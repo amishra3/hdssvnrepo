@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Panel"
+    title="HDS Corp">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <navigation
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Navigation DropDown Path"
+            name="./navpath"
+            xtype="pathfield"/>
+        <pagesubtext
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Enter page Subtext"
+            name="./subtext"
+            xtype="textfield"/>
+        <personalizationenabled
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Include Personalization Scripts?"
+            inputValue="true"
+            name="./personalizationEnabled"
+            type="checkbox"
+            xtype="selection"/>
+        <hidebreadcrumb
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Hide Breadcrumb ?"
+            name="./hidebreadcrumb"
+            type="checkbox"
+            xtype="selection"/>
+        <hidereturntotop
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Hide Return to Top Functionality For The Page ?"
+            name="./hidereturntotop"
+            type="checkbox"
+            xtype="selection"/>
+    </items>
+</jcr:root>

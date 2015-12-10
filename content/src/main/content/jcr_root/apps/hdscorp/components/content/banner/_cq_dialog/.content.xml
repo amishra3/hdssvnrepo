@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Banner Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    height="{Long}450"
+    helppath="en/cq/current/wcm/&#xa;default_components.html#Carousel"
+    width="{Long}700">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <banner1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General Tab"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <listFrom
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"
+                                fieldLabel="Select Banner Type"
+                                name="./listFrom">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <homepagehero
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Homepage Hero Banner"
+                                        value="homepagehero"/>
+                                    <homepagesecondary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Homepage Seondary Banner"
+                                        value="homepagesecondary"/>
+                                    <homepagesecondarytype2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Homepage Seondary Banner Type 2"
+                                        value="homepagesecondarytype2"/>
+                                    <productsolutionhero
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product &amp; Solution Hero Banner"
+                                        value="productsolutionhero"/>
+                                    <storagehero
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Storage Hero Banner"
+                                        value="storagehero"/>
+                                    <productdetailvideohero
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product Detail Video Hero banner"
+                                        value="productdetailvideohero"/>
+                                    <newsandinsightsshorthero
+                                        jcr:primaryType="nt:unstructured"
+                                        text="News and Insights Short Hero banner"
+                                        value="newsandinsightsshorthero"/>
+                                </items>
+                            </listFrom>
+                            <sethomepagehero
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="homepagehero">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Homepage Hero Banner"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <title
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        allowBlank="{Boolean}false"
+                                                        fieldLabel="Banner Title"
+                                                        name="./jcr:title"
+                                                        required="{Boolean}true"/>
+                                                    <altText
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        allowBlank="{Boolean}false"
+                                                        fieldLabel="Image ALT text"
+                                                        name="./jcr:altText"
+                                                        required="{Boolean}true"/>
+                                                    <subText
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        allowBlank="{Boolean}false"
+                                                        fieldLabel="Banner Sub text"
+                                                        name="./jcr:subText"
+                                                        required="{Boolean}true"/>
+                                                    <viewalllink
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="View ALL link"
+                                                        name="./jcr:viewalllink"/>
+                                                    <viewalltext
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="View ALL link text"
+                                                        name="./jcr:viewalltext"/>
+                                                    <imagePath
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                        allowBlank="{Boolean}false"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="Banner Image"
+                                                        fileNameParameter="./fileName"
+                                                        fileReferenceParameter="./jcr:imagePath"
+                                                        id="image"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}true"
+                                                        name="./image"
+                                                        text="Select Image"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true"/>
+                                                    <fieldset
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Sample Dashboard"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                                        <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <column
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <dashboard
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                        fieldDescription="Enter Dashboard name"
+                                                                        fieldLabel="Dashboard name"
+                                                                        name="./dashboard"/>
+                                                                    <pages
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="/apps/touch-ui-multi-field-panel/multifield"
+                                                                        class="full-width"
+                                                                        fieldDescription="Click '+' to add a new page"
+                                                                        fieldLabel="URLs">
+                                                                        <field
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                                            name="./items">
+                                                                            <layout
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                                                method="absolute"/>
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <column
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                                        <page
+                                                                                            jcr:primaryType="nt:unstructured"
+                                                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                                            fieldDescription="Enter Page Name"
+                                                                                            fieldLabel="Page Name"
+                                                                                            name="./page"/>
+                                                                                        <path
+                                                                                            jcr:primaryType="nt:unstructured"
+                                                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                                            fieldDescription="Select Path"
+                                                                                            fieldLabel="Path"
+                                                                                            name="./path"
+                                                                                            rootPath="/content"/>
+                                                                                    </items>
+                                                                                </column>
+                                                                            </items>
+                                                                        </field>
+                                                                    </pages>
+                                                                </items>
+                                                            </column>
+                                                        </items>
+                                                    </fieldset>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </well>
+                                </items>
+                            </sethomepagehero>
+                            <sethomepagesecondary
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="homepagesecondary">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Homepage Seondary Banner"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <imagePath1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                        allowBlank="{Boolean}false"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="Banner Image"
+                                                        fileNameParameter="./fileName1"
+                                                        fileReferenceParameter="./jcr:imagePath1"
+                                                        id="image1"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}true"
+                                                        name="./image1"
+                                                        text="Select Image"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true"/>
+                                                    <title1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Title"
+                                                        name="./jcr:title1"/>
+                                                    <altText1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Image ALT text"
+                                                        name="./jcr:altText1"/>
+                                                    <subText1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Sub text"
+                                                        name="./jcr:subText1"/>
+                                                    <ctaUrl1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA URL"
+                                                        name="./jcr:ctaUrl1"/>
+                                                    <ctaLabel1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA Label"
+                                                        name="./jcr:ctaLabel1"/>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </well>
+                                </items>
+                            </sethomepagesecondary>
+                            <sethomepagesecondarytype2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="homepagesecondarytype2">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Homepage Seondary Banner Type 2"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <title2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Title"
+                                                        name="./jcr:title2"/>
+                                                    <altText2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Image ALT text"
+                                                        name="./jcr:altText2"/>
+                                                    <subText2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Sub text"
+                                                        name="./jcr:subText2"/>
+                                                    <ctaUrl2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA URL"
+                                                        name="./jcr:ctaUrl2"/>
+                                                    <ctaLabel2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA Label"
+                                                        name="./jcr:ctaLabel2"/>
+                                                    <imagePath2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                        allowBlank="{Boolean}false"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="Banner Image"
+                                                        fileNameParameter="./fileName2"
+                                                        fileReferenceParameter="./jcr:imagePath2"
+                                                        id="image2"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}true"
+                                                        name="./image2"
+                                                        text="Select Image"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true"/>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </well>
+                                </items>
+                            </sethomepagesecondarytype2>
+                            <setproductsolutionhero
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="productsolutionhero">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Product &amp; Solution Hero Banner"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <title3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Title"
+                                                        name="./jcr:title3"/>
+                                                    <altText3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Image ALT text"
+                                                        name="./jcr:altText3"/>
+                                                    <subText3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Sub text"
+                                                        name="./jcr:subText3"/>
+                                                    <ctaUrl3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA URL"
+                                                        name="./jcr:ctaUrl3"/>
+                                                    <ctaLabel3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA Label"
+                                                        name="./jcr:ctaLabel3"/>
+                                                    <imagePath3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                        allowBlank="{Boolean}false"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="Banner Image"
+                                                        fileNameParameter="./fileName2"
+                                                        fileReferenceParameter="./jcr:imagePath3"
+                                                        id="image3"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}true"
+                                                        name="./image3"
+                                                        text="Select Image"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true"/>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setproductsolutionhero>
+                            <setstoragehero
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="storagehero">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Storage Hero Banner"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <title4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Title"
+                                                        name="./jcr:title4"/>
+                                                    <altText4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Image ALT text"
+                                                        name="./jcr:altText4"/>
+                                                    <subText4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Sub text"
+                                                        name="./jcr:subText4"/>
+                                                    <ctaUrl4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA URL"
+                                                        name="./jcr:ctaUrl4"/>
+                                                    <ctaLabel4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA Label"
+                                                        name="./jcr:ctaLabel4"/>
+                                                    <imagePath4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                        allowBlank="{Boolean}false"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="Banner Image"
+                                                        fileNameParameter="./fileName4"
+                                                        fileReferenceParameter="./jcr:imagePath4"
+                                                        id="image4"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}true"
+                                                        name="./image4"
+                                                        text="Select Image"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true"/>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setstoragehero>
+                            <setproductdetailvideohero
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="productdetailvideohero">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Product Detail Video Hero banner"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <imagePath5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                        allowBlank="{Boolean}false"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="Image"
+                                                        fileNameParameter="./fileName5"
+                                                        fileReferenceParameter="./jcr:imagePath5"
+                                                        id="image2"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}true"
+                                                        name="./image5"
+                                                        text="Select Image"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true"/>
+                                                    <title5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Video Banner Title"
+                                                        name="./jcr:title5"/>
+                                                    <altText5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Image ALT text"
+                                                        name="./jcr:altText5"/>
+                                                    <subText5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Video Banner Sub text"
+                                                        name="./jcr:subText5"/>
+                                                    <targetUrl5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Video Target URL"
+                                                        name="./jcr:targetUrl5"/>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setproductdetailvideohero>
+                            <setnewsandinsightsshorthero
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="newsandinsightsshorthero">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="News and Insights Short Hero banner"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <imagePath6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                        allowBlank="{Boolean}false"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldLabel="Banner Image"
+                                                        fileNameParameter="./fileName6"
+                                                        fileReferenceParameter="./jcr:imagePath6"
+                                                        id="image6"
+                                                        mimeTypes="[image]"
+                                                        multiple="{Boolean}true"
+                                                        name="./image6"
+                                                        text="Select Image"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true"/>
+                                                    <title6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Banner Title"
+                                                        name="./jcr:title6"/>
+                                                    <altText6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Image Alt Text"
+                                                        name="./jcr:altText6"/>
+                                                    <subText6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Email Box Inactive text"
+                                                        name="./jcr:subText6"/>
+                                                    <ctaUrl6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA URL"
+                                                        name="./jcr:ctaUrl6"/>
+                                                    <ctaLabel6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="CTA Label"
+                                                        name="./jcr:ctaLabel6"/>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </well>
+                                </items>
+                            </setnewsandinsightsshorthero>
+                        </items>
+                    </column>
+                </items>
+            </banner1>
+        </items>
+    </content>
+</jcr:root>

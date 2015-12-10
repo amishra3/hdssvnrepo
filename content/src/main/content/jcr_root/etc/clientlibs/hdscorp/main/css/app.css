@@ -1,0 +1,19 @@
+.floatleft{
+	float: left;
+}
+
+.floatright {
+	float: right;
+}
+
+.textrightalign {
+	text-align: right;
+}
+
+.textleftalign {
+	text-align: left;
+}
+
+.editbarstyle {
+	overflow: auto;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="com.hdscorp.cms.listeners.ReplicationEventHandlerListener" configuration-policy="require">
+        <implementation class="com.hdscorp.cms.listeners.ReplicationEventHandlerListener"/>
+        <service servicefactory="false">
+            <provide interface="org.osgi.service.event.EventHandler"/>
+        </service>
+        <property name="service.description" value="HDS Corp Replication EventHandler Listener"/>
+        <property name="event.topics" value="com/day/cq/replication"/>
+        <property name="service.vendor" value="HDS Corp"/>
+        <property name="service.pid" value="com.hdscorp.cms.listeners.ReplicationEventHandlerListener"/>
+    </scr:component>
+</components>

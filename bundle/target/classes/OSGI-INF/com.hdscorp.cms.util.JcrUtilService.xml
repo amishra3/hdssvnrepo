@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="com.hdscorp.cms.util.JcrUtilService" activate="activate" deactivate="deactivate">
+        <implementation class="com.hdscorp.cms.util.JcrUtilService"/>
+        <service servicefactory="false">
+            <provide interface="com.hdscorp.cms.util.JcrUtilService"/>
+        </service>
+        <property name="service.description" value="JCR Util Service"/>
+        <property name="service.vendor" value="HDS Corp"/>
+        <property name="service.ranking" type="Integer" value="100"/>
+        <property name="service.pid" value="com.hdscorp.cms.util.JcrUtilService"/>
+        <reference name="replicator" interface="com.day.cq.replication.Replicator" cardinality="1..1" policy="static" bind="bindReplicator" unbind="unbindReplicator"/>
+        <reference name="slingRepository" interface="org.apache.sling.jcr.api.SlingRepository" cardinality="1..1" policy="static" bind="bindSlingRepository" unbind="unbindSlingRepository"/>
+        <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResolverFactory" unbind="unbindResolverFactory"/>
+    </scr:component>
+</components>

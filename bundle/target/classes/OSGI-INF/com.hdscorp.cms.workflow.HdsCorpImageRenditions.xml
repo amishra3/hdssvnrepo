@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component name="com.hdscorp.cms.workflow.HdsCorpImageRenditions">
+        <implementation class="com.hdscorp.cms.workflow.HdsCorpImageRenditions"/>
+        <service servicefactory="false">
+            <provide interface="com.day.cq.workflow.exec.WorkflowProcess"/>
+        </service>
+        <property name="service.description" value="HdsCorpImageRenditions"/>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="process.label" value="Panera Image Renditions"/>
+        <property name="service.pid" value="com.hdscorp.cms.workflow.HdsCorpImageRenditions"/>
+        <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResolverFactory" unbind="unbindResolverFactory"/>
+        <reference name="mimeTypeService" interface="org.apache.sling.commons.mime.MimeTypeService" cardinality="1..1" policy="static" bind="bindMimeTypeService" unbind="unbindMimeTypeService"/>
+        <reference name="store" interface="com.day.cq.dam.api.handler.store.AssetStore" cardinality="1..1" policy="static" bind="bindStore" unbind="unbindStore"/>
+        <reference name="jcrResolverFactory" interface="org.apache.sling.jcr.resource.JcrResourceResolverFactory" cardinality="1..1" policy="static" bind="bindJcrResolverFactory" unbind="unbindJcrResolverFactory"/>
+    </scr:component>
+</components>

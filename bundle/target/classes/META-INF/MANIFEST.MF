@@ -1,0 +1,120 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1449717592522
+Build-Jdk: 1.7.0_45
+Built-By: amish9
+Bundle-Description: Maven Multimodule project for HDS CORP Project.
+Bundle-ManifestVersion: 2
+Bundle-Name: HDS CORP Project Bundle
+Bundle-SymbolicName: com.hdscorp.hdscorp-project
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.hdscorp.cms.config;version="0.0.1.SNAPSHOT";uses:="o
+ rg.osgi.service.component",com.hdscorp.cms.constants;version="0.0.1.SNA
+ PSHOT",com.hdscorp.cms.dao;version="0.0.1.SNAPSHOT";uses:="com.day.cq.s
+ earch,com.day.cq.search.result,com.day.cq.tagging,javax.jcr,javax.servl
+ et.jsp",com.hdscorp.cms.db.util;version="0.0.1.SNAPSHOT",com.hdscorp.cm
+ s.exception;version="0.0.1.SNAPSHOT",com.hdscorp.cms.listeners;version=
+ "0.0.1.SNAPSHOT";uses:="org.osgi.service.event",com.hdscorp.cms.renditi
+ on;version="0.0.1.SNAPSHOT";uses:="org.apache.sling.api.resource",com.h
+ dscorp.cms.servlet;version="0.0.1.SNAPSHOT";uses:="com.sun.jersey.api.c
+ lient,javax.servlet,org.apache.sling.api,org.apache.sling.api.servlets,
+ org.apache.sling.commons.json",com.hdscorp.cms.slingmodels;version="0.0
+ .1.SNAPSHOT";uses:="org.apache.sling.api.resource,org.apache.sling.mode
+ ls.annotations",com.hdscorp.cms.util;version="0.0.1.SNAPSHOT";uses:="co
+ m.day.cq.commons,com.day.cq.replication,com.day.cq.tagging,com.day.cq.w
+ cm.api,javax.jcr,javax.servlet,javax.servlet.http,org.apache.sling.api,
+ org.apache.sling.api.resource,org.apache.sling.commons.json,org.apache.
+ sling.jcr.api,org.jcrom,org.osgi.service.component",com.hdscorp.cms.wor
+ kflow;version="0.0.1.SNAPSHOT";uses:="com.day.cq.dam.api,com.day.cq.dam
+ .commons.process,com.day.cq.workflow,com.day.cq.workflow.exec,com.day.c
+ q.workflow.metadata,com.day.image,javax.imageio,javax.jcr,org.apache.sl
+ ing.commons.mime"
+Import-Package: com.day.cq.commons;version="[5.7,6)",com.day.cq.dam.api;
+ version="[1.2,2)",com.day.cq.dam.api.handler;version="[1.2,2)",com.day.
+ cq.dam.commons.process;version="[1.1,2)",com.day.cq.dam.commons.util;ve
+ rsion="[1.2,2)",com.day.cq.mailer;version="[5.8,6)",com.day.cq.replicat
+ ion;version="[5.15,6)",com.day.cq.search;version="[1.1,2)",com.day.cq.s
+ earch.result;version="[1.1,2)",com.day.cq.tagging;version="[5.7,6)",com
+ .day.cq.wcm.api;version="[1.2,2)",com.day.cq.wcm.foundation;version="[5
+ .7,6)",com.day.cq.workflow;version="[0.0,1)",com.day.cq.workflow.exec;v
+ ersion="[0.0,1)",com.day.cq.workflow.metadata;version="[0.0,1)",com.day
+ .cq.workflow.model;version="[0.0,1)",com.day.image;version="[1.0,2)",co
+ m.day.text;version="[1.1,2)",com.sun.jersey.api.client,javax.activation
+ ,javax.crypto,javax.crypto.spec,javax.imageio,javax.inject;version="[0.
+ 0,1)",javax.jcr;version="[2.0,3)",javax.mail.internet,javax.servlet,jav
+ ax.servlet.http,javax.servlet.jsp,oracle.jdbc.driver,org.apache.commons
+ .codec.binary;version="[1.5,2)",org.apache.commons.collections,org.apac
+ he.commons.collections.map;version="[3.2,4)",org.apache.commons.httpcli
+ ent,org.apache.commons.httpclient.methods,org.apache.commons.httpclient
+ .util,org.apache.commons.io;version="[1.4,2)",org.apache.commons.lang;v
+ ersion="[2.5,3)",org.apache.commons.logging,org.apache.commons.mail,org
+ .apache.sling.api;version="[2.3,3)",org.apache.sling.api.resource;versi
+ on="[2.5,3)",org.apache.sling.api.scripting;version="[2.1,3)",org.apach
+ e.sling.api.servlets;version="[2.1,3)",org.apache.sling.commons.json;ve
+ rsion="[2.0,3)",org.apache.sling.commons.mime;version="[2.1,3)",org.apa
+ che.sling.event;version="[2.4,3)",org.apache.sling.jcr.api;version="[2.
+ 2,3)",org.apache.sling.jcr.resource;version="[2.2,3)",org.apache.sling.
+ models.annotations;version="[1.0,2)",org.apache.velocity,org.apache.vel
+ ocity.app,org.apache.velocity.context,org.jcrom,org.osgi.framework;vers
+ ion="[1.5,2)",org.osgi.service.component;version="[1.1,2)",org.osgi.ser
+ vice.event;version="[1.2,2)",org.slf4j;version="[1.7,2)"
+Provide-Capability: osgi.service;effective:=active;objectClass="javax.se
+ rvlet.Servlet";service.description="Request Servlet";service.vendor="HD
+ S Corp";sling.servlet.paths="/servicehdscorp/servlets/showrequestheader
+ s";sling.servlet.methods=GET,osgi.service;effective:=active;objectClass
+ ="com.hdscorp.cms.config.HdsCorpGlobalConfiguration";service.descriptio
+ n=HDSGlobalConfig;service.vendor="HDS Corp";hdscorp.dispatcher.uri="/di
+ spatcher/invalidate.cache";hdscorp.error.path="/content/hdscorp/en_us/e
+ rror-page";hdscorp.structured.content.root.path="/content/hdscorp/en_us
+ /structureddata";fbAppId=172495462931268;gaaccountid=UA-12177097-3,osgi
+ .service;effective:=active;objectClass="com.day.cq.workflow.exec.Workfl
+ owProcess";service.description=HdsCorpNewImageRenditions;service.vendor
+ =Adobe;process.label="Panera New Image Renditions",osgi.service;effecti
+ ve:=active;objectClass="javax.servlet.Servlet";service.description="HDS
+  Corp Workflow Servlet";service.vendor="HDS Corp";sling.servlet.paths="
+ /servicehdscorp/images/renditions";sling.servlet.methods=GET,osgi.servi
+ ce;effective:=active;objectClass="javax.servlet.Servlet";service.descri
+ ption="Asset Gating Servlet";service.vendor="HDS Corp",osgi.service;eff
+ ective:=active;objectClass="org.osgi.service.event.EventHandler";servic
+ e.description="HDS Corp Replication EventHandler Listener";event.topics
+ ="com/day/cq/replication";service.vendor="HDS Corp",osgi.service;effect
+ ive:=active;objectClass="com.day.cq.workflow.exec.WorkflowProcess";serv
+ ice.description="Cache Invalidation Workflow";service.vendor=Adobe;proc
+ ess.label="Cache Invalidation Workflow",osgi.service;effective:=active;
+ objectClass="com.day.cq.workflow.exec.WorkflowProcess";service.descript
+ ion="Scheduled Activation Workflow";service.vendor=Adobe;process.label=
+ "Scheduled Activation Workflow",osgi.service;effective:=active;objectCl
+ ass="javax.servlet.Servlet",osgi.service;effective:=active;objectClass=
+ "com.hdscorp.cms.util.JcrUtilService";service.description="JCR Util Ser
+ vice";service.vendor="HDS Corp";service.ranking=100,osgi.service;effect
+ ive:=active;objectClass="com.day.cq.workflow.exec.WorkflowProcess";serv
+ ice.description=HdsCorpImageRenditions;service.vendor=Adobe;process.lab
+ el="Panera Image Renditions",osgi.service;effective:=active;objectClass
+ ="javax.servlet.Servlet";service.description="Filters Tags ";service.ve
+ ndor="HDS Corp";sling.servlet.paths="/servicehdscorp/tags/recipes";slin
+ g.servlet.methods=GET
+Require-Capability: osgi.service;effective:=active;filter:="(objectClass
+ =com.day.cq.search.QueryBuilder)",osgi.service;effective:=active;filter
+ :="(objectClass=org.apache.sling.jcr.resource.JcrResourceResolverFactor
+ y)",osgi.service;effective:=active;filter:="(objectClass=com.day.cq.dam
+ .api.handler.store.AssetStore)",osgi.service;effective:=active;filter:=
+ "(objectClass=org.apache.sling.api.resource.ResourceResolverFactory)",o
+ sgi.service;effective:=active;filter:="(objectClass=com.day.cq.replicat
+ ion.Replicator)",osgi.service;effective:=active;filter:="(objectClass=o
+ rg.apache.sling.commons.mime.MimeTypeService)",osgi.service;effective:=
+ active;filter:="(objectClass=org.apache.sling.jcr.api.SlingRepository)"
+ ,osgi.service;effective:=active;filter:="(objectClass=com.day.cq.workfl
+ ow.WorkflowService)",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Service-Component: OSGI-INF/com.hdscorp.cms.workflow.HdsCorpImageRenditi
+ ons.xml,OSGI-INF/com.hdscorp.cms.util.JcrUtilService.xml,OSGI-INF/com.h
+ dscorp.cms.servlet.AssetGatingServlet.xml,OSGI-INF/com.hdscorp.cms.conf
+ ig.HdsCorpGlobalConfiguration.xml,OSGI-INF/com.hdscorp.cms.servlet.Filt
+ erTags.xml,OSGI-INF/com.hdscorp.cms.servlet.HdsWorkflowServlet.xml,OSGI
+ -INF/com.hdscorp.cms.workflow.ScheduledActivationProcess.xml,OSGI-INF/c
+ om.hdscorp.cms.servlet.ShowRequestHeadersServlet.xml,OSGI-INF/com.hdsco
+ rp.cms.servlet.AssetGatingServlet2.xml,OSGI-INF/com.hdscorp.cms.listene
+ rs.ReplicationEventHandlerListener.xml,OSGI-INF/com.hdscorp.cms.workflo
+ w.HdsCorpNewImageRenditions.xml,OSGI-INF/com.hdscorp.cms.workflow.Cache
+ InvalidationWorkflow.xml
+Sling-Model-Packages: com.hdscorp.cms.slingmodels
+Tool: Bnd-2.3.0.201405100607
