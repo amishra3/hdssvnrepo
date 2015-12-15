@@ -11,6 +11,6 @@
 <c:if test="${empty pageProperties.hidereturntotop}">
 		<button class="cta-scroll-top">
 			<div class="icon-arrow-scroll-top"></div>
-			<span class="text-return">${properties.returnTopLabel}</span>
+			<span class="text-return">return to top</span>
 		</button>
 </c:if>

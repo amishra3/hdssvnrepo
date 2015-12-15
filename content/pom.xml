@@ -130,7 +130,7 @@
                     <embeddeds>
                         <embedded>
                             <groupId>com.hdscorp</groupId>
-                            <artifactId>hdscorp-project-bundle</artifactId>
+                            <artifactId>hdscorp-bundle</artifactId>
                             <target>/apps/hdscorp/install</target>
                         </embedded>
                     </embeddeds>

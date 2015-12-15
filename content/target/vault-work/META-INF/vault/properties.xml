@@ -2,9 +2,9 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>HDS CORP Project Content Package</comment>
-<entry key="createdBy">amish9</entry>
+<entry key="createdBy">cyadlapalli</entry>
 <entry key="name">hdscorp-content</entry>
-<entry key="created">2015-12-09T22:14:05.628-0500</entry>
+<entry key="created">2015-12-15T12:01:56.827-0600</entry>
 <entry key="groupId">com.hdscorp</entry>
 <entry key="version">0.0.1-SNAPSHOT</entry>
 <entry key="requiresRoot">false</entry>

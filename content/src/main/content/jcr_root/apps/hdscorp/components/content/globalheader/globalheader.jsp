@@ -43,8 +43,8 @@
 	<div class="header">
 		<div
 			class="header-container content-container">
-    		<a href=""${logoTargetURL}""><span class="hitachi-logo hidden-xs hidden-sm"></span></a>
-    		<a href=""${logoTargetURL}""><span class="hitachi-logo-mobile hidden-md hidden-lg"></span></a>				
+    		<a href="${logoTargetURL}"><span class="hitachi-logo hidden-xs hidden-sm"></span></a>
+    		<a href="${logoTargetURL}"><span class="hitachi-logo-mobile hidden-md hidden-lg"></span></a>				
 				
 			<div class="navigation hidden-xs hidden-sm">
 				<ul>		

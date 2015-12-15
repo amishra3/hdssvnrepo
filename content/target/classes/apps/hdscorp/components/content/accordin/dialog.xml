@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Accordin"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <multilinks
+            jcr:primaryType="cq:Widget"
+            customMultiFieldName="./multilinks"
+            fieldLabel="Links"
+            name="./multilinks"
+            xtype="custommultifield">
+            <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                <tabName
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Tab Display Name"
+                    name="./tabName"
+                    width="{Long}200"
+                    xtype="textfield"/>
+                <tabAnchor
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Tab Content Anchor Name"
+                    name="./tabAnchor"
+                    width="{Long}200"
+                    xtype="textfield"/>
+            </fieldConfig>
+        </multilinks>
+    </items>
+    </items>
+</jcr:root>

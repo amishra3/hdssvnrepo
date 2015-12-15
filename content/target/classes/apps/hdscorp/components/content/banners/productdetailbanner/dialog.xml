@@ -69,8 +69,8 @@
                         fieldLabel="Align Content on Right ?"
                         name="./simplebannercontentalign"
                         type="checkbox"
-                        xtype="selection"/>    
-					<simpllebannerlinklabel
+                        xtype="selection"/>
+                    <simpllebannerlinklabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Link Text"
                         name="./simpllebannerlinklabel"
@@ -85,7 +85,34 @@
                         fieldLabel="Open in New Window ?"
                         name="./simplebannerlinkurltargettype"
                         type="checkbox"
-                        xtype="selection"/>                                            
+                        xtype="selection"/>
+                    <simplebannerusevideomodal
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Use Video Modal ?"
+                        name="./simplebannerusevideomodal"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <simplebannerimageoverlaypath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter=".simplebannerimageoverlaypathCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./simplebannerimageoverlayfileName2"
+                        fileReferenceParameter="./simplebannerimageoverlaypath"
+                        height="{Long}200"
+                        name="./simplebannerimageoverlaypath"
+                        rotateParameter="./simplebannerimageoverlayRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <simplebannervideoembedcode
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video Embed code"
+                        name="./simplebannervideoembedcode"
+                        xtype="textarea"/>                        
                 </items>
             </tab1>
         </items>

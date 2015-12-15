@@ -8,5 +8,10 @@
             fieldLabel="Manual ID:"
             name="./id"
             xtype="textfield"/>
+        <class
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Manual css class:"
+            name="./class"
+            xtype="textfield"/>            
     </items>
 </jcr:root>

@@ -329,32 +329,7 @@
 					<artifactId>jslint-maven-plugin</artifactId>
 					<version>1.0.1</version>
 				</plugin>
-               <plugin>
-                <groupId>com.day.jcr.vault</groupId>
-                <artifactId>content-package-maven-plugin</artifactId>
-                <extensions>true</extensions>
-				<executions>
-				<execution>
-				<goals>
-				<goal>package</goal>
-				</goals>
-                <configuration>
-                    <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
-					<embeddedTarget>/apps/hdscorp/install</embeddedTarget>
-                    <embeddeds>
-                        <embedded>
-                            <groupId>com.hdscorp</groupId>
-                            <artifactId>hdscorp-bundle</artifactId>
-                           <filter>true</filter>
-                        </embedded>
-                    </embeddeds>
-             
 
-                    <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
-                </configuration>
-				</execution>
-				</executions>
-            </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>

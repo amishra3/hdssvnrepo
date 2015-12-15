@@ -7749,13 +7749,13 @@ The `sprites` mixin generates identical output to the CSS template
 
 button.cta-scroll-top {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 10px;
+  right: 10px;
   outline: 0;
   border: 0;
   display: none;
-  padding: 0 6px;
-  margin: 6px 8px;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
   text-align: center;
   text-transform: uppercase;
@@ -7767,21 +7767,21 @@ button.cta-scroll-top {
   cursor: pointer;
   letter-spacing: .15em;
   z-index: 1031;
-  min-height: 56px;
-  min-width: 56px;
-  width: 87px;
-  height: 87px;
+  width: 77px;
+  height: 77px;
   vertical-align: middle;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   border-radius: 50%;
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition-property: background-color, box-shadow, transform;
-  background-color: #838383;
+  background-color: #8f8f8f;
+  background-color: rgba(131, 131, 131, 0.9);
   color: #ffffff;
 }
 
 button.cta-scroll-top:hover {
-  background-color: #666;
+  background-color: #757575;
+  background-color: rgba(102, 102, 102, 0.9);
 }
 
 button.cta-scroll-top.active {
@@ -7794,9 +7794,9 @@ button.cta-scroll-top span {
 
 button.cta-scroll-top .icon-arrow-scroll-top {
   background-image: url(../images/sprite.png);
-  background-position: -334px -103px;
-  width: 37px;
-  height: 19px;
+  background-position: -354px -158px;
+  width: 26px;
+  height: 14px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -7844,9 +7844,16 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-  button.cta-scroll-top,
-  button.cta-scroll-top.active {
-    display: none;
+  button.cta-scroll-top {
+    position: absolute;
+    display: inline-block;
+    font-size: .5rem;
+    line-height: .7rem;
+    width: 68px;
+    height: 68px;
+  }
+  button.cta-scroll-top .text-return {
+    margin-top: 5px;
   }
   .btn-transparent-square {
     max-width: 300px;
@@ -7860,14 +7867,14 @@ button.cta-scroll-top .text-return {
 
 .icon-close-hero {
   background-image: url(../images/sprite.png);
-  background-position: -27px -215px;
+  background-position: 0px -215px;
   width: 32px;
   height: 32px;
 }
 
 .icon-connect {
   background-image: url(../images/sprite.png);
-  background-position: -234px -20px;
+  background-position: -292px -20px;
   width: 56px;
   height: 65px;
 }
@@ -7881,6 +7888,13 @@ button.cta-scroll-top .text-return {
 
 .icon-advance {
   background-image: url(../images/sprite.png);
+  background-position: -234px -20px;
+  width: 58px;
+  height: 66px;
+}
+
+.icon-advance-lt {
+  background-image: url(../images/sprite.png);
   background-position: -176px -20px;
   width: 58px;
   height: 66px;
@@ -7888,35 +7902,35 @@ button.cta-scroll-top .text-return {
 
 .icon-connect-small {
   background-image: url(../images/sprite.png);
-  background-position: -91px -158px;
+  background-position: -60px -215px;
   width: 27px;
   height: 31px;
 }
 
 .icon-transform-small {
   background-image: url(../images/sprite.png);
-  background-position: 0px -215px;
+  background-position: -348px -20px;
   width: 27px;
   height: 42px;
 }
 
 .icon-advance-small {
   background-image: url(../images/sprite.png);
-  background-position: -59px -215px;
+  background-position: -32px -215px;
   width: 28px;
   height: 32px;
 }
 
 .icon-caret-red {
   background-image: url(../images/sprite.png);
-  background-position: -377px -20px;
+  background-position: -375px -20px;
   width: 9px;
   height: 14px;
 }
 
 .icon-caret-white {
   background-image: url(../images/sprite.png);
-  background-position: -364px -86px;
+  background-position: -375px -34px;
   width: 9px;
   height: 14px;
 }
@@ -7930,42 +7944,42 @@ button.cta-scroll-top .text-return {
 
 .icon-suitcase-red {
   background-image: url(../images/sprite.png);
-  background-position: -226px -158px;
+  background-position: -147px -158px;
   width: 27px;
   height: 24px;
 }
 
 .icon-phone-red {
   background-image: url(../images/sprite.png);
-  background-position: -133px -117px;
+  background-position: -114px -215px;
   width: 27px;
   height: 27px;
 }
 
 .icon-building-red {
   background-image: url(../images/sprite.png);
-  background-position: -172px -158px;
+  background-position: -168px -215px;
   width: 27px;
   height: 27px;
 }
 
 .icon-globe-red {
   background-image: url(../images/sprite.png);
-  background-position: -199px -158px;
+  background-position: -195px -215px;
   width: 27px;
   height: 27px;
 }
 
 .icon-arrow-up {
   background-image: url(../images/sprite.png);
-  background-position: -290px -70px;
+  background-position: -308px -131px;
   width: 29px;
   height: 13px;
 }
 
 .icon-arrow-down {
   background-image: url(../images/sprite.png);
-  background-position: -290px -45px;
+  background-position: -91px -158px;
   width: 56px;
   height: 25px;
 }
@@ -8000,49 +8014,49 @@ button.cta-scroll-top .text-return {
 
 .icon-facebook-white {
   background-image: url(../images/sprite.png);
-  background-position: -324px -158px;
+  background-position: -174px -158px;
   width: 24px;
   height: 23px;
 }
 
 .icon-twitter-white {
   background-image: url(../images/sprite.png);
-  background-position: -348px -158px;
+  background-position: -246px -158px;
   width: 23px;
   height: 23px;
 }
 
 .icon-linkedin-white {
   background-image: url(../images/sprite.png);
-  background-position: -44px -189px;
+  background-position: -97px -189px;
   width: 23px;
   height: 24px;
 }
 
 .icon-gplus-white {
   background-image: url(../images/sprite.png);
-  background-position: -300px -158px;
+  background-position: -198px -158px;
   width: 24px;
   height: 23px;
 }
 
 .icon-youtube-white {
   background-image: url(../images/sprite.png);
-  background-position: -276px -158px;
+  background-position: -222px -158px;
   width: 24px;
   height: 23px;
 }
 
 .icon-two-white {
   background-image: url(../images/sprite.png);
-  background-position: -253px -158px;
+  background-position: -74px -189px;
   width: 23px;
   height: 24px;
 }
 
 .icon-group-white {
   background-image: url(../images/sprite.png);
-  background-position: -67px -189px;
+  background-position: -360px -103px;
   width: 23px;
   height: 24px;
 }
@@ -8077,14 +8091,14 @@ button.cta-scroll-top .text-return {
 
 .icon-minus {
   background-image: url(../images/sprite.png);
-  background-position: -346px -45px;
+  background-position: -348px -62px;
   width: 38px;
   height: 19px;
 }
 
 .icon-search-mobile {
   background-image: url(../images/sprite.png);
-  background-position: -156px -189px;
+  background-position: -335px -158px;
   width: 19px;
   height: 20px;
 }
@@ -8098,37 +8112,44 @@ button.cta-scroll-top .text-return {
 
 .icon-content-type {
   background-image: url(../images/sprite.png);
-  background-position: -273px -103px;
+  background-position: -133px -117px;
   width: 31px;
   height: 27px;
 }
 
 .icon-white-paper {
   background-image: url(../images/sprite.png);
-  background-position: -118px -158px;
+  background-position: -87px -215px;
   width: 27px;
   height: 30px;
 }
 
 .icon-video-play {
   background-image: url(../images/sprite.png);
-  background-position: -145px -158px;
+  background-position: -141px -215px;
   width: 27px;
   height: 27px;
 }
 
 .icon-accordion-closed {
   background-image: url(../images/sprite.png);
-  background-position: -136px -189px;
+  background-position: -315px -158px;
   width: 20px;
   height: 20px;
 }
 
 .icon-accordion-opened {
   background-image: url(../images/sprite.png);
-  background-position: -346px -64px;
+  background-position: -348px -81px;
   width: 20px;
   height: 3px;
+}
+
+.icon-quote {
+  background-image: url(../images/sprite.png);
+  background-position: -364px -86px;
+  width: 22px;
+  height: 17px;
 }
 
 .hexagon {
@@ -8251,7 +8272,7 @@ button.cta-scroll-top .text-return {
 
 .header .header-container .hitachi-logo-mobile {
   background-image: url(../images/sprite.png);
-  background-position: -290px -20px;
+  background-position: -273px -103px;
   width: 87px;
   height: 25px;
 }
@@ -8267,7 +8288,7 @@ button.cta-scroll-top .text-return {
   top: 5px;
   margin-right: 5px;
   background-image: url(../images/sprite.png);
-  background-position: -113px -189px;
+  background-position: -269px -158px;
   width: 23px;
   height: 21px;
 }
@@ -8276,14 +8297,14 @@ button.cta-scroll-top .text-return {
   top: 5px;
   margin-right: 5px;
   background-image: url(../images/sprite.png);
-  background-position: -90px -189px;
+  background-position: -292px -158px;
   width: 23px;
   height: 21px;
 }
 
 .header .header-container .navigation .nav-search {
   background-image: url(../images/sprite.png);
-  background-position: -304px -103px;
+  background-position: -44px -189px;
   width: 30px;
   height: 26px;
 }
@@ -8344,7 +8365,7 @@ button.cta-scroll-top .text-return {
 
 .header .header-container .navigation > ul > li.search .nav-search {
   position: absolute;
-  right: 11px;
+  right: 13px;
 }
 
 .header .header-container .navigation-mobile {
@@ -8383,7 +8404,7 @@ button.cta-scroll-top .text-return {
 
 .header .sub-navigation-container .sub-navigation > h5 {
   float: left;
-  margin-top: 15px;
+  margin-top: 18px;
   color: #ffffff;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -8775,6 +8796,9 @@ button.cta-scroll-top .text-return {
   .footer .footer-gray .footer-container .social > a {
     margin-left: 10px;
   }
+  .footer .footer-blue {
+    position: relative;
+  }
   .footer .footer-blue .buttons .reseller,
   .footer .footer-blue .buttons .information {
     display: block;
@@ -8792,6 +8816,9 @@ button.cta-scroll-top .text-return {
     display: block;
     float: none;
     text-align: center;
+  }
+  .footer .footer-white .footer-container .copyright {
+    padding-top: 0;
   }
 }
 
@@ -9127,19 +9154,19 @@ button.cta-scroll-top .text-return {
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-connect {
     background-image: url(../images/sprite.png);
-    background-position: -91px -158px;
+    background-position: -60px -215px;
     width: 27px;
     height: 31px;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-transform {
     background-image: url(../images/sprite.png);
-    background-position: 0px -215px;
+    background-position: -348px -20px;
     width: 27px;
     height: 42px;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-advance {
     background-image: url(../images/sprite.png);
-    background-position: -59px -215px;
+    background-position: -32px -215px;
     width: 28px;
     height: 32px;
   }
@@ -9295,12 +9322,13 @@ button.cta-scroll-top .text-return {
 }
 
 .hero-product-solutions .hero-product-solutions-container .request:hover {
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
 }
 
 .hero-product-solutions .hero-product-solutions-container .request:hover a {
-  color: #ffffff;
+  color: #000000;
 }
 
 .hero-product-solutions .hero-product-solutions-container .buy-through {
@@ -9333,9 +9361,12 @@ button.cta-scroll-top .text-return {
   top: 2px;
 }
 
+.hero-product-solutions.overview {
+  display: none;
+}
+
 .hero-product-solutions.server-rack {
   position: relative;
-  display: none;
 }
 
 .hero-product-solutions.server-rack .hero-product-solutions-container {
@@ -9344,7 +9375,7 @@ button.cta-scroll-top .text-return {
 
 .hero-product-solutions.server-rack .hero-product-solutions-container .servers {
   position: absolute;
-  bottom: 0;
+  top: 120px;
   margin-left: 720px;
 }
 
@@ -9366,6 +9397,19 @@ button.cta-scroll-top .text-return {
   height: 480px;
 }
 
+@media only screen and (max-width: 1280px) {
+  .hero-product-solutions.server-rack .hero-product-solutions-container .servers img {
+    width: 100%;
+    height: 100%;
+  }
+  .hero-product-solutions.video {
+    padding-top: 110px;
+  }
+  .hero-product-solutions.video .hero-product-solutions-container > iframe {
+    width: 80%;
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .hero-product-solutions.server-rack .hero-product-solutions-container .servers {
     display: block;
@@ -9375,19 +9419,11 @@ button.cta-scroll-top .text-return {
   }
 }
 
-@media only screen and (max-width: 1280px) {
-  .hero-product-solutions.video {
-    padding-top: 110px;
-  }
-  .hero-product-solutions.video .hero-product-solutions-container > iframe {
-    width: 80%;
-  }
-}
-
 @media only screen and (max-width: 992px) {
   .hero-product-solutions {
     min-height: 0;
     padding-top: 130px;
+    padding-bottom: 80px;
     background-position: top right;
   }
   .hero-product-solutions .hero-product-solutions-container {
@@ -9426,6 +9462,7 @@ button.cta-scroll-top .text-return {
 @media only screen and (max-width: 768px) {
   .hero-product-solutions {
     padding-top: 170px;
+    padding-bottom: 0;
   }
   .hero-product-solutions .hero-product-solutions-container .headline {
     margin-bottom: 10px;
@@ -9978,6 +10015,271 @@ button.cta-scroll-top .text-return {
   margin: 15px 0px;
 }
 
+.navContain {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.sticky {
+  position: fixed;
+  height: 0;
+  top: 0;
+  left: 0px;
+  z-index: 999;
+}
+
+.sticky .stickNav-background {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sticky .stickNav-container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+ul.stickyNav {
+  display: table;
+  border-spacing: 15px 0;
+  border-collapse: separate;
+  z-index: 1001;
+  max-width: 1280px;
+  margin: 0 0 0 auto;
+}
+
+ul.stickyNav li {
+  display: table-cell;
+  text-align: center;
+  width: 194px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  position: relative;
+  vertical-align: middle;
+  background-color: #eee;
+}
+
+ul.stickyNav li a {
+  display: inline-block;
+  height: 100%;
+  padding: 15px 21.5px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  display: block;
+}
+
+ul.stickyNav li a:hover, ul.stickyNav li a:active, ul.stickyNav li a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+ul.stickyNav li:first-child a {
+  margin-left: 0;
+}
+
+ul.stickyNav li.active {
+  background-color: #fff;
+}
+
+ul.stickyNav li.active:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 10px solid #fff;
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 12px);
+}
+
+ul.stickyNav li.active a {
+  color: #ce0000;
+}
+
+ul.stickyNav li:hover {
+  background-color: #fff;
+}
+
+.business-specific .icon-light,
+.business-specific .icon-gear,
+.business-specific .icon-advance,
+.business-specific .icon-advance-lt,
+.specific-benefit .icon-light,
+.specific-benefit .icon-gear,
+.specific-benefit .icon-advance,
+.specific-benefit .icon-advance-lt,
+.specific-tech .icon-light,
+.specific-tech .icon-gear,
+.specific-tech .icon-advance,
+.specific-tech .icon-advance-lt {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.business-specific .calculating-list,
+.specific-benefit .calculating-list,
+.specific-tech .calculating-list {
+  display: inline-block;
+  width: 100%;
+  margin: 35px 0 0;
+  padding: 0;
+  list-style-type: none;
+  height: auto;
+}
+
+.business-specific .calculating-list > li,
+.specific-benefit .calculating-list > li,
+.specific-tech .calculating-list > li {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px;
+  padding: 50px 10px 0 10px;
+  overflow: visible;
+  height: auto;
+}
+
+.business-specific .calculating-list > li h4,
+.specific-benefit .calculating-list > li h4,
+.specific-tech .calculating-list > li h4 {
+  color: #000000;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+  padding: 0 5px;
+  font-size: 1.3125em;
+  line-height: 1.3em;
+  letter-spacing: 0;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.business-specific .calculating-list > li p,
+.specific-benefit .calculating-list > li p,
+.specific-tech .calculating-list > li p {
+  margin: 0 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  text-align: center;
+  color: #414141;
+}
+
+.business-specific .calculating-list > li .icon-plus,
+.business-specific .calculating-list > li .icon-minus,
+.specific-benefit .calculating-list > li .icon-plus,
+.specific-benefit .calculating-list > li .icon-minus,
+.specific-tech .calculating-list > li .icon-plus,
+.specific-tech .calculating-list > li .icon-minus {
+  position: relative;
+}
+
+.business-specific .calculating-list > li .icon-plus,
+.specific-benefit .calculating-list > li .icon-plus,
+.specific-tech .calculating-list > li .icon-plus {
+  top: 10px;
+}
+
+.business-specific .calculating-list > li .icon-minus,
+.specific-benefit .calculating-list > li .icon-minus,
+.specific-tech .calculating-list > li .icon-minus {
+  top: -5px;
+}
+
+.business-specific .hexContain,
+.specific-benefit .hexContain,
+.specific-tech .hexContain {
+  min-height: 420px;
+}
+
+.animateAnchor {
+  position: relative;
+  margin: 15px auto;
+  z-index: 10;
+  display: block;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 0.75em;
+  line-height: 1;
+  line-height: 1.4em;
+  color: #ce0000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.animateAnchor:hover, .animateAnchor:active, .animateAnchor:focus {
+  color: #ac1f25;
+  text-decoration: none;
+  outline: none;
+}
+
+.animateAnchor.bottomPos {
+  margin-bottom: 0px;
+}
+
+.animateAnchor .animateIcon {
+  position: relative;
+  font-size: 1.2em;
+  top: 2px;
+  left: -3px;
+  transition: all 0.5s ease;
+}
+
+.animateAnchor:hover > .animateIcon {
+  color: #ac1f25;
+  left: 6px;
+}
+
+@media only screen and (max-width: 992px) {
+  ul.stickyNav li {
+    margin: 0 0 0 15px;
+  }
+  ul.stickyNav li:first-child {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .business-specific .specific-benefit {
+    padding: 22px 15px 35px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .business-specific .specific-benefit .content-container [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .specific-benefit .content-container h2 {
+    font-size: 1.875rem;
+    margin: 0 0 30px;
+  }
+  .specific-benefit .content-container h4 {
+    font-size: 1.125rem;
+  }
+  .specific-benefit .content-container .hexContain {
+    text-align: center;
+  }
+  .specific-benefit .content-container .hexContain .hexagon {
+    width: 280px;
+  }
+  .specific-benefit .content-container .hexContain .hexagon:before {
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+  }
+  .specific-benefit .content-container .hexContain .hexagon:after {
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+  }
+}
+
 .specific-quote {
   padding: 40px 10px 45px 10px;
   color: #ffffff;
@@ -9985,15 +10287,32 @@ button.cta-scroll-top .text-return {
   background-size: cover;
 }
 
-.specific-quote q {
+.specific-quote p {
+  position: relative;
   display: block;
   width: 63%;
   margin: 25px auto;
   font-family: 'Myriad Pro', arial, sans-serif;
   font-size: 1.5em;
   line-height: 1;
-  text-align: center;
+  text-align: left;
   line-height: 1.6;
+}
+
+.specific-quote p .icon-quote.open-quote,
+.specific-quote p .icon-quote.close-quote {
+  position: relative;
+}
+
+.specific-quote p .icon-quote.open-quote {
+  top: -13px;
+  left: -7px;
+  margin-left: -22px;
+}
+
+.specific-quote p .icon-quote.close-quote {
+  top: -5px;
+  margin-left: 10px;
 }
 
 .specific-quote cite {
@@ -10003,6 +10322,42 @@ button.cta-scroll-top .text-return {
   font-size: 0.875em;
   line-height: 1;
   font-style: normal;
+}
+
+@media only screen and (max-width: 768px) {
+  .specific-quote {
+    padding: 22px 15px 35px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .specific-quote .content-container [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .specific-quote q {
+    width: auto;
+  }
+  .specific-benefit .content-container h2 {
+    font-size: 1.875rem;
+    margin: 0 0 30px;
+  }
+  .specific-benefit .content-container h4 {
+    font-size: 1.125rem;
+  }
+  .specific-benefit .content-container .hexContain {
+    text-align: center;
+  }
+  .specific-benefit .content-container .hexContain .hexagon {
+    width: 280px;
+  }
+  .specific-benefit .content-container .hexContain .hexagon:before {
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+  }
+  .specific-benefit .content-container .hexContain .hexagon:after {
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+  }
 }
 
 .specific-tech {
@@ -10044,231 +10399,33 @@ button.cta-scroll-top .text-return {
   margin: 15px 0px;
 }
 
-.navContain {
-  margin-top: -45px;
-  position: absolute;
-  right: -25px;
-  text-align: right;
-  z-index: 999;
-}
-
-.sticky {
-  position: fixed;
-  top: 45px;
-  left: 0px;
-  z-index: 999;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  height: 45px;
-}
-
-#overview .icon-light,
-#overview .icon-gear,
-#overview .icon-advance {
-  position: absolute;
-  top: -30px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-#overview .calculating-list {
-  display: inline-block;
-  width: 100%;
-  margin: 35px 0 0;
-  padding: 0;
-  list-style-type: none;
-  height: auto;
-}
-
-#overview .calculating-list > li {
-  display: inline-block;
-  position: relative;
-  margin: 0 5px;
-  padding-top: 50px;
-  overflow: visible;
-  height: auto;
-}
-
-#overview .calculating-list > li h4 {
-  color: #000000;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  text-align: center;
-  padding: 0 5px;
-  font-size: 1.3125em;
-  line-height: 1;
-}
-
-#overview .calculating-list > li p {
-  margin: 0 10px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.875em;
-  line-height: 1;
-  line-height: 130%;
-  text-align: center;
-  color: #414141;
-}
-
-#overview .calculating-list > li .icon-plus,
-#overview .calculating-list > li .icon-minus {
-  position: relative;
-}
-
-#overview .calculating-list > li .icon-plus {
-  top: 10px;
-}
-
-#overview .calculating-list > li .icon-minus {
-  top: -5px;
-}
-
-#overview .hexContain {
-  min-height: 420px;
-}
-
-#overview ul.stickyNav {
-  height: 45px;
-  z-index: 1001;
-  max-width: 1280px;
-  text-align: right;
-  margin: 0 auto;
-}
-
-#overview ul.stickyNav li {
-  height: 45px;
-  text-align: center;
-  width: 194px;
-  padding: 5px 20px;
-  margin-right: 15px;
-  line-height: 3;
-  background-color: #eee;
-  position: relative;
-}
-
-#overview ul.stickyNav li a {
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: bold;
-  color: #000;
-  text-transform: uppercase;
-  display: block;
-}
-
-#overview ul.stickyNav li a:hover, #overview ul.stickyNav li a:active, #overview ul.stickyNav li a:focus {
-  text-decoration: none;
-  outline: none;
-}
-
-#overview ul.stickyNav li.active {
-  background-color: #fff;
-}
-
-#overview ul.stickyNav li.active:after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 11px solid transparent;
-  border-right: 11px solid transparent;
-  border-top: 10px solid #fff;
-  position: absolute;
-  bottom: -10px;
-  left: calc(50% - 12px);
-}
-
-#overview ul.stickyNav li.active a {
-  color: #ce0000;
-}
-
-#overview ul.stickyNav li:hover {
-  background-color: #fff;
-}
-
-.animateAnchor {
-  position: relative;
-  margin: 15px auto;
-  z-index: 10;
-  display: block;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 900;
-  font-size: 0.75em;
-  line-height: 1;
-  line-height: 1.4em;
-  color: #ce0000;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.animateAnchor:hover, .animateAnchor:active, .animateAnchor:focus {
-  color: #ac1f25;
-  text-decoration: none;
-  outline: none;
-}
-
-.animateAnchor.bottomPos {
-  margin-bottom: 0px;
-}
-
-.animateAnchor .animateIcon {
-  position: relative;
-  font-size: 1.2em;
-  top: 2px;
-  left: -3px;
-  transition: all 0.5s ease;
-}
-
-.animateAnchor:hover > .animateIcon {
-  color: #ac1f25;
-  left: 6px;
-}
-
 @media only screen and (max-width: 768px) {
-  .business-specific .specific-benefit {
-    padding: 22px 15px 35px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .business-specific .specific-benefit .content-container [class*="col-"] {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .specific-quote,
   .specific-tech {
     padding: 22px 15px 35px;
     margin-left: 0;
     margin-right: 0;
   }
-  .specific-quote .content-container [class*="col-"],
   .specific-tech .content-container [class*="col-"] {
     padding-left: 0;
     padding-right: 0;
   }
-  .specific-quote q {
-    width: auto;
-  }
-  .specific-benefit .content-container h2,
   .specific-tech .content-container h2 {
     font-size: 1.875rem;
     margin: 0 0 30px;
   }
-  .specific-benefit .content-container h4,
   .specific-tech .content-container h4 {
     font-size: 1.125rem;
   }
-  .specific-benefit .content-container .hexContain,
   .specific-tech .content-container .hexContain {
     text-align: center;
   }
-  .specific-benefit .content-container .hexContain .hexagon,
   .specific-tech .content-container .hexContain .hexagon {
     width: 280px;
   }
-  .specific-benefit .content-container .hexContain .hexagon:before,
   .specific-tech .content-container .hexContain .hexagon:before {
     border-left: 140px solid transparent;
     border-right: 140px solid transparent;
   }
-  .specific-benefit .content-container .hexContain .hexagon:after,
   .specific-tech .content-container .hexContain .hexagon:after {
     border-left: 140px solid transparent;
     border-right: 140px solid transparent;
@@ -10294,6 +10451,7 @@ button.cta-scroll-top .text-return {
 .mes-section .mes-container header {
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 40px;
@@ -10336,6 +10494,7 @@ button.cta-scroll-top .text-return {
   outline: 0;
   text-decoration: none;
   color: #ce0000;
+  font-weight: 800;
 }
 
 .mes-section .mes-container .product-box .product-link a:hover {
@@ -10407,7 +10566,13 @@ button.cta-scroll-top .text-return {
     padding-bottom: 35px;
   }
   .hds-community-section .hds-community-container .hds-title {
-    font-size: 1.125rem;
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #848484;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
   }
   .hds-community-section .hds-community-container .tbd p {
     font-size: 1.875rem;
@@ -10443,6 +10608,29 @@ button.cta-scroll-top .text-return {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.spec-section .spec-container .tbd-dl a {
+  background-color: transparent;
+  transition: background-color 0.3s linear, color 0.3s linear;
+  margin: 0 auto;
+  display: block;
+  max-width: 375px;
+  text-align: center;
+}
+
+.spec-section .spec-container .tbd-dl a:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.spec-section .spec-container .tbd-dl a:hover a {
+  color: #000000;
+}
+
+.spec-section .spec-container .tbd-dl a:focus, .spec-section .spec-container .tbd-dl a:hover {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -10537,6 +10725,7 @@ button.cta-scroll-top .text-return {
   outline: 0;
   text-decoration: none;
   color: #ce0000;
+  font-weight: 800;
 }
 
 .cs-section .cs-container .cs-highlight-box .cs-highlight-box-read a:hover {
@@ -10562,17 +10751,39 @@ button.cta-scroll-top .text-return {
 }
 
 .cs-section .cs-container .cs-selections .cs-selection-box:hover .glyphicon.glyphicon-chevron-right {
-  left: 8px;
+  right: -8px;
 }
 
 .cs-section .cs-container .cs-selections .cs-selection-box .glyphicon.glyphicon-chevron-right {
   position: relative;
-  left: 0;
+  right: 0;
   transition: all 0.5s ease-out;
 }
 
 .cs-section .cs-container .cs-all {
   margin: 42px 0;
+}
+
+.cs-section .cs-container .cs-all .cs-all-box a {
+  background-color: transparent;
+  transition: background-color 0.3s linear, color 0.3s linear;
+  margin: 0 auto;
+  display: block;
+  max-width: 375px;
+}
+
+.cs-section .cs-container .cs-all .cs-all-box a:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.cs-section .cs-container .cs-all .cs-all-box a:hover a {
+  color: #000000;
+}
+
+.cs-section .cs-container .cs-all .cs-all-box a:focus, .cs-section .cs-container .cs-all .cs-all-box a:hover {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -10656,6 +10867,7 @@ button.cta-scroll-top .text-return {
   outline: 0;
   text-decoration: none;
   color: #ce0000;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -10707,13 +10919,13 @@ button.cta-scroll-top .text-return {
 
 .resources-section .resources-container .resources-all:hover .glyphicon.glyphicon-chevron-right,
 .resources-section .resources-container .resources-support:hover .glyphicon.glyphicon-chevron-right {
-  left: 8px;
+  right: -8px;
 }
 
 .resources-section .resources-container .resources-all .glyphicon.glyphicon-chevron-right,
 .resources-section .resources-container .resources-support .glyphicon.glyphicon-chevron-right {
   position: relative;
-  left: 0;
+  right: 0;
   transition: all 0.5s ease-out;
 }
 
@@ -10816,6 +11028,7 @@ button.cta-scroll-top .text-return {
     outline: 0;
     text-decoration: none;
     color: #ce0000;
+    font-weight: 800;
   }
   .resources-section .resources-all-mobile .resources-all-mobile-read a:hover {
     color: #ac1f25;
@@ -10832,7 +11045,7 @@ button.cta-scroll-top .text-return {
   min-height: 875px;
   max-width: 1280px;
   margin: 0 auto;
-  padding-top: 110px;
+  padding-top: 70px;
   /*padding-bottom: 123px;*/
 }
 
@@ -10853,7 +11066,7 @@ button.cta-scroll-top .text-return {
   text-align: center;
   min-height: 382px;
   max-width: 1107px;
-  padding-top: 120px;
+  padding-top: 60px;
   margin: 0 auto 140px;
 }
 
@@ -10902,6 +11115,33 @@ button.cta-scroll-top .text-return {
   font-size: 0.875rem;
 }
 
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-more {
+  text-align: left;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+}
+
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-more:hover .glyphicon.glyphicon-chevron-right {
+  left: 8px;
+}
+
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-more .glyphicon.glyphicon-chevron-right {
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease-out;
+}
+
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-more a {
+  outline: 0;
+  text-decoration: none;
+  color: #ce0000;
+  font-weight: 800;
+}
+
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-more a:hover {
+  color: #ac1f25;
+}
+
 @media only screen and (max-width: 768px) {
   .fb-section .fb-container {
     padding-top: 22px;
@@ -10917,10 +11157,12 @@ button.cta-scroll-top .text-return {
   .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading {
     margin-bottom: 18px;
     font-size: 1.125rem;
+    text-align: left;
   }
   .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-highlight {
     font-size: 1.25rem;
     margin-bottom: 18px;
+    text-align: left;
   }
   .fb-section .fb-container .fb-category-container .fb-category-box .col-sm-4 .fb-category-points-box,
   .fb-section .fb-container .fb-category-container .fb-category-box .col-sm-3 .fb-category-points-box,
@@ -10953,6 +11195,11 @@ button.cta-scroll-top .text-return {
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
+}
+
+.accordion-level .accordion-menu-container .accordion-menu span.acc-label {
+  position: relative;
+  padding-left: 15px;
 }
 
 .accordion-level .accordion-menu-container .accordion-menu .icon-accordion-closed {
@@ -10996,6 +11243,9 @@ button.cta-scroll-top .text-return {
     height: 3px;
     width: 100%;
     background-color: #c5c5c5;
+  }
+  .accordion-menu-container .accordion-menu {
+    display: block !important;
   }
   .accordion-content {
     max-height: 0px;

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1449717592522
-Build-Jdk: 1.7.0_45
-Built-By: amish9
+Bnd-LastModified: 1450202510429
+Build-Jdk: 1.7.0_79
+Built-By: cyadlapalli
 Bundle-Description: Maven Multimodule project for HDS CORP Project.
 Bundle-ManifestVersion: 2
 Bundle-Name: HDS CORP Project Bundle
@@ -16,19 +16,20 @@ Export-Package: com.hdscorp.cms.config;version="0.0.1.SNAPSHOT";uses:="o
  s.exception;version="0.0.1.SNAPSHOT",com.hdscorp.cms.listeners;version=
  "0.0.1.SNAPSHOT";uses:="org.osgi.service.event",com.hdscorp.cms.renditi
  on;version="0.0.1.SNAPSHOT";uses:="org.apache.sling.api.resource",com.h
- dscorp.cms.servlet;version="0.0.1.SNAPSHOT";uses:="com.sun.jersey.api.c
- lient,javax.servlet,org.apache.sling.api,org.apache.sling.api.servlets,
- org.apache.sling.commons.json",com.hdscorp.cms.slingmodels;version="0.0
- .1.SNAPSHOT";uses:="org.apache.sling.api.resource,org.apache.sling.mode
- ls.annotations",com.hdscorp.cms.util;version="0.0.1.SNAPSHOT";uses:="co
- m.day.cq.commons,com.day.cq.replication,com.day.cq.tagging,com.day.cq.w
- cm.api,javax.jcr,javax.servlet,javax.servlet.http,org.apache.sling.api,
- org.apache.sling.api.resource,org.apache.sling.commons.json,org.apache.
- sling.jcr.api,org.jcrom,org.osgi.service.component",com.hdscorp.cms.wor
- kflow;version="0.0.1.SNAPSHOT";uses:="com.day.cq.dam.api,com.day.cq.dam
- .commons.process,com.day.cq.workflow,com.day.cq.workflow.exec,com.day.c
- q.workflow.metadata,com.day.image,javax.imageio,javax.jcr,org.apache.sl
- ing.commons.mime"
+ dscorp.cms.servlet;version="0.0.1.SNAPSHOT";uses:="com.day.cq.workflow,
+ com.sun.jersey.api.client,javax.servlet,org.apache.sling.api,org.apache
+ .sling.api.servlets,org.apache.sling.commons.json,org.apache.sling.jcr.
+ api",com.hdscorp.cms.slingmodels;version="0.0.1.SNAPSHOT";uses:="org.ap
+ ache.sling.api.resource,org.apache.sling.models.annotations",com.hdscor
+ p.cms.util;version="0.0.1.SNAPSHOT";uses:="com.day.cq.commons,com.day.c
+ q.replication,com.day.cq.tagging,com.day.cq.wcm.api,javax.jcr,javax.ser
+ vlet,javax.servlet.http,org.apache.sling.api,org.apache.sling.api.resou
+ rce,org.apache.sling.commons.json,org.apache.sling.jcr.api,org.jcrom,or
+ g.osgi.service.component",com.hdscorp.cms.workflow;version="0.0.1.SNAPS
+ HOT";uses:="com.day.cq.dam.api,com.day.cq.dam.commons.process,com.day.c
+ q.search,com.day.cq.workflow,com.day.cq.workflow.exec,com.day.cq.workfl
+ ow.metadata,com.day.image,javax.imageio,javax.jcr,org.apache.sling.api.
+ resource,org.apache.sling.commons.mime"
 Import-Package: com.day.cq.commons;version="[5.7,6)",com.day.cq.dam.api;
  version="[1.2,2)",com.day.cq.dam.api.handler;version="[1.2,2)",com.day.
  cq.dam.commons.process;version="[1.1,2)",com.day.cq.dam.commons.util;ve
