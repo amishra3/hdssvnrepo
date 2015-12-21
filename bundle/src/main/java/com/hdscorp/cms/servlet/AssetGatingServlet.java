@@ -15,7 +15,7 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
  
 @SlingServlet(
 		resourceTypes = {"dam:Asset"},
-	    methods = {"GET"},
+	    methods = {"GET"}
 	   // extensions = {"pdf"}
 )
 @Properties({
