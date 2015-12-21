@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/com.hdscorp.cms.servlet.AssetGatingServlet2">
-    <OCD id="com.hdscorp.cms.servlet.AssetGatingServlet2" name="%com.hdscorp.cms.servlet.AssetGatingServlet2.name" description="%com.hdscorp.cms.servlet.AssetGatingServlet2.description"/>
-    <Designate pid="com.hdscorp.cms.servlet.AssetGatingServlet2">
-        <Object ocdref="com.hdscorp.cms.servlet.AssetGatingServlet2"/>
-    </Designate>
-</metatype:MetaData>

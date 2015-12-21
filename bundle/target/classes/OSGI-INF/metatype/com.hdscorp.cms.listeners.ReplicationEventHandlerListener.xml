@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/com.hdscorp.cms.listeners.ReplicationEventHandlerListener">
-    <OCD id="com.hdscorp.cms.listeners.ReplicationEventHandlerListener" name="%com.hdscorp.cms.listeners.ReplicationEventHandlerListener.name" description="%com.hdscorp.cms.listeners.ReplicationEventHandlerListener.description">
-        <AD id="event.topics" type="String" default="com/day/cq/replication" name="%com.hdscorp.cms.listeners.ReplicationEventHandlerListener.event.topics.name" description="%com.hdscorp.cms.listeners.ReplicationEventHandlerListener.event.topics.description"/>
-    </OCD>
-    <Designate pid="com.hdscorp.cms.listeners.ReplicationEventHandlerListener">
-        <Object ocdref="com.hdscorp.cms.listeners.ReplicationEventHandlerListener"/>
-    </Designate>
-</metatype:MetaData>
