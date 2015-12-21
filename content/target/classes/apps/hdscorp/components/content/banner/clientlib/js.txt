@@ -1,1 +1,0 @@
-multipanel1.js

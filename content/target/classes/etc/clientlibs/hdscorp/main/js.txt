@@ -1,6 +1,0 @@
-#base=js
-vendor.js
-plugins.js
-main.js
-home.js
-product-solutions.js
