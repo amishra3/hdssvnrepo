@@ -52,8 +52,7 @@ public class BrightTalkScheduler {
 		final Runnable job = new Runnable() {
 			public void run() {
 				BrightTalkWebService brightTalkService = new BrightTalkWebService();
-				saveWSResponse(brightTalkService.getInvoke(feedURL));
-				log.info("data is saved::" + brightTalkService.getInvoke(feedURL));
+				saveWSResponse(brightTalkService.getInvoke(feedURL));			
 
 			}
 		};
