@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="550"
+    title="Geo website overlay"
+    width="700"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="panel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <selectmessagetext
+                jcr:primaryType="cq:Widget"
+                allowBlank="false"
+                fieldLabel="Select Message Text"
+                name="./selectmessagetext"
+                xtype="textfield"/>
+            <tab jcr:primaryType="cq:Panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <overlaymap
+                        jcr:primaryType="cq:Widget"
+                        hideLabel="false"
+                        name="./overlaymap"
+                        title="Countries and URL"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="true"
+                            layout="form"
+                            padding="10px"
+                            width="1000"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <gwocountryname
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
+                                    fieldLabel="Country Name"
+                                    key="gwocountryname"
+                                    name="gwocountryname"
+                                    width="300"
+                                    xtype="textfield"/>
+                                <gwoflagimage
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
+                                    fieldLabel="Flag Image"
+                                    key="gwoflagimage"
+                                    width="300"
+                                    xtype="pathfield"/>
+                                <gwoiconimagealttext
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
+                                    fieldLabel="Icon Image ALT Text"
+                                    key="gwoiconimagealttext"
+                                    width="300"
+                                    xtype="textfield"/>
+                                <gwotargeturl
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
+                                    fieldLabel="Target URL"
+                                    key="gwotargeturl"
+                                    width="300"
+                                    xtype="pathfield"/>
+                                <gwoopeninnewwindow
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Open in New Window"
+                                    key="gwoopeninnewwindow"
+                                    name="./gwoopeninnewwindow"
+                                    type="checkbox"
+                                    width="300"
+                                    xtype="selection"/>
+                            </items>
+                        </fieldConfig>
+                    </overlaymap>
+                </items>
+            </tab>
+        </items>
+    </items>
+</jcr:root>

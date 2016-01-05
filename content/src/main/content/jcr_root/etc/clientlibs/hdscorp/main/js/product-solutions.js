@@ -141,21 +141,17 @@
 		return false;
 	});
 
-	$('.accordion-level').on('click', function(event) {
-		var $currentMenu = $(this).find('.accordion-menu-container');
-		var $currentContent = $(this).find('.accordion-content');
-
-		if ($currentMenu.hasClass('open')) {
-			$currentMenu.removeClass('open');
-			$currentContent.removeClass('open');
-			return false;
-		}
-		// allMenus.removeClass('open');
-		// allContents.removeClass('open');
-		$currentMenu.toggleClass('open');
-		$currentContent.toggleClass('open');
-		return false;
-	});
+	$('.accordion-level > .accordion-menu-container').on('click', function(event) {
+        var $currentContent = $(this).closest('div').next('div.accordion-content',this);
+        if ($(this).hasClass("open") && $(this).next().queue().length === 0) {
+            $currentContent.removeClass('open');
+            $(this).removeClass("open");
+        } else if (!$(this).hasClass("open") && $(this).next().queue().length === 0) {
+            $currentContent.addClass('open');
+            $(this).addClass("open");
+        }
+        return false;
+    });
 
 	/**
 	 * stickyNav scrolling functionality
@@ -178,5 +174,32 @@
 
 		$(window).scrollTo( element, 1000, { offset: scrollOffset } );
 	});
+
+
+	/* Read More Less Code Start */
+	var deviceAgent = navigator.userAgent.toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipad|android)/);      
+	if (agentID) {
+		$(".product-desc").each(function( index ) {
+			pCount = $(this).children("p").length
+			if(pCount > 1){
+				$(this).find('p:not(:first-child)').hide();
+				$(this).find('p:first-child').css({'margin-bottom':'0'}).append('..<a href="javascript:void(0);" class="read-more">read more</a>');
+				$(this).find('p:last-child').append('..<a href="javascript:void(0);" class="read-less">read less</a>');
+			}	
+		})
+
+		$('.read-more').click(function(){
+			$(this).parent().siblings().show();
+			$(this).parent().parent().find('p:first-child').css({'margin-bottom':'30px'}).show();
+			$(this).hide();
+		})
+
+		$('.read-less').click(function(){
+			$(this).parent().parent().find('p').hide();
+			$(this).parent().parent().find('p:first-child, a.read-more').css({'margin-bottom':'0'}).show();
+		})
+	}
+	/* Read More Less Code End */
 
 })(jQuery);

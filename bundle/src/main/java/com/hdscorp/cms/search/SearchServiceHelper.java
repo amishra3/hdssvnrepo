@@ -20,7 +20,6 @@ import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
-import com.day.cq.search.result.ResultPage;
 import com.day.cq.search.result.SearchResult;
 import com.hdscorp.cms.util.JcrUtilService;
 
@@ -192,7 +191,7 @@ public class SearchServiceHelper {
 				PredicateGroup.create(searchParams),
 				resourceResolver.adaptTo(Session.class));
 		SearchResult results = query.getResult();
-		
+		LOG.debug("Execution Time************" + results.getExecutionTime());
 		
 
 		return results;

@@ -17,17 +17,30 @@
 
 	<c:set var="view" value="<%=viewtype%>"/>
 	
-	<c:if test ="${view ne 'overlay'}">
+	<c:if test ="${view ne 'modal'}">
 	
 		<cq:include script="headlibs.jsp"/>
 		
 		<cq:include script="/libs/wcm/core/components/init/init.jsp"/>		
 	
 		<cq:includeClientLib js="hdscorp.main" />	
+		
+		<wcmmode:edit>
+			<cq:includeClientLib categories ="cq.widgets"/>
+			<cq:includeClientLib categories ="hdscorp.widgets"/>
+		</wcmmode:edit>
+		
 	</c:if>
 	
-	<cq:include path="par" resourceType="foundation/components/parsys" />
+	<c:if test="${view eq 'modal'}">
+		<div class="hiddencontent">
+	</c:if>
+	
+		<cq:include path="par" resourceType="foundation/components/parsys" />
 		
+	<c:if test="${view eq 'modal'}">
+		</div>
+	</c:if>
 	
 
 

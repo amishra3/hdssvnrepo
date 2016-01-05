@@ -19,4 +19,3 @@
 <cq:includeClientLib css="hdscorp.main"/>
 <cq:includeClientLib categories="hdscorp.dependencies"/>
 
-

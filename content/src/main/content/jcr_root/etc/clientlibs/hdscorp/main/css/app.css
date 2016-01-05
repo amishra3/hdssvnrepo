@@ -1,4 +1,4 @@
-.floatleft{
+.floatleft {
 	float: left;
 }
 
@@ -16,4 +16,167 @@
 
 .editbarstyle {
 	overflow: auto;
+}
+
+.hero-product-solutions.overview {
+	display: block;
+}
+
+.acs-commons-resp-colctrl-row .col-sm-4 {
+	width: 100%;
+}
+
+.acs-commons-resp-colctrl-row .col-sm-6 {
+	width: 100%;
+}
+
+.cs-section .cyancta {
+	background-color: #008eaa;
+	margin: 7px;
+	padding: 15px 20px;
+}
+
+.hiddencontent {
+	display: none;
+}
+
+.showcontent {
+	display: block !important;
+}
+
+.bannericon {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.bigbannericon {
+	height: 70px;
+	width: 70px;
+}
+
+.icon-content-type {
+	background-repeat: no-repeat;
+	height: 30px;
+}
+
+.fb-section .fb-container {
+	min-height: auto;
+}
+
+.specific-benefit.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.rightborder {
+	border-right: 1px solid #ebebeb !important;
+}
+
+.business-specific .icon-light, .business-specific .icon-gear,
+	.business-specific .icon-advance, .business-specific .icon-advance-lt,
+	.specific-benefit .icon-light, .specific-benefit .icon-gear,
+	.specific-benefit .icon-advance, .specific-benefit .icon-advance-lt,
+	.specific-tech .icon-light, .specific-tech .icon-gear, .specific-tech .icon-advance,
+	.specific-tech .icon-advance-lt {
+	background-repeat: no-repeat;
+}
+
+.heaxongonbannernobutton {
+	min-height: 655px;
+}
+
+.productcategory .calculating-success-container>p {
+	font-size: 1em;
+}
+
+.productcategory .calculating-success-container>h4 {
+	font-size: 1.7em;
+	letter-spacing: .025em;
+}
+
+.calculating-success {
+	background-color: transparent;
+	background-image: none;
+}
+
+.icon-light {
+	width: 70px;
+}
+
+.product-category-list{
+	overflow: auto;
+}
+
+.lineseperator{
+    border-bottom: 7px solid #f78e1e;
+    width:95%;
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display:inline-block;
+}
+
+.category-heading h2 {
+    font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.5rem;
+    color: #008eaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+}
+
+.category-desc {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.75rem;
+    color: #000000;
+    margin: 0 0 40px 0;
+    line-height: 1.4em;
+}
+
+.category-promotion {
+    border-top: 7px solid #f78e1e;
+    border-bottom: 7px solid #f78e1e;
+    padding: 40px 20px;
+}
+
+
+.category-products-listing .product a {
+    font-size: 0.8485rem;
+    color: #ce0000;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+}
+
+/* .mes-section{
+	background:url("/etc/clientlibs/hdscorp/main/images/prod-sol-bg-mes.jpg") no-repeat 50% 50%;
+}
+
+.specific-tech {
+	background: url("/etc/clientlibs/hdscorp/main/images/hero-specific-tech.jpg") center center no-repeat;
+}
+ */
+@media only screen and (max-width: 768px) {
+	.cs-section .cyancta {
+		display: block;
+		max-width: 300px;
+		position: relative;
+		padding: 15px 10px;
+		margin: 7px auto;
+	}
+	.acs-commons-resp-colctrl-col {
+		margin-bottom: -5px;
+	}
+	.cs-section .cs-container .cs-selections .cs-selection-box a span.glyphicon.glyphicon-chevron-right
+		{
+		right: 5%;
+	}
+	.productcategory .calculating-success-container>h4{
+	    font-size: 1rem;
+	    line-height: 1.2em;
+	}
+	.productcategory .calculating-success-container>p {
+    	font-size: 0.875rem;
+	}
 }

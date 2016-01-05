@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <storiesbannermagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./storiesbannerimageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Background Banner Image"
+                        fileNameParameter="./storiesbannermagefileName2"
+                        fileReferenceParameter="./storiesbannermagePath"
+                        height="{Long}200"
+                        name="./storiesbannermagePath"
+                        rotateParameter="./storiesbannerimageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <contentsectioniconimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Customer Logo Image Path"
+                        name="./contentsectioniconimagepath"
+                        xtype="pathfield"/>
+                    <customerstoriessectiontitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Customer Stories Section Title"
+                        name="./customerstoriessectiontitle"
+                        xtype="textfield"/>
+                    <customerinfotext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Customer Info Text"
+                        name="./customerinfotext"
+                        xtype="textfield"/>
+                    <customerstatementtext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Customer Statement"
+                        name="./customerstatementtext"
+                        xtype="textarea"/>
+                    <customerstatementauthortext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Customer Statement Author Details"
+                        name="./customerstatementauthortext"
+                        xtype="textfield"/>
+                    <readasestudylinktargeturl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Read Case Study Target URL"
+                        name="./readasestudylinktargeturl"
+                        xtype="pathfield"/>
+                    <readcasestudylinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Label for Read Case Study"
+                        name="./readcasestudylinktext"
+                        xtype="textfield"/>
+                    <readcasestudylinkopeninnew
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./readcasestudylinkopeninnew"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

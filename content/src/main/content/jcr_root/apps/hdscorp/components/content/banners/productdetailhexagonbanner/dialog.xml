@@ -27,8 +27,26 @@
 			                    jcr:primaryType="nt:unstructured"
 			                    text="Dark (Black)"
 			                    value="dark"/>
+			                <customdamimage
+			                    jcr:primaryType="nt:unstructured"
+			                    text="Custom (DAM Image)"
+			                    value="customdamimage"/>
+			                <custombkgcolor
+			                    jcr:primaryType="nt:unstructured"
+			                    text="Custom (Background Color)"
+			                    value="custombkgcolor"/>			                    			                    			                    
 			            </options>
-			        </type>                                              
+			        </type>
+					<bannerbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Background Image (If Custom Image selected above.)"
+                        name="./bannerbackgroundimage"
+                        xtype="ddpathfield"/>
+					<colorbackgroundpicker
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Background Image (If Custom Color selected above.)"
+                        name="./colorbackgroundpicker"
+                        xtype="colorfield"/>			                                                                            			                                                    
                     <secondaryherotitlecontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hero Title"
@@ -55,7 +73,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Icon Path"
                         name="./hexagoniconpath"
-                        xtype="pathfield"/>
+                        xtype="ddpathfield"/>
 					<hexagontitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Content Title"

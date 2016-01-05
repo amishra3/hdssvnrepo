@@ -15,7 +15,7 @@
 
 		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tabOverlayPath-tabIconPath")%>" />
 
-		<div class="hero general col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-image: url(${properties.heroimagePath});">
+		<div class="hero general col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-image: url(${properties.heroimagePath})">
     		<div class="hero-container general">
     			
     			<h2 class="headline hidden-xs">${properties.herotitlecontent}</h2>
@@ -30,7 +30,7 @@
 						<c:set var="tabIconPath" value="${tabList.tabIconPath}" />
 						<li class="col-sm-6">
     						<a href="#" data-href="${tabOverlayPath}.overlay.html" class="general-healthcare">
-    							<span class="sprite icon-suitcase-red" style="background-image: url(${tabIconPath});background-position: 0 0"></span> ${tabTitle}
+    							<span class="sprite icon-suitcase-red" style="background-image: url(${tabIconPath});background-position: 0 0;"></span> ${tabTitle}
     						</a>
     						<sling:include path="${tabOverlayPath}.overlay.html" />	
     					</li>

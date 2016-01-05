@@ -26,7 +26,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hero Content"
                         name="./hexcontent"
-                        xtype="richtext">
+                        xtype="textarea">
                         <rtePlugins
                             jcr:primaryType="nt:unstructured"
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
@@ -36,14 +36,14 @@
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         allowUpload="false"
-                        cropParameter="./heximagePath/imageCrop2"
+                        cropParameter="./heximageCrop2"
                         ddGroups="[media]"
                         fieldLabel="Banner Image"
-                        fileNameParameter="./heximagePath/fileName2"
+                        fileNameParameter="./heximagefileName2"
                         fileReferenceParameter="./heximagePath"
                         height="{Long}200"
                         name="./heximagePath"
-                        rotateParameter="./heximagePathimagePath/imageRotate2"
+                        rotateParameter="./heximagePathimageRotate2"
                         sizeLimit="100"
                         title="Image"
                         width="{Long}200"

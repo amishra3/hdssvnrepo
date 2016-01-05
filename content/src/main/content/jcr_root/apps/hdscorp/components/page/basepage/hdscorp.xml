@@ -8,11 +8,6 @@
             fieldLabel="Navigation DropDown Path"
             name="./navpath"
             xtype="pathfield"/>
-        <pagesubtext
-            jcr:primaryType="cq:Widget"
-            fieldLabel="Enter page Subtext"
-            name="./subtext"
-            xtype="textfield"/>
         <personalizationenabled
             jcr:primaryType="cq:Widget"
             fieldLabel="Include Personalization Scripts?"
@@ -32,5 +27,12 @@
             name="./hidereturntotop"
             type="checkbox"
             xtype="selection"/>
+        <pagesubtext
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Enter page blurb"
+            fieldDescription="This'll be used to show product overview, when pulled into product listing pages."
+            name="./subtext"
+            height="200"
+            xtype="richtext"/>            
     </items>
 </jcr:root>

@@ -57,7 +57,7 @@
       <meta name="title" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:title", "")) %>"<%=xs%>>
       <meta name="description" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:description", "")) %>"<%=xs%>>
 	  <meta name="google" value="notranslate" />
-	<meta name="referrer" content="origin">
+	  <meta name="referrer" content="origin">
 	
 	  <cq:include script="headlibs.jsp"/>
 	  <cq:include script="headeranalytics.jsp"/>
@@ -67,4 +67,5 @@
 		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
       <% } %>
       <title><%= currentPage.getTitle() == null ? StringEscapeUtils.escapeHtml4(currentPage.getName()) : StringEscapeUtils.escapeHtml4(currentPage.getTitle()) %></title>
+      
 </head>

@@ -12,6 +12,22 @@
             jcr:primaryType="cq:Widget"
             fieldLabel="Manual css class:"
             name="./class"
-            xtype="textfield"/>            
+            xtype="textfield"/>
+        <isaccordincontainer
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Is this tabbed accordin content container ?"
+            name="./isaccordincontainer"
+            type="checkbox"
+            xtype="selection"/>
+        <mobileaccordinsectiontitle
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Mobile Accordin Section Title"
+            name="./mobileaccordinsectiontitle"
+            xtype="textfield"/>                        
+        <accordincontentsectionnumber
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Accordin Content Section Number"
+            name="./accordincontentsectionnumber"
+            xtype="textfield"/>                        
     </items>
 </jcr:root>

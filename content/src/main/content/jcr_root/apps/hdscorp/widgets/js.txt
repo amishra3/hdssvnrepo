@@ -13,3 +13,4 @@ genericlist.js
 CustomMenuMultiField.js
 CustomCompositeField.js
 CustomMultiField.js
+nestedmultifield.js

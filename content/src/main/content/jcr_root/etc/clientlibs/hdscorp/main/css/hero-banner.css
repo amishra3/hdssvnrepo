@@ -1,0 +1,424 @@
+.hero-homepage {
+  position: relative;
+  padding: 70px 15px 115px 15px;
+}
+
+.hero-homepage .hero-homepage-container {
+  position: relative;
+  text-align: center;
+  max-width:1280px;
+  margin:0 auto;
+}
+
+.hero-homepage .hero-homepage-container > h1,
+.hero-homepage .hero-homepage-container > h2,
+.hero-homepage .hero-homepage-container > h4,
+.hero-homepage .hero-homepage-container > p {
+  color: #ffffff;
+}
+
+.hero-homepage .hero-homepage-container a:hover,
+.hero-homepage .hero-homepage-container a:focus,
+.hero-homepage .hero-homepage-container a:active {
+  text-decoration: none;
+}
+
+.hero-homepage .hero-homepage-container .close-hero {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.hero-homepage.general {
+  padding-top: 150px;
+  background: url("../images/hero-city-night.jpg") top center no-repeat;
+  background-size: cover;
+  z-index: 2;
+}
+
+.hero-homepage.general .hero-homepage-container .headline {
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 3.4375em;
+  line-height: 1;
+  line-height: 110%;
+  width: 73%;
+  margin: 0 auto 17px auto;
+}
+
+.hero-homepage.general .hero-homepage-container .headline strong {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero-homepage.general .hero-homepage-container .sub-headline {
+  margin-bottom: 70px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 1.375em;
+  line-height: 1;
+  line-height: 120%;
+}
+
+.hero-homepage.general .hero-homepage-container .sub-headline strong {
+  font-weight: 500;
+}
+
+.hero-homepage.general .hero-homepage-container .general-list {
+  float: none;
+  margin: 0 auto;
+}
+
+.hero-homepage.general .hero-homepage-container .general-list li {
+  padding-left: 0;
+  list-style-type: none;
+  text-align: left;
+}
+
+.hero-homepage.general .hero-homepage-container .general-list li a {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  padding: 13px 10px 10px 53px;
+  height: 50px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.25em;
+  line-height: 1;
+  color: #333333;
+  border: 1px solid #ffffff;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.hero-homepage.general .hero-homepage-container .general-list li a:hover {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-homepage.general .hero-homepage-container .general-list li a .sprite {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.hero-homepage.general .hero-homepage-container .view-all,
+.hero-homepage.general .hero-homepage-container .scroll-down {
+  display: block;
+}
+
+.hero-homepage.general .hero-homepage-container .view-all {
+  margin-top: 95px;
+}
+
+.hero-homepage.general .hero-homepage-container .view-all:hover .glyphicon.glyphicon-chevron-right {
+  left: 8px;
+}
+
+.hero-homepage.general .hero-homepage-container .view-all .glyphicon.glyphicon-chevron-right {
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease-out;
+}
+
+.hero-homepage.general .hero-homepage-container .view-all a {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 0.8125em;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.hero-homepage.general .hero-homepage-container .view-all a > .sprite {
+  position: relative;
+  top: 2px;
+}
+
+.hero-homepage.general .hero-homepage-container .scroll-down {
+    bottom: -145px;
+    display: inline-block;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.hero-homepage.general .hero-homepage-container .scroll-down:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 20px solid #000;
+  position: absolute;
+  left: calc(50% - 30px);
+}
+
+
+
+.hero-homepage.healthcare {
+  display: none;
+  background: url("../images/hero-doctors.jpg") top center no-repeat;
+}
+
+.hero-homepage.healthcare .hero-homepage-container > h1 {
+  margin: 15px 0 20px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 3.25em;
+  line-height: 1;
+}
+
+.hero-homepage.healthcare .hero-homepage-container > h4 {
+  margin-bottom: 12px;
+  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-homepage.healthcare .hero-homepage-container > p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 0.875em;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .hexagon-connect, .hero-homepage.healthcare .hero-homepage-container .hexagon-transform, .hero-homepage.healthcare .hero-homepage-container .hexagon-advance {
+  display: inline-block;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .icon-healthcare {
+  margin: 15px auto 0;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .icon-connect, .hero-homepage.healthcare .hero-homepage-container .icon-transform, .hero-homepage.healthcare .hero-homepage-container .icon-advance {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list {
+  margin-top: 35px;
+  padding: 0;
+  list-style-type: none;
+  min-height: 380px;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li {
+  position: relative;
+  margin: 0 12px;
+  padding-top: 35px;
+  vertical-align: top;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li h4 {
+  color: #000000;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.3125em;
+  line-height: 1;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li p {
+  margin: 0 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.875em;
+  line-height: 1;
+  line-height: 1.3em;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a {
+  position: absolute;
+  top: 160px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  display: block;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 0.75em;
+  line-height: 1;
+  line-height: 1.4em;
+  color: #c91c13;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a .icon-caret-red {
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+
+@media only screen and (min-width: 1280px) {
+  .hero-homepage.healthcare {
+    background-size: 128%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .hero-homepage.healthcare {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#012e32+0,121a1a+100 */
+    background: #012e32;
+    /* Old browsers */
+    background-image: url("../images/hero-doctors_gradient.jpg");
+    background-image: url("../images/hero-doctors_gradient.jpg"), linear-gradient(to bottom, #012e32 0%, #121a1a 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#012e32', endColorstr='#121a1a',GradientType=0 );
+    /* IE6-9 */
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: top left;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li {
+    margin-bottom: 190px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .hero-homepage {
+    padding-top: 36px;
+  }
+  .hero-homepage.general {
+    background-size: auto 100%;
+  }
+  .hero-homepage.general .hero-homepage-container .general-list li a {
+    padding-top: 17px;
+    font-size: 1em;
+    line-height: 1;
+  }
+  .hero-homepage.healthcare {
+    margin-top: 43px;
+    padding-top: 80px;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon {
+    padding-top: 0;
+    top: 56px;
+    width: 270px;
+    height: 144px;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon:before {
+    top: -76px;
+    border-left: 135px solid transparent;
+    border-right: 135px solid transparent;
+    border-bottom: 76px solid #ffffff;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon:after {
+    bottom: -76px;
+    border-left: 135px solid transparent;
+    border-right: 135px solid transparent;
+    border-top: 76px solid #ffffff;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon h4 {
+    font-weight: 500;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon a {
+    top: 120px;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-connect {
+    background-image: url(../images/sprite.png);
+    background-position: -60px -215px;
+    width: 27px;
+    height: 31px;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-transform {
+    background-image: url(../images/sprite.png);
+    background-position: -348px -20px;
+    width: 27px;
+    height: 42px;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-advance {
+    background-image: url(../images/sprite.png);
+    background-position: -32px -215px;
+    width: 28px;
+    height: 32px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-homepage.general .hero-homepage-container .general-list li {
+    padding-right: 15px !important;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-homepage {
+    padding-bottom: 20px;
+  }
+  .hero-homepage.general {
+    background-size: auto 100%;
+    background-position: bottom right;
+    padding-top: 170px;
+  }
+  .hero-homepage.general .hero-homepage-container .headline {
+    margin-bottom: 10px;
+    font-size: 1.4375em;
+    line-height: 1;
+  }
+  .hero-homepage.general .hero-homepage-container .sub-headline {
+    margin-bottom: 20px;
+    font-size: 1em;
+    line-height: 1;
+    line-height: 120%;
+  }
+  .hero-homepage.general .hero-homepage-container .general-list li {
+    padding-right: 0;
+  }
+  .hero-homepage.general .hero-homepage-container .view-all {
+    margin-top: 23px;
+  }
+  .hero-homepage.healthcare {
+    display: none;
+    padding-top: 120px;
+    background-size: auto 40%;
+    background-position: top left;
+  }
+  .hero-homepage.healthcare .hero-homepage-container > h1 {
+    margin: 15px 0 20px;
+    font-weight: 500;
+    font-size: 1.75em;
+    line-height: 1;
+  }
+  .hero-homepage.healthcare .hero-homepage-container > h4 {
+    margin-bottom: 12px;
+    font-size: 1.25em;
+    line-height: 1;
+    line-height: 140%;
+  }
+  .hero-homepage.healthcare .hero-homepage-container > p {
+    font-size: 0.8125em;
+    line-height: 1;
+    line-height: 150%;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .close-hero {
+    right: 15px;
+  }
+  .hero-homepage.general .hero-homepage-container .scroll-down::after{
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 13px solid #000;
+    left: calc(51% - 30px);
+  }
+  .hero-homepage.general .hero-homepage-container .scroll-down{
+    bottom: -50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

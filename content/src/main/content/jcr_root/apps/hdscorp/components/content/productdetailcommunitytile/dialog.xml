@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <bannermagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./communitybannermagePathCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Background Banner Image"
+                        fileNameParameter="./communitybannermagefileName2"
+                        fileReferenceParameter="./communitybannermagePath"
+                        height="{Long}200"
+                        name="./communitybannermagePath"
+                        rotateParameter="./communitybannermageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>                
+                    <columntitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content Title"
+                        name="./columntitle"
+                        xtype="textfield"/>
+                    <columncontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content"
+                        name="./columncontent"
+                        xtype="textarea"/>
+                    <articleurllabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Display Text for the Link"
+                        name="./articleurllabel"
+                        xtype="textfield"/>                
+                    <articleurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Target URL for the Article"
+                        name="./articleurl"
+                        xtype="textfield"/>
+                    <articleurlopeninnew
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./articleurlopeninnew"
+                        type="checkbox"
+                        xtype="selection"/>                                                                
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

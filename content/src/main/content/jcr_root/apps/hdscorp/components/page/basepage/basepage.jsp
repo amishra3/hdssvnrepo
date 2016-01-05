@@ -67,6 +67,8 @@
  		
  		 pageContext.setAttribute("ajaxerrormsg", ajaxFailureMsg);
  	}
+ 	
+ 	
 %>
 
 <!DOCTYPE html>

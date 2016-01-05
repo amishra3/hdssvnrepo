@@ -1,7 +1,8 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
-<script src="https://use.typekit.net/pmh2hld.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<script src="https://use.typekit.net/bza1awk.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 
 	<c:set var="editbarstyle" value="" />
 	<wcmmode:edit>
