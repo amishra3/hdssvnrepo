@@ -30,13 +30,13 @@ import org.xml.sax.SAXParseException;
 public class BrightTalkWebService extends GenericRestfulServiceInvokers{
  static final Logger log = LoggerFactory.getLogger(BrightTalkWebService.class);
 	
-	public String getInvoke(String feedURL) {
+	public String getBrightTalkResponse(String feedURL) {
 		log.info("Start execution of getInvokeResponse()  with feed URL" + feedURL);
-		String invokeData = getWSResponse(feedURL, FeedConstant.GET_METHOD_TYPE,FeedConstant.FEED_PARAMETER);
-		if (getWSInvokeStatus(invokeData)) {
-			return invokeData;
+		String wsResponse = getWSResponse(feedURL, FeedConstant.GET_METHOD_TYPE,FeedConstant.FEED_PARAMETER);
+		if (getWSInvokeStatus(wsResponse)) {
+			return wsResponse;
 		} else {
-			return getBrightTalkFeedData(invokeData);
+			return getBrightTalkFeedData(wsResponse);
 		}
 
 	}

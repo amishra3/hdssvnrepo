@@ -30,7 +30,7 @@ public abstract class GenericRestfulServiceInvokers {
 		try {
 
 			HttpClient httpClient = new DefaultHttpClient();
-			HttpResponse reponse = getWSMethodType(methodType,parameter, feedUrl, httpClient);
+			HttpResponse reponse = invokeWS(methodType,parameter, feedUrl, httpClient);
 			if (reponse.getStatusLine().getStatusCode() != 200) {
 				jsonObject.put(FeedConstant.JSON_STATUS_CODE, reponse.getStatusLine().getStatusCode());
 				jsonObject.put(FeedConstant.JSON_STATUS_REASON, reponse.getStatusLine().getReasonPhrase());
@@ -68,7 +68,7 @@ public abstract class GenericRestfulServiceInvokers {
 			return false;
 	}
 
-	public HttpResponse getWSMethodType(String type, String parameter,String feedURL, HttpClient httpClient)
+	private HttpResponse invokeWS(String type, String parameter,String feedURL, HttpClient httpClient)
 			throws ClientProtocolException, IOException {
 		log.info("Execution start for getInvokeMethodType() and method type is " + type);
 		if (type.equalsIgnoreCase(FeedConstant.POST_METHOD_TYPE)) {
