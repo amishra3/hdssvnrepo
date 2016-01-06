@@ -20,12 +20,13 @@ import org.slf4j.LoggerFactory;
 
 import com.hdscorp.cms.restservice.BrightTalkWebService;
 import com.hdscorp.cms.restservice.FeedConstant;
+import com.hdscorp.cms.util.JcrUtilService;
 
 @Component(label = "BrightTalk Scheduler", description = "This service basically is used for consuming data from the feed", metatype = true, immediate = true)
 @Service(BrightTalkScheduler.class)
 @Properties({
 		@Property(name = "feed.url", description = "Default feed URL is provided you can change it accordingly", value = "https://www.brighttalk.com/channel/12821/feed"),
-		@Property(name = "scheduler.expression", description = "Default Cron Job", value = "0 25 13 * *?"),
+		@Property(name = "scheduler.expression", description = "Default Cron Job", value = "0 25 13 * * ?"),
 		@Property(name = "storage.path", description = "Default storage path", value = "/content/hdscorp/en_us/test/jcr:content/") })
 
 public class BrightTalkScheduler {
@@ -37,6 +38,9 @@ public class BrightTalkScheduler {
 	@Reference
 	private SlingRepository repository;
 
+	@Reference
+	private BrightTalkWebService brightTalkService;
+	
 	private String schedulerExpression;
 
 	private String feedURL;
@@ -50,10 +54,8 @@ public class BrightTalkScheduler {
 		Map<String, Serializable> configOne = new HashMap<>();
 
 		final Runnable job = new Runnable() {
-			public void run() {
-				BrightTalkWebService brightTalkService = new BrightTalkWebService();
-				saveWSResponse(brightTalkService.getInvoke(feedURL));			
-
+			public void run() {			
+				saveWSResponse(brightTalkService.getBrightTalkResponse(feedURL));				
 			}
 		};
 		try {
@@ -68,7 +70,7 @@ public class BrightTalkScheduler {
 	private void saveWSResponse(String wsResponse) {
 		Session session = null;
 		try {
-			session = this.repository.loginAdministrative(null);
+			session =JcrUtilService.getSession();
 			Node node = session.getNode(storagePath);
 			node.setProperty(FeedConstant.SAVE_FEED_DATA_PROPERTY_NAME, wsResponse);
 			session.save();
