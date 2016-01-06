@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    feed.url="https://www.brighttalk.com/channel/12821/feed"
+    scheduler.expression="0 35 14 * * ?"
+    storage.path="/content/hdscorp/en_us/test/jcr:content/"/>
