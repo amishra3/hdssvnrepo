@@ -1,5 +1,6 @@
 package com.hdscorp.cms.search;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +21,7 @@ import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
+import com.day.cq.search.result.ResultPage;
 import com.day.cq.search.result.SearchResult;
 import com.hdscorp.cms.util.JcrUtilService;
 
@@ -57,8 +59,7 @@ public class SearchServiceHelper {
 		}
 
 		searchParams.put("group.2_group.p.and", "true");
-		searchParams.put("group.2_group.1_property",
-				"@jcr:content/metadata/cq:tags");
+		searchParams.put("group.2_group.1_property", "jcr:content/cq:tags");
 		int k = 0;
 		for (String tag : tags) {
 			searchParams.put("group.2_group.1_property." + ++k + "_value", tag);
@@ -88,6 +89,185 @@ public class SearchServiceHelper {
 		return hits;
 	}
 
+	private void getSingleTypeTagSearchParams(Map<String, String> searchParams,
+			String[] tags, String[] types, int groupCnt) {
+
+		for (String type : types) {
+
+			if (type.equals(TYPE)) {
+
+				searchParams.put("group." + groupCnt + "_group.1_property",
+						"jcr:content/cq:tags");
+
+			} else {
+				searchParams.put("group." + groupCnt + "_group.1_property",
+						"jcr:content/metadata/cq:tags");
+
+			}
+			int k = 0;
+			for (String tag : tags) {
+				searchParams.put("group." + groupCnt + "_group.1_property."
+						+ ++k + "_value", tag);
+			}
+		}
+
+	}
+
+	private void getMultipleTypeTagSearchParams(
+			Map<String, String> searchParams, String[] tags, int groupCnt) {
+		
+		
+
+		searchParams.put("group." + groupCnt + "_group.1_group.1_property",
+				"jcr:content/cq:tags");
+		searchParams.put("group." + groupCnt + "_group.2_group.1_property",
+				"jcr:content/metadata/cq:tags");
+		int k = 0;
+		for (String tag : tags) {
+			searchParams.put("group." + groupCnt + "_group.1_group.1_property." + ++k
+					+ "_value", tag);
+			searchParams.put("group." + groupCnt + "_group.2_group.1_property." + ++k
+					+ "_value", tag);
+		}
+
+	}
+
+	private void getSingleTypeFullTextSearchParams(
+			Map<String, String> searchParams, String searchKeyword,
+			String[] types, int groupCnt) {
+		for (String type : types) {
+
+			if (type.equals(TYPE)) {
+				
+				/*
+				 * searchParams.put("group." + groupCnt + "_group.1_fulltext",
+				 * searchKeyword); searchParams.put("group." + groupCnt +
+				 * "_group.1_fulltext.relPath", "jcr:content");
+				 */
+				searchParams.put("group." + groupCnt + "_group.1_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
+				searchParams.put("group." + groupCnt + "_group.2_fulltext",
+						searchKeyword);
+				searchParams
+						.put("group." + groupCnt + "_group.2_fulltext.relPath",
+								"jcr:content/@jcr:title");
+				searchParams.put("group." + groupCnt + "_group.3_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.3_fulltext.relPath",
+						"jcr:content/@jcr:description");
+			} else {
+				
+				/*
+				 * searchParams.put("group." + groupCnt + "_group.1_fulltext",
+				 * searchKeyword); searchParams.put("group." + groupCnt +
+				 * "_group.1_fulltext.relPath", "jcr:content");
+				 */
+				/*
+				 * searchParams.put("group." + groupCnt + "_group.2_fulltext",
+				 * searchKeyword); searchParams.put("group." + groupCnt +
+				 * "_group.2_fulltext.relPath", "jcr:content/metadata");
+				 */
+				searchParams.put("group." + groupCnt + "_group.1_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.1_fulltext.relPath",
+						"jcr:content/metadata/@cq:tags");
+				searchParams.put("group." + groupCnt + "_group.2_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.2_fulltext.relPath",
+						"jcr:content/metadata/@jcr:title");
+				searchParams.put("group." + groupCnt + "_group.3_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.3_fulltext.relPath",
+						"jcr:content/metadata/@jcr:description");
+				searchParams.put("group." + groupCnt + "_group.4_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.4_fulltext.relPath",
+						"jcr:content/metadata/@pdfx:Comments");
+				searchParams.put("group." + groupCnt + "_group.5_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.5_fulltext.relPath",
+						"jcr:content/metadata/@pdfx:Company");
+				searchParams.put("group." + groupCnt + "_group.6_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.6_fulltext.relPath",
+						"jcr:content/metadata/@pdf:Keywords");
+			}
+		}
+	}
+
+	private void getMultipleTypeFullTextSearchParams(
+			Map<String, String> searchParams, String searchKeyword, int groupCnt) {
+		
+		searchParams.put("group." + groupCnt + "_group.1_group.p.or", "true");
+		searchParams.put("group." + groupCnt + "_group.2_group.p.or", "true");
+		/*
+		 * searchParams.put("group." + groupCnt + "_group.1_fulltext",
+		 * searchKeyword); searchParams.put("group." + groupCnt +
+		 * "_group.1_fulltext.relPath", "jcr:content");
+		 * searchParams.put("group." + groupCnt + "_group.2_fulltext",
+		 * searchKeyword); searchParams.put("group." + groupCnt +
+		 * "_group.2_fulltext.relPath", "jcr:content/metadata");
+		 */
+
+		searchParams.put("group." + groupCnt + "_group.1_group.1_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.1_group.1_fulltext.relPath", "jcr:content/@cq:tags");
+		searchParams.put("group." + groupCnt + "_group.1_group.2_fulltext",
+				searchKeyword);
+		searchParams
+				.put("group." + groupCnt + "_group.1_group.2_fulltext.relPath",
+						"jcr:content/@jcr:title");
+		searchParams.put("group." + groupCnt + "_group.1_group.3_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.1_group.3_fulltext.relPath",
+				"jcr:content/@jcr:description");
+
+		searchParams.put("group." + groupCnt + "_group.2_group.1_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.2_group.1_fulltext.relPath",
+				"jcr:content/metadata/@cq:tags");
+
+		searchParams.put("group." + groupCnt + "_group.2_group.2_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.2_group.2_fulltext.relPath",
+				"jcr:content/metadata/@jcr:title");
+
+		searchParams.put("group." + groupCnt + "_group.2_group.3_fulltext",
+				searchKeyword);
+
+		searchParams.put("group." + groupCnt
+				+ "_group.2_group.3_fulltext.relPath",
+				"jcr:content/metadata/@pdfx:Comments");
+		searchParams.put("group." + groupCnt + "_group.2_group.4_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.2_group.4_fulltext.relPath",
+				"jcr:content/metadata/@pdfx:Company");
+		searchParams.put("group." + groupCnt + "_group.2_group.5_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.2_group.5_fulltext.relPath",
+				"jcr:content/metadata/@pdf:Keywords");
+		searchParams.put("group." + groupCnt + "_group.2_group.6_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.2_group.6_fulltext.relPath",
+				"jcr:content/metadata/@jcr:description");
+	}
+
 	public SearchResult getFullTextBasedResuts(String[] paths, String[] tags,
 			String template, String[] types, String searchKeyword,
 			boolean doPagination, String returnOffset, String returnLimit,
@@ -95,6 +275,7 @@ public class SearchServiceHelper {
 			String orderBySort) {
 
 		Map<String, String> searchParams = new HashMap<String, String>();
+
 		int groupCnt = 1;
 
 		if (types != null && types.length > 0) {
@@ -122,46 +303,36 @@ public class SearchServiceHelper {
 		}
 
 		if (tags != null && tags.length > 0) {
-
 			searchParams.put("group." + groupCnt + "_group.p.facets", "true");
 			searchParams.put("group." + groupCnt + "_group.p.or", "true");
-			searchParams.put("group." + groupCnt + "_group.1_property",
-					"jcr:content/cq:tags");
-			int k = 0;
-			for (String tag : tags) {
-				searchParams.put("group." + groupCnt + "_group.1_property."
-						+ ++k + "_value", tag);
+			if (types != null && types.length == 1) {
+				getSingleTypeTagSearchParams(searchParams, tags, types,
+						groupCnt);
+
+			} else {
+				getMultipleTypeTagSearchParams(searchParams, tags, groupCnt);
 			}
 			groupCnt++;
 		}
 
 		if (template != null && !template.isEmpty()) {
-			searchParams.put("group." + groupCnt + "_group.2_property",
+			searchParams.put("group." + groupCnt + "_group.1_property",
 					"@jcr:content/cq:template");
-			searchParams.put("group." + groupCnt + "_group.2_property.1_value",
+			searchParams.put("group." + groupCnt + "_group.1_property.1_value",
 					template);
 			groupCnt++;
 		}
 
 		if (searchKeyword != null) {
-			// combine this group with OR
 			searchParams.put("group." + groupCnt + "_group.p.or", "true");
-			searchParams.put("group." + groupCnt + "_group.1_fulltext",
-					searchKeyword);
-			searchParams.put("group." + groupCnt + "_group.1_fulltext.relPath",
-					"jcr:content");
-			searchParams.put("group." + groupCnt + "_group.2_fulltext",
-					searchKeyword);
-			searchParams.put("group." + groupCnt + "_group.2_fulltext.relPath",
-					"jcr:content/@cq:tags");
-			searchParams.put("group." + groupCnt + "_group.3_fulltext",
-					searchKeyword);
-			searchParams.put("group." + groupCnt + "_group.3_fulltext.relPath",
-					"jcr:content/@jcr:title");
-			searchParams.put("group." + groupCnt + "_group.4_fulltext",
-					searchKeyword);
-			searchParams.put("group." + groupCnt + "_group.4_fulltext.relPath",
-					"jcr:content/@jcr:description");
+			if (types != null && types.length == 1) {
+				getSingleTypeFullTextSearchParams(searchParams, searchKeyword,
+						types, groupCnt);
+			} else {
+				getMultipleTypeFullTextSearchParams(searchParams,
+						searchKeyword, groupCnt);
+			}
+
 		}
 
 		searchParams.put("p.guesstotal", "false");
@@ -172,7 +343,7 @@ public class SearchServiceHelper {
 		} else {
 			searchParams.put("p.limit", "-1");
 		}
-		 searchParams.put("group.p.and", "true");
+		// searchParams.put("group.p.and", "true");
 		// searchParams.put("p.facets", "true");
 
 		if (orderByProperty != null && !orderByProperty.isEmpty()) {
@@ -185,14 +356,13 @@ public class SearchServiceHelper {
 		} else {
 			searchParams.put("orderby.sort", "desc");
 		}
-
+		System.out.println("before cretae query************"
+				+ searchParams.toString());
 		LOG.debug("before cretae query************" + searchParams.toString());
 		Query query = queryBuilder.createQuery(
 				PredicateGroup.create(searchParams),
 				resourceResolver.adaptTo(Session.class));
 		SearchResult results = query.getResult();
-		LOG.debug("Execution Time************" + results.getExecutionTime());
-		
 
 		return results;
 	}
