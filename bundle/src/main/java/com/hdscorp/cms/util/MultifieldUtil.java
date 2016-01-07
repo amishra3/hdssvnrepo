@@ -13,12 +13,18 @@ import org.apache.sling.commons.json.JSONTokener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * {@link MultifieldUtil} Usefull To Retrive JSON Data From Multifields,NestedMultifields
+ * @author Ramana
+ *
+ */
 public class MultifieldUtil {
 
 	 private final Logger LOGGER = LoggerFactory.getLogger(MultifieldUtil.class);
 	 
-	public List<Map<String, Object>> getMultiFieldPanelValues(String[] items) {
-		LOGGER.info("[CategoryFacetsUtil]:getMultiFieldPanelValues method  Starting.");
+	
+	 public List<Map<String, Object>> getMultiFieldPanelValues(String[] items) {
+		LOGGER.info("[MultifieldUtil]:getMultiFieldPanelValues method  Starting.");
 		List<Map<String, Object>> results = new ArrayList<Map<String, Object>>();
 		if (items != null) {
 			
@@ -60,18 +66,18 @@ public class MultifieldUtil {
 						results.add(columnMap);
 					}
 				} catch (JSONException e) {
-					LOGGER.error("[CategoryFacetsUtil]:getMultiFieldPanelValues ", e.getMessage());
+					LOGGER.error("[MultifieldUtil]:getMultiFieldPanelValues ", e.getMessage());
 					e.printStackTrace();
 				}
 			}
 		}
-		LOGGER.debug("[CategoryFacetsUtil]:getMultiFieldPanelValues Category values :", results);
-		LOGGER.info("[CategoryFacetsUtil]:getMultiFieldPanelValues method  Ending.");
+		LOGGER.debug("[MultifieldUtil]:getMultiFieldPanelValues Category values :", results);
+		LOGGER.info("[MultifieldUtil]:getMultiFieldPanelValues method  Ending.");
 		return results;
 	}
-
+	 
 	private Map<String, Object> getSubCategory(JSONObject parsed) {
-		LOGGER.info("[CategoryFacetsUtil]:getSubCategory  Method  Starting.");
+		LOGGER.info("[MultifieldUtil]:getSubCategory  Method  Starting.");
 		Map<String, Object> columnMap = new HashMap<String, Object>();
 		try {
 			if (parsed != null) {
@@ -83,10 +89,10 @@ public class MultifieldUtil {
 				}
 			}
 		} catch (JSONException e) {
-			LOGGER.error("[CategoryFacetsUtil]:getSubCategory ", e.getMessage());
+			LOGGER.error("[MultifieldUtil]:getSubCategory ", e.getMessage());
 		}
-		LOGGER.debug("[CategoryFacetsUti]:getSubCategory SubCategory Values:",columnMap);
-		LOGGER.info("[CategoryFacetsUtil]:getSubCategory  Method  Ending.");
+		LOGGER.debug("[MultifieldUtil]:getSubCategory SubCategory Values:",columnMap);
+		LOGGER.info("[MultifieldUtil]:getSubCategory  Method  Ending.");
 		return columnMap;
 		
 	}
