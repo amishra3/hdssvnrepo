@@ -33,6 +33,10 @@
             fieldDescription="This'll be used to show product overview, when pulled into product listing pages."
             name="./subtext"
             height="200"
-            xtype="richtext"/>            
+            xtype="richtext"/>     
+        <errorpages
+		    jcr:primaryType="cq:Widget"
+		    path="/apps/acs-commons/components/utilities/errorpagehandler/dialog/errorpages.infinity.json"
+		    xtype="cqinclude"/>       
     </items>
 </jcr:root>
