@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
     title="Category Facets"
     width="800"
@@ -35,20 +35,26 @@
                             layout="form"
                             xtype="multifieldpanel">
                             <items jcr:primaryType="cq:WidgetCollection">
+                                <cfid
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Category Id"
+                                    key="category-id"
+                                    layout="anchor"
+                                    name="./categoryid"
+                                    xtype="textfield"/>
                                 <cfdisplaytitle
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"
                                     anchor="100%"
                                     dname="header"
-                                    fieldLabel="Display Title"
+                                    fieldLabel="Category Title"
                                     key="display-title"
                                     layout="anchor"
                                     name="./display-title"
-                                    xtype="textfield">
-                                    <listeners
-                                        jcr:primaryType="nt:unstructured"
-                                        change="function(x,y,z)&#xa;{&#xa;&#xa;var dlg=this.findParentByType(&quot;dialog&quot;);&#xa;var bannerimage1=dlg.find(&quot;name&quot;,&quot;./display-title)[0];&#xa;if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }}"/>
-                                </cfdisplaytitle>
+                                    xtype="textfield"/>
                                 <cftags
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"
@@ -62,7 +68,6 @@
                                     jcr:primaryType="cq:Widget"
                                     fieldLabel="Sub Categories"
                                     key="sub-category"
-                                    name="./subCategories"
                                     xtype="multifield">
                                     <fieldConfig
                                         jcr:primaryType="cq:Widget"
@@ -71,12 +76,22 @@
                                         layout="form"
                                         xtype="multifieldpanel">
                                         <items jcr:primaryType="cq:WidgetCollection">
-                                            <cfdisplaytitle
+                                            <cfscid
                                                 jcr:primaryType="cq:Widget"
                                                 allowBlank="{Boolean}false"
                                                 anchor="100%"
                                                 dname="header"
-                                                fieldLabel="Display Title"
+                                                fieldLabel="Sub Category ID"
+                                                key="sub-category-ID"
+                                                layout="anchor"
+                                                name="./sub-category-id"
+                                                xtype="textfield"/>
+                                            <cfscdisplaytitle
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                dname="header"
+                                                fieldLabel="Sub Category Title"
                                                 key="sub-category-title"
                                                 layout="anchor"
                                                 name="./sub-category-title"
