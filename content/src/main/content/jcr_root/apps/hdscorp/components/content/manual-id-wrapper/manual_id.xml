@@ -23,11 +23,11 @@
             jcr:primaryType="cq:Widget"
             fieldLabel="Mobile Accordin Section Title"
             name="./mobileaccordinsectiontitle"
-            xtype="textfield"/>                        
+            xtype="textfield"/>
         <accordincontentsectionnumber
             jcr:primaryType="cq:Widget"
             fieldLabel="Accordin Content Section Number"
             name="./accordincontentsectionnumber"
-            xtype="textfield"/>                        
+            xtype="textfield"/>
     </items>
 </jcr:root>

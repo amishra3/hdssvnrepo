@@ -211,7 +211,7 @@
 .header .sub-navigation-container .sub-navigation > ul > li a {
     display: table-cell;
     margin: 0;
-    padding: 19px 10px 20px;
+    padding: 19px 14px 20px;
     vertical-align: middle;
     color: #ffffff;
     text-transform: uppercase;
@@ -261,6 +261,12 @@
 
 .header .breadcrumb-container .breadcrumb a:first-child {
     margin-left: 0;
+}
+@media only screen and (max-width: 1199px) {
+    .header .sub-navigation-container .sub-navigation > ul > li a {
+        padding-left:10px;
+        padding-right:10px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -315,6 +321,8 @@
         font-size: 0.6875em;
         line-height: 1;
         line-height: 120%;
+        padding-left:10px;
+        padding-right:10px;
     }
     .header .sub-navigation-container .sub-navigation > ul > li a.active {
         background-color: #555555;
@@ -759,14 +767,14 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-    button.cta-scroll-top {
-        position: absolute;
-        display: inline-block;
-        font-size: .5rem;
-        line-height: .7rem;
-        width: 68px;
-        height: 68px;
-    }
+     button.cta-scroll-top {    
+	    font-size: .5rem;
+	   line-height: .7rem;
+	   display: inline-block;
+	   width: 68px;
+	   height: 68px;
+     }
+
     button.cta-scroll-top .text-return {
         margin-top: 5px;
     }

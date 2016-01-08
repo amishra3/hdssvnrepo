@@ -8,4 +8,7 @@ product-banner.css
 product-solutions.css
 hds-community.css
 product-category.css
+hero-product-lp-banner.css
+press-release.css
+product-lp-list.css
 app.css

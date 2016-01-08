@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <simplebannertitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hero Title Content"
+                        name="./simplebannertitle"
+                        xtype="textfield"/>
+                    <simplebannersubtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hero Sub Title Content"
+                        name="./simplebannersubtitle"
+                        xtype="textfield"/>
+                    <simplebannermagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./simplebannermageimageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./simplebannermagefileName2"
+                        fileReferenceParameter="./simplebannermagePath"
+                        height="{Long}200"
+                        name="./simplebannermagePath"
+                        rotateParameter="./simplebannermageimageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <simpllebannerbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./simpllebannerbuttonlabel"
+                        xtype="textfield"/>
+                    <simplebannerbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./simplebannerbuttonurl"
+                        xtype="pathfield"/>
+                    <simplebannerurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./simplebannerurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+<!--                     <contentalign
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Align Content on Right?"
+                        name="./contentalign"
+                        type="checkbox"
+                        xtype="selection"/>                        
+ -->                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

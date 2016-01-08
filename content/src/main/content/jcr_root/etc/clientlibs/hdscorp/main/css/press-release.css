@@ -1,0 +1,592 @@
+/* Press Release List */
+.pr-list {
+    background: #ffffff;
+    padding: 120px 15px 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.pr-list .pr-list-container{
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  padding: 0 15px;
+}
+
+.pr-list .pr-list-container .pr-search{
+  width:70%;
+  border:5px solid #e6e6e6;
+  min-height: 65px;
+  margin: 45px auto 55px;
+  position: relative;
+}
+.pr-list .pr-list-container .pr-search span.glyphicon.glyphicon-search{
+  -ms-transform: rotate(90deg); 
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-size: 2.2em;
+  color: #cc0000;
+  position: absolute;
+  top: 15px; right: 14px;
+  cursor: pointer;
+}
+
+.pr-list .pr-list-container .pr-search > input {
+    border: medium none;
+    min-height: 65px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.125rem;
+    padding-left: 15px;
+    padding-right: 62px;
+}
+
+.pr-list .pr-list-container .pr-search ::-webkit-input-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+.pr-list .pr-list-container .pr-search ::-moz-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+.pr-list .pr-list-container .pr-search :-ms-input-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+.pr-list .pr-list-container .pr-search input:-moz-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+
+.pr-list .pr-list-container h2 {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 0;
+}
+
+.pr-list-archives{
+  background: #f1f1f1;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 0.8125rem;
+  padding: 0;
+}
+.pr-list-archives ul{
+  list-style: none; margin: 0; padding:0;}
+.pr-list-archives ul > li{ margin: 0; padding:0 20px; position: relative;}
+.pr-list-archives ul > li > a{
+  border-bottom: 3px solid #c5c5c5; 
+  padding:22px 0;
+  display:block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 900;
+  color: #414141;
+  position: relative;
+}
+.pr-list-archives ul > li:last-child a{
+  border-bottom: none;
+}
+.pr-list-archives ul > li.active {   
+  background: #414141;
+  margin-top: -3px;
+}
+.no-touch .pr-list-archives ul > li.active:after {
+  content: '';
+  display: block;  
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -9px;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 9px solid #414141;
+  z-index: 9;
+}
+.pr-list-archives ul > li.active > a{
+  color:#ffffff; 
+  border-bottom: none;
+  font-size: 0.875rem;
+}
+
+.pr-archives-list{
+  background: #ffffff;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  padding: 0 0 0 45px;
+  min-height: 768px;
+}
+
+.pr-archives-list .pr-archives-list-items .pr{
+  border-bottom: 3px solid #c5c5c5;
+  padding: 35px 0 25px 0;
+}
+.pr-archives-list .pr-archives-list-items .pr:first-child{
+  padding-top: 0;
+}
+.pr-archives-list .pr-archives-list-items .pr .pr-date{
+  color:#8d8d8d;
+  padding-bottom: 5px;
+  font-family: Arial, Helvetica, 'museo-sans';
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.pr-archives-list .pr-archives-list-items .pr h3{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.3rem;
+  color: #000000;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+}
+.pr-archives-list .pr-archives-list-items .pr p{
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.875rem;
+}
+.pr-archives-list .pr-archives-list-items .pr ul{
+  margin: 0 0 12px 0; padding: 0 0 0 15px;
+  list-style-type: square;
+  list-style-position: outside;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.875rem;
+}
+.pr-archives-list .pr-archives-list-items .pr ul li{
+  margin-bottom: 8px;
+}
+.pr-archives-list .pr-archives-list-items .pr a{
+  font-size: 0.8485rem;
+  color:#ce0000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+}
+.pr-archives-list .pr-archives-list-items .pr a:hover{
+  color:#ac1f25;
+}
+
+.pr-archives-list .pr-load-more{
+  text-align: center;
+  margin: 60px 0 0;
+}
+
+.learn-more-red-link {
+    background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    padding: 0;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+.learn-more-red-link:hover {
+    background-color: #cc0000;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.learn-more-red-link a{text-decoration: none; padding:8px 35px; display: block; border: 1px solid #cc0000; color: #cc0000;}
+.learn-more-red-link a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.learn-more-white-link {
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    padding: 0;
+}
+.learn-more-white-link:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+.learn-more-white-link a{text-decoration: none; padding:8px 35px; display: block;}
+.learn-more-white-link a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+@media only screen and (max-width: 480px) {
+  .pr-list .pr-list-container .pr-search ::-webkit-input-placeholder {
+    color: #414141;
+    font-size: 0.875rem;
+  }
+  .pr-list .pr-list-container .pr-search ::-moz-placeholder {
+      color: #414141;
+      font-size: 0.875rem;
+  }
+  .pr-list .pr-list-container .pr-search :-ms-input-placeholder {
+      color: #414141;
+      font-size: 0.875rem;
+  }
+  .pr-list .pr-list-container .pr-search input:-moz-placeholder {
+      color: #414141;
+      font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+
+  .page-press-release .header .breadcrumb-container {
+      text-align: left;
+      top: 200px;
+  }
+
+  .pr-list{
+    padding:220px 0 0;
+  }
+
+  .pr-list .pr-list-container{
+    padding: 0;
+  }
+
+  .pr-list .pr-list-container .pr-search{
+    width:90%;
+    border:2px solid #e6e6e6;
+    min-height: 35px;
+    margin: 32px auto 45px;
+  }
+  .pr-list .pr-list-container .pr-search span.glyphicon.glyphicon-search{
+    font-size: 1.5em;
+    top: 6px; right: 6px;
+  }
+
+  .pr-list .pr-list-container .pr-search > input {
+      min-height: 35px;
+      font-size: 0.875rem;
+      padding-right: 40px;
+  }
+
+  .pr-list .pr-list-container h2{
+    font-size: 1.125rem;
+    padding: 0 15px;
+  }
+
+  .pr-list-archives div.MobileHolderWrapper{
+    background: #fff;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .pr-list-archives ul > li{
+    padding: 0;
+  }
+  .pr-list-archives ul > li > a{
+    padding: 20px;
+  }
+  .pr-list-archives div.MobileHolderWrapper{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .pr-list-archives ul > li > a > span {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+
+  .pr-list-archives ul > li .icon-accordion-closed {
+    display: inline-block;
+  }
+
+  .pr-list-archives ul > li .icon-accordion-opened {
+    display: none;
+  } 
+
+
+  .pr-archives-list{
+    padding: 0 0 30px 0;
+  }
+  .pr-archives-list .pr-archives-list-items .pr:first-child{
+    padding-top: 20px;
+  }
+  .pr-archives-list-items{
+    padding: 0 21px;
+  }
+  .pr-archives-list-items .glyphicon.glyphicon-menu-right.animateIcon {
+      top: 3px;
+  }
+  .pr-archives-list .pr-archives-list-items .pr:last-child{
+    padding-bottom: 20px;
+  }
+  .pr-archives-list-items{
+    padding-top: 0;
+    padding-bottom:0;
+    min-height: 0;
+  }
+  .pr-archives-list .pr-archives-list-items .pr{
+    padding:22px 0;
+  }
+  .pr-archives-list .pr-archives-list-items .pr h3{
+    font-size: 1.065rem;
+  }
+
+  .pr-archives-list .pr-load-more{
+    text-align: center;
+    margin: 30px 0 0;
+  }
+
+}
+
+
+/* Press Release  Detail Page */
+
+.page-press-release{
+
+}
+.page-press-release .header .breadcrumb-container .breadcrumb,
+.page-press-release .header .breadcrumb-container .breadcrumb a{
+  color: #333333;
+}
+.pr-detail{
+  background:#ffffff;
+  min-height: 740px;
+  padding: 120px 15px 60px;
+  position: relative;
+}
+.pr-detail .pr-detail-container{
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  padding: 0 15px;
+}
+.pr-detail .pr-detail-container .pr-detail-desc{
+  font-size: 1.125rem;
+}
+.pr-detail .pr-detail-container .pr-detail-desc h1{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 3.438rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 30px;
+  margin-top: 0;
+  margin-right: 245px;
+}
+.pr-detail .pr-detail-container .pr-detail-desc .sub-heading{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  color: #008eaa;
+  font-size: 1.375rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.pr-detail .pr-detail-container .pr-detail-desc p{
+  font-family: Arial, Helvetica;
+  margin-bottom:30px;
+}
+
+.pr-detail .pr-detail-container .pr-detail-desc .list-heading{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.pr-detail .pr-detail-container .pr-detail-desc ul{
+  margin:0 0 25px 0; padding: 0;
+}
+.pr-detail .pr-detail-container .pr-detail-desc ul li{
+  margin:0 0 5px 15px; padding: 0;
+  list-style-type: square;
+}
+
+.pr-detail .pr-detail-container a{
+  color: #cc0000;
+}
+
+
+.pr-detail .pr-detail-container .pr-detail-share{
+  background: #f1f1f1;
+  padding: 25px 30px;
+}
+.pr-detail .pr-detail-container .pr-detail-share .heading{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  color: #333333;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.pr-detail .pr-detail-container .pr-detail-share .share-this-page{
+  border-bottom: 3px solid #c5c5c5;
+  padding-bottom: 25px;
+}
+.pr-detail .pr-detail-container .pr-detail-share .press-contact{
+  padding-top: 25px;
+}
+.pr-detail .pr-detail-container .pr-detail-share .press-contact .press-contact-detail{
+  color: #333333;
+  font-size: 1.125rem;
+}
+.pr-view-all{ font-family: "museo-sans",Helvetica,Arial,sans-serif; text-transform: uppercase; text-align: left;}
+.pr-view-all a{font-weight: 800;}
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .pr-detail{padding-top: 210px;}
+  .pr-detail .pr-detail-container .pr-detail-desc h1{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  .pr-detail .pr-detail-container .pr-detail-desc p{
+    margin-bottom: 15px;
+  }
+  .pr-detail .pr-detail-container .pr-detail-desc ul{
+    margin-bottom: 15px;
+  }
+  .pr-detail .pr-detail-container .pr-detail-desc .sub-heading{
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  .pr-detail .pr-detail-container .pr-detail-desc{
+    font-size: 0.875rem;
+    padding: 0;
+  }
+
+  .pr-detail .pr-detail-container .pr-detail-share{
+    padding: 15px;
+    margin-right: -15px; 
+    margin-left: -15px;
+    margin-top: 0;
+  }
+  .pr-detail .pr-detail-container .pr-detail-share .share-this-page{
+    background: #ffffff; padding: 10px; text-align: center;
+    border-bottom: none;
+  }
+  .pr-detail .pr-detail-container .pr-detail-share .heading{
+    display: inline;
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    margin-bottom: 0;
+    line-height: 3em;
+  }
+  .pr-detail .pr-detail-container .pr-detail-share .share-links{display: inline; margin-left:10px; }
+
+  .pr-detail .pr-detail-container .pr-detail-share .press-contact{
+    padding: 10px;
+    text-align: center;
+    background: #ffffff;
+    margin-top: 12px;
+  }
+
+  .pr-view-all{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+}
+
+
+/* Press Release Explore Section */
+.pr-explore {
+  background-image: url("../images/pr-explore-section.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+.pr-explore .pr-explore-container{
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  padding: 60px 15px;
+}
+.pr-explore .pr-explore-container .col-sm-4 {
+    padding-left: 0;
+}
+.pr-explore .pr-explore-container h2{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin:0;
+  min-height:55px;
+}
+.pr-explore h2 span.glyphicon.glyphicon-menu-right.animateIcon {
+    top: 0px;
+    font-size: 1rem;
+}
+
+.pr-explore .pr-explore-container .pr-common-box{
+  background: #ffffff;
+  margin:0 0 20px 0; 
+  padding: 25px 25px 20px;
+  min-height: 170px;
+}
+
+.pr-explore .pr-explore-container .pr-common-box .icon{
+  display: inline-block;
+}
+.pr-explore .pr-explore-container .pr-common-box .type{
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #010000;
+  letter-spacing: 0.04em;
+  margin-left: 8px;
+  font-weight: 600;
+}
+.pr-explore .pr-explore-container .pr-common-box .description{
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 700;
+  margin: 12px 0 12px 0;
+}
+
+.pr-explore .pr-explore-container .pr-common-box .read-more{
+  font-size: 0.8125rem;
+}
+.pr-explore .pr-explore-container .pr-common-box .read-more a{
+  color: #ce0000;
+  font-weight: 800;
+  outline: 0 none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .pr-explore .pr-explore-container h2{
+    display: block;
+    background: #ffffff;
+    color: #000000;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 23px 0 19px 10px;
+    margin-bottom: 10px;
+  }
+  .pr-explore h2 span.glyphicon.glyphicon-menu-right.animateIcon {
+    float: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    right: 10px;
+    top: 0;
+  }
+  .pr-explore .pr-explore-container .col-sm-4{
+    padding-left: 15px;
+  }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .pr-explore .pr-explore-container h2{
+    font-size: 1.45rem;
+  }
+  .pr-explore .pr-explore-container .pr-common-box{
+    min-height: 190px;
+  }
+  .pr-explore .pr-explore-container .col-sm-4{
+    padding-left: 15px;
+  }
+}

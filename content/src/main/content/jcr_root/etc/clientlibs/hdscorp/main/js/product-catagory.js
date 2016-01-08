@@ -80,3 +80,7 @@ var hds = window.hds || {};
         }
     }
 }(window, document, jQuery, hds));
+
+$(function() {	
+	hds.productCatagory.init();
+})

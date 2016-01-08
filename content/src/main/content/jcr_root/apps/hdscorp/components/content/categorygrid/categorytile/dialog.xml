@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Title"
+    title="Category Tile"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <categorysubtitle
+            jcr:primaryType="cq:Widget"
+            fieldDescription="This is the Category Description/Sub-Title."
+            fieldLabel="Category Description/Sub-Title"
+            name="./categorysubtitle"
+            xtype="textarea"/>
+        <categoryiconpath
+            jcr:primaryType="cq:Widget"
+            fieldDescription="Please provide the path to category icon."
+            fieldLabel="Category Icon Path"
+            name="./categoryiconpath"
+            xtype="ddpathfield"/>            
+    </items>
+</jcr:root>

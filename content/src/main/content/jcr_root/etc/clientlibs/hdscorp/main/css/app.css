@@ -157,6 +157,65 @@
 	background: url("/etc/clientlibs/hdscorp/main/images/hero-specific-tech.jpg") center center no-repeat;
 }
  */
+ 
+.productsolutionlanding .hero-product-category {
+    z-index: 2;
+    position: relative;
+    min-height: 402px;
+    padding: 90px 15px 0;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.productsolutionlanding .hero-product-category .hero-product-solutions-container .headline{
+    margin-bottom: 0px;
+    margin-top: 53px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 3.4375em;
+    line-height: 1;
+    line-height: 120%;
+    color: #ffffff;
+}
+
+.productsolutionlanding .hero-product-category .hero-product-solutions-container > h3{
+    margin-bottom: 37px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.375em;
+    line-height: 1;
+    line-height: 120%;
+    color: #ffffff;
+    margin: 0 0 11px;
+    text-transform: none;
+}
+
+.productdetail .icon-advance-lt{
+    width: 75px;
+    height: 75px;
+}
+
+.hero-homepage.general .hero-homepage-container .general-list li a .sprite{
+	width: 27px;
+    height: 28px;
+}
+
+.icon-home-modal {
+    width: 56px;
+    height: 65px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .icon-connect{
+	width: 56px;
+    height: 65px;	
+}
+ 
 @media only screen and (max-width: 768px) {
 	.cs-section .cyancta {
 		display: block;
@@ -178,5 +237,12 @@
 	}
 	.productcategory .calculating-success-container>p {
     	font-size: 0.875rem;
+	}
+	
+	.productsolutionlanding .hero-product-category .hero-product-solutions-container .headline{
+		margin-top: 65px;
+		font-size: 1.5rem;
+		text-align: center;
+		font-weight: 700;
 	}
 }

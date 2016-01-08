@@ -34,15 +34,15 @@
 						<c:set var="tabOverlayPath" value="${tabList.tabOverlayPath}" />
 						<c:set var="tabIconPath" value="${tabList.tabIconPath}" />
 						<li class="col-sm-6">
-    						<a href="#" data-href="${tabOverlayPath}.overlay.html" class="general-healthcare">
-    							<span class="sprite icon-suitcase-red" style="background-image: url(${tabIconPath});background-position: 0 0"></span> ${tabTitle}
+    						<a href="#" data-class="healthcare">    							
+    							<span class="sprite icon-suitcase-red" style="background-image: url(${tabIconPath});background-position: 0 0;background-repeat:no-repeat;"></span> ${tabTitle}
     						</a>
-    						
-    							<sling:include path="${tabOverlayPath}.modal.html"/>
+
+    						<sling:include path="${tabOverlayPath}.modal.html"/>
     						
     					</li>
     					
-    					
+
     				</c:forEach>
     			</ul>
     	
@@ -53,7 +53,9 @@
     			<div class="scroll-down">
     			</div>
     		</div>
-    	</div>	
+    	</div>
+
+        <div class="hero-homepage list-content-container"></div>
     	
 	</c:when>
 	<c:otherwise>

@@ -10,9 +10,7 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.ConfigurationPolicy;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.event.EventUtil;
@@ -24,13 +22,11 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.replication.ReplicationAction;
 import com.day.cq.replication.ReplicationActionType;
-import com.day.cq.wcm.api.Page;
-import com.hdscorp.cms.util.PropertyResolver;
 import com.hdscorp.cms.constants.GlobalConstants;
 import com.hdscorp.cms.util.CacheInvalidator;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.PathResolver;
-import com.hdscorp.cms.util.ReplicatorProvider;
+import com.hdscorp.cms.util.PropertyResolver;
 
 @Component(immediate = true, label = "HDS Corp Replication EventHandler Listener", description = "HDS Corp Replication EventHandler Listener", metatype = true, policy =ConfigurationPolicy.REQUIRE)
 @Service
@@ -62,37 +58,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 						if(pagePath.contains(GlobalConstants.CUSTOM_LOCATIONS_PATH)){
 							CacheInvalidator.invalidateCache("/location", false);
 						}
-						if (pagePath.startsWith("/content/hdscorp/en_us/structureddata/recipes/")) {
-							resourceResolver = JcrUtilService.getResourceResolver();
-							String RECIPE_ROOT_PATH = "/content/hdscorp/en_us/recipes/";
-							Resource resource = resourceResolver.getResource(pagePath);
-							if(null!=resource){
-								Page page = resource.adaptTo(Page.class);
-								final String recipePath = RECIPE_ROOT_PATH+ page.getName();
-								if(!JcrUtilService.getSession().itemExists(recipePath)){
-									LOG.info("Activate Event:Recipe soft page doesn't exist.Creating a soft page");
-								}
-								LOG.info("Activating soft page" + recipePath);
-								ReplicatorProvider.getInstance().activatePage(recipePath);
-								// Invalidate Cache for Recipe Landing Pages
-								invalidateLandingPages(GlobalConstants.RECIPES);
-							}
-						}else if(pagePath.contains("/content/hdscorp/en_us/structureddata/articles/")) {
-							resourceResolver = JcrUtilService.getResourceResolver();
-							final String ARTICLE_ROOT_PATH = "/content/hdscorp/en_us/articles/";
-							final Resource resource = resourceResolver.getResource(pagePath);
-							if(null!=resource){
-								final Page page = resource.adaptTo(Page.class);
-								final String articlePath = ARTICLE_ROOT_PATH+ page.getName();
-								if(!JcrUtilService.getSession().itemExists(articlePath)){
-									LOG.info("Activate Article soft page doesn't exist.Creating a soft page");
-								}
-								LOG.info("Activating soft page" + articlePath);
-								ReplicatorProvider.getInstance().activatePage(articlePath);
-								// Invalidate Cache for Article Landing Pages
-								invalidateLandingPages(GlobalConstants.ARTICLES);
-							}
-						}
+
 						
 						if (StringUtils.isNotEmpty(pagePath)) {
 							if(pagePath.startsWith("/etc/segmentation/hdscorp/")){
@@ -112,33 +78,6 @@ public class ReplicationEventHandlerListener implements EventHandler {
 						
 
 					}else if(replicationAction.getType() == ReplicationActionType.DEACTIVATE){
-						if(pagePath.contains("/content/hdscorp/en_us/structureddata/recipes/")) {
-							resourceResolver = JcrUtilService.getResourceResolver();
-							String RECIPE_ROOT_PATH = "/content/hdscorp/en_us/recipes/";
-							final Resource resource = resourceResolver.getResource(pagePath);
-							if(null!=resource){
-								final Page page = resource.adaptTo(Page.class);
-								final String recipePath = RECIPE_ROOT_PATH + page.getName();
-								LOG.info("deActivating soft page" + recipePath);
-								ReplicatorProvider.getInstance().deActivatePage(recipePath);
-								
-								// Invalidate Cache for Recipe Landing Pages
-								invalidateLandingPages(GlobalConstants.RECIPES);
-							}
-						}else if(pagePath.contains("/content/hdscorp/en_us/structureddata/articles/")){
-							resourceResolver = JcrUtilService.getResourceResolver();
-							final String ARTICLE_ROOT_PATH = "/content/hdscorp/en_us/articles/";
-							final Resource resource = resourceResolver.getResource(pagePath);
-							if(null!=resource){
-								final Page page = resource.adaptTo(Page.class);
-								final String articlePath = ARTICLE_ROOT_PATH + page.getName();
-								LOG.info("deActivating soft page" + articlePath);
-								ReplicatorProvider.getInstance().deActivatePage(articlePath);
-								
-								// Invalidate Cache for Article Landing Pages
-								invalidateLandingPages(GlobalConstants.ARTICLES);
-							}
-						}
 					
 					}
 				} // end if
@@ -183,6 +122,4 @@ public class ReplicationEventHandlerListener implements EventHandler {
 		}
 		return processStatus;
 	}
-	
-	
 }

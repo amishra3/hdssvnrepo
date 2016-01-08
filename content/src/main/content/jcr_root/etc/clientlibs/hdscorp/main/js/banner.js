@@ -2,7 +2,7 @@
 
 	var $heroHomepage = $('.hero-homepage');
 	var $generalList = $('ul.general-list li a');
-	var $listContent = $('.list-content-container');
+	var $listContent = $('.hiddencontent');
 
 	if ($heroHomepage.length) {
 		$('.list-content-container').on('click', '.close-hero', function() {
@@ -13,7 +13,7 @@
 
 		$generalList.click(function(){
 			var tabClass = $(this).attr('data-class');
-			var tabHtml = $(this).next('.general-list-content').html();
+			var tabHtml = $(this).next('.hiddencontent').html();
 			$heroHomepage.siblings('.list-content-container').addClass(tabClass).append(tabHtml).fadeIn(1000);
 			$heroHomepage.siblings('.general').hide();
 		})

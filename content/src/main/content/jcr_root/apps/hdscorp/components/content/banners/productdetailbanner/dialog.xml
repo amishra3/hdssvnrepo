@@ -94,7 +94,7 @@
                         xtype="selection"/>
                     <simplebannerimageoverlaypath
                         jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
+                        allowBlank="{Boolean}true"
                         allowUpload="false"
                         cropParameter=".simplebannerimageoverlaypathCrop2"
                         ddGroups="[media]"

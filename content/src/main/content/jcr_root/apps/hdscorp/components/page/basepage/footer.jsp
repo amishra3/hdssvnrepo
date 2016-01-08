@@ -12,11 +12,4 @@
 
 <cq:includeClientLib js="hdscorp.main"/> 
 <!-- includeClientLib is not loading the JS lib and that is why doing it conventionally-->
-<!-- <script type="text/javascript" src="/etc/clientlibs/hdscorp/main.js"></script> -->
-
-
-<script>
-$(function() {
-	hds.productCatagory.init();
-})
-</script> 
+<!-- <script type="text/javascript" src="/etc/clientlibs/hdscorp/main.js"></script> --> 

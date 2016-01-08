@@ -8,18 +8,19 @@
 	import="java.util.List,com.day.cq.search.facets.Facet,com.day.cq.search.facets.Bucket,java.util.Map"%>
 <%
 	try {
-		SearchServiceHelper searchServiceHelper = sling.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-		String paths[] = { "/content/geometrixx-outdoors/en" };
-		String tags[] = { "geometrixx-outdoors:gender/women","geometrixx-outdoors:season/winter" };
-		//tags=null;
-		String template = "/apps/geometrixx-outdoors/templates/page_product";
-		template = null;
-		String type[] = {"cq:Page"};
-		boolean doPagination = false;
-		String returnOffset = "0";
-		String returnLimit = "10";
-		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, tags, template, type,"This summer head", doPagination, returnOffset,returnLimit, resourceResolver,null,null);
-		
+		SearchServiceHelper searchServiceHelper = sling
+				.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
+        String paths[] = {"/content/dam/public/testpdf/batch1"};
+        String tags[] = {"common:country/us","common:region/global"};
+        String template= "/apps/geometrixx-outdoors/templates/page_product";
+        template=null;
+        String type[] = {"dam:Asset"};
+    //tags=null;
+        boolean doPagination = false;
+        String returnOffset="0";
+        String returnLimit="10";
+           SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, tags, null, type,"Hitachi", doPagination, returnOffset,returnLimit, resourceResolver,null,null);
+
 		List<Hit> hits = result.getHits();
 		pageContext.setAttribute("hits", hits);
 		out.println("<BR><BR><BR><BR>");
@@ -37,10 +38,9 @@
 		out.println("Filtering Predicates *******"
 				+ result.getFilteringPredicates() + "<BR>");
 		out.println("<BR><BR><BR><BR>");
-		
 		Map<String, Facet> facets = result.getFacets();
- 		for (String key : facets.keySet()) {
-			//System.out.println("facet key**********" + key);
+		for (String key : facets.keySet()) {
+			System.out.println("facet key**********" + key);
 			Facet facet = facets.get(key);
 			if (facet.getContainsHit()) {
 
@@ -59,7 +59,7 @@
 					 */
 				}
 			}
-		} 
+		}
 		for (Hit hit : hits) {
 
 			Page reourcePage = hit.getResource().adaptTo(Page.class);
@@ -83,6 +83,7 @@
 		}
 
 	} catch (Exception ex) {
-		/*System.out.println("+++++++++++++++IN ERROR BLOCK"+ ex.getMessage());*/	
+		System.out.println("+++++++++++++++IN ERROR BLOCK"
+				+ ex.getMessage());
 	}
 %>

@@ -1,6 +1,5 @@
 package com.hdscorp.cms.search;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +20,6 @@ import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
-import com.day.cq.search.result.ResultPage;
 import com.day.cq.search.result.SearchResult;
 import com.hdscorp.cms.util.JcrUtilService;
 
