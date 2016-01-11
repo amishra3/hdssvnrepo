@@ -44,12 +44,11 @@
 
 
 				for (Bucket bucket : facet.getBuckets()) {
-					long count = bucket.getCount();
-
+					
 					Tag tag = tm.resolve((String) bucket.getValue());
 					if(tag!= null){ %> 
 						<tr>
-						<td><h4><%= tag.getTitle()%></h4></td><td><h4><%=count %></h4></td></tr><%
+						<td><h4><%= tag.getTitle()%></h4></td><td><h4><%=bucket.getCount() %></h4></td></tr><%
 						//out.println("<h4>"+tag.getTitle()+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+count+ "</h4><BR>");
 					}
 									/*
@@ -87,7 +86,6 @@
 		}
 
 	} catch (Exception ex) {
-		System.out.println("+++++++++++++++IN ERROR BLOCK"
-				+ ex.getMessage());
+		System.out.println("+++++++++++++++IN ERROR BLOCK"+ ex.getMessage());
 	}
 %> 

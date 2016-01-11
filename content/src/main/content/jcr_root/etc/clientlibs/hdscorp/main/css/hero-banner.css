@@ -234,7 +234,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0.875em;
   line-height: 1;
-  line-height: 1.3em;lis
+  line-height: 1.3em;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a {
@@ -260,8 +260,6 @@
   top: 2px;
   left: 5px;
 }
-
-.hero-homepage.list-content-container{display: none;}
 
 @media only screen and (min-width: 1280px) {
   .hero-homepage.healthcare {

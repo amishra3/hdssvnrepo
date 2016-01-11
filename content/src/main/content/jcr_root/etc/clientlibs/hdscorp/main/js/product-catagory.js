@@ -84,3 +84,4 @@ var hds = window.hds || {};
 $(function() {	
 	hds.productCatagory.init();
 })
+

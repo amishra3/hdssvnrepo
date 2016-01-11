@@ -630,10 +630,10 @@ button.cta-scroll-top {
     right: 10px;
     outline: 0;
     border: 0;
-    display: none;
     padding: 0;
     margin: 0;
     overflow: hidden;
+    visibility: hidden;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -656,34 +656,37 @@ button.cta-scroll-top {
     color: #ffffff;
 }
 
-button.cta-scroll-top:hover {
-    background-color: #757575;
-    background-color: rgba(102, 102, 102, 0.9);
+button.cta-scroll-top.cd-is-visible, button.cta-scroll-top.cd-fade-out, .no-touch button.cta-scroll-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
 }
-
-button.cta-scroll-top.active {
-    display: inline-block;
+button.cta-scroll-top.cd-is-visible {
+  visibility: visible;
+  opacity: 1;
 }
-
-button.cta-scroll-top span {
-    display: inline-block;
+button.cta-scroll-top.cd-fade-out {
+  opacity: .5;
+}
+.no-touch button.cta-scroll-top:hover {
+  background-color: #757575;
+  background-color: rgba(102, 102, 102, 0.9);
 }
 
 button.cta-scroll-top .icon-arrow-scroll-top {
     background-image: url(../images/sprite.png);
     background-position: -354px -158px;
     width: 26px;
-    height: 14px;
+    height: 20px;
     margin-left: auto;
     margin-right: auto;
 }
-
 button.cta-scroll-top .text-return {
     margin-top: 7px;
 }
 
 .btn-square {
-    padding: 8px 35px;
+    padding: 0;
     border: 1px solid;
     font-size: .8em;
     font-weight: bold;
@@ -702,7 +705,7 @@ button.cta-scroll-top .text-return {
 }
 
 [class|="btn-square"] {
-    padding: 8px 35px;
+    padding: 0;
     font-size: .8em;
     font-weight: bold;
     text-transform: uppercase;
@@ -716,16 +719,40 @@ button.cta-scroll-top .text-return {
 }
 
 .btn-square-white a {
+    background-color: transparent;
     color: #ffffff;
+    display: block;
+    padding: 8px 35px;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+}
+.btn-square-white a:hover{
+    text-decoration: none;
+    background: #ffffff;
+    color: #000000;
+}
+.btn-square-white a:focus{
+    text-decoration: none;
 }
 
 .btn-square-red {
     border: 1px solid #ce0000;
-    color: #ce0000;
+    color: #cc0000;
 }
 
 .btn-square-red a {
+    background-color: transparent;
     color: #ce0000;
+    display: block;
+    padding: 8px 35px;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+}
+.btn-square-red a:hover{
+    text-decoration: none;
+    background: #ffffff;
+    color: #cc0000;
+}
+.btn-square-red a:focus{
+    text-decoration: none;
 }
 
 .btn-transparent-square {
@@ -767,14 +794,13 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-     button.cta-scroll-top {    
-	    font-size: .5rem;
-	   line-height: .7rem;
-	   display: inline-block;
-	   width: 68px;
-	   height: 68px;
-     }
-
+    button.cta-scroll-top {
+        display: inline-block;
+        font-size: .5rem;
+        line-height: .7rem;
+        width: 68px;
+        height: 68px;
+    }
     button.cta-scroll-top .text-return {
         margin-top: 5px;
     }

@@ -215,6 +215,21 @@
 	width: 56px;
     height: 65px;	
 }
+
+
+.productsolutionlanding .result-product .category-products-listing .product h3 {
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    font-size: 1.3rem;
+    color: #000000;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.productsolutionlanding .result-product .category-products-listing .product a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
  
 @media only screen and (max-width: 768px) {
 	.cs-section .cyancta {

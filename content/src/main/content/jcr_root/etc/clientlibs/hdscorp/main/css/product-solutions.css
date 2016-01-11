@@ -612,25 +612,10 @@ ul.stickyNav li:hover {
 }
 
 .spec-section .spec-container .tbd-dl a {
-  background-color: transparent;
-  transition: background-color 0.3s linear, color 0.3s linear;
   margin: 0 auto;
   display: block;
   max-width: 375px;
   text-align: center;
-}
-
-.spec-section .spec-container .tbd-dl a:hover {
-  color: #000000;
-  border-color: #ffffff;
-}
-
-.spec-section .spec-container .tbd-dl a:hover a {
-  color: #000000;
-}
-
-.spec-section .spec-container .tbd-dl a:focus, .spec-section .spec-container .tbd-dl a:hover {
-  text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -767,30 +752,11 @@ ul.stickyNav li:hover {
 }
 
 .cs-section .cs-container .cs-all .cs-all-box{
-  background-color: transparent;
   cursor: pointer;
   display: inline-block;
-  transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
   min-width: 375px;
 }
 
-.cs-section .cs-container .cs-all .cs-all-box:hover {
-  background-color: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
-}
-
-.cs-section .cs-container .cs-all .cs-all-box:hover a {
-  color: #000000;
-}
-
-.cs-section .cs-container .cs-all .cs-all-box a:hover a {
-  color: #000000;
-}
-
-.cs-section .cs-container .cs-all .cs-all-box a:focus, .cs-section .cs-container .cs-all .cs-all-box a:hover {
-  text-decoration: none;
-}
 
 @media only screen and (max-width: 768px) {
   .cs-section .cs-container {

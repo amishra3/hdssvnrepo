@@ -23,6 +23,11 @@
                         name="./allCategoriesLabel"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./allCategoriesLabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
+                    <allCategoriesid
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="All Categories ID"
+                        name="./allCategoriesid"
+                        xtype="textfield"/>
                     <contents
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Categories"

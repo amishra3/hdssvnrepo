@@ -4,11 +4,13 @@ common.css
 home.css
 hexagone.css
 hero-banner.css
-product-banner.css
 product-solutions.css
+product-banner.css
 hds-community.css
 product-category.css
 hero-product-lp-banner.css
 press-release.css
 product-lp-list.css
+01-hero-product-banner.css
+02-product-list.css
 app.css
