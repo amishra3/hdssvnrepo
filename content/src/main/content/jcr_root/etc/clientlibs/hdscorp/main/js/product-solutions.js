@@ -127,6 +127,9 @@
 		offset: -136
 	});
 
+
+
+
 	// Get text values from Sticky Nav, apply to Accordion labels
 	$("ul.stickyNav li a").each(function(i) {
 		var stickyLabel = $(this).text();
@@ -141,7 +144,7 @@
 		return false;
 	});
 
-	$('.accordion-level > .accordion-menu-container').on('click', function(event) {
+	$(document).on('click','.accordion-level > .accordion-menu-container').on('click', function(event) {
         var $currentContent = $(this).closest('div').next('div.accordion-content',this);
         if ($(this).hasClass("open") && $(this).next().queue().length === 0) {
             $currentContent.removeClass('open');

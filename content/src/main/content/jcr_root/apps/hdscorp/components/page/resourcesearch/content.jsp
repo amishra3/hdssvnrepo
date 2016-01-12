@@ -1,3 +1,6 @@
+<%@page import="com.day.cq.dam.api.Asset"%>
+<%@page import="com.hdscorp.cms.util.PathResolver"%>
+<%@page import="org.apache.sling.api.resource.ValueMap"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
 <%@page import="com.hdscorp.cms.search.SearchServiceHelper"%>
@@ -27,12 +30,64 @@
 		out.println("<BR><BR><BR><BR>");
 
 		%>
-		<h2>Execution Time &nbsp;&nbsp;&nbsp;      <%=result.getExecutionTime() %>   </h2>
-		<h2>Total Matches  &nbsp;&nbsp;&nbsp;&nbsp;    <%=result.getTotalMatches() %>   </h2>
-		<h3>Query Statement  &nbsp;&nbsp;&nbsp;   <%=result.getQueryStatement() %>   </h3>
-
+		<div style="margin-left: 6%;">
+			<h2 style="font-size: 1.5em;">Execution Time &nbsp;&nbsp;&nbsp;      <%=result.getExecutionTime() %>   </h2>
+			<h2 style="font-size: 1.5em;">Total Matches  &nbsp;&nbsp;&nbsp;&nbsp;    <%=result.getTotalMatches() %>   </h2>
+			<h3 style="font-size: 1em;">Query Statement  &nbsp;&nbsp;&nbsp;   <%=result.getQueryStatement() %>   </h3>
+		</div>
 		<br>
-		<table width="59%" border="1">
+		<div>
+		<span style="float:right;width: 69%; background-color: white;">
+		<%
+		
+		for (Hit hit : hits) {
+			
+			String hitType = hit.getResource().getResourceType();
+			if(hitType.equals("dam:Asset")){
+				Asset asset = hit.getResource().adaptTo(Asset.class);
+				
+				String resourcePath = asset.getPath();
+				if(resourcePath!=null && resourcePath.startsWith("/content")){
+					resourcePath=PathResolver.getShortURLPath(resourcePath);
+				}
+
+				String resourceDescription = asset.getMetadataValue("dc:description");			
+				String resourceTitle = asset.getMetadataValue("dc:title");
+				out.println("<a href=" + resourcePath
+					+ " style='padding-left:10px;margin-bottom:5em;'>"
+					+ resourceTitle + "</a>" + "<BR>");
+
+				if (resourceDescription != null) {
+					out.println("<span  style='padding-left:10px;margin-bottom:5em;'>"+resourceDescription + "</span><BR><BR>");
+				}
+				
+			}else{
+	 			Page reourcePage = hit.getResource().adaptTo(Page.class);
+	 			String pageTitle = reourcePage.getTitle();
+	 			String pagePath = reourcePage.getPath();
+	 			String pageDescription = reourcePage.getDescription();
+
+	 			if (pageTitle != null) {
+	 				pageTitle = pagePath.substring(
+	 						pagePath.lastIndexOf('/') + 1,
+	 						pagePath.length());
+	 			}
+
+	 			out.println("<a href=" + pagePath
+	 					+ " style='padding-left:10px;margin-bottom:5em;'>"
+	 					+ pageTitle + "</a>" + "<BR>");
+	 			if (pageDescription != null) {
+	 				out.println(pageDescription + "<BR>");
+	 			}
+				
+			}
+
+		}
+		
+		%>
+		</span>
+		<span style="float:left;width: 30%; background-color: white;">
+				<table width="29%" border="1" style="margin-left: 200px;">
 		<tr><td><h3>Tag</h3></td><td><h3>#Results</h3>
 		<% Map<String, Facet> facets = result.getFacets();
 
@@ -46,9 +101,9 @@
 				for (Bucket bucket : facet.getBuckets()) {
 					
 					Tag tag = tm.resolve((String) bucket.getValue());
-					if(tag!= null){ %> 
+			 		if(tag!= null){ %> 
 						<tr>
-						<td><h4><%= tag.getTitle()%></h4></td><td><h4><%=bucket.getCount() %></h4></td></tr><%
+						<td><p><%= tag.getTitle()%></p></td><td><p><%=bucket.getCount() %></p></td></tr><%
 						//out.println("<h4>"+tag.getTitle()+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+count+ "</h4><BR>");
 					}
 									/*
@@ -61,29 +116,9 @@
 		}
 		%>
 		</table>
-		<%
-		
-		for (Hit hit : hits) {
-
-			Page reourcePage = hit.getResource().adaptTo(Page.class);
-			String pageTitle = reourcePage.getTitle();
-			String pagePath = reourcePage.getPath();
-			String pageDescription = reourcePage.getDescription();
-
-			if (pageTitle != null) {
-				pageTitle = pagePath.substring(
-						pagePath.lastIndexOf('/') + 1,
-						pagePath.length());
-			}
-
-			out.println("<a href=" + pagePath
-					+ " style='padding-left:5em;margin-bottom:5em;'>"
-					+ pageTitle + "</a>" + "<BR>");
-			if (pageDescription != null) {
-				out.println(pageDescription + "<BR>");
-			}
-
-		}
+		</span>
+		</div>
+<%		
 
 	} catch (Exception ex) {
 		System.out.println("+++++++++++++++IN ERROR BLOCK"+ ex.getMessage());

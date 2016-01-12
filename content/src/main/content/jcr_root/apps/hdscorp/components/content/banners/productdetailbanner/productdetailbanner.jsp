@@ -47,10 +47,10 @@
 				<c:if test="${not empty properties.simpllebannerlinklabel}">
 					<div class="buy-through">
 						<!-- <a href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="sprite icon-caret-white"></span></a> -->
-						<a href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+						<a class="animateLink" href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
 					</div>
 				</c:if>
-				
+
 				<c:if test="${not empty properties.simplebannerusevideomodal}">
 					<a href="#" class="servers hidden-xs hidden-sm btn-play-video"><img src="${properties.simplebannerimageoverlaypath}"></a>
 				</c:if>

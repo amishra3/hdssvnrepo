@@ -22,7 +22,7 @@
 	                      <div class="resources-category-title">${column.contenttitle}</div>
 	                      <div class="resources-category-description">${column.columncontent}</div>
 	                      <div class="resources-category-more">
-						  		<a href="${linkUrl}">${column.seemorelabel} <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+						  		<a class="animateLink" href="${linkUrl}">${column.seemorelabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
 	                      </div>
 	                    </div>
 					</c:forEach>

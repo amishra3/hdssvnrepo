@@ -35,7 +35,7 @@
                   <span>${properties.customerstatementauthortext}</span>
                 </div>
                 <div class="cs-highlight-box-read">
-                  <p><a href="javascript:void(0);">read case study <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></p>
+                  <a class="animateLink" href="javascript:void(0);">read case study <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
                 </div>
               </div>
 
@@ -51,8 +51,8 @@
 
 
               <div class="cs-all">
-                <div class="cs-all-box">
-                  <p><a class="btn-square btn-square-white" href="${buttonUrl}" target="${properties.viewallctaopeninnew?'_blank':'_self'}">${properties.viewallctatext}</a></p>
+                <div class="cs-all-box btn-square btn-square-white">
+                  <a href="${buttonUrl}" target="${properties.viewallctaopeninnew?'_blank':'_self'}">${properties.viewallctatext}</a>
                 </div>
               </div>
 		 </div>

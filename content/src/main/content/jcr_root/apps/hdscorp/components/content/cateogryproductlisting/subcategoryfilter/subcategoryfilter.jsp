@@ -28,6 +28,10 @@
 			</c:if>	
 			<c:set var="subcatid" value="${subcat.subcatid}" />
 			
+			<c:if test="${empty selectorString && loopcnt.index == 0}">
+				<c:set var="includeURL" value="${subcat.subcatcontenturl}" />
+			</c:if>
+			
 			<c:if test="${selectorString== subcat.subcatid}">
 				<c:set var="includeURL" value="${subcat.subcatcontenturl}" />
 				<c:set var="activeSubCatIndex" value="${loopcnt.index}" />			

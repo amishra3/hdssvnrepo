@@ -732,7 +732,7 @@ ul.stickyNav li:hover {
 
 .cs-section .cs-container .cs-selections .cs-selection-box {
   background-color: #008eaa;
-  margin: 7px;
+  margin: 7px 0 0;
   max-width: 300px;
   max-height: 50px;
 }
@@ -1034,13 +1034,13 @@ ul.stickyNav li:hover {
   min-height: 875px;
   max-width: 1280px;
   margin: 0 auto;
-  padding-top: 70px;
   /*padding-bottom: 123px;*/
 }
 
 .fb-section .fb-container .fb-title {
   font-size: 3.75rem;
   font-weight: 100;
+  margin-top:70px;
 }
 
 .fb-section .fb-container .fb-category-container:after {

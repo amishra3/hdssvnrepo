@@ -112,7 +112,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Video Embed code"
                         name="./simplebannervideoembedcode"
-                        xtype="textarea"/>                        
+                        xtype="textarea"/>
                 </items>
             </tab1>
         </items>

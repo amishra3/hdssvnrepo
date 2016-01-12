@@ -14,10 +14,10 @@
 	<c:set var="editbarstyle" value="style='overflow:auto;'" />
 </wcmmode:edit>
 
-<div class="col-sm-6 col-no-pad ${editbarstyle}">
+<div class="col-sm-6 ${editbarstyle}">
 	<div class="resources-all cs-selection-box">
-		<a href="${linkUrl}">${properties.ctalabel}
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<a class="animateLink" href="${linkUrl}">${properties.ctalabel}
+			<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>
 		</a>
 	</div>
 </div>

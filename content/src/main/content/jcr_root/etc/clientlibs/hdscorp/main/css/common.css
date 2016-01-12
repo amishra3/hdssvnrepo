@@ -436,6 +436,7 @@
     line-height: 1;
     background-color: #008eaa;
     transition: background-color 0.3s linear, color 0.3s linear;
+    padding:8px 35px;
 }
 .footer .footer-blue .buttons .information a{text-decoration: none;}
 .footer .footer-blue .buttons .information:hover {
@@ -491,6 +492,10 @@
 
 .footer .footer-gray .footer-container .social {
     float: right;
+}
+
+.footer .footer-gray .footer-container .social ul{
+    margin-bottom:0;
 }
 
 .footer .footer-gray .footer-container .social a {
@@ -691,7 +696,7 @@ button.cta-scroll-top .text-return {
     font-size: .8em;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: .15em;
+    letter-spacing: .13em;
 }
 
 .btn-square.-white {
@@ -709,7 +714,7 @@ button.cta-scroll-top .text-return {
     font-size: .8em;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: .15em;
+    letter-spacing: .13em;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 
@@ -773,7 +778,7 @@ button.cta-scroll-top .text-return {
 
 .btn-transparent-square:hover {
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .btn-transparent-square:hover a {
@@ -808,6 +813,8 @@ button.cta-scroll-top .text-return {
         max-width: 300px;
         min-height: 36px;
     }
+	.btn-square-red a {padding-left:15px; padding-right:15px;}
+    .btn-square-white a {padding-left:15px; padding-right:15px;}
 }
 
 .sprite {

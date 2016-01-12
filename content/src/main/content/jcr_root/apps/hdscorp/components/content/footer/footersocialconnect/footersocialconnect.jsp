@@ -8,15 +8,15 @@
 
 
 
-<c:set var="socialmultilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linktargeturl-linkIconPath")%>" />
+<c:set var="socialmultilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linktargeturl-linkIconPath-linkicontext")%>" />
 
-<ul class="social-icons">
+<ul class="social-icons hide-small">
 	<c:forEach var="externalLink" items="${socialmultilinks}">
 		<c:set var="linktargeturl" value="${externalLink.linktargeturl}" />
 		<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
+        <c:set var="imageAltText" value="${externalLink.linkicontext}"/>
 		<a href="${linktargeturl}" target="_blank"> 
-			<span class="sprite icon-facebook-white"
-				style="background-image: url(${linkIconPath});background-position: 0 0;" />
+            <img alt="${imageAltText}" title="" src="${linkIconPath}"/>
 		</a>
 	</c:forEach>
 </ul>

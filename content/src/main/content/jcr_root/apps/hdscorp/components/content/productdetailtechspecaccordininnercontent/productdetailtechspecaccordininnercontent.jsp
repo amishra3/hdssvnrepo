@@ -36,9 +36,7 @@
                </div>
                <div class="col-sm-8">
                    <div class="product-desc">
-                       <div class="comment more">
                            ${definition['sectioncontent']}
-                       </div>
                    </div>
                </div>
            </div>

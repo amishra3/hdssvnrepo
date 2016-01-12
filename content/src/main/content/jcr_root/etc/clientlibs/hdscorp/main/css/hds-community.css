@@ -113,7 +113,9 @@
   }
 }
 
+
 /* Tech Specification - Table Grid & Product Details */
+
 .spec-section .spec-container{padding-top: 50px;}
 .spec-section .spec-container .spec-title{margin-bottom: 40px;}
 .spec-section .spec-container .spec-title .spec-download-pdf{ text-transform: uppercase; font-size: 0.8125rem; float: right; margin-top: 35px; }
@@ -128,9 +130,9 @@
     color: #ffffff;
 }
 .spec-section .tbd-dl{
-  margin-top:45px;
-  display: block;
   text-align: center;
+  max-width: 375px;
+  margin: 45px auto 0;
 }
 
 .spec-section .tbd-dl .dl-specs{
@@ -326,6 +328,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+.spec-section{background:#ffffff;}
+.spec-section .spec-container{padding-top: 50px; background: url("../images/prod-sol-bg-tech-spec.png") no-repeat 50% 50%;  background-size: cover;}
   /* Tech Specification - Table Grid & Product Details */
   #no-more-tables table, 
   #no-more-tables thead, 

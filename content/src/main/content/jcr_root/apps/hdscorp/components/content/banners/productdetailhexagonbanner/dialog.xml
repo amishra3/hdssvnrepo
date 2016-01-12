@@ -12,41 +12,41 @@
                 jcr:primaryType="cq:Panel"
                 title="Tab 1">
                 <items jcr:primaryType="cq:WidgetCollection">
-			        <type
-			            jcr:primaryType="cq:Widget"
-			            fieldLabel="Banner Type"
-			            name="./type"
-			            type="select"
-			            xtype="selection">
-			            <options jcr:primaryType="cq:WidgetCollection">
-			                <cyan
-			                    jcr:primaryType="nt:unstructured"
-			                    text="Cyan"
-			                    value="cyan"/>
-			                <dark
-			                    jcr:primaryType="nt:unstructured"
-			                    text="Dark (Black)"
-			                    value="dark"/>
-			                <customdamimage
-			                    jcr:primaryType="nt:unstructured"
-			                    text="Custom (DAM Image)"
-			                    value="customdamimage"/>
-			                <custombkgcolor
-			                    jcr:primaryType="nt:unstructured"
-			                    text="Custom (Background Color)"
-			                    value="custombkgcolor"/>			                    			                    			                    
-			            </options>
-			        </type>
-					<bannerbackgroundimage
+                    <type
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Type"
+                        name="./type"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <cyan
+                                jcr:primaryType="nt:unstructured"
+                                text="Cyan"
+                                value="cyan"/>
+                            <dark
+                                jcr:primaryType="nt:unstructured"
+                                text="Dark (Black)"
+                                value="dark"/>
+                            <customdamimage
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom (DAM Image)"
+                                value="customdamimage"/>
+                            <custombkgcolor
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom (Background Color)"
+                                value="custombkgcolor"/>
+                        </options>
+                    </type>
+                    <bannerbackgroundimage
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Provide Background Image (If Custom Image selected above.)"
                         name="./bannerbackgroundimage"
                         xtype="ddpathfield"/>
-					<colorbackgroundpicker
+                    <colorbackgroundpicker
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Provide Background Image (If Custom Color selected above.)"
                         name="./colorbackgroundpicker"
-                        xtype="colorfield"/>			                                                                            			                                                    
+                        xtype="colorfield"/>
                     <secondaryherotitlecontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hero Title"
@@ -69,21 +69,21 @@
                                 features="*"/>
                         </rtePlugins>
                     </secondaryherocontent>
-					<hexagoniconpath
+                    <hexagoniconpath
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Icon Path"
                         name="./hexagoniconpath"
                         xtype="ddpathfield"/>
-					<hexagontitle
+                    <hexagontitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Content Title"
                         name="./hexagontitle"
-                        xtype="textfield"/>                            
-					<hexagoncontent
+                        xtype="textfield"/>
+                    <hexagoncontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Content"
                         name="./hexagoncontent"
-                        xtype="textarea"/>                        
+                        xtype="textarea"/>
                     <secondarylinkurl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Download Link Target URL"

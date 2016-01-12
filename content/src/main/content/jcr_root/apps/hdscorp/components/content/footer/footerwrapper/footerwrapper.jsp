@@ -28,18 +28,18 @@
     	
        		
     		<div class="footer-gray">
-    			<div class="footer-container content-container">
+    			<div class="footer-container content-container container-fluid">
     				<div class="nav-list-container">
 	    				<c:forEach var="i" begin="1" end="${columns}" varStatus="status">
 	    					<c:set var="path" value="brandedfooter_${i}" />
-	    					<ul class="nav-list col-sm-6 col-md-3">
+                            <ul class="nav-list col-sm-6 col-md-3 ${i!=1? 'hide-small': ''}">
 	    						<cq:include path="${currentDesign.path}/jcr:content/globalfooter/${path}" 
 	    							resourceType="hdscorp/components/content/footer/globalfooter" />
 	    					</ul>
 	    				</c:forEach>
 
     				</div>
-    	
+
     				<div class="social">
     				
     					<cq:include path="${currentDesign.path}/jcr:content/globalfooter/footersocialconnect" 
@@ -50,7 +50,7 @@
     			</div>
     		</div>
     		<div class="footer-white">
-    			<div class="footer-container content-container">
+    			<div class="footer-container content-container container-fluid">
     				<cq:include path="${currentDesign.path}/jcr:content/globalfooter/corporatefooter"
 								resourceType="hdscorp/components/content/footer/corporatefooter" />
     			
