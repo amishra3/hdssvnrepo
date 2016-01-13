@@ -708,8 +708,10 @@ public static String  getComponentPath(final Page currentPage, ResourceResolver 
 			log.info("Execution start for getPropertyValue");
 			if(resourceResolver!=null && path!=null && !path.isEmpty() && propertyName!=null && !propertyName.isEmpty()){
 			Resource res = resourceResolver.getResource(path);
+			if(res!=null){
 			ValueMap properties = res.adaptTo(ValueMap.class);
 			propertyValue = properties.get(propertyName, (String) null).toString();
+			}
 			}
 		} catch (Exception e) {
 			log.error("Exception occourred while saving data to JCR: ", e);
