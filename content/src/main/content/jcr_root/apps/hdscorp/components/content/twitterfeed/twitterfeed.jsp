@@ -23,26 +23,22 @@ Social Follow US Label:${twitterFeedModel.socialFollowUsLabel}<br>
 </div>
 
 
-   <script type="text/javascript">
+  <script type="text/javascript">
  var htmlContent="";
 
        var feedResponsefromStoredPath=<%=PageUtils.getPropertyValue(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.TwitterScheduler","twitter.storagePath"),ServiceConstants.TWITTER_SAVE_FEED_DATA_PROPERTY_NAME )%>;
 
-         htmlContent+='';
 
-       if(feedResponsefromStoredPath!=null){
      for(var count=0; count<feedResponsefromStoredPath.length; count++){
 
-         htmlContent+='<tr><td style="text-decoration: underline;">Twitter ID :::'+feedResponsefromStoredPath[count].twitterID+'</tr></td><tr><td>Twitter Posted Date:::'+feedResponsefromStoredPath[count].twitterPostedDate+
-             '</td></tr><tr><td>Twitter Message:::'+feedResponsefromStoredPath[count].twitterMessageText+'</td></tr><tr><td>'
-             if(feedResponsefromStoredPath[count].twitterMediaUrl!=undefined){'Twitter Media URL::'feedResponsefromStoredPath[count].twitterMediaUrl}
-         '</td></tr><tr><td>Posted '+feedResponsefromStoredPath[count].timeDifference+
-                 '</td></tr><tr><td> </td></tr>';
-
-     }}
+         htmlContent+='<tr><td style="text-decoration: underline;">Twitter ID  :: '+feedResponsefromStoredPath[count].twitterID+'</tr></td><tr><td>'+'</td></tr><tr><td>Twitter MessageText  :: '+feedResponsefromStoredPath[count].twitterMessageText+'</tr></td><tr><td>Twitter Posted Date  :: '+feedResponsefromStoredPath[count].twitterPostedDate+'</td></tr><tr><td>Posted ::  '+feedResponsefromStoredPath[count].timeDifference
+             '</td></tr>';
 
 
+    }
     $("table tbody").append(htmlContent);
     </script>
+
+
 
     
