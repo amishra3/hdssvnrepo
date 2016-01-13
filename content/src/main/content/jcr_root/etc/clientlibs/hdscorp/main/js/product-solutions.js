@@ -63,6 +63,7 @@
 		$('.list-inline').find('li.' + currentId).addClass('active');
 	}
 
+    if($('#overview').length  ){
 	var waypoint = new Waypoint({
 		element: document.getElementById('overview'),
 		handler: function(direction) {
@@ -78,7 +79,8 @@
 		},
 		offset: -136
 	});
-
+    }
+     if($('#features-benefits') > 0 ){
 	var waypoint2 = new Waypoint({
 		element: document.getElementById('features-benefits'),
 		handler: function(direction) {
@@ -94,7 +96,8 @@
 		},
 		offset: -136
 	});
-
+     }
+if($('#resources') > 0 ){
 	var waypoint3 = new Waypoint({
 		element: document.getElementById('resources'),
 		handler: function(direction) {
@@ -110,7 +113,8 @@
 		},
 		offset: -136
 	});
-
+}
+if($('#tech-specifications') > 0 ){
 	var waypoint4 = new Waypoint({
 		element: document.getElementById('tech-specifications'),
 		handler: function(direction) {
@@ -127,7 +131,7 @@
 		offset: -136
 	});
 
-
+}
 
 
 	// Get text values from Sticky Nav, apply to Accordion labels
@@ -205,4 +209,22 @@
 	}
 	/* Read More Less Code End */
 
+})(jQuery);
+
+
+var hds = window.hds || {};
+(function(window, document, $, hds) {
+    hds.equalColoumns = function(htmlElements) {
+        var heights = $(htmlElements).map(function() {
+                return $(this).height();
+            }).get(),
+            maxHeight = Math.max.apply(null, heights);
+        	setTimeout(function(){
+        		$(htmlElements).height(maxHeight);	
+        	}, 1000);
+    }
+ }(window, document, jQuery, hds));
+
+(function($) {
+    hds.equalColoumns('.resources-category-box');
 })(jQuery);
