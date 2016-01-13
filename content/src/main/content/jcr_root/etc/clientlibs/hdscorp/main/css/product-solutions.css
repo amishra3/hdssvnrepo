@@ -952,6 +952,11 @@ ul.stickyNav li:hover {
     background: #f78e1e;
     margin-bottom: 30px;
   }
+
+.resources-section .resources-container .resources-category {
+    padding: 0;
+}
+
   .resources-section .resources-container .resources-category .resources-category-heading {
     font-size: 1.125rem;
     margin-bottom: 18px;
@@ -1042,7 +1047,6 @@ ul.stickyNav li:hover {
 }
 
 .fb-section .fb-container {
-  min-height: 875px;
   max-width: 1280px;
   margin: 0 auto;
   /*padding-bottom: 123px;*/

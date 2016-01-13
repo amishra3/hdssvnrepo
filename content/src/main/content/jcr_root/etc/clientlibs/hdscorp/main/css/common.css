@@ -661,18 +661,16 @@ button.cta-scroll-top {
     color: #ffffff;
 }
 
-button.cta-scroll-top.cd-is-visible, button.cta-scroll-top.cd-fade-out, .no-touch button.cta-scroll-top:hover {
+button.cta-scroll-top.active, .no-touch button.cta-scroll-top:hover {
   -webkit-transition: opacity .3s 0s, visibility 0s 0s;
   -moz-transition: opacity .3s 0s, visibility 0s 0s;
   transition: opacity .3s 0s, visibility 0s 0s;
 }
-button.cta-scroll-top.cd-is-visible {
+button.cta-scroll-top.active {
   visibility: visible;
   opacity: 1;
 }
-button.cta-scroll-top.cd-fade-out {
-  opacity: .5;
-}
+
 .no-touch button.cta-scroll-top:hover {
   background-color: #757575;
   background-color: rgba(102, 102, 102, 0.9);
@@ -813,7 +811,7 @@ button.cta-scroll-top .text-return {
         max-width: 300px;
         min-height: 36px;
     }
-	.btn-square-red a {padding-left:15px; padding-right:15px;}
+    .btn-square-red a {padding-left:15px; padding-right:15px;}
     .btn-square-white a {padding-left:15px; padding-right:15px;}
 }
 
