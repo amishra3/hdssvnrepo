@@ -65,10 +65,10 @@
 			<artifactId>junit-addons</artifactId>
 		</dependency>
 		<!-- <dependency>
-			<groupId>com.adobe.aem</groupId>
-			<artifactId>uber-jar</artifactId>
-			<classifier>obfuscated-apis</classifier>
-		</dependency>-->
+		<groupId>com.adobe.aem</groupId>
+		<artifactId>uber-jar</artifactId>
+        <classifier>obfuscated-apis</classifier>
+		</dependency> -->
 		<dependency>
 			<groupId>com.adobe.aem</groupId>
 			<artifactId>aem-api</artifactId>
@@ -144,8 +144,27 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.5.1</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.facebook4j</artifactId>
+			<version>2.0.4_1</version>
+		</dependency>
 
+
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.twitter4j</artifactId>
+			<version>4.0.4_1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.joda-time</artifactId>
+			<version>2.3_1</version>
+		</dependency>
+
+	</dependencies>
+	
 	<!-- ====================================================================== -->
 	<!-- B U I L D D E F I N I T I O N -->
 	<!-- ====================================================================== -->
