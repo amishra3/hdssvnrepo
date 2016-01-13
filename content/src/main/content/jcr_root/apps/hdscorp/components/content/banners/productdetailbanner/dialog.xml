@@ -93,6 +93,7 @@
                         type="checkbox"
                         xtype="selection"/>
                     <simplebannerimageoverlaypath
+                        jcr:mixinTypes="[]"
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}true"
                         allowUpload="false"
