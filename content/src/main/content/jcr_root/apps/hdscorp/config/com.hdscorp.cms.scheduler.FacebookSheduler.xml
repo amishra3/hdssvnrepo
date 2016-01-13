@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    facebook.accesstoken="927821663969335|He7bEf1-lxX0xj2hmJwnJPUopLs"
+    facebook.appid="927821663969335"
+    facebook.appsecret="9f52caf6cd51c8fb68a3adbcb0020793"
+    facebook.postlimit="3"
+    facebook.scheduler.expression="0 10 16 * * ?"
+    facebook.searchpost="HitachiDataSystems"
+    facebook.storage.path="/content/hdscorp/en_us/test/jcr:content/"/>
