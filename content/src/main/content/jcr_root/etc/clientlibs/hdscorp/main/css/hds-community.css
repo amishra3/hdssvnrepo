@@ -69,6 +69,7 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+div.hds-community-blog-more span.glyphicon.glyphicon-menu-right.animateIcon { top: 4px;}
 
 .hds-community-section .hds-community-container .hds-community-join a{color:#ce0000; outline: 0 none; text-decoration: none; font-size: 0.8125rem;}
 .hds-community-section .hds-community-container .hds-community-join a:hover {color: #ac1f25;}
@@ -297,8 +298,9 @@
 .vsp-soft-products-details .col-sm-4{padding-left: 0;}
 .vsp-soft-products-details .col-sm-8{padding-right: 0;}
 .vsp-soft-products-details .product-name{margin-bottom: 25px; font-size: 1.4rem;}
-.vsp-soft-products-details .product-name .glyphicon.glyphicon-menu-right.animateIcon {
-    top: 3px;
+
+.vsp-soft-products-details div.product-name span.glyphicon.glyphicon-menu-right {
+    top: 4px;
 }
 .vsp-soft-products-details .product-download{
     color: #cc0000;
@@ -318,6 +320,8 @@
 .vsp-soft-products-details .product-email a{
     color: #cc0000;
 }
+.vsp-soft-products-details .product-email span.glyphicon.glyphicon-menu-right{top:2px;}
+
 .vsp-soft-products-details .product-desc p{
     font-size: 1.1rem; font-weight: 300; margin-bottom: 30px; line-height: 1.4em;
 }

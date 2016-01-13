@@ -4,7 +4,7 @@
 
 .business-specific .specific-benefit {
   color: #ffffff;
-  padding: 40px 15px;
+  padding: 40px 15px 60px;
 }
 
 .business-specific .specific-benefit h2 {
@@ -161,6 +161,7 @@ ul.stickyNav li:hover {
   padding: 0;
   list-style-type: none;
   height: auto;
+  min-height:180px;
 }
 
 .business-specific .calculating-list > li,
@@ -410,7 +411,7 @@ ul.stickyNav li:hover {
 }
 
 .specific-tech {
-  padding: 40px 10px 45px 10px;
+  padding: 40px 10px 60px 10px;
   color: #ffffff;
   background: url("../images/hero-specific-tech.jpg") center center no-repeat;
   background-size: cover;
@@ -490,7 +491,6 @@ ul.stickyNav li:hover {
 }
 
 .mes-section .mes-container {
-  min-height: 630px;
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 70px;
@@ -734,7 +734,6 @@ ul.stickyNav li:hover {
   background-color: #008eaa;
   margin: 7px 0 0;
   max-width: 300px;
-  max-height: 50px;
 }
 
 .cs-section .cs-container .cs-selections .cs-selection-box:hover .glyphicon.glyphicon-chevron-right {
@@ -755,6 +754,10 @@ ul.stickyNav li:hover {
   cursor: pointer;
   display: inline-block;
   min-width: 375px;
+}
+
+.resources-section .acs-commons-resp-colctrl-col.acs-commons-resp-colctrl-col-50 .col-sm-6{
+    padding:0;
 }
 
 
@@ -828,13 +831,17 @@ ul.stickyNav li:hover {
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 50px;
-  padding-bottom: 95px;
+  padding-bottom: 60px;
 }
 
 .resources-section .resources-container .resources-title {
   font-size: 3.75rem;
   font-weight: 100;
   margin-bottom: 40px;
+}
+
+.resources-section .resources-container .resources-category {
+    padding: 0 40px 0 0;
 }
 
 .resources-section .resources-container .resources-category .resources-category-heading {
@@ -923,6 +930,10 @@ ul.stickyNav li:hover {
   outline: 0;
   text-decoration: none;
   color: #ffffff;
+}
+
+.resources-all span.glyphicon.glyphicon-menu-right.animateIcon {
+    top: 4px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1053,10 +1064,9 @@ ul.stickyNav li:hover {
 
 .fb-section .fb-container .fb-category-container .fb-category-box {
   text-align: center;
-  min-height: 382px;
   max-width: 1107px;
   padding-top: 80px;
-  margin: 0 auto 50px;
+  margin: 0 auto 80px;
 }
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading {
@@ -1078,7 +1088,7 @@ ul.stickyNav li:hover {
 .fb-section .fb-container .fb-category-container .fb-category-box .col-sm-4 .fb-category-points-box {
   padding: 0 40px;
   border-right: 1px solid #ebebeb;
-  min-height: 180px;
+  min-height: 100px;
 }
 .fb-section .fb-container .fb-category-container .fb-category-box .col-sm-4:last-child div.fb-category-points-box{
   border-right: none;
@@ -1150,11 +1160,12 @@ ul.stickyNav li:hover {
 @media only screen and (max-width: 768px) {
   .fb-section .fb-container {
     padding-top: 22px;
-    padding-bottom: 35px;
   }
   .fb-section .fb-container .fb-title {
     font-size: 1.875rem;
+    margin-top:0;
   }
+
   .fb-section .fb-container .fb-category-container .fb-category-box {
     padding: 0;
     margin: 30px 0 25px;
@@ -1194,6 +1205,8 @@ ul.stickyNav li:hover {
     border-right: none;
     min-height: 0;
   }
+
+.rightborder{border-right:none;}
 }
 
 .accordion-level .accordion-menu-container {
