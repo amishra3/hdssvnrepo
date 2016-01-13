@@ -13,8 +13,8 @@
 			<div class="hds-community-blog-title">${properties.columntitle}</div>
 			<div class="hds-community-blog-description">${properties.columncontent}</div>
 			<div class="hds-community-blog-more">
-				<a href="${articleurl}" target="${properties.articleurlopeninnew?'_blank':'_self'}">${properties.articleurllabel}<span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+				<a class="animateLink" href="${articleurl}" target="${properties.articleurlopeninnew?'_blank':'_self'}">${properties.articleurllabel} <span
+					class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
 			</div>
 		</div>
 	</div>

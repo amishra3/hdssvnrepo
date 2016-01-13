@@ -35,7 +35,7 @@
                   <span>${properties.customerstatementauthortext}</span>
                 </div>
                 <div class="cs-highlight-box-read">
-                  <a class="animateLink" href="javascript:void(0);">read case study <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                  <a class="animateLink" href="${properties.readasestudylinktargeturl}" target="${properties.readcasestudylinkopeninnew?'_blank':'_self'}">read case study <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
                 </div>
               </div>
 

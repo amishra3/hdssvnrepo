@@ -31,8 +31,8 @@
   				${properties.contactbannercontent}
   				<div class="buttons">
   					<a href="${buttonUrl}" class="information btn-square -white hidden-sm hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
-  					<a href="${linkUrl}" class="reseller" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext}<span class="sprite icon-caret-white hidden-xs"></span></a>
-  					<a href="${buttonUrl}" class="information btn-square -white hidden-xs" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
+  					<a href="${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext}<span class="sprite icon-caret-white hidden-xs animateIcon"></span></a>
+  					<a href="${buttonUrl}" class="information btn-square-white hidden-xs" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
   				</div>
   			</div>
   		</div>

@@ -14,9 +14,8 @@
 		<p class="product-copy-main">${properties.columntitle}</p>
 		<p class="product-copy-sub">${properties.columncontent}</p>
 		<p class="product-link">
-			<a href="${articleurl}"
-				target="${properties.articleurlopeninnew?'_blank':'_self'}">${properties.articleurllabel}
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<a class="animateLink" href="${articleurl}"	target="${properties.articleurlopeninnew?'_blank':'_self'}">${properties.articleurllabel}
+				<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>
 			</a>
 		</p>
 	</div>
