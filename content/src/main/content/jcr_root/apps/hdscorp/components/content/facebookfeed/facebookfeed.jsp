@@ -8,7 +8,7 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
-<%@page import="com.hdscorp.cms.restservice.FeedConstant"%> 
+<%@page import="com.hdscorp.cms.constants.ServiceConstants"%> 
 
 <h1>Facebook Feed Component</h1>
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.FacebookFeedModel" var="facebookFeedModel" />
@@ -35,7 +35,7 @@ Social Follow US Label:${facebookFeedModel.socialFollowUsLabel}<br>
    <script type="text/javascript">
  var htmlContent="";
 
-       var feedResponsefromStoredPath=<%=PageUtils.getPropertyValue(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.FacebookFeedSheduler.config","facebook.storage.path"), FeedConstant.SAVE_FB_FEED_DATA_PROPERTY_NAME)%>;
+       var feedResponsefromStoredPath=<%=PageUtils.getPropertyValue(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.FacebookFeedSheduler","facebook.storage.path"), ServiceConstants.SAVE_FB_FEED_DATA_PROPERTY_NAME)%>;
 
 
      for(var count=0; count<feedResponsefromStoredPath.length; count++){
