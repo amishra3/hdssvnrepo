@@ -27,6 +27,11 @@
                                 fieldLabel="Link Icon Path"
                                 name="./linkIconPath"
                                 xtype="pathfield"/>
+                            <linkIconText
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Image Alt Text"
+                                name="./linkicontext"
+                                xtype="textfield"/>
                         </fieldConfig>
                     </socialmultilinks>
                 </items>

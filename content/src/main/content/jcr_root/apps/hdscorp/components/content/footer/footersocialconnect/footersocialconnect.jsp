@@ -16,7 +16,7 @@
 		<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
         <c:set var="imageAltText" value="${externalLink.linkicontext}"/>
 		<a href="${linktargeturl}" target="_blank"> 
-            <img alt="${imageAltText}" title="" src="${linkIconPath}"/>
+            <img alt="${imageAltText}" title="${imageAltText}" src="${linkIconPath}"/>
 		</a>
 	</c:forEach>
 </ul>
