@@ -25,7 +25,7 @@
 <c:choose>
 	<c:when test="${not empty properties.hextitlecontent}">
 
-		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath")%>" />
+		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt")%>" />
 
     	<div class="calculating-success col-xs-12 col-sm-12 col-md-12 col-lg-12 hero-homepage-container ${editbarstyle} ${not empty properties.hexbuttonlabel?' ':'heaxongonbannernobutton'}" style="background-image: url('${properties.heximagePath}')">
     	    <!-- IF IS A MODAL TRUE -->
@@ -50,8 +50,9 @@
 						<c:set var="placardTitle" value="${placardList.placardTitle}" />
 						<c:set var="placardIconPath" value="${placardList.placardIconPath}" />
 						<c:set var="placardcontent" value="${placardList.placardcontent}" />
+                    	<c:set var="placardIconalt" value="${placardList.placardIconalt}" />
 	    				<li class="hexagon-good hexagon270">
-	    					<span class="sprite icon-light" style="background-image: url('${placardIconPath}');background-repeat:no-repeat;background-position:0 0;"></span>
+                            <img src='${placardIconPath}' alt='${placardIconalt}' title='${placardIconalt}' style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;">
 	    					<h4>${placardTitle}</h4>
 	    					${placardcontent}
 	    				</li>

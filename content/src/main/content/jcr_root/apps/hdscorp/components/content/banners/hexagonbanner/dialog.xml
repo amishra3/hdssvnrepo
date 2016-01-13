@@ -75,6 +75,11 @@
                                 fieldLabel="Placard Icon Path"
                                 name="./placardIconPath"
                                 xtype="pathfield"/>
+                            <placardIconalt
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Placard Icon Alt"
+                                name="./placardIconalt"
+                                xtype="textfield"/>
                         </fieldConfig>
                     </multilinks>
                     <hexbuttonlabel
