@@ -19,6 +19,8 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 
+import com.hdscorp.cms.constants.ServiceConstants;
+
 /**
  * This service is basically used for get all feed data from provided feed
  * URL and method is getInvoke(String feedUrl)
@@ -31,8 +33,8 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers{
  static final Logger log = LoggerFactory.getLogger(BrightTalkWebService.class);
 	
 	public String getBrightTalkResponse(String feedURL) {
-		log.info("Start execution of getInvokeResponse()  with feed URL" + feedURL);
-		String wsResponse = getWSResponse(feedURL, FeedConstant.GET_METHOD_TYPE,FeedConstant.FEED_PARAMETER);
+		log.info("Start execution of getInvokeResponse()  with feed URL " + feedURL);
+		String wsResponse = getWSResponse(feedURL, ServiceConstants.GET_METHOD_TYPE,ServiceConstants.FEED_PARAMETER);
 		if (getWSInvokeStatus(wsResponse)) {
 			return wsResponse;
 		} else {
@@ -49,7 +51,7 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document document = builder.parse(new InputSource(new StringReader(xmlFeed)));
-			NodeList nList = document.getElementsByTagName(FeedConstant.ENTRY_TAG);
+			NodeList nList = document.getElementsByTagName(ServiceConstants.ENTRY_TAG);
 
 			JSONObject feed = null;
 			for (int nCount = 0; nCount < nList.getLength(); nCount++) {
@@ -61,51 +63,51 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers{
 					Element eElement = (Element) nNode;
 
 					feed = new JSONObject();
-					feed.put(FeedConstant.JSON_UPDATED_DATE,
-							formatDate(eElement.getElementsByTagName(FeedConstant.UPDATED_DATE).item(0).getTextContent()));
-					feed.put(FeedConstant.JSON_TITLE,
-							eElement.getElementsByTagName(FeedConstant.TITLE).item(0).getTextContent());
-					feed.put(FeedConstant.JSON_AUTHOR,
-							eElement.getElementsByTagName(FeedConstant.AUTHOR).item(0).getTextContent());
-					feed.put(FeedConstant.JSON_SUMMARY,
-							eElement.getElementsByTagName(FeedConstant.SUMMARY).item(0).getTextContent());
-					if (eElement.getElementsByTagName(FeedConstant.FEATURED).item(0) != null) {
-						feed.put(FeedConstant.JSON_FEATURED,
-								eElement.getElementsByTagName(FeedConstant.FEATURED).item(0).getTextContent());
+					feed.put(ServiceConstants.JSON_UPDATED_DATE,
+							formatDate(eElement.getElementsByTagName(ServiceConstants.UPDATED_DATE).item(0).getTextContent()));
+					feed.put(ServiceConstants.JSON_TITLE,
+							eElement.getElementsByTagName(ServiceConstants.TITLE).item(0).getTextContent());
+					feed.put(ServiceConstants.JSON_AUTHOR,
+							eElement.getElementsByTagName(ServiceConstants.AUTHOR).item(0).getTextContent());
+					feed.put(ServiceConstants.JSON_SUMMARY,
+							eElement.getElementsByTagName(ServiceConstants.SUMMARY).item(0).getTextContent());
+					if (eElement.getElementsByTagName(ServiceConstants.FEATURED).item(0) != null) {
+						feed.put(ServiceConstants.JSON_FEATURED,
+								eElement.getElementsByTagName(ServiceConstants.FEATURED).item(0).getTextContent());
 					}
-					feed.put(FeedConstant.JSON_STATUS,
-							eElement.getElementsByTagName(FeedConstant.STATUS).item(0).getTextContent());
-					feed.put(FeedConstant.JSON_FORMAT,
-							eElement.getElementsByTagName(FeedConstant.FORMAT).item(0).getTextContent());
-					feed.put(FeedConstant.JSON_DURATION,
+					feed.put(ServiceConstants.JSON_STATUS,
+							eElement.getElementsByTagName(ServiceConstants.STATUS).item(0).getTextContent());
+					feed.put(ServiceConstants.JSON_FORMAT,
+							eElement.getElementsByTagName(ServiceConstants.FORMAT).item(0).getTextContent());
+					feed.put(ServiceConstants.JSON_DURATION,
 							String.valueOf(Integer.parseInt(
-									eElement.getElementsByTagName(FeedConstant.DURATION).item(0).getTextContent())
-							/ FeedConstant.SECOND).concat(FeedConstant.MIN));
-					feed.put(FeedConstant.JSON_START,
-							eElement.getElementsByTagName(FeedConstant.START).item(0).getTextContent());
-					feed.put(FeedConstant.JSON_RATING,
-							eElement.getElementsByTagName(FeedConstant.RATING).item(0).getTextContent());
-					NodeList nCommunication = eElement.getElementsByTagName(FeedConstant.COMMUNICATION);
+									eElement.getElementsByTagName(ServiceConstants.DURATION).item(0).getTextContent())
+							/ ServiceConstants.SECOND).concat(ServiceConstants.MIN));
+					feed.put(ServiceConstants.JSON_START,
+							eElement.getElementsByTagName(ServiceConstants.START).item(0).getTextContent());
+					feed.put(ServiceConstants.JSON_RATING,
+							eElement.getElementsByTagName(ServiceConstants.RATING).item(0).getTextContent());
+					NodeList nCommunication = eElement.getElementsByTagName(ServiceConstants.COMMUNICATION);
 					Node nNodeCommunication = nCommunication.item(0);
 					Element eElementCommunication = (Element) nNodeCommunication;
-					feed.put(FeedConstant.JSON_COMMUNICATION_ID, eElementCommunication.getAttribute(FeedConstant.ID));
+					feed.put(ServiceConstants.JSON_COMMUNICATION_ID, eElementCommunication.getAttribute(ServiceConstants.ID));
 
-					NodeList nChannel = eElement.getElementsByTagName(FeedConstant.CHANNEL);
+					NodeList nChannel = eElement.getElementsByTagName(ServiceConstants.CHANNEL);
 					Node nNodeChannel = nChannel.item(0);
 					Element eElementChannel = (Element) nNodeChannel;
-					feed.put(FeedConstant.JSON_CHANNEL_ID, eElementChannel.getAttribute(FeedConstant.ID));
+					feed.put(ServiceConstants.JSON_CHANNEL_ID, eElementChannel.getAttribute(ServiceConstants.ID));
 
-					NodeList hrefLinks = eElement.getElementsByTagName(FeedConstant.LINK);
+					NodeList hrefLinks = eElement.getElementsByTagName(ServiceConstants.LINK);
 					for (int hCount = 0; hCount < hrefLinks.getLength(); hCount++) {
 						Node nNodeHref = hrefLinks.item(hCount);
 						Element eElementHref = (Element) nNodeHref;
 						if (hCount == 0) {
-							feed.put(FeedConstant.JSON_HERF_LINK, eElementHref.getAttribute(FeedConstant.HREF));
+							feed.put(ServiceConstants.JSON_HERF_LINK, eElementHref.getAttribute(ServiceConstants.HREF));
 						} else if (hCount == 1) {
-							feed.put(FeedConstant.JSON_THUMBNAIL_PATH, eElementHref.getAttribute(FeedConstant.HREF));
+							feed.put(ServiceConstants.JSON_THUMBNAIL_PATH, eElementHref.getAttribute(ServiceConstants.HREF));
 						} else {
-							feed.put(FeedConstant.JSON_PREVIEW_IMAGE_PATH,
-									eElementHref.getAttribute(FeedConstant.HREF));
+							feed.put(ServiceConstants.JSON_PREVIEW_IMAGE_PATH,
+									eElementHref.getAttribute(ServiceConstants.HREF));
 						}
 
 					}
@@ -119,8 +121,8 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers{
 			log.error("Data is not valid format: ", e);
 			JSONObject jsonObjet=new JSONObject();
 			try {
-				jsonObjet.put(FeedConstant.JSON_STATUS_CODE, FeedConstant.OK_FOUND_STATUS_CODE);
-				jsonObjet.put(FeedConstant.JSON_STATUS_REASON, FeedConstant.OK_FOUND_STATUS_REASON);
+				jsonObjet.put(ServiceConstants.JSON_STATUS_CODE, ServiceConstants.OK_FOUND_STATUS_CODE);
+				jsonObjet.put(ServiceConstants.JSON_STATUS_REASON, ServiceConstants.OK_FOUND_STATUS_REASON);
 				return jsonObjet.toString();
 			} catch (JSONException e1) {	
 				log.error("JSON Parsing exception: ", e1);
