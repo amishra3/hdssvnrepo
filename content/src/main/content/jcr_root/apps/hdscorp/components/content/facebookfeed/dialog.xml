@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Facebook Feed"
+    width="600"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <fetitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./jcr:fetitle"
+                        xtype="textfield"/>
+                    <febackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="./febackgroundimage/imageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Background Image"
+                        fileNameParameter="./febackgroundimage/fileName2"
+                        fileReferenceParameter="./jcr:febackgroundimage"
+                        height="{Long}200"
+                        name="./febackgroundimage"
+                        rotateParameter="./febackgroundimage/imageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <feimportpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Import Path"
+                        name="./jcr:feimportpath"
+                        xtype="pathfield"/>
+                    <fefacbookiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Facebook Icon path"
+                        name="./jcr:fefacbookiconpath"
+                        xtype="pathfield"/>
+                    <fesocialfollowuslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Social Follow US Label"
+                        name="./jcr:fesocialfollowuslabel"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
