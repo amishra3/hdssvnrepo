@@ -58,16 +58,12 @@
       <meta name="description" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:description", "")) %>"<%=xs%>>
 	  <meta name="google" value="notranslate" />
 	  <meta name="referrer" content="origin">
+      <script src="https://use.typekit.net/bza1awk.js"></script>
+	  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 	
 	  <cq:include script="headlibs.jsp"/>
 	  <cq:include script="headeranalytics.jsp"/>
-
-	  <!-- Load sidekick only when viewing page on its own -->
-	  <% if(currentPage.getPath().equals(resourcePage.getPath())) {  %>
-			<cq:include script="/libs/wcm/core/components/init/init.jsp"/>
-	  <%}%>
-
-
+      <cq:include script="/libs/wcm/core/components/init/init.jsp"/>
 	  <% if (favIcon != null) { %>
 		<link rel="icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
 		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
