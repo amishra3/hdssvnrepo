@@ -803,11 +803,11 @@ ul.stickyNav li:hover {
   }
   .cs-section .cs-container .cs-selections .cs-selection-box a {text-align: left;}
   .cs-section .cs-container .cs-selections .cs-selection-box a span.glyphicon.glyphicon-menu-right {
-    position: absolute;
+    /*position: absolute;
     left: initial;
     right: 5%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%);*/
   }
 
   .cs-section .cs-container .cs-all .cs-all-box{
@@ -1165,6 +1165,9 @@ ul.stickyNav li:hover {
   .fb-section .fb-container {
     padding-top: 22px;
   }
+  .fb-section .fb-container:last-child{
+        padding-bottom: 30px;
+   }
   .fb-section .fb-container .fb-title {
     font-size: 1.875rem;
     margin-top:0;
