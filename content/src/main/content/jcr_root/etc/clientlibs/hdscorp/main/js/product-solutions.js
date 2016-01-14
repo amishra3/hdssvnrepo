@@ -55,84 +55,85 @@
 		});
 	};
 
-	stickyElement();
-
 	function setActiveLi() {
 		var currentId = $(this.element).attr('id');
 		$('.list-inline').find('li').removeClass('active');
 		$('.list-inline').find('li.' + currentId).addClass('active');
 	}
 
-    if ($('#overview').length > 0) {
-		var waypoint = new Waypoint({
-			element: document.getElementById('overview'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: 1
-		});
+	if($('.navContain').length!==0){
+		stickyElement();
+        if($('#overview').length!==0){
+            var waypoint = new Waypoint({
+                element: document.getElementById('overview'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: 1
+            });
+    
+            var waypointb = new Waypoint({
+                element: document.getElementById('overview'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: -136
+            });
+        }
 
-		var waypointb = new Waypoint({
-			element: document.getElementById('overview'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: -136
-		});
-    }
+        if($('#features-benefits').length!==0){
+            var waypoint2 = new Waypoint({
+                element: document.getElementById('features-benefits'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: 34
+            });
+    
+            var waypoint2b = new Waypoint({
+                element: document.getElementById('features-benefits'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: -136
+            });
+        }
 
-    if ($('#features-benefits').length > 0) {
-		var waypoint2 = new Waypoint({
-			element: document.getElementById('features-benefits'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: 34
-		});
+        if($('#resources').length!==0){
+            var waypoint3 = new Waypoint({
+                element: document.getElementById('resources'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: 34
+            });
+    
+            var waypoint3b = new Waypoint({
+                element: document.getElementById('resources'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: -136
+            });
+        }
 
-		var waypoint2b = new Waypoint({
-			element: document.getElementById('features-benefits'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: -136
-		});
-     }
-
-    if ($('#resources').length > 0) {
-		var waypoint3 = new Waypoint({
-			element: document.getElementById('resources'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: 34
-		});
-
-		var waypoint3b = new Waypoint({
-			element: document.getElementById('resources'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: -136
-		});
-	}
-	if ($('#tech-specifications').length > 0) {
-		var waypoint4 = new Waypoint({
-			element: document.getElementById('tech-specifications'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: 34
-		});
-
-		var waypoint4b = new Waypoint({
-			element: document.getElementById('tech-specifications'),
-			handler: function(direction) {
-				setActiveLi.call(this);
-			},
-			offset: -136
-		});
-
+        if($('#tech-specifications').length!==0){
+            var waypoint4 = new Waypoint({
+                element: document.getElementById('tech-specifications'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: 34
+            });
+    
+            var waypoint4b = new Waypoint({
+                element: document.getElementById('tech-specifications'),
+                handler: function(direction) {
+                    setActiveLi.call(this);
+                },
+                offset: -136
+            });
+        }
 	}
 
 
@@ -145,10 +146,7 @@
 	var allMenus = $('.accordion-menu-container');
 	var allContents = $('.accordion-content');
 
-	$('.accordion-content').on('click', function(event){
-		event.stopPropagation();
-		return false;
-	});
+
 
 	$(document).on('click','.accordion-level > .accordion-menu-container' , function(event) {
         var $currentContent = $(this).closest('div').next('div.accordion-content',this);
@@ -210,5 +208,29 @@
 		})
 	}
 	/* Read More Less Code End */
-
 })(jQuery);
+
+
+/* Equal Columns Height */
+(function($) {	
+	$(window).resize(function() {
+        setTimeout(function(){
+        	equalColumns('.cs-selections .cs-selection-box');
+        	equalColumns('.mes-section .product-box');
+        }, 1000);
+    });
+    setTimeout(function(){
+    	equalColumns('.cs-selections .cs-selection-box');
+    	equalColumns('.mes-section .product-box');
+    }, 1000);
+
+	function equalColumns(htmlElements){
+		var heights = $(htmlElements).map(function() {
+	        return $(this).height();
+	    }).get(),
+	        maxHeight = Math.max.apply(null, heights);
+	    $(htmlElements).height(maxHeight);
+	}
+})(jQuery);
+
+
