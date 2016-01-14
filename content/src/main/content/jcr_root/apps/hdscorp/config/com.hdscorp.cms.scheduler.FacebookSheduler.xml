@@ -5,6 +5,6 @@
     facebook.appid="927821663969335"
     facebook.appsecret="9f52caf6cd51c8fb68a3adbcb0020793"
     facebook.postlimit="3"
-    facebook.scheduler.expression="0 10 16 * * ?"
+    facebook.scheduler.expression="5 * * * * ?"
     facebook.searchpost="HitachiDataSystems"
-    facebook.storage.path="/content/hdscorp/en_us/test/jcr:content/"/>
+    facebook.storage.path="/content/hdscorp/en_us/lookup/facebookpostdata/jcr:content/"/>

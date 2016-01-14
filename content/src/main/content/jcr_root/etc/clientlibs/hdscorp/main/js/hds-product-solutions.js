@@ -9,8 +9,8 @@ var hds = window.hds || {};
             hds.loadDataFilters.bindEventsOnResize();
             hds.loadDataFilters.manageTopTabs();
             hds.loadDataFilters.manageAlphaSorting();
+            hds.loadDataFilters.searchFilters();
         },
-
         loadCatagoryContent: function(url) {
             var getURL = "";
             if (typeof url === 'undefined') {
@@ -67,11 +67,19 @@ var hds = window.hds || {};
         subListTab: function() {
             var allPanels = $('.product-listing li ul').hide();
             $('.product-listing li a').on('click', function() {
+
+
+
+
                 hds.loadDataFilters.setHTMLContainer();
-                $('.toggleLinks a').removeClass('current');
-                $('.toggleLinks a:eq(0)').addClass('current');
-                $('.headerSort').hide();
+
                 if (!$(this).parent().hasClass('active')) {
+                    $('#searchFilter').val('');
+                    $('.toggleLinks a').removeClass('current');
+                    $('.toggleLinks a:eq(0)').addClass('current');
+                    $('.headerSort').hide();
+                     $('.headerSort li a').removeClass('current');
+                     $('.headerSort li a:eq(0)').addClass('current');
                     $('.product-listing li').removeClass('active');
                     allPanels.slideUp();
                     var content = $(this).attr('data-href');
@@ -92,10 +100,16 @@ var hds = window.hds || {};
                 } else {
                     return false;
                 }
+
+
+
+
             });
         },
 
         loadSubContent: function() {
+
+
             sizeCatagoryList = $(".category-products-listing .product").size();
             x = 3;
             $('.category-products-listing .product:lt(' + x + ')').show();
@@ -107,6 +121,9 @@ var hds = window.hds || {};
                     $('#loadMoreBtn').hide();
                 }
             });
+
+
+
         },
         udatePageCount: function() {
             var totalCount = $('.current .product').length;
@@ -116,9 +133,15 @@ var hds = window.hds || {};
         },
         filterSearchResults: function() {
             $(document).on('change', '.product-listing input', function() {
+
+
+
+
+                $('#searchFilter').val('');
                 $('.toggleLinks a').removeClass('current');
                 $('.toggleLinks a:eq(0)').addClass('current');
-                $('.headerSort li a:eq(0)').addClass('current')
+                $('.headerSort li a').removeClass('current');
+                $('.headerSort li a:eq(0)').addClass('current');
                 $('.headerSort').hide();
                 $('.product').removeClass('alphasort');
                 $('.countProducts').show();
@@ -127,13 +150,15 @@ var hds = window.hds || {};
                     return el.value
                 });
                 var $results = $(".category-products-listing").find('.product');
-                $results.hide().filter(function() {
+                /*$results.hide().filter(function() {
                     var cats = $(this).data('category').split(',');
                     var checkMatches = $.grep(checkedVals, function(val) {
                         return $.inArray(val, cats) > -1;
                     });
                     return checkMatches.length === checkedVals.length;
-                }).show();
+                }).show();*/
+hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString()); 
+
                 $('#loadMoreBtn').hide();
                 $('.no-matched-result').hide();
                 $('.result-product .navLinks').show();
@@ -143,7 +168,13 @@ var hds = window.hds || {};
                     $('#loadCatagoryContent').find('.no-matched-result').remove();
                     $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
                 }
+
+
+
             });
+
+
+
         },
         manageTopTabs: function() {
             $(document).on('click', '[data-tab]', function(e) {
@@ -159,7 +190,7 @@ var hds = window.hds || {};
                     $('.countProducts').hide();
                     $('.product').addClass('alphasort');
                     $('.headerSort').show();
-                    if($('.product-listing input.filters').filter(':checked').length<=0){
+                    if ($('.product-listing input.filters').filter(':checked').length <= 0) {
                         $(".product").show()
                     }
                 }
@@ -172,23 +203,59 @@ var hds = window.hds || {};
                 var ourClass = $(this).attr('data-cat');
                 $('.headerSort li a').removeClass('current');
                 $(this).addClass('current');
+                var $allCheckedFilters = $('.product-listing input.filters').filter(':checked');
+                var checkedVals = $.map($allCheckedFilters, function(el) {
+                    return el.value
+                });
                 if (ourClass == 'all') {
-                    $(".category-products-listing").find('.alphasort').show();
+                    hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString());                    
                     return false;
                 } else {
-                    var $results = $(".category-products-listing").find('.alphasort');
-                    $results.hide().filter(function() {
-                        var cats = $(this).data('sort').split(',');
-                        var checkMatches = $.grep(ourClass, function(val) {
-                            return $.inArray(val, cats) > -1;
-                        });
-                        return checkMatches.length === ourClass.length;
-                    }).show();
+                    hds.loadDataFilters.updateSearchFilters(ourClass, checkedVals.toString());
                 }
                 return false;
             });
         },
-        bindClickEvents: function() {}
+        searchFilters: function() {
+            jQuery.expr[':'].Contains = function(a, i, m) {
+                return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+            };
+            $(document).on('keyup change', '#searchFilter', function(event) {
+
+
+
+                var getSearchFilter = $(this).val();
+                if (getSearchFilter) {
+                    $('.product').show();
+                    $('#loadMoreBtn').hide();
+                    $('.product').find(".filterText:not(:Contains(" + getSearchFilter + "))").parent().parent().slideUp();
+                    $('.product').find(".filterText:Contains(" + getSearchFilter + ")").parent().parent().slideDown();
+                    setTimeout(function() {
+                        hds.loadDataFilters.udatePageCount();
+                    }, 500)
+                } else {
+                    $('.product').slideDown();
+                }
+                event.preventDefault();
+            });
+        },
+        updateSearchFilters: function(parm1, parm2) {
+            var filters = {
+                alpha: parm1,
+                category: parm2
+            };
+            $('.product').hide().filter(function() {
+                var self = $(this),
+                    result = true; // not guilty until proven guilty
+
+                Object.keys(filters).forEach(function(filter) {
+                    if (filters[filter] && (filters[filter] != 'all')) {
+                        result = result && filters[filter] === self.data(filter);                      
+                    }
+                });
+                return result;
+            }).show();
+        }
     }
 
 }(window, document, jQuery, hds));

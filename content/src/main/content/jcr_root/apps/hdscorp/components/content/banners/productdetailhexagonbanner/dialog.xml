@@ -36,11 +36,6 @@
                                 text="Custom (Background Color)"
                                 value="custombkgcolor"/>
                         </options>
-                        <contentsectioniconalttext
-                            jcr:primaryType="cq:Widget"
-                            fieldLabel="Icon Alt Text"
-                            name="./contentsectioniconalttext"
-                            xtype="textfield"/>
                     </type>
                     <bannerbackgroundimage
                         jcr:primaryType="cq:Widget"
@@ -79,11 +74,6 @@
                         fieldLabel="Hexagon Icon Path"
                         name="./hexagoniconpath"
                         xtype="ddpathfield"/>
-                    <hexagoniconalt
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Hexagon Icon Alt"
-                        name="./hexagoniconalt"
-                        xtype="textfield"/>
                     <hexagontitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Content Title"

@@ -23,8 +23,6 @@
 
 <c:if test = "${properties.hexagoniconpath != null}">
 	<c:set var="hexagoniconstyle" value=" style='background-image: url(${properties.hexagoniconpath});background-position:0 0;''" />
-	<c:set var="hexagoniconstyle" value="${properties.hexagoniconpath}"/>
-	
 </c:if>
 
 
@@ -41,7 +39,9 @@
    				<div class="col-xs-12 col-md-4 hexContain">
    					<ul class="calculating-list">
    						<li class="hexagon-transformative hexagon">
-							<img src='${hexagoniconstyle}' alt='${properties.hexagoniconalt}' title='${properties.hexagoniconalt}' style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;">
+   							<span class="sprite icon-advance-lt" ${hexagoniconstyle}>
+								<img src="">
+                            </span>
    							<h4>${properties.hexagontitle}</h4>
    							<p>${properties.hexagoncontent}</p>
    							<a class="animateAnchor bottomPos text-center" href="${linkUrl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">${properties.secondarylinklabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>

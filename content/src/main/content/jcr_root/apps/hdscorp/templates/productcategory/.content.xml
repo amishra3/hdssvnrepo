@@ -3,7 +3,7 @@
     jcr:description="This is the template for creating Product Category pages."
     jcr:primaryType="cq:Template"
     jcr:title="Product Category Template"
-    ranking="{Long}2">
+    ranking="{Long}4">
     <jcr:content
         jcr:primaryType="cq:PageContent"
         sling:resourceType="hdscorp/components/page/productcateogry">

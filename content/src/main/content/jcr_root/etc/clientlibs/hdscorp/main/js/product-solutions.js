@@ -145,7 +145,10 @@
 	var allMenus = $('.accordion-menu-container');
 	var allContents = $('.accordion-content');
 
-
+	$('.accordion-content').on('click', function(event){
+		event.stopPropagation();
+		return false;
+	});
 
 	$(document).on('click','.accordion-level > .accordion-menu-container' , function(event) {
         var $currentContent = $(this).closest('div').next('div.accordion-content',this);
