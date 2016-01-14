@@ -1,0 +1,126 @@
+.product-hero-banner {
+    z-index: 2;
+    position: relative;
+    min-height: 402px;
+    padding: 90px 15px 0;
+    background-image: url("../images/banner_header_product.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.product-hero-banner .product-hero-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 15px;
+}
+
+.product-hero-banner .product-hero-container > h1,
+.product-hero-banner .product-hero-container > h2,
+.product-hero-banner .product-hero-container > h4,
+.product-hero-banner .product-hero-container > p {
+    color: #ffffff;
+}
+
+.product-hero-banner .product-hero-container a:hover,
+.product-hero-banner .product-hero-container a:focus,
+.product-hero-banner .product-hero-container a:active {
+    text-decoration: none;
+}
+
+.product-hero-banner .product-hero-container .headline {
+    margin-bottom: 0px;
+    margin-top: 53px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 3.4375em;
+    line-height: 1;
+    line-height: 120%;
+    color: #ffffff;
+}
+
+.product-hero-banner .product-hero-container .sub-text {
+    margin-bottom: 37px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.375em;
+    line-height: 1;
+    line-height: 120%;
+    color: #ffffff;
+}
+
+.product-hero-banner .product-hero-container .sub-headline strong {
+    font-weight: 500;
+}
+
+.product-hero-banner .product-hero-container .request {
+    margin-right: 35px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s linear, color 0.3s linear;
+    text-align:center; 
+}
+
+.product-hero-banner .product-hero-container .request:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.product-hero-banner .product-hero-container .request:hover a {
+    color: #000000;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .product-hero-banner{
+        padding:145px 0 40px 0;
+    }
+    .product-hero-banner .overRideleft{
+        padding-right: 0;
+    }
+    .product-hero-banner .product-hero-container .sub-text{
+        font-size: 0.8125em;
+        text-align: center; 
+        margin-top: 10px;
+    }
+    .product-hero-banner .product-hero-container .headline {
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 700;
+    }
+    
+    .product-hero-banner .product-hero-container .sub-headline {
+        font-size: 0.875rem;
+        text-align: center;
+        line-height: 1.3em;
+    }
+    .product-hero-banner .product-hero-container .request {
+        font-size: 0.6875rem;
+        line-height: 1;
+        margin-right: 0;
+        padding:8px 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+  .product-hero-banner {
+    min-height: 0;
+    padding-top: 130px;
+  }
+  .product-hero-banner .product-hero-container {
+    text-align: center;
+  }
+  .product-hero-banner .product-hero-container .headline {
+    margin-top: 65px;
+  }
+  .product-hero-banner .product-hero-container .request,
+  
+  .product-hero-banner .product-hero-container .request {
+    max-width: 244px;
+    margin: 0 auto 25px;
+  }
+}
