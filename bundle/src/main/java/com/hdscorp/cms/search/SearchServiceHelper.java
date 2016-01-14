@@ -16,6 +16,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.day.cq.search.Predicate;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
@@ -39,11 +40,13 @@ public class SearchServiceHelper {
 	private static final String TYPE = "cq:Page";
 	private static final String ORDER_BY_PROPERTY = "@jcr:content/jcr:lastModified";
 	private static final String ORDER_BY_SORT = "desc";
+	private static final String ARCHIVE = "archive";
 
-	public List<Hit> getTagBasedResuts(String[] paths, String[] tags,
-			String template, String type) {
+	public SearchResult getTagBasedResuts(String[] paths, String[] tags,
+			String template, String type,String orderByProperty,
+			String orderBySort) {
 
-		long startTime = Calendar.getInstance().getTimeInMillis();
+		
 		Map<String, String> searchParams = new HashMap<String, String>();
 
 		if (type != null && !type.isEmpty()) {
@@ -56,12 +59,15 @@ public class SearchServiceHelper {
 			searchParams.put("group.1_group." + ++i + "_path", path);
 		}
 
-		searchParams.put("group.2_group.p.and", "true");
-		searchParams.put("group.2_group.1_property", "jcr:content/cq:tags");
-		int k = 0;
-		for (String tag : tags) {
-			searchParams.put("group.2_group.1_property." + ++k + "_value", tag);
+		if(tags!=null) {
+			searchParams.put("group.2_group.p.and", "true");
+			searchParams.put("group.2_group.1_property", "jcr:content/cq:tags");
+			int k = 0;
+			for (String tag : tags) {
+				searchParams.put("group.2_group.1_property." + ++k + "_value", tag);
+			}
 		}
+		
 
 		if (template != null && !template.isEmpty()) {
 			searchParams.put("group.2_group.2_property",
@@ -72,19 +78,68 @@ public class SearchServiceHelper {
 		searchParams.put("group.p.and", "true");
 		searchParams.put("p.guesstotal", "true");
 		searchParams.put("p.offset", "0");
-		searchParams.put("p.limit", "10");
-		// searchParams.put("p.limit", "-1");
-		LOG.debug("before cretae query************" + searchParams.toString());
+		searchParams.put("p.limit", "-1");
+		if (orderByProperty != null && !orderByProperty.isEmpty()) {
+			searchParams.put("orderby", orderByProperty);
+		} else {
+			searchParams.put("orderby", ORDER_BY_PROPERTY);
+		}
+		if (orderBySort != null && !orderBySort.isEmpty()) {
+			searchParams.put("orderby.sort", ORDER_BY_SORT);
+		} else {
+			searchParams.put("orderby.sort", "desc");
+		}
+		LOG.info("before cretae query************" + searchParams.toString());
 		Query query = queryBuilder.createQuery(
 				PredicateGroup.create(searchParams),
 				JcrUtilService.getSession());
 		SearchResult result = query.getResult();
-		List<Hit> hits = result.getHits();
-		LOG.debug("No of hits*******" + hits.size());
-		long endTime = Calendar.getInstance().getTimeInMillis();
-		long time = endTime - startTime;
-		LOG.debug("Total time *************" + time / 1000);
-		return hits;
+		
+		return result;
+	}
+
+	public SearchResult getNewsResults(String filter, String path, int noOfYears) {
+
+		Map<String, String> searchParams = new HashMap<String, String>();
+		PredicateGroup combinedPredicate = new PredicateGroup();
+
+		searchParams.put("type", "cq:Page");
+
+		searchParams.put("property", "jcr:content/id");
+		searchParams.put("property.operation", "exists");
+		searchParams.put("p.offset", "0");
+		searchParams.put("p.limit", "-1");
+		searchParams.put("group.p.and", "true");
+
+		if (filter != ARCHIVE) {
+			path = path + "/" + filter;
+			searchParams.put("path", path);
+			combinedPredicate = PredicateGroup.create(searchParams);
+		} else {
+			searchParams.put("path", path);
+			PredicateGroup doNotSearchGroup = new PredicateGroup();
+			int year = Calendar.getInstance().get(Calendar.YEAR);
+			noOfYears = noOfYears - 1;
+			for (int i = year; i >= (year - noOfYears); i--) {
+
+				Predicate excludePathPredicate = new Predicate("path").set(
+						"path", path + "/" + i);
+				doNotSearchGroup.add(excludePathPredicate);
+			}
+
+			doNotSearchGroup.setAllRequired(false);
+			doNotSearchGroup.setNegated(true);
+			combinedPredicate = PredicateGroup.create(searchParams);
+			combinedPredicate.add(doNotSearchGroup);
+
+		}
+
+		Query query = queryBuilder.createQuery(combinedPredicate,
+				JcrUtilService.getSession());
+		
+		SearchResult result = query.getResult();
+		return result;
+
 	}
 
 	private void getSingleTypeTagSearchParams(Map<String, String> searchParams,
@@ -113,8 +168,6 @@ public class SearchServiceHelper {
 
 	private void getMultipleTypeTagSearchParams(
 			Map<String, String> searchParams, String[] tags, int groupCnt) {
-		
-		
 
 		searchParams.put("group." + groupCnt + "_group.1_group.1_property",
 				"jcr:content/cq:tags");
@@ -122,10 +175,10 @@ public class SearchServiceHelper {
 				"jcr:content/metadata/cq:tags");
 		int k = 0;
 		for (String tag : tags) {
-			searchParams.put("group." + groupCnt + "_group.1_group.1_property." + ++k
-					+ "_value", tag);
-			searchParams.put("group." + groupCnt + "_group.2_group.1_property." + ++k
-					+ "_value", tag);
+			searchParams.put("group." + groupCnt + "_group.1_group.1_property."
+					+ ++k + "_value", tag);
+			searchParams.put("group." + groupCnt + "_group.2_group.1_property."
+					+ ++k + "_value", tag);
 		}
 
 	}
@@ -136,7 +189,7 @@ public class SearchServiceHelper {
 		for (String type : types) {
 
 			if (type.equals(TYPE)) {
-				
+
 				/*
 				 * searchParams.put("group." + groupCnt + "_group.1_fulltext",
 				 * searchKeyword); searchParams.put("group." + groupCnt +
@@ -157,7 +210,7 @@ public class SearchServiceHelper {
 						+ "_group.3_fulltext.relPath",
 						"jcr:content/@jcr:description");
 			} else {
-				
+
 				/*
 				 * searchParams.put("group." + groupCnt + "_group.1_fulltext",
 				 * searchKeyword); searchParams.put("group." + groupCnt +
@@ -204,7 +257,7 @@ public class SearchServiceHelper {
 
 	private void getMultipleTypeFullTextSearchParams(
 			Map<String, String> searchParams, String searchKeyword, int groupCnt) {
-		
+
 		searchParams.put("group." + groupCnt + "_group.1_group.p.or", "true");
 		searchParams.put("group." + groupCnt + "_group.2_group.p.or", "true");
 		/*
@@ -354,13 +407,13 @@ public class SearchServiceHelper {
 		} else {
 			searchParams.put("orderby.sort", "desc");
 		}
-//		System.out.println("before cretae query************"+ searchParams.toString());
+		System.out.println("before cretae query************"
+				+ searchParams.toString());
 		LOG.debug("before cretae query************" + searchParams.toString());
 		Query query = queryBuilder.createQuery(
 				PredicateGroup.create(searchParams),
 				resourceResolver.adaptTo(Session.class));
 		SearchResult results = query.getResult();
-
 		return results;
 	}
 }
