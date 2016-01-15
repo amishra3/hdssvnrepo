@@ -75,7 +75,15 @@ public class ServiceUtil {
 			return ServiceConstants.EMPTY_SPACE;
 		}
 	}
-
+	
+	
+     public static String getDisplayDateFormat(Date date, String displayFormat)
+			throws ParseException {
+		
+			SimpleDateFormat sdfDestination = new SimpleDateFormat(displayFormat);
+			return sdfDestination.format(date);
+		
+	}
 	/**
 	 * Useful to get the time difference between the feed PostedDate to
 	 * CurrentDate
