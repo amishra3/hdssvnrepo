@@ -36,20 +36,7 @@ public class HdsCorpGlobalConfiguration {
 	public static final String WEBSERVERS = "hdscorp.web.servers.address";
 
 	@Property(label = "Dispatcher Invalidate URI", value = "/dispatcher/invalidate.cache", description = "Dispatcher Invalidate URI")
-	public static final String DISPACHER_URI = "hdscorp.dispatcher.uri";
-
-	@Property(label = "Error Page Path", value = "/content/hdscorp/en_us/error-page", description = "Error Page Path")
-	public static final String HDSCORP_ERROR_PATH = "hdscorp.error.path";
-
-	@Property(label = "Structured Content Root Path", value = "/content/hdscorp/en_us/structureddata", description = "Structured Content Root Path")
-	public static final String STRUCTURED_CONTENT_ROOT_PATH = "hdscorp.structured.content.root.path";
-
-	@Property(label = "Facebook App ID", value = "172495462931268", description = "Face Book Application ID")
-	public static final String FACE_BOOK_APP_ID = "fbAppId";
-	
-	@Property(label = "Google Analytics UA-AccountID", value = "UA-12177097-3", description = "UA-AccountID for Google Analytics")
-	public static final String GA_ACCOUNTID = "gaaccountid";
-	
+	public static final String DISPACHER_URI = "hdscorp.dispatcher.uri";	
 	
 	
 	@SuppressWarnings("rawtypes")

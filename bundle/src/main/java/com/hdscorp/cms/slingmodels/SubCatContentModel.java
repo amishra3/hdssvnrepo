@@ -42,7 +42,7 @@ public class SubCatContentModel {
 
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
         
-		String paths[] = {"/content/hdscorp/en_us/productsandsolutions"};
+		String paths[] = {"/content/hdscorp/en_us/products-solutions"};
 		String tags[] = subcattags ;
 		String template= "/apps/hdscorp/templates/productdetail";
 		String type[] = {"cq:Page"};

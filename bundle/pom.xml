@@ -147,20 +147,16 @@
 		<dependency>
 			<groupId>org.apache.servicemix.bundles</groupId>
 			<artifactId>org.apache.servicemix.bundles.facebook4j</artifactId>
-			<version>2.0.4_1</version>
+			<version>2.4.1_1</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.apache.servicemix.bundles</groupId>
 			<artifactId>org.apache.servicemix.bundles.twitter4j</artifactId>
-			<version>4.0.4_1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.servicemix.bundles</groupId>
 			<artifactId>org.apache.servicemix.bundles.joda-time</artifactId>
-			<version>2.3_1</version>
 		</dependency>
 
 	</dependencies>
@@ -189,7 +185,8 @@
 				<configuration>
 					<instructions>
 						<Bundle-SymbolicName>com.hdscorp.hdscorp-project</Bundle-SymbolicName>
-						<Export-Package>com.hdscorp.cms.*;version=${project.version}</Export-Package>
+						<Export-Package>com.hdscorp.cms.*;version=${project.version},javax.crypto.*</Export-Package>
+						<Import-Package>javax.crypto.*,io.netty.*;version="4.0.0",com.day.cq.*,*;resolution:=provided</Import-Package>
 						<Sling-Model-Packages>
 							com.hdscorp.cms.slingmodels
 						</Sling-Model-Packages>

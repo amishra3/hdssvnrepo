@@ -70,7 +70,7 @@ public class CacheInvalidationWorkflow implements WorkflowProcess {
 		try {
 
 			final Map queryParams = new HashMap(32, 0.75f);
-			queryParams.put("path", "/content/hdscorp/en_us");
+			queryParams.put("path", "/content/hdscorp");
 			queryParams.put("1_property", "jcr:content/hasItemsData");
 			queryParams.put("1_property.value", "true");
 			Iterable allItemsList = new ArrayList(32);
