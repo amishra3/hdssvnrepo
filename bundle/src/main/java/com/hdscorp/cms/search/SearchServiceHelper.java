@@ -98,7 +98,7 @@ public class SearchServiceHelper {
 		return result;
 	}
 
-	public SearchResult getNewsResults(String filter, String path, int noOfYears) {
+	public SearchResult getNewsResults(String filter, String path, int noOfYears,String fullText) {
 
 		Map<String, String> searchParams = new HashMap<String, String>();
 		PredicateGroup combinedPredicate = new PredicateGroup();
@@ -110,17 +110,38 @@ public class SearchServiceHelper {
 		searchParams.put("p.offset", "0");
 		searchParams.put("p.limit", "-1");
 		searchParams.put("group.p.and", "true");
-
-		if (filter != ARCHIVE) {
+		int groupCnt = 1;
+		if(fullText!=null) {
+	    searchParams.put("group." + groupCnt + "_group.p.or", "true");
+		searchParams.put("group." + groupCnt + "_group.1_fulltext",
+				fullText);
+		searchParams.put("group." + groupCnt
+				+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
+		searchParams.put("group." + groupCnt + "_group.2_fulltext",
+				fullText);
+		searchParams
+				.put("group." + groupCnt + "_group.2_fulltext.relPath",
+						"jcr:content/@jcr:title");
+		searchParams.put("group." + groupCnt + "_group.3_fulltext",
+				fullText);
+		searchParams.put("group." + groupCnt
+				+ "_group.3_fulltext.relPath",
+				"jcr:content/@jcr:description");
+		}
+      
+		if (!filter.equalsIgnoreCase(ARCHIVE)) {
+			
 			path = path + "/" + filter;
 			searchParams.put("path", path);
 			combinedPredicate = PredicateGroup.create(searchParams);
 		} else {
+			
+			
 			searchParams.put("path", path);
 			PredicateGroup doNotSearchGroup = new PredicateGroup();
 			int year = Calendar.getInstance().get(Calendar.YEAR);
-			noOfYears = noOfYears - 1;
-			for (int i = year; i >= (year - noOfYears); i--) {
+			
+			for (int i = year; i >(year - noOfYears); i--) {
 
 				Predicate excludePathPredicate = new Predicate("path").set(
 						"path", path + "/" + i);
