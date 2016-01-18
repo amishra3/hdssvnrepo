@@ -28,16 +28,16 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
-                    <contentsectioniconimagepath
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Customer Logo Image Path"
-                        name="./contentsectioniconimagepath"
-                        xtype="pathfield"/>
                     <customerstoriessectiontitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Customer Stories Section Title"
                         name="./customerstoriessectiontitle"
                         xtype="textfield"/>
+                    <contentsectioniconimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Case Study Icon"
+                        name="./contentsectioniconimagepath"
+                        xtype="pathfield"/>
                     <customerinfotext
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Customer Info Text"
@@ -69,6 +69,21 @@
                         name="./readcasestudylinkopeninnew"
                         type="checkbox"
                         xtype="selection"/>
+                    <bannerbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Background Image (If Custom Image selected above.)"
+                        name="./bannerbackgroundimage"
+                        xtype="ddpathfield"/>
+                    <customerviewallctatext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Label for View All Case Study"
+                        name="./viewallctatext"
+                        xtype="textfield"/>
+                    <casestudylinktargeturl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link for View All Case Study"
+                        name="./buttonUrl"
+                        xtype="pathfield"/>
                 </items>
             </tab1>
         </items>
