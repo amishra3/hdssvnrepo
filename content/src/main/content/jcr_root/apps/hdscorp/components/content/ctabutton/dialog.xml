@@ -16,5 +16,11 @@
             fieldLabel="CTA Target URL."
             name="./ctatargeturl"
             xtype="pathfield"/>
+        <ctatargeturlopeninnew
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Open in New Window ?"
+            name="./ctatargeturlopeninnew"
+            type="checkbox"
+            xtype="selection"/>
     </items>
 </jcr:root>
