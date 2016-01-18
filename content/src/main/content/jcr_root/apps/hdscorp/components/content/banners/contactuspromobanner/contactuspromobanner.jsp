@@ -9,7 +9,7 @@
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
-
+<div class="stop"></div>
 <c:set var="linkUrl" value="${properties.contactusbannerlinkurl}" />
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
