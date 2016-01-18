@@ -15,10 +15,10 @@
   max-width: 1280px;
 }
 
-.hero-product-solutions .hero-product-solutions-container > h1,
-.hero-product-solutions .hero-product-solutions-container > h2,
-.hero-product-solutions .hero-product-solutions-container > h4,
-.hero-product-solutions .hero-product-solutions-container > p {
+.hero-product-solutions .hero-product-solutions-container > div > h1,
+.hero-product-solutions .hero-product-solutions-container > div > h2,
+.hero-product-solutions .hero-product-solutions-container > div > h4,
+.hero-product-solutions .hero-product-solutions-container > div > p {
   color: #ffffff;
 }
 
@@ -31,8 +31,8 @@
 .hero-product-solutions .hero-product-solutions-container .close-hero {
   display: inline-block;
   position: absolute;
-  top: -20px;
-  right: 0;
+  top: -15px;
+  right: 80px;
 }
 
 .hero-product-solutions .hero-product-solutions-container .headline {
@@ -49,7 +49,7 @@
   font-weight: 700;
 }
 
-.hero-product-solutions .hero-product-solutions-container > h3 {
+.hero-product-solutions .hero-product-solutions-container > div > h3 {
   margin-bottom: 10px;
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -124,7 +124,7 @@
   display: none;
 }
 
-.hero-product-solutions.server-rack {
+.hero-product-solutions.server-rack ,.hero-product-solutions .server-rack-holder {
   position: relative;
 }
 
@@ -133,10 +133,17 @@
   padding-left: 15px;
 }
 
+.hero-product-solutions.server-rack .hero-product-solutions-container br{
+	display:none;
+}
+
 .hero-product-solutions.server-rack .hero-product-solutions-container .servers {
   position: absolute;
-  top: 120px;
-  margin-left: 720px;
+    left:0;
+  /*  bottom:0;
+ top: 120px;
+  margin-left: 720px;*/
+    float:right;
 }
 
 .hero-product-solutions.server-rack .hero-product-solutions-container .video-play {
@@ -170,6 +177,12 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+    .hero-product-solutions .hero-product-solutions-container .headline{
+        font-size:3rem;
+    }
+}
+
 @media only screen and (min-width: 992px) {
   .hero-product-solutions.server-rack .hero-product-solutions-container .servers {
     display: block;
@@ -178,6 +191,7 @@
     display: none;
   }
 }
+
 
 @media only screen and (max-width: 992px) {
   .hero-product-solutions {
@@ -204,7 +218,7 @@
     margin-bottom: 50px;
   }
   .hero-product-solutions .hero-product-solutions-container .close-hero {
-    right: 10px;
+    right: 0px;
   }
   .hero-product-solutions.server-rack .hero-product-solutions-container .servers {
     display: none;
