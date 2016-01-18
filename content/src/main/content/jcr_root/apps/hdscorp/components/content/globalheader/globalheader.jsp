@@ -71,6 +71,13 @@
 				<div class="search-mobile">
 					<span class="sprite icon-search-mobile"></span>
 				</div>
+                <button class="navbar-toggle collapsed nav-button" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                </button>
 			</div>
 		</div>
 		
