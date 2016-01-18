@@ -29,6 +29,11 @@
                                 fieldLabel="Icon Path"
                                 name="./contenticonpath"
                                 xtype="pathfield"/>
+                            <contenticonpathalttext
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Icon Alt Text"
+                                name="./contenticonpathalttext"
+                                xtype="textfield"/>
                             <contenttitle
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Cell Title"
@@ -49,6 +54,12 @@
                                 fieldLabel="Link target URL"
                                 name="./seemoretargeturl"
                                 xtype="pathfield"/>
+                            <seemorenewwin
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window ?"
+                                name="./seemorenewwin"
+                                type="checkbox"
+                                xtype="selection"/>
                         </fieldConfig>
                     </multilinks>
                 </items>
