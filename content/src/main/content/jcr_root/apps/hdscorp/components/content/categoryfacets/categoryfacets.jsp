@@ -39,6 +39,8 @@
 					<c:set var="includetargetURL" value="${categoryTargetURL}" scope="request"/>
 					<c:set var="activeclass" value=" class='active'"/>
 				</c:if>
+				
+				<div class="MobileHolderWrapper"></div>
 
 				<li ${activeclass}>
 					
@@ -62,7 +64,7 @@
 									id="${xss:filterHTML(xssAPI,subCategoryData['sub-category-ID'])}"
 									value="${xss:filterHTML(xssAPI,subCategoryData['sub-category-tag'])}">
 								
-								<label for="cloudStorage" class="hds-icon"><span>${xss:filterHTML(xssAPI,subCategoryData['sub-category-title'])}</span></label>
+								<label for="${xss:filterHTML(xssAPI,subCategoryData['sub-category-ID'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,subCategoryData['sub-category-title'])}</span></label>
 							</div>
 						</li>
 	

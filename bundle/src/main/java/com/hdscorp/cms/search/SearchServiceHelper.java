@@ -428,8 +428,8 @@ public class SearchServiceHelper {
 		} else {
 			searchParams.put("orderby.sort", "desc");
 		}
-		System.out.println("before cretae query************"
-				+ searchParams.toString());
+//		System.out.println("before cretae query************"
+//				+ searchParams.toString());
 		LOG.debug("before cretae query************" + searchParams.toString());
 		Query query = queryBuilder.createQuery(
 				PredicateGroup.create(searchParams),

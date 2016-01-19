@@ -4,7 +4,7 @@ var hds = window.hds || {};
 (function(window, document, $, hds) {
     hds.productCatagory = {
         init: function() {
-            hds.productCatagory.loadCatagoryHTML();
+            //hds.productCatagory.loadCatagoryHTML();
             hds.productCatagory.bindEventsOnResize();
             hds.productCatagory.bindClick();
         },
@@ -14,7 +14,7 @@ var hds = window.hds || {};
             $('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
-            $("#contentCatagory").html(" ").load(url, function() {
+            $("#contentCatagory").html(" ").load(url + " .subcategorycontent", function() {
                 hds.productCatagory.bindHTMLLoad();
             });
         },

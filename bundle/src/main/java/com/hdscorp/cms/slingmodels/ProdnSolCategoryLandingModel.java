@@ -66,12 +66,17 @@ public class ProdnSolCategoryLandingModel {
 			    String pageTitle = reourcePage.getTitle();
 			    String pagePath = reourcePage.getPath();
 			    String pageProductDescription = (String)reourcePage.getProperties().get("subtext");
+			    String[] pageTags= (String[])reourcePage.getProperties().get("cq:tags");
+			    System.out.println("----pageTags----- "+pageTags);
+			    
 			    if(pagePath.startsWith("/content")){
 			    	pagePath=PathResolver.getShortURLPath(pagePath);
 			    }
 			    productNode.setProductTitle(pageTitle);
 			    productNode.setProductDescription(pageProductDescription);
 			    productNode.setProductPath(pagePath);
+			    productNode.setProductTags(pageTags);
+			    
 			    products.add(productNode);
 			}
 			

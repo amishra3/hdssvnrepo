@@ -9,7 +9,16 @@ public class ProductNode {
 	
 	private String productDescription;
 
+	private String[] productTags;
 	
+	public String[] getProductTags() {
+		return productTags;
+	}
+
+	public void setProductTags(String[] productTags) {
+		this.productTags = productTags;
+	}
+
 	public String getProductTitle() {
 		return productTitle;
 	}

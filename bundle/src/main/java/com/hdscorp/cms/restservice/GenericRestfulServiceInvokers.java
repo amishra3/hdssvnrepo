@@ -18,11 +18,25 @@ import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.hdscorp.cms.constants.ServiceConstants;
+
+/** This GenericRestfulServiceInvokers have common methods which is used in Services.
+ * 
+ * @author gokula.nand
+ *
+ */
 
 public abstract class GenericRestfulServiceInvokers {
 
 	private static final Logger log = LoggerFactory.getLogger(GenericRestfulServiceInvokers.class);
-
+	
+    /**Useful for get response of feed based on parameter.
+     * 
+     * @param feedUrl
+     * @param methodType
+     * @param parameter
+     * @return
+     */
 	public String getWSResponse(String feedUrl, String methodType, String parameter) {
 		log.info("Execution start for getURLContents() " + feedUrl);
 		StringBuilder sb = new StringBuilder();
@@ -30,14 +44,14 @@ public abstract class GenericRestfulServiceInvokers {
 		try {
 
 			HttpClient httpClient = new DefaultHttpClient();
-			HttpResponse reponse = invokeWS(methodType,parameter, feedUrl, httpClient);
+			HttpResponse reponse = invokeWS(methodType, parameter, feedUrl, httpClient);
 			if (reponse.getStatusLine().getStatusCode() != 200) {
-				jsonObject.put(FeedConstant.JSON_STATUS_CODE, reponse.getStatusLine().getStatusCode());
-				jsonObject.put(FeedConstant.JSON_STATUS_REASON, reponse.getStatusLine().getReasonPhrase());
+				jsonObject.put(ServiceConstants.JSON_STATUS_CODE, reponse.getStatusLine().getStatusCode());
+				jsonObject.put(ServiceConstants.JSON_STATUS_REASON, reponse.getStatusLine().getReasonPhrase());
 				return jsonObject.toString();
 			}
 			BufferedReader br = new BufferedReader(
-					new InputStreamReader((reponse.getEntity().getContent()), FeedConstant.UTF_8));
+					new InputStreamReader((reponse.getEntity().getContent()), ServiceConstants.UTF_8));
 			String output;
 			while ((output = br.readLine()) != null) {
 				sb.append(output);
@@ -46,8 +60,8 @@ public abstract class GenericRestfulServiceInvokers {
 		} catch (java.net.UnknownHostException e) {
 			log.error("Feed is not found:" + e.getMessage());
 			try {
-				jsonObject.put(FeedConstant.JSON_STATUS_CODE, FeedConstant.NOT_FOUND_STATUS_CODE);
-				jsonObject.put(FeedConstant.JSON_STATUS_REASON, FeedConstant.NOT_FOUND_STATUS_REASON);
+				jsonObject.put(ServiceConstants.JSON_STATUS_CODE, ServiceConstants.NOT_FOUND_STATUS_CODE);
+				jsonObject.put(ServiceConstants.JSON_STATUS_REASON, ServiceConstants.NOT_FOUND_STATUS_REASON);
 			} catch (JSONException e1) {
 				log.error("Error while parsing in json" + e.getMessage());
 			}
@@ -60,21 +74,35 @@ public abstract class GenericRestfulServiceInvokers {
 		return sb.toString();
 
 	}
-
+/**
+ * Useful for get status availability
+ * @param content
+ * @return
+ */
 	public boolean getWSInvokeStatus(String content) {
 		if (content.indexOf("statusCode") != -1)
 			return true;
 		else
 			return false;
 	}
-
-	private HttpResponse invokeWS(String type, String parameter,String feedURL, HttpClient httpClient)
+	
+/** Useful for get instance of HttpResponse
+ * 
+ * @param type
+ * @param parameter
+ * @param feedURL
+ * @param httpClient
+ * @return
+ * @throws ClientProtocolException
+ * @throws IOException
+ */
+	private HttpResponse invokeWS(String type, String parameter, String feedURL, HttpClient httpClient)
 			throws ClientProtocolException, IOException {
 		log.info("Execution start for getInvokeMethodType() and method type is " + type);
-		if (type.equalsIgnoreCase(FeedConstant.POST_METHOD_TYPE)) {
+		if (type.equalsIgnoreCase(ServiceConstants.POST_METHOD_TYPE)) {
 			HttpPost postReq = new HttpPost(feedURL);
-			StringEntity input = new StringEntity(parameter, FeedConstant.UTF_8);
-			input.setContentType(FeedConstant.CONTENT_TYPE);
+			StringEntity input = new StringEntity(parameter, ServiceConstants.UTF_8);
+			input.setContentType(ServiceConstants.CONTENT_TYPE);
 			postReq.setEntity(input);
 			return httpClient.execute(postReq);
 		} else {
@@ -83,12 +111,18 @@ public abstract class GenericRestfulServiceInvokers {
 		}
 
 	}
-
+	
+/**
+ * Useful for get feed date
+ * @param dateString
+ * @return
+ * @throws ParseException
+ */
 	public String formatDate(String dateString) throws ParseException {
-		SimpleDateFormat sdfSource = new SimpleDateFormat(FeedConstant.DATE_FORMAT_FROM);
-		String dateFrom = dateString.substring(0, dateString.indexOf(FeedConstant.DATE_SEPERATOR));
+		SimpleDateFormat sdfSource = new SimpleDateFormat(ServiceConstants.DATE_FORMAT_FROM);
+		String dateFrom = dateString.substring(0, dateString.indexOf(ServiceConstants.DATE_SEPERATOR));
 		Date dateTo = sdfSource.parse(dateFrom.trim());
-		SimpleDateFormat sdfDestination = new SimpleDateFormat(FeedConstant.DATE_FORMAT_TO);
+		SimpleDateFormat sdfDestination = new SimpleDateFormat(ServiceConstants.DATE_FORMAT_TO);
 		return sdfDestination.format(dateTo);
 	}
 

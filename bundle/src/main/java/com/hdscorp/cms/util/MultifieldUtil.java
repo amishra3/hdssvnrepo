@@ -85,6 +85,11 @@ public class MultifieldUtil {
 				for (Iterator<String> iterator = parsed.keys(); iterator.hasNext();) {
 					String key = iterator.next();
 					String innerValue = parsed.getString(key);
+					
+					if(key.equals("sub-category-tag")){
+						innerValue=innerValue.replaceAll("[\\(\\)\\[\\]\\{\\}]","");
+						innerValue=innerValue.replaceAll("\"", "");
+					}
 					columnMap.put(key, innerValue);
 				}
 			}

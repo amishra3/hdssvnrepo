@@ -9,7 +9,14 @@
 	<c:forEach var="product" items="${model.products}" varStatus="loopcnt">
 		<c:set var="productTitle" value="${product.productTitle}" />
 		<c:set var="productInitialChar" value="${fn:substring(productTitle, 0,1)}" />
-		<div class="product" data-sort="${productInitialChar}" style="display: block;">
+		<c:set var="productTags" value="${product.productTags}" />
+		<c:if test="${not empty  productTags}">
+			<c:set var="productTags" value="${fn:join(productTags, ',')}" />
+		</c:if>
+		
+		
+		<div class="product" data-sort="${productInitialChar}" data-alpha="${productInitialChar}" style="display: block;"
+		data-category="${productTags}">
 			<h3><a href="${product.productPath}">${product.productTitle}</a></h3>
 		    ${product.productDescription}
 		    <a href="${product.productPath}" class="animateLink">${properties.viewproductlabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>

@@ -14,15 +14,17 @@ var hds = window.hds || {};
         loadCatagoryContent: function(url) {
             var getURL = "";
             if (typeof url === 'undefined') {
-                getURL = $('.product-listing > ul > li').eq(0).find("a").attr("data-href");
-                $('.product-listing > ul > li').eq(0).addClass('active');
-                $("#loadCatagoryContent").attr('data-content', 'all');
+//                getURL = $('.product-listing > ul > li').eq(0).find("a").attr("data-href");
+//                $('.product-listing > ul > li').eq(0).addClass('active');
+//                $("#loadCatagoryContent").attr('data-content', 'all');
             } else {
                 getURL = url;
                 $("#loadCatagoryContent").removeAttr('data-content');
             }
 
-            $("#loadCatagoryContent").html(" ").load(getURL, function() {
+
+
+            $("#loadCatagoryContent").html(" ").load(getURL + " .prodnsolcategorycontent ", function() {                
                 hds.loadDataFilters.loadSubContent();
                 hds.loadDataFilters.bindHTMLLoad();
                 $('.category-heading > h2').html(" ").html($('.product-listing > ul > li.active').find('a').text());
@@ -75,12 +77,15 @@ var hds = window.hds || {};
 
                 if (!$(this).parent().hasClass('active')) {
                     $('#searchFilter').val('');
-                    $('.toggleLinks a').removeClass('current');
-                    $('.toggleLinks a:eq(0)').addClass('current');
-                    $('.headerSort').hide();
-                     $('.headerSort li a').removeClass('current');
-                     $('.headerSort li a:eq(0)').addClass('current');
+                    $('.toggleLinks a,.headerSort li a').removeClass('current');
+                    $('.toggleLinks a:eq(0),.headerSort li a:eq(0)').addClass('current');
+                    $('.headerSort').hide();                   
+
+
+
+
                     $('.product-listing li').removeClass('active');
+                    $('.countProducts').show();
                     allPanels.slideUp();
                     var content = $(this).attr('data-href');
                     hds.loadDataFilters.loadCatagoryContent(content);
@@ -112,15 +117,25 @@ var hds = window.hds || {};
 
             sizeCatagoryList = $(".category-products-listing .product").size();
             x = 3;
-            $('.category-products-listing .product:lt(' + x + ')').show();
+            $('.product:lt(' + x + ')').show();
             $(document).delegate('#loadMoreBtn', 'click', function() {
                 x = (x + 5 <= sizeCatagoryList) ? x + 5 : sizeCatagoryList;
-                $('.category-products-listing .product:lt(' + x + ')').show();
+                $('product:lt(' + x + ')').show();
                 hds.loadDataFilters.udatePageCount();
                 if (x == sizeCatagoryList) {
                     $('#loadMoreBtn').hide();
                 }
             });
+        },
+        controlCount: function() {
+            var sizeCatagoryList = $(".category-products-listing .product:visible").size();
+            var x = 3;
+            x = (x + 5 <= sizeCatagoryList) ? x + 5 : sizeCatagoryList;
+            $('.category-products-listing .product:visible:lt(' + x + ')').show();
+            hds.loadDataFilters.udatePageCount();
+            if (x == sizeCatagoryList) {
+                $('#loadMoreBtn').hide();
+            }
 
 
 
@@ -138,26 +153,26 @@ var hds = window.hds || {};
 
 
                 $('#searchFilter').val('');
-                $('.toggleLinks a').removeClass('current');
-                $('.toggleLinks a:eq(0)').addClass('current');
-                $('.headerSort li a').removeClass('current');
-                $('.headerSort li a:eq(0)').addClass('current');
+                $('.toggleLinks a,.headerSort li a').removeClass('current');
+
+
+                $('.toggleLinks a:eq(0),.headerSort li a:eq(0)').addClass('current');
                 $('.headerSort').hide();
                 $('.product').removeClass('alphasort');
                 $('.countProducts').show();
-                var $allCheckedFilters = $('.product-listing input.filters').filter(':checked');
-                var checkedVals = $.map($allCheckedFilters, function(el) {
-                    return el.value
-                });
-                var $results = $(".category-products-listing").find('.product');
-                /*$results.hide().filter(function() {
-                    var cats = $(this).data('category').split(',');
-                    var checkMatches = $.grep(checkedVals, function(val) {
-                        return $.inArray(val, cats) > -1;
-                    });
-                    return checkMatches.length === checkedVals.length;
-                }).show();*/
-hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString()); 
+
+
+
+
+
+
+
+
+
+
+
+
+                 hds.loadDataFilters.checkSearchEmpty();
 
                 $('#loadMoreBtn').hide();
                 $('.no-matched-result').hide();
@@ -183,9 +198,13 @@ hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString());
                 $(this).addClass('current');
                 $("#" + tab_id).addClass('current');
                 if ($(this).attr('data-tab') === "tab-1") {
-                    $('.countProducts').show();
+
                     $('.product').removeClass('alphasort');
+                    $('.headerSort li a').removeClass('current');
+                    $('.headerSort li a:eq(0)').addClass('current');
                     $('.headerSort').hide();
+                    $('.countProducts').show();
+
                 } else {
                     $('.countProducts').hide();
                     $('.product').addClass('alphasort');
@@ -193,8 +212,10 @@ hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString());
                     if ($('.product-listing input.filters').filter(':checked').length <= 0) {
                         $(".product").show()
                     }
+                    $('#loadMoreBtn').hide();
                 }
-                $('#loadMoreBtn').hide();
+
+
                 e.preventDefault();
             })
         },
@@ -203,16 +224,16 @@ hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString());
                 var ourClass = $(this).attr('data-cat');
                 $('.headerSort li a').removeClass('current');
                 $(this).addClass('current');
-                var $allCheckedFilters = $('.product-listing input.filters').filter(':checked');
-                var checkedVals = $.map($allCheckedFilters, function(el) {
-                    return el.value
-                });
-                if (ourClass == 'all') {
-                    hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString());                    
-                    return false;
-                } else {
-                    hds.loadDataFilters.updateSearchFilters(ourClass, checkedVals.toString());
-                }
+
+
+
+
+
+                hds.loadDataFilters.checkSearchEmpty();
+
+
+
+
                 return false;
             });
         },
@@ -220,41 +241,109 @@ hds.loadDataFilters.updateSearchFilters(null, checkedVals.toString());
             jQuery.expr[':'].Contains = function(a, i, m) {
                 return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
             };
+
             $(document).on('keyup change', '#searchFilter', function(event) {
 
 
 
                 var getSearchFilter = $(this).val();
-                if (getSearchFilter) {
-                    $('.product').show();
-                    $('#loadMoreBtn').hide();
-                    $('.product').find(".filterText:not(:Contains(" + getSearchFilter + "))").parent().parent().slideUp();
-                    $('.product').find(".filterText:Contains(" + getSearchFilter + ")").parent().parent().slideDown();
-                    setTimeout(function() {
-                        hds.loadDataFilters.udatePageCount();
-                    }, 500)
+                if (getSearchFilter.length > 0) {
+
+
+
+
+
+                    hds.loadDataFilters.checkSearchEmpty();
+
                 } else {
-                    $('.product').slideDown();
+                   hds.loadDataFilters.checkSearchEmpty();
+
                 }
                 event.preventDefault();
             });
         },
-        updateSearchFilters: function(parm1, parm2) {
+        checkSearchEmpty: function() {
+            var alphaSelected = null,
+                haveFilters = null,
+                haveTextInInput=null;
+            var $ourClass = $('.headerSort li a.current').attr('data-cat'),
+                $allCheckedFilters = $('.product-listing input.filters').filter(':checked'),
+                $searchBox = $('#searchFilter').val();
+
+            if ($ourClass === 'all') {
+                alphaSelected = null;
+            } 
+             if ($ourClass !== 'all') {
+                alphaSelected = $ourClass;
+            } 
+             if ($allCheckedFilters.length > 0) {
+                var checkedVals = $.map($allCheckedFilters, function(el) {
+                    return el.value
+                });
+                haveFilters = checkedVals;
+            } 
+             if ($allCheckedFilters.length < 0) {
+                haveFilters = null;
+            } 
+             if ($.trim($searchBox).length > 0) {
+                haveTextInInput = 'inputsearc';
+            } 
+             if ($.trim($searchBox).length < 0) {
+                haveTextInInput = null;
+            }
+            
+            hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
+
+            setTimeout(function() {
+                hds.loadDataFilters.controlCount();
+            }, 500);
+        },
+        
+        updateSearchFilters: function(parm1, parm2, param3) {
             var filters = {
                 alpha: parm1,
-                category: parm2
+                category: parm2,
+                textFilter: param3
             };
+            $('#loadCatagoryContent').find('.no-matched-result').remove();
             $('.product').hide().filter(function() {
                 var self = $(this),
                     result = true; // not guilty until proven guilty
 
                 Object.keys(filters).forEach(function(filter) {
-                    if (filters[filter] && (filters[filter] != 'all')) {
-                        result = result && filters[filter] === self.data(filter);                      
+                    if ($.isArray(filters[filter])) {
+                        var cats = self.data('category').split(',');
+                        var checkMatches = $.grep(filters[filter], function(val) {
+                            return $.inArray(val, cats) > -1;
+                        });
+                        result = result && checkMatches.length === filters[filter].length;
+                    } else {
+                        if (filters[filter]) {
+                            if ((filters[filter] != 'inputsearc')) {
+
+                                result = result && filters[filter] === self.data(filter);
+                            } else {
+                                jQuery.expr[':'].Contains = function(a, i, m) {
+                                    return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+                                };
+                                var getSearchFilter = $('#searchFilter').val();
+                                self.show();
+                                $('#loadMoreBtn').hide();
+                                self.find(".filterText:not(:Contains(" + getSearchFilter + "))").parent().parent().slideUp();
+                                self.find(".filterText:Contains(" + getSearchFilter + ")").parent().parent().slideDown();
+                                setTimeout(function() {
+                                    hds.loadDataFilters.udatePageCount();
+                                }, 500);
+                            }
+                        }
                     }
                 });
                 return result;
             }).show();
+            if ($(".product:visible").length === 0) {
+                $('#loadCatagoryContent').find('.no-matched-result').remove();
+                $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+            }
         }
     }
 
