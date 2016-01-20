@@ -9,9 +9,10 @@
 		<div class="resources-category">
 			<div class="resources-category-heading">${properties.columntitle}</div>
 
-			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin")%>" />
+			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1")%>" />
 					<c:forEach var="column" items="${contentColumns}" varStatus="loop">
 						<c:set var="linkUrl" value="${column.seemoretargeturl}"/>
+                         
 						<c:if test="${fn:startsWith(linkUrl,'/content/')}">
 							<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
 						</c:if>	
@@ -23,7 +24,10 @@
 	                      <div class="resources-category-description">${column.columncontent}</div>
 	                      <div class="resources-category-more">
 
-						  		<a class="animateLink" href="${linkUrl}" target="${column.seemorenewwin?'_blank':'_self'}">${column.seemorelabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+
+
+
+						  		<a class="animateLink" href="${linkUrl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
 	                      </div>
 	                    </div>
 					</c:forEach>
