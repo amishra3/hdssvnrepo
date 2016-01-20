@@ -1,7 +1,17 @@
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
+<%@page import="org.apache.sling.api.resource.Resource"%>
 
+<%@page import="javax.jcr.Node"%>
+<%
 
+Resource res = resourceResolver.getResource(currentPage.getPath()+"/jcr:content") ;
+Node node = res.adaptTo(Node.class);
+
+node.setProperty("techSpecContentPath", currentNode.getPath());
+
+node.save();
+%>
 <div class="col-sm-12">
 	<div id="no-more-tables">
 		<table
@@ -40,4 +50,5 @@
 			</tbody>
 		</table>
 	</div>
+	<a href ="<%=currentPage.getPath()%>.techspec.html">View All</a>
 </div>
