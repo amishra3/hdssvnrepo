@@ -167,6 +167,14 @@ public final class PageConstants {
      */
     public static final String PROPERTY_JCRTEMPLATE_PATH = "jcr:content/cq:template";
 
+  
+    
+    /**
+     * constant for event path
+     */
+    
+    public static final String PROPERTY_JCREVENT_PATH ="/jcr:content/event";
+    		
     /**
      * private constructor to prevent instantiation of class.
      */
