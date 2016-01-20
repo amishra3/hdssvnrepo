@@ -74,6 +74,11 @@
                         fieldLabel="Hexagon Icon Path"
                         name="./hexagoniconpath"
                         xtype="ddpathfield"/>
+                    <hexagoniconpathalt
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hexagon Icon Alt"
+                        name="./hexagoniconpathalt"
+                        xtype="textfield"/>
                     <hexagontitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hexagon Content Title"

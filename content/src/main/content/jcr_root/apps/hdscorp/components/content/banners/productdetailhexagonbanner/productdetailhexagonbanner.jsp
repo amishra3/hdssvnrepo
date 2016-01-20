@@ -26,7 +26,8 @@
 </c:if>
 
 
-
+<c:choose>
+	<c:when test="${not empty properties.hexagontitle}">
 <div class="${bannertype=='dark'?'specific-tech':'business-specific clearfix'}" ${bannerbackgroundstyle}>
    	<div class="business-specific-container clearfix content-container">
    		<div class="specific-benefit row">
@@ -39,8 +40,8 @@
    				<div class="col-xs-12 col-md-4 hexContain">
    					<ul class="calculating-list">
    						<li class="hexagon-transformative hexagon">
-   							<span class="sprite icon-advance-lt" ${hexagoniconstyle}>
-								<img src="">
+								<span class="sprite">
+								<img src='${properties.hexagoniconpath}' alt='${properties.hexagoniconpathalt}' style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;">
                             </span>
    							<h4>${properties.hexagontitle}</h4>
    							<p>${properties.hexagoncontent}</p>
@@ -52,3 +53,20 @@
    		</div>
    </div>
 </div>
+</c:when>
+<c:otherwise>
+<div class="${bannertype=='dark'?'specific-tech':'business-specific clearfix'}" ${bannerbackgroundstyle}>
+   	<div class="business-specific-container clearfix content-container">
+   		<div class="specific-benefit row">
+   			<div class="content-container clearfix">
+   				<div class="col-xs-12 col-md-12 ${properties.secondarycontentalign?'floatright':''}">
+   					<h2>${properties.secondaryherotitlecontent}</h2>
+   					<h4>${properties.secondaryherosubtitlecontent}</h4>
+   						${properties.secondaryherocontent}
+   				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</c:otherwise>
+</c:choose>
