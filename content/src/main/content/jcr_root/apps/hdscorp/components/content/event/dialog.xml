@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Event Component"
+    width="600"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <event
+                jcr:primaryType="cq:Panel"
+                title="event">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <eventtype
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event Type"
+                        name="./eventtype"
+                        xtype="tags"/>
+                    <eventtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event Title"
+                        name="./eventtitle"
+                        xtype="textfield"/>
+                    <eventstartdate
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event Start Date"
+                        name="./eventstartdate"
+                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa; var currentDate= new Date();&#xa;&#xa; if (currentDate>=eventstartdatevalue)&#xa; {&#xa; alert(&quot;You are not allow to enter previous date&quot;);&#xa;return false;&#xa; }&#xa; &#xa;}"
+                        xtype="datefield"/>
+                    <eventenddate
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event End Date"
+                        name="./eventenddate"
+                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa;  &#xa;  var enddate = dialog.getField('./eventenddate');&#xa;  var enddateValue = enddate.getValue();&#xa;  &#xa; if (enddateValue &lt;=eventstartdatevalue)&#xa; {&#xa; alert(&quot;End date should be greater that start date&quot;);&#xa;return false;&#xa; }&#xa; &#xa;}"
+                        xtype="datefield"/>
+                    <eventlocation
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event Location"
+                        name="./eventlocation"
+                        xtype="textfield"/>
+                    <eventregiontag
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Region Tag"
+                        name="./eventregiontag"
+                        xtype="tags"/>
+                    <eventdescription
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event Description"
+                        name="./eventdescription"
+                        xtype="richtext"/>
+                    <backgroundimage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Background Image"
+                        name="./evbackgroundimage"
+                        xtype="pathfield"/>
+                    <registernowlabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Register Now Label"
+                        name="./registernowlabel"
+                        xtype="textfield"/>
+                    <registernowlink
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Register Now Link"
+                        name="./registernowlink"
+                        xtype="pathfield"/>
+                </items>
+            </event>
+        </items>
+    </items>
+</jcr:root>

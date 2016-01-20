@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Event and Regional Filter"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <eventfilter
+                jcr:primaryType="cq:Panel"
+                title="Event Filter">
+                <items
+                    jcr:primaryType="cq:WidgetCollection"
+                    xtype="multifieldpanel">
+                    <eshownfrom
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Showing From"
+                        name="./eshownfrom"
+                        xtype="textfield"/>
+                    <eupdatelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Update Label"
+                        name="./eupdatelabel"
+                        xtype="textfield"/>
+                    <eallevent
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="All Events"
+                        name="./eallevent"
+                        xtype="textfield"/>
+                    <eventtypes
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Types"
+                        name="./eventtypes"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <elabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Event Label"
+                                    key="elabel"
+                                    name="./elabel"
+                                    xtype="textfield"/>
+                                <econtenttag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Event Content Tag"
+                                    key="econtenttag"
+                                    name="./econtenttag"
+                                    xtype="tags"/>
+                                <eregionttag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Event Region Tag"
+                                    key="eregionttag"
+                                    name="./eregionttag"
+                                    xtype="tags"/>
+                            </items>
+                        </fieldConfig>
+                    </eventtypes>
+                </items>
+            </eventfilter>
+            <regionfilter
+                jcr:primaryType="cq:Panel"
+                title="Regional Filter">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <efilterbylabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Filter by Label"
+                        name="./efilterbylabel"
+                        xtype="textfield"/>
+                    <regions
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Regions"
+                        name="./regions"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <eregionlabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region Label"
+                                    key="eregionlabel"
+                                    name="./eregionlabel"
+                                    xtype="textfield"/>
+                                <eregionsttag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region Tag"
+                                    key="eregionsttag"
+                                    name="./eregionsttag"
+                                    xtype="tags"/>
+                            </items>
+                        </fieldConfig>
+                    </regions>
+                </items>
+            </regionfilter>
+        </items>
+    </items>
+</jcr:root>
