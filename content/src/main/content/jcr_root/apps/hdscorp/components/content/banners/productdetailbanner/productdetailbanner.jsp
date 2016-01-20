@@ -27,34 +27,48 @@
 	<c:when test="${not empty properties.simplebannertitle}">
 		<div class="hero-product-solutions clearfix ${properties.simplebannerusevideomodal?'server-rack':'overview'}" style="background-image:url('${properties.simplebannermagePath}');${properties.simplebannerusevideomodal?'display:block;':''}">
 			<div class="hero-product-solutions-container ${properties.simplebannercontentalign?'floatright':''}">
-				<h1 class="headline">${properties.simplebannertitle}</h1>
-				<h3>${properties.simplebannersubtitle}</h3>
-				<h4 class="sub-headline"><cq:text property="simplebannercontent" placeholder="click here to set text" /></h4>
 
-				<c:if test="${not empty properties.simplebannerusevideomodal}">
-		      		<div class="video-play hidden-lg">
-		      			<a href="#" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
-		      		</div>
-				</c:if>
 
-				<c:if test="${not empty properties.simpllebannerbuttonlabel}">
-					<div class="btn-square-white request">
-						<a href="${buttonUrl}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
-							${properties.simpllebannerbuttonlabel}
-						</a>
-					</div>
-				</c:if>
-				<c:if test="${not empty properties.simpllebannerlinklabel}">
-					<div class="buy-through">
-						<!-- <a href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="sprite icon-caret-white"></span></a> -->
-						<a class="animateLink" href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
-					</div>
-				</c:if>
+                 <c:if test="${not empty properties.simplebannerusevideomodal}">
+                     <div class="col-lg-7 col-md-7 col-xs-12 overRideleft">
+					</c:if>
 
-				<c:if test="${not empty properties.simplebannerusevideomodal}">
-					<a href="#" class="servers hidden-xs hidden-sm btn-play-video"><img src="${properties.simplebannerimageoverlaypath}"></a>
-				</c:if>
-				
+
+                     <c:if test="${empty properties.simplebannerusevideomodal}">
+                     <div class="col-lg-12 col-md-12 col-xs-12 overRideleft">
+					</c:if>
+
+                    <h1 class="headline">${properties.simplebannertitle}</h1>
+                    <h3>${properties.simplebannersubtitle}</h3>
+                    <h4 class="sub-headline"><cq:text property="simplebannercontent" placeholder="click here to set text" /></h4>
+
+                    <c:if test="${not empty properties.simplebannerusevideomodal}">
+                        <div class="video-play hidden-lg">
+                            <a href="#" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
+                        </div>
+                    </c:if>
+    
+                    <c:if test="${not empty properties.simpllebannerbuttonlabel}">
+                        <div class="btn-square-white request">
+                            <a href="${buttonUrl}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
+                                ${properties.simpllebannerbuttonlabel}
+                            </a>
+                        </div>
+                    </c:if>
+                    <c:if test="${not empty properties.simpllebannerlinklabel}">
+                        <div class="buy-through">
+                            <!-- <a href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="sprite icon-caret-white"></span></a> -->
+                            <a class="animateLink" href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                        </div>
+                    </c:if>
+                </div>
+
+				<div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm">
+                    <c:if test="${not empty properties.simplebannerusevideomodal}">
+                        <a href="#" class="servers hidden-xs hidden-sm btn-play-video"><img src="${properties.simplebannerimageoverlaypath}"></a>
+                    </c:if>
+                </div>
+
 			</div>
 		</div>
 
@@ -69,6 +83,8 @@
 
 
 	</c:when>
+
+
 	<c:otherwise>
 		<wcmmode:edit>
 			<p>
