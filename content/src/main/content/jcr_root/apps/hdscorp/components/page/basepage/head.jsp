@@ -58,6 +58,7 @@
       <meta name="description" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:description", "")) %>"<%=xs%>>
 	  <meta name="google" value="notranslate" />
 	  <meta name="referrer" content="origin">
+	  <cq:include script="metatags.jsp"/>
       <script src="https://use.typekit.net/bza1awk.js"></script>
 	  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 	
