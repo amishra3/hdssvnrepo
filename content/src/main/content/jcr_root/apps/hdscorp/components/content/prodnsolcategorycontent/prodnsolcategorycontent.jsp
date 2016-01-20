@@ -15,9 +15,9 @@
 		</c:if>
 		
 		
-		<div class="product" data-sort="${productInitialChar}" data-alpha="${productInitialChar}" style="display: block;"
+		<div class="product" data-sort="${productInitialChar}" data-alpha="${productInitialChar}"
 		data-category="${productTags}">
-			<h3><a href="${product.productPath}">${product.productTitle}</a></h3>
+			<h3><a href="${product.productPath}" class="filterText">${product.productTitle}</a></h3>
 		    ${product.productDescription}
 		    <a href="${product.productPath}" class="animateLink">${properties.viewproductlabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 		 </div>

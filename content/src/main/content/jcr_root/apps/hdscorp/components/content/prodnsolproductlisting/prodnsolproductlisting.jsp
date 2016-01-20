@@ -11,7 +11,7 @@
                         <div class="col-xs-12 col-md-10 col-md-offset-1">
                             <div id="custom-search-input">
                                 <div class="pr-search">
-                                    <input type="text" placeholder="${properties.searchboxdeafulttext}">
+                                    <input type="text" id="searchFilter" name="searchFilter" placeholder="${properties.searchboxdeafulttext}">
                                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                    		<sling:include path="${includetargetURL}" />
                                     </c:if>
                                     </div>
-                                    <div class="btn-square-red load-more-link" id="loadMoreBtn" style="display:none;">
+                                    <div class="btn-square-red load-more-link" id="loadMoreBtn">
                                         <a href="javascript:void(0);" title="${properties.loadmorelabel}">${properties.loadmorelabel}</a>
                                     </div>
                                 </div>

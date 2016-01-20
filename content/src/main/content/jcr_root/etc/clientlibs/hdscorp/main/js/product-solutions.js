@@ -17,125 +17,40 @@
 		});
 	}
 
-	var stickyElement = function() {
-		// element to be sticky
-		var $stickyEl = $('.navContain');
-		// element that will stop the sticky element
-		var $stopEl = $('.stop');
-
-		var sticky = new Waypoint.Sticky({
-			element: $stickyEl,
-			wrapper: false,
-			stuckClass: 'sticky',
-			offset: 0
-		});
-
-		$stopEl.waypoint(function(direction) {
-			if (direction === 'down') {
-				// when scrolling down
-				// replace pos:fixed with absolute and set top value to
-				// the distance from $stopEl to viewport top minus the
-				// height of the stickyElement
-				// var footerOffset = $stopEl.offset();
-				$stickyEl.css({
-					position: 'absolute',
-					top: 0
-						//top: footerOffset.top - $stickyEl.outerHeight()
-				});
-			} else if (direction === 'up') {
-				// remove the inline styles so sticky styles apply again
-				$stickyEl.attr('style', '');
-			}
-
-		}, {
-			// trigger the waypoint when the bottom of stickyEl touches top of stopEl
-			offset: function() {
-				return $stickyEl.outerHeight();
-			}
-		});
-	};
-
-	function setActiveLi() {
-		var currentId = $(this.element).attr('id');
-		$('.list-inline').find('li').removeClass('active');
-		$('.list-inline').find('li.' + currentId).addClass('active');
-	}
 
 	if($('.navContain').length!==0){
-		stickyElement();
-        if($('#overview').length!==0){
-            var waypoint = new Waypoint({
-                element: document.getElementById('overview'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: 1
-            });
-    
-            var waypointb = new Waypoint({
-                element: document.getElementById('overview'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: -136
-            });
-        }
+		$('.navContain').stickyNavbar();
+		$('.navContain').stickyNavbar({
+			activeClass: "active",          // Class to be added to highlight nav elements
+			sectionSelector: "accordion-level",    // Class of the section that is interconnected with nav links
+			animDuration: 250,              // Duration of jQuery animation
+			startAt: 0,                     // Stick the menu at XXXpx from the top of the this() (nav container)
+			easing: "linear",               // Easing type if jqueryEffects = true, use jQuery Easing plugin to extend easing types - gsgd.co.uk/sandbox/jquery/easing
+			animateCSS: true,               // AnimateCSS effect on/off
+			animateCSSRepeat: false,        // Repeat animation everytime user scrolls
+			cssAnimation: "fadeInDown",     // AnimateCSS class that will be added to selector
+			jqueryEffects: false,           // jQuery animation on/off
+			jqueryAnim: "slideDown",        // jQuery animation type: fadeIn, show or slideDown
+			selector: "li",                  // Selector to which activeClass will be added, either "a" or "li"
+			mobile: false,                  // If false nav will not stick under 480px width of window
+			mobileWidth: 480,               // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due usability on mobile devices)
+			zindex: 9999,                   // The zindex value to apply to the element: default 9999, other option is "auto"
+			stickyModeClass: "sticky",      // Class that will be applied to 'this' in sticky mode
+			unstickyModeClass: "unsticky"   // Class that will be applied to 'this' in non-sticky mode
+		});
 
-        if($('#features-benefits').length!==0){
-            var waypoint2 = new Waypoint({
-                element: document.getElementById('features-benefits'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: 34
-            });
-    
-            var waypoint2b = new Waypoint({
-                element: document.getElementById('features-benefits'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: -136
-            });
-        }
+        var stopPos = $('.stop').eq(0).offset().top;
+	    $(window).scroll(function(e){
+		var cScroll = $(window).scrollTop();
+		if(cScroll >= stopPos){
+		    $('.navContain').removeClass('sticky').addClass('unsticky').removeAttr('style');
+		}
+		e.stopPropagation();
+	})
 
-        if($('#resources').length!==0){
-            var waypoint3 = new Waypoint({
-                element: document.getElementById('resources'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: 34
-            });
-    
-            var waypoint3b = new Waypoint({
-                element: document.getElementById('resources'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: -136
-            });
-        }
+	};
 
-        if($('#tech-specifications').length!==0){
-            var waypoint4 = new Waypoint({
-                element: document.getElementById('tech-specifications'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: 34
-            });
-    
-            var waypoint4b = new Waypoint({
-                element: document.getElementById('tech-specifications'),
-                handler: function(direction) {
-                    setActiveLi.call(this);
-                },
-                offset: -136
-            });
-        }
-	}
-
+	/* sticky nav code end here */
 
 	// Get text values from Sticky Nav, apply to Accordion labels
 	$("ul.stickyNav li a").each(function(i) {
@@ -145,8 +60,6 @@
 
 	var allMenus = $('.accordion-menu-container');
 	var allContents = $('.accordion-content');
-
-
 
 	$(document).on('click','.accordion-level > .accordion-menu-container' , function(event) {
         var $currentContent = $(this).closest('div').next('div.accordion-content',this);
@@ -166,7 +79,6 @@
 
 	$('.stickyNav a').on('click', function(e){
 		e.preventDefault();
-
 		var
 		 	scrollOffset = 0,
 			el = $(this).attr('href').substring(1),
@@ -208,29 +120,38 @@
 		})
 	}
 	/* Read More Less Code End */
+
+	/* Product & Solution Active Tab */
+	if(window.location.href.indexOf("products-solutions") > -1) {
+       $('.sub-navigation ul li:first-child a').addClass('active');
+    }
+
 })(jQuery);
 
 
 /* Equal Columns Height */
 (function($) {	
-	$(window).resize(function() {
-        setTimeout(function(){
-        	equalColumns('.cs-selections .cs-selection-box');
-        	equalColumns('.mes-section .product-box');
-        }, 1000);
-    });
-    setTimeout(function(){
-    	equalColumns('.cs-selections .cs-selection-box');
-    	equalColumns('.mes-section .product-box');
-    }, 1000);
-
-	function equalColumns(htmlElements){
+    function equalColumns(htmlElements){
+		$(htmlElements).removeAttr('style');
 		var heights = $(htmlElements).map(function() {
 	        return $(this).height();
 	    }).get(),
-	        maxHeight = Math.max.apply(null, heights);
+	    maxHeight = Math.max.apply(null, heights);
 	    $(htmlElements).height(maxHeight);
 	}
+
+	window.addEventListener("resize", function() {
+    	// Get screen size (inner/outerWidth, inner/outerHeight)
+        setTimeout(function(){
+			equalColumns('.cs-selections .cs-selection-box');
+        	equalColumns('.mes-section .product-box');
+        }, 500);
+	}, false);
+
+
+    setTimeout(function(){
+    	equalColumns('.cs-selections .cs-selection-box');
+        equalColumns('.mes-section .product-box');
+    }, 500);
+
 })(jQuery);
-
-

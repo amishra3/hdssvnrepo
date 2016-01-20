@@ -40,7 +40,7 @@
 					<c:set var="activeclass" value=" class='active'"/>
 				</c:if>
 				
-				<div class="MobileHolderWrapper"></div>
+
 
 				<li ${activeclass}>
 					
@@ -49,7 +49,8 @@
 							<span class="icon-accordion-closed"></span> 
 							<span class="icon-accordion-opened"></span>
 					</a>
-					
+					<div class="MobileHolderWrapper"></div>
+
 				    <c:if test="${selectorString== xss:filterHTML(xssAPI,data['category-id'])}">
 						<c:set var="includeURL" value="${subcat.subcatcontenturl}" />
 						<c:set var="activeSubCatIndex" value="${status.index}" />			
