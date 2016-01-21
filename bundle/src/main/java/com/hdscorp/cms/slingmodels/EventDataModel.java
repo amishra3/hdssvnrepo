@@ -21,7 +21,8 @@ import com.hdscorp.cms.dao.EventNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
-/** Useful for fetch all the event details based on directory.
+/**
+ * Useful for fetch all the event details based on directory.
  * 
  * @author gokula.nand
  *
@@ -59,9 +60,10 @@ public class EventDataModel {
 				log.info("Events path is::" + pagePath);
 
 				Resource res = resourceResolver.getResource(pagePath + PageConstants.PROPERTY_JCREVENT_PATH);
+
 				if (res != null) {
 					ValueMap properties = res.adaptTo(ValueMap.class);
-					eventNode.setEventType(properties.get("eventtype").toString());
+					eventNode.setEventType((String[]) properties.get("eventtype", String[].class));
 					eventNode.setEventTitle(properties.get("eventtitle", (String) null));
 					eventNode.setEventStartDate(properties.get("eventstartdate", (String) null));
 					eventNode.setEventEndDate(properties.get("eventenddate", (String) null));
@@ -70,7 +72,7 @@ public class EventDataModel {
 					eventNode.setEventImageBackground(properties.get("evbackgroundimage", (String) null));
 					eventNode.setEventRegisterNowLabel(properties.get("registernowlabel", (String) null));
 					eventNode.setEventRegisterNowLink(properties.get("registernowlink", (String) null));
-					eventNode.setEventRegion(properties.get("eventregiontag").toString());
+					eventNode.setEventRegion((String[]) properties.get("eventregiontag", String[].class));
 				}
 
 			} catch (RepositoryException e) {
