@@ -1,13 +1,14 @@
 package com.hdscorp.cms.dao;
 
-/** Useful for Event Data Model
+/**
+ * Useful for Event Data Model
  * 
  * @author gokula.nand
  *
  */
 public class EventNode {
 
-	private String eventType;
+	private String[] eventType;
 
 	private String eventTitle;
 
@@ -25,9 +26,9 @@ public class EventNode {
 
 	private String eventRegisterNowLink;
 
-	private String eventRegion;
+	private String[] eventRegion;
 
-	public String getEventType() {
+	public String[] getEventType() {
 		return eventType;
 	}
 
@@ -63,11 +64,11 @@ public class EventNode {
 		return eventRegisterNowLink;
 	}
 
-	public String getEventRegion() {
+	public String[] getEventRegion() {
 		return eventRegion;
 	}
 
-	public void setEventType(String eventType) {
+	public void setEventType(String[] eventType) {
 		this.eventType = eventType;
 	}
 
@@ -103,7 +104,7 @@ public class EventNode {
 		this.eventRegisterNowLink = eventRegisterNowLink;
 	}
 
-	public void setEventRegion(String eventRegion) {
+	public void setEventRegion(String[] eventRegion) {
 		this.eventRegion = eventRegion;
 	}
 
