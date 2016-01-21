@@ -1136,13 +1136,12 @@ This basically loops and creates that many number of classes
   float: left;
 }
 
-
-
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   /*ipad portrait*/
     div.acs-commons-resp-colctrl-row > div {
         width:100%; 
     }
+    
     .acs-commons-resp-colctrl-row br {
         display: none;
     }
