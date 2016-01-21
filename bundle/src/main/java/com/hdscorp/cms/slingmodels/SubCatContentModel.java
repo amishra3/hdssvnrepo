@@ -9,10 +9,13 @@ import javax.jcr.RepositoryException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
+import com.hdscorp.cms.config.HdsCorpGlobalConfiguration;
 import com.hdscorp.cms.dao.ProductNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.PathResolver;
@@ -37,8 +40,11 @@ public class SubCatContentModel {
 		return subcattags;
 	}
 
+	private static final Logger LOG = LoggerFactory.getLogger(SubCatContentModel.class);
 	
 	public List<ProductNode> getProducts() throws RepositoryException {
+		
+		LOG.debug("-------------INSIDE getProducts in SubCatContentModel.Making the Search Service call");
 
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
         
@@ -49,6 +55,8 @@ public class SubCatContentModel {
 		boolean doPagination = false;
 		
 		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,null,null);
+		
+		LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
 		List<Hit> hits = result.getHits();
 		products = new ArrayList<ProductNode>();
 		

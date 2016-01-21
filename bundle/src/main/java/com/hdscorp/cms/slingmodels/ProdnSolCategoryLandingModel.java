@@ -1,7 +1,6 @@
 package com.hdscorp.cms.slingmodels;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -11,6 +10,8 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
@@ -30,10 +31,15 @@ public class ProdnSolCategoryLandingModel {
 	private ResourceResolver resourceResolver;	
 	
 	private List<ProductNode> products;
+	
+	private static final Logger LOG = LoggerFactory.getLogger(ProdnSolCategoryLandingModel.class);
 
 	public List<ProductNode> getProducts() throws RepositoryException {
 
 		try {
+			
+			
+			LOG.debug("-------------INSIDE getProducts in ProdnSolCategoryLandingModel .GETTING THE SEARCH SERVICE");
 			
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			
@@ -58,6 +64,8 @@ public class ProdnSolCategoryLandingModel {
 			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,null,null);
 			List<Hit> hits = result.getHits();
 			
+			LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
+			
 			products = new ArrayList<ProductNode>();
 			
 			for (Hit hit : hits) {
@@ -67,7 +75,7 @@ public class ProdnSolCategoryLandingModel {
 			    String pagePath = reourcePage.getPath();
 			    String pageProductDescription = (String)reourcePage.getProperties().get("subtext");
 			    String[] pageTags= (String[])reourcePage.getProperties().get("cq:tags");
-			    System.out.println("----pageTags----- "+pageTags);
+//			    System.out.println("----pageTags----- "+pageTags);
 			    
 			    if(pagePath.startsWith("/content")){
 			    	pagePath=PathResolver.getShortURLPath(pagePath);
