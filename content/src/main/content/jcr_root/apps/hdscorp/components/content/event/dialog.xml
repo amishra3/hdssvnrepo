@@ -17,62 +17,71 @@
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Event Type"
-                        name="./eventtype"
+                        name="./jcr:eventtype"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:eventtype')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="tags"/>
                     <eventtitle
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Event Title"
-                        name="./eventtitle"
+                        name="./jcr:eventtitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:eventtitle')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <eventstartdate
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Event Start Date"
-                        name="./eventstartdate"
-                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa; var currentDate= new Date();&#xa;&#xa; if (currentDate>=eventstartdatevalue)&#xa; {&#xa; alert(&quot;You are not allow to enter previous date&quot;);&#xa;return false;&#xa; }&#xa; &#xa;}"
+                        name="./jcr:eventstartdate"
+                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./jcr:eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa; var currentDate= new Date();&#xa;&#xa; if (currentDate>=eventstartdatevalue)&#xa; {&#xa; alert(&quot;You are not allow to enter previous date&quot;);&#xa;return false;&#xa; }&#xa;}"
                         xtype="datefield"/>
                     <eventenddate
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Event End Date"
-                        name="./eventenddate"
-                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa;  &#xa;  var enddate = dialog.getField('./eventenddate');&#xa;  var enddateValue = enddate.getValue();&#xa;  &#xa; if (enddateValue &lt;=eventstartdatevalue)&#xa; {&#xa; alert(&quot;End date should be greater that start date&quot;);&#xa;return false;&#xa; }&#xa; &#xa;}"
+                        name="./jcr:eventenddate"
+                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./jcr:eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa;  &#xa;  var enddate = dialog.getField('./jcr:eventenddate');&#xa;  var enddateValue = enddate.getValue();&#xa;  &#xa; if (enddateValue &lt;=eventstartdatevalue)&#xa; {&#xa; alert(&quot;End date should be greater that start date&quot;);&#xa;return false;&#xa; }&#xa; }"
                         xtype="datefield"/>
                     <eventlocation
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Event Location"
-                        name="./eventlocation"
+                        name="./jcr:eventlocation"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:eventlocation')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <eventregiontag
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="Region Tag"
-                        name="./eventregiontag"
+                        name="./jcr:eventregiontag"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:eventregiontag')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="tags"/>
                     <eventdescription
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Event Description"
-                        name="./eventdescription"
+                        name="./jcr:eventdescription"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:eventdescription')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="richtext"/>
                     <backgroundimage
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Background Image"
-                        name="./evbackgroundimage"
+                        name="./jcr:evbackgroundimage"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:evbackgroundimage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
                     <registernowlabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Register Now Label"
-                        name="./registernowlabel"
+                        name="./jcr:registernowlabel"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:registernowlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <registernowlink
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Register Now Link"
-                        name="./registernowlink"
+                        name="./jcr:registernowlink"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:registernowlink')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
                 </items>
             </event>
