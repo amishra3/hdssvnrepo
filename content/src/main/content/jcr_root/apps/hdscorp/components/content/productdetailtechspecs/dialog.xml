@@ -15,6 +15,16 @@
                 title="Tech Spec's"
                 xtype="panel">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <viewalllinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="View All Link Label"
+                        name="./viewalllinklabel"
+                        xtype="textfield"/>
+                    <techspecrowstoshow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Total Rows To Show for Tech Specs."
+                        name="./techspecrowstoshow"
+                        xtype="textfield"/>                        
                     <developer
                         jcr:primaryType="cq:Widget"
                         fieldDescription="Click the '+' to add a new data"
