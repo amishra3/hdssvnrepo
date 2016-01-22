@@ -40,6 +40,7 @@ import org.apache.commons.collections.map.LinkedMap;
 import org.apache.commons.httpclient.util.URIUtil;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -703,7 +704,7 @@ public static String  getComponentPath(final Page currentPage, ResourceResolver 
     
     
     public static String getPropertyValue(ResourceResolver resourceResolver,String path, String propertyName) {
-		String propertyValue = "";
+		String propertyValue = "";		
 		try {
 			log.info("Execution start for getPropertyValue");
 			if(resourceResolver!=null && path!=null && !path.isEmpty() && propertyName!=null && !propertyName.isEmpty()){
@@ -716,6 +717,35 @@ public static String  getComponentPath(final Page currentPage, ResourceResolver 
 		} catch (Exception e) {
 			log.error("Exception occourred while saving data to JCR: ", e);
 		}
+		log.info("propertyValue:::"+propertyValue);
 		return propertyValue;
+	}
+    
+    
+    public static int doesNodeExist(Node content, String nodeName) {
+		try {
+			int childRecs = 0;
+			java.lang.Iterable<Node> requiredRoot = JcrUtils.getChildNodes(content, nodeName);
+			Iterator<Node> rootitr = requiredRoot.iterator();
+
+			// only going to be 1 content/nodeName node if it exists
+			if (rootitr.hasNext()) {
+				// Count the number of child nodes in content/customer
+				Node requiredRootNode = content.getNode(nodeName);
+				Iterable<Node> itCust = JcrUtils.getChildNodes(requiredRootNode);
+				Iterator<Node> childNodeIt = itCust.iterator();
+
+				// Count the number of nodeName child nodes
+				while (childNodeIt.hasNext()) {
+					childRecs++;
+					childNodeIt.next();
+				}
+				return childRecs;
+			} else
+				return -1; // required node does not exist
+		} catch (Exception e) {
+			log.error("Exception occured while checking not into the JCR: " + e);
+		}
+		return 0;
 	}
 }
