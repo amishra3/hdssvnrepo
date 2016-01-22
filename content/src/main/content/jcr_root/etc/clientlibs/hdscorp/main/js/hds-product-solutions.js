@@ -3,7 +3,6 @@ var hds = window.hds || {};
 (function(window, document, $, hds) {
     hds.loadDataFilters = {
         init: function() {
-        	//hds.loadDataFilters.disableHref();
 			hds.loadDataFilters.loadSubContent();
             //hds.loadDataFilters.loadCatagoryContent();
             hds.loadDataFilters.subListTab();
