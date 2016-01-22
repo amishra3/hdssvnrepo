@@ -10,7 +10,7 @@ import org.apache.sling.models.annotations.Model;
 
 /** Sling model for event component
  * 
- * @author gokula.nand
+ * @author ramana
  *
  */
 @Model(adaptables = Resource.class)
@@ -18,52 +18,52 @@ public class EventModel {
 	
 	
 	@Inject
-	@Named("eventtype")
-	@Default(values = {"cq:tags"})
+	@Named("jcr:eventtype")
+	@Default(values = {"Event Type cq:tags"})
 	private String[] eventType;
 	
 	@Inject
-	@Named("eventregiontag")
-	@Default(values = {"cq:tags"})
+	@Named("jcr:eventregiontag")
+	@Default(values = {"Event Region cq:tags"})
 	private String[] eventRegionTag;
 	
 	@Inject
-	@Named("eventtitle")
-	@Default(values = {"eventtitle"})
+	@Named("jcr:eventtitle")
+	@Default(values = {"Event Title"})
 	private String eventTitle;
 	
 	@Inject
-	@Named("eventstartdate")
-	@Default(values = {"eventstartdate"})
+	@Named("jcr:eventstartdate")
+	@Default(values = {"Event Start Date"})
 	private String eventStartDate;
 	
 	@Inject
-	@Named("eventenddate")
-	@Default(values = {"eventenddate"})
+	@Named("jcr:eventenddate")
+	@Default(values = {"Event End Date"})
 	private String eventEndDate;
 	
 	@Inject
-	@Named("eventlocation")
-	@Default(values = {"eventlocation"})
+	@Named("jcr:eventlocation")
+	@Default(values = {"Event Location"})
 	private String eventLocation;
 	@Inject
-	@Named("eventdescription")
-	@Default(values = {"eventdescription"})
+	@Named("jcr:eventdescription")
+	@Default(values = {"Event Description"})
 	private String eventDescription;
 	
 	@Inject
-	@Named("evbackgroundimage")
-	@Default(values = {"evbackgroundimage"})
+	@Named("jcr:evbackgroundimage")
+	@Default(values = {"Event BackGround Image"})
 	private String evBackgroundImage;
 	
 	@Inject
-	@Named("registernowlabel")
-	@Default(values = {"registerNowLabel"})
+	@Named("jcr:registernowlabel")
+	@Default(values = {"Register Now Label"})
 	private String registerNowLabel;
 	
 	@Inject
-	@Named("registernowlink")
-	@Default(values = {"registerNowLink"})
+	@Named("jcr:registernowlink")
+	@Default(values = {"Register Now Link"})
 	private String registerNowLink;
 
 	public String[] getEventType() {
