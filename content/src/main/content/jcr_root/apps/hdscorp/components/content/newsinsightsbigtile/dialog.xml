@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="News Insights Big Tile Component"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <newsinsights
+                jcr:primaryType="cq:Panel"
+                title="News Insights">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <nibtlabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Label"
+                        name="./jcr:nibtlabel"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:nibtlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <nibtlabellink
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Label Link"
+                        name="./jcr:nibtlabellink"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:nibtlabellink')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <nibtbgimagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Back Ground Image Path"
+                        name="./jcr:nibtbgimagepath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:nibtbgimagepath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <nibticonimagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Icon Image Path"
+                        name="./jcr:nibticonimagepath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:nibticonimagepath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <nibticonimagetitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Icon Image Title"
+                        name="./jcr:nibticonimagetitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:nibticonimagetitle')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <nibtdescription
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Description"
+                        name="./jcr:nibtdescription"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:nibtdescription')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="richtext"/>
+                    <nibtopeninnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window"
+                        key="nibtopeninnewwindow"
+                        name="./jcr:nibtopeninnewwindow"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                </items>
+            </newsinsights>
+        </items>
+    </items>
+</jcr:root>
