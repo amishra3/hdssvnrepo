@@ -2,7 +2,7 @@
 
 <%@include file="/apps/foundation/global.jsp"%>
 
-
+<div class="fb-section">
 <div class="fb-container container-fluid">
 	<c:if test="${not empty properties.sectiontitle}">
 		<div class="fb-title hidden-xs">${properties.sectiontitle}</div>
@@ -29,4 +29,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
