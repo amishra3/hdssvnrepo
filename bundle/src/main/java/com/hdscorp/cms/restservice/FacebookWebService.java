@@ -44,11 +44,14 @@ private static final Logger log = LoggerFactory.getLogger(FacebookWebService.cla
 		JSONArray jsonArray = new JSONArray();
 		if (getFacebookInstance(appId, appSecret, accessToken) != null) {
 			ResponseList<Post> results = getFacebookInstance(appId, appSecret, accessToken).getFeed(facebookPostName,
-					new Reading().limit(Integer.parseInt(postLimt)));
+					new Reading().limit(Integer.parseInt(postLimt)));		
+		
 			try {
 				for (Post post : results) {
+				
 					JSONObject jsonObject = new JSONObject();
 					jsonObject.put(ServiceConstants.JSON_FB_ID, post.getId());
+					jsonObject.put(ServiceConstants.JSON_FB_POST_ID, post.getId().substring(post.getId().indexOf("_")+1));
 					jsonObject.put(ServiceConstants.JSON_FB_MESSAGE, post.getMessage());
 					jsonObject.put(ServiceConstants.JSON_FB_CreatedDate,
 							ServiceUtil.getDisplayDateFormat(post.getCreatedTime().toString(),
@@ -97,5 +100,4 @@ private static final Logger log = LoggerFactory.getLogger(FacebookWebService.cla
 		return facebook;
 	}
 	
-
 }
