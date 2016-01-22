@@ -14,7 +14,7 @@ From the bundle directory, run ``mvn -PautoInstallBundle clean install`` to buil
 
 To use this project with the AEM Developer Tools for Eclipse, import the generated Maven projects via the Import:Maven:Existing Maven Projects wizard. Then enable the Content Package facet on the _content_ project by right-clicking on the project, then select Configure, then Convert to Content Package... In the resulting dialog, select _src/main/content_ as the Content Sync Root.
 
-## Using with VLT
+### Using with VLT
 
 To use vlt with this project, first build and install the package to your local CQ instance as described above. Then cd to `content/src/main/content/jcr_root` and run
 
