@@ -29,14 +29,7 @@
 			<div class="hero-product-solutions-container ${properties.simplebannercontentalign?'floatright':''}">
 
 
-                 <c:if test="${not empty properties.simplebannerusevideomodal}">
-                     <div class="col-lg-7 col-md-7 col-xs-12 overRideleft">
-					</c:if>
-
-
-                     <c:if test="${empty properties.simplebannerusevideomodal}">
-                     <div class="col-lg-12 col-md-12 col-xs-12 overRideleft">
-					</c:if>
+               		 <div class="col-lg-7 col-md-7 col-xs-12 overRideleft">
 
                     <h1 class="headline">${properties.simplebannertitle}</h1>
                     <h3>${properties.simplebannersubtitle}</h3>
