@@ -111,10 +111,72 @@ public final class ServiceConstants {
 	public static final String FB_POST_STORAGE_PATH = "facebook.storage.path";
 
 	public static final String JSON_FB_ID = "id";
+	public static final String JSON_FB_POST_ID = "postId";
 	public static final String JSON_FB_CreatedDate = "createdDate";
 	public static final String JSON_FB_MESSAGE = "message";
 	public static final String FB_PERSMISSION_STRING = "email, publish_stream, id, name, first_name, last_name, read_stream , generic";
 	public static final String FB_POST_FEED_DISPLAY_DATE_FORMAT = "MMMM d, yyyy";
 	public static final String SAVE_FB_FEED_DATA_PROPERTY_NAME = "facebookResonse";
+
+	/**
+	 * BrightCove Constraints
+	 * 
+	 */
+
+	
+
+	public static final String BR_COVE_JCR_TITLE = "jcr:title";
+	public static final String BR_COVE_JCR_DISC = "jcr:description";
+	public static final String BR_COVE_JCR_GUID = "guid";
+	public static final String BR_COVE_JCR_PUB_DATE = "pubDate";
+	public static final String BR_COVE_JCR_THUMBNAIL = "thumbnail";
+	public static final String BR_COVE_JCR_THUMBNAIL_VS = "thumbnailvs";
+	public static final String BR_COVE_JCR_TITLE_ID = "titleid";
+	public static final String BR_COVE_JCR_DURATION = "duration";
+	public static final String BR_COVE_JCR_ACCOUNT_ID = "accountid";
+	public static final String BR_COVE_JCR_URL = "url";
+	public static final String BR_COVE_JCR_KEYWORD = "keyword";
+	public static final String BR_COVE_JCR_UNSTR= "nt:unstructured";
+	public static final String BR_COVE_JRC_NODE_SEPRATOR= "-";
+	
+
+
+	public static final String BR_COVE_ENTRY = "item";
+	public static final String BR_COVE_FEED_TITLE = "title";
+	public static final String BR_COVE_FEED_GUID = "guid";
+	public static final String BR_COVE_FEED_PUB_DATE = "pubDate";
+	public static final String BR_COVE_FEED_THUMBNAIL = "media:thumbnail";
+	public static final String BR_COVE_FEED_URL = "url";
+	public static final String BR_COVE_FEED_BCTITLE_ID = "bc:titleid";
+	public static final String BR_COVE_BC_FEED_DURATION = "bc:duration";
+	public static final String BR_COVE_BC_FEED_ACCOUNT_ID = "bc:accountid";
+	public static final String BR_COVE_FEED_DISC = "description";
+	public static final String BR_COVE_FEED_MEDIA_CONTENT = "media:content";
+	public static final String BR_COVE_FEED_MEDIA_KEYWORD = "media:keywords";
+	
+	
+	/**
+	 * Event Constraints
+	 */
+	
+	
+	public static final String EVENT_JCR_EVENTTYPE = "eventtype";
+	public static final String EVENT_JCR_EVENTTITLE = "eventtitle";
+	public static final String EVENT_JCR_START_DATE = "eventstartdate";
+	public static final String EVENT_JCR_END_DATE= "eventenddate";
+	public static final String EVENT_JCR_LOCATION= "eventlocation";
+	public static final String EVENT_JCR_DESCRIPTION= "eventdescription";
+	public static final String EVENT_JCR_BACKGROUND_IMAGE= "evbackgroundimage";
+	public static final String EVENT_JCR_REGISTER_NOW_LABEL= "registernowlabel";
+	public static final String EVENT_JCR_REGISTER_NOW_LINK= "registernowlink";
+	public static final String EVENT_JCR_REGION_TAG= "eventregiontag";
+	
+	
+	
+	
+	
+	
+	
+
 
 }
