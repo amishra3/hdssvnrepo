@@ -3,6 +3,7 @@ var hds = window.hds || {};
 (function(window, document, $, hds) {
     hds.loadDataFilters = {
         init: function() {
+        	//hds.loadDataFilters.disableHref();
 			hds.loadDataFilters.loadSubContent();
             //hds.loadDataFilters.loadCatagoryContent();
             hds.loadDataFilters.subListTab();
@@ -69,7 +70,8 @@ var hds = window.hds || {};
         },
         subListTab: function() {
             var allPanels = $('.product-listing li ul').hide();
-            $('.product-listing li a').on('click', function() {
+            $('.product-listing li a').on('click', function(event ) {
+            	event.preventDefault();
                 hds.loadDataFilters.setHTMLContainer();
                 if (!$(this).parent().hasClass('active')) {
                     $('#searchFilter').val('');

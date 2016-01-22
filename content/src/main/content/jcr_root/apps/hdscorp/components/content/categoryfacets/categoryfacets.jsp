@@ -13,6 +13,10 @@
 	}
 	
 	pageContext.setAttribute("selectorString", viewtype);
+	
+	pageContext.setAttribute("currentPageShortUrl", PathResolver.getShortURLPath(currentPage.getPath()));
+	
+	
 %>
 
 <c:set var="contentrenderingpagepath" value="${requestScope['contentrenderingpagepath']}" />
@@ -26,7 +30,7 @@
 
 <div class="col-md-3 product-listing">
 	<ul id="asideLinks-product">
-		<li class="${allfilteractiveclass}"><a href="javascript:void(0);" data-href="${contentrenderingpagepath}.html"> ${properties.allCategoriesLabel} </a></li>
+		<li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${contentrenderingpagepath}.html"> ${properties.allCategoriesLabel} </a></li>
 
 		<c:forEach items="${model.categories}" var="data" varStatus="status">
 
@@ -43,8 +47,16 @@
 
 
 				<li ${activeclass}>
+				
+				<c:set var="currentCategoryID" value="${xss:filterHTML(xssAPI,data['category-id'])}"/>
+				<% 
+				String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
+				String currentCategoryID = (String)pageContext.getAttribute("currentCategoryID");
+				System.out.println(currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
+				pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
+				%>
 					
-					<a href="javascript:void(0);" data-href="${categoryTargetURL}" id="${xss:filterHTML(xssAPI,data['category-id'])}">
+					<a href="${currentCategoryUrl}" data-href="${categoryTargetURL}" id="${currentCategoryID}">
 							${xss:filterHTML(xssAPI,data['display-title'])} 
 							<span class="icon-accordion-closed"></span> 
 							<span class="icon-accordion-opened"></span>
