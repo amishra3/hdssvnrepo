@@ -1,6 +1,9 @@
 .business-specific {
   background-color: #168ba2;
 }
+.hexagonredbg{background-color:#a61e23;}
+.hexagondyellowbg{background-color:#30302f;}
+.hexagonblackbg{background-color:#323231;}
 
 .business-specific .specific-benefit {
   color: #ffffff;
@@ -22,7 +25,7 @@
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: .15em;
+  /*letter-spacing: .15em;*/
   font-size: 1.5em;
   line-height: 1;
 }
@@ -175,6 +178,7 @@ ul.stickyNav li:hover {
   padding: 50px 10px 0 10px;
   overflow: visible;
   height: auto;
+  min-height:170px;
 }
 
 .business-specific .calculating-list > li h4,

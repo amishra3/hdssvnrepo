@@ -32,7 +32,7 @@
   display: inline-block;
   position: absolute;
   top: -15px;
-  right: 80px;
+  right: 145px;
 }
 
 .hero-product-solutions .hero-product-solutions-container .headline {
@@ -40,7 +40,7 @@
   margin-bottom: 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 3.4375em;
+  font-size: 3.125em;
   line-height: 1;
   line-height: 120%;
 }
