@@ -25,10 +25,33 @@
 	<c:set var="hexagoniconstyle" value=" style='background-image: url(${properties.hexagoniconpath});background-position:0 0;''" />
 </c:if>
 
+<c:if test = "${bannertype=='dark'}">
+
+	<c:set var="hexacss" value=" business-specific clearfix specific-tech" />
+</c:if>
+<c:if test = "${bannertype=='red'}">
+
+	<c:set var="hexacss" value=" business-specific clearfix hexagonredbg" />
+</c:if>
+<c:if test = "${bannertype=='dyellow'}">
+
+	<c:set var="hexacss" value=" business-specific clearfix hexagondyellowbg" />
+</c:if>
+
+<c:if test = "${bannertype=='black'}">
+
+	<c:set var="hexacss" value=" business-specific clearfix hexagonblackbg" />
+</c:if>
+
+<c:if test = "${bannertype=='cyan' || bannertype=='customdamimage'|| bannertype=='custombkgcolor'}">
+
+	<c:set var="hexacss" value="business-specific clearfix" />
+</c:if>
+
 
 <c:choose>
 	<c:when test="${not empty properties.hexagontitle}">
-<div class="${bannertype=='dark'?'specific-tech':'business-specific clearfix'}" ${bannerbackgroundstyle}>
+<div class="${hexacss}" ${bannerbackgroundstyle}>
    	<div class="business-specific-container clearfix content-container">
    		<div class="specific-benefit row">
    			<div class="content-container clearfix">
@@ -55,7 +78,7 @@
 </div>
 </c:when>
 <c:otherwise>
-<div class="${bannertype=='dark'?'specific-tech':'business-specific clearfix'}" ${bannerbackgroundstyle}>
+<div class="${hexacss}" ${bannerbackgroundstyle}>
    	<div class="business-specific-container clearfix content-container">
    		<div class="specific-benefit row">
    			<div class="content-container clearfix">

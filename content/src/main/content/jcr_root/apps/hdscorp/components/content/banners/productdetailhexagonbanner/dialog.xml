@@ -35,6 +35,18 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Custom (Background Color)"
                                 value="custombkgcolor"/>
+                            <red
+                                jcr:primaryType="nt:unstructured"
+                                text="Red"
+                                value="red"/>
+                            <darkyellow
+                                jcr:primaryType="nt:unstructured"
+                                text="Dark Yellow"
+                                value="dyellow"/>
+                            <black
+                                jcr:primaryType="nt:unstructured"
+                                text="Black"
+                                value="black"/>
                         </options>
                     </type>
                     <bannerbackgroundimage
