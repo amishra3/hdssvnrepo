@@ -55,7 +55,7 @@
 				pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
 				%>
 					
-					<a href="${currentCategoryUrl}" data-href="${categoryTargetURL}" id="${currentCategoryID}">
+					<a href="${currentCategoryUrl}#${currentCategoryID}" data-href="${categoryTargetURL}" id="${currentCategoryID}" name="${currentCategoryID}">
 							${xss:filterHTML(xssAPI,data['display-title'])} 
 							<span class="icon-accordion-closed"></span> 
 							<span class="icon-accordion-opened"></span>
