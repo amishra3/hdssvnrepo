@@ -17,6 +17,11 @@
                         fieldLabel="Content Section Title"
                         name="./sectiontitle"
                         xtype="textfield"/>
+                    <sectionbackground
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Section Background"
+                        name="./sectionbackground"
+                        xtype="pathfield"/>
                 </items>
             </tab1>
         </items>
