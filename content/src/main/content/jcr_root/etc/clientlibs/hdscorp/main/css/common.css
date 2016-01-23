@@ -262,6 +262,11 @@
 .header .breadcrumb-container .breadcrumb a:first-child {
     margin-left: 0;
 }
+
+.header .breadcrumb-container .breadcrumb.black, .header .breadcrumb-container .breadcrumb.black a{
+    color: #414141;
+}
+
 @media only screen and (max-width: 1199px) {
     .header .sub-navigation-container .sub-navigation > ul > li a {
         padding-left:10px;
@@ -725,6 +730,11 @@ button.cta-scroll-top .text-return {
     border-color: #ce0000;
 }
 
+.btn-square.-black {
+    color: #000000;
+    border-color: #000000;
+}
+
 [class|="btn-square"] {
     padding: 0;
     font-size: .8em;
@@ -737,6 +747,7 @@ button.cta-scroll-top .text-return {
 .btn-square-white {
     border: 1px solid #ffffff;
     color: #ffffff;
+    text-align: center;
 }
 
 .btn-square-white a {
@@ -758,6 +769,7 @@ button.cta-scroll-top .text-return {
 .btn-square-red {
     border: 1px solid #ce0000;
     color: #cc0000;
+    text-align: center;
 }
 
 .btn-square-red a {
@@ -769,10 +781,32 @@ button.cta-scroll-top .text-return {
 }
 .btn-square-red a:hover{
     text-decoration: none;
-    background: #ffffff;
-    color: #cc0000;
+    background: #cc0000;
+    color: #ffffff;
 }
 .btn-square-red a:focus{
+    text-decoration: none;
+}
+
+.btn-square-black {
+    border: 1px solid #000000;
+    color: #000000;
+    text-align: center;
+}
+
+.btn-square-black a {
+    background-color: transparent;
+    color: #000000;
+    display: block;
+    padding: 8px 35px;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+}
+.btn-square-black a:hover{
+    text-decoration: none;
+    background: #000000;
+    color: #ffffff;
+}
+.btn-square-black a:focus{
     text-decoration: none;
 }
 
@@ -831,6 +865,7 @@ button.cta-scroll-top .text-return {
     }
     .btn-square-red a {padding-left:15px; padding-right:15px;}
     .btn-square-white a {padding-left:15px; padding-right:15px;}
+    .btn-square-black a {padding-left:15px; padding-right:15px;}
 }
 
 .sprite {
@@ -1148,6 +1183,17 @@ button.cta-scroll-top .text-return {
 }
 .animateLink:hover > .animateIcon {
   left: 5px;
+}
+
+.animateLink .animateIconLeft {
+  position: relative;
+  font-size: 1.2em;
+  top: 3px;
+  right: 0px;
+  transition: all 0.5s ease;
+}
+.animateLink:hover > .animateIconLeft {
+  right: 5px;
 }
 
 /* Anchor outline for Webkit browser */

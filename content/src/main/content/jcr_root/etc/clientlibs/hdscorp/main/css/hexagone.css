@@ -79,18 +79,21 @@
   overflow: visible;
   z-index: 10;
   float: left;
-  margin-right: 38px;
+  margin-right: 52px;
   float: left;
 }
+
 .hexagon320:last-child{margin-right: 0;}
 
 .hexagon320 .icon{
   line-height: 85px;
   position: absolute;
   text-align: center;
-  top: -75px;
+  top: -65px;
   width: 100%;
 }
+
+
 .hexagon320 .icon img{
   vertical-align: bottom;
 }
@@ -116,7 +119,7 @@
 .hexagon320 .read-more {
     font-size: 0.8125rem;
     font-weight: 800;
-    margin-top: 15px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -157,6 +160,10 @@
     margin-bottom: 175px;
     width: 270px;
     height: 144px;
+    margin-right:0;
+  }
+  .hexagon320:last-child{
+    margin-bottom: 135px;
   }
 
   .hexagon320 h4{
@@ -181,3 +188,5 @@
     border-top: 76px solid #ffffff;
   }
 }
+
+.mac-os .hexagon320 { margin-right:26px;}

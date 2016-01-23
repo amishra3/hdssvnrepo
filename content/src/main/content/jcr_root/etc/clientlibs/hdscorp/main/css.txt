@@ -13,4 +13,7 @@ press-release.css
 product-lp-list.css
 01-hero-product-banner.css
 02-product-list.css
+news-insight-news.css
+about-hds-leadership-detail.css
+common-component.css
 app.css

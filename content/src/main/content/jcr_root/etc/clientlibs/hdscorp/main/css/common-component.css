@@ -1,0 +1,734 @@
+/* Common Hero Tall Banner CSS*/
+.common-hero-banner {
+z-index: 2;
+position: relative;
+min-height: 718px;
+padding: 120px 15px 50px;
+background-position: top center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.top-banner-heading{
+font-weight:500;
+font-family:'museo-sans', Helvetica, Arial, sans-serif;
+font-size:2.2rem;
+margin-top:0;
+}
+
+.common-hero-banner .common-hero-banner-container {
+position: relative;
+margin: 0 auto;
+max-width: 1280px;
+}
+
+.common-hero-banner .common-hero-banner-container  h1,
+.common-hero-banner .common-hero-banner-container  h2,
+.common-hero-banner .common-hero-banner-container  h4,
+.common-hero-banner .common-hero-banner-container  p {
+color: #ffffff;
+}
+
+.common-hero-banner .common-hero-banner-container a:hover,
+.common-hero-banner .common-hero-banner-container a:focus,
+.common-hero-banner .common-hero-banner-container a:active {
+text-decoration: none;
+}
+
+.common-hero-banner .common-hero-banner-container .close-hero {
+display: inline-block;
+position: absolute;
+top: -20px;
+right: 0;
+}
+
+.common-hero-banner .common-hero-banner-container .headline {
+margin-top: 120px;
+margin-bottom: 20px;
+font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+font-weight: 500;
+font-size: 3.4375em;
+line-height: 1;
+line-height: 120%;
+}
+
+.common-hero-banner .common-hero-banner-container > h3 {
+margin-bottom: 10px;
+font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+font-weight: 700;
+font-size: 1.5em;
+line-height: 1;
+color: #ffffff;
+text-transform: uppercase;
+}
+
+.common-hero-banner .common-hero-banner-container .sub-headline {
+margin-bottom: 35px;
+font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+font-weight: 400;
+font-size: 1.375em;
+line-height: 1;
+line-height: 120%;
+}
+
+.common-hero-banner .common-hero-banner-container .sub-headline strong {
+font-weight: 500;
+}
+
+.common-hero-banner .common-hero-banner-container .request {
+margin-right: 35px;
+display: inline-block;
+cursor: pointer;
+background-color: transparent;
+transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.common-hero-banner .common-hero-banner-container .request:hover {
+background-color: #ffffff;
+color: #000000;
+border-color: #ffffff;
+}
+
+.common-hero-banner .common-hero-banner-container .request:hover a {
+color: #000000;
+}
+
+.common-hero-banner .common-hero-banner-container .buy-through {
+display: inline-block;
+}
+
+.common-hero-banner .common-hero-banner-container .buy-through:hover .glyphicon.glyphicon-chevron-right {
+left: 8px;
+}
+
+.common-hero-banner .common-hero-banner-container .buy-through .glyphicon.glyphicon-chevron-right {
+position: relative;
+left: 0;
+transition: all 0.5s ease-out;
+}
+
+.common-hero-banner .common-hero-banner-container .buy-through a {
+font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+font-weight: 900;
+font-size: 0.8125em;
+line-height: 1;
+text-transform: uppercase;
+color: #ffffff;
+letter-spacing: 2px;
+}
+
+.common-hero-banner .common-hero-banner-container .buy-through a > .sprite {
+margin-left: 2px;
+position: relative;
+top: 2px;
+}
+
+.common-hero-banner.overview {
+display: none;
+}
+
+.common-hero-banner.server-rack {
+position: relative;
+}
+
+.common-hero-banner.server-rack .common-hero-banner-container {
+position: static;
+padding-left: 15px;
+}
+
+.common-hero-banner.server-rack .common-hero-banner-container .servers {
+position: absolute;
+top: 120px;
+margin-left: 720px;
+}
+
+.common-hero-banner.video .common-hero-banner-container {
+text-align: center;
+}
+
+.common-hero-banner.video .common-hero-banner-container > iframe {
+margin: 20px auto 0;
+width: 916px;
+height: 480px;
+}
+
+@media only screen and (max-width: 1280px) {
+.common-hero-banner.server-rack .common-hero-banner-container .servers img {
+width: 100%;
+height: 100%;
+}
+.common-hero-banner.video {
+padding-top: 110px;
+}
+.common-hero-banner.video .common-hero-banner-container > iframe {
+width: 80%;
+}
+}
+
+@media only screen and (min-width: 992px) {
+.common-hero-banner.server-rack .common-hero-banner-container .servers {
+display: block;
+}
+}
+
+@media only screen and (max-width: 992px) {
+.common-hero-banner {
+min-height: 0;
+padding-top: 130px;
+padding-bottom: 80px;
+background-position: top right;
+}
+.common-hero-banner .common-hero-banner-container {
+text-align: center;
+}
+.common-hero-banner .common-hero-banner-container .headline {
+margin-top: 40px;
+}
+.common-hero-banner .common-hero-banner-container .request,
+.common-hero-banner .common-hero-banner-container .buy-through {
+display: block;
+}
+.common-hero-banner .common-hero-banner-container .request {
+max-width: 244px;
+margin: 0 auto 25px;
+}
+.common-hero-banner .common-hero-banner-container .buy-through {
+margin-bottom: 50px;
+}
+.common-hero-banner .common-hero-banner-container .close-hero {
+right: 10px;
+}
+.common-hero-banner.server-rack .common-hero-banner-container .servers {
+display: none;
+}
+.common-hero-banner.video {
+margin-top: 44px;
+padding-top: 180px;
+}
+.common-hero-banner.video .common-hero-banner-container > iframe {
+margin-bottom: 40px;
+width: 90%;
+}
+
+.common-hero-banner.server-rack .common-hero-banner-container {
+padding-left: 0;
+}
+.common-hero-banner .common-hero-banner-container .headline {
+margin-bottom: 10px;
+font-size: 1.5em;
+line-height: 1;
+}
+.top-banner-heading {
+font-size: 1.2rem;
+}
+}
+
+@media only screen and (max-width: 768px) {
+.common-hero-banner {
+padding-top: 210px;
+padding-bottom: 50px;
+}
+
+.common-hero-banner .common-hero-banner-container h3 {
+font-size: 1em;
+line-height: 1;
+}
+.common-hero-banner .common-hero-banner-container .sub-headline {
+margin-bottom: 50px;
+font-size: 0.8125em;
+line-height: 1;
+line-height: 120%;
+}
+.common-hero-banner.video .common-hero-banner-container > iframe {
+width: 100%;
+}
+
+}
+
+@media only screen and (max-width: 480px) {
+.common-hero-banner {
+background-position: top left;
+}
+.common-hero-banner .request {
+font-size: 0.8125em;
+line-height: 1;
+}
+.common-hero-banner .buy-through {
+font-size: 0.8125em;
+line-height: 1;
+}
+
+}
+
+/* Common PR, Awards Listing CSS Code */
+.pr-list-archives{
+  background: #f1f1f1;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 0.8125rem;
+  padding: 0;
+}
+.pr-list-archives ul{
+  list-style: none; margin: 0; padding:0;}
+.pr-list-archives ul > li{ margin: 0; padding:0 20px; position: relative;}
+.pr-list-archives ul > li > a{
+  border-bottom: 3px solid #c5c5c5; 
+  padding:22px 0;
+  display:block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 900;
+  color: #414141;
+  position: relative;
+}
+.pr-list-archives ul > li:last-child a{
+  border-bottom: none;
+}
+.pr-list-archives ul > li.active {   
+  background: #414141;
+  margin-top: -3px;
+}
+.pr-list-archives ul > li.active:after {
+  content: '';
+  display: block;  
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -9px;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 9px solid #414141;
+  z-index: 9;
+}
+.pr-list-archives ul > li.active > a{
+  color:#ffffff; 
+  border-bottom: none;
+  font-size: 0.875rem;
+}
+
+.pr-archives-list{
+  background: #ffffff;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  padding: 0 0 0 45px;
+  min-height: 768px;
+}
+
+.pr-archives-list .pr-archives-list-items .pr{
+  border-bottom: 3px solid #c5c5c5;
+  padding: 35px 0 25px 0;
+}
+.pr-archives-list .pr-archives-list-items .pr:first-child{
+  padding-top: 0;
+}
+.pr-archives-list .pr-archives-list-items .pr .pr-date{
+  color:#8d8d8d;
+  padding-bottom: 5px;
+  font-family: Arial, Helvetica, 'museo-sans';
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.pr-archives-list .pr-archives-list-items .pr h3{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.3rem;
+  color: #000000;
+  font-weight: bold;
+  margin: 0 0 25px 0;
+}
+.pr-archives-list .pr-archives-list-items .pr p{
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.875rem;
+}
+.pr-archives-list .pr-archives-list-items .pr ul{
+  margin: 0 0 12px 0; padding: 0 0 0 15px;
+  list-style-type: square;
+  list-style-position: outside;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.875rem;
+}
+.pr-archives-list .pr-archives-list-items .pr ul li{
+  margin-bottom: 8px;
+}
+.pr-archives-list .pr-archives-list-items .pr a{
+  font-size: 0.8485rem;
+  color:#ce0000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+}
+.pr-archives-list .pr-archives-list-items .pr a:hover{
+  color:#ac1f25;
+}
+
+.pr-load-more {
+    margin: 60px auto 0;
+    max-width: 170px;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 1024px){
+  .pr-archives-list .pr-archives-list-items .pr h3{
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 991px){
+  .pr-list-archives div.MobileHolderWrapper{
+    background: #fff;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .pr-list-archives ul > li{
+    padding: 0;
+  }
+  .pr-list-archives ul > li > a{
+    padding: 20px;
+  }
+  .pr-list-archives ul > li.active:after {
+    display: none;
+  }
+
+  .pr-list-archives div.MobileHolderWrapper{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .pr-list-archives ul > li > a > span {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+
+  .pr-list-archives ul > li .icon-accordion-closed {
+    display: inline-block;
+  }
+
+  .pr-list-archives ul > li .icon-accordion-opened {
+    display: none;
+  } 
+
+
+  .pr-archives-list{
+    padding: 0 0 30px 0;
+  }
+  .pr-archives-list .pr-archives-list-items .pr:first-child{
+    padding-top: 20px;
+  }
+  .pr-archives-list-items{
+    padding: 0 21px;
+  }
+  .pr-archives-list-items .glyphicon.glyphicon-menu-right.animateIcon {
+      top: 3px;
+  }
+  .pr-archives-list .pr-archives-list-items .pr:last-child{
+    padding-bottom: 20px;
+  }
+  .pr-archives-list-items{
+    padding-top: 0;
+    padding-bottom:0;
+    min-height: 0;
+  }
+  .pr-archives-list .pr-archives-list-items .pr{
+    padding:22px 0;
+  }
+  .pr-archives-list .pr-archives-list-items .pr h3{
+    font-size: 1.065rem;
+  }
+}
+
+/* Common Explore Section */
+.pr-explore {
+  background-image: url("../images/pr-explore-section.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+.pr-explore .pr-explore-container{
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  padding: 50px 15px;
+}
+.pr-explore .pr-explore-container .col-sm-4 {
+    padding-right: 0;
+}
+.pr-explore .pr-explore-container .col-sm-4:last-child {
+    padding-right: 15px;
+}
+.pr-explore .pr-explore-container h2{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin:0;
+  min-height:55px;
+}
+.pr-explore h2 span.glyphicon.glyphicon-menu-right.animateIcon {
+    top: 0px;
+    font-size: 1rem;
+}
+
+.pr-explore .pr-explore-container .pr-common-box{
+  background: #ffffff;
+  margin:0 0 20px 0; 
+  padding: 25px 15px 20px;
+  min-height: 170px;
+}
+
+.pr-explore .pr-explore-container .pr-common-box .icon{
+  display: table-cell;
+}
+.pr-explore .pr-explore-container .pr-common-box .type{
+  display: table-cell;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #010000;
+  letter-spacing: 0.04em;
+  padding-left: 10px;
+    padding-top: 2px;
+    vertical-align: top;
+  font-weight: 600;
+}
+.pr-explore .pr-explore-container .pr-common-box .description{
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 700;
+  margin: 12px 0 12px 0;
+}
+
+.pr-explore .pr-explore-container .pr-common-box .read-more{
+  font-size: 0.8125rem;
+}
+.pr-explore .pr-explore-container .pr-common-box .read-more a{
+  color: #ce0000;
+  font-weight: 800;
+  outline: 0 none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 991px) {
+  .pr-explore .pr-explore-container h2{
+    font-size: 1.45rem;
+  }
+  .pr-explore h2 span.glyphicon.glyphicon-menu-right.animateIcon {
+    top: 1px;
+  }
+  .pr-explore .pr-explore-container .pr-common-box{
+    min-height: 190px;
+  }
+  .pr-explore .pr-explore-container .col-sm-4{
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pr-explore .pr-explore-container .col-sm-4 {
+      padding-right: 15px;
+  }
+  .pr-explore .pr-explore-container h2{
+    display: block;
+    background: #ffffff;
+    color: #000000;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 23px 15px 19px;
+    margin-bottom: 10px;
+  }
+  .pr-explore h2 span.glyphicon.glyphicon-menu-right.animateIcon {
+    float: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    right: 10px;
+    top: 0;
+  }
+  .pr-explore .pr-explore-container .col-sm-4{
+    padding-left: 15px;
+  }
+}
+
+/* Common Search Input Field CSS */
+.pr-search{
+  width:70%;
+  border:5px solid #e6e6e6;
+  min-height: 65px;
+  margin: 45px auto 55px;
+  position: relative;
+}
+.pr-search span.glyphicon.glyphicon-search{
+  -ms-transform: rotate(90deg); 
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-size: 2.2em;
+  color: #cc0000;
+  position: absolute;
+  top: 15px; right: 14px;
+  cursor: pointer;
+}
+
+.pr-search > input {
+    border: medium none;
+    min-height: 65px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.125rem;
+    padding-left: 15px;
+    padding-right: 62px;
+}
+
+.pr-search ::-webkit-input-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+.pr-search ::-moz-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+.pr-search :-ms-input-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+.pr-search input:-moz-placeholder {
+    color: #414141;
+    font-size: 1.125rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .pr-list .pr-list-container .pr-search ::-webkit-input-placeholder {
+    color: #414141;
+    font-size: 0.875rem;
+  }
+  .pr-list .pr-list-container .pr-search ::-moz-placeholder {
+      color: #414141;
+      font-size: 0.875rem;
+  }
+  .pr-list .pr-list-container .pr-search :-ms-input-placeholder {
+      color: #414141;
+      font-size: 0.875rem;
+  }
+  .pr-list .pr-list-container .pr-search input:-moz-placeholder {
+      color: #414141;
+      font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .pr-list .pr-list-container .pr-search{
+    width:90%;
+    border:2px solid #e6e6e6;
+    min-height: 35px;
+    margin: 32px auto 45px;
+  }
+  .pr-list .pr-list-container .pr-search span.glyphicon.glyphicon-search{
+    font-size: 1.5em;
+    top: 6px; right: 6px;
+  }
+
+  .pr-list .pr-list-container .pr-search > input {
+      min-height: 35px;
+      font-size: 0.875rem;
+      padding-right: 40px;
+  }
+}
+
+/**********************************************/
+
+/* Common Hero Short Banner CSS*/
+.common-hero-short-banner {
+z-index: 2;
+position: relative;
+min-height: 230px;
+padding: 120px 15px 50px;
+background-position: top center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.common-hero-short-banner   h1,
+.common-hero-short-banner   h2,
+.common-hero-short-banner   h4,
+.common-hero-short-banner   p {
+color: #ffffff;
+}
+
+.common-hero-short-banner  a:hover,
+.common-hero-short-banner  a:focus,
+.common-hero-short-banner  a:active {
+text-decoration: none;
+}
+
+.common-hero-short-banner  .headline {
+margin-top: 30px;
+margin-bottom: 20px;
+font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+font-weight: 500;
+font-size: 3.4375em;
+line-height: 1;
+line-height: 120%;
+}
+
+.common-hero-short-banner  > h3 {
+margin-bottom: 10px;
+font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+font-weight: 700;
+font-size: 1.5em;
+line-height: 1;
+color: #ffffff;
+text-transform: uppercase;
+}
+
+.common-hero-short-banner  .sub-headline {
+margin-bottom: 35px;
+font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+font-weight: 100;
+font-size: 1.375em;
+line-height: 1;
+line-height: 120%;
+}
+
+.common-hero-short-banner  .sub-headline strong {
+font-weight: 500;
+}
+
+
+@media only screen and (max-width: 991px) {
+  .common-hero-short-banner {
+  min-height: 0;
+  padding-top: 130px;
+  padding-bottom: 80px;
+  background-position: top right;
+  }
+  .common-hero-short-banner  {
+  text-align: center;
+  }
+  .common-hero-short-banner  .headline {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .common-hero-short-banner {
+    padding-top: 210px;
+    padding-bottom: 50px;
+  }
+
+  .common-hero-short-banner  h3 {
+    font-size: 1em;
+    line-height: 1;
+  }
+  .common-hero-short-banner  .sub-headline {
+    margin-bottom: 50px;
+    font-size: 0.875rem;
+    line-height: 1;
+    line-height: 120%;
+  }
+}

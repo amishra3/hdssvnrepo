@@ -13,6 +13,8 @@
 	}
 	
 	pageContext.setAttribute("selectorString", viewtype);
+	
+	pageContext.setAttribute("currentPageShortUrl", PathResolver.getShortURLPath(currentPage.getPath()));
 %>
 <c:if test="${empty selectorString}">
 	<c:set var="activeSubCatIndex" value="0" />
@@ -37,10 +39,17 @@
 				<c:set var="activeSubCatIndex" value="${loopcnt.index}" />			
 			</c:if>
 			
+			<% 
+				String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
+				String currentCategoryID = (String)pageContext.getAttribute("subcatid");
+				pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
+			%>
+			
+			
 			<li class="linkLeft ${loopcnt.index== activeSubCatIndex?'active':''}">
-				<a href="javascript:void(0);"
+				<a href="${currentCategoryUrl}"
 					data-loadhtml="${linkUrl}"
-					class="${loopcnt.index==0?'active':'dummyclass'}"> 
+					class="${loopcnt.index==0?'active':'dummyclass'}" name="${subcat.subcatid}" id="${subcat.subcatid}"> 
 						${subcat.subcatdisplaylabel}
 						<span class="icon-accordion-closed hidden-md hidden-lg"
 						style="display: none;"></span> 

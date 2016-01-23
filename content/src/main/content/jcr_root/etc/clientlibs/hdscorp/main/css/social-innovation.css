@@ -16,10 +16,10 @@
   max-width: 1280px;
 }
 
-.hero-social-innovation .hero-social-innovation-container > h1,
-.hero-social-innovation .hero-social-innovation-container > h2,
-.hero-social-innovation .hero-social-innovation-container > h4,
-.hero-social-innovation .hero-social-innovation-container > p {
+.hero-social-innovation .hero-social-innovation-container  h1,
+.hero-social-innovation .hero-social-innovation-container  h2,
+.hero-social-innovation .hero-social-innovation-container  h4,
+.hero-social-innovation .hero-social-innovation-container  p {
   color: #ffffff;
 }
 
@@ -32,8 +32,8 @@
 .hero-social-innovation .hero-social-innovation-container .close-hero {
   display: inline-block;
   position: absolute;
-  top: -20px;
-  right: 0;
+  top: -15px;
+  right: 145px;
 }
 
 .hero-social-innovation .hero-social-innovation-container .headline {
@@ -50,7 +50,7 @@
   font-weight: 700;
 }
 
-.hero-social-innovation .hero-social-innovation-container > h3 {
+.hero-social-innovation .hero-social-innovation-container  h3 {
   margin-bottom: 10px;
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -140,8 +140,13 @@
   margin-left: 720px;
 }
 
-.hero-social-innovation.server-rack .hero-social-innovation-container .video-play {
-  margin-bottom: 50px;
+.hero-social-innovation .hero-social-innovation-container .buy-through a > .sprite {
+
+}
+
+.hero-social-innovation.server-rack .hero-social-innovation-container .video-play-desktop{
+  text-align: center;
+  margin-top: 140px;
 }
 
 .hero-social-innovation.video {
@@ -168,6 +173,12 @@
   }
   .hero-social-innovation.video .hero-social-innovation-container > iframe {
     width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .hero-social-innovation.server-rack .hero-social-innovation-container {
+    padding-left: 0;
   }
 }
 
@@ -199,13 +210,13 @@
   }
   .hero-social-innovation .hero-social-innovation-container .request {
     max-width: 244px;
-    margin: 0 auto 25px;
+    margin: 20px auto 25px;
   }
   .hero-social-innovation .hero-social-innovation-container .buy-through {
     margin-bottom: 50px;
   }
   .hero-social-innovation .hero-social-innovation-container .close-hero {
-    right: 10px;
+    right: 0px;
   }
   .hero-social-innovation.server-rack .hero-social-innovation-container .servers {
     display: none;
@@ -292,9 +303,37 @@
     width: 100%;
 }
 
-@media only screen and (max-width: 767px) {
+.mac-os .advance-tech-hexagon{min-height: 720px;}
+
+@media only screen and (max-width: 1024px) {
+  .advance-tech-hexagon{
+    min-height: 750px;
+  }
+  .advance-tech-hexagon-list .hex-contain{
+    width:100%;
+    margin:0;
+  }
+  .advance-tech-hexagon-list .hex-contain .hexagon320{
+    margin-right:16px;
+  }
+  .advance-tech-hexagon-list .hex-contain .hexagon320:last-child{
+    margin-right:0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
   .advance-tech-hexagon h2{
    font-size: 1.875rem;
+  }
+  .advance-tech-hexagon p{
+    margin-bottom: 50px;
+  }
+
+  .advance-tech-hexagon .advance-tech-hexagon-list {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 270px;
   }
 }
 
@@ -351,7 +390,7 @@
    font-size: 1.125rem;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .we-mean-business{
     padding: 45px 0;
   }
@@ -411,24 +450,16 @@
 }
 .social-innovation-article .si-article-content .icon{
   display: inline-block;
-}
-.social-innovation-article .si-article-content .icon.col-sm-2 {
-    padding-right: 0;
+  text-align: right;
 }
 .social-innovation-article .si-article-content .desc{
   display: inline-block;
-  padding-top: 15px;
-}
-.social-innovation-article .si-article-content .desc.col-sm-10 {
-    padding-left: 0;
 }
 
 .social-innovation-article .si-article-more {
-    background-color: transparent;
-    cursor: pointer;
-    display: inline-block;
-    margin-right: 35px;
-    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
     text-align: center;
 }
 
@@ -447,16 +478,12 @@
   .social-innovation-article .si-article-content{
     text-align: center;
   }
-  .social-innovation-article .si-article-content .icon.col-sm-2 {
-    padding-left: 0;
-    padding-right: 0;
+  .social-innovation-article .si-article-content .icon{
+    margin-bottom: 20px;
   }
-  .social-innovation-article .si-article-content .desc.col-sm-10 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .social-innovation-article .si-article-more{
-    margin-right: 0;
+  .social-innovation-article h3{
+    margin-top:0;
+    margin-bottom: 25px;
   }
 }
 
@@ -472,6 +499,9 @@
   text-align: center;
   color: #000000;
   margin: 0 0 60px 0;
+}
+.si-work-today .si-work-today-box{
+  padding: 0 15px 0 0;
 }
 .si-work-today .si-comm-box{
   box-shadow: 0 2px 3px #999;
@@ -541,9 +571,6 @@
     font-size: 1rem;
     margin: 0 0 40px;
   }
-  .si-work-today .col-sm-6 {
-      padding-right: 15px;
-  }
   .si-work-today .si-comm-box{
     min-height: 200px;
   }
@@ -568,5 +595,4 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-
 }
