@@ -19,8 +19,8 @@
          <div class="row">
 			<cq:include path="communitycontentpar" resourceType="hdscorp/components/content/column-control" />
             <div class="hds-community-join">
-                <a class="animateLink" href="${targetUrl}" target="${properties.joincommunitytargeturlopenininew?'_blank':'_self'}">
-                    ${properties.joincommunity} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
+                <a class="animateLink" href="http://community.hds.com/" target="_blank">
+                    JOIN THE COMMUNITY AND START A CONVERSATION<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
                 </a>
             </div>
 		</div>
