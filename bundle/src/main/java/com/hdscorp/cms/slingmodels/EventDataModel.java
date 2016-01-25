@@ -17,8 +17,10 @@ import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.constants.PageConstants;
+import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.dao.EventNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.ServiceUtil;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
 /**
@@ -63,19 +65,19 @@ public class EventDataModel {
 
 				if (res != null) {
 					ValueMap properties = res.adaptTo(ValueMap.class);
-					eventNode.setEventType((String[]) properties.get("eventtype", String[].class));
-					eventNode.setEventTitle(properties.get("eventtitle", (String) null));
-					eventNode.setEventStartDate(properties.get("eventstartdate", (String) null));
-					eventNode.setEventEndDate(properties.get("eventenddate", (String) null));
-					eventNode.setEventLocation(properties.get("eventlocation", (String) null));
-					eventNode.setEventDescription(properties.get("eventdescription", (String) null));
-					eventNode.setEventImageBackground(properties.get("evbackgroundimage", (String) null));
-					eventNode.setEventRegisterNowLabel(properties.get("registernowlabel", (String) null));
-					eventNode.setEventRegisterNowLink(properties.get("registernowlink", (String) null));
-					eventNode.setEventRegion((String[]) properties.get("eventregiontag", String[].class));
+					eventNode.setEventType((String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
+					eventNode.setEventTitle(properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));							
+					eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),ServiceConstants.DATE_FORMAT_FROM_EVENT,ServiceConstants.DATE_FORMAT_TO_EVENT));
+					eventNode.setEventEndDate(ServiceUtil.getDisplayDateFormat(properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null),ServiceConstants.DATE_FORMAT_FROM_EVENT,ServiceConstants.DATE_FORMAT_TO_EVENT));
+					eventNode.setEventLocation(properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
+					eventNode.setEventDescription(properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
+					eventNode.setEventImageBackground(properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
+					eventNode.setEventRegisterNowLabel(properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LABEL, (String) null));
+					eventNode.setEventRegisterNowLink(properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LINK, (String) null));
+					eventNode.setEventRegion((String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG, String[].class));
 				}
 
-			} catch (RepositoryException e) {
+			} catch (Exception e) {
 
 				log.error("Error occured during getting value from the pages" + e);
 			}
