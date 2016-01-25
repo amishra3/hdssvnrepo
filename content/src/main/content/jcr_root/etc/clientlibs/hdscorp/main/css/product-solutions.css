@@ -274,12 +274,14 @@ ul.stickyNav li:hover {
 }
 
 @media only screen and (max-width: 992px) {
+  .resources-section .resources-container .resources-title, .fb-section .fb-container .fb-title{display:none;}
   ul.stickyNav li {
     margin: 0 0 0 15px;
   }
   ul.stickyNav li:first-child {
     margin-left: 0;
   }
+  .cs-section .cs-container .cs-title{padding-top:40px;}
 }
 
 @media only screen and (max-width: 768px) {
@@ -357,6 +359,8 @@ ul.stickyNav li:hover {
   font-size: 0.875em;
   line-height: 1;
   font-style: normal;
+
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -646,7 +650,7 @@ ul.stickyNav li:hover {
 }
 
 .cs-section .cs-container {
-  min-height: 860px;
+  min-height: 700px;
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 90px;
@@ -972,7 +976,7 @@ ul.stickyNav li:hover {
 
   .resources-section .resources-container .resources-category .resources-category-heading {
     font-size: 1.125rem;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
   }
   .resources-section .resources-container .resources-category .resources-category-box {
     margin-bottom: 25px;
@@ -982,6 +986,7 @@ ul.stickyNav li:hover {
   }
   .resources-section .resources-container .resources-category .resources-category-box div[class|="resources-category"]:last-child {
     margin-bottom: 0;
+
   }
   .resources-section .resources-container .resources-category .resources-category-box .resources-category-icon {
     display: inline-block;
@@ -1270,6 +1275,7 @@ ul.stickyNav li:hover {
 
 .accordion-level .accordion-menu-container.open {
   background-color: #414141;
+    margin-top:-3px;
 }
 
 .accordion-level .accordion-menu-container.open:after {
@@ -1293,6 +1299,9 @@ ul.stickyNav li:hover {
 .accordion-level-last .accordion-menu-container:after {
   display: none;
 }
+.accordion-level-last .accordion-menu-container:after{background:#ffffff;}
+
+
 
 @media only screen and (max-width: 768px) {
   .accordion-menu-container:after {
@@ -1316,6 +1325,6 @@ ul.stickyNav li:hover {
   }
 }
 @media (min-width: 992px){
-#overview{position:relative; margin-top:-49px; z-index:1;}
+#overview{position:relative; margin-top:-49px; padding-top:49px; z-index:1;}
 #hdspsaccordion{position:relative; margin-top:-49px; z-index:11;}
 }
