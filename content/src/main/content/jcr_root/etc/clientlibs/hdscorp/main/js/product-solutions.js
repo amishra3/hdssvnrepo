@@ -127,7 +127,37 @@
     }
 
 })(jQuery);
+if($('.accordion-level').length!==0){
+	$( ".contentarea .accordion-level" ).last().addClass("accordion-level-last");
+}
+/* equal column height start */
+if( $(window).width() > 1209){
+if($('.fb-category-container').length!==0){
+	
+			$('div[class="fb-category-container"]').each(function(index,item){
+				
+				this.id = 'fixedRate' + index;
 
+				var callheightinner = 0;
+				for(var i=0;i<$("#fixedRate"+index+" .fb-category-points-box-description").size();i++){
+					if($("#fixedRate"+index+" .fb-category-points-box-description:eq("+i+")").height()>=callheightinner){
+							callheightinner=$("#fixedRate"+index+" .fb-category-points-box-description:eq("+i+")").height();
+						}
+				}
+				$("#fixedRate"+index+" .fb-category-points-box-description").height(callheightinner);
+				
+				var callheightinnerhead=0;
+				for(var i=0;i<$("#fixedRate"+index+" .fb-category-points-box-heading").size();i++){
+					if($("#fixedRate"+index+" .fb-category-points-box-heading:eq("+i+")").height()>=callheightinnerhead){
+							callheightinnerhead=$("#fixedRate"+index+" .fb-category-points-box-heading:eq("+i+")").height();
+						}
+				}
+				$("#fixedRate"+index+" .fb-category-points-box-heading").height(callheightinnerhead);
+			});
+
+}
+}
+/* equal column height end */
 
 /* Equal Columns Height */
 (function($) {	
