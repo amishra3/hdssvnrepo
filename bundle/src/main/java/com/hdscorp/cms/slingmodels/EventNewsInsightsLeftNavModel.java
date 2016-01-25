@@ -11,6 +11,11 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 
 import com.hdscorp.cms.util.MultifieldUtil;
+
+/** Sling model for Event And News Insights Left Nav component
+ * @author gokula.nand
+ *
+ */
 @Model(adaptables = Resource.class)
 public class EventNewsInsightsLeftNavModel extends MultifieldUtil{
 
