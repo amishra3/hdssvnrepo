@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -65,16 +64,26 @@ public class EventDataModel {
 
 				if (res != null) {
 					ValueMap properties = res.adaptTo(ValueMap.class);
-					eventNode.setEventType((String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
-					eventNode.setEventTitle(properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));							
-					eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),ServiceConstants.DATE_FORMAT_FROM_EVENT,ServiceConstants.DATE_FORMAT_TO_EVENT));
-					eventNode.setEventEndDate(ServiceUtil.getDisplayDateFormat(properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null),ServiceConstants.DATE_FORMAT_FROM_EVENT,ServiceConstants.DATE_FORMAT_TO_EVENT));
+					eventNode.setEventType(
+							(String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
+					eventNode.setEventTitle(properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));
+					eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(
+							properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
+							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
+					eventNode.setEventEndDate(ServiceUtil.getDisplayDateFormat(
+							properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null),
+							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
 					eventNode.setEventLocation(properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
-					eventNode.setEventDescription(properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
-					eventNode.setEventImageBackground(properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
-					eventNode.setEventRegisterNowLabel(properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LABEL, (String) null));
-					eventNode.setEventRegisterNowLink(properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LINK, (String) null));
-					eventNode.setEventRegion((String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG, String[].class));
+					eventNode
+							.setEventDescription(properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
+					eventNode.setEventImageBackground(
+							properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
+					eventNode.setEventRegisterNowLabel(
+							properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LABEL, (String) null));
+					eventNode.setEventRegisterNowLink(
+							properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LINK, (String) null));
+					eventNode.setEventRegion(
+							(String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG, String[].class));
 				}
 
 			} catch (Exception e) {
