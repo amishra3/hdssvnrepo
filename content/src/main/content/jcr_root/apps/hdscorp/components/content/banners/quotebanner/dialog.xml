@@ -22,18 +22,40 @@
                         fieldLabel="Quote Author"
                         name="./quoteauthor"
                         xtype="textfield"/>
+                    <type
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Type"
+                        name="./type"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <customdamimage
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom (DAM Image)"
+                                value="customdamimage"/>
+                            <custombkgcolor
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom (Background Color)"
+                                value="custombkgcolor"/>
+                        </options>
+                    </type>
+                    <quotecolorbackgroundpicker
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Background Color (If Custom Color selected above.)"
+                        name="./quotecolorbackgroundpicker"
+                        xtype="colorfield"/>                                            
                     <quoteheroimage
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}true"
                         allowUpload="false"
-                        cropParameter="./quoteheroimagePath/imageCrop2"
+                        cropParameter="./quoteheroimagePathCrop2"
                         ddGroups="[media]"
                         fieldLabel="Quote Hero Image"
-                        fileNameParameter="./quoteheroimage/fileName"
-                        fileReferenceParameter="./quoteheroimage"
+                        fileNameParameter="./quoteheroimagefileName"
+                        fileReferenceParameter="./quoteheroimagereference"
                         height="{Long}200"
                         name="./quoteheroimage"
-                        rotateParameter="./quoteheroimage/imageRotate"
+                        rotateParameter="./quoteheroimageimageRotate"
                         sizeLimit="100"
                         title="Quote Hero Image"
                         width="{Long}200"
