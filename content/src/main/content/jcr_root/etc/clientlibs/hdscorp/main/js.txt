@@ -13,3 +13,4 @@ hds-product-solutions.js
 press-release.js
 news-insight-news.js
 social-innovation.js
+about-hds-awards.js

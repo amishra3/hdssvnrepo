@@ -22,7 +22,7 @@
 
   ==============================================================================
 --%>
-<%@include file="/apps/foundation/global.jsp"%>
+<%@include file="/apps/foundation/global.jsp"%> 
 
 <%@page
 	import="com.day.cq.wcm.api.WCMMode,com.day.cq.tagging.Tag"%>

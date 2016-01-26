@@ -1,0 +1,441 @@
+/* Hero Social Innovation CSS*/
+.common-hero-short-banner.about-hds{
+  background-image: url("../images/about-hds-hero-bg.jpg");
+}
+
+
+@media only screen and (max-width: 1280px) {
+  .common-hero-short-banner.about-hds .content-container{
+    margin-left: -15px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .common-hero-short-banner.about-hds{
+    background-position:top left;
+  }
+}
+
+/* About HDS - Behind the Scene - Pentagon Section CSS*/
+.behind-scene-hexagon{
+  position: relative;
+  padding: 55px 15px 55px;
+  background-image: url("../images/si-article-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  min-height:590px;
+}
+
+.behind-scene-hexagon h2 {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 1;
+    margin: 0 0 35px 0;
+    text-align: center;
+}
+.behind-scene-hexagon p{
+  text-align: center;
+}
+
+.behind-scene-hexagon .behind-scene-hexagon-list{
+    display: inline-block;
+    list-style-type: none;
+    margin: 55px 0 0;
+    padding: 0;
+    width: 100%;
+}
+
+.mac-os .behind-scene-hexagon{min-height: 720px;}
+
+@media only screen and (max-width: 1024px) {
+  .behind-scene-hexagon{
+    min-height: 750px;
+  }
+  .behind-scene-hexagon-list .hex-contain{
+    width:100%;
+    margin:0;
+  }
+  .behind-scene-hexagon-list .hex-contain .hexagon320{
+    margin-right:16px;
+  }
+  .behind-scene-hexagon-list .hex-contain .hexagon320:last-child{
+    margin-right:0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .behind-scene-hexagon h2{
+   font-size: 1.875rem;
+  }
+
+  .behind-scene-hexagon .behind-scene-hexagon-list {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 270px;
+  }
+}
+
+/* About HDS Career CSS Code */
+.about-hds-career-leader {
+    padding: 105px 15px 90px;    
+    min-height: 500px;
+    position: relative;
+}
+
+.about-hds-career-leader.bg-cover-career{
+  background: url("../images/about-hds-career.jpg") top center no-repeat;
+  background-size: cover;
+}
+
+.about-hds-career-leader.bg-cover-leader{
+  background: url("../images/about-hds-leadership.jpg") top center no-repeat;
+  background-size: cover;
+}
+
+
+.about-hds-career-leader a:hover,
+.about-hds-career-leader a:active {
+    text-decoration: none;
+}
+
+.about-hds-career-leader .about-hds-career-content {
+    text-align: right;
+    float: right;
+}
+
+.about-hds-career-leader .about-hds-leader-content {
+    text-align: left;
+    float: left;
+}
+
+.about-hds-career-leader h2 {
+    margin: 0 0 20px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 3.25em;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.about-hds-career-leader h4 {
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1;
+  margin-bottom:20px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.about-hds-career-leader p {
+    margin-bottom: 40px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 1;
+    color: #ffffff;
+}
+.about-hds-career-leader .blurb-container{
+
+}
+.about-hds-career-leader .blurb-container p {
+    padding: 0;
+    color: #ffffff;
+}
+
+.about-hds-career-leader .learn-about-hds-career-leader {
+     background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    text-transform: uppercase;
+    font-family: 'museo-sans' , Arial, sans-serif;
+    letter-spacing: 0.15rem;
+    font-weight: 600;
+    font-size: 0.8125rem;
+}
+
+.about-hds-career-leader  .learn-about-hds-career:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.about-hds-career-leader .learn-about-hds-career a:focus, 
+.about-hds-career-leader .learn-about-hds-career a:hover {
+    text-decoration: none;
+}
+.about-hds-career-leader  .learn-about-hds-career:hover a {
+    color: #000000;
+}
+
+@media only screen and (min-width: 1280px) {
+    .about-hds-career-leader {
+        min-height: 0;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .about-hds-career-leader {
+        background-position: top left;
+        min-height: 0;
+    }
+    .about-hds-career-leader h2 {
+        margin: 0 0 10px;
+        font-size: 1.875rem;
+        line-height: 1;
+    }
+    .about-hds-career-leader h4 {
+        font-size: 1.25em;
+        line-height: 1;
+        line-height: 140%;
+    }
+    .about-hds-career-leader p {
+        line-height: 150%;
+        margin-bottom: 20px;
+    }
+    .about-hds-career-leader p {
+       font-size: 0.875em;
+    }
+    .about-hds-career-leader .learn {
+        font-size: 0.8125em;
+        line-height: 1;
+    }
+
+    .about-hds-career-leader .about-hds-career-content {
+    text-align: right;
+    }
+
+    .about-hds-career-leader .about-hds-leader-content {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .about-hds-career-leader  {
+        text-align: left;
+    }
+    .about-hds-career-leader .learn {
+        margin-bottom: 2em;
+    }
+    .about-hds-career-leader .about-hds-career-content {
+      text-align: left;
+    }
+
+    .about-hds-career-leader .about-hds-leader-content {
+        text-align: left;
+    }
+}
+
+/* About HDS Specific Quote CSS Code */
+.about-hds-quote{
+  padding: 55px 10px 60px 10px;
+  color: #ffffff;
+  background: none #018EAA;
+  background-size: cover;
+}
+
+.about-hds-quote p {
+  position: relative;
+  display: block;
+  width: 63%;
+  margin: 25px auto;
+  font-family: "museo-sans",arial,sans-serif;
+  font-size: 1.5em;
+  line-height: 1;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.about-hds-quote p .icon-quote.open-quote,
+.about-hds-quote p .icon-quote.close-quote {
+  position: relative;
+}
+
+.about-hds-quote p .icon-quote.open-quote {
+  top: -2px;
+  left: -2px;
+  margin-left: -22px;
+}
+
+.about-hds-quote p .icon-quote.close-quote {
+  top: -5px;
+  margin-left: 2px;
+}
+
+.about-hds-quote cite {
+  display: block;
+  text-align: right;
+  margin-right: 10%;
+  font-size: 1rem;
+  line-height: 1;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-hds-quote{
+    padding: 22px 15px 35px;
+    margin-left: 0;
+    margin-right: 0;
+    background-position: 25% center;
+  }
+  .about-hds-quote p {
+    width: 90%;
+    text-align: center;
+    font-family: 'museo-sans', arial, sans-serif;
+    line-height: 1.3rem;
+    font-size: 1rem;
+  }
+  .about-hds-quote cite{
+    text-align: center;
+    line-height: 1.2em;
+    font-size: 0.8125rem;
+  }
+  .about-hds-quote p .icon-quote.open-quote{
+    margin-left: 0;
+  }
+  .about-hds-quote p .icon-quote.close-quote{
+    top:5px;
+  }
+  .about-hds-quote .content-container [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about-hds-quote q {
+    width: auto;
+  }
+}
+
+/* About HDS Latest Headline - Events Section CSS code */
+.about-hds-latest {
+  background-color: #f1f1f1;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  color: #333333;
+  padding: 50px 0 70px;
+}
+
+.about-hds-latest  .hds-title {
+  font-size: 3.75rem;
+  font-weight: 100;
+  margin-bottom: 40px; 
+  text-transform: none; 
+  color: #333333;
+}
+.about-hds-latest  .about-hds-events{margin-bottom: 15px; box-shadow: 0 2px 3px #999; min-height: 375px; color: #ffffff; position: relative; font-family: 'museo-sans', Helvetica, Arial, sans-serif;}
+
+.about-hds-latest  .about-hds-events.blog-left{
+    background: url("../images/about-hds-latest-headline.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.about-hds-latest  .about-hds-events.blog-right{
+    background: url("../images/about-hds-latest-events.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.about-hds-latest  .about-hds-events .about-hds-events-content{
+  position: absolute;
+  bottom: 30px;
+  padding: 0 20px 0 30px;
+}
+
+.about-hds-latest h2 {
+    color: #000000;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0;
+    min-height: 55px;
+}
+
+.about-hds-latest h2 .glyphicon.glyphicon-menu-right.animateIcon{
+  font-size: 1.3rem;
+  top: 2px;
+}
+
+.about-hds-latest  .about-hds-events .about-hds-events-content .date-stamp{
+
+}
+.about-hds-latest  .about-hds-events .about-hds-events-content .date-stamp span{
+  display: inline-block;
+  margin-left:5px;
+  text-transform: uppercase;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 0.75rem;
+}
+
+.about-hds-latest  .about-hds-events .about-hds-events-content .title{
+  font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+  .about-hds-latest  {
+    padding-top: 22px;
+    padding-bottom: 35px;
+  }
+  .about-hds-latest  .hds-title {
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #848484;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+  .about-hds-latest  .tbd p {
+    font-size: 1.875rem;
+  }
+
+  .about-hds-latest h2 {
+    font-size:  1.25rem;
+    min-height: 35px;
+  }
+
+  .about-hds-latest h2 .glyphicon.glyphicon-menu-right.animateIcon{
+    font-size: 1rem;
+    top: 2px;
+  }
+
+  .about-hds-latest  .about-hds-events{min-height: 200px; }
+  .about-hds-latest  .about-hds-events .about-hds-events-content{
+    bottom: 15px;
+    padding: 0 15px 0 15px;
+  }
+  .about-hds-latest  .about-hds-events .about-hds-events-content .title{
+    font-size: 0.875rem; font-weight: 600; margin-bottom: 10px;
+  }
+  .about-hds-latest  .about-hds-events .about-hds-events-content .date-stamp span{
+    font-size: 0.6875rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about-hds-latest  .about-hds-events.blog-left{
+    background: none;
+  }
+
+  .about-hds-latest  .about-hds-events.blog-right{
+      background: none;
+  }
+
+  .about-hds-latest .about-hds-events .about-hds-events-content{
+    position: static;
+    color: #414141;
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+  .about-hds-events-content .date-stamp.hidden-sm.hidden-md.hidden-lg > span {
+      display: table-cell;
+      vertical-align: top;
+      padding-left: 5px;
+  }
+}
