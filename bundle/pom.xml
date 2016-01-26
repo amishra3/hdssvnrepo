@@ -158,7 +158,12 @@
 			<groupId>org.apache.servicemix.bundles</groupId>
 			<artifactId>org.apache.servicemix.bundles.joda-time</artifactId>
 		</dependency>
-
+		 <dependency>
+		  <!-- jsoup HTML parser library @ http://jsoup.org/ -->
+		  <groupId>org.jsoup</groupId>
+		  <artifactId>jsoup</artifactId>
+		  <version>1.8.3</version>
+		 </dependency>
 	</dependencies>
 	
 	<!-- ====================================================================== -->
