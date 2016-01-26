@@ -66,6 +66,7 @@
 				"product-and-solutions")) {
             String tagTitle=tag.getTitle();
             Tag parent=tag.getParent();
+            String topic="";
             while(parent!=null)
             {
                 if(parent.getTitle().equals("Common"))
@@ -77,9 +78,15 @@
                 tagTitle=parent.getTitle()+tagTitle;
                 parent=parent.getParent();
             }
-
+            if(tagTitle!=null)
+            {
+           	String tagsArr[]= tagTitle.split("/");
+           	if(tagsArr.length>1)
+           		topic=tagsArr[1];
+            }
              %>
             <meta name="products-and-solutions" value="<%=tagTitle%>" />
+            <meta name="topic" value="<%=topic%>" />
             <%
 
 		}
