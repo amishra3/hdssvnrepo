@@ -5,6 +5,7 @@ public class NewsNode {
 	private String newsTitle;
 
 	private String newsDetailPath;
+	
 
 	private String newsDate;
 	

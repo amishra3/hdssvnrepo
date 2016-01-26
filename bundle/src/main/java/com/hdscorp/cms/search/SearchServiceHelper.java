@@ -98,14 +98,14 @@ public class SearchServiceHelper {
 		return result;
 	}
 
-	public SearchResult getNewsResults(String filter, String path, int noOfYears,String fullText) {
+	public SearchResult getPressReleases(String filter, String path, int noOfYears,String fullText) {
 
 		Map<String, String> searchParams = new HashMap<String, String>();
 		PredicateGroup combinedPredicate = new PredicateGroup();
 
 		searchParams.put("type", "cq:Page");
 
-		searchParams.put("property", "jcr:content/id");
+		searchParams.put("property", "jcr:content/pressrelease/pressreleasetitle");
 		searchParams.put("property.operation", "exists");
 		searchParams.put("p.offset", "0");
 		searchParams.put("p.limit", "-1");
@@ -121,12 +121,12 @@ public class SearchServiceHelper {
 				fullText);
 		searchParams
 				.put("group." + groupCnt + "_group.2_fulltext.relPath",
-						"jcr:content/@jcr:title");
+						"jcr:content/pressrelease/@pressreleasetitle");
 		searchParams.put("group." + groupCnt + "_group.3_fulltext",
 				fullText);
 		searchParams.put("group." + groupCnt
 				+ "_group.3_fulltext.relPath",
-				"jcr:content/@jcr:description");
+				"jcr:content/pressrelease/@pressreleasedesc");
 		}
       
 		if (!filter.equalsIgnoreCase(ARCHIVE)) {

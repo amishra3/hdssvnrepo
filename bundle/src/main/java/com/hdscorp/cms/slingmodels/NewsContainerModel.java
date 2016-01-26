@@ -15,7 +15,7 @@ import org.apache.sling.models.annotations.Model;
 import com.hdscorp.cms.dao.NewsContainerNode;
 import com.hdscorp.cms.util.PathResolver;
 
-@Model(adaptables = {SlingHttpServletRequest.class,Resource.class })
+@Model(adaptables = {SlingHttpServletRequest.class, Resource.class})
 public class NewsContainerModel {
 	
 	@Inject
@@ -44,7 +44,7 @@ public class NewsContainerModel {
 	
 	@Inject
 	@Named(value = "lookupPagePath")
-	@Default(values = { "/content/hdscorp/en_us/lookup/newssearch" })
+	@Default(values = { "/content/hdscorp/en_us/lookup/search-press-releases" })
 	private String lookupPagePath;
 	
 	private List<NewsContainerNode> filterUrls;
