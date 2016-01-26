@@ -33,12 +33,12 @@
 
 		if (tag.getTagID().contains("content-type")) {
 %>
-<meta name="Content Type" value="<%=tag.getTitle()%>" />
+<meta name="content-type" value="<%=tag.getTitle()%>" />
 <%
 	} else if (tag.getTagID().contains("services")) {
 			if (tag.getParent() != null) {
 %>
-<meta name="Services"
+<meta name="services"
 	value="<%=tag.getParent().getTitle()%>/<%=tag.getTitle()%>" />
 <%
 	} else {
@@ -48,32 +48,39 @@
 	}
 		} else if (tag.getTagID().contains("region")) {
 %>
-<meta name="Region" value="<%=tag.getTitle()%>" />
+<meta name="region" value="<%=tag.getTitle()%>" />
 <%
 	} else if (tag.getTagID().contains("language")) {
 %>
-<meta name="Language" value="<%=tag.getTitle()%>" />
+<meta name="language" value="<%=tag.getTitle()%>" />
 <%
 	} else if (tag.getTagID().contains("country")) {
 %>
-<meta name="Country" value="<%=tag.getTitle()%>" />
+<meta name="country" value="<%=tag.getTitle()%>" />
 <%
 	} else if (tag.getTagID().contains("industry")) {
 %>
-<meta name="Industry" value="<%=tag.getTitle()%>" />
+<meta name="industry" value="<%=tag.getTitle()%>" />
 <%
 	} else if (tag.getTagID().contains(
 				"product-and-solutions")) {
-			if (tag.getParent() != null) {
-%>
-<meta name="Products and Solutions "
-	value="<%=tag.getParent().getTitle()%>/<%=tag.getTitle()%>" />
-<%
-	} else {
-%>
-<meta name="Products and Solutions" value="<%=tag.getTitle()%>" />
-<%
-	}
+            String tagTitle=tag.getTitle();
+            Tag parent=tag.getParent();
+            while(parent!=null)
+            {
+                if(parent.getTitle().equals("Common"))
+                    break;
+				if(tagTitle.length()>0)
+                {
+                    tagTitle="/"+tagTitle;
+                }
+                tagTitle=parent.getTitle()+tagTitle;
+                parent=parent.getParent();
+            }
+
+             %>
+            <meta name="products-and-solutions" value="<%=tagTitle%>" />
+            <%
 
 		}
 	}
