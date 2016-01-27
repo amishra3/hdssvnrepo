@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <lbdimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Image"
+                        name="./jcr:lbdimage"
+                        xtype="pathfield"/>
+                    <lbdtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Title"
+                        name="./jcr:lbdtitle"
+                        xtype="textfield"/>
+                    <lbdjobtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Job Title"
+                        name="./jcr:lbdjobtitle"
+                        xtype="textfield"/>
+                    <lbdjoblocation
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Job Location"
+                        name="./jcr:lbdjoblocation"
+                        xtype="textfield"/>
+                    <lbdtwitterfollowurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Twitter Follow URL"
+                        name="./jcr:lbdtwitterfollowurl"
+                        xtype="textfield"/>
+                    <lbdfacebookfollowurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Facebook Follow URL"
+                        name="./jcr:lbdfacebookfollowurl"
+                        xtype="textfield"/>
+                    <lbdlinkedinfollowurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Linkedin Follow URL"
+                        name="./jcr:lbdlinkedinfollowurl"
+                        xtype="textfield"/>
+                    <lbdcontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Content"
+                        name="./jcr:lbdcontent"
+                        xtype="richtext"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

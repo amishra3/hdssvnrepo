@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <lbdfollowlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Follow Label"
+                        name="./lbdfollowlabel"
+                        xtype="textfield"/>
+                    <lbdviewalllinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO View ALL link Label"
+                        name="./lbdviewalllinklabel"
+                        xtype="textfield"/>
+                    <lbdviewalllinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO View ALL link URL"
+                        name="./lbdviewalllinkurl"
+                        xtype="textfield"/>
+                    <lbdviewalllinkopeninnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO View ALL link Open in New Window ?"
+                        name="./lbdviewalllinkopeninnewwindow"
+                        type="selection"
+                        xtype="checkbox"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
