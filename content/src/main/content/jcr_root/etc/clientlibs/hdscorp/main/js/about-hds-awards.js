@@ -82,7 +82,7 @@ var hds = window.hds || {};
 }(window, document, jQuery, hds));
 
 $(function() {	
-	if ( '.about-hds-awards'.length){
+	if ( $('.about-hds-awards').length > 0){
 		hds.abouthdsAwards.init();
 	}
 })
