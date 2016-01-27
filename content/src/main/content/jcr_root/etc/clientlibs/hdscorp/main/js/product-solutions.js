@@ -157,6 +157,34 @@ if($('.fb-category-container').length!==0){
 
 }
 }
+
+if( $(window).width() > 1209){
+if($('.mes-section').length!==0){
+	
+				var resheightinner = 0;
+				for(var i=0;i<$(".product-box .product-copy-main").size();i++){
+					if($(".product-box .product-copy-main:eq("+i+")").height()>=resheightinner){
+							resheightinner=$(".product-box .product-copy-main:eq("+i+")").height();
+						}
+				}
+				$(".product-box .product-copy-main").height(resheightinner);
+				
+				var resheightinnerhead=0;
+				for(var i=0;i<$(".product-box .product-copy-sub").size();i++){
+					if($(".product-box .product-copy-sub:eq("+i+")").height()>=resheightinnerhead){
+							resheightinnerhead=$(".product-box .product-copy-sub:eq("+i+")").height();
+						}
+				}
+				$(".product-box .product-copy-sub").height(resheightinnerhead);
+}
+}
+
+if($('.resources-category-box').length!==0){
+	$('.resources-category .resources-category-box').each(function(index,item){
+		this.id = 'fixedRes' + index;
+	})
+}
+
 /* equal column height end */
 
 /* Equal Columns Height */
