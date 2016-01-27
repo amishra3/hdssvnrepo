@@ -293,5 +293,7 @@ var hds = window.hds || {};
 }(window, document, jQuery, hds));
 
 $(function() {
-    hds.loadDataFilters.init();
+	if ( '.productsolutionlanding'.length){
+		hds.loadDataFilters.init();
+	}
 })

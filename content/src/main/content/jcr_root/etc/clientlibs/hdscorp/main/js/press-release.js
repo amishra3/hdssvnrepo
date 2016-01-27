@@ -1,20 +1,20 @@
 /*Global Namespace*/
 var hds = window.hds || {};
 (function(window, document, $, hds) {
-    hds.productCatagory = {
+    hds.pressrelease = {
         init: function() {
-            hds.productCatagory.loadCatagoryHTML();
-            hds.productCatagory.bindEventsOnResize();
-            hds.productCatagory.bindClick();
+            hds.pressrelease.loadCatagoryHTML();
+            hds.pressrelease.bindEventsOnResize();
+            hds.pressrelease.bindClick();
         },
         loadCatagoryHTML: function() {        	
-            hds.productCatagory.processHTML($('.linkLeft a').eq(0).attr('data-loadhtml'), 0);
+            hds.pressrelease.processHTML($('.linkLeft a').eq(0).attr('data-loadhtml'), 0);
             $('.linkLeft a').eq(0).addClass('active');
             $('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
             $("#contentCatagory").html(" ").load(url + " .pr-archives-list", function() {
-                hds.productCatagory.bindHTMLLoad();
+                hds.pressrelease.bindHTMLLoad();
             });
         },
         bindHTMLLoad: function() {
@@ -43,7 +43,7 @@ var hds = window.hds || {};
         },
         bindEventsOnResize: function() {
             $(window).resize(function() {
-                hds.productCatagory.bindHTMLLoad();
+                hds.pressrelease.bindHTMLLoad();
             });
         },
         bindClick: function() {
@@ -63,7 +63,7 @@ var hds = window.hds || {};
                         $('.linkLeft').find('.icon-accordion-opened').removeAttr('style').css('display', 'none');
 
                         $('.linkLeft a').parent().find('.MobileHolderWrapper').html(" ").removeAttr("style");
-                        hds.productCatagory.processHTML(loadUrl, loadIndec);
+                        hds.pressrelease.processHTML(loadUrl, loadIndec);
                     } else if ($(this).hasClass('active') && $(window).width() < 991) {
                         $(this).removeClass('active');
                         $(this).parent().removeClass('active');
@@ -81,5 +81,7 @@ var hds = window.hds || {};
 }(window, document, jQuery, hds));
 
 $(function() {	
-	hds.productCatagory.init();
+	if ( '.pr-list-container'.length){
+		hds.pressrelease.init();
+	}
 })
