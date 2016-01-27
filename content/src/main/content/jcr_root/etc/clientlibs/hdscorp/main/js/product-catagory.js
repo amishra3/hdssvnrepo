@@ -82,6 +82,8 @@ var hds = window.hds || {};
 }(window, document, jQuery, hds));
 
 $(function() {	
-	hds.productCatagory.init();
+	if ( $('.product-category-list').length > 0){
+		hds.productCatagory.init();
+	}
 })
 

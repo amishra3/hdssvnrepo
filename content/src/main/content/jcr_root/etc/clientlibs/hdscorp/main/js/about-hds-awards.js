@@ -80,3 +80,9 @@ var hds = window.hds || {};
         }
     }
 }(window, document, jQuery, hds));
+
+$(function() {	
+	if ( '.about-hds-awards'.length){
+		hds.abouthdsAwards.init();
+	}
+})

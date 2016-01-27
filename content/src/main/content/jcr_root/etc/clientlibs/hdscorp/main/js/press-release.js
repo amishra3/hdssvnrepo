@@ -80,8 +80,8 @@ var hds = window.hds || {};
     }
 }(window, document, jQuery, hds));
 
-$(function() {	
-	if ( '.pr-list-container'.length){
+$(function() {
+	if ( $('.pr-list-container').length > 0){
 		hds.pressrelease.init();
 	}
 })
