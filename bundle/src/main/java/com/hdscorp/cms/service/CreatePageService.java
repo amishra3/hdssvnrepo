@@ -2,7 +2,6 @@ package com.hdscorp.cms.service;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,7 +10,6 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
 import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
 import org.jsoup.Jsoup;
@@ -23,23 +21,22 @@ import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.WCMException;
 import com.hdscorp.cms.dao.PressReleaseModel;
 import com.hdscorp.cms.exception.SystemException;
-
 import com.hdscorp.cms.util.JcrUtilService;
+import com.hdscorp.cms.util.ServiceUtil;
 
 @Component(immediate = true)
 @Service(value = CreatePageService.class)
 public class CreatePageService {
 
-	
 	private final String blackSlash = "/";
 
 	public void createPage(Session session, String template, String path,
 			PressReleaseModel pressReleaseModel) {
 		try {
-			System.out.println("inside create page method*** " + template);
+			
 			String pagePath = appendDateToPagePath(path,
 					pressReleaseModel.getPubDate());
-			System.out.println("page path" + pagePath);
+			
 			String pageName = "";
 			Page page = null;
 			String pageTitle = pressReleaseModel.getTitle();
@@ -57,8 +54,14 @@ public class CreatePageService {
 
 			pressRelease.setProperty("pressreleasetitle",
 					pressReleaseModel.getTitle());
-			pressRelease.setProperty("pressreleasedate",
-					pressReleaseModel.getPubDate());
+
+			Date date = ServiceUtil.getDateFromString(
+					pressReleaseModel.getPubDate(),
+					"EEE, d MMM yyyy HH:mm:ss Z");
+
+			String pubDate = ServiceUtil.getStringFromDate(date, "MM/d/yy");
+
+			pressRelease.setProperty("pressreleasedate", pubDate);
 			pressRelease.setProperty("sling:resourceType",
 					"hdscorp/components/content/pressrelease");
 			pressRelease.setProperty("pressreleasedesc",
@@ -66,7 +69,7 @@ public class CreatePageService {
 
 			session.save();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
@@ -74,12 +77,12 @@ public class CreatePageService {
 
 	private String appendDateToPagePath(final String pagePath, String pubdate) {
 
-		SimpleDateFormat format = new SimpleDateFormat(
-				"EEE, d MMM yyyy HH:mm:ss Z");
+		
 		int year = 0;
 		try {
 
-			Date sysDate = format.parse(pubdate);
+			Date sysDate = ServiceUtil.getDateFromString(pubdate,
+					"EEE, d MMM yyyy HH:mm:ss Z");
 
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(sysDate);
@@ -116,17 +119,14 @@ public class CreatePageService {
 				}
 			}
 
-			System.out.println("before creating page");
+			
 			if (!session.itemExists(currentPath + "/" + pageName)) {
 				page = pageManager.create(path, pageName, template, pageTitle);
 			}
 
-		} catch (WCMException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch (RepositoryException e) {
-			throw new SystemException(
-					"RepositoryException raised during creating Asset Path ", e);
-		}
+		} 
 		return page;
 	}
 

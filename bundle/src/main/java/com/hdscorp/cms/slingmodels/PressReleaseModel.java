@@ -1,6 +1,5 @@
 package com.hdscorp.cms.slingmodels;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,7 +26,7 @@ import com.hdscorp.cms.util.ServiceUtil;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
 @Model(adaptables = { SlingHttpServletRequest.class, Resource.class })
-public class NewsModel {
+public class PressReleaseModel {
 
 	@Inject
 	private SlingHttpServletRequest request;
@@ -104,11 +103,9 @@ public class NewsModel {
 
 					String pubDate = properties.get("pressreleasedate",
 							(String) null).toString();
-
-					SimpleDateFormat format = new SimpleDateFormat(
-							"EEE, d MMM yyyy HH:mm:ss Z");
-					Date date = format.parse(pubDate);
-
+					
+					Date date = ServiceUtil.getDateFromString(pubDate, "MM/d/yy");
+							
 					newsNode.setNewsDate(ServiceUtil.getStringFromDate(date,
 							"MMMM d, yyyy"));
 					Page reourcePage = hit.getResource().adaptTo(Page.class);
@@ -119,9 +116,9 @@ public class NewsModel {
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
-			System.out.println(" ----IN ERROR BLOCK---" + e.getMessage());
+			
 		}
 		return newsList;
 	}
