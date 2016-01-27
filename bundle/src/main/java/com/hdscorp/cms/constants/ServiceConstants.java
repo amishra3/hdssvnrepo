@@ -170,8 +170,8 @@ public final class ServiceConstants {
 	public static final String EVENT_JCR_REGISTER_NOW_LABEL= "registernowlabel";
 	public static final String EVENT_JCR_REGISTER_NOW_LINK= "registernowlink";
 	public static final String EVENT_JCR_REGION_TAG= "eventregiontag";
-	public static final String DATE_FORMAT_FROM_EVENT= "";
-	public static final String DATE_FORMAT_TO_EVENT= "";
+	public static final String DATE_FORMAT_FROM_EVENT = "dd/MM/yy";
+	public static final String DATE_FORMAT_TO_EVENT = "MM/dd/yyyy";
 	
 	
 	
