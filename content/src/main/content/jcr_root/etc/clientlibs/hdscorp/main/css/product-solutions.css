@@ -7,7 +7,7 @@
 
 .business-specific .specific-benefit {
   color: #ffffff;
-  padding: 40px 15px 60px;
+  padding: 25px 15px 40px;
 }
 
 .business-specific .specific-benefit h2 {
@@ -36,7 +36,7 @@
 
 .business-specific .specific-benefit ul {
   list-style-type: square;
-  padding-left: 15px;
+  padding-left: 15px; padding-bottom:10px;
 }
 
 .business-specific .specific-benefit ul li {
@@ -232,7 +232,7 @@ ul.stickyNav li:hover {
 .business-specific .hexContain,
 .specific-benefit .hexContain,
 .specific-tech .hexContain {
-  min-height: 490px;
+  min-height: 430px;
 }
 
 .animateAnchor {
@@ -361,6 +361,7 @@ ul.stickyNav li:hover {
   font-style: normal;
 
 
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -442,7 +443,7 @@ ul.stickyNav li:hover {
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: .15em;
+  /*letter-spacing: .15em;*/
   font-size: 1.5em;
   line-height: 1;
 }

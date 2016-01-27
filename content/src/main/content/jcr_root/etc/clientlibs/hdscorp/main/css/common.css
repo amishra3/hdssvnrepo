@@ -425,9 +425,9 @@
 .footer .footer-blue .buttons .reseller {
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 0.75em;
+    font-size: 0.8em;
     line-height: 1;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .footer .footer-blue .buttons .reseller:hover .glyphicon.glyphicon-chevron-right {
@@ -455,7 +455,7 @@
     display: inline-block;
     cursor: pointer;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-size: 0.75em;
+    font-size: 0.8em;
     line-height: 1;
     background-color: #008eaa;
     transition: background-color 0.3s linear, color 0.3s linear;
@@ -747,7 +747,7 @@ button.cta-scroll-top .text-return {
 .btn-square-white {
     border: 1px solid #ffffff;
     color: #ffffff;
-    text-align: center;
+	text-align: center;
 }
 
 .btn-square-white a {
@@ -769,7 +769,7 @@ button.cta-scroll-top .text-return {
 .btn-square-red {
     border: 1px solid #ce0000;
     color: #cc0000;
-    text-align: center;
+
 }
 
 .btn-square-red a {
@@ -781,8 +781,8 @@ button.cta-scroll-top .text-return {
 }
 .btn-square-red a:hover{
     text-decoration: none;
-    background: #cc0000;
-    color: #ffffff;
+    background: #ffffff;
+    color: #cc0000;
 }
 .btn-square-red a:focus{
     text-decoration: none;
@@ -865,7 +865,7 @@ button.cta-scroll-top .text-return {
     }
     .btn-square-red a {padding-left:15px; padding-right:15px;}
     .btn-square-white a {padding-left:15px; padding-right:15px;}
-    .btn-square-black a {padding-left:15px; padding-right:15px;}
+	.btn-square-black a {padding-left:15px; padding-right:15px;}
 }
 
 .sprite {
@@ -1180,6 +1180,7 @@ button.cta-scroll-top .text-return {
   top: 3px;
   left: 0px;
   transition: all 0.5s ease;
+    display:inline;
 }
 .animateLink:hover > .animateIcon {
   left: 5px;
