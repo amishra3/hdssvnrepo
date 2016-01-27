@@ -4,7 +4,6 @@ plugins.js
 main.js
 banner.js
 product-solutions.js
-product-solutions-lp.js
 tech-specs.js
 accordion.js
 product-catagory.js
@@ -12,5 +11,4 @@ product-box.js
 hds-product-solutions.js
 press-release.js
 news-insight-news.js
-social-innovation.js
 about-hds-awards.js
