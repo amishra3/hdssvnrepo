@@ -1,6 +1,5 @@
 /*Global Namespace*/
 var hds = window.hds || {};
-
 (function(window, document, $, hds) {
     hds.productCatagory = {
         init: function() {
@@ -8,13 +7,13 @@ var hds = window.hds || {};
             hds.productCatagory.bindEventsOnResize();
             hds.productCatagory.bindClick();
         },
-        loadCatagoryHTML: function() {
+        loadCatagoryHTML: function() {        	
             hds.productCatagory.processHTML($('.linkLeft a').eq(0).attr('data-loadhtml'), 0);
             $('.linkLeft a').eq(0).addClass('active');
             $('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
-            $("#contentCatagory").html(" ").load(url, function() {
+            $("#contentCatagory").html(" ").load(url + " .pr-archives-list", function() {
                 hds.productCatagory.bindHTMLLoad();
             });
         },
@@ -80,3 +79,7 @@ var hds = window.hds || {};
         }
     }
 }(window, document, jQuery, hds));
+
+$(function() {	
+	hds.productCatagory.init();
+})
