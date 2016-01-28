@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <aboutushextitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./aboutushextitlecontent"
+                        xtype="textfield"/>
+                    <aboutusheximagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./aboutusheximageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./aboutusheximagefileName2"
+                        fileReferenceParameter="./aboutusheximagePath"
+                        height="{Long}200"
+                        name="./aboutusheximagePath"
+                        rotateParameter="./aboutusheximagePathimageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./aboutushexmultilinks"
+                        fieldLabel="Tabs"
+                        name="./aboutushexmultilinks"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <placardTitle
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Placard Title"
+                                name="./placardTitle"
+                                xtype="textfield"/>
+                            <placardcontent
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Placard Content"
+                                name="./placardcontent"
+                                xtype="textarea">
+                            </placardcontent>
+                            <placardIconPath
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Placard Icon Path"
+                                name="./placardIconPath"
+                                xtype="pathfield"/>
+                            <placardIconalt
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Placard Icon Alt"
+                                name="./placardIconalt"
+                                xtype="textfield"/>
+                            <placardurllabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Placard URL Label"
+                                name="./placardurllabel"
+                                xtype="textfield"/>
+                            <placardtargeturl
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Placard URL Label"
+                                name="./placardtargeturl"
+                                xtype="pathfield"/>                                                                                                
+                        </fieldConfig>
+                    </multilinks>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
