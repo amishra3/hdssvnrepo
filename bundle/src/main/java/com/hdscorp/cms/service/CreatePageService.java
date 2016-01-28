@@ -1,26 +1,19 @@
 package com.hdscorp.cms.service;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
 import javax.jcr.Node;
-import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
-import com.day.cq.wcm.api.WCMException;
 import com.hdscorp.cms.dao.PressReleaseModel;
-import com.hdscorp.cms.exception.SystemException;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.ServiceUtil;
 
@@ -64,8 +57,8 @@ public class CreatePageService {
 			pressRelease.setProperty("pressreleasedate", pubDate);
 			pressRelease.setProperty("sling:resourceType",
 					"hdscorp/components/content/pressrelease");
-			pressRelease.setProperty("pressreleasedesc",
-					getPressReleaseDesc(pressReleaseModel.getLink()));
+//			pressRelease.setProperty("pressreleasedesc",
+//					getPressReleaseDesc(pressReleaseModel.getLink()));
 
 			session.save();
 		} catch (Exception e) {
@@ -130,21 +123,21 @@ public class CreatePageService {
 		return page;
 	}
 
-	private String getPressReleaseDesc(String url) {
-
-		String pressReleaseDesc = "";
-		try {
-
-			Document doc = Jsoup.connect(url).get();
-
-			doc.getElementsByTag("style").remove();
-			doc.getElementsByClass("PageTitleStyle1").remove();
-			Elements content = doc.select("div#printarea");
-			pressReleaseDesc = content.toString();
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-		return pressReleaseDesc;
-	}
+//	private String getPressReleaseDesc(String url) {
+//
+//		String pressReleaseDesc = "";
+//		try {
+//
+//			Document doc = Jsoup.connect(url).get();
+//
+//			doc.getElementsByTag("style").remove();
+//			doc.getElementsByClass("PageTitleStyle1").remove();
+//			Elements content = doc.select("div#printarea");
+//			pressReleaseDesc = content.toString();
+//		} catch (IOException e) {
+//
+//			e.printStackTrace();
+//		}
+//		return pressReleaseDesc;
+//	}
 }
