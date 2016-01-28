@@ -47,9 +47,9 @@
 			
 			
 			<li class="linkLeft ${loopcnt.index== activeSubCatIndex?'active':''}">
-				<a href="${currentCategoryUrl}#${subcatid}"
+				<a href="${currentCategoryUrl}#categorycontent"
 					data-loadhtml="${linkUrl}"
-					class="${loopcnt.index==0?'active':'dummyclass'}" name="${subcat.subcatid}" id="${subcat.subcatid}"> 
+					class="${loopcnt.index==activeSubCatIndex?'active':'dummyclass'}" name="${subcat.subcatid}" id="${subcat.subcatid}"> 
 						${subcat.subcatdisplaylabel}
 						<span class="icon-accordion-closed hidden-md hidden-lg"
 						style="display: none;"></span> 
