@@ -9,7 +9,7 @@
 <c:set var="tabinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabName-tabAnchor-defaultActiveTab")%>" />
 
 
-<div class="hidden-xs hidden-sm content-container" id="hdspsaccordion" style="position: relative;">
+<div class="hidden-xs hidden-sm content-container" id="hdspsaccordion" style="position: relative; min-height:49px;">
 	<div class="navContain">
 		<div class="stickNav-background">
 			<div class="stickNav-container">
