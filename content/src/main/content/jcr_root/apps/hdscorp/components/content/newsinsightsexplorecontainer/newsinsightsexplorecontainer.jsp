@@ -1,7 +1,8 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 
-
+  <div class="clearfix"></div>
+  
   <div class="pr-explore">
       <div class="pr-explore-container">
           <div class="row">
