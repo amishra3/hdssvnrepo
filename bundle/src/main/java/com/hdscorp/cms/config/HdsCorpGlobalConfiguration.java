@@ -38,6 +38,12 @@ public class HdsCorpGlobalConfiguration {
 	@Property(label = "Dispatcher Invalidate URI", value = "/dispatcher/invalidate.cache", description = "Dispatcher Invalidate URI")
 	public static final String DISPACHER_URI = "hdscorp.dispatcher.uri";	
 	
+
+	@Property(label = "Press Release Import Path", value = "/content/hdscorp/en_us/lookup/pressreleases", description = "Press Release Import Path")
+	public static final String PRESS_RELEASE_IMPORT_PATH = "hdscorp.pressreleaseimport.path";	
+
+	@Property(label = "Press Release Detail Template", value = "/apps/hdscorp/templates/pressreleasedetail", description = "Press Release Detail Template")
+	public static final String PRESS_RELEASE_DETAIL_TEMPLATE = "hdscorp.pressreleasedetail.template";		
 	
 	@SuppressWarnings("rawtypes")
 	private static Dictionary properties = null;
