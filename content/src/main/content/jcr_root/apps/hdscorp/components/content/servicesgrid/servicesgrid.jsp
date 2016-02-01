@@ -18,11 +18,12 @@
 					</c:if>
 					 
 			 				<c:set var="serviceObj" value="${service}" scope="request" /> 
-							
+							<c:set var="loopindex" value="${loopcnt.index}" scope="request" />
 					
 			 				<cq:include path="servicepar-${loopcnt.index}" resourceType="hdscorp/components/content/servicesgrid/servicetile" /> 
 					
 			 				<c:remove var="serviceObj" scope="request" />
+			 				<c:remove var="loopindex" scope="request" />
 			 				
 				 	<c:if test="${( (loopcnt.index != 0) && (loopcnt.index mod 2 == 0)) || (loopcnt.last)}">
 						</div>
