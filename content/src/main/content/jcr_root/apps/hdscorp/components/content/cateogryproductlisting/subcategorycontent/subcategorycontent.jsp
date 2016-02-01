@@ -24,8 +24,8 @@
 	</div>
 </c:if>
 
-
-<c:if test="${not empty properties.subcatimagePath}">
+<c:choose>
+<c:when test="${not empty properties.subcatimagePath}">
 	<c:set var="linkUrl" value="${properties.subcatbuttonurl}" />
 	
 	<c:if test="${fn:startsWith(linkUrl,'/content/')}">
@@ -37,15 +37,23 @@
 	     <div class="category-promo-img col-sm-5 hidden-xs ${not empty properties.subcatcontentalign?'floatright':''}">
 	         <img src="${properties.subcatimagePath}" alt="" title="" class="img-responsive">
 	     </div>
+    </div>
+</c:when>
+<c:otherwise>
+</c:otherwise>
+</c:choose>		 
+
 	     <div class="category-promo-desc col-sm-7">
 	         <h2>${properties.subcategorybannertitle}</h2>
 	         <p>${properties.subcategorybanneresubtext}</p>
+			 
+			 <c:if test="${not empty properties.subcatbuttonlabel}">
 	         <div class="btn-square-red learn-more-red-link">
 	             <a href="${linkUrl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}</a>
 	         </div>
+			 </c:if>
 	     </div>
-	</div>
-</c:if>
+
 
 <div class="category-products-listing">
 	<c:forEach var="product" items="${subCatContentModel.products}" varStatus="loopcnt">
