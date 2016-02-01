@@ -87,6 +87,18 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers{
 							eElement.getElementsByTagName(ServiceConstants.START).item(0).getTextContent());
 					feed.put(ServiceConstants.JSON_RATING,
 							eElement.getElementsByTagName(ServiceConstants.RATING).item(0).getTextContent());
+					
+					NodeList categoriesList = eElement.getElementsByTagName(ServiceConstants.CATEGORY);
+					StringBuffer categoryBuffer=new StringBuffer();				
+					for (int catCount = 0; catCount < categoriesList.getLength(); catCount++) {
+						Node nNodeHref = categoriesList.item(catCount);
+						Element eElementHref = (Element) nNodeHref;		
+						if(catCount==0)							
+							categoryBuffer.append(eElementHref.getAttribute(ServiceConstants.TERM).toString().replaceAll(ServiceConstants.REG_EXP, ""));
+							else							
+							categoryBuffer.append(","+eElementHref.getAttribute(ServiceConstants.TERM).toString().replaceAll(ServiceConstants.REG_EXP, ""));
+					}		
+					feed.put(ServiceConstants.JSON_CATEGORORY, categoryBuffer.toString());
 					NodeList nCommunication = eElement.getElementsByTagName(ServiceConstants.COMMUNICATION);
 					Node nNodeCommunication = nCommunication.item(0);
 					Element eElementCommunication = (Element) nNodeCommunication;
@@ -137,5 +149,9 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers{
 
 	}
 	
+	public static void main(String args[]){
+		BrightTalkWebService BrightTalkWebService=new BrightTalkWebService();
+		BrightTalkWebService.getBrightTalkResponse("https://www.brighttalk.com/channel/12821/feed");
+	}
 	
 }
