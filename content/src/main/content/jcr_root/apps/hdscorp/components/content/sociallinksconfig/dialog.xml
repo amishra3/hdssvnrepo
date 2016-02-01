@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="400"
+    title="Social Links Config "
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Social Links Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <socialfollowuslabel
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Social Follow US Label"
+                        name="./socialfollowuslabel"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./socialfollowuslabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <sociallinksconfig
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Social Links Config "
+                        name="./sociallinksconfig"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <socialchannelicon
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Social channel Icon"
+                                    key="scicon"
+                                    name="./scicon"
+                                    xtype="pathfield"/>
+                                <socialchanneltargeturl
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Socail Chanel Target URL"
+                                    key="scturl"
+                                    name="./scturl"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </sociallinksconfig>
+                    <socialtargeturltype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open In New Window?"
+                        name="./socialurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
