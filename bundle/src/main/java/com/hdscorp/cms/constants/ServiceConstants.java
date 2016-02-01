@@ -28,6 +28,9 @@ public final class ServiceConstants {
 	public static final String MIN = " mins";
 	public static final int SECOND = 60;
 	public static final String ENTRY_TAG = "entry";
+	public static final String CATEGORY = "category";
+	public static final String TERM = "term";
+	public static final String REG_EXP = "#|\"";
 	public static final int TIME_OUT = 60 * 1000;
 
 	public static final String JSON_UPDATED_DATE = "updatedDate";
@@ -41,6 +44,7 @@ public final class ServiceConstants {
 	public static final String JSON_START = "start";
 	public static final String JSON_RATING = "rating";
 	public static final String JSON_COMMUNICATION_ID = "communicationId";
+	public static final String JSON_CATEGORORY = "category";
 	public static final String JSON_CHANNEL_ID = "channelId";
 	public static final String JSON_HERF_LINK = "herfLink";
 	public static final String JSON_THUMBNAIL_PATH = "thumbnailPath";
