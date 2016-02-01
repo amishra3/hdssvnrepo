@@ -4,7 +4,7 @@
     jcr:primaryType="cq:Template"
     jcr:title="Event Page Template"
     allowedPaths="[/content/hdscorp(/.*)?]"
-    ranking="{Long}2">
+    ranking="{Long}11">
     <jcr:content
         jcr:primaryType="cq:PageContent"
         sling:resourceType="hdscorp/components/page/eventpage"/>

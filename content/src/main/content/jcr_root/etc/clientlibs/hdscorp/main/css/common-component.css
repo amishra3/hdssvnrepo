@@ -1,25 +1,26 @@
 /* Common Hero Tall Banner CSS*/
 .common-hero-banner {
-z-index: 2;
-position: relative;
-min-height: 718px;
-padding: 120px 15px 50px;
-background-position: top center;
-background-repeat: no-repeat;
-background-size: cover;
+  z-index: 2;
+  position: relative;
+  min-height: 718px;
+  padding: 120px 15px 50px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .top-banner-heading{
-font-weight:500;
-font-family:'museo-sans', Helvetica, Arial, sans-serif;
-font-size:2.2rem;
-margin-top:0;
+  font-weight:500;
+  font-family:'museo-sans', Helvetica, Arial, sans-serif;
+  font-size:2.2rem;
+  margin-top:0;
+  color: #ffffff;
 }
 
 .common-hero-banner .common-hero-banner-container {
-position: relative;
-margin: 0 auto;
-max-width: 1280px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
 }
 
 .common-hero-banner .common-hero-banner-container  h1,
@@ -52,7 +53,7 @@ line-height: 1;
 line-height: 120%;
 }
 
-.common-hero-banner .common-hero-banner-container > h3 {
+.common-hero-banner .common-hero-banner-container h3 {
 margin-bottom: 10px;
 font-family: 'museo-slab', Helvetica, Arial, sans-serif;
 font-weight: 700;
@@ -162,6 +163,12 @@ padding-top: 110px;
 }
 .common-hero-banner.video .common-hero-banner-container > iframe {
 width: 80%;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+.common-hero-banner .common-hero-banner-container {
+  margin-left: -15px;
 }
 }
 
@@ -730,5 +737,6 @@ font-weight: 500;
     font-size: 0.875rem;
     line-height: 1;
     line-height: 120%;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   }
 }

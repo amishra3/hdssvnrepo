@@ -3,7 +3,7 @@
     jcr:description="This is the template for creating Megamenu Fragments."
     jcr:primaryType="cq:Template"
     jcr:title="Megamenu Template"    
-    ranking="{Long}5">
+    ranking="{Long}4">
     <jcr:content
         jcr:primaryType="cq:PageContent"
         sling:resourceType="hdscorp/components/page/megamenu"/>

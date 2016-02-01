@@ -3,7 +3,7 @@
     jcr:description="This is the template for creating press release detail pages."
     jcr:primaryType="cq:Template"
     jcr:title="Press Release Detail"    
-    ranking="{Long}1">
+    ranking="{Long}7">
     <jcr:content
         jcr:primaryType="cq:PageContent"
         sling:resourceType="hdscorp/components/page/pressreleasedetail"/>
