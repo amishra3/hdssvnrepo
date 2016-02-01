@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Services Grid"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab
+                jcr:primaryType="cq:Panel"
+                title="Category Grid">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <cgtargetparentdirectory
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Target Parent Directory"
+                        name="./targetparentdirectory"
+                        xtype="pathfield"/>
+                    <sectiontitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        anchor="100%"
+                        fieldLabel="Section Title"
+                        layout="anchor"
+                        name="./sectiontitle"
+                        xtype="textfield"/>
+	                <imagePath
+	                    jcr:primaryType="cq:Widget"
+	                    allowBlank="{Boolean}false"
+	                    allowUpload="false"
+	                    cropParameter="./serviceimageCrop2"
+	                    ddGroups="[media]"
+	                    fieldLabel="Banner Image"
+	                    fileNameParameter="./serviceimagefileName2"
+	                    fileReferenceParameter="./jcr:imagePath"
+	                    height="{Long}200"
+	                    name="./serviceimagename"
+	                    rotateParameter="./serviceimageRotate"
+	                    sizeLimit="100"
+	                    title="Image"
+	                    width="{Long}200"
+	                    xtype="html5smartimage"/>                        
+                </items>
+            </tab>
+        </items>
+    </items>
+</jcr:root>
