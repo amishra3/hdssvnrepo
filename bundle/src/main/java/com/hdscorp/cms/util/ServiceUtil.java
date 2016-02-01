@@ -188,5 +188,10 @@ public class ServiceUtil {
 		return feedPostedTime.toString();
 
 	}
+	
+	public static String getMonth(int month){
+	    String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+	    return monthNames[month];
+	}
 
 }
