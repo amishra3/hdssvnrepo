@@ -15,9 +15,10 @@
 												
 <div class="col-sm-4">
     <div class="section-product-col">
-        <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${serviceObj.categoryTitle}"></div>
-        <h3 class="headline">${serviceObj.categoryTitle}</h3>
-        <p>${properties.categorysubtitle}</p>
-        <a href="${linkUrl}" class="animateLink">${seealllinklabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+    	<a href="${linkUrl}" >
+	        <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${serviceObj.categoryTitle}"></div>
+	        <h3 class="headline">${serviceObj.categoryTitle}</h3>
+	        <p>${properties.categorysubtitle}</p>
+         </a>
     </div>
 </div>

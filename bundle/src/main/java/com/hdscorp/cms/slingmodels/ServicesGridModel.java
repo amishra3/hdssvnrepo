@@ -23,9 +23,6 @@ import com.hdscorp.cms.util.ViewHelperUtil;
 public class ServicesGridModel {
 
 	@Inject
-	private Page resourcePage;
-
-	@Inject
 	private ResourceResolver resourceResolver;	
 		
 	@Inject
