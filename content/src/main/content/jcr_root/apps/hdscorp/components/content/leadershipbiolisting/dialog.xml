@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <abouthdsleaders
+                jcr:primaryType="cq:Panel"
+                title="Leaders Info Panel">
+                <items
+                    jcr:primaryType="cq:WidgetCollection"
+                    xtype="multifieldpanel">
+                    <biotilestitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Bio Tiles Title"
+                        name="./biotilestitle"
+                        xtype="textfield"/>
+                    <biotilesbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Bio Tiles Background Image"
+                        name="./biotilesbackgroundimage"
+                        xtype="pathfield"/>
+                    <leadersinfo
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Leaders Information"
+                        name="./leadersinfo"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <leadername
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Leader Name"
+                                    key="leadername"
+                                    name="./leadername"
+                                    width="350"
+                                    xtype="textfield"/>
+                                <leaderimagepath
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Leader Image Path"
+                                    key="leaderimagepath"
+                                    name="./leaderimagepath"
+                                    width="350"
+                                    xtype="pathfield"/>
+                                <leaderdesgniation
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Leader Desgniation"
+                                    key="leaderdesgniation"
+                                    name="./leaderdesgniation"
+                                    width="350"
+                                    xtype="textfield"/>
+                                <leaderviewbiotext
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Leader View Bio Text"
+                                    key="leaderviewbiotext"
+                                    name="./leaderviewbiotext"
+                                    width="350"
+                                    xtype="textfield"/>
+                                <leaderviewbiotargeturl
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="View Bio Target URL"
+                                    key="leaderviewbiotargeturl"
+                                    name="./leaderviewbiotargeturl"
+                                    width="350"
+                                    xtype="textfield"/>
+                            </items>
+                        </fieldConfig>
+                    </leadersinfo>
+                </items>
+            </abouthdsleaders>
+        </items>
+    </items>
+</jcr:root>
