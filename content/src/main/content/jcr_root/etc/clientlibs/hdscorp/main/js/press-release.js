@@ -49,6 +49,7 @@ var hds = window.hds || {};
         bindClick: function() {
             $('.linkLeft a').on('click', function(event) {
                 event.preventDefault();
+                $('#fulltext').val('');
                 var self = $(this);
                 
                     if (!$(this).hasClass('active')) {
@@ -76,7 +77,17 @@ var hds = window.hds || {};
                     }   
             });
 
+            $('.pr-search .glyphicon-search').on('click', function(event) {
+            	var searchTerm = $.trim($('#fulltext').val());
+            	if(searchTerm!=""){
+	            	var activeFilterURL = $('#asideLinks li.active a').attr('data-loadhtml');
+	            	var loadIndec = $('#asideLinks li.active a').parent().index();
+	            	var fulltextSearchURL = activeFilterURL+"?fulltext="+searchTerm ;
+	            	hds.pressrelease.processHTML(fulltextSearchURL, loadIndec);
+            	}
+            });
         }
+        
     }
 }(window, document, jQuery, hds));
 
