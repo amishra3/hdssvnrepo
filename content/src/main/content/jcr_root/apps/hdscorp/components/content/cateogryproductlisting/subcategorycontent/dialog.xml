@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
     height="500"
     width="800"
@@ -12,52 +12,41 @@
                 jcr:primaryType="cq:Panel"
                 title="Title Section">
                 <items jcr:primaryType="cq:WidgetCollection">
-			        <title
-			            jcr:primaryType="cq:Widget"
-			            fieldDescription="This is the Subcategory title."
-			            fieldLabel="Subcategory Title"
-			            name="./subcategorytitle"
-			            xtype="textfield"/>
-			        <subcategorytitlesubtext
-			            jcr:primaryType="cq:Widget"
-			            fieldDescription="This is the title sub-text."
-			            fieldLabel="Subcategory Title Sub Text"
-			            name="./subcategorytitlesubtext"
-			            xtype="textarea"/>
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the Subcategory title."
+                        fieldLabel="Subcategory Title"
+                        name="./subcategorytitle"
+                        xtype="textfield"/>
+                    <subcategorytitlesubtext
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the title sub-text."
+                        fieldLabel="Subcategory Title Sub Text"
+                        name="./subcategorytitlesubtext"
+                        xtype="textarea"/>
                 </items>
             </tab1>
             <tab2
                 jcr:primaryType="cq:Panel"
                 title="Banner Config">
                 <items jcr:primaryType="cq:WidgetCollection">
-			        <title
-			            jcr:primaryType="cq:Widget"
-			            fieldDescription="This is the Banner title."
-			            fieldLabel="Subcategory Title"
-			            name="./subcategorybannertitle"
-			            xtype="textfield"/>
-			        <subcategorytitlesubtext
-			            jcr:primaryType="cq:Widget"
-			            fieldDescription="This is the title sub-text."
-			            fieldLabel="Subcategory Banner Sub Text"
-			            name="./subcategorybanneresubtext"
-			            xtype="textarea"/>
-	                <imagePath
-	                    jcr:primaryType="cq:Widget"
-	                    allowBlank="{Boolean}false"
-	                    allowUpload="false"
-	                    cropParameter="./subcatimagePathCrop2"
-	                    ddGroups="[media]"
-	                    fieldLabel="Banner Image"
-	                    fileNameParameter="./subcatimagePathfileName2"
-	                    fileReferenceParameter="./subcatimagePath"
-	                    height="{Long}200"
-	                    name="./subcatimagePath"
-	                    rotateParameter="./subcatimagePathRotate2"
-	                    sizeLimit="100"
-	                    title="Image"
-	                    width="{Long}200"
-	                    xtype="html5smartimage"/>		
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the Banner title."
+                        fieldLabel="Subcategory Title"
+                        name="./subcategorybannertitle"
+                        xtype="textfield"/>
+                    <subcategorytitlesubtext
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the title sub-text."
+                        fieldLabel="Subcategory Banner Sub Text"
+                        name="./subcategorybanneresubtext"
+                        xtype="textarea"/>
+                    <imagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Image Path"
+                        name="./subcatimagePath"
+                        xtype="pathfield"/>
                     <subcatbuttonurl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Target URL"
@@ -79,9 +68,9 @@
                         fieldLabel="Align Content on Left and Image on Right ?"
                         name="./subcatcontentalign"
                         type="checkbox"
-                        xtype="selection"/>	                    	           
+                        xtype="selection"/>
                 </items>
-            </tab2>    
+            </tab2>
             <tab3
                 jcr:primaryType="cq:Panel"
                 title="Product Config">
@@ -95,9 +84,9 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Product View Link Label"
                         name="./subcatproductviewlabel"
-                        xtype="textfield"/>                        	                    	           
+                        xtype="textfield"/>
                 </items>
-            </tab3>    
+            </tab3>
         </items>
     </items>
 </jcr:root>
