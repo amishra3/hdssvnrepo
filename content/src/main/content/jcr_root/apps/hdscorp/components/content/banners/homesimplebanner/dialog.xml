@@ -26,24 +26,20 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Content"
                         name="./simplebannercontent"
-                        xtype="richtext">
-                        <rtePlugins
-                            jcr:primaryType="nt:unstructured"
-                            path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
-                            xtype="cqinclude"/>
+                        xtype="textarea">
                     </simplebannercontent>
                     <simplebannermagePath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         allowUpload="false"
-                        cropParameter="./simplebannermagePath/imageCrop2"
+                        cropParameter="./simplebannermageCrop2"
                         ddGroups="[media]"
                         fieldLabel="Banner Image"
-                        fileNameParameter="./simplebannermagePath/fileName2"
+                        fileNameParameter="./simplebannermagefileName2"
                         fileReferenceParameter="./simplebannermagePath"
                         height="{Long}200"
                         name="./simplebannermagePath"
-                        rotateParameter="./simplebannermagePath/imageRotate2"
+                        rotateParameter="./simplebannerimageRotate2"
                         sizeLimit="100"
                         title="Image"
                         width="{Long}200"
