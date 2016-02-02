@@ -10,7 +10,10 @@
 %>
 
 <h4> News detail Component</h4>
-<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsDetailModel" var="model" />
+
+<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsDetailModel" var="news" />
 
 <h1>${news.newsTitle}</h1>
+<h1>${news.newsLink}</h1>
+
 
