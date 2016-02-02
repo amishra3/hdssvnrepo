@@ -1,4 +1,4 @@
-(function($) {
+$(function() {
 	/**
 	 * Functionality for hero banner area
 	 */
@@ -19,4 +19,4 @@
 		$('body').addClass('mac-os');
 	}
 
-})(jQuery);
+});
