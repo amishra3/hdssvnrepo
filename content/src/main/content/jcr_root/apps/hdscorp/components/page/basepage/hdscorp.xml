@@ -37,6 +37,20 @@
         <errorpages
 		    jcr:primaryType="cq:Widget"
 		    path="/apps/acs-commons/components/utilities/errorpagehandler/dialog/errorpages.infinity.json"
-		    xtype="cqinclude"/>       
+		    xtype="cqinclude"/>
+		<viewallprlabel
+            jcr:primaryType="cq:Widget"
+            allowBlank="{Boolean}false"
+            fieldLabel="View Alll Press Releases label"
+            name="./viewallprlabel"
+            validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./viewallprlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+            xtype="textfield"/> 
+        <viewallprlink
+             jcr:primaryType="cq:Widget"
+             allowBlank="{Boolean}false"
+             fieldLabel="View All Press Releases Link"
+             name="./viewallprlink"
+             validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./viewallprlink')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+             xtype="pathfield"/>                          
     </items>
 </jcr:root>

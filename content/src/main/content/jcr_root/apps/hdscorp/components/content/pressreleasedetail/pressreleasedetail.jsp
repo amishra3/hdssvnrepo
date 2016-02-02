@@ -9,9 +9,45 @@
 %><%@page session="false" %><%
 %>
 
-<h4> Press Release detail Component</h4>
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.PressReleaseDetailModel" var="pressRelease" />
+           
+            <div class="pr-detail">
+                <div class="pr-detail-container">
+                    <div class="row">
+                        <div class="col-md-12 col-md-12 pr-detail-desc">
+                            <h1>${pressRelease.pressReleaseTitle}</h1>
+                        </div>
+                        <div class="col-md-9 pr-detail-desc">                                                      
+                            ${pressRelease.pressReleaseDescription}
+                            <div class="pr-view-all">
+                                <a href="${pressRelease.viewAllPRLink}" class="animateLink">${pressRelease.viewAllPRLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pr-detail-share">
+                            <div class="share-this-page clearfix">
+                                <div class="heading">Share this page</div>
+                                <div class="share-links">
+                                    <a href="javascript:void(0);"><img src="images/sprites/twitter-pr-share.png" alt="" title=""></a>
+                                    <a href="javascript:void(0);"><img src="images/sprites/facebook-pr-share.png" alt="" title=""></a>
+                                    <a href="javascript:void(0);"><img src="images/sprites/linkedin-pr-share.png" alt="" title=""></a>
+                                    <a href="javascript:void(0);"><img src="images/sprites/blog-pr-share.png" alt="" title=""></a>
+                                </div>
+                            </div>
+                            <div class="press-contact">
+                                <div class="heading">Press contact</div> 
+                                <div class="press-contact-detail">
+                                    Stefani Finch<br>
+                                    408-499-7349<br>
+                                    <a href="mailto:Stefani.Finch@HDS.com" target="_blank">Stefani.Finch@HDS.com</a>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
 
-<h1>${pressRelease.pressReleaseTitle}</h1>
 
-${pressRelease.pressReleaseDescription}
+
+
+
+
