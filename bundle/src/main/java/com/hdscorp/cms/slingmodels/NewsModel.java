@@ -1,16 +1,13 @@
 package com.hdscorp.cms.slingmodels;
 
-import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.jcr.RepositoryException;
 
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
@@ -26,65 +23,92 @@ import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ServiceUtil;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
-@Model(adaptables = { SlingHttpServletRequest.class, Resource.class })
+@Model(adaptables = { Resource.class })
 public class NewsModel {
 
 	@Inject
-	private SlingHttpServletRequest request;
+	@Named("hdsinnewstext")
+	@Default(values = { "HDS in the news" })
+	private String hdsInNewsText;
+	@Inject
+	@Named(value = "readmorelabel")
+	@Default(values = { "READ MORE" })
+	private String readMoreLabel;
+	@Inject
+	@Named(value = "viewallnewslabel")
+	@Default(values = { "VIEW ALL NEWS" })
+	private String viewAllNewsLabel;
+	@Inject
+	@Named(value = "viewallnewslink")
+	@Default(values = { "" })
+	private String viewAllNewsLink;
+	@Inject
+	@Named(value = "newsLookuppath")
+	@Default(values = { "" })
+	private String newsLookupPath;
 
 	@Inject
-	@Named("newsPath")
-	@Default(values = { "/content/hdscorp/en_us/lookup/pressreleases" })
-	private String newsPath;
+	@Named("featurednewsimage")
+	@Default(values = { "" })
+	private String featuredNewsImage;
 	@Inject
-	@Named("readPressReleaseText")
-	@Default(values = { "READ PRESS RELEASE" })
-	private String readPressReleaseText;
+	@Named("featurednews")
+	@Default(values = { "" })
+	private String featuredNewsPath;
+	@Inject
+	@Named("featurednewsdesc")
+	@Default(values = { "" })
+	private String featuredNewsDesc;
 
+	@Inject
+	@Named(value = "noofitemsshown")
+	@Default(values = { "10" })
+	private String noofitemsshown;
 	@Inject
 	@Named(value = "loadMoreLabel")
 	@Default(values = { "Load More" })
 	private String loadMoreLabel;
 
-	public String getLoadMoreLabel() {
-		return loadMoreLabel;
-	}
-
-	public String getReadPressReleaseText() {
-		return readPressReleaseText;
-	}
-
+	private NewsNode featuredNews;
 	private List<NewsNode> newsList;
 
-	public List<NewsNode> getNewsList() throws RepositoryException {
+	public NewsNode getFeaturedNews() {
 
-		try {
+		if (!featuredNewsPath.isEmpty()) {
 
-			String fullText = request.getParameter("fulltext");
-			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
-					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-			Integer year = Calendar.getInstance().get(Calendar.YEAR);
+			Resource resource = JcrUtilService.getResourceResolver().resolve(
+					featuredNewsPath + "/jcr:content/newsdetail");
+			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+				featuredNews = new NewsNode();
+				ValueMap properties = resource.adaptTo(ValueMap.class);
 
-			String viewtype = Integer.toString(year);
-			String[] selectorArray = request.getRequestPathInfo()
-					.getSelectors();
-			int noOfYears = 0;
+				featuredNews.setNewsTitle(properties.get("newstitle",
+						(String) null).toString());
 
-			if (selectorArray != null && selectorArray.length > 0) {
-				viewtype = selectorArray[0];
-				viewtype = viewtype.replaceAll("\\|", "/").replaceAll(
-						"[\\[\\](){}]", "");
-				if (selectorArray.length > 1) {
+				Calendar cal = (Calendar) properties.get("newsdate");
+				try {
 
-					noOfYears = Integer.parseInt(selectorArray[1]);
+					featuredNews.setNewsDate(ServiceUtil.getStringFromDate(
+							cal.getTime(), "MMMM d, yyyy"));
+				} catch (ParseException e) {
+
+					e.printStackTrace();
 				}
 
 			}
+		}
+		return featuredNews;
+	}
 
-			SearchResult result = searchServiceHelper.getPressReleases(
-					viewtype, newsPath, noOfYears, fullText);
+	public List<NewsNode> getNewsList() {
+
+		try {
+			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
+					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
+			SearchResult result = searchServiceHelper.getPressReleases(null,
+					newsLookupPath, 0, null, this.noofitemsshown, "0", "news");
 			List<Hit> hits = result.getHits();
-
+						
 			newsList = new ArrayList<NewsNode>();
 
 			for (Hit hit : hits) {
@@ -92,37 +116,69 @@ public class NewsModel {
 				Resource resource = JcrUtilService.getResourceResolver()
 						.resolve(
 								hit.getResource().getPath()
-										+ "/jcr:content/pressrelease");
+										+ "/jcr:content/newsdetail");
 				if (!resource
 						.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 
 					NewsNode newsNode = new NewsNode();
 					ValueMap properties = resource.adaptTo(ValueMap.class);
 
-					newsNode.setNewsTitle(properties.get("pressreleasetitle",
+					newsNode.setNewsTitle(properties.get("newstitle",
 							(String) null).toString());
 
-					String pubDate = properties.get("pressreleasedate",
-							(String) null).toString();
+					Calendar cal = (Calendar) properties.get("newsdate");
 
-					SimpleDateFormat format = new SimpleDateFormat(
-							"EEE, d MMM yyyy HH:mm:ss Z");
-					Date date = format.parse(pubDate);
+					newsNode.setNewsDate(ServiceUtil.getStringFromDate(
+							cal.getTime(), "MMMM d, yyyy"));
 
-					newsNode.setNewsDate(ServiceUtil.getStringFromDate(date,
-							"MMMM d, yyyy"));
-					Page reourcePage = hit.getResource().adaptTo(Page.class);
-					newsNode.setNewsDetailPath(PathResolver.getShortURLPath(reourcePage.getPath()));
+					newsNode.setNewsDetailPath(properties.get("newslink",
+							(String) null).toString());
 					newsList.add(newsNode);
 				}
 
 			}
-
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println(" ----IN ERROR BLOCK---" + e.getMessage());
 		}
+
 		return newsList;
+	}
+
+	public String getHdsInNewsText() {
+		return hdsInNewsText;
+	}
+
+	public String getFeaturedNewsImage() {
+		return featuredNewsImage;
+	}
+
+	public String getFeaturedNewsPath() {
+		return featuredNewsPath;
+	}
+
+	public String getNoofitemsshown() {
+		return noofitemsshown;
+	}
+
+	public String getLoadMoreLabel() {
+		return loadMoreLabel;
+	}
+
+	public String getReadMoreLabel() {
+		return readMoreLabel;
+	}
+
+	public String getViewAllNewsLabel() {
+		return viewAllNewsLabel;
+	}
+
+	public String getViewAllNewsLink() {
+		return PathResolver.getShortURLPath(viewAllNewsLink) ;
+	}
+	public String getFeaturedNewsDesc() {
+		return featuredNewsDesc;
+	}
+	public String getNewsLookupPath() {
+		return newsLookupPath;
 	}
 }

@@ -7,13 +7,13 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.hdscorp.cms.dao.PressReleaseModel;
+import com.hdscorp.cms.dao.PressReleaseNode;
 
 public class PressReleasesSaxHandler extends  DefaultHandler {
 	
 	   
-	List<PressReleaseModel> pressReleaseList = new ArrayList<>();
-	PressReleaseModel pressReleaseModel = null;
+	List<PressReleaseNode> pressReleaseList = new ArrayList<>();
+	PressReleaseNode pressReleaseModel = null;
 	String content = null;
 
 	   @Override
@@ -25,7 +25,7 @@ public class PressReleasesSaxHandler extends  DefaultHandler {
 		   switch(qName){
 		   case "item":
 			   
-			   pressReleaseModel = new PressReleaseModel();
+			   pressReleaseModel = new PressReleaseNode();
 			   break;
 		   }
 	      

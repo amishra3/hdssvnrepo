@@ -1,5 +1,6 @@
 package com.hdscorp.cms.service;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
@@ -10,10 +11,13 @@ import javax.jcr.Session;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
-import com.hdscorp.cms.dao.PressReleaseModel;
+import com.hdscorp.cms.dao.PressReleaseNode;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.ServiceUtil;
 
@@ -24,7 +28,7 @@ public class CreatePageService {
 	private final String blackSlash = "/";
 
 	public void createPage(Session session, String template, String path,
-			PressReleaseModel pressReleaseModel) {
+			PressReleaseNode pressReleaseModel,String type) {
 		try {
 			
 			String pagePath = appendDateToPagePath(path,
@@ -42,6 +46,8 @@ public class CreatePageService {
 					.getResource(page.getPath() + "/jcr:content");
 
 			Node jcrContent = resource.adaptTo(Node.class);
+			
+			if (type.equalsIgnoreCase("pressRelease")) {
 			Node pressRelease = jcrContent.addNode("pressrelease",
 					"nt:unstructured");
 
@@ -51,14 +57,37 @@ public class CreatePageService {
 			Date date = ServiceUtil.getDateFromString(
 					pressReleaseModel.getPubDate(),
 					"EEE, d MMM yyyy HH:mm:ss Z");
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+			//String pubDate = ServiceUtil.getStringFromDate(date, "MM/d/yy");
 
-			String pubDate = ServiceUtil.getStringFromDate(date, "MM/d/yy");
-
-			pressRelease.setProperty("pressreleasedate", pubDate);
+			pressRelease.setProperty("pressreleasedate", cal);
+			//pressRelease.setProperty("pressreleasedate", pubDate);
 			pressRelease.setProperty("sling:resourceType",
-					"hdscorp/components/content/pressrelease");
-//			pressRelease.setProperty("pressreleasedesc",
-//					getPressReleaseDesc(pressReleaseModel.getLink()));
+					"hdscorp/components/content/pressreleasedetail");
+			pressRelease.setProperty("pressreleasedesc",
+				getPressReleaseDesc(pressReleaseModel.getLink()));
+			}else {
+				Node newsDetail = jcrContent.addNode("newsdetail",
+						"nt:unstructured");
+
+				newsDetail.setProperty("newstitle",
+						pressReleaseModel.getTitle());
+
+				Date date = ServiceUtil.getDateFromString(
+						pressReleaseModel.getPubDate(),
+						"EEE, d MMM yyyy HH:mm:ss Z");
+	            Calendar cal = Calendar.getInstance();
+	            cal.setTime(date);
+				//String pubDate = ServiceUtil.getStringFromDate(date, "MM/d/yy");
+
+				newsDetail.setProperty("newsdate", cal);
+				newsDetail.setProperty("newslink",pressReleaseModel.getLink());
+				//pressRelease.setProperty("pressreleasedate", pubDate);
+				newsDetail.setProperty("sling:resourceType",
+						"hdscorp/components/content/newsdetail");
+				
+			}
 
 			session.save();
 		} catch (Exception e) {
@@ -123,21 +152,21 @@ public class CreatePageService {
 		return page;
 	}
 
-//	private String getPressReleaseDesc(String url) {
-//
-//		String pressReleaseDesc = "";
-//		try {
-//
-//			Document doc = Jsoup.connect(url).get();
-//
-//			doc.getElementsByTag("style").remove();
-//			doc.getElementsByClass("PageTitleStyle1").remove();
-//			Elements content = doc.select("div#printarea");
-//			pressReleaseDesc = content.toString();
-//		} catch (IOException e) {
-//
-//			e.printStackTrace();
-//		}
-//		return pressReleaseDesc;
-//	}
+	private String getPressReleaseDesc(String url) {
+
+		String pressReleaseDesc = "";
+		try {
+
+			Document doc = Jsoup.connect(url).get();
+
+			doc.getElementsByTag("style").remove();
+			doc.getElementsByClass("PageTitleStyle1").remove();
+			Elements content = doc.select("div#printarea");
+			pressReleaseDesc = content.toString();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return pressReleaseDesc;
+	}
 }

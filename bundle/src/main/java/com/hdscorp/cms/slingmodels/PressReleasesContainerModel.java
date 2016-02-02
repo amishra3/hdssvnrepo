@@ -21,14 +21,14 @@ public class PressReleasesContainerModel {
 	@Inject
 	private SlingHttpServletRequest request;
 	@Inject
-	@Named("pressReleasesText")
+	@Named("headerText")
 	@Default(values = { "Press Releases" })
-	private String pressReleasesText;
+	private String headerText;
 	
 	@Inject
-	@Named(value = "searchPressReleasesText")
+	@Named(value = "searchText")
 	@Default(values = { "Search press releases" })
-	private String searchPressReleasesText;
+	private String searchText;
 	@Inject
 	@Named(value = "archiveLabel")
 	@Default(values = { "ARCHIVE" })
@@ -43,13 +43,18 @@ public class PressReleasesContainerModel {
 	private String loadMoreLabel;
 	
 	@Inject
-	@Named(value = "lookupPagePath")
+	@Named(value = "searchPagePath")
 	@Default(values = { "/content/hdscorp/en_us/lookup/search-press-releases" })
-	private String lookupPagePath;
+	private String searchPagePath;
 	
+	public String getSearchPagePath() {
+		return searchPagePath;
+	}
 	private List<NewsContainerNode> filterUrls;
 	
 	public List<NewsContainerNode> getFilterUrls() {
+		
+		
 		filterUrls = new ArrayList<NewsContainerNode>();
 		String fullText = request.getParameter("fulltext");
 		int year = Calendar.getInstance().get(Calendar.YEAR);
@@ -57,18 +62,18 @@ public class PressReleasesContainerModel {
 		for (int i = year; i> (year-navYears) ; i--) {
 			NewsContainerNode newsContainerNode = new NewsContainerNode();
 			if(fullText!=null) {
-			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.lookupPagePath + "."+i)+"?fullText= "+fullText);
+			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+i)+"?fullText= "+fullText);
 			} else {
-				newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.lookupPagePath + "."+i));
+				newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+i));
 			}
 			newsContainerNode.setFilterText(String.valueOf(i));
 			filterUrls.add(newsContainerNode);
 		}
 		NewsContainerNode newsContainerNode = new NewsContainerNode();
 		if(fullText!=null){
-			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.lookupPagePath + "."+"archive"+"."+navYears)+"?fullText= "+fullText);
+			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+"archive"+"."+navYears)+"?fullText= "+fullText);
 		}else {
-			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.lookupPagePath + "."+"archive"+"."+navYears));
+			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+"archive"+"."+navYears));
 		}
 		
 		newsContainerNode.setFilterText(this.archiveLabel);
@@ -77,14 +82,14 @@ public class PressReleasesContainerModel {
 		
 		return filterUrls;
 	}
-	public String getLookupPagePath() {
-		return lookupPagePath;
+	
+	
+	
+	public String getHeaderText() {
+		return headerText;
 	}
-	public String getPressReleasesText() {
-		return pressReleasesText;
-	}
-	public String getSearchPressReleasesText() {
-		return searchPressReleasesText;
+	public String getSearchText() {
+		return searchText;
 	}
 	public String getArchiveLabel() {
 		return archiveLabel;

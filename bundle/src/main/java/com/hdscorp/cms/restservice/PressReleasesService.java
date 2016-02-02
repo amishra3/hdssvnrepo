@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 
 import com.hdscorp.cms.constants.ServiceConstants;
-import com.hdscorp.cms.dao.PressReleaseModel;
+import com.hdscorp.cms.dao.PressReleaseNode;
 import com.hdscorp.cms.service.CreatePageService;
 import com.hdscorp.cms.util.JcrUtilService;
 
@@ -25,7 +25,7 @@ public class PressReleasesService extends GenericRestfulServiceInvokers {
 	@Reference
 	CreatePageService createPageService;
 
-	public String getPressReleasesResponse(String feedURL) {
+	public String getPressReleasesResponse(String feedURL,String type) {
 
 		log.info("Start execution of getInvokeResponse()  with feed URL "
 				+ feedURL);
@@ -35,12 +35,12 @@ public class PressReleasesService extends GenericRestfulServiceInvokers {
 		if (getWSInvokeStatus(wsResponse)) {
 			return wsResponse;
 		} else {
-			return savePressRelease(wsResponse);
+			return savePressRelease(wsResponse,type);
 		}
 
 	}
 
-	public String savePressRelease(String wsResponse) {
+	public String savePressRelease(String wsResponse,String type) {
 
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		SAXParser saxParser;
@@ -51,14 +51,23 @@ public class PressReleasesService extends GenericRestfulServiceInvokers {
 
 			saxParser.parse(new InputSource(new StringReader(wsResponse)),
 					pressReleasesSaxHandler);
-
-			for (PressReleaseModel pressReleaseModel : pressReleasesSaxHandler.pressReleaseList) {
+if(type.equalsIgnoreCase("pressRelease") ){
+			for (PressReleaseNode pressReleaseModel : pressReleasesSaxHandler.pressReleaseList) {
 
 				createPageService.createPage(JcrUtilService.getSession(),
 						"/apps/hdscorp/templates/pressreleasedetail",
 						"/content/hdscorp/en_us/lookup/pressreleases",
-						pressReleaseModel);
+						pressReleaseModel,type);
 			}
+} else {
+	for (PressReleaseNode pressReleaseModel : pressReleasesSaxHandler.pressReleaseList) {
+
+		createPageService.createPage(JcrUtilService.getSession(),
+				"/apps/hdscorp/templates/newsdetail",
+				"/content/hdscorp/en_us/lookup/news",
+				pressReleaseModel,type);
+	}
+}
 		} catch (Exception e) {
 
 			e.printStackTrace();

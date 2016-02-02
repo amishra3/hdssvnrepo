@@ -38,13 +38,13 @@ public class NewsContainerModel {
 	@Default(values = { "2" })
 	private String noOfYears;
 	@Inject
-	@Named(value = "loadMoreLabel")
+	@Named(value = "loadmorelabel")
 	@Default(values = { "Load More" })
 	private String loadMoreLabel;
 	
 	@Inject
-	@Named(value = "lookupPagePath")
-	@Default(values = { "/content/hdscorp/en_us/lookup/search-press-releases" })
+	@Named(value = "lookuppagepath")
+	@Default(values = { "/content/hdscorp/en_us/lookup/search-news" })
 	private String lookupPagePath;
 	
 	private List<NewsContainerNode> filterUrls;

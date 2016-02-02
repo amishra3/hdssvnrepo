@@ -39,6 +39,8 @@ public class SearchServiceHelper {
 			.getLogger(SearchServiceHelper.class);
 	private static final String TYPE = "cq:Page";
 	private static final String ORDER_BY_PROPERTY = "@jcr:content/jcr:lastModified";
+	private static final String PR_ORDER_BY_PROPERTY = "@jcr:content/pressrelease/pressreleasedate";
+	private static final String NEWS_ORDER_BY_PROPERTY = "@jcr:content/newsdetail/newsdate";
 	private static final String ORDER_BY_SORT = "desc";
 	private static final String ARCHIVE = "archive";
 
@@ -98,17 +100,36 @@ public class SearchServiceHelper {
 		return result;
 	}
 
-	public SearchResult getPressReleases(String filter, String path, int noOfYears,String fullText) {
+	public SearchResult getPressReleases(String filter, String path, int noOfYears,String fullText,String limit,String offSet,String searchType) {
 
 		Map<String, String> searchParams = new HashMap<String, String>();
 		PredicateGroup combinedPredicate = new PredicateGroup();
 
 		searchParams.put("type", "cq:Page");
-
+        if(searchType.equalsIgnoreCase("pressRelease")) {
 		searchParams.put("property", "jcr:content/pressrelease/pressreleasetitle");
 		searchParams.put("property.operation", "exists");
-		searchParams.put("p.offset", "0");
-		searchParams.put("p.limit", "-1");
+		searchParams.put("orderby.sort", "desc");
+		searchParams.put("orderby", PR_ORDER_BY_PROPERTY);
+        } else {
+        	searchParams.put("property", "jcr:content/newsdetail/newstitle");
+    		searchParams.put("property.operation", "exists");
+    		searchParams.put("orderby.sort", "desc");
+    		searchParams.put("orderby", NEWS_ORDER_BY_PROPERTY);
+        }
+        if(offSet!=null){
+        	searchParams.put("p.offset",offSet);
+        } else {
+        	searchParams.put("p.offset", "0");
+        }
+		
+		if(limit != null) {
+			
+			searchParams.put("p.limit", limit);
+		} else {
+			searchParams.put("p.limit", "-1");
+		}
+		
 		searchParams.put("group.p.and", "true");
 		int groupCnt = 1;
 		if(fullText!=null) {
@@ -129,6 +150,8 @@ public class SearchServiceHelper {
 				"jcr:content/pressrelease/@pressreleasedesc");
 		}
       
+		if(filter!=null) {
+		
 		if (!filter.equalsIgnoreCase(ARCHIVE)) {
 			
 			path = path + "/" + filter;
@@ -154,7 +177,10 @@ public class SearchServiceHelper {
 			combinedPredicate.add(doNotSearchGroup);
 
 		}
-
+		} else {
+			searchParams.put("path", path);
+			combinedPredicate = PredicateGroup.create(searchParams);
+		}
 		Query query = queryBuilder.createQuery(combinedPredicate,
 				JcrUtilService.getSession());
 		

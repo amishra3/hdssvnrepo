@@ -2,7 +2,6 @@ package com.hdscorp.cms.slingmodels;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -17,29 +16,26 @@ import org.apache.sling.models.annotations.Model;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.NewsNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.JcrUtilService;
-import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ServiceUtil;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
 @Model(adaptables = { SlingHttpServletRequest.class, Resource.class })
-public class PressReleaseModel {
+public class NewsSearchModel {
 
 	@Inject
 	private SlingHttpServletRequest request;
 
 	@Inject
 	@Named("newsPath")
-	@Default(values = { "/content/hdscorp/en_us/lookup/pressreleases" })
+	@Default(values = { "/content/hdscorp/en_us/lookup/news" })
 	private String newsPath;
 	@Inject
-	@Named("readPressReleaseText")
-	@Default(values = { "READ PRESS RELEASE" })
-	private String readPressReleaseText;
-
+	@Named("readmoretext")
+	@Default(values = { "READ MORE" })
+	private String readMoreText;
 	@Inject
 	@Named(value = "loadMoreLabel")
 	@Default(values = { "Load More" })
@@ -49,8 +45,8 @@ public class PressReleaseModel {
 		return loadMoreLabel;
 	}
 
-	public String getReadPressReleaseText() {
-		return readPressReleaseText;
+	public String getReadMoreText() {
+		return readMoreText;
 	}
 
 	private List<NewsNode> newsList;
@@ -81,9 +77,9 @@ public class PressReleaseModel {
 			}
 
 			SearchResult result = searchServiceHelper.getPressReleases(
-					viewtype, newsPath, noOfYears, fullText,null,null,null);
+					viewtype, newsPath, noOfYears, fullText,null,"0","news");
 			List<Hit> hits = result.getHits();
-
+            
 			newsList = new ArrayList<NewsNode>();
 
 			for (Hit hit : hits) {
@@ -91,34 +87,36 @@ public class PressReleaseModel {
 				Resource resource = JcrUtilService.getResourceResolver()
 						.resolve(
 								hit.getResource().getPath()
-										+ "/jcr:content/pressrelease");
+										+ "/jcr:content/newsdetail");
 				if (!resource
 						.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 
 					NewsNode newsNode = new NewsNode();
 					ValueMap properties = resource.adaptTo(ValueMap.class);
 
-					newsNode.setNewsTitle(properties.get("pressreleasetitle",
+					newsNode.setNewsTitle(properties.get("newstitle",
 							(String) null).toString());
 
-					String pubDate = properties.get("pressreleasedate",
-							(String) null).toString();
+					Calendar cal  =(Calendar) properties.get("newsdate");
 					
-					Date date = ServiceUtil.getDateFromString(pubDate, "MM/d/yy");
-							
-					newsNode.setNewsDate(ServiceUtil.getStringFromDate(date,
+					
+					
+					newsNode.setNewsDate(ServiceUtil.getStringFromDate(cal.getTime(),
 							"MMMM d, yyyy"));
-					Page reourcePage = hit.getResource().adaptTo(Page.class);
-					newsNode.setNewsDetailPath(PathResolver.getShortURLPath(reourcePage.getPath()));
+
+					
+					
+					newsNode.setNewsDetailPath(properties.get("newslink",
+							(String) null).toString());
 					newsList.add(newsNode);
 				}
 
 			}
 
 		} catch (Exception e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
+			System.out.println(" ----IN ERROR BLOCK---" + e.getMessage());
 		}
 		return newsList;
 	}
