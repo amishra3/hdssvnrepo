@@ -16,9 +16,9 @@ Calling Press Release Migration service
 try {
 	PressReleasesService pressReleasesService = sling
 			.getService(com.hdscorp.cms.restservice.PressReleasesService.class);
-	pressReleasesService.getPressReleasesResponse("https://www.hds.com/corporate/rss-and-subscriptions/pr/");
-	
-	
+	pressReleasesService.getPressReleasesResponse("https://www.hds.com/corporate/rss-and-subscriptions/pr-all/", "pressRelease");
+	pressReleasesService.getPressReleasesResponse("https://www.hds.com/corporate/rss-and-subscriptions/news/", "news");
+
 } catch (Exception ex) {
 	System.out.println("+++++++++++++++IN ERROR BLOCK"+ ex.getMessage());
 }

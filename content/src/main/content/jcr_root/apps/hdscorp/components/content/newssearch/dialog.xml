@@ -20,20 +20,14 @@
                         name="./newsPath"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./newsPath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
-                    <readpressreleasetext
+                    <readmoretext
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Read Press Release Text"
-                        name="./readPressReleaseText"
-                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./readPressReleaseText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        fieldLabel="Read More Text"
+                        name="./readmoretext"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./readmoretext')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>  
-                     <loadmorelabel
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
-                        fieldLabel="Load More Label"
-                        name="./loadMoreLabel"
-                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./loadMoreLabel')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="textfield"/>                        
+                                           
   
                 </items>
             </tab1>

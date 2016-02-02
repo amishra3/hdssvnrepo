@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
-    height="150"
-    title="News Search"
-    width="100"
+    
+    title="Press Release/News Search"
+   
     xtype="dialog">
     <items
         jcr:primaryType="cq:Widget"
@@ -16,7 +16,7 @@
                     <newspath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="News Path"
+                        fieldLabel="News/Press Release Lookup Path"
                         name="./newsPath"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./newsPath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
@@ -24,8 +24,8 @@
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Read Press Release Text"
-                        name="./readPressReleaseText"
-                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./readPressReleaseText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        name="./readMoreText"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./readMoreText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>  
                      <loadmorelabel
                         jcr:primaryType="cq:Widget"
@@ -34,7 +34,25 @@
                         name="./loadMoreLabel"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./loadMoreLabel')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>                        
-  
+                     <searchType
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Search Type"
+                        name="./searchType"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchType')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"                    
+                        type="select"
+					    xtype="selection">
+						    <options jcr:primaryType="cq:WidgetCollection">
+						        <one
+						            jcr:primaryType="nt:unstructured"
+						            text="PressRelease"
+						            value="PressRelease"/>
+						        <two
+						            jcr:primaryType="nt:unstructured"
+						            text="News"
+						            value="News"/>   
+						    </options>
+                       </searchType>
                 </items>
             </tab1>
         </items>

@@ -14,18 +14,14 @@
 			<div class="pr">
 				<div class="pr-date">${news.newsDate}</div>
 				<h3>${news.newsTitle}</h3>
-				<a href="${news.newsDetailPath}" class="animateLink">${model.readPressReleaseText}<span
+				<a href="${news.newsDetailPath}" class="animateLink">${model.readMoreText}<span
 					aria-hidden="true"
 					class="glyphicon glyphicon-menu-right animateIcon"></span>
 				</a>
 			</div>
 		</c:forEach>
 	</div>
-	<div class="pr-load-more">
-		<div class="learn-more-red-link">
-			<a href="javascript:void(0);">${model.loadMoreLabel}</a>
-		</div>
-	</div>
+	
 </div>
 
 

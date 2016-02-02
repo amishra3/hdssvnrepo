@@ -13,6 +13,6 @@
 	
 	</c:if>
 	
-	<cq:include path="pressrelease" resourceType="hdscorp/components/content/pressreleasedetail" />
+	<cq:include path="newsdetail" resourceType="hdscorp/components/content/newsdetail" />
 	
 </div>

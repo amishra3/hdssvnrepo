@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
-    height="150"
-    title="News Search"
-    width="100"
+    title="Press Release/News Container"  
     xtype="dialog">
     <items
         jcr:primaryType="cq:Widget"
@@ -11,21 +9,21 @@
         <items jcr:primaryType="cq:WidgetCollection">
             <tab1
                 jcr:primaryType="cq:Panel"
-                title="News Search">
+                title="News/Press Container">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <pressreleasestext
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Press Releases Text"
-                        name="./pressReleasesText"
-                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./pressReleasesText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        fieldLabel="headerText"
+                        name="./headerText"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./headerText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                      <searchpressreleasestext
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Search Press Releases Text"
-                        name="./searchPressReleasesText"
-                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchPressReleasesText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        fieldLabel="Search Text"
+                        name="./searchText"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/> 
                      <archivelabel
                         jcr:primaryType="cq:Widget"
@@ -48,12 +46,12 @@
                         name="./loadMoreLabel"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./loadMoreLabel')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>  
-                    <lookuppagepath
+                    <searchpagepath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Lookup Page Path"
-                        name="./lookupPagePath"
-                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./pressReleasesText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        fieldLabel="Search Page Path"
+                        name="./searchPagePath"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchPagePath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>       
   
                 </items>
