@@ -171,7 +171,7 @@
     text-decoration: none;
 }
 
-.calculating-success .calculating-success-container > h1 {
+.calculating-success .calculating-success-container > h2 {
     margin: 50px 0 20px;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 100;
@@ -210,33 +210,37 @@
 }
 
 .calculating-success .calculating-success-container .calculating-list {
-    display: inline-block;
-    width: 100%;
-    margin: 35px 0 0;
+    display: table;
+    margin: 35px auto 0;
     padding: 0;
     list-style-type: none;
 }
 
 .calculating-success .calculating-success-container .calculating-list > li {
-    display: inline-block;
+    display: table-cell;
     position: relative;
     margin: 0 5px;
     padding-top: 50px;
     overflow: visible;
 }
 
+.calculating-success .calculating-success-container .calculating-list > li.separator {
+    padding: 105px 15px 0;
+    vertical-align: middle;
+}
+
 .calculating-success .calculating-success-container .calculating-list > li h4 {
     color: #000000;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 1.3125em;
+    font-size: 1.125rem;
     line-height: 1;
 }
 
 .calculating-success .calculating-success-container .calculating-list > li p {
     margin: 0 10px;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 0.875em;
+    font-size: 0.75rem;
     line-height: 1;
     line-height: 130%;
     color: #414141;
@@ -248,11 +252,11 @@
 }
 
 .calculating-success .calculating-success-container .calculating-list > li .icon-plus {
-    top: 25px;
+    top: 7px;
 }
 
 .calculating-success .calculating-success-container .calculating-list > li .icon-minus {
-    top: 15px;
+    top: 6px;
 }
 
 .calculating-success .calculating-success-container .blurb-container > p {
@@ -292,12 +296,6 @@
     }
 }
 
-@media only screen and (min-width: 992px) {
-    .calculating-success .calculating-success-container .calculating-list > li {
-        display: inline-block;
-    }
-}
-
 @media only screen and (max-width: 992px) {
     .calculating-success .calculating-success-container > h1 {
         font-size: 2em;
@@ -316,7 +314,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
     .calculating-success {
         background-image: url("../images/hero-calculating-success_mobile.jpg");
         background-position: top center;
