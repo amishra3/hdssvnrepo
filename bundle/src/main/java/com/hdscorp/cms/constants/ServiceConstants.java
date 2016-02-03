@@ -33,6 +33,36 @@ public final class ServiceConstants {
 	public static final String REG_EXP = "#|\"";
 	public static final int TIME_OUT = 60 * 1000;
 
+	
+	/**
+	 * Blog Constants
+	 */
+	
+	public static final String BLOG_TAG = "item";
+	public static final String PUB_DATE = "pubDate";
+	public static final String DC_DATE = "dc:date";
+	public static final String GUID = "guid";
+	public static final String DATE_TO_TEXT = "clearspace:dateToText";
+	public static final String OBJECT_TYPE = "clearspace:objectType";
+	public static final String REPLY_TYPE = "clearspace:replyCount";
+	public static final String DOMAIN = "domain";
+	public static final String BLOG_TO_DATE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
+	public static final String DESCRIPTION = "description";
+	
+	
+	
+	public static final String JSON_LINK = "link";
+	public static final String JSON_DC_DATE = "dcDate";
+	public static final String JSON_GUID = "guid";
+	public static final String JSON_OBJECT_TYPE = "objectType";
+	public static final String JSON_REPLY_TYPE = "replyCount";
+	public static final String JSON_DESCRIPTION = "description";
+	public static final String JSON_DOMAIN= "domain";
+	
+	
+
+	
+	
 	public static final String JSON_UPDATED_DATE = "updatedDate";
 	public static final String JSON_TITLE = "title";
 	public static final String JSON_AUTHOR = "author";
@@ -44,7 +74,7 @@ public final class ServiceConstants {
 	public static final String JSON_START = "start";
 	public static final String JSON_RATING = "rating";
 	public static final String JSON_COMMUNICATION_ID = "communicationId";
-	public static final String JSON_CATEGORORY = "category";
+	public static final String JSON_CATEGORY = "category";
 	public static final String JSON_CHANNEL_ID = "channelId";
 	public static final String JSON_HERF_LINK = "herfLink";
 	public static final String JSON_THUMBNAIL_PATH = "thumbnailPath";
@@ -67,6 +97,8 @@ public final class ServiceConstants {
 	public static final String GET_METHOD_TYPE = "Get";
 	public static final String FEED_PARAMETER = "";
 	public static final String SAVE_FEED_DATA_PROPERTY_NAME = "serviceResponse";
+	
+	public static final String SAVE_BLOG_FEED_DATA_PROPERTY_NAME = "blogResponse";
 
 	public static final String FEED_URL_KEY = "feed.url";
 	public static final String FEED_SCHEDULER_EXPRESSION = "scheduler.expression";
