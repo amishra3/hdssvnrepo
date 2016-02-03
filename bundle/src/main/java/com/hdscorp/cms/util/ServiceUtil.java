@@ -2,12 +2,19 @@ package com.hdscorp.cms.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.jcr.Node;
 import javax.jcr.Session;
 
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.commons.json.JSONArray;
+import org.apache.sling.commons.json.JSONObject;
 import org.joda.time.DateTime;
 import org.joda.time.Period;
 import org.slf4j.Logger;
@@ -16,7 +23,9 @@ import org.slf4j.LoggerFactory;
 import com.hdscorp.cms.constants.ServiceConstants;
 
 /**
- * This Utility has common methods which can be used in the services and other implementation.
+ * This Utility has common methods which can be used in the services and other
+ * implementation.
+ * 
  * @author gokula.nand
  */
 
@@ -75,6 +84,7 @@ public class ServiceUtil {
 			return ServiceConstants.EMPTY_SPACE;
 		}
 	}
+
 	/**
 	 * 
 	 * @param date
@@ -82,28 +92,28 @@ public class ServiceUtil {
 	 * @return
 	 * @throws ParseException
 	 */
-	
-     public static String getStringFromDate(Date date, String displayFormat)
-			throws ParseException {
-		
-			SimpleDateFormat sdfDestination = new SimpleDateFormat(displayFormat);
-			return sdfDestination.format(date);
-		
+
+	public static String getStringFromDate(Date date, String displayFormat) throws ParseException {
+
+		SimpleDateFormat sdfDestination = new SimpleDateFormat(displayFormat);
+		return sdfDestination.format(date);
+
 	}
-     /**
-      * 
-      * @param date
-      * @param format
-      * @return
-      * @throws ParseException
-      */
-     public static Date getDateFromString(String date, String format)
- 			throws ParseException {
- 		
- 			SimpleDateFormat sdfDestination = new SimpleDateFormat(format);
- 			return sdfDestination.parse(date);
- 		
- 	}
+
+	/**
+	 * 
+	 * @param date
+	 * @param format
+	 * @return
+	 * @throws ParseException
+	 */
+	public static Date getDateFromString(String date, String format) throws ParseException {
+
+		SimpleDateFormat sdfDestination = new SimpleDateFormat(format);
+		return sdfDestination.parse(date);
+
+	}
+
 	/**
 	 * Useful to get the time difference between the feed PostedDate to
 	 * CurrentDate
@@ -188,10 +198,51 @@ public class ServiceUtil {
 		return feedPostedTime.toString();
 
 	}
-	
-	public static String getMonth(int month){
-	    String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-	    return monthNames[month];
+
+	public static String getMonth(int month) {
+		String[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
+				"October", "November", "December" };
+		return monthNames[month];
 	}
 
+	public static List<Map<String, String>> getBrightTalkMapFromJSON(ResourceResolver resourceResolver,
+			String storagePath, String savedProperty) {
+		log.info("Start execution of getBrightTalkMapFromJSON()");
+		List<Map<String, String>> listMap = new ArrayList<>();
+		Map<String, String> map = new HashMap<String, String>();
+		try {
+			String jsonArrayObject = PageUtils.getPropertyValue(resourceResolver, storagePath, savedProperty);					
+			if(jsonArrayObject.contains(ServiceConstants.JSON_STATUS_CODE)){
+				JSONObject jsonObject=new JSONObject(jsonArrayObject);
+				 map.put(ServiceConstants.JSON_STATUS_CODE, jsonObject.getString(ServiceConstants.JSON_STATUS_CODE));
+				 map.put(ServiceConstants.JSON_STATUS_REASON, jsonObject.getString(ServiceConstants.JSON_STATUS_REASON));			
+				  listMap.add(map);
+				  return listMap;
+			}
+			JSONArray jsonArray = new JSONArray(jsonArrayObject);		
+			for (int i = 0; i < jsonArray.length(); i++) {
+				JSONObject item = jsonArray.getJSONObject(i);
+				map.put(ServiceConstants.JSON_TITLE, item.getString(ServiceConstants.JSON_TITLE));
+				map.put(ServiceConstants.JSON_UPDATED_DATE, item.getString(ServiceConstants.JSON_UPDATED_DATE));
+				map.put(ServiceConstants.JSON_AUTHOR, item.getString(ServiceConstants.JSON_AUTHOR));
+				map.put(ServiceConstants.JSON_SUMMARY, item.getString(ServiceConstants.JSON_SUMMARY));
+				map.put(ServiceConstants.JSON_FEATURED, item.getString(ServiceConstants.JSON_FEATURED));
+				map.put(ServiceConstants.JSON_STATUS, item.getString(ServiceConstants.JSON_STATUS));
+				map.put(ServiceConstants.JSON_FORMAT, item.getString(ServiceConstants.JSON_FORMAT));
+				map.put(ServiceConstants.JSON_DURATION, item.getString(ServiceConstants.JSON_DURATION));
+				map.put(ServiceConstants.JSON_START, item.getString(ServiceConstants.JSON_START));
+				map.put(ServiceConstants.JSON_RATING, item.getString(ServiceConstants.JSON_RATING));
+				map.put(ServiceConstants.JSON_CATEGORY, item.getString(ServiceConstants.JSON_CATEGORY));
+				map.put(ServiceConstants.JSON_COMMUNICATION_ID, item.getString(ServiceConstants.JSON_COMMUNICATION_ID));
+				map.put(ServiceConstants.JSON_CHANNEL_ID, item.getString(ServiceConstants.JSON_CHANNEL_ID));
+				map.put(ServiceConstants.JSON_HERF_LINK, item.getString(ServiceConstants.JSON_HERF_LINK));
+				map.put(ServiceConstants.JSON_THUMBNAIL_PATH, item.getString(ServiceConstants.JSON_THUMBNAIL_PATH));
+				map.put(ServiceConstants.JSON_PREVIEW_IMAGE_PATH, item.getString(ServiceConstants.JSON_PREVIEW_IMAGE_PATH));
+				listMap.add(map);
+			}
+		} catch (Exception e) {
+			log.info("Exception while creating map::" + e);
+		}
+		return listMap;
+	}
 }
