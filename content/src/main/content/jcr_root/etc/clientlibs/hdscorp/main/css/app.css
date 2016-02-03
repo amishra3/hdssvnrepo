@@ -148,15 +148,6 @@
     text-transform: uppercase;
     letter-spacing: 0.10em;
 }
-
-/* .mes-section{
-	background:url("/etc/clientlibs/hdscorp/main/images/prod-sol-bg-mes.jpg") no-repeat 50% 50%;
-}
-
-.specific-tech {
-	background: url("/etc/clientlibs/hdscorp/main/images/hero-specific-tech.jpg") center center no-repeat;
-}
- */
  
 .productsolutionlanding .hero-product-category {
     z-index: 2;
@@ -216,20 +207,15 @@
     height: 65px;	
 }
 
-
-/* .productsolutionlanding .result-product .category-products-listing .product h3 { */
-/*     font-family: "museo-sans", Helvetica, Arial, sans-serif; */
-/*     font-size: 1.3rem; */
-/*     color: #000000; */
-/*     font-weight: bold; */
-/*     margin: 0 0 10px 0; */
-/* } */
-
-/* .productsolutionlanding .result-product .category-products-listing .product a { */
-/*     color: #337ab7; */
-/*     text-decoration: none; */
-/* } */
-
+@media only screen and (min-width: 768px) {
+	.product-category-list{
+		min-height: 900px;
+	}	
+	
+	.pr-list-container{
+		min-height: 900px;
+	}
+}
  
 @media only screen and (max-width: 768px) {
 	.cs-section .cyancta {
