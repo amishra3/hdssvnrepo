@@ -37,7 +37,7 @@
             	<span class="sprite icon-healthcare" style="background-image: url('${properties.bannericonpath}')"></span>
             </c:if>
     		<div class="calculating-success-container content-container">
-    			<h1>${properties.hextitlecontent}</h1>
+    			<h2>${properties.hextitlecontent}</h2>
     			<h4>${properties.hexsubtitlecontent}</h4>
 					<p>${properties.hexcontent}</p>	
 				<c:if test="${not empty properties.hexbuttonlabel}">					
@@ -58,7 +58,7 @@
 	    				</li>
 
 						<c:if test="${!loop.last && properties.hexshowadditionsymbol}">							    				
-			    			<li class="hidden-xs">
+			    			<li class="hidden-xs separator">
 		    					<span class="sprite ${loop.count==1?'icon-plus':'icon-minus'}"/>
 		    				</li>
 						</c:if>	    				

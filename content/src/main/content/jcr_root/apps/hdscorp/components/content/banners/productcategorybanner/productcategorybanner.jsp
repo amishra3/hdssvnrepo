@@ -19,6 +19,7 @@
 
 		<div class="hero-product-category server-rack clearfix" style="background-image: url('${properties.simplebannermagePath}');">
 	              <div class="hero-product-solutions-container">
+                      <div class="col-lg-7 col-md-7 col-xs-12 overRideleft">
 	                  <div class="product-category-heading">
 	                  	  <c:if test="${not empty properties.categoryiconpath}">
 	                      		<span class="icon ${contentalignclass}"><img src="${properties.categoryiconpath}"></span>
@@ -27,7 +28,7 @@
 	                      		<span class="text ${contentalignclass}">${properties.categorytitle}</span>
 	                      </c:if>
 	                  </div>
-	                  <h2 class="headline ${contentalignclass}">${properties.simplebannertitle}</h2>
+	                  <h1 class="headline ${contentalignclass}">${properties.simplebannertitle}</h1>
 	                  <h3 class="${contentalignclass}">${properties.simplebannersubtitle}</h3>
 	                  <h4 class="sub-headline ${contentalignclass}">${properties.simplebannercontent}</h4>
 	                  <c:if test="${not empty properties.simpllebannerbuttonlabel}">
@@ -35,6 +36,7 @@
 		                      <a href="${linkUrl}">${properties.simpllebannerbuttonlabel}</a>
 		                  </div>
 	                  </c:if>
+					</div>
 	              </div>
 	      </div>
 	</c:when>

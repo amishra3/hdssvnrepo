@@ -52,7 +52,7 @@
 	         <h2>${properties.subcategorybannertitle}</h2>
 	         <p>${properties.subcategorybanneresubtext}</p>
              <c:if test="${not empty properties.subcatbuttonlabel}">
-	         <div class="btn-square-red learn-more-red-link">
+	         <div class="btn-square-red learn-more-promo">
 	             <a href="${linkUrl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}</a>
 	          </div>
               </c:if>    	
