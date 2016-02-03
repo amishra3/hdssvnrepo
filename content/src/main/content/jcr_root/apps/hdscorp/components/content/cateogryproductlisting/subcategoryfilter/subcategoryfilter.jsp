@@ -67,10 +67,13 @@
 </div>
 
 <!-- Category Content to Loaded here -->
-<div class="col-md-9 category-products">
 	<div id="contentCatagory">
-		<c:if test="${not empty includeURL}">
-			<sling:include path="${includeURL}.html" />
-		</c:if>
+        <div class="col-md-9 category-products" style="position:relative">
+            <div id="loading"></div>
+			<div id="contentCatagoryHTML">
+                <c:if test="${not empty includeURL}">
+                    <sling:include path="${includeURL}.html" />
+                </c:if>
+           </div>
 	</div>
 </div>
