@@ -55,8 +55,7 @@
 	         <div class="btn-square-red learn-more-promo">
 	             <a href="${linkUrl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}</a>
 	          </div>
-              </c:if>    	
-
+              </c:if>
 	     </div>
     </div>
 
@@ -70,7 +69,7 @@
 	<c:forEach var="product" items="${subCatContentModel.products}" varStatus="loopcnt">
 
 		<div class="product">
-		    <h3>${product.productTitle}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h3>
+		    <h3>${product.productTitle}</h3>
 		    ${product.productDescription}
 		    <a href="${product.productPath}" class="animateLink">${properties.subcatproductviewlabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 		 </div>
