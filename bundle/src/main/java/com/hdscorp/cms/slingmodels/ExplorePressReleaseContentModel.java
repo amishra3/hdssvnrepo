@@ -1,20 +1,16 @@
 package com.hdscorp.cms.slingmodels;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 import javax.inject.Inject;
-import javax.jcr.Node;
-import javax.jcr.Property;
-import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +21,7 @@ import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.PressReleaseModel;
 import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.PathResolver;
+import com.hdscorp.cms.util.ServiceUtil;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
 @Model(adaptables = Resource.class)
@@ -43,21 +40,19 @@ public class ExplorePressReleaseContentModel {
 	public List<PressReleaseModel> getPressReleases() throws RepositoryException {
 		
 
-			LOG.debug("-------------Entering  getPress Releases .Making the Search Service call");
+			LOG.debug("-------------Entering  getPress Releases--------");
 
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			
-			String paths[] = {"/content/hdscorp/en_us/lookup/pressreleases"};
-			String tags[] = null ;
-			String template= "/apps/hdscorp/templates/pressreleasedetail";
-			String type[] = {"cq:Page"};
-			boolean doPagination = true;
+			String path = "/content/hdscorp/en_us/lookup/pressreleases";
 			String returnOffset = "0";
 			String returnLimit = "2";
 			
-			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,returnOffset,returnLimit,resourceResolver,null,null);
 			
-			LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
+			SearchResult result = searchServiceHelper.getPressReleases(null, path, 0, null , returnLimit, returnOffset, "pressRelease");
+
+			
+			LOG.debug("-------------getTotalMatches-----"+result.getTotalMatches());
 			List<Hit> hits = result.getHits();
 			pressReleases = new ArrayList<PressReleaseModel>();
 			
@@ -67,36 +62,19 @@ public class ExplorePressReleaseContentModel {
 					PressReleaseModel pressRelease = new PressReleaseModel();
 					Page reourcePage = hit.getResource().adaptTo(Page.class);
 					String pagePath = reourcePage.getPath();
-					Node pressReleaseDetailnode = null ;
+					ValueMap properties = reourcePage.getContentResource("pressrelease").adaptTo(ValueMap.class);
 						
-					pressReleaseDetailnode = reourcePage.getContentResource("pressrelease").adaptTo(Node.class);
-
-					String pageTitle = "";
-					String pageDescription = "";
+					String pageTitle = properties.get("pressreleasetitle",(String) null).toString();
+					String pageDescription = properties.get("pressreleasedesc",(String) null).toString();;
 					String pagePublishDate = "";
-
 					
-					for(PropertyIterator propeIterator = pressReleaseDetailnode.getProperties() ; propeIterator.hasNext();)  {
-						Property prop= propeIterator.nextProperty();  
-						if(!prop.getDefinition().isMultiple()){  
-							if(prop.getName().equals("pressreleasedate")){
-								pagePublishDate = prop.getValue().getString();
-//								DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
-//								Date date = format.parse(pagePublishDate);
-//								pagePublishDate=date.toString();
-							}
-
-							if(prop.getName().equals("pressreleasetitle")){
-								pageTitle = prop.getValue().getString();
-							}
-
-							if(prop.getName().equals("pressreleasedesc")){
-								pageDescription = prop.getValue().getString();
-							}				
-							
-						}
+					Calendar cal  =(Calendar) properties.get("pressreleasedate");
+					try {
+						pagePublishDate = ServiceUtil.getStringFromDate(cal.getTime(),"MMMM d, yyyy");
+					} catch (ParseException ex) {
+						LOG.error(ex.getMessage());
 					}
-					
+
 					if(pagePath.startsWith("/content")){
 						pagePath=PathResolver.getShortURLPath(pagePath);
 					}
@@ -107,7 +85,6 @@ public class ExplorePressReleaseContentModel {
 					pressRelease.setPubDate(pagePublishDate);
 					pressReleases.add(pressRelease );
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					LOG.error(e.getMessage());
 				}
 			}
