@@ -14,7 +14,7 @@ var hds = window.hds || {};
             $('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
-            $("#contentCatagory").html(" ").load(url + " .subcategorycontent", function() {
+            $("#contentCatagoryHTML").html(" ").load(url + " .subcategorycontent", function(data) {
                 hds.productCatagory.bindHTMLLoad();
             });
         },
@@ -48,10 +48,8 @@ var hds = window.hds || {};
             });
         },
         bindClick: function() {
-            $('.linkLeft a').on('click', function(event) {
-                event.preventDefault();
-                var self = $(this);
-                
+            $(document).on('click','.linkLeft a', function(event) {
+                var self = $(this);                
                     if (!$(this).hasClass('active')) {
                         $('.linkLeft a').removeClass('active');
                         $('.linkLeft a').parent().removeClass('active');
@@ -63,7 +61,16 @@ var hds = window.hds || {};
                         $('.linkLeft').find('.icon-accordion-closed').removeAttr('style').css('display', 'inline-block');
                         $('.linkLeft').find('.icon-accordion-opened').removeAttr('style').css('display', 'none');
 
+
+                        $('.linkLeft a').each(function() {
+                            if($.trim($(this).parent().find('.MobileHolderWrapper').html()).length>=0){
+                            $('#contentCatagory').append($(this).parent().find('.MobileHolderWrapper').html());
+                        }
+
+                        })
+
                         $('.linkLeft a').parent().find('.MobileHolderWrapper').html(" ").removeAttr("style");
+
                         hds.productCatagory.processHTML(loadUrl, loadIndec);
                     } else if ($(this).hasClass('active') && $(window).width() < 991) {
                         $(this).removeClass('active');
@@ -74,7 +81,9 @@ var hds = window.hds || {};
                             height: '0px',
                             overflow: 'hidden'
                         })
-                    }   
+                    }  
+
+                event.preventDefault();
             });
 
         }
@@ -82,8 +91,16 @@ var hds = window.hds || {};
 }(window, document, jQuery, hds));
 
 $(function() {	
-	if ( $('.product-category-list').length > 0){
-		hds.productCatagory.init();
-	}
+	hds.productCatagory.init();
+
+    $(document).ajaxStart(function(e) {
+		$("#loading").show();
+        console.log(e.currentTarget.activeElement);
+	});
+
+	$(document).ajaxStop(function(e) {
+		$("#loading").hide();
+        console.log(e.currentTarget.activeElement);
+	});
 })
 
