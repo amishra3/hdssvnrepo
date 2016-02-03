@@ -72,8 +72,7 @@ public class SearchServiceHelper {
 		
 
 		if (template != null && !template.isEmpty()) {
-			searchParams.put("group.2_group.2_property",
-					"@jcr:content/cq:template");
+			searchParams.put("group.2_group.2_property","@jcr:content/cq:template");
 			searchParams.put("group.2_group.2_property.1_value", template);
 		}
 
@@ -92,9 +91,7 @@ public class SearchServiceHelper {
 			searchParams.put("orderby.sort", "desc");
 		}
 		LOG.info("before cretae query************" + searchParams.toString());
-		Query query = queryBuilder.createQuery(
-				PredicateGroup.create(searchParams),
-				JcrUtilService.getSession());
+		Query query = queryBuilder.createQuery(PredicateGroup.create(searchParams),JcrUtilService.getSession());
 		SearchResult result = query.getResult();
 		
 		return result;
@@ -132,57 +129,55 @@ public class SearchServiceHelper {
 		
 		searchParams.put("group.p.and", "true");
 		int groupCnt = 1;
-		if(fullText!=null) {
-	    searchParams.put("group." + groupCnt + "_group.p.or", "true");
-		searchParams.put("group." + groupCnt + "_group.1_fulltext",
-				fullText);
-		searchParams.put("group." + groupCnt
-				+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
-		searchParams.put("group." + groupCnt + "_group.2_fulltext",
-				fullText);
-		searchParams
-				.put("group." + groupCnt + "_group.2_fulltext.relPath",
-						"jcr:content/pressrelease/@pressreleasetitle");
-		searchParams.put("group." + groupCnt + "_group.3_fulltext",
-				fullText);
-		searchParams.put("group." + groupCnt
-				+ "_group.3_fulltext.relPath",
-				"jcr:content/pressrelease/@pressreleasedesc");
+
+		if(fullText!=null && searchType.equalsIgnoreCase("pressRelease")) {
+		    searchParams.put("group." + groupCnt + "_group.p.or", "true");
+			searchParams.put("group." + groupCnt + "_group.1_fulltext",fullText);
+			searchParams.put("group." + groupCnt+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
+			searchParams.put("group." + groupCnt + "_group.2_fulltext",fullText);
+			searchParams.put("group." + groupCnt + "_group.2_fulltext.relPath","jcr:content/pressrelease/@pressreleasetitle");
+			searchParams.put("group." + groupCnt + "_group.3_fulltext",fullText);
+			searchParams.put("group." + groupCnt+ "_group.3_fulltext.relPath","jcr:content/pressrelease/@pressreleasedesc");
+		}else if(fullText!=null && !searchType.equalsIgnoreCase("pressRelease")){
+		    searchParams.put("group." + groupCnt + "_group.p.or", "true");
+			searchParams.put("group." + groupCnt + "_group.1_fulltext",fullText);
+			searchParams.put("group." + groupCnt+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
+			searchParams.put("group." + groupCnt + "_group.2_fulltext",fullText);
+			searchParams.put("group." + groupCnt + "_group.2_fulltext.relPath","jcr:content/newsdetail/@newstitle");
 		}
       
 		if(filter!=null) {
 		
-		if (!filter.equalsIgnoreCase(ARCHIVE)) {
-			
-			path = path + "/" + filter;
-			searchParams.put("path", path);
-			combinedPredicate = PredicateGroup.create(searchParams);
-		} else {
-			
-			
-			searchParams.put("path", path);
-			PredicateGroup doNotSearchGroup = new PredicateGroup();
-			int year = Calendar.getInstance().get(Calendar.YEAR);
-			
-			for (int i = year; i >(year - noOfYears); i--) {
-
-				Predicate excludePathPredicate = new Predicate("path").set(
-						"path", path + "/" + i);
-				doNotSearchGroup.add(excludePathPredicate);
+			if (!filter.equalsIgnoreCase(ARCHIVE)) {
+				
+				path = path + "/" + filter;
+				searchParams.put("path", path);
+				combinedPredicate = PredicateGroup.create(searchParams);
+			} else {
+				
+				
+				searchParams.put("path", path);
+				PredicateGroup doNotSearchGroup = new PredicateGroup();
+				int year = Calendar.getInstance().get(Calendar.YEAR);
+				
+				for (int i = year; i >(year - noOfYears); i--) {
+	
+					Predicate excludePathPredicate = new Predicate("path").set(
+							"path", path + "/" + i);
+					doNotSearchGroup.add(excludePathPredicate);
+				}
+	
+				doNotSearchGroup.setAllRequired(false);
+				doNotSearchGroup.setNegated(true);
+				combinedPredicate = PredicateGroup.create(searchParams);
+				combinedPredicate.add(doNotSearchGroup);
+	
 			}
-
-			doNotSearchGroup.setAllRequired(false);
-			doNotSearchGroup.setNegated(true);
-			combinedPredicate = PredicateGroup.create(searchParams);
-			combinedPredicate.add(doNotSearchGroup);
-
-		}
 		} else {
 			searchParams.put("path", path);
 			combinedPredicate = PredicateGroup.create(searchParams);
 		}
-		Query query = queryBuilder.createQuery(combinedPredicate,
-				JcrUtilService.getSession());
+		Query query = queryBuilder.createQuery(combinedPredicate,JcrUtilService.getSession());
 		
 		SearchResult result = query.getResult();
 		return result;
