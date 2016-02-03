@@ -28,7 +28,7 @@ import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.PropertyResolver;
 
-@Component(immediate = true, label = "HDS Corp Replication EventHandler Listener", description = "HDS Corp Replication EventHandler Listener", metatype = true, policy =ConfigurationPolicy.REQUIRE)
+@Component(immediate = true, label = "HDS Corp Replication EventHandler Listener", description = "HDS Corp Replication EventHandler Listener", metatype = true)
 @Service
 @Properties({
 		@Property(name = Constants.SERVICE_DESCRIPTION, value = "HDS Corp Replication EventHandler Listener"),
@@ -44,6 +44,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 	@Override
 	public void handleEvent(final Event event) {
 		try {
+		
 			LOG.info("ReplicationEventHandlerListener::"+ EventUtil.isLocal(event));
 			if(EventUtil.isLocal(event)){
 				final ReplicationAction replicationAction = ReplicationAction.fromEvent(event);
@@ -65,6 +66,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 								CacheInvalidator.invalidateCache("/etc/segmentation.segment.js", false);
 							}
 							final String shortUrl = PathResolver.getShortURLPath(pagePath);
+							
 							if (StringUtils.isNotBlank(shortUrl)) {
 								// Invalidate Cache for Activated Page
 								LOG.info("Page Modified .. invalidating cache...."+ shortUrl);

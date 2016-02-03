@@ -111,26 +111,6 @@ public class SearchServiceHelper {
 		searchParams.put("property.operation", "exists");
 		searchParams.put("orderby.sort", "desc");
 		searchParams.put("orderby", PR_ORDER_BY_PROPERTY);
-        } else {
-        	searchParams.put("property", "jcr:content/newsdetail/newstitle");
-    		searchParams.put("property.operation", "exists");
-    		searchParams.put("orderby.sort", "desc");
-    		searchParams.put("orderby", NEWS_ORDER_BY_PROPERTY);
-        }
-        if(offSet!=null){
-        	searchParams.put("p.offset",offSet);
-        } else {
-        	searchParams.put("p.offset", "0");
-        }
-		
-		if(limit != null) {
-			
-			searchParams.put("p.limit", limit);
-		} else {
-			searchParams.put("p.limit", "-1");
-		}
-		
-		searchParams.put("group.p.and", "true");
 		int groupCnt = 1;
 		if(fullText!=null) {
 	    searchParams.put("group." + groupCnt + "_group.p.or", "true");
@@ -149,6 +129,41 @@ public class SearchServiceHelper {
 				+ "_group.3_fulltext.relPath",
 				"jcr:content/pressrelease/@pressreleasedesc");
 		}
+        } else {
+        	searchParams.put("property", "jcr:content/newsdetail/newstitle");
+    		searchParams.put("property.operation", "exists");
+    		searchParams.put("orderby.sort", "desc");
+    		searchParams.put("orderby", NEWS_ORDER_BY_PROPERTY);
+    		int groupCnt = 1;
+    		if(fullText!=null) {
+    	    searchParams.put("group." + groupCnt + "_group.p.or", "true");
+    		searchParams.put("group." + groupCnt + "_group.1_fulltext",
+    				fullText);
+    		searchParams.put("group." + groupCnt
+    				+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
+    		searchParams.put("group." + groupCnt + "_group.2_fulltext",
+    				fullText);
+    		searchParams
+    				.put("group." + groupCnt + "_group.2_fulltext.relPath",
+    						"jcr:content/newsdetail/@newstitle");
+    		
+    		}
+        }
+        if(offSet!=null){
+        	searchParams.put("p.offset",offSet);
+        } else {
+        	searchParams.put("p.offset", "0");
+        }
+		
+		if(limit != null) {
+			
+			searchParams.put("p.limit", limit);
+		} else {
+			searchParams.put("p.limit", "-1");
+		}
+		
+		searchParams.put("group.p.and", "true");
+		
       
 		if(filter!=null) {
 		
