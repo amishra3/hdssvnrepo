@@ -2,6 +2,7 @@
 vendor.js
 plugins.js
 main.js
+#global-hds-navigation.js
 banner.js
 product-solutions.js
 tech-specs.js

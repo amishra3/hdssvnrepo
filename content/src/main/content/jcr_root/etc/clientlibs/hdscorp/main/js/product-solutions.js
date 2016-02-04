@@ -61,7 +61,8 @@
 	var allMenus = $('.accordion-menu-container');
 	var allContents = $('.accordion-content');
 
-	$(document).on('click','.accordion-level > .accordion-menu-container' , function(event) {
+	$(document).on('tap','.accordion-level > .accordion-menu-container' , function(event) {
+	//$('.accordion-level > .accordion-menu-container').on('click', function(event) {
         var $currentContent = $(this).closest('div').next('div.accordion-content',this);
         if ($(this).hasClass("open") && $(this).next().queue().length === 0) {
             $currentContent.removeClass('open');

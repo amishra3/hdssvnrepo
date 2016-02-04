@@ -1,0 +1,287 @@
+/* Contact Us Hero Banner */
+
+.common-hero-short-banner.contact-banner {
+  background-image: url("../images/contact_banner.jpg");
+  min-height: inherit;
+}
+.common-hero-short-banner.contact-banner .headline{
+  margin-top: 0;
+  font-size: 2.25rem;
+}
+.common-hero-short-banner.contact-banner .content-container {
+    padding: 0 15px;
+}
+
+/* Contact Us Detail */
+.common-hero-short-banner.contact-banner .detail-container{
+  margin-top:70px;
+}
+.common-hero-short-banner.contact-banner .detail-container .details-box {
+  width:100%;
+  background: #fff none repeat scroll 0 0;
+  color: #000; text-align:left;
+  float: left;
+  padding:  25px 30px;min-height: 250px;
+}
+.common-hero-short-banner.contact-banner .detail-container .details-box a {
+  color: #ce0000;
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  display: block;
+}
+.common-hero-short-banner.contact-banner .detail-container .details-box > h2 {
+  margin-bottom: 20px;
+  margin-top: 0; font-weight:300;
+  font-size: 1.75rem;
+  color: #000000;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+}
+.common-hero-short-banner.contact-banner .detail-container .col-md-4 {
+  padding-right: 0;
+}
+
+@media screen and (max-width:1024px){
+  .common-hero-short-banner.contact-banner .content-container {
+      padding: 0;
+  }
+}
+
+@media screen and (max-width:991px){
+  .common-hero-short-banner.contact-banner {
+    padding-top: 180px;
+    padding-bottom: 15px;
+  }
+  .common-hero-short-banner.contact-banner .headline{
+    font-size: 1.5rem;
+    margin-top:40px;
+  }
+  .common-hero-short-banner.contact-banner .detail-container .details-box > h2{
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .common-hero-short-banner.contact-banner .detail-container .details-box {    
+    padding: 20px 10px 25px;
+    margin-bottom: 12px;
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width:768px){
+   .common-hero-short-banner.contact-banner .detail-container .details-box{
+      min-height: 260px;
+   }
+}
+
+.address-contacts {
+  margin-top:0;
+  font-size: 1rem;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+}
+.address-contacts .contact {
+  font-size: 1rem;
+}
+.address-contacts .contact span {
+  font-weight: 600;
+}
+
+.common-hero-short-banner.contact-banner .detail-container .details-box > p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  font-family: Arial;
+  color: #000000;
+}
+
+@media screen and (max-width:991px){
+.common-hero-short-banner.contact-banner .detail-container .col-md-4 {
+  padding-right: 15px;
+}
+}
+
+
+/* Contact Address */
+.headquarter-block .content-container {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+
+.right_address_panel {
+  margin-top: 0;
+}
+.right_address_panel .driving-direction {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.right_address_panel .view-all-loc {
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+
+.contact-info h2{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 3rem;
+  font-weight: 100;
+}
+.contact-info p{
+  font-size: 1.313rem;
+  margin-bottom: 35px;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+.right_address_panel a{ 
+  float:left; 
+  width:100%;
+  color: #ce0000;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+}
+
+.right_address_panel h4 {
+  font-size: 16px;
+  font-weight: 700; margin-top:0;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  color: #000000;
+}
+.right_address_panel p {
+  font-size: 16px;
+  font-weight: 300; margin:0;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  color: #000000;
+}
+
+@media screen and (max-width:1024px){
+  .headquarter-block .content-container{
+    padding-bottom: 30px;
+  }
+  .right_address_panel .driving-direction {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .right_address_panel .view-all-loc {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width:991px){
+  .headquarter-block .content-container{
+    padding-top: 35px;
+  }
+  .contact-info h2{
+    font-size:  1.5rem;
+    font-weight: 300;
+    margin-top: 0;
+  }
+  .contact-info p {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+  }
+  .headquarter-block .right_address_panel{
+    margin: 30px 0 15px;
+  }
+  .right_address_panel {
+    margin: 50px 0;
+  }
+}
+
+/* Grey Container */
+.grey_container .content-container {
+  margin: 0 auto 50px;
+  max-width: 1280px;
+  padding-top: 80px;
+}
+.grey_container {
+  background: #f1f1f1 none repeat scroll 0 0;
+}
+.grey-box-inner{
+  border-right: 1px solid #d7d7d7;
+  padding: 0 60px;
+  min-height: 230px;
+}
+.grey-box-inner:first-child{
+  padding-left: 0;
+}
+.grey-box-inner:last-child{
+  border-right: none;
+  padding-right: 0;
+}
+
+.grey-box-inner h2 {
+  font-size: 28px; 
+  margin-top: 8px;
+  font-weight: 500;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  color: #000000;
+}
+.grey-box-inner > p {
+  font-size: 14px;
+  font-weight: 300;
+}
+.grey-box-inner a {
+  color: #ce0000;
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+}
+@media screen and (max-width:1024px){
+  .grey-box-inner{
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width:991px){
+  .grey-box-inner {
+    padding: 0px 15px 0;
+    min-height: auto;
+  }
+  .grey-box-inner:first-child{
+    padding-left: 15px;
+  }
+  .grey-box-inner:last-child{
+    border-right: none;
+    padding-right: 15px;
+  }
+  .grey_container .content-container{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 40px;
+  }
+  .grey-box-inner h2{
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width:767px){
+  .grey-box-inner {
+    padding: 25px 15px 0;
+    min-height: auto;
+  }
+  .grey_container .content-container{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+  }
+  .grey-box-inner h2{
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+  .right_address_panel .driving-direction{
+    margin-bottom: 20px;
+  }
+}

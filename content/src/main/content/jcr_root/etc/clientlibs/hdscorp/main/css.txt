@@ -1,6 +1,7 @@
 #base=css
 main.css
 common.css
+global-hds-navigation.css
 home.css
 hexagone.css
 hero-banner.css
@@ -19,5 +20,7 @@ about-hds-awards.css
 about-hds-leadership.css
 about-hds-lp.css
 services-lp.css
+services-detail.css
+contact-us.css
 common-component.css
 app.css
