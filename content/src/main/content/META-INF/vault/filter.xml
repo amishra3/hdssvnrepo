@@ -6,7 +6,6 @@
     <filter root="/apps/sling/servlet/errorhandler"/>
 	<filter root="/apps/foundation"/>
 	<filter root="/apps/cq"/>
-	<filter root="/apps/dam"/>
     <filter root="/etc/clientlibs/hdscorp"/>
     <filter root="/etc/map/"/>
 
