@@ -7,9 +7,20 @@
 <c:set var="newsPath" value="${properties.newsPath}" scope="request"/>
 <c:set var="searchType" value="${properties.searchType}" scope="request"/>
 <c:set var="noofItemsShown" value="${properties.noofItemsShown}" scope="request"/>
-<sling:adaptTo adaptable="${slingRequest}"
-	adaptTo="com.hdscorp.cms.slingmodels.PressReleasesSearchModel" var="model" />
 
+
+
+<sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.PressReleasesSearchModel" var="model" />
+<c:set var="resultSize" value="${fn:length(model.newsList)}"/>
+<c:set var="noResultMessage" value="No results found."/>
+<c:set var="itemsVisibleonLoad" value="5"/>
+<c:if test="${not empty properties.noResultMessage}">
+	<c:set var="noResultMessage" value="${properties.noResultMessage}"/>
+</c:if>
+
+<c:if test="${not empty properties.itemsVisibleonLoad}">
+	<c:set var="itemsVisibleonLoad" value="${properties.itemsVisibleonLoad}"/>
+</c:if>
 
 <div class="col-md-9 pr-archives-list">
 	<div class="pr-archives-list-items">
@@ -25,11 +36,17 @@
 			</div>
 		</c:forEach>
 	</div>
-	<div class="pr-load-more">
-		<div class="learn-more-red-link">
-			<a href="javascript:void(0);">${model.loadMoreLabel}</a>
+	<c:if test="${resultSize!=0 and resultSize > itemsVisibleonLoad}">
+		<div class="pr-load-more">
+			<div class="learn-more-red-link">
+				<a href="javascript:void(0);">${model.loadMoreLabel}</a>
+			</div>
 		</div>
-	</div>
+	</c:if>
+	
+	<c:if test="${resultSize==0}">
+		<div class="no-matched-result" style="padding: 50px 0; text-align: center;">${noResultMessage}</div>	
+	</c:if>
 </div>
 
 

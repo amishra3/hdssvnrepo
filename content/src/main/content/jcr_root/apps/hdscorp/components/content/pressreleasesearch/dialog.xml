@@ -40,7 +40,19 @@
                         fieldLabel="No of Result Items Shown "
                         name="./noofItemsShown"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./noofItemsShown')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="numberfield"/>                           
+                        xtype="numberfield"/>
+                     <itemsVisibleonLoad
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="If the resultset is greater than this number, load more button would show up."
+                        fieldLabel="Number of Items to be shown on page load."
+                        name="./itemsVisibleonLoad"
+                        xtype="numberfield"/>
+                     <noResultMessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="No Results Found Message."
+                        name="./noResultMessage"
+                        xtype="textfield"/>                                                                                                      
                     <searchType
 	                    jcr:primaryType="cq:Widget"
 	                    allowBlank="{Boolean}false"
