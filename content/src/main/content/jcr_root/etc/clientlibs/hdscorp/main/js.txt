@@ -2,14 +2,15 @@
 vendor.js
 plugins.js
 main.js
-#global-hds-navigation.js
 banner.js
 product-solutions.js
 tech-specs.js
 accordion.js
 product-catagory.js
 product-box.js
+global-hds-navigation.js
 hds-product-solutions.js
+social-innovation.js
 press-release.js
 news-insight-news.js
 about-hds-awards.js

@@ -53,7 +53,7 @@ var hds = window.hds || {};
     }
 }(window, document, jQuery, hds));
 
-;
+
 (function($, window, document, undefined) {
     $.fn.doubleTapToGo = function(params) {
         if (!('ontouchstart' in window) &&
@@ -88,7 +88,8 @@ var hds = window.hds || {};
 })(jQuery, window, document);
 
 $(function() {
-    hds.buildShowNav.init();
-    $('.globalNavWrapper li:has(div.hds-megaMenuWrapper)').doubleTapToGo();
-
+	if($('.globalNavWrapper li:has(div.hds-megaMenuWrapper)')){
+		hds.buildShowNav.init();	
+    	$('.globalNavWrapper li:has(div.hds-megaMenuWrapper)').doubleTapToGo();	
+    }
 })
