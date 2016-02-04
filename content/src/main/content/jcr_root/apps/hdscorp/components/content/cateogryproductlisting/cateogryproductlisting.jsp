@@ -3,7 +3,7 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
 
-<div class="product-category-list">
+<div class="product-category-list" id="productCatagoryList">
 	<div class="product-category-list-container">		
 		<cq:include path="categoryproductlistingtitle" resourceType="hdscorp/components/content/cateogryproductlisting/sectiontitle" />
 		<div class="row">

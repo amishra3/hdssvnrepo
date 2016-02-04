@@ -51,19 +51,13 @@
 					data-loadhtml="${linkUrl}"
 					class="${loopcnt.index==activeSubCatIndex?'active':'dummyclass'}" name="${subcat.subcatid}" id="${subcat.subcatid}"> 
 						${subcat.subcatdisplaylabel}
-						<span class="icon-accordion-closed hidden-md hidden-lg"
-						style="display: none;"></span> 
-						<span class="icon-accordion-opened hidden-md hidden-lg"
-						style="display: inline-block;"></span>
-				</a>			
-			
+						<span class="icon-accordion-closed hidden-md hidden-lg"></span> 
+						<span class="icon-accordion-opened hidden-md hidden-lg"></span>
+				</a>
 				<div class="MobileHolderWrapper"></div>
-			</li>
-		
-		</c:forEach>	
-			
-	</ul>
-	
+			</li>		
+		</c:forEach>			
+	</ul>	
 </div>
 
 <!-- Category Content to Loaded here -->
