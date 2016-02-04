@@ -27,6 +27,12 @@
                         fieldLabel="Content Sub Title"
                         name="./contensubttitle"
                         xtype="textfield"/>
+                    <sectiondivider
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide section divider"
+                        name="./sectiondiv"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>

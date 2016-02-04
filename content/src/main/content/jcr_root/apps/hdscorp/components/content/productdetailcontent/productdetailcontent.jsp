@@ -9,14 +9,15 @@
 	</c:if>	
 	
 	<c:set var="containerclass" value=""/>
-	
+
 
 	<c:if test="${empty properties.sectiontitle}">
 		<c:set var="containerclass" value="reduceTopPadding"/>
 	</c:if>	
 
 
-	<div class="fb-category-container">
+
+	<div class="fb-category-container ${properties.sectiondiv?'no-border-container':''}">
 		<div class="fb-category-box ${containerclass}">
 			<div class="fb-category-heading">${properties.contenttitle}</div>
 			<div class="fb-category-highlight">${properties.contensubttitle}</div>
