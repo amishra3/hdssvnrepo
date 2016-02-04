@@ -292,7 +292,7 @@
 @media only screen and (max-width: 992px) {
     .header .breadcrumb-container {
         top: 160px;
-        text-align: center;
+        text-align: left;
     }
     .header .sub-navigation-container {
         top: 42px;
