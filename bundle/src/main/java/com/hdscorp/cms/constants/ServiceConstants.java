@@ -33,11 +33,10 @@ public final class ServiceConstants {
 	public static final String REG_EXP = "#|\"";
 	public static final int TIME_OUT = 60 * 1000;
 
-	
 	/**
 	 * Blog Constants
 	 */
-	
+
 	public static final String BLOG_TAG = "item";
 	public static final String PUB_DATE = "pubDate";
 	public static final String DC_DATE = "dc:date";
@@ -48,21 +47,15 @@ public final class ServiceConstants {
 	public static final String DOMAIN = "domain";
 	public static final String BLOG_TO_DATE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
 	public static final String DESCRIPTION = "description";
-	
-	
-	
+
 	public static final String JSON_LINK = "link";
 	public static final String JSON_DC_DATE = "dcDate";
 	public static final String JSON_GUID = "guid";
 	public static final String JSON_OBJECT_TYPE = "objectType";
 	public static final String JSON_REPLY_TYPE = "replyCount";
 	public static final String JSON_DESCRIPTION = "description";
-	public static final String JSON_DOMAIN= "domain";
-	
-	
+	public static final String JSON_DOMAIN = "domain";
 
-	
-	
 	public static final String JSON_UPDATED_DATE = "updatedDate";
 	public static final String JSON_TITLE = "title";
 	public static final String JSON_AUTHOR = "author";
@@ -97,12 +90,13 @@ public final class ServiceConstants {
 	public static final String GET_METHOD_TYPE = "Get";
 	public static final String FEED_PARAMETER = "";
 	public static final String SAVE_FEED_DATA_PROPERTY_NAME = "serviceResponse";
-	
+
 	public static final String SAVE_BLOG_FEED_DATA_PROPERTY_NAME = "blogResponse";
 
 	public static final String FEED_URL_KEY = "feed.url";
 	public static final String FEED_SCHEDULER_EXPRESSION = "scheduler.expression";
 	public static final String FEED_STORAGE_PATH = "storage.path";
+	public static final String FEED_POST_LIMIT = "feed.limit";
 
 	/*
 	 * Twitter constraints
@@ -161,8 +155,6 @@ public final class ServiceConstants {
 	 * 
 	 */
 
-	
-
 	public static final String BR_COVE_JCR_TITLE = "jcr:title";
 	public static final String BR_COVE_JCR_DISC = "jcr:description";
 	public static final String BR_COVE_JCR_GUID = "guid";
@@ -174,10 +166,8 @@ public final class ServiceConstants {
 	public static final String BR_COVE_JCR_ACCOUNT_ID = "accountid";
 	public static final String BR_COVE_JCR_URL = "url";
 	public static final String BR_COVE_JCR_KEYWORD = "keyword";
-	public static final String BR_COVE_JCR_UNSTR= "nt:unstructured";
-	public static final String BR_COVE_JRC_NODE_SEPRATOR= "-";
-	
-
+	public static final String BR_COVE_JCR_UNSTR = "nt:unstructured";
+	public static final String BR_COVE_JRC_NODE_SEPRATOR = "-";
 
 	public static final String BR_COVE_ENTRY = "item";
 	public static final String BR_COVE_FEED_TITLE = "title";
@@ -191,31 +181,22 @@ public final class ServiceConstants {
 	public static final String BR_COVE_FEED_DISC = "description";
 	public static final String BR_COVE_FEED_MEDIA_CONTENT = "media:content";
 	public static final String BR_COVE_FEED_MEDIA_KEYWORD = "media:keywords";
-	
-	
+
 	/**
 	 * Event Constraints
 	 */
-	
-	
+
 	public static final String EVENT_JCR_EVENTTYPE = "jcr:eventtype";
 	public static final String EVENT_JCR_EVENTTITLE = "jcr:eventtitle";
 	public static final String EVENT_JCR_START_DATE = "jcr:eventstartdate";
-	public static final String EVENT_JCR_END_DATE= "jcr:eventenddate";
-	public static final String EVENT_JCR_LOCATION= "jcr:eventlocation";
-	public static final String EVENT_JCR_DESCRIPTION= "jcr:eventdescription";
-	public static final String EVENT_JCR_BACKGROUND_IMAGE= "jcr:evbackgroundimage";
-	public static final String EVENT_JCR_REGISTER_NOW_LABEL= "jcr:registernowlabel";
-	public static final String EVENT_JCR_REGISTER_NOW_LINK= "jcr:registernowlink";
-	public static final String EVENT_JCR_REGION_TAG= "jcr:eventregiontag";
+	public static final String EVENT_JCR_END_DATE = "jcr:eventenddate";
+	public static final String EVENT_JCR_LOCATION = "jcr:eventlocation";
+	public static final String EVENT_JCR_DESCRIPTION = "jcr:eventdescription";
+	public static final String EVENT_JCR_BACKGROUND_IMAGE = "jcr:evbackgroundimage";
+	public static final String EVENT_JCR_REGISTER_NOW_LABEL = "jcr:registernowlabel";
+	public static final String EVENT_JCR_REGISTER_NOW_LINK = "jcr:registernowlink";
+	public static final String EVENT_JCR_REGION_TAG = "jcr:eventregiontag";
 	public static final String DATE_FORMAT_FROM_EVENT = "MM/dd/yy";
 	public static final String DATE_FORMAT_TO_EVENT = "MM/dd/yyyy";
-	
-	
-	
-	
-	
-	
-
 
 }
