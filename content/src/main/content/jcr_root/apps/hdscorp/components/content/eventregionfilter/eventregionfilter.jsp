@@ -86,14 +86,31 @@ Filter by Label:${resourceLibraryModel.efilterbylabel}
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.EventDataModel" var="eventDataModel" />
 
 
-<c:set var="eventDataList" scope="request" value="${eventDataModel}"/>
+<c:forEach items="${eventDataModel.eventNodes}" var="eventNodes"> 
+
+
+
+	<c:forEach items="${eventNodes.eventType}" var="eventTag" >
+    ${eventTag} <br>
+    </c:forEach>
+
+
+    ${eventNodes.eventTitle} <br>
+    ${eventNodes.eventStartDate}<br>
+    ${eventNodes.eventDescription}<br>
+	${eventNodes.eventLocation}<br>
+    ${eventNodes.eventImageBackground}<br>
+    ${eventNodes.eventRegisterNowLink}<br>
+	${eventNodes.eventRegisterNowLabel}<br>
+
+    <c:forEach items="${eventNodes.eventRegion}" var="eventRegionTag" >
+    ${eventRegionTag}<br>
+  </c:forEach>
 
 
 
 
-List Object:::: ${eventDataModel.eventNodes}
 
-
-
+</c:forEach>
 
 
