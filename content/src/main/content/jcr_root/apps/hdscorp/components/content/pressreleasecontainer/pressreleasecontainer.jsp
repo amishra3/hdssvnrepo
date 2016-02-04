@@ -12,7 +12,8 @@
 <sling:adaptTo adaptable="${slingRequest}"
 	adaptTo="com.hdscorp.cms.slingmodels.PressReleasesContainerModel" var="model" />
 
-<div class="pr-list">                    
+<div class="pr-list">       
+				<div id="loading"></div>             
                 <div class="row pr-list-container">
                     <h2>${model.headerText}</h2>
                     <div class="pr-search">
