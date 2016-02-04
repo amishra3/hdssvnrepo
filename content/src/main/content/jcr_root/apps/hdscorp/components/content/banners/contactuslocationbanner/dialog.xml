@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contactlocationtitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./contactlocationtitlecontent"
+                        xtype="textfield"/>
+                    <contactlocationsubtitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./contactlocationsubtitlecontent"
+                        xtype="textfield"/>
+                    <contactlocationlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Label for the location"
+                        name="./contactlocationlabel"
+                        xtype="textfield"/>
+                    <contactlocationaddressline1
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Address Line 1"
+                        name="./contactlocationaddressline1"
+                        xtype="textfield"/>                                                
+                    <contactlocationaddressline2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Address Line 2"
+                        name="./contactlocationaddressline2"
+                        xtype="textfield"/>
+                    <contactdrivingdirectionslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Driving Directions Label"
+                        name="./contactdrivingdirectionslabel"
+                        xtype="textfield"/>
+                    <contactdrivingdirectionsurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Driving Directions URL"
+                        name="./contactdrivingdirectionsurl"
+                        xtype="textfield"/>                          
+                    <contactlocationimagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./contactlocationimageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./contactlocationimagefileName2"
+                        fileReferenceParameter="./contactlocationimagePath"
+                        height="{Long}200"
+                        name="./contactlocationimagePath"
+                        rotateParameter="./contactlocationimagePathimageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <contactimagealtlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Image Alt Label"
+                        name="./contactimagealtlabel"
+                        xtype="textfield"/>                        
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./contactlocationmultilinks"
+                        fieldLabel="Phone Numbers"
+                        name="./contactlocationmultilinks"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <phonenumbertext
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Phone Number Text"
+                                name="./phonenumbertext"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </multilinks>
+                    <contactlocationviewalllabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="View Alll Location Link Label"
+                        name="./contactlocationviewalllabel"
+                        xtype="textfield"/>
+                    <contactlocationviewallurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="View Alll Location Target URL"
+                        name="./contactlocationviewallurl"
+                        xtype="pathfield"/>                    
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
