@@ -23,7 +23,7 @@ import com.hdscorp.cms.constants.ServiceConstants;
 
 /**
  * This service is basically used for get all feed data from provided feed URL
- * and method is getInvoke(String feedUrl)
+ * and method is getBrightTalkResponse(String feedUrl)
  * 
  * @author gokula.nand
  */
