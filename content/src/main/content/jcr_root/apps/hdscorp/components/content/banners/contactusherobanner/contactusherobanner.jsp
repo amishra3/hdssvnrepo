@@ -11,9 +11,6 @@
 
 		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-phonenumbertext1-phonenumbertext2-contacturllabel1-contacttargeturl1-contacturllabel2-contacttargeturl2")%>" />
 
-
-
-
             <div class="common-hero-short-banner contact-banner clearfix" style="background: url('${properties.contactusimagePath}')">
                 <div class="content-container">
                     <h1 class="headline">${properties.contactustitlecontent}</h1>
@@ -60,30 +57,17 @@
 									<c:if test="${not empty contacturllabel2}">
 										<a class="animateLink" href="${contacttargeturl2}">${contacturllabel2}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 									</c:if>									
-									
 								</div>
 							</div>			
-			
 						</c:forEach>
-					
-		
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-		
 	</c:when>
 	<c:otherwise>
 		<wcmmode:edit>
 			<p>
-				<span class="cq-text-placeholder-ipe">Configure About US HEXAGON Banner</span>
+				<span class="cq-text-placeholder-ipe">Configure Contact US Hero Banner</span>
 			</p>
 		</wcmmode:edit>
 	</c:otherwise>
