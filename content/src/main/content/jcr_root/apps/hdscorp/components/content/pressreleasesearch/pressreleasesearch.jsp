@@ -6,6 +6,7 @@
 <c:set var="readMoreText" value="${properties.readMoreText}" scope="request"/>
 <c:set var="newsPath" value="${properties.newsPath}" scope="request"/>
 <c:set var="searchType" value="${properties.searchType}" scope="request"/>
+<c:set var="noofItemsShown" value="${properties.noofItemsShown}" scope="request"/>
 <sling:adaptTo adaptable="${slingRequest}"
 	adaptTo="com.hdscorp.cms.slingmodels.PressReleasesSearchModel" var="model" />
 

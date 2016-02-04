@@ -40,15 +40,37 @@
 		    xtype="cqinclude"/>
 		<viewallprlabel
             jcr:primaryType="cq:Widget"
-            allowBlank="{Boolean}false"
             fieldLabel="View Alll Press Releases label"
             name="./viewallprlabel"
             xtype="textfield"/> 
         <viewallprlink
              jcr:primaryType="cq:Widget"
-             allowBlank="{Boolean}false"
              fieldLabel="View All Press Releases Link"
              name="./viewallprlink"
-             xtype="pathfield"/>                          
+             xtype="pathfield"/>
+        <hideinsitemap
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Hide in  Sitemap"
+            name="./hideinsitemap"
+            type="checkbox"
+            xtype="selection"/> 
+          <displaydescendants
+                   jcr:primaryType="cq:Widget"
+                   fieldLabel="Display descendants in Sitemap"
+                   name="./displaydescendants"                
+                   type="select"
+				                   xtype="selection">
+					    <options jcr:primaryType="cq:WidgetCollection">
+					        <one
+					            jcr:primaryType="nt:unstructured"
+					            text="Yes"
+					            value="yes"/>
+					        <two
+					            jcr:primaryType="nt:unstructured"
+					            text="No"
+					            value="no"/>   
+					    </options>
+            </displaydescendants>   
+                                
     </items>
 </jcr:root>

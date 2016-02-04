@@ -13,6 +13,7 @@
     <filter root="/etc/designs/hdscorp">
         <include pattern="/etc/designs/hdscorp/jcr:content"/>
         <include pattern="/etc/designs/hdscorp/jcr:content/clientlibs"/>
+		<include pattern="/etc/designs/hdscorp/clientLibs"/>
         <include pattern="/etc/designs/hdscorp/jcr:content/clientlibs/.*"/>
     </filter>
 
