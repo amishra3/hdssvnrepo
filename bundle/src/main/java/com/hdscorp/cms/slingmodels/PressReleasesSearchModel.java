@@ -43,8 +43,15 @@ public class PressReleasesSearchModel {
 	@Named("searchType")
 	@Default(values = { "PressRelease" })
 	private String searchType;
+	@Inject
+	@Named("noofItemsShown")
+	@Default(values = { "12" })
+	private String noofItemsShown;
 	
-	
+	public String getNoofItemsShown() {
+		return noofItemsShown;
+	}
+
 	public String getReadMoreText() {
 		return readMoreText;
 	}

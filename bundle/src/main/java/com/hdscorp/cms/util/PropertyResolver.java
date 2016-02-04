@@ -189,8 +189,13 @@ public final class PropertyResolver {
             Page child = children.next();
             String displayDescendants = child.getProperties().get("displaydescendants", "yes");
             String navpath = child.getProperties().get("navpath", "");
+            Boolean hideInSitemap = false;
+            if(child.getProperties().containsKey("hideinsitemap")) {
+            	hideInSitemap =Boolean.valueOf(child.getProperties().get("hideinsitemap").toString());
+            }
+            
             long level = child.getDepth();
-            if(!child.isHideInNav() && level>2 && navpath=="")
+            if(!hideInSitemap && level>2 && navpath=="")
             {
             	try{
             	 pageTemplate=(String)child.getProperties().get("cq:template");
