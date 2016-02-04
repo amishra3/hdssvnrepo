@@ -1085,6 +1085,14 @@ ul.stickyNav li:hover {
   background-color: #f78e1e;
 }
 
+.fb-section .fb-container .fb-category-container.no-border-container:after{
+    content: "";
+    display: block;
+    height: 0px;
+    width: 100%;
+    background-color: none;
+ }
+
 .fb-section .fb-container .fb-category-container .fb-category-box {
   text-align: center;
   max-width: 1107px;
