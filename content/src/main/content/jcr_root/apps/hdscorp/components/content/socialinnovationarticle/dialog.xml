@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <articletitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Article Headline"
+                        name="./articletitle"
+                        xtype="textfield"/>
+                    <articledescription
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Article Description"
+                        name="./articledescription"
+                        xtype="textarea"/>
+                    <articlebackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Background Image"
+                        name="./articlebackgroundimage"
+                        xtype="pathfield"/>
+                    <articleiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Icon Path"
+                        name="./articleiconpath"
+                        xtype="pathfield"/>
+                    <articlereadbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./articlereadbuttonlabel"
+                        xtype="textfield"/>
+                    <articlereadbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./articlereadbuttonurl"
+                        xtype="pathfield"/>
+                    <articlereadbuttonurlopeninnew
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open In New Window?"
+                        name="./articlereadbuttonurlopeninnew"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
