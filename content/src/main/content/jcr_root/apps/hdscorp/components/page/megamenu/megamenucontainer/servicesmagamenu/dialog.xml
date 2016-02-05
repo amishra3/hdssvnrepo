@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <mgmsernavtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Navegation Title"
+                        name="./mgmservnavtitle"
+                        xtype="textfield"/>
+                    <mgmservnavpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Navigation Path"
+                        name="./mgmservnavpath"
+                        xtype="pathfield"/>
+                    <mgmservtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title"
+                        name="./mgmservtitle"
+                        xtype="textfield"/>
+                    <mgmservtitleiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title Icon path"
+                        name="./mgmservtitleiconpath"
+                        xtype="pathfield"/>
+                    <subnav
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./servicesubnav"
+                        fieldLabel="&#xa;Sub Navigation Path"
+                        name="./servicesubnav"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <mgmservsubnavlabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Sub Navgation Label"
+                                name="./mgmservsubnavlabel"
+                                xtype="textfield"/>
+                            <mgmservsubnavlink
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Sub Navigation Path"
+                                name="./mgmservsubnavlink"
+                                xtype="pathfield"/>
+                            <mgmservalttext
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link  Alt Text"
+                                name="./mgmservalttext"
+                                xtype="textfield"/>
+                            <mgmservopeninnewwindow
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window"
+                                key="mgmpsopeninnewwindow"
+                                name="./mgmservopeninnewwindow"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </mgmservopeninnewwindow>
+                        </fieldConfig>
+                    </subnav>
+                    <mgmservbackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BackGround Image Path"
+                        name="./mgmservbackgroundimagepath"
+                        xtype="pathfield"/>
+                    <mgmservmultidecscription
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./subnav"
+                        fieldLabel="Description"
+                        name="./subnav"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <mgmservheadline
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="HeadLine"
+                                name="./mgmservheadline"
+                                xtype="textarea"/>
+                            <mgmservdescription
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Description"
+                                name="./mgmservdescription"
+                                xtype="richtext"/>
+                            <mgmservviewfeaturedproductslabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="View Featured Products Label"
+                                name="./mgmservviewfeaturedproductslabel"
+                                xtype="textfield"/>
+                            <mgmservviewfeaturedproductslink
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="View Featured Products Path"
+                                name="./mgmservviewfeaturedproductslink"
+                                xtype="pathfield"/>
+                            <mgmservopeninnewwindows
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window"
+                                key="mgmpsopeninnewwindows"
+                                name="./mgmservopeninnewwindows"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </mgmservopeninnewwindows>
+                            <mgmservphonenumber
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Phone Number"
+                                name="./mgmservphonenumber"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </mgmservmultidecscription>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
