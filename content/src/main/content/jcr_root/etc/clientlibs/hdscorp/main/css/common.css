@@ -233,14 +233,14 @@
     outline: none;
 }
 
-.header .breadcrumb-container {
+.hds-global-header .breadcrumb-container {
     position: absolute;
     top: 110px;
     width: 100%;
-    z-index: 10;
+    z-index: 6;
 }
 
-.header .breadcrumb-container .breadcrumb {
+.hds-global-header .breadcrumb-container .breadcrumb {
     max-width: 1280px;
     margin: 0 auto;
     background: transparent;
@@ -252,20 +252,22 @@
     letter-spacing: 2px;
 }
 
-.header .breadcrumb-container .breadcrumb a {
+.hds-global-header .breadcrumb-container .breadcrumb a {
     margin: 0 10px;
     color: #ffffff;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.header .breadcrumb-container .breadcrumb a:first-child {
+.hds-global-header .breadcrumb-container .breadcrumb a:first-child {
     margin-left: 0;
 }
 
-.header .breadcrumb-container .breadcrumb.black, .header .breadcrumb-container .breadcrumb.black a{
+.hds-global-header .breadcrumb-container .breadcrumb.black, .header .breadcrumb-container .breadcrumb.black a{
     color: #414141;
 }
+
+
 
 @media only screen and (max-width: 1199px) {
     .header .sub-navigation-container .sub-navigation > ul > li a {
@@ -290,7 +292,7 @@
 }
 
 @media only screen and (max-width: 992px) {
-    .header .breadcrumb-container {
+    .hds-global-header .breadcrumb-container {
         top: 160px;
         text-align: left;
     }
@@ -337,7 +339,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .header .breadcrumb-container {
+    .hds-global-header .breadcrumb-container {
         top: 200px;
     }
     .header .sub-navigation-container .sub-navigation > ul > li {
@@ -372,14 +374,14 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .header .breadcrumb-container .breadcrumb a {
+    .hds-global-header .breadcrumb-container .breadcrumb a {
         font-size: 0.75em;
         line-height: 1;
         margin: 0;
     }
 }
 
-.homepage .header .breadcrumb-container {
+.homepage .hds-global-header .breadcrumb-container {
     display: none;
 }
 

@@ -452,7 +452,6 @@ HDS Global Header and Navigation
     left: 0;
     z-index: 999;
     display: none;
-    min-height: 400px;
 }
 
 .hds-global-header .hds-megaMenuWrapper .row {
@@ -623,7 +622,7 @@ HDS Global Header and Navigation
 
 .hds-mobile-navigation ul > li {
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
     position: relative;
 }
 
@@ -638,6 +637,7 @@ HDS Global Header and Navigation
     font-weight: 900;
     color: #000;
     position: relative;
+    margin:0 10px;
 }
 
 .hds-mobile-navigation ul > li.quick-nav > a,
@@ -714,7 +714,7 @@ HDS Global Header and Navigation
 
 .hds-mobile-navigation ul > li ul > li > a {
     border: none;
-    padding: 10px 0;
+    padding: 10px 0 10px 10px;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     display: block;
     text-decoration: none;
@@ -764,7 +764,7 @@ HDS Global Header and Navigation
         font-weight: 300;
         text-transform: none;
         color: #d42727;
-        margin-left: -15px;
+        margin-left: -5px;
 
     }
     .spotlightNavigation p a .glyphicon {
@@ -777,7 +777,7 @@ HDS Global Header and Navigation
     }
 
     .spotlightNavigation .phone-no{
-        margin-left: -15px;
+        margin-left: -5px;
         font-size: 1rem;
         margin-bottom: 6px;
         font-weight: 300;
