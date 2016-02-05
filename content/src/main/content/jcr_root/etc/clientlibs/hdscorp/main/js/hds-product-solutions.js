@@ -11,7 +11,13 @@ var hds = window.hds || {};
             hds.loadDataFilters.manageTopTabs();
             hds.loadDataFilters.manageAlphaSorting();
             hds.loadDataFilters.searchFilters();
+            hds.loadDataFilters.updateTitleOnLoad();
         },
+        
+       updateTitleOnLoad: function(url) {
+        	$('.category-heading > h2').html(" ").html($('.product-listing > ul > li.active').find('a').text());
+        },
+        
         loadCatagoryContent: function(url) {
             var getURL = "";
             if (typeof url === 'undefined') {
