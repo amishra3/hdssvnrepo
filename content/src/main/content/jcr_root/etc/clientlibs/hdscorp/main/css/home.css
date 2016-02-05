@@ -333,6 +333,9 @@
     .calculating-success .calculating-success-container .explore.bottom {
         display: none !important;
     }
+	.calculating-success .calculating-success-container > h2{
+		font-size:1.875rem;
+	}
 }
 
 .millennials {
