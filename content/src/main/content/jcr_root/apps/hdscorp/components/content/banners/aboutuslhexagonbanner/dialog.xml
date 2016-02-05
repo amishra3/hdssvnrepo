@@ -17,6 +17,28 @@
                         fieldLabel="Banner Title"
                         name="./aboutushextitlecontent"
                         xtype="textfield"/>
+                    <aboutushexsubtitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Sub-Title"
+                        name="./aboutushexsubtitlecontent"
+                        xtype="textarea"/>                        
+			        <bannertype
+			            jcr:primaryType="cq:Widget"
+			            fieldLabel="Select the banner type/"
+			            name="./bannertype"
+			            type="select"
+			            xtype="selection">
+			            <options jcr:primaryType="cq:WidgetCollection">
+			                <advance-tech-hexagon
+			                    jcr:primaryType="nt:unstructured"
+			                    text="Advance Tech Hexagon"
+			                    value="advance-tech-hexagon"/>
+			                <yes
+			                    jcr:primaryType="nt:unstructured"
+			                    text="About US behind Scene Hexagon"
+			                    value="behind-scene-hexagon"/>
+			            </options>
+			        </bannertype>                        
                     <aboutusheximagePath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"

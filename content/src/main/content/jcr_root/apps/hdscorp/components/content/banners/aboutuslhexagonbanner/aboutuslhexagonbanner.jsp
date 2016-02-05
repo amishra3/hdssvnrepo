@@ -9,14 +9,20 @@
 <c:choose>
 	<c:when test="${not empty properties.aboutushextitlecontent}">
 
-		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl")%>" />
-
-		<div class="behind-scene-hexagon clearfix">
+		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl")%>" />	
+		<c:set var="bannertypeclass" value="behind-scene-hexagon"/>
+		<c:if test="${not empty properties.bannertype}">
+			<c:set var="bannertypeclass" value="${properties.bannertype}"/>
+		</c:if>
+		<div class="${bannertypeclass} clearfix" style="background-image: url('${properties.aboutusheximagePath}');">
 			<div class="content-container">
             	<h2>${properties.aboutushextitlecontent}</h2>
             </div>
+            <c:if test="${not empty properties.aboutushexsubtitlecontent}">
+            	<p class="col-sm-10 col-sm-offset-1">${properties.aboutushexsubtitlecontent}</p>
+            </c:if>
             
-            <div class="behind-scene-hexagon-list">
+            <div class="${bannertypeclass}-list">
             	<div class="content-container">
                 	<div class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
 
