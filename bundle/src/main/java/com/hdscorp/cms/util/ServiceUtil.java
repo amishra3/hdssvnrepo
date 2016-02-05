@@ -209,10 +209,11 @@ public class ServiceUtil {
 			String storagePath, String savedProperty) {
 		log.info("Start execution of getBrightTalkMapFromJSON()");
 		List<Map<String, String>> listMap = new ArrayList<>();
-		Map<String, String> map = new HashMap<String, String>();
+		
 		try {
 			String jsonArrayObject = PageUtils.getPropertyValue(resourceResolver, storagePath, savedProperty);					
 			if(jsonArrayObject.contains(ServiceConstants.JSON_STATUS_CODE)){
+				Map<String, String> map = new HashMap<String, String>();
 				JSONObject jsonObject=new JSONObject(jsonArrayObject);
 				 map.put(ServiceConstants.JSON_STATUS_CODE, jsonObject.getString(ServiceConstants.JSON_STATUS_CODE));
 				 map.put(ServiceConstants.JSON_STATUS_REASON, jsonObject.getString(ServiceConstants.JSON_STATUS_REASON));			
@@ -221,6 +222,7 @@ public class ServiceUtil {
 			}
 			JSONArray jsonArray = new JSONArray(jsonArrayObject);		
 			for (int i = 0; i < jsonArray.length(); i++) {
+				Map<String, String> map = new HashMap<String, String>();
 				JSONObject item = jsonArray.getJSONObject(i);
 				map.put(ServiceConstants.JSON_TITLE, item.getString(ServiceConstants.JSON_TITLE));
 				map.put(ServiceConstants.JSON_UPDATED_DATE, item.getString(ServiceConstants.JSON_UPDATED_DATE));
