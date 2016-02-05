@@ -19,14 +19,16 @@
 	<c:when test="${not empty properties.newsandinsightsbannertitle}">
 		<div class="common-hero-banner news-banner clearfix" style="background-image:url('${properties.newsandinsightsbannerimagePath}');">
                 <div class="common-hero-banner-container">
-                    <div class="col-lg-12 col-md-12 col-xs-12 news-content-box" >
+                    <div class="col-lg-8 col-md-12 col-xs-12 col-no-pad news-content-box" >
         				    <h2 class="top-banner-heading">${properties.newsandinsightsbannertitle}</h2>
                             <h1 class="headline">${properties.newsandinsightsbannersubtitle}</h1>
-                            <h4 class="sub-headline">${properties.newsandinsightsbannercontent}</h4>        					
-                            <div class="btn-square-white request">
-                             <a href="${linkUrl}" target="${properties.newsandinsightsbannerurltargettype?'_blank':'_self'}">
-                                ${properties.newsandinsightsbannerbuttonlabel}</a>
-                            </div>
+                            <h4 class="sub-headline">${properties.newsandinsightsbannercontent}</h4>
+                            <c:if test="${not empty properties.newsandinsightsbannerbuttonlabel}">        					
+	                            <div class="btn-square-white request">
+	                             <a href="${linkUrl}" target="${properties.newsandinsightsbannerurltargettype?'_blank':'_self'}">
+	                                ${properties.newsandinsightsbannerbuttonlabel}</a>
+	                            </div>
+                            </c:if>
                     </div>
                 </div>
         </div>

@@ -67,7 +67,7 @@
                                 fieldLabel="View Bio Target URL"
                                 key="leaderviewbiotargeturl"
                                 name="./leaderviewbiotargeturl"
-                                xtype="textfield"/>
+                                xtype="ddpathfield"/>
                             <openinnewwindow
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Open in New Window ?"
