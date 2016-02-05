@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Leaders Info Panel">
+                <items
+                    jcr:primaryType="cq:WidgetCollection"
+                    xtype="multifieldpanel">
+                    <socialinovationsectiontitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Section Title"
+                        name="./socialinovationworktodaytitle"
+                        xtype="textfield"/>
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./multilinks"
+                        fieldLabel="Work Today Tiles"
+                        name="./leadersinfo"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <socialinovationtilestitle
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Title"
+                                name="./socialinovationtilestitle"
+                                xtype="textfield"/>
+                            <socialinovationtilesdescription
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Content"
+                                name="./socialinovationtilesdescription"
+                                xtype="textarea"/>
+                            <tilesimagepath
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Image Path"
+                                name="./tilesimagepath"
+                                xtype="pathfield"/>
+                            <seemorelabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="See More Label"
+                                name="./seemorelabel"
+                                xtype="textfield"/>
+                            <seemoreurl
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Target URL"
+                                name="./seemoreurl"
+                                xtype="textfield"/>
+                            <seemoreurlopeninnew
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window ?"
+                                name="./seemoreurlopeninnew"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </seemoreurlopeninnew>
+                        </fieldConfig>
+                    </multilinks>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
