@@ -384,6 +384,10 @@
   font-weight: 600;
 }
 
+.we-mean-business .si-comm-box .title span:after {
+  content: " ";
+}
+
 .we-mean-business .si-comm-box .description{
    display: table-cell;
    padding-left: 20px;
