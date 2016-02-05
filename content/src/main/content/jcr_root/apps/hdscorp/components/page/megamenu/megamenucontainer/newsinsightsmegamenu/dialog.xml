@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <mgmnewsinsightsnavtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Navegation Title"
+                        name="./mgmnewsinsightsnavtitle"
+                        xtype="textfield"/>
+                    <mgmnewsinsightsnavpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Navigation Path"
+                        name="./mgmnewsinsightsnavpath"
+                        xtype="pathfield"/>
+                    <mgmnewsinsightstitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title"
+                        name="./mgmnewsinsightstitle"
+                        xtype="textfield"/>
+                    <mgmnewsinsightstitleiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title Icon Path"
+                        name="./mgmnewsinsightstitleiconpath"
+                        xtype="pathfield"/>
+                    <mgmnewsinsightsbackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Background Image Path"
+                        name="./mgmnewsinsightsbackgroundimagepath"
+                        xtype="pathfield"/>
+                    <subnav
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./subnav"
+                        fieldLabel="&#xa;Sub Navigation Path"
+                        name="./subnav"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <mgmnewsinsightssubnavlabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Sub Navgation Label"
+                                name="./mgmnewsinsightssubnavlabel"
+                                xtype="textfield"/>
+                            <mgmnewsinsightssubnavlink
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Sub Navigation Path"
+                                name="./mgmnewsinsightssubnavlink"
+                                xtype="pathfield"/>
+                            <mgmnewsinsightsalttext
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link  Alt Text"
+                                name="./mgmnewsinsightsalttext"
+                                xtype="textfield"/>
+                            <mgmnewsinsightsopeninnewwindow
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window?"
+                                key="mgmnewsinsightsopeninnewwindow"
+                                name="./mgmnewsinsightsopeninnewwindow"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </mgmnewsinsightsopeninnewwindow>
+                        </fieldConfig>
+                    </subnav>
+                    <mgmnewsmultidiscription
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./mgmnewsmultidiscription"
+                        fieldLabel="&#xa;Description"
+                        name="./mgmnewsmultidiscription"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <mgmnewsinsightsheadline
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="HeadLine"
+                                name="./mgmnewsinsightsheadline"
+                                xtype="textarea"/>
+                            <mgmnewsinsightsdescription
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Description"
+                                name="./mgmnewsinsightsdescription"
+                                xtype="richtext"/>
+                            <mgmnewsinsightsviewfeaturedproductslabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="View Featured Products Label"
+                                name="./mgmnewsinsightsviewfeaturedproductslabel"
+                                xtype="textfield"/>
+                            <mgmnewsinsightsviewfeaturedproductslink
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="View Featured Products Path"
+                                name="./mgmnewsinsightsviewfeaturedproductslink"
+                                xtype="pathfield"/>
+                            <mgmnewsinsightsopeninnewwindow2
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window?"
+                                key="mgmnewsinsightsopeninnewwindow2"
+                                name="./mgmnewsinsightsopeninnewwindow2"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </mgmnewsinsightsopeninnewwindow2>
+                        </fieldConfig>
+                    </mgmnewsmultidiscription>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
