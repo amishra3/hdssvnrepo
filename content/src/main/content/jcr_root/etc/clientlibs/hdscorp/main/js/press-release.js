@@ -47,6 +47,7 @@ var hds = window.hds || {};
             });
         },
         bindClick: function() {
+        	var searchTermPreValue="";
             $('.linkLeft a').on('click', function(event) {
                 event.preventDefault();
                 $('#fulltext').val('');
@@ -79,30 +80,19 @@ var hds = window.hds || {};
 
             $('.pr-search .glyphicon-search').on('click', function(event) {
             	var searchTerm = $.trim($('#fulltext').val());
-            	//if(searchTerm!=""){
-	            	var activeFilterURL = $('#asideLinks li.active a').attr('data-loadhtml');
-	            	var loadIndec = $('#asideLinks li.active a').parent().index();
-	            	var fulltextSearchURL = activeFilterURL+"?fulltext="+searchTerm ;
-	            	hds.pressrelease.processHTML(fulltextSearchURL, loadIndec);
-            	//}
-            });
-            
-            $('#fulltext').keypress(function(e){
-            	searchTerm = $.trim($('#fulltext').val());
-                //if(e.which == 13){//Enter key pressed
-                	$('.pr-search .glyphicon-search').click();//Trigger search button click event
-                //}
-            });
-            
-            $('#fulltext').keyup(function(e){
-            	searchTerm = $.trim($('#fulltext').val());
-            	if(searchTerm!=""){
-	            	if(e.keyCode == 8){
-	            		$('.pr-search .glyphicon-search').click();//Trigger search button click event
-	            	}
+            	if(searchTerm!=searchTermPreValue){
+                	var activeFilterURL = $('#asideLinks li.active a').attr('data-loadhtml');
+                	var loadIndec = $('#asideLinks li.active a').parent().index();
+                	var fulltextSearchURL = activeFilterURL+"?fulltext="+searchTerm ;
+                	hds.pressrelease.processHTML(fulltextSearchURL, loadIndec);            		
             	}
+            	searchTermPreValue = searchTerm;
             });
             
+            
+            $('#fulltext').on("change keyup", function(){
+            	$('.pr-search .glyphicon-search').click();//Trigger search button click event
+            })
         }
         
     }
