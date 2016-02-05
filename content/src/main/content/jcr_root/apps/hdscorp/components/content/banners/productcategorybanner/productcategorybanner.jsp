@@ -19,7 +19,7 @@
 
 		<div class="hero-product-category server-rack clearfix" style="background-image: url('${properties.simplebannermagePath}');">
 	              <div class="hero-product-solutions-container">
-                      <div class="col-lg-7 col-md-7 col-xs-12 overRideleft">
+                      <div class="col-lg-7 col-md-7 col-xs-12 col-no-pad">
 	                  <div class="product-category-heading">
 	                  	  <c:if test="${not empty properties.categoryiconpath}">
 	                      		<span class="icon ${contentalignclass}"><img src="${properties.categoryiconpath}"></span>
