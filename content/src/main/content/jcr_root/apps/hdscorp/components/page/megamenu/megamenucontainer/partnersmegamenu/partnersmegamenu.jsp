@@ -29,7 +29,7 @@
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">

@@ -30,7 +30,7 @@
 <!-- 		class="icon-accordion-opened"></span> -->
 <!-- </a> -->
 	<div class="hds-megaMenuWrapper"
-		style="background-image:url(${properties.mgmahbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;">
+		style="background-image:url(${properties.mgmahbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
 		<div class="hds-megaMenu">
 			<div class="content-container">
 				<div class="row">

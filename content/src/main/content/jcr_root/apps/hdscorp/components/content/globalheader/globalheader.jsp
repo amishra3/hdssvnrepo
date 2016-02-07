@@ -103,7 +103,9 @@
 						    	<span class="icon-accordion-opened"></span>
 							</a>
 							<c:if test="${not empty pageprops.navpath}">
+								<%WCMMode prevMode = WCMMode.DISABLED.toRequest(request);%>
 								<sling:include path="${pageprops.navpath}" />
+								<%prevMode.toRequest(request);%>
 						    </c:if>
 						</li>
 					</c:if>

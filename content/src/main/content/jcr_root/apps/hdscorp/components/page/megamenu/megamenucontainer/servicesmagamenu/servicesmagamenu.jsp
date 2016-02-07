@@ -5,12 +5,9 @@
   This is services Megamenu component
 
 --%>
-<%
-%><%@include file="/apps/foundation/global.jsp"%>
-<%
-%><%@page session="false"%>
-<%
-%>
+<%@include file="/apps/foundation/global.jsp"%>
+<%@page session="false"%>
+
 <%@page import="com.hdscorp.cms.dao.JCRDataAccessor"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PropertyResolver"%>
@@ -23,22 +20,19 @@
 
 
 
-<c:set var="subnavlinks"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservsubnavlabel-mgmservsubnavlink-mgmservalttext-mgmservopeninnewwindow")%>" />
+<c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservsubnavlabel-mgmservsubnavlink-mgmservalttext-mgmservopeninnewwindow")%>" />
 
 <c:set var="rightsection"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservheadline-mgmservdescription-mgmservviewfeaturedproductslabel-mgmservviewfeaturedproductslink-mgmservopeninnewwindows-mgmservphonenumber")%>" />
-<li><a href="${properties.mgmservnavpath}"
-	title="${properties.mgmpsnavtitle}">${properties.mgmservnavtitle} <span
-		class="icon-accordion-closed"></span> <span
-		class="icon-accordion-opened"></span>
-</a>
-
-
+<%-- <li><a href="${properties.mgmservnavpath}" --%>
+<%-- 	title="${properties.mgmpsnavtitle}">${properties.mgmservnavtitle} <span --%>
+<!-- 		class="icon-accordion-closed"></span> <span -->
+<!-- 		class="icon-accordion-opened"></span> -->
+<!-- </a> -->
 
 
 	<div class="hds-megaMenuWrapper"
-		style="background-image:url(${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;">
+		style="background-image:url(${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
 		<div class="hds-megaMenu">
 			<div class="content-container">
 				<div class="row">
@@ -150,4 +144,5 @@
 				</div>
 			</div>
 		</div>
-	</div></li>
+	</div>
+<!-- </li> -->
