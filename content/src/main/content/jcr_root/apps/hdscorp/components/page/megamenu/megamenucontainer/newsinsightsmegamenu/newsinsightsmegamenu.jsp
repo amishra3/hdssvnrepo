@@ -12,22 +12,22 @@
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
-<%
-// 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
-%>
-
 
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmnewsinsightssubnavlabel-mgmnewsinsightssubnavlink-mgmnewsinsightsopeninnewwindow-mgmnewsinsightsalttext")%>" />
-
 <c:set var="subnavlinks2" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmnewsinsightsheadline-mgmnewsinsightsdescription-mgmnewsinsightsviewfeaturedproductslabel-mgmnewsinsightsviewfeaturedproductslink-mgmnewsinsightsopeninnewwindow2")%>" />
-
 <c:set var="navpath" scope="request" value="${properties.mgmnewsinsightsnavpath}"/>
+
+<c:set var="mgmnewsinsightsnavpath" value="${properties.mgmnewsinsightsnavpath}" />
+<c:if test="${fn:startsWith(mgmnewsinsightsnavpath,'/content/')}">
+	<c:set var="mgmnewsinsightsnavpath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmnewsinsightsnavpath").toString())%>"/>
+</c:if>
+
 
 <%-- <li><a href="${properties.mgmnewsinsightsnavpath}.html" title="${properties.mgmnewsinsightsnavtitle}">${properties.mgmnewsinsightsnavtitle} --%>
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmnewsinsightsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmnewsinsightsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmnewsinsightsnavtitle}" data-parent-path="${mgmnewsinsightsnavpath}">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">

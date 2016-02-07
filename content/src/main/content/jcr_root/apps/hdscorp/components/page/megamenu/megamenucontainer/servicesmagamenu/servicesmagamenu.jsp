@@ -21,9 +21,12 @@
 
 
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservsubnavlabel-mgmservsubnavlink-mgmservalttext-mgmservopeninnewwindow")%>" />
+<c:set var="rightsection" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservheadline-mgmservdescription-mgmservviewfeaturedproductslabel-mgmservviewfeaturedproductslink-mgmservopeninnewwindows-mgmservphonenumber")%>" />
+<c:set var="mgmservnavpath" value="${properties.mgmservnavpath}" />
+<c:if test="${fn:startsWith(mgmservnavpath,'/content/')}">
+	<c:set var="mgmservnavpath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmservnavpath").toString())%>"/>
+</c:if>
 
-<c:set var="rightsection"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservheadline-mgmservdescription-mgmservviewfeaturedproductslabel-mgmservviewfeaturedproductslink-mgmservopeninnewwindows-mgmservphonenumber")%>" />
 <%-- <li><a href="${properties.mgmservnavpath}" --%>
 <%-- 	title="${properties.mgmpsnavtitle}">${properties.mgmservnavtitle} <span --%>
 <!-- 		class="icon-accordion-closed"></span> <span -->
@@ -32,7 +35,7 @@
 
 
 	<div class="hds-megaMenuWrapper"
-		style="background-image:url(${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
+		style="background-image:url(${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmservnavtitle}" data-parent-path="${mgmservnavpath}">
 		<div class="hds-megaMenu">
 			<div class="content-container">
 				<div class="row">

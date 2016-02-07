@@ -12,22 +12,21 @@
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
-<%
-// 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
-%>
 
 
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactussubnavlabel-mgmcontactussubnavlink-mgmcontactusopeninnewwindow-mgmcontactusalttext")%>" />
-
 <c:set var="subnavlinks2" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactusheadline-mgmcontactusdescription-mgmcontactusviewfeaturedproductslabel-mgmcontactusnumber-mgmcontactusviewfeaturedproductslink-mgmcontactusopeninnewwindow2")%>" />
-
 <c:set var="navpath" scope="request" value="${properties.mgmcontactusnavpath}"/>
+<c:set var="mgmcontactusnavpath" value="${properties.mgmcontactusnavpath}" />
+<c:if test="${fn:startsWith(mgmcontactusnavpath,'/content/')}">
+	<c:set var="mgmcontactusnavpath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmcontactusnavpath").toString())%>"/>
+</c:if>
 
 <%-- <li><a href="${properties.mgmcontactusnavpath}.html" title="${properties.mgmcontactusnavtitle}">${properties.mgmcontactusnavtitle} --%>
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmcontactusbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmcontactusbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmcontactusnavtitle}" data-parent-path="${mgmcontactusnavpath}">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">

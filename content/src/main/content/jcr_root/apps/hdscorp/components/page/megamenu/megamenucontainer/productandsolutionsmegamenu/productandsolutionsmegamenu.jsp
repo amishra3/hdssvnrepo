@@ -19,13 +19,18 @@
 
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmpssubnavlabel-mgmpssubnavlink-mgmpsopeninnewwindow-mgmpsalttext")%>" />
 <c:set var="navpath" scope="request" value="${properties.mgmpsnavpath}"/>
+<c:set var="mgmpsnavpath" value="${properties.mgmpsnavpath}" />
+<c:if test="${fn:startsWith(mgmpsnavpath,'/content/')}">
+	<c:set var="mgmpsnavpath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmpsnavpath").toString())%>"/>
+</c:if>
+
 
 <!-- <li> -->
 <%-- 	<a href="${properties.mgmpsnavpath}.html" title="${properties.mgmpsnavtitle}">${properties.mgmpsnavtitle} --%>
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmpsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmpsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmpsnavtitle}" data-parent-path="${mgmpsnavpath}">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">

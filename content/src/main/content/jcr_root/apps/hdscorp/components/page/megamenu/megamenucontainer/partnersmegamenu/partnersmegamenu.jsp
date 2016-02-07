@@ -23,13 +23,17 @@
 %>
 <c:set var="partnersubnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmptsubnavlabel-mgmptsubnavlink-mgmptopeninnewwindow-mgmptalttext")%>" />
 <c:set var="partnerrightsection" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmptmultidescription-mgmptmultisubnavlabel1-mgmptmultisubnavlink1-mgmptmultiopeninnewwindow")%>" />
+<c:set var="mgmptnavpath" value="${properties.mgmptnavpath}" />
+<c:if test="${fn:startsWith(mgmptnavpath,'/content/')}">
+	<c:set var="mgmptnavpath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmptnavpath").toString())%>"/>
+</c:if>
 
 
 <%-- <li><a href="${properties.mgmptnavpath}.html" title="${properties.mgmptnavtitle}">${properties.mgmptnavtitle} --%>
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${properties.mgmptnavpath}.html">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${mgmptnavpath}">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">
