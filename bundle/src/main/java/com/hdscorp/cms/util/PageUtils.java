@@ -16,7 +16,6 @@
 package com.hdscorp.cms.util;
 
 
-import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
@@ -51,22 +51,14 @@ import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.jcr.resource.JcrResourceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.sling.api.SlingHttpServletRequest;
 
 import com.day.cq.commons.LabeledResource;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.Rendition;
 import com.day.cq.wcm.api.Page;
-import com.hdscorp.cms.constants.GlobalConstants;
 import com.hdscorp.cms.constants.PageConstants;
 import com.hdscorp.cms.dao.JCRDataAccessor;
 import com.hdscorp.cms.exception.SystemException;
-import javax.jcr.PathNotFoundException;
-import javax.jcr.RepositoryException;
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-
-import org.apache.commons.codec.binary.Base64;
 
 
 /**

@@ -13,7 +13,7 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
 <%
-	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
+// 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 %>
 
 
@@ -23,10 +23,10 @@
 
 <c:set var="navpath" scope="request" value="${properties.mgmcontactusnavpath}"/>
 
-<li><a href="${properties.mgmcontactusnavpath}.html" title="${properties.mgmcontactusnavtitle}">${properties.mgmcontactusnavtitle}
-    	<span class="icon-accordion-closed"></span>
-    	<span class="icon-accordion-opened"></span>
-    </a>
+<%-- <li><a href="${properties.mgmcontactusnavpath}.html" title="${properties.mgmcontactusnavtitle}">${properties.mgmcontactusnavtitle} --%>
+<!--     	<span class="icon-accordion-closed"></span> -->
+<!--     	<span class="icon-accordion-opened"></span> -->
+<!--     </a> -->
     <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmcontactusbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;">
 		<div class="hds-megaMenu">
         	<div class="content-container">
@@ -94,4 +94,4 @@
             </div>
         </div>
     </div>
-</li>
+<!-- </li> -->

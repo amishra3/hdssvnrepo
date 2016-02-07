@@ -44,7 +44,7 @@ public class NewsModel {
 	private String viewAllNewsLink;
 	@Inject
 	@Named(value = "newsLookuppath")
-	@Default(values = { "" })
+	@Default(values = { "/content/hdscorp/en_us/newsandinsights/news/news" })
 	private String newsLookupPath;
 
 	@Inject

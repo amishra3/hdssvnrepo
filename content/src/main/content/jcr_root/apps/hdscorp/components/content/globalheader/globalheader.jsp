@@ -1,6 +1,4 @@
-<%--
-  globalheader component.
---%>
+<%--globalheader component--%>
 
 <%@page import="com.hdscorp.cms.dao.JCRDataAccessor"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
@@ -15,18 +13,12 @@
 
 <%@include file="/apps/foundation/global.jsp"%>
 
-<c:set var="childPages"
-	value="<%=PageUtils.getChildPages(properties.get("rootPath", ""),resourceResolver)%>" />
-<c:set var="childs"
-	value="<%=PageUtils.getChildPages(properties.get("rootPath", ""),resourceResolver)%>" />
+<c:set var="childPages" value="<%=PageUtils.getChildPages(properties.get("rootPath", ""),resourceResolver)%>" />
 
 <c:set var="logoTargetURL" value="${properties.	imageurl}" />
 <c:if test="${fn:startsWith(logoTargetURL,'/content/')}">
-	<c:set var="logoTargetURL"
-		value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("logoTargetURL").toString())%>" />
+	<c:set var="logoTargetURL" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("logoTargetURL").toString())%>" />
 </c:if>
-
-
 
 <%
 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
@@ -57,12 +49,9 @@
 					<c:set var="linkTitle" value="${externalLink.linkTitle}" />
 					<c:set var="linktargeturl" value="${externalLink.linktargeturl}" />
 					<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
-					<c:set var="linkurltargettype"
-						value="${externalLink.linkurltargettype}" />
+					<c:set var="linkurltargettype" value="${externalLink.linkurltargettype}" />
 					<li><a href="${linktargeturl}" x-cq-linkchecker="skip"
-						target="${linkurltargettype?'_blank':'_self'}"> <span
-							class="icon nav-globe"
-							style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
+						target="${linkurltargettype?'_blank':'_self'}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
 							${linkTitle}
 					</a></li>
 
@@ -100,26 +89,30 @@
 				<c:forEach var="childPage" items="${childPages}" varStatus="count">
 					<c:if test="${childPage.hideInNav != true}">
 						<c:set var="pagepath" value="${childPage.path}/jcr:content" />
-						<c:set var="pageprops"
-							value="<%=dataAccessor.getResource(pageContext.getAttribute("pagepath").toString())%>" />
+						<c:set var="pageprops" value="<%=dataAccessor.getResource(pageContext.getAttribute("pagepath").toString())%>" />
 						<c:set var="subtext" value="${pageprops.subtext}" />
 						<c:set var="navpath" value="${pageprops.navpath}" />
-
-
-						<c:if test="${not empty pageprops.navpath}">
-                      <sling:include path="${pageprops.navpath}" />
-                        </c:if>
-
+						<c:set var="navTitle" value="${childPage.title}" />
+						<c:if test="${not empty childPage.navigationTitle}">
+							<c:set var="navTitle" value="${childPage.navigationTitle}" />
+						</c:if>
+						
+						<li>
+						    <a href="${childPage.path}.html" title="${navTitle}">${navTitle}
+						    	<span class="icon-accordion-closed"></span>
+						    	<span class="icon-accordion-opened"></span>
+							</a>
+							<c:if test="${not empty pageprops.navpath}">
+								<sling:include path="${pageprops.navpath}" />
+						    </c:if>
+						</li>
 					</c:if>
 				</c:forEach>
-
-
 			</ul>
 		</div>
 	</div>
 
-	<cq:include path="${currentDesign.path}/jcr:content/breadcrumbpar"
-		resourceType="hdscorp/components/content/breadcrumb" />
+	<cq:include path="${currentDesign.path}/jcr:content/breadcrumbpar" resourceType="hdscorp/components/content/breadcrumb" />
 
 </div>
 

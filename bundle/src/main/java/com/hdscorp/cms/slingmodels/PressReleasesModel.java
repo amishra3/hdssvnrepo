@@ -34,7 +34,7 @@ public class PressReleasesModel {
 	private String pressReleasesLabel;
 	@Inject
 	@Named("pressReleasesPath")
-	@Default(values = { "/content/hdscorp/en_us/lookup/pressreleases" })
+	@Default(values = { "/content/hdscorp/en_us/newsandinsights/press-releases/pressreleases" })
 	private String newsPath;
 	@Inject
 	@Named(value = "readmorelabel")

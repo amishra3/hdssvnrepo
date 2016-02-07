@@ -16,19 +16,15 @@
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
-<%
-	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 
-
-%>
-<c:set var="childPages" value="<%=PageUtils.getChildPages(properties.get("mgmpsnavpath",String.class),resourceResolver)%>" />
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmpssubnavlabel-mgmpssubnavlink-mgmpsopeninnewwindow-mgmpsalttext")%>" />
 <c:set var="navpath" scope="request" value="${properties.mgmpsnavpath}"/>
 
-<li><a href="${properties.mgmpsnavpath}.html" title="${properties.mgmpsnavtitle}">${properties.mgmpsnavtitle}
-    	<span class="icon-accordion-closed"></span>
-    	<span class="icon-accordion-opened"></span>
-    </a>
+<!-- <li> -->
+<%-- 	<a href="${properties.mgmpsnavpath}.html" title="${properties.mgmpsnavtitle}">${properties.mgmpsnavtitle} --%>
+<!--     	<span class="icon-accordion-closed"></span> -->
+<!--     	<span class="icon-accordion-opened"></span> -->
+<!--     </a> -->
     <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmpsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;">
 		<div class="hds-megaMenu">
         	<div class="content-container">
@@ -72,23 +68,21 @@
  								<c:choose>
                                     <c:when test="${properties.mgmpsviewfeaturedproductslink=='#'}">                                        
                                         <p><a href="javascript:void(0)" class="animateLink" title="${properties.mgmpsviewfeaturedproductslabel}">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
-                                         </c:when>
+                                    </c:when>
 									<c:when test="${properties.mgmpsopeninnewwindowouter}">
-
-                                   <p><a target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}" href="${properties.mgmpsviewfeaturedproductslink}.html" title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></p>
+                                  		<p><a target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}" href="${properties.mgmpsviewfeaturedproductslink}.html" title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></p>
                                     </c:when>
 									<c:otherwise>                                       
-                             <p><a target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}" href="${properties.mgmpsviewfeaturedproductslink}.html" title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
-                                        </c:otherwise>
-
+                             			<p><a target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}" href="${properties.mgmpsviewfeaturedproductslink}.html" title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
+                                    </c:otherwise>
 								</c:choose>
-     </div>
+     					</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</li>
+<!-- </li> -->
 
 
 

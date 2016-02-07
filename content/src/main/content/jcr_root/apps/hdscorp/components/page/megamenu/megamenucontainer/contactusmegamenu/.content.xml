@@ -3,4 +3,4 @@
     jcr:description="This is Contact Us MegaMenu"
     jcr:primaryType="cq:Component"
     jcr:title="Contact Us Mega Menu"
-    componentGroup="HDS Corp Components"/>
+    componentGroup="HDS Corp MegaMenu Components"/>

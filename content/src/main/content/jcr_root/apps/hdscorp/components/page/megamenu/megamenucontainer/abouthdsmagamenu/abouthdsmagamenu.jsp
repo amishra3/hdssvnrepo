@@ -21,16 +21,14 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
 
-<c:set var="subnavlinks"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmahsubnavlabel-mgmahsubnavlink-mgmahalttext-mgmahopeninnewwindow")%>" />
+<c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmahsubnavlabel-mgmahsubnavlink-mgmahalttext-mgmahopeninnewwindow")%>" />
 
-<c:set var="aboutrightsection"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmahheadline-mgmahdescription-mgmahviewfeaturedproductslabel-mgmahviewfeaturedproductslink-mgmahopeninnewwindows")%>" />
-<li><a href="${properties.mgmahnavpath}.html"
-	title="${properties.mgmpsnavtitle}">${properties.mgmahnavtitle} <span
-		class="icon-accordion-closed"></span> <span
-		class="icon-accordion-opened"></span>
-</a>
+<c:set var="aboutrightsection" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmahheadline-mgmahdescription-mgmahviewfeaturedproductslabel-mgmahviewfeaturedproductslink-mgmahopeninnewwindows")%>" />
+<%-- <li><a href="${properties.mgmahnavpath}.html" --%>
+<%-- 	title="${properties.mgmpsnavtitle}">${properties.mgmahnavtitle} <span --%>
+<!-- 		class="icon-accordion-closed"></span> <span -->
+<!-- 		class="icon-accordion-opened"></span> -->
+<!-- </a> -->
 	<div class="hds-megaMenuWrapper"
 		style="background-image:url(${properties.mgmahbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;">
 		<div class="hds-megaMenu">
@@ -134,5 +132,6 @@
 				</div>
 			</div>
 		</div>
-	</div></li>
+	</div>
+<!-- </li> -->
 

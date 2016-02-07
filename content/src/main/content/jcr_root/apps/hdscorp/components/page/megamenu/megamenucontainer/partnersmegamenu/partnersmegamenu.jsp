@@ -17,7 +17,7 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
 <%
-	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
+// 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 
 
 %>
@@ -25,10 +25,10 @@
 <c:set var="partnerrightsection" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmptmultidescription-mgmptmultisubnavlabel1-mgmptmultisubnavlink1-mgmptmultiopeninnewwindow")%>" />
 
 
-<li><a href="${properties.mgmptnavpath}.html" title="${properties.mgmptnavtitle}">${properties.mgmptnavtitle}
-    	<span class="icon-accordion-closed"></span>
-    	<span class="icon-accordion-opened"></span>
-    </a>
+<%-- <li><a href="${properties.mgmptnavpath}.html" title="${properties.mgmptnavtitle}">${properties.mgmptnavtitle} --%>
+<!--     	<span class="icon-accordion-closed"></span> -->
+<!--     	<span class="icon-accordion-opened"></span> -->
+<!--     </a> -->
     <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;">
 		<div class="hds-megaMenu">
         	<div class="content-container">
@@ -91,7 +91,7 @@
             </div>
         </div>
     </div>
-</li>
+<!-- </li> -->
 
 
 
