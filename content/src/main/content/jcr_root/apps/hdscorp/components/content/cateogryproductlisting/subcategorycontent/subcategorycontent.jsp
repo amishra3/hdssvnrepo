@@ -72,7 +72,7 @@
 		    <h3>${product.productTitle}</h3>
 		    ${product.productDescription}
 <%/* %>		    
-		    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="loopcnt">
+		    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="descloopcnt">
 		    	${fn:join(descriptionObj.categoryTag, ',')}
 		    	${descriptionObj.description}
 		    </c:forEach>
