@@ -58,9 +58,13 @@
 							<c:forEach var="subnavlinks" items="${subnavlinks}"
 								varStatus="count">
 								<c:choose>
+
+								<c:when test="${empty subnavlinks.mgmahsubnavlabel}">
+
+                                     </c:when>
                                     <c:when test="${subnavlinks.mgmahsubnavlink=='#'}">                                        
                                         <li><a href="javascript:void(0)" class="animateLink" title="${subnavlinks.mgmahsubnavlabel}">${subnavlinks.mgmahsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-  </c:when>
+  									</c:when>
 									<c:when test="${subnavlinks.mgmahopeninnewwindow==1}">
 										<li><a
 											target="${subnavlinks.mgmahopeninnewwindow?'_blank':'_self'}"
