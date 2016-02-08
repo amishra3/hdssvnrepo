@@ -5,9 +5,13 @@ import java.io.StringReader;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Properties;
+import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
+import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -17,14 +21,26 @@ import com.hdscorp.cms.dao.PressReleaseNode;
 import com.hdscorp.cms.service.CreatePageService;
 import com.hdscorp.cms.util.JcrUtilService;
 
-@Component(immediate = true)
+@Component(immediate = true,metatype = true)
 @Service(value = PressReleasesService.class)
-public class PressReleasesService extends GenericRestfulServiceInvokers {
+@Properties({
+	@Property(name = "pressRelesesRootPath", description = "Press Releses Root Path", value = "/content/hdscorp/en_us/newsandinsights/press-releases"),
+	@Property(name = "newsRootPath", description = "News Root Path", value = "/content/hdscorp/en_us/newsandinsights/news") })
+    public class PressReleasesService extends GenericRestfulServiceInvokers {
 	static final Logger log = LoggerFactory
 			.getLogger(PressReleasesService.class);
 	@Reference
 	CreatePageService createPageService;
+	
+	private String pressReleasesRootPath;
 
+	private String newsRootPath;
+
+	@Activate
+	protected void activate(ComponentContext ctx) {
+		this.pressReleasesRootPath = ctx.getProperties().get("pressRelesesRootPath").toString();
+		this.newsRootPath = ctx.getProperties().get("newsRootPath").toString();
+	}
 	public String getPressReleasesResponse(String feedURL,String type) {
 
 		log.info("Start execution of getInvokeResponse()  with feed URL "
@@ -56,7 +72,7 @@ if(type.equalsIgnoreCase("pressRelease") ){
 
 				createPageService.createPage(JcrUtilService.getSession(),
 						"/apps/hdscorp/templates/pressreleasedetail",
-						"/content/hdscorp/en_us/lookup/pressreleases",
+						this.pressReleasesRootPath,
 						pressReleaseModel,type);
 			}
 } else {
@@ -64,7 +80,7 @@ if(type.equalsIgnoreCase("pressRelease") ){
 
 		createPageService.createPage(JcrUtilService.getSession(),
 				"/apps/hdscorp/templates/newsdetail",
-				"/content/hdscorp/en_us/lookup/news",
+				this.newsRootPath,
 				pressReleaseModel,type);
 	}
 }
