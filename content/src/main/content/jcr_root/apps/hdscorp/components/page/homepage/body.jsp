@@ -7,11 +7,17 @@ if(pageTemplatePath!=null){
 }
 %>
 
-<body class="<%=pageTemplatePath %> home-page">
-	 <div class="one-column homepage">
-	     <cq:include script="header.jsp"/>
-	    <cq:include script="content.jsp"/>
-	    <cq:include script="footer.jsp" />
+<body class="<%=pageTemplatePath %> home-page hds-megaMenu-push">
+    <div class="hds-MobileMenu hds-megaMenu-right">
+        <div class="closeHDSMenu">
+            <a href="javascript:void(0);" title="Close" id="closeHDSMenu">Close</a>
+        </div>
+	    <div class="hds-mobile-navigation"></div>
+	</div>
+	<div class="one-column homepage">
+		<cq:include script="header.jsp"/>
+		<cq:include script="content.jsp"/>
+		<cq:include script="footer.jsp" />
 	</div>
 	<!-- <cq:includeClientLib js="hdscorp.main" /> -->
 </body>
