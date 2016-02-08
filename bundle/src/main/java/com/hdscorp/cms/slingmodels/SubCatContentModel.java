@@ -94,8 +94,10 @@ public class SubCatContentModel {
 			    productNode.setProductTitle(pageTitle);
 			    productNode.setProductDescription(pageProductDescription);
 			    productNode.setProductPath(pagePath);
-			    products.add(productNode);
 			    productNode.setDescriptionList(descriptionList);
+			    
+			    products.add(productNode);
+			    
 			}
 		} catch (Exception e) {
 			LOG.error("----IN EXCEPTION BLOCK----"+e.getCause());
