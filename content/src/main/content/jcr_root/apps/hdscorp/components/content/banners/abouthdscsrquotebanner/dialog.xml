@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <type
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Type"
+                        name="./type"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <csrquote1
+                                jcr:primaryType="nt:unstructured"
+                                text="CSR Quote 1 (White)"
+                                value="about-hds-csr-quote csr-quote-1"/>
+                            <csrquote2
+                                jcr:primaryType="nt:unstructured"
+                                text="CSR Quote 2 (Black)"
+                                value="about-hds-csr-quote csr-quote-2"/>
+                            <csrquote3
+                                jcr:primaryType="nt:unstructured"
+                                text="CSR Quote 3 (Red)"
+                                value="about-hds-csr-quote csr-quote-3"/>
+                            <csrquote4
+                                jcr:primaryType="nt:unstructured"
+                                text="CSR Quote 4 (Blue)"
+                                value="about-hds-csr-quote csr-quote-4"/>
+                        </options>
+                    </type>
+                    <quoteheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Quote Headline"
+                        name="./quoteheadline"
+                        xtype="textfield"/>
+                    <quotecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Quote Content"
+                        name="./quotecontent"
+                        xtype="textarea"/>
+                    <ctalabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="CTA Label"
+                        name="./ctalabel"
+                        xtype="textfield"/>
+                    <ctatargeturl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="CTA Target URL"
+                        name="./ctatargeturl"
+                        xtype="textfield"/>
+                    <openinnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open In New Window?"
+                        name="./openinnewwindow"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
