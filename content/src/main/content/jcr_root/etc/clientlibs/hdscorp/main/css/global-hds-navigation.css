@@ -542,6 +542,8 @@ HDS Global Header and Navigation
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 
+.spotlightNavigation p a:hover{color:#ac1f25;}
+
 .spotlightNavigation p a .glyphicon {
     top: 2px;
     font-size: 0.875rem;
