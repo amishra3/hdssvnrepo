@@ -60,6 +60,10 @@
 								varStatus="count">
                                     <c:choose>
 
+								<c:when test="${empty subnavlinks.mgmservsubnavlabel}">
+
+                                     </c:when>
+
                                         <c:when test="${subnavlinks.mgmservsubnavlink=='#'}">                                        
                                         <li><a href="javascript:void(0)" class="animateLink" title="${subnavlinks.mgmservsubnavlabel}">${subnavlinks.mgmservsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
                                          </c:when>
@@ -107,6 +111,10 @@
 									</c:when>
 									<c:otherwise>
                                         <c:choose>
+
+                                          <c:when test="${empty rightsection.mgmservviewfeaturedproductslabel}">
+
+                                           </c:when>
 
                                           <c:when test="${rightsection.mgmservviewfeaturedproductslink=='#'}">                                        
                                         <p><a href="javascript:void(0)" class="animateLink" title="${rightsection.mgmservviewfeaturedproductslabel}">${rightsection.mgmservviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
