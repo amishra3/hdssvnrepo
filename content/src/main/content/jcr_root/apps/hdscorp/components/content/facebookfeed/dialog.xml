@@ -18,36 +18,16 @@
                         fieldLabel="Title"
                         name="./jcr:fetitle"
                         xtype="textfield"/>
-                    <febackgroundimage
+                    <facbackgroundimage
                         jcr:primaryType="cq:Widget"
-                        allowUpload="false"
-                        cropParameter="./febackgroundimage/imageCrop2"
-                        ddGroups="[media]"
-                        fieldLabel="Background Image"
-                        fileNameParameter="./febackgroundimage/fileName2"
-                        fileReferenceParameter="./jcr:febackgroundimage"
-                        height="{Long}200"
-                        name="./febackgroundimage"
-                        rotateParameter="./febackgroundimage/imageRotate2"
-                        sizeLimit="100"
-                        title="Image"
-                        width="{Long}200"
-                        xtype="html5smartimage"/>
-                    <feimportpath
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Import Path"
-                        name="./jcr:feimportpath"
+                        fieldLabel="Background Image  Path"
+                        name="./fbbgimage"
                         xtype="pathfield"/>
                     <fefacbookiconpath
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Facebook Icon path"
                         name="./jcr:fefacbookiconpath"
                         xtype="pathfield"/>
-                    <fesocialfollowuslabel
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Social Follow US Label"
-                        name="./jcr:fesocialfollowuslabel"
-                        xtype="textfield"/>
                 </items>
             </tab1>
         </items>
