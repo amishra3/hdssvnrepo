@@ -37,8 +37,10 @@ public class CreatePageService {
 			String pageName = "";
 			Page page = null;
 			String pageTitle = pressReleaseModel.getTitle();
-			pageName = pressReleaseModel.getTitle();
-
+			
+		 
+			pageName = pressReleaseModel.getLink().substring(pressReleaseModel.getLink().lastIndexOf('/'), pressReleaseModel.getLink().lastIndexOf('.')); ;
+			
 			pageName = pageName.replaceAll("[^-a-zA-Z0-9 ]+", "");
 			pageName = pageName.toLowerCase().replaceAll("\\s+", "-");
 			page = createPath(pagePath, session, template, pageName, pageTitle);
