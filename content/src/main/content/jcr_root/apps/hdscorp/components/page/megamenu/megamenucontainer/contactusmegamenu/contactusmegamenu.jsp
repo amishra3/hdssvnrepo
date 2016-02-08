@@ -46,6 +46,9 @@
                           <li>
                             <c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
                                  <c:choose>
+   						 <c:when test="${empty subnavlinks.mgmcontactussubnavlabel}">
+
+                                     </c:when>
                                      <c:when test="{subnavlinks.mgmcontactussubnavlink=='#'}">                                        
                                     <li><a href="javascript:void(0)" class="animateLink" title="${subnavlinks.mgmcontactusalttext}">${subnavlinks.mgmcontactussubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
                                      </c:when>
@@ -70,6 +73,10 @@
                             <p class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusdescription}</p>
                             <div class="phone-no">${subnavlinks2.mgmcontactusnumber}</div>
 <c:choose>
+    			 <c:when test="${empty subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
+
+                                     </c:when>
+
                                 <c:when test="${subnavlinks2.mgmcontactusviewfeaturedproductslink=='#'}">                                        
                                   <p><a href="javascript:void(0)" title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
                                    </c:when>
