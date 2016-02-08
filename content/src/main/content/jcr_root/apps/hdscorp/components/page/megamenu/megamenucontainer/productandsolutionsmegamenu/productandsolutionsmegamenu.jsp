@@ -48,7 +48,13 @@
                      <div class="col-md-6 col-xs-12 megamenu-list">
                      	<ul>
                             <c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
-                                <c:choose>
+
+
+                                    <c:choose>
+
+								<c:when test="${empty subnavlinks.mgmpssubnavlabel}">
+
+                                     </c:when>
 
                                      <c:when test="${subnavlinks.mgmpssubnavlink=='#'}">                                        
                                         <li><a href="javascript:void(0)" class="animateLink" title="${subnavlinks.mgmpssubnavlabel}">${subnavlinks.mgmpssubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -71,6 +77,11 @@
                             <h3 class="hidden-xs hidden-sm">${properties.mgmpsheadline}</h3>
                             <p class="hidden-xs hidden-sm">${properties.mgmpsdescription}</p>
  								<c:choose>
+
+                                     <c:when test="${empty properties.mgmpsviewfeaturedproductslabel}">
+
+                                     </c:when>
+
                                     <c:when test="${properties.mgmpsviewfeaturedproductslink=='#'}">                                        
                                         <p><a href="javascript:void(0)" class="animateLink" title="${properties.mgmpsviewfeaturedproductslabel}">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
                                     </c:when>
