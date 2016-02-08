@@ -50,7 +50,7 @@ public class EventDataModel {
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 				.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		log.info("Execution of getEventDetails");
-		String paths[] = { "/content/hdscorp/en_us/events" };
+		String paths[] = { "/content/hdscorp/en_us/lookup/events" };
 		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, null, null, null, null, true, null,
 				null, resourceResolver, null, null);
 		TagManager tm = resourceResolver.adaptTo(TagManager.class);
