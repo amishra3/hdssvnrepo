@@ -341,7 +341,7 @@
 
 @media only screen and (max-width: 768px) {
     .hds-global-header .breadcrumb-container {
-        top: 200px;
+        /*top: 200px;*/ top:60px;
     }
     .header .sub-navigation-container .sub-navigation > ul > li {
         display: table;
