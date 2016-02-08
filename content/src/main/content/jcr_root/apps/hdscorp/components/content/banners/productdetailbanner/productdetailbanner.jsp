@@ -25,7 +25,7 @@
 
 <c:choose>
 	<c:when test="${not empty properties.simplebannertitle}">
-		<div class="hero-product-solutions clearfix ${properties.simplebannerusevideomodal?'server-rack':'overview'}" style="background-image:url('${properties.simplebannermagePath}');${properties.simplebannerusevideomodal?'display:block;':''}">
+		<div class="hero-product-solutions server-rack clearfix ${properties.simplebannerusevideomodal?'server-rack':'overview'}" style="background-image:url('${properties.simplebannermagePath}');${properties.simplebannerusevideomodal?'display:block;':''}">
 			<div class="hero-product-solutions-container ${properties.simplebannercontentalign?'floatright':''}">
 
 
