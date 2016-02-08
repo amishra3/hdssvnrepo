@@ -75,8 +75,8 @@
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="News look up path"
-                        name="./newslookuppath"
-                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./newslookuppath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        name="./newsLookuppath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./newsLookuppath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>         
                 </items>
             </tab1>
