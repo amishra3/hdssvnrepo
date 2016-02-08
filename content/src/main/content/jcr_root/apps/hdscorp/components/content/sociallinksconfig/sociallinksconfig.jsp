@@ -17,7 +17,7 @@
 		<ul>
 			<c:forEach items="${sociallinkconfig}" var="items">
 			<li>
-				<a href="${items.scturl}" target="${properties.socialurltargettype?'_blank':'_self'}"><img src="${items.scicon}" alt=""></a>
+				<a href="${items.scturl}" target="${items.socialtargettype==1?'_blank':'_self'}"><img src="${items.scicon}" alt=""></a>
 			</li>
 			</c:forEach>
 		</ul>
