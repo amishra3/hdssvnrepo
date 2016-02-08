@@ -44,7 +44,7 @@ public class NewsModel {
 	private String viewAllNewsLink;
 	@Inject
 	@Named(value = "newsLookuppath")
-	@Default(values = { "/content/hdscorp/en_us/newsandinsights/news/news" })
+	@Default(values = { "/content/hdscorp/en_us/newsandinsights/news" })
 	private String newsLookupPath;
 
 	@Inject
@@ -110,7 +110,7 @@ public class NewsModel {
 			List<Hit> hits = result.getHits();
 						
 			newsList = new ArrayList<NewsNode>();
-
+System.out.println("no of hits****"+hits.size());
 			for (Hit hit : hits) {
 
 				Resource resource = JcrUtilService.getResourceResolver()
