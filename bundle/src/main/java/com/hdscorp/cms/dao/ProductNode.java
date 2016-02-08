@@ -1,5 +1,7 @@
 package com.hdscorp.cms.dao;
 
+import java.util.ArrayList;
+
 
 public class ProductNode {
 	
@@ -11,6 +13,16 @@ public class ProductNode {
 
 	private String[] productTags;
 	
+	private ArrayList<ProductDescription> descriptionList;
+	
+	public ArrayList<ProductDescription> getDescriptionList() {
+		return descriptionList;
+	}
+
+	public void setDescriptionList(ArrayList<ProductDescription> descriptionList) {
+		this.descriptionList = descriptionList;
+	}
+
 	public String[] getProductTags() {
 		return productTags;
 	}

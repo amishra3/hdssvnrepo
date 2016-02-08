@@ -30,7 +30,7 @@
                                     allowBlank="{Boolean}false"
                                     anchor="100%"
                                     fieldLabel="Tag Id"
-                                    key="category-tag"
+                                    key="categoryTag"
                                     layout="anchor"
                                     name="cq:tags"
                                     xtype="tags"/>

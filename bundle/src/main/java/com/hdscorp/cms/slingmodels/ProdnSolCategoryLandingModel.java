@@ -9,15 +9,20 @@ import javax.jcr.RepositoryException;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceUtil;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
+import com.hdscorp.cms.dao.ProductDescription;
 import com.hdscorp.cms.dao.ProductNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.JsonMapper;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
@@ -75,7 +80,18 @@ public class ProdnSolCategoryLandingModel {
 			    String pagePath = reourcePage.getPath();
 			    String pageProductDescription = (String)reourcePage.getProperties().get("subtext");
 			    String[] pageTags= (String[])reourcePage.getProperties().get("cq:tags");
-//			    System.out.println("----pageTags----- "+pageTags);
+			    Resource descriptionListResource = reourcePage.getContentResource("productdescriptions") ;
+			    String[] productMultiDescriptionList = new String[0];
+			    ObjectMapper mapper = new ObjectMapper();
+		    	ArrayList<ProductDescription> descriptionList = new ArrayList<ProductDescription>();
+			    if(descriptionListResource!=null){
+			    	ValueMap descriptioNodeProps= descriptionListResource.adaptTo(ValueMap.class);
+			    	productMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
+				    for(String desc:productMultiDescriptionList){
+				    	ProductDescription prodDescObj = mapper.readValue(desc, ProductDescription.class);
+				    	descriptionList.add(prodDescObj);
+				    }
+			    }
 			    
 			    if(pagePath.startsWith("/content")){
 			    	pagePath=PathResolver.getShortURLPath(pagePath);
@@ -84,14 +100,14 @@ public class ProdnSolCategoryLandingModel {
 			    productNode.setProductDescription(pageProductDescription);
 			    productNode.setProductPath(pagePath);
 			    productNode.setProductTags(pageTags);
+			    productNode.setDescriptionList(descriptionList);
 			    
 			    products.add(productNode);
 			}
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println(" ----IN ERROR BLOCK---"+e.getMessage());
+			LOG.error("----IN EXCEPTION BLOCK----"+e.getCause());
+			LOG.error(e.getMessage());
 		}
 		return products;
 	}
