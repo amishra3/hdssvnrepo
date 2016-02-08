@@ -47,6 +47,11 @@
                             <c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
                                 <c:choose>
 
+                             <c:when test="${empty subnavlinks.mgmnewsinsightssubnavlabel}">
+
+                                     </c:when>
+
+
                                     <c:when test="${subnavlinks.mgmnewsinsightssubnavlink=='#'}">                                        
   						<li><a href="javascript:void(0)" title="${subnavlinks.mgmnewsinsightssubnavlabel}" class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
   						</c:when>
@@ -68,6 +73,11 @@
                             <h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmnewsinsightsheadline}</h3>
                             <p class="hidden-xs hidden-sm">${subnavlinks2.mgmnewsinsightsdescription}</p>
                             <c:choose>
+
+                                 <c:when test="${empty subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">
+
+                                     </c:when>
+
 
 						<c:when test="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'}">                                        
   						<p><a href="javascript:void(0)" class="animateLink" title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
