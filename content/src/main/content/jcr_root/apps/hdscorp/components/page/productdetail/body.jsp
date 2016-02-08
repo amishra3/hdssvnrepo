@@ -8,7 +8,13 @@ if(pageTemplatePath!=null){
 }
 %>
 
-<body class="<%=pageTemplatePath %> contentwidepage">
+<body class="<%=pageTemplatePath %> contentwidepage hds-megaMenu-push">
+    <div class="hds-MobileMenu hds-megaMenu-right">
+        <div class="closeHDSMenu">
+            <a href="javascript:void(0);" title="Close" id="closeHDSMenu">Close</a>
+        </div>
+	    <div class="hds-mobile-navigation"></div>
+	</div>
 	<div class="one-column">
 		<cq:include script="header.jsp" />
 		<cq:include script="content.jsp" />
