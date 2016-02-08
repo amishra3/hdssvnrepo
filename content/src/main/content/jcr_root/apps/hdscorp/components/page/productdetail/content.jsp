@@ -9,8 +9,8 @@
 			resourceType="cq/personalization/components/clientcontext" />
 	
 	</c:if>
-	
-
+		
+	<cq:include path="productdescriptions" resourceType="hdscorp/components/content/productdescription" />
 	<cq:include path="par" resourceType="foundation/components/parsys" />
 
 </div>

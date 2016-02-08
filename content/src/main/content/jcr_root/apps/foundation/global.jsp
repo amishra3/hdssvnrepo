@@ -63,6 +63,7 @@
 %><%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %><%
 %><%@ taglib prefix="wcmmode" uri="http://www.adobe.com/consulting/acs-aem-commons/wcmmode" %><%
 %><%@ taglib prefix="xss" uri="http://www.adobe.com/consulting/acs-aem-commons/xss" %><%
+%><%@ taglib prefix="widgets" uri="http://www.adobe.com/consulting/acs-aem-commons/widgets" %><%
 %><cq:defineObjects /><%
 
 //add more initialization code here
