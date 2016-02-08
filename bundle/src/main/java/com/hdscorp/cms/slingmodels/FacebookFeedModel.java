@@ -24,26 +24,19 @@ public class FacebookFeedModel {
 	@Named("jcr:fetitle")
 	@Default(values = { "title" })
 	private String title;
+	
 	@Inject
-	@Named(value = "jcr:febackgroundimage")
+	@Named(value = "fbbgimage")
 	@Default(values = { "/content/dam/geometrixx-outdoors/logo.png" })
 	private String bGImagePath;
-	@Inject
-	@Named(value = "jcr:feimportpath")
-	@Default(values = { "Facebook Import Path" })
-	private String importPath;
+	
 	@Inject
 	@Named(value = "jcr:fefacbookiconpath")
 	@Default(values = { "/content/dam/geometrixx-outdoors/logo.png" })
 	private String iconPath;
-	@Inject
-	@Named(value = "jcr:fesocialfollowuslabel")
-	@Default(values = { "Social FollowUS Label" })
-	private String socialFollowUsLabel;
+	
 
-	public String getSocialFollowUsLabel() {
-		return this.socialFollowUsLabel;
-	}
+	
 
 	public String getTitle() {
 		return this.title;
@@ -53,9 +46,7 @@ public class FacebookFeedModel {
 		return this.bGImagePath;
 	}
 
-	public String getImportPath() {
-		return this.importPath;
-	}
+	
 
 	public String getIconPath() {
 		return this.iconPath;
