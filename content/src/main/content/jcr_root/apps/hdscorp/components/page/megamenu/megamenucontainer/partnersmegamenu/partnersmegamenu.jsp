@@ -52,6 +52,12 @@
                      	<ul>
                             <c:forEach var="subnavlinks" items="${partnersubnavlinks}" varStatus="count">
                                 <c:choose>
+
+
+                                 <c:when test="${empty subnavlinks.mgmptsubnavlabel}">
+
+                                     </c:when>
+
                                     <c:when test="${subnavlinks.mgmptsubnavlink=='#'}">                                        
                                         <li><a href="javascript:void(0)" title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
                                  </c:when>
@@ -73,6 +79,11 @@
                               <div class="col-xs-12 col-md-4">
                                   <p class="hidden-xs hidden-sm">${partnerrighsection.mgmptmultidescription}</p>
                                 <c:choose>
+
+                                      <c:when test="${empty partnerrighsection.mgmptmultisubnavlabel1}">
+
+                                     </c:when>
+
                                     <c:when test="${partnerrighsection.mgmptmultisubnavlink1=='#'}">                                        
                                           <p><a href="javascript:void(0)" title="${partnerrighsection.mgmptmultisubnavlabel1}" class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
                                       </c:when>
