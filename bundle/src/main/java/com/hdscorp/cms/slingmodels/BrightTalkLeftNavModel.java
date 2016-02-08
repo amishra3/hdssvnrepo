@@ -84,6 +84,7 @@ public class BrightTalkLeftNavModel  extends MultifieldUtil{
 						Tag tag = tm.resolve((String) strings[count]);
 						tags.setTagId(tag.getTagID());
 						tags.setTagName(tag.getName());
+						tags.setTitle(tag.getTitle());
 						tagsResult.add(tags);
 						sb.append(tag.getTagID() + "-" + tag.getName());
 					}
