@@ -61,8 +61,7 @@
 	var allMenus = $('.accordion-menu-container');
 	var allContents = $('.accordion-content');
 
-	//$(document).on('tap','.accordion-level > .accordion-menu-container' , function(event) {
-	$('.accordion-level > .accordion-menu-container').on('click', function(event) {
+	$(document).on('click','.accordion-level > .accordion-menu-container' , function(event) {
         var $currentContent = $(this).closest('div').next('div.accordion-content',this);
         if ($(this).hasClass("open") && $(this).next().queue().length === 0) {
             $currentContent.removeClass('open');
@@ -134,9 +133,9 @@ if($('.accordion-level').length!==0){
 /* equal column height start */
 if( $(window).width() > 1209){
 if($('.fb-category-container').length!==0){
-	
+
 			$('div[class="fb-category-container "]').each(function(index,item){
-				
+
 				this.id = 'fixedRate' + index;
 
 				var callheightinner = 0;
@@ -161,7 +160,7 @@ if($('.fb-category-container').length!==0){
 
 if( $(window).width() > 1209){
 if($('.mes-section').length!==0){
-	
+
 				var resheightinner = 0;
 				for(var i=0;i<$(".product-box .product-copy-main").size();i++){
 					if($(".product-box .product-copy-main:eq("+i+")").height()>=resheightinner){
