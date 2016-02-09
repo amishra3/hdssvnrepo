@@ -135,7 +135,7 @@ if($('.accordion-level').length!==0){
 if( $(window).width() > 1209){
 if($('.fb-category-container').length!==0){
 	
-			$('div[class="fb-category-container"]').each(function(index,item){
+			$('div[class="fb-category-container "]').each(function(index,item){
 				
 				this.id = 'fixedRate' + index;
 
