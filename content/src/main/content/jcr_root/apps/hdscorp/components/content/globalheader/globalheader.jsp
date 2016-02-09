@@ -28,7 +28,18 @@
 	   pageContext.setAttribute("shortseacrhUrl", shortseacrhUrl);
 	}
 
+	String viewtype = "";
+	String[] selectorArray = slingRequest.getRequestPathInfo().getSelectors();
+	if (selectorArray != null && selectorArray.length > 0) {
+		viewtype = selectorArray[0];
+	}
+	
+	pageContext.setAttribute("selectorString", viewtype);	
+	
 %>
+
+
+
 
 <c:set var="externalLinksList"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"linkTitle-linktargeturl-linkIconPath-linkurltargettype")%>" />
@@ -37,45 +48,47 @@
 <!-- HEADER STARTS -->
 
 <div class="hds-global-header">
-	<div class="header-container content-container">
-		<a href="${logoTargetURL}"><span
-			class="hitachi-logo hidden-xs hidden-sm"></span></a> <a
-			href="${logoTargetURL}"><span
-			class="hitachi-logo-mobile hidden-md hidden-lg"></span></a>
-
-		<div class="hds-quick-navigation hidden-xs hidden-sm">
-			<ul>
-				<c:forEach var="externalLink" items="${externalLinksList}">
-					<c:set var="linkTitle" value="${externalLink.linkTitle}" />
-					<c:set var="linktargeturl" value="${externalLink.linktargeturl}" />
-					<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
-					<c:set var="linkurltargettype" value="${externalLink.linkurltargettype}" />
-					<li><a href="${linktargeturl}" x-cq-linkchecker="skip"
-						target="${linkurltargettype?'_blank':'_self'}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
-							${linkTitle}
-					</a></li>
-
-				</c:forEach>
-
-				<li class="search"><input type="text"
-					placeholder="${properties.searchboxtext}"><span
-					class="icon nav-search"></span></li>
-			</ul>
+	<c:if test="${selectorString!= 'excludetop'}">
+		<div class="header-container content-container">
+			<a href="${logoTargetURL}"><span
+				class="hitachi-logo hidden-xs hidden-sm"></span></a> <a
+				href="${logoTargetURL}"><span
+				class="hitachi-logo-mobile hidden-md hidden-lg"></span></a>
+	
+			<div class="hds-quick-navigation hidden-xs hidden-sm">
+				<ul>
+					<c:forEach var="externalLink" items="${externalLinksList}">
+						<c:set var="linkTitle" value="${externalLink.linkTitle}" />
+						<c:set var="linktargeturl" value="${externalLink.linktargeturl}" />
+						<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
+						<c:set var="linkurltargettype" value="${externalLink.linkurltargettype}" />
+						<li><a href="${linktargeturl}" x-cq-linkchecker="skip"
+							target="${linkurltargettype?'_blank':'_self'}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
+								${linkTitle}
+						</a></li>
+	
+					</c:forEach>
+	
+					<li class="search"><input type="text"
+						placeholder="${properties.searchboxtext}"><span
+						class="icon nav-search"></span></li>
+				</ul>
+			</div>
+	
+			<button class="navbar-toggle collapsed nav-button" type="button"
+				data-toggle="collapse" data-target="#bs-navbar"
+				aria-controls="bs-navbar" aria-expanded="false" id="hdsMobileNaV">
+				<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<div class="search-mobile">
+				<span class="sprite icon-search-mobile"></span>
+			</div>
+	
 		</div>
-
-		<button class="navbar-toggle collapsed nav-button" type="button"
-			data-toggle="collapse" data-target="#bs-navbar"
-			aria-controls="bs-navbar" aria-expanded="false" id="hdsMobileNaV">
-			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-			<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-				class="icon-bar"></span>
-		</button>
-		<div class="search-mobile">
-			<span class="sprite icon-search-mobile"></span>
-		</div>
-
-	</div>
-
+	
+	</c:if>
 	<div class="hds-main-navigation-container hidden-xs hidden-sm">
 		<div class="hds-main-navigation">
 			<h5 class="col-md-3">
