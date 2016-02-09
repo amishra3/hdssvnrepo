@@ -126,9 +126,9 @@
 			</ul>
 		</div>
 	</div>
-
-	<cq:include path="${currentDesign.path}/jcr:content/breadcrumbpar" resourceType="hdscorp/components/content/breadcrumb" />
-
+	<c:if test="${selectorString!= 'excludetop'}">
+		<cq:include path="${currentDesign.path}/jcr:content/breadcrumbpar" resourceType="hdscorp/components/content/breadcrumb" />
+	</c:if>
 </div>
 
 <!-- HEADER ENDS HERE -->
