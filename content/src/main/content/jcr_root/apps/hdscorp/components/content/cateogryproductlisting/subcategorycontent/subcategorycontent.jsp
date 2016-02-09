@@ -58,8 +58,6 @@
               </c:if>
 	     </div>
     </div>
-
-
 </c:when>
 <c:otherwise>
 </c:otherwise>
@@ -71,12 +69,6 @@
 		<div class="product">
 		    <h3>${product.productTitle}</h3>
 		    ${product.productDescription}
-<%/* %>		    
-		    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="descloopcnt">
-		    	${fn:join(descriptionObj.categoryTag, ',')}
-		    	${descriptionObj.description}
-		    </c:forEach>
-<% */%>		    
 		    <a href="${product.productPath}" class="animateLink">${properties.subcatproductviewlabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 		 </div>
 	
