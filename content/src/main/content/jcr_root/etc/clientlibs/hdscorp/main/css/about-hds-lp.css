@@ -51,9 +51,6 @@
 .mac-os .behind-scene-hexagon{min-height: 720px;}
 
 @media only screen and (max-width: 1024px) {
-  .behind-scene-hexagon{
-    min-height: 750px;
-  }
   .behind-scene-hexagon-list .hex-contain{
     width:100%;
     margin:0;
@@ -258,7 +255,7 @@
 }
 
 .about-hds-quote p .icon-quote.open-quote {
-  top: -2px;
+  top: -7px;
   left: -2px;
   margin-left: -22px;
 }
@@ -300,7 +297,7 @@
     margin-left: 0;
   }
   .about-hds-quote p .icon-quote.close-quote{
-    top:5px;
+    top:-2px;
   }
   .about-hds-quote .content-container [class*="col-"] {
     padding-left: 0;

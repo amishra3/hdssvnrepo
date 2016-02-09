@@ -23,5 +23,7 @@ social-innovation.css
 services-lp.css
 services-detail.css
 contact-us.css
+about-hds-csr.css
+news-insight-lp.css
 common-component.css
 app.css

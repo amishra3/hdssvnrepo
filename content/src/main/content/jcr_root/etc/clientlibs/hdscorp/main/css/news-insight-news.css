@@ -180,6 +180,9 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
   float: left;
   padding: 6px;
 }
+.social-links li:last-child {
+  padding-right: 0;
+}
 .social-links > ul {
   list-style: outside none none;
   padding: 0; float:left;
@@ -194,6 +197,11 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
   margin-top: 30px;
 }
 .stay-inner-coloum{}
+
+@media only screen and (max-width: 1024px) {
+  .social-links{margin-left: -15px; margin-right: -15px;}
+}
+
 @media only screen and (max-width: 991px) {
 .comment_box {
   margin-bottom: 20px;
