@@ -421,6 +421,11 @@
 }
 
 .footer .footer-blue .talk a, .footer .footer-blue .talk a:hover{color:#ffffff;}
+.footer .footer-blue .talk a.call{
+	color: #ffffff;
+    cursor: default;
+    text-decoration: none;
+}
 
 .footer .footer-blue .buttons {
     position: relative;
