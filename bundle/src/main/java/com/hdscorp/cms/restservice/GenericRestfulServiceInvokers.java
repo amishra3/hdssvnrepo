@@ -41,9 +41,9 @@ public abstract class GenericRestfulServiceInvokers {
 	@Reference
 	ConfigurationAdmin configurationAdmin;
 	final String propProxyHost = "proxy.host";
-	final String propProxyPort = "proxy.port";
+	
 	final String propProxyEnabled = "proxy.enabled";
-	private static final String HTTPCLIENT_PID = "org.apache.http.proxyconfigurator";
+	private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 
 	private static final Logger log = LoggerFactory
 			.getLogger(GenericRestfulServiceInvokers.class);
@@ -140,10 +140,12 @@ public abstract class GenericRestfulServiceInvokers {
 			postReq.setEntity(input);
 			return httpClient.execute(postReq);
 		} else {
-			HttpGet getReq = new HttpGet(feedURL);
-			getProxy(getReq);
-
-			return httpClient.execute(getReq);
+			HttpGet request = new HttpGet(feedURL);
+			getProxy(request);
+			if(request.getConfig()!=null && request.getConfig().getProxy()!=null){
+			log.info("Http proxy details are: host name:" +request.getConfig().getProxy().getHostName()+" port number:"+request.getConfig().getProxy().getPort());
+			}
+			return httpClient.execute(request);
 		}
 
 	}
@@ -157,14 +159,14 @@ public abstract class GenericRestfulServiceInvokers {
 			Dictionary props = config.getProperties();
 			if ((Boolean) props.get(propProxyEnabled)) {
 
-				HttpHost proxy = new HttpHost(props.get(propProxyHost)
-						.toString(), Integer.parseInt(props.get(propProxyPort)
-						.toString()), "http");
+				final String proxyHost = config.getProperties()
+                        .get(propProxyHost).toString();
+                final String[] proxyValue = proxyHost.split(":");
+				HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "https");
 
 				RequestConfig reqConfig = RequestConfig.custom()
 						.setProxy(proxy).build();
 				request.setConfig(reqConfig);
-
 			}
 		} catch (IOException e) {
 
