@@ -261,7 +261,6 @@ var hds = window.hds || {};
 
                 Object.keys(filters).forEach(function(filter) {
                     if ($.isArray(filters[filter])) {
-                    	//alert("22");
                         var cats = self.data('category').split(',');
                         
                         var checkMatches = $.grep(filters[filter], function(val) {
@@ -270,7 +269,6 @@ var hds = window.hds || {};
                         result = result && checkMatches.length === filters[filter].length;
                     } else {
                         if (filters[filter]) {
-                        	//alert("33"+filters[filter]);
                             if ((filters[filter] != 'inputsearc')) {
 
                                 result = result && filters[filter] === self.data(filter);
