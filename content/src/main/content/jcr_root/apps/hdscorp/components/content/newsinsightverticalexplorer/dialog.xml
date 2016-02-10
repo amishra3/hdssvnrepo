@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="News Insights Vertical Explorer Component"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <top
+                jcr:primaryType="cq:Panel"
+                title="Upper">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <nibtbgimagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Background Image Path"
+                        name="./nibtbgimagepath"
+                        xtype="pathfield"/>
+                    <nibticonimagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Image Path"
+                        name="./nibticonimagepath"
+                        xtype="pathfield"/>
+                    <nibticonimagelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Label"
+                        name="./nibticonimagelabel"
+                        xtype="textfield"/>
+                    <nibtlabeltargeturl
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item URL"
+                        name="./nibtlabeltargeturl"
+                        xtype="pathfield"/>
+                    <nibteventtype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Type"
+                        key="nibteventtype"
+                        name="./nibteventtype"
+                        type="select"
+                        width="300"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <opt1
+                                jcr:primaryType="nt:unstructured"
+                                text="Press Release"
+                                value="Press Release"/>
+                        </options>
+                    </nibteventtype>
+                </items>
+            </top>
+            <bottom
+                jcr:primaryType="cq:Panel"
+                title="Lower">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <nibticonbimagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Image Path"
+                        name="./nibticonbimagepath"
+                        xtype="pathfield"/>
+                    <nibticonbimagelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Label"
+                        name="./nibticonbimagelabel"
+                        xtype="textfield"/>
+                    <nibtlabelbtargeturl
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item URL"
+                        name="./nibtlabelbtargeturl"
+                        xtype="pathfield"/>
+                    <nibticonreadmorelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Read More Label"
+                        name="./nibticonreadmorelabel"
+                        xtype="textfield"/>
+                    <nibttopeninnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window?"
+                        key="nibtopeninnewwindow"
+                        name="./nibttopeninnewwindow"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                    <nibtbeventtype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Type"
+                        key="nibtbeventtype"
+                        name="./nibtbeventtype"
+                        type="select"
+                        width="300"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <opt1
+                                jcr:primaryType="nt:unstructured"
+                                text="Press Release"
+                                value="Press Release"/>
+                        </options>
+                    </nibtbeventtype>
+                </items>
+            </bottom>
+        </items>
+    </items>
+</jcr:root>
