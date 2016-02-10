@@ -34,5 +34,9 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 	});
 
 
+	/**
+	 * Click to call phone number on mobile
+	 */
+    phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
 	//})( jQuery, ResponsiveBootstrapToolkit );
 })(jQuery);
