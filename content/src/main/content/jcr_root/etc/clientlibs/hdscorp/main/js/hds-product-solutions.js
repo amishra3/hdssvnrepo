@@ -261,13 +261,16 @@ var hds = window.hds || {};
 
                 Object.keys(filters).forEach(function(filter) {
                     if ($.isArray(filters[filter])) {
+                    	//alert("22");
                         var cats = self.data('category').split(',');
+                        
                         var checkMatches = $.grep(filters[filter], function(val) {
                             return $.inArray(val, cats) > -1;
                         });
                         result = result && checkMatches.length === filters[filter].length;
                     } else {
                         if (filters[filter]) {
+                        	//alert("33"+filters[filter]);
                             if ((filters[filter] != 'inputsearc')) {
 
                                 result = result && filters[filter] === self.data(filter);
@@ -287,6 +290,27 @@ var hds = window.hds || {};
                         }
                     }
                 });
+/*                
+                self.children(".catdesc").each(function(i) {
+                	var parentdiv = $(this);
+                	var descTags = $(this).data('desctag');
+                	var descArray = descTags.split(',') ;
+                	var catDescFound = false ;
+                	$.each( descArray , function(index, value) {
+                		if($.inArray( value,filters.category) > -1){
+                			parentdiv.removeClass( "hidden");
+                			parentdiv.siblings('.deafultdesc').addClass( "hidden");
+                			catDescFound =  true;
+                			return false;
+                		}
+                	});
+                	
+                	if(!catDescFound){
+            			parentdiv.addClass( "hidden");
+            			parentdiv.siblings('.deafultdesc').removeClass( "hidden");                		
+                	}
+                });
+*/
                 return result;
             }).show();
             if ($(".product:visible").length === 0) {

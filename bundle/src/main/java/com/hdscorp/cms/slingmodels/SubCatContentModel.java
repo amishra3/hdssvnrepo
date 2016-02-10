@@ -93,16 +93,16 @@ public class SubCatContentModel {
 			    		productNode.setProductDescription((String)reourcePage.getProperties().get("subtext"));
 			    	}
 			    	if(desctags.length>0 && !desctags[0].isEmpty()) {
-			    	productMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
-			    	
-				    for(String desc:productMultiDescriptionList){
-				    	ProductDescription prodDescObj = mapper.readValue(desc, ProductDescription.class);
+				    	productMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
 				    	
-				    	if(Arrays.asList(prodDescObj.getCategoryTag()).contains(desctags[0])) {
-				    		productNode.setProductDescription(prodDescObj.getDescription());
-				    		break;
-				    	}
-				    }
+					    for(String desc:productMultiDescriptionList){
+					    	ProductDescription prodDescObj = mapper.readValue(desc, ProductDescription.class);
+					    	
+					    	if(Arrays.asList(prodDescObj.getCategoryTag()).contains(desctags[0])) {
+					    		productNode.setProductDescription(prodDescObj.getDescription());
+					    		break;
+					    	}
+					    }
 			    	} 
 			    }
 
@@ -111,9 +111,7 @@ public class SubCatContentModel {
 			    	pagePath=PathResolver.getShortURLPath(pagePath);
 			    }
 			    productNode.setProductTitle(pageTitle);
-			    
 			    productNode.setProductPath(pagePath);
-			  
 			    
 			    products.add(productNode);
 			    
