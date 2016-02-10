@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <commonherobannertitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./commonherobannertitle"
+                        xtype="textfield"/>
+                    <commonherobannersubtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Sub Title"
+                        name="./commonherobannersubtitle"
+                        xtype="textfield"/>
+                    <commonherobannercontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Content"
+                        name="./commonherobannercontent"
+                        xtype="richtext">
+                        <rtePlugins
+                            jcr:primaryType="nt:unstructured"
+                            path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
+                            xtype="cqinclude"/>
+                    </commonherobannercontent>
+                    <commonherobannerimagePath
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="./commonherobannerimageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./commonherobannerimagefileName2"
+                        fileReferenceParameter="./commonherobannerimagePath"
+                        height="{Long}200"
+                        name="./commonherobannerimagePath"
+                        rotateParameter="./commonherobannerimageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <commonherobannerbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./commonherobannerbuttonlabel"
+                        xtype="textfield"/>
+                    <commonherobannericonpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video Icon Path"
+                        name="./commonherobannericonpath"
+                        xtype="pathfield"/>
+                    <commonherobannervideoembedcode
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video Embed code"
+                        name="./commonherobannervideoembedcode"
+                        xtype="textarea"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
