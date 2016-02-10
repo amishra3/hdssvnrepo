@@ -15,13 +15,16 @@
 			<c:set var="bannertypeclass" value="${properties.bannertype}"/>
 		</c:if>
 		<div class="${bannertypeclass} clearfix" style="background-image: url('${properties.aboutusheximagePath}');">
-			<div class="content-container">
+
+            <c:if test="${not empty properties.aboutushextitlecontent}">
+            <div class="content-container">
             	<h2>${properties.aboutushextitlecontent}</h2>
             </div>
+            </c:if>
             <c:if test="${not empty properties.aboutushexsubtitlecontent}">
             	<p class="col-sm-10 col-sm-offset-1">${properties.aboutushexsubtitlecontent}</p>
             </c:if>
-            
+
             <div class="${bannertypeclass}-list">
             	<div class="content-container">
                 	<div class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
@@ -44,12 +47,17 @@
 								</div>
 								<h4>${placardTitle}</h4>
 								<p>${placardcontent}</p>
+
+                                <c:if test="${not empty placardurllabel}">
+
 								<div class="read-more">
 									<a href="${placardtargeturl}" class="animateLink">${placardurllabel}
 										<span class="glyphicon glyphicon-menu-right animateIcon"
 										aria-hidden="true"></span>
 									</a>
 								</div>
+                                </c:if> 
+
 							</div>
 		    			</c:forEach>
 					</div>

@@ -21,24 +21,28 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Sub-Title"
                         name="./aboutushexsubtitlecontent"
-                        xtype="textarea"/>                        
-			        <bannertype
-			            jcr:primaryType="cq:Widget"
-			            fieldLabel="Select the banner type/"
-			            name="./bannertype"
-			            type="select"
-			            xtype="selection">
-			            <options jcr:primaryType="cq:WidgetCollection">
-			                <advance-tech-hexagon
-			                    jcr:primaryType="nt:unstructured"
-			                    text="Advance Tech Hexagon"
-			                    value="advance-tech-hexagon"/>
-			                <yes
-			                    jcr:primaryType="nt:unstructured"
-			                    text="About US behind Scene Hexagon"
-			                    value="behind-scene-hexagon"/>
-			            </options>
-			        </bannertype>                        
+                        xtype="textarea"/>
+                    <bannertype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select the banner type/"
+                        name="./bannertype"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <advance-tech-hexagon
+                                jcr:primaryType="nt:unstructured"
+                                text="Advance Tech Hexagon"
+                                value="advance-tech-hexagon"/>
+                            <behind-scene-hexagon
+                                jcr:primaryType="nt:unstructured"
+                                text="About US behind Scene Hexagon"
+                                value="behind-scene-hexagon"/>
+                            <behind-scene-hexagon-scr
+                                jcr:primaryType="nt:unstructured"
+                                text="HDS SCR Hexagon  Banner"
+                                value="behind-scene-hexagon about-hds-csr-hexagon"/>
+                        </options>
+                    </bannertype>
                     <aboutusheximagePath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -71,8 +75,7 @@
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Placard Content"
                                 name="./placardcontent"
-                                xtype="textarea">
-                            </placardcontent>
+                                xtype="textarea"/>
                             <placardIconPath
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Placard Icon Path"
@@ -85,14 +88,14 @@
                                 xtype="textfield"/>
                             <placardurllabel
                                 jcr:primaryType="cq:Widget"
-                                fieldLabel="Placard URL Label"
+                                fieldLabel="Placard Label"
                                 name="./placardurllabel"
                                 xtype="textfield"/>
                             <placardtargeturl
                                 jcr:primaryType="cq:Widget"
-                                fieldLabel="Placard URL Label"
+                                fieldLabel="Placard Label Target URL"
                                 name="./placardtargeturl"
-                                xtype="pathfield"/>                                                                                                
+                                xtype="pathfield"/>
                         </fieldConfig>
                     </multilinks>
                 </items>
