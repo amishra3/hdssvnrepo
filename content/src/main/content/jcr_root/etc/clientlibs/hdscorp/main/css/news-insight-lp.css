@@ -20,7 +20,7 @@
 .stay-touch-hexagon{
   position: relative;
   padding: 0 15px;
-  background-image: url("../images/stay-touch-bg.jpg");
+ /* background-image: url("../images/stay-touch-bg.jpg");*/
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,7 +53,7 @@
 }
 
 .stay-touch-hexagon-list.twitter-feed .hexagon320 .icon{
-  top:-90px;
+  top:-41px;
 }
 .stay-touch-hexagon-list.twitter-feed .hexagon320 h4{
   margin: 20px 0 25px;
