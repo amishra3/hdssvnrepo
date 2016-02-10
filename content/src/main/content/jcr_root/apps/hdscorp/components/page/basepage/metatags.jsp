@@ -91,7 +91,7 @@
 
 		}
 	}
-	if(!currentPage.isHideInNav())
+	if(currentPage.getAbsoluteParent(3)!=null && !currentPage.getAbsoluteParent(3).isHideInNav())
 	{
 	String section=currentPage.getAbsoluteParent(3).getTitle();
 	%>
