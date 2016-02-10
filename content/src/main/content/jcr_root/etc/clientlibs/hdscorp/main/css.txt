@@ -28,3 +28,4 @@ about-hds-csr.css
 news-insight-lp.css
 common-component.css
 app.css
+partner-lp.css
