@@ -1,6 +1,7 @@
 package com.hdscorp.cms.slingmodels;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -72,6 +73,7 @@ public class ProdnSolCategoryLandingModel {
 			LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
 			
 			products = new ArrayList<ProductNode>();
+			boolean defultDescriptionFound = false ;
 			
 			for (Hit hit : hits) {
 				ProductNode productNode = new ProductNode();
@@ -89,6 +91,17 @@ public class ProdnSolCategoryLandingModel {
 			    	productMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
 				    for(String desc:productMultiDescriptionList){
 				    	ProductDescription prodDescObj = mapper.readValue(desc, ProductDescription.class);
+				    	if(!defultDescriptionFound){
+					    	for(String prodTag:prodDescObj.getCategoryTag()){
+						    	if(Arrays.asList(tags).contains(prodTag)){
+						    		defultDescriptionFound=true;
+						    		prodDescObj.setDefault(true);
+						    		break;
+						    	}
+					    	}
+				    	}
+				    	//Loop through tags and check if any of these tags are present in the product description
+				    	//If found, set is the default description flag to true for the object and also set the deault description flag found to true.
 				    	descriptionList.add(prodDescObj);
 				    }
 			    }

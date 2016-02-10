@@ -298,7 +298,7 @@ var hds = window.hds || {};
                 	//Reset all default desc to show and hide all cat specific desc's
                 }
                 
-                /*
+/*                
                 self.children(".catdesc").each(function(i) {
                 	var parentdiv = $(this);
                 	var descTags = $(this).data('desctag');
@@ -319,9 +319,8 @@ var hds = window.hds || {};
             			parentdiv.addClass( "hidden");
             			parentdiv.siblings('.deafultdesc').removeClass( "hidden");                		
                 	}
-                	*/
                 });
-
+*/
                 return result;
             }).show();
             if ($(".product:visible").length === 0) {

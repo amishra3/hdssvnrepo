@@ -7,6 +7,16 @@ public class ProductDescription {
 	
 	private String description;
 	
+	private boolean isDefault;
+	
+	public boolean isDefault() {
+		return isDefault;
+	}
+
+	public void setDefault(boolean isDefault) {
+		this.isDefault = isDefault;
+	}
+
 	public String[] getCategoryTag() {
 		return categoryTag;
 	}
@@ -22,6 +32,5 @@ public class ProductDescription {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	
 }
