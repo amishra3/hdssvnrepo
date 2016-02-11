@@ -16,7 +16,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Content"
                         name="./contactbannercontent"
-                        xtype="richtext">
+                        xtype="textfield">
                         <rtePlugins
                             jcr:primaryType="nt:unstructured"
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"

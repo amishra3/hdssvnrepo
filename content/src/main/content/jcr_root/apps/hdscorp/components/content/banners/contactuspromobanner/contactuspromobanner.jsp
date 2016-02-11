@@ -28,7 +28,10 @@
 
   		<div class="footer-blue col-xs-12 col-sm-12 col-md-12 col-lg-12">
   			<div class="footer-container content-container col-md-12">
-  				${properties.contactbannercontent}
+                <div class="talk">
+                ${properties.contactbannercontent}
+                </div>
+
   				<div class="buttons">
   					<a href="${buttonUrl}" class="information btn-square -white hidden-sm hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
   					<a href="${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext}<span class="sprite icon-caret-white hidden-xs animateIcon"></span></a>
