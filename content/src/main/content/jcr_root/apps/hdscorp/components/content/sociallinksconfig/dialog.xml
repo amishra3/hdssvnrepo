@@ -16,7 +16,7 @@
                     <socialfollowuslabel
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Social Follow US Label"
-                        name="./jcr:socialfollowuslabel"
+                        name="./socialfollowuslabel"
                         xtype="textfield"/>
                     <sociallinksconfig
                         jcr:primaryType="cq:Widget"
