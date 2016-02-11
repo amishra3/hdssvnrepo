@@ -59,7 +59,7 @@
          if(twitterPostMsg.indexOf('http')!=-1)
          {
              var twitterPostURL=twitterPostMsg.substring(twitterPostMsg.indexOf('http'),twitterPostMsg.length);
-                var twitterHREFLink='<a href='+twitterPostURL+'>'+twitterPostURL+'</a>';
+                var twitterHREFLink='<a href='+twitterPostURL+' target="_blank">'+twitterPostURL+'</a>';
 				twitterPostMsg=twitterPostMsg.replace(twitterPostURL,twitterHREFLink);
 
          }
