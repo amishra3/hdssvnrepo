@@ -29,7 +29,7 @@
 			<div class="hero-product-solutions-container ${properties.simplebannercontentalign?'floatright':''}">
 
 
-               		 <div class="col-lg-7 col-md-7 col-xs-12 overRideleft">
+               		 <div class="col-lg-6 col-md-6 col-xs-12 overRideleft">
 
                     <h1 class="headline">${properties.simplebannertitle}</h1>
                     <h3>${properties.simplebannersubtitle}</h3>
@@ -56,7 +56,7 @@
                     </c:if>
                 </div>
 
-				<div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm">
+				<div class="col-lg-6 col-md-6 col-xs-12 hidden-xs hidden-sm">
                     <c:if test="${not empty properties.simplebannerusevideomodal}">
                         <a href="#" class="servers hidden-xs hidden-sm btn-play-video"><img src="${properties.simplebannerimageoverlaypath}"></a>
                     </c:if>
