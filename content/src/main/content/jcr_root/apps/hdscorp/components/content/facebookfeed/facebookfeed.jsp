@@ -26,7 +26,7 @@
             for(var count=0; count<feedResponsefromStoredPath.length; count++){
                  var facebookPostMsg=feedResponsefromStoredPath[count].message;
            		var facebookPostURL=facebookPostMsg.substring(facebookPostMsg.indexOf('http'),facebookPostMsg.length);
-                var facebookHREFLink='<a href='+facebookPostURL+'>'+facebookPostURL+'</a>';
+                var facebookHREFLink='<a href='+facebookPostURL+' target="_blank">'+facebookPostURL+'</a>';
 				facebookPostMsg=facebookPostMsg.replace(facebookPostURL,facebookHREFLink);
                 htmlContent+='<div class="col-sm-4"><div class="comment_box"><div class="icon"><img src="${facebookFeedModel.iconPath}" alt="" title=""></div><div class="type">'+feedResponsefromStoredPath[count].createdDate+'</div><div class="description">'+facebookPostMsg+
                     '</div></div></div>';
