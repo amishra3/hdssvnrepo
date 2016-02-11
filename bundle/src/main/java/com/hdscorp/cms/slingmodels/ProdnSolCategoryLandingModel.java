@@ -36,6 +36,22 @@ public class ProdnSolCategoryLandingModel {
 	
 	private List<ProductNode> products;
 	
+	private boolean noTags;
+	
+	public boolean isNoTags() {
+		String[] selectorArray = request.getRequestPathInfo().getSelectors();
+		if(selectorArray==null || selectorArray.length==0){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+
+	public void setNoTags(boolean noTags) {
+		this.noTags = noTags;
+	}
+
 	private static final Logger LOG = LoggerFactory.getLogger(ProdnSolCategoryLandingModel.class);
 
 	public List<ProductNode> getProducts() throws RepositoryException {

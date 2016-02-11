@@ -5,7 +5,6 @@
 
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.ProdnSolCategoryLandingModel" var="model" />
 
-
 	<c:forEach var="product" items="${model.products}" varStatus="loopcnt">
 		<c:set var="productTitle" value="${product.productTitle}" />
 		<c:set var="productInitialChar" value="${fn:substring(productTitle, 0,1)}" />
@@ -22,24 +21,25 @@
 		    <%// IF there is no selector, dont include this as the defaul one would be showed %>
 		    <%// Mark the description which belongs to parent category, if available %>
 		    
-		    
-		    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="descloopcnt">
-		    	<div class="catdesc ${descriptionObj.defaultDesc eq true?' catdefaultdesc':'hidden' }" data-desctag="${fn:join(descriptionObj.categoryTag, ',')}">
-		    		${descriptionObj.description}
-		    	</div>
-		    	
-		    	
-		    	<c:if test="${descriptionObj.defaultDesc eq true}">
-		    		<c:set var="defaultDescClass" value="hidden"/>
-		    	</c:if>
-		    	
-			</c:forEach>
+		    <c:if test="${model.noTags ne true}">
+			    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="descloopcnt">
+			    	<div class="catdesc ${descriptionObj.defaultDesc eq true?' catdefaultdesc':'hidden' }" data-desctag="${fn:join(descriptionObj.categoryTag, ',')}">
+			    		${descriptionObj.description}
+			    	</div>
+			    	
+			    	
+			    	<c:if test="${descriptionObj.defaultDesc eq true}">
+			    		<c:set var="defaultDescClass" value="hidden"/>
+			    	</c:if>
+			    	
+				</c:forEach>
+			</c:if>
 			
 			<div class="deafultdesc ${defaultDescClass}">
 		    	${product.productDescription}
 		    </div>
-			
 		    <c:set var="defaultDescClass" value=""/>
+		    
 		    <a href="${product.productPath}" class="animateLink">${properties.viewproductlabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 		 </div>
 	</c:forEach>
