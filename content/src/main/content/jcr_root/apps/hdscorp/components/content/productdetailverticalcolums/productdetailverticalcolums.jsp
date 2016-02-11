@@ -22,13 +22,16 @@
 	                      </div>
 	                      <div class="resources-category-title">${column.contenttitle}</div>
 	                      <div class="resources-category-description">${column.columncontent}</div>
-	                      <div class="resources-category-more">
-
-
-
-
-						  		<a class="animateLink" href="${linkUrl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
-	                      </div>
+                            <c:choose>
+                            	<c:when test="${not empty linkUrl && not empty column.seemorelabel}">
+                                      <div class="resources-category-more">
+                                            <a class="animateLink" href="${linkUrl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                                      </div>
+                                </c:when>
+                                <c:otherwise>
+                                   
+                                 </c:otherwise>
+								</c:choose>
 	                    </div>
 					</c:forEach>
 		</div>	
