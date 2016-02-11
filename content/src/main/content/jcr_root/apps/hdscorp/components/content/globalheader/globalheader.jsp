@@ -82,14 +82,14 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<div class="search-mobile">
+			<div class="search-mobile hidden-md hidden-lg">
 				<span class="sprite icon-search-mobile"></span>
 			</div>
 	
 		</div>
 	
 	</c:if>
-	<div class="hds-main-navigation-container hidden-xs hidden-sm">
+	<div class="hds-main-navigation-container">
 		<div class="hds-main-navigation">
 			<h5 class="col-md-3">
 				<a href="${logoTargetURL}"> <span
@@ -98,7 +98,7 @@
 						Data Systems</span>
 				</a>
 			</h5>
-			<ul class="col-md-9 col-xs-12 removePosRelative globalNavWrapper">
+			<ul class="col-md-9 col-xs-12 removePosRelative globalNavWrapper  hidden-xs hidden-sm">
 				<c:forEach var="childPage" items="${childPages}" varStatus="count">
 					<c:if test="${childPage.hideInNav != true}">
 						<c:set var="pagepath" value="${childPage.path}/jcr:content" />
