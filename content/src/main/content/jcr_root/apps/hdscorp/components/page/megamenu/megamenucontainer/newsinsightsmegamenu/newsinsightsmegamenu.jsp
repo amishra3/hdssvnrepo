@@ -11,7 +11,11 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
-
+<%
+JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
+%>
+<c:set var="pageprops" value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
+<c:set var="domain" value="${pageprops.domain}" />
 
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmnewsinsightssubnavlabel-mgmnewsinsightssubnavlink-mgmnewsinsightsopeninnewwindow-mgmnewsinsightsalttext")%>" />
 <c:set var="subnavlinks2" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmnewsinsightsheadline-mgmnewsinsightsdescription-mgmnewsinsightsviewfeaturedproductslabel-mgmnewsinsightsviewfeaturedproductslink-mgmnewsinsightsopeninnewwindow2")%>" />
@@ -27,7 +31,7 @@
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmnewsinsightsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmnewsinsightsnavtitle}" data-parent-path="${mgmnewsinsightsnavpath}">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${domain}${properties.mgmnewsinsightsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmnewsinsightsnavtitle}" data-parent-path="${mgmnewsinsightsnavpath}">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">
@@ -58,10 +62,10 @@
 
                                     <c:when test="${subnavlinks.mgmnewsinsightsopeninnewwindow==1}">
 
-                        	<li><a target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}" href="${subnavlinks.mgmnewsinsightssubnavlink}" title="${subnavlinks.mgmnewsinsightsalttext}" class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
+                        	<li><a target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}" href="${domain}${subnavlinks.mgmnewsinsightssubnavlink}" title="${subnavlinks.mgmnewsinsightsalttext}" class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
 </c:when>
                                     <c:otherwise>
-                                        <li><a target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}" href="${subnavlinks.mgmnewsinsightssubnavlink}" title="${subnavlinks.mgmnewsinsightsalttext}" class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
+                                        <li><a target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}" href="${domain}${subnavlinks.mgmnewsinsightssubnavlink}" title="${subnavlinks.mgmnewsinsightsalttext}" class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
                                         </c:otherwise>
                                     </c:choose>
                                     </c:forEach>
@@ -85,11 +89,11 @@
 
                                 <c:when test="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1}">
                             <p>
-                                <a target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}" title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
+                                <a target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" href="${domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}" title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
 </c:when>
                                 <c:otherwise>
                                     <p>
-                                        <a target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}" title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
+                                        <a target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" href="${domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}" title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
 
 
                                     </c:otherwise>

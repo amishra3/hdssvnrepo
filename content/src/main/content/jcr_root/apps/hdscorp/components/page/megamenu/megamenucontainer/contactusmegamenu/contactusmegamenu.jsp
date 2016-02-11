@@ -11,9 +11,11 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
-
-
-
+<%
+JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
+%>
+<c:set var="pageprops" value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
+<c:set var="domain" value="${pageprops.domain}" />
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactussubnavlabel-mgmcontactussubnavlink-mgmcontactusopeninnewwindow-mgmcontactusalttext")%>" />
 <c:set var="subnavlinks2" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactusheadline-mgmcontactusdescription-mgmcontactusviewfeaturedproductslabel-mgmcontactusnumber-mgmcontactusviewfeaturedproductslink-mgmcontactusopeninnewwindow2")%>" />
 <c:set var="navpath" scope="request" value="${properties.mgmcontactusnavpath}"/>
@@ -22,11 +24,12 @@
 	<c:set var="mgmcontactusnavpath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmcontactusnavpath").toString())%>"/>
 </c:if>
 
+
 <%-- <li><a href="${properties.mgmcontactusnavpath}.html" title="${properties.mgmcontactusnavtitle}">${properties.mgmcontactusnavtitle} --%>
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmcontactusbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmcontactusnavtitle}" data-parent-path="${mgmcontactusnavpath}">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${domain}${properties.mgmcontactusbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmcontactusnavtitle}" data-parent-path="${mgmcontactusnavpath}">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">
@@ -53,11 +56,11 @@
                                     <li><a href="javascript:void(0)" class="animateLink" title="${subnavlinks.mgmcontactusalttext}">${subnavlinks.mgmcontactussubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
                                      </c:when>
                                     <c:when test="${subnavlinks.mgmcontactusopeninnewwindow==1}">
-                        	<li><a target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}" href="${subnavlinks.mgmcontactussubnavlink}.html" title="${subnavlinks.mgmcontactusalttext}" class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
+                        	<li><a target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}" href="${domain}${subnavlinks.mgmcontactussubnavlink}.html" title="${subnavlinks.mgmcontactusalttext}" class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
 
  </c:when>
                                      <c:otherwise>
-                                         <li><a target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}" href="${subnavlinks.mgmcontactussubnavlink}.html" title="${subnavlinks.mgmcontactusalttext}" class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
+                                         <li><a target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}" href="${domain}${subnavlinks.mgmcontactussubnavlink}.html" title="${subnavlinks.mgmcontactusalttext}" class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
 
                                            </c:otherwise>
 
@@ -82,12 +85,12 @@
                                    </c:when>
                                     <c:when test="${subnavlinks2.mgmcontactusopeninnewwindow2==1}">
                             <p>
-                                <a target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" href="${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html" title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></p>
+                                <a target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" href="${domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html" title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></p>
 
  </c:when>
                                      <c:otherwise>
                                          <p>
-                                <a target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" href="${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html" title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
+                                <a target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" href="${domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html" title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
 
                                          </c:otherwise>
 

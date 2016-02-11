@@ -35,6 +35,10 @@
                     jcr:primaryType="cq:Widget"
                     path="/apps/hdscorp/components/page/basepage/hdscorp.infinity.json"
                     xtype="cqinclude"/>
+                <globalmsg
+                    jcr:primaryType="cq:Widget"
+                    path="/apps/hdscorp/components/page/basepage/globalmsg.infinity.json"
+                    xtype="cqinclude"/>    
             </items>
         </tabs>
     </items>

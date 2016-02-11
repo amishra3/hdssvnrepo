@@ -18,7 +18,11 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 
-
+<%
+JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
+%>
+<c:set var="pageprops" value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
+<c:set var="domain" value="${pageprops.domain}" />
 
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservsubnavlabel-mgmservsubnavlink-mgmservalttext-mgmservopeninnewwindow")%>" />
 <c:set var="rightsection" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservheadline-mgmservdescription-mgmservviewfeaturedproductslabel-mgmservviewfeaturedproductslink-mgmservopeninnewwindows-mgmservphonenumber")%>" />
@@ -35,7 +39,7 @@
 
 
 	<div class="hds-megaMenuWrapper"
-		style="background-image:url(${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmservnavtitle}" data-parent-path="${mgmservnavpath}">
+		style="background-image:url(${domain}${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmservnavtitle}" data-parent-path="${mgmservnavpath}">
 		<div class="hds-megaMenu">
 			<div class="content-container">
 				<div class="row">
@@ -71,7 +75,7 @@
                                         <c:when test="${subnavlinks.mgmservopeninnewwindow==1}">
 								<li><a
 									target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-									href="${subnavlinks.mgmservsubnavlink}.html"
+									href="${domain}${subnavlinks.mgmservsubnavlink}.html"
 									title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 										aria-hidden="true"
 										class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
@@ -79,7 +83,7 @@
                                         <c:otherwise>
                                             <li><a
 									target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-									href="${subnavlinks.mgmservsubnavlink}.html"
+									href="${domain}${subnavlinks.mgmservsubnavlink}.html"
 									title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 										aria-hidden="true"
 										class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -124,7 +128,7 @@
                                         <p>
 											<a
 												target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
-												href="${rightsection.mgmservviewfeaturedproductslink}.html"
+												href="${domain}${rightsection.mgmservviewfeaturedproductslink}.html"
 												title="${rightsection.mgmservviewfeaturedproductslabel}"
 												class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
 												aria-hidden="true"
@@ -135,7 +139,7 @@
                                                  <p>
 											<a
 												target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
-												href="${rightsection.mgmservviewfeaturedproductslink}"
+												href="${domain}${rightsection.mgmservviewfeaturedproductslink}"
 												title="${rightsection.mgmservviewfeaturedproductslabel}.html"
 												class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
 												aria-hidden="true"

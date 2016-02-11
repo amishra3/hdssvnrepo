@@ -19,8 +19,11 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
-
-
+<%
+JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
+%>
+<c:set var="pageprops" value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
+<c:set var="domain" value="${pageprops.domain}" />
 <c:set var="subnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmahsubnavlabel-mgmahsubnavlink-mgmahalttext-mgmahopeninnewwindow")%>" />
 <c:set var="aboutrightsection" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmahheadline-mgmahdescription-mgmahviewfeaturedproductslabel-mgmahviewfeaturedproductslink-mgmahopeninnewwindows")%>" />
 <c:set var="mgmahnavpath" value="${properties.mgmahnavpath}" />
@@ -28,6 +31,7 @@
 	<c:set var="mgmahnavpath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmahnavpath").toString())%>"/>
 </c:if>
 
+ 
 
 <%-- <li><a href="${properties.mgmahnavpath}.html" --%>
 <%-- 	title="${properties.mgmpsnavtitle}">${properties.mgmahnavtitle} <span --%>
@@ -35,7 +39,7 @@
 <!-- 		class="icon-accordion-opened"></span> -->
 <!-- </a> -->
 	<div class="hds-megaMenuWrapper"
-		style="background-image:url(${properties.mgmahbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmpsnavtitle}" data-parent-path="${mgmahnavpath}">
+		style="background-image:url(${domain}${properties.mgmahbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmpsnavtitle}" data-parent-path="${mgmahnavpath}">
 		<div class="hds-megaMenu">
 			<div class="content-container">
 				<div class="row">
@@ -57,10 +61,12 @@
 						<ul>
 							<c:forEach var="subnavlinks" items="${subnavlinks}"
 								varStatus="count">
+								
+								
 								<c:choose>
-
+                               
 								<c:when test="${empty subnavlinks.mgmahsubnavlabel}">
-
+                                
                                      </c:when>
                                     <c:when test="${subnavlinks.mgmahsubnavlink=='#'}">                                        
                                         <li><a href="javascript:void(0)" class="animateLink" title="${subnavlinks.mgmahsubnavlabel}">${subnavlinks.mgmahsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -68,7 +74,7 @@
 									<c:when test="${subnavlinks.mgmahopeninnewwindow==1}">
 										<li><a
 											target="${subnavlinks.mgmahopeninnewwindow?'_blank':'_self'}"
-											href="${subnavlinks.mgmahsubnavlink}.html"
+											href="${domain}${subnavlinks.mgmahsubnavlink}.html"
 											title="${subnavlinks.mgmahalttext}" class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
 												aria-hidden="true"
 												class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
@@ -77,7 +83,7 @@
 									<c:otherwise>
 										<li><a
 											target="${subnavlinks.mgmahopeninnewwindow?'_blank':'_self'}"
-											href="${subnavlinks.mgmahsubnavlink}.html"
+											href="${domain}${subnavlinks.mgmahsubnavlink}.html"
 											title="${subnavlinks.mgmahalttext}" class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
 												aria-hidden="true"
 												class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -106,7 +112,7 @@
 										<p>
 											<a
 												target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}"
-												href="${aboutrightsection.mgmahviewfeaturedproductslink}.html"
+												href="${domain}${aboutrightsection.mgmahviewfeaturedproductslink}.html"
 												title="${aboutrightsection.mgmahviewfeaturedproductslabel}"
 												class="animateLink">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
 												aria-hidden="true"
@@ -120,7 +126,7 @@
 										<p>
 											<a
 												target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}"
-												href="${aboutrightsection.mgmahviewfeaturedproductslink}.html"
+												href="${domain}${aboutrightsection.mgmahviewfeaturedproductslink}.html"
 												title="${aboutrightsection.mgmahviewfeaturedproductslabel}"
 												class="animateLink">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
 												aria-hidden="true"

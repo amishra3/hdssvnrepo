@@ -21,6 +21,12 @@
 
 
 %>
+<%
+JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
+%>
+<c:set var="pageprops" value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
+<c:set var="domain" value="${pageprops.domain}" />
+
 <c:set var="partnersubnavlinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmptsubnavlabel-mgmptsubnavlink-mgmptopeninnewwindow-mgmptalttext")%>" />
 <c:set var="partnerrightsection" value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmptmultidescription-mgmptmultisubnavlabel1-mgmptmultisubnavlink1-mgmptmultiopeninnewwindow")%>" />
 <c:set var="mgmptnavpath" value="${properties.mgmptnavpath}" />
@@ -33,7 +39,7 @@
 <!--     	<span class="icon-accordion-closed"></span> -->
 <!--     	<span class="icon-accordion-opened"></span> -->
 <!--     </a> -->
-    <div class="hds-megaMenuWrapper" style="background-image:url(${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${mgmptnavpath}">
+    <div class="hds-megaMenuWrapper" style="background-image:url(${domain}${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;" data-parent-title="${properties.mgmptnavtitle}" data-parent-path="${mgmptnavpath}">
 		<div class="hds-megaMenu">
         	<div class="content-container">
             	<div class="row">
@@ -62,10 +68,10 @@
                                         <li><a href="javascript:void(0)" title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
                                  </c:when>
                                    <c:when test="${subnavlinks.mgmptopeninnewwindow==1}">
-                        	<li><a target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}" href="${subnavlinks.mgmptsubnavlink}.html"  class="animateLink" title="${subnavlinks.mgmptalttext}">${subnavlinks.mgmptsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
+                        	<li><a target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}" href="${domain}${subnavlinks.mgmptsubnavlink}.html"  class="animateLink" title="${subnavlinks.mgmptalttext}">${subnavlinks.mgmptsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
 </c:when>
                                     <c:otherwise>
-                                        <li><a target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}" href="${subnavlinks.mgmptsubnavlink}.html" title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
+                                        <li><a target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}" href="${domain}${subnavlinks.mgmptsubnavlink}.html" title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
                                         </c:otherwise>
                                     </c:choose>
                                     </c:forEach>
@@ -90,11 +96,11 @@
 
                                     <c:when test="${partnerrighsection.mgmptmultiopeninnewwindow==1}">
                                   <p>
-                                  <a target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}" href="${partnerrighsection.mgmptmultisubnavlink1}.html" title="${partnerrighsection.mgmptmultisubnavlabel1}" class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></p>
+                                  <a target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}" href="${domain}${partnerrighsection.mgmptmultisubnavlink1}.html" title="${partnerrighsection.mgmptmultisubnavlabel1}" class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span aria-hidden="true" class="glyphicon glyphicon-new-window animateIcon"></span></a></p>
 </c:when>
                                      <c:otherwise>
                                          <p>
-                                             <a target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}" href="${partnerrighsection.mgmptmultisubnavlink1}.html" title="${partnerrighsection.mgmptmultisubnavlabel1}" class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
+                                             <a target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}" href="${domain}${partnerrighsection.mgmptmultisubnavlink1}.html" title="${partnerrighsection.mgmptmultisubnavlabel1}" class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
                                          </c:otherwise>
                                     </c:choose>
                                     </div>   
