@@ -7,14 +7,15 @@ public class ProductDescription {
 	
 	private String description;
 	
-	private boolean isDefault;
+	private boolean defaultDesc;
 	
-	public boolean isDefault() {
-		return isDefault;
+
+	public boolean isDefaultDesc() {
+		return defaultDesc;
 	}
 
-	public void setDefault(boolean isDefault) {
-		this.isDefault = isDefault;
+	public void setDefaultDesc(boolean defaultDesc) {
+		this.defaultDesc = defaultDesc;
 	}
 
 	public String[] getCategoryTag() {

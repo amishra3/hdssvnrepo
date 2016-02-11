@@ -10,7 +10,6 @@ import javax.jcr.RepositoryException;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -23,7 +22,6 @@ import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.ProductDescription;
 import com.hdscorp.cms.dao.ProductNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
-import com.hdscorp.cms.util.JsonMapper;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
@@ -93,15 +91,13 @@ public class ProdnSolCategoryLandingModel {
 				    	ProductDescription prodDescObj = mapper.readValue(desc, ProductDescription.class);
 				    	if(!defultDescriptionFound){
 					    	for(String prodTag:prodDescObj.getCategoryTag()){
-						    	if(Arrays.asList(tags).contains(prodTag)){
+						    	if(tags!=null && Arrays.asList(tags).contains(prodTag) && !defultDescriptionFound){
 						    		defultDescriptionFound=true;
-						    		prodDescObj.setDefault(true);
+						    		prodDescObj.setDefaultDesc(true);
 						    		break;
 						    	}
 					    	}
 				    	}
-				    	//Loop through tags and check if any of these tags are present in the product description
-				    	//If found, set is the default description flag to true for the object and also set the deault description flag found to true.
 				    	descriptionList.add(prodDescObj);
 				    }
 			    }

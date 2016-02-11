@@ -18,19 +18,28 @@
 		<div class="product" data-sort="${productInitialChar}" data-alpha="${productInitialChar}"
 		data-category="${productTags}">
 			<h3><a href="${product.productPath}" class="filterText">${product.productTitle}</a></h3>
-			<div class="deafultdesc">
-		    	${product.productDescription}
-		    </div>
 		    
 		    <%// IF there is no selector, dont include this as the defaul one would be showed %>
 		    <%// Mark the description which belongs to parent category, if available %>
 		    
+		    
 		    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="descloopcnt">
-		    	<div class="catdesc hidden" data-desctag="${fn:join(descriptionObj.categoryTag, ',')}">
+		    	<div class="catdesc ${descriptionObj.defaultDesc eq true?' catdefaultdesc':'hidden' }" data-desctag="${fn:join(descriptionObj.categoryTag, ',')}">
 		    		${descriptionObj.description}
 		    	</div>
+		    	
+		    	
+		    	<c:if test="${descriptionObj.defaultDesc eq true}">
+		    		<c:set var="defaultDescClass" value="hidden"/>
+		    	</c:if>
+		    	
 			</c:forEach>
-		    
+			
+			<div class="deafultdesc ${defaultDescClass}">
+		    	${product.productDescription}
+		    </div>
+			
+		    <c:set var="defaultDescClass" value=""/>
 		    <a href="${product.productPath}" class="animateLink">${properties.viewproductlabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 		 </div>
 	</c:forEach>

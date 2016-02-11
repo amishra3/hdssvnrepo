@@ -289,38 +289,50 @@ var hds = window.hds || {};
                     }
                 });
                 
-                
+                //Multiple Description Logic START
                 if(filters.category){
-                	//console.log(" -IFFF- "+filters.category);
                 	//Find the cat specific desc and show it + Hide the default description
+                    self.children(".catdesc").each(function(i) {
+                    	var parentdiv = $(this);
+                    	var descTags = $(this).data('desctag');
+                    	var descArray = descTags.split(',') ;
+                    	var catDescFound = false ;
+                    	
+                    	$.each( descArray , function(index, value) {
+                    		if($.inArray( value,filters.category) > -1){
+                    			if(!parentdiv.siblings('.catdefaultdesc').hasClass( "hidden")){
+                    				parentdiv.siblings('.catdefaultdesc').addClass( "hidden");	
+                    			}
+                    			parentdiv.siblings('.deafultdesc').addClass( "hidden");
+                    			parentdiv.removeClass( "hidden");
+                    			catDescFound =  true;
+                    			return false;
+                    		}
+                    	});
+                    });
+                	
                 }else{
-                	//console.log(" -ELSE- "+filters.category);
-                	//Reset all default desc to show and hide all cat specific desc's
+                	if(self.children('.catdefaultdesc').length>0){
+                		self.children('.catdesc').each(function(index){
+                			 $(this).addClass( "hidden");	
+                		});
+                		
+                		self.children('.catdefaultdesc').each(function(index){
+                			$(this).removeClass( "hidden");
+                		});
+                			
+            		}else{
+                		self.children('.catdesc').each(function(index){
+               			 $(this).addClass( "hidden");	
+	               		});
+	               		
+	               		self.children('.deafultdesc').each(function(index){
+	               			$(this).removeClass( "hidden");
+	               		});
+            		}
                 }
+                //Multiple Description Logic END
                 
-/*                
-                self.children(".catdesc").each(function(i) {
-                	var parentdiv = $(this);
-                	var descTags = $(this).data('desctag');
-                	var descArray = descTags.split(',') ;
-                	var catDescFound = false ;
-                	console.log(" -ELSE- "+filters.category);
-                	
-                	$.each( descArray , function(index, value) {
-                		if($.inArray( value,filters.category) > -1){
-                			parentdiv.removeClass( "hidden");
-                			parentdiv.siblings('.deafultdesc').addClass( "hidden");
-                			catDescFound =  true;
-                			return false;
-                		}
-                	});
-                	
-                	if(!catDescFound){
-            			parentdiv.addClass( "hidden");
-            			parentdiv.siblings('.deafultdesc').removeClass( "hidden");                		
-                	}
-                });
-*/
                 return result;
             }).show();
             if ($(".product:visible").length === 0) {
