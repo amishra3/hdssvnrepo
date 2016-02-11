@@ -59,7 +59,7 @@
          if(twitterPostMsg.indexOf('http')!=-1)
          {
              var twitterPostURL=twitterPostMsg.substring(twitterPostMsg.indexOf('http'),twitterPostMsg.length);
-                var twitterHREFLink='<a href='+twitterPostURL+' target="_blank">'+twitterPostURL+'</a>';
+                var twitterHREFLink='<a href='+twitterPostURL+' target="_blank" >'+twitterPostURL+'</a>';
 				twitterPostMsg=twitterPostMsg.replace(twitterPostURL,twitterHREFLink);
 
          }
@@ -68,7 +68,7 @@
          //htmlContent+='<tr><td style="text-decoration: underline;">Twitter ID  :: '+feedResponsefromStoredPath[count].twitterID+'</tr></td><tr><td> Twitter Media Url ::'+feedResponsefromStoredPath[count].twitterMediaUrl+'</td></tr><tr><td>Twitter MessageText  :: '+feedResponsefromStoredPath[count].twitterMessageText+'</tr></td><tr><td>Twitter Posted Date  :: '+feedResponsefromStoredPath[count].twitterPostedDate+'</td></tr><tr><td>Posted ::  '+postedDate+' ' +propertyValue
          //   '</td></tr>';
 
-         htmlContentTwitter+='<div class="hexagon320"><div class="icon"><img src="${twitterFeedModel.iconPath}" alt="" title=""></div><h4></h4><p>'+twitterPostMsg+'</p><p>'+postedDate+' ' +propertyValue+'</p></div>';
+         htmlContentTwitter+='<div class="hexagon320"> <div class="tweet-content"><div class="icon"><img src="${twitterFeedModel.iconPath}" alt="" title=""></div><h4></h4><p>'+twitterPostMsg+' <br/><br/>'+postedDate+' ' +propertyValue+'</p></div></div>';
 
     }
     $(".col-sm-10").append(htmlContentTwitter);
