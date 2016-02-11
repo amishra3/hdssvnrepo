@@ -45,7 +45,7 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers {
 	}
 
 	public String getBrightTalkFeedData(String xmlFeed) {
-		log.info("Start execution of getInvoke()");
+		log.info("xml feed response"+xmlFeed);
 
 		JSONArray feedList = new JSONArray();
 		try {

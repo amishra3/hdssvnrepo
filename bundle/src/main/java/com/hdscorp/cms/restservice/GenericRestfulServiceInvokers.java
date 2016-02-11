@@ -68,6 +68,8 @@ public abstract class GenericRestfulServiceInvokers {
 
 			HttpResponse reponse = invokeWS(methodType, parameter, feedUrl,
 					httpClient);
+			
+			log.info("response received from service call" + reponse);
 			if (reponse.getStatusLine().getStatusCode() != 200) {
 				jsonObject.put(ServiceConstants.JSON_STATUS_CODE, reponse
 						.getStatusLine().getStatusCode());
