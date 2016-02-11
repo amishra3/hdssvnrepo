@@ -46,7 +46,7 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 					<div class="col-md-12">
 						<div class="megamenu-heading hidden-xs hidden-sm">
 							<div class="icon">
-								<img src="${properties.mgmahtitleiconpath}"
+								<img src="${domain}${properties.mgmahtitleiconpath}"
 									title="${properties.mgmahtitle}">
 							</div>
 							<div class="title">
