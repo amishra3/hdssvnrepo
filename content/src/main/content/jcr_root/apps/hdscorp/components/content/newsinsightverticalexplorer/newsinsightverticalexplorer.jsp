@@ -33,7 +33,7 @@
                                         <img src="/content/dam/hdscorp/icon-content-type.png" alt="" title="">
                                     </div>
                                     <div class="type">${newsInsightVerticalExplorer.iconImageLabel} ${newsInsightVerticalExplorer.pressReleaseTop.pubDate}</div>
-                                    <div class="spotlight-title">${newsInsightVerticalExplorer.pressReleaseTop.title} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></div>                                    
+                                   <div class="spotlight-title">${newsInsightVerticalExplorer.pressReleaseTop.title} <a href="${newsInsightVerticalExplorer.targetURL}" class="animateLink"><span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></div>                                                                                                       
                                 </div>
                             </div>
                             <div class="news-insight-explore-spotlight spotlight-normal">
