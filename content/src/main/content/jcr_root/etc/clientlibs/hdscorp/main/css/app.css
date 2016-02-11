@@ -208,10 +208,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.product-category-list{
-		min-height: 900px;
-	}	
-	
+
 	.pr-list-container{
 		min-height: 900px;
 	}
