@@ -12,9 +12,9 @@
 		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl")%>" />	
 		<c:set var="bannertypeclass" value="behind-scene-hexagon"/>
 		<c:if test="${not empty properties.bannertype}">
-			<c:set var="bannertypeclass" value="${properties.bannertype}"/>
+			<c:set var="bannertypeclass1" value="${properties.bannertype}"/>
 		</c:if>
-		<div class="${bannertypeclass} clearfix" style="background-image: url('${properties.aboutusheximagePath}');">
+		<div class="${bannertypeclass1} clearfix" style="background-image: url('${properties.aboutusheximagePath}');">
 
             <c:if test="${not empty properties.aboutushextitlecontent}">
             <div class="content-container">
