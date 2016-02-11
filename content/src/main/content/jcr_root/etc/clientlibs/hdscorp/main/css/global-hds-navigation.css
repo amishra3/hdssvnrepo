@@ -345,10 +345,7 @@ HDS Global Header and Navigation
 }
 
 @media only screen and (max-width: 992px) {
-    .hds-global-header .breadcrumb-container {
-        top: 160px;
-        text-align: center;
-    }
+  
     .hds-global-header .hds-main-navigation-container {
         top: 42px;
         min-height: 43px;
@@ -392,9 +389,7 @@ HDS Global Header and Navigation
 }
 
 @media only screen and (max-width: 768px) {
-    .hds-global-header .breadcrumb-container {
-        top: 200px;
-    }
+    
     .hds-global-header .hds-main-navigation-container .hds-main-navigation > ul > li {
         display: table;
         min-height: 50px;
