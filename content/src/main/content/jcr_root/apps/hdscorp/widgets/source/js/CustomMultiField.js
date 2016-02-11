@@ -349,7 +349,7 @@ CQ.form.CustomMultiField.Item = CQ.Ext.extend(CQ.Ext.Panel, {
 								d.ownerCt.remove(d.field.items.get(e));                               
 							}
 							d.ownerCt.remove(d);   
-							enableDynamicLoad(g); // Added for Tab Builder
+							//enableDynamicLoad(g); // Added for Tab Builder
                             g.setNumberOfItems(g.items.getCount() - 1)
 
 						}
