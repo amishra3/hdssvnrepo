@@ -93,7 +93,37 @@
 	}
 	if(currentPage.getAbsoluteParent(3)!=null && !currentPage.getAbsoluteParent(3).isHideInNav())
 	{
-	String section=currentPage.getAbsoluteParent(3).getTitle();
-	%>
-	<meta name="section" content="<%=section%>" />
-	<%}%>
+     %><meta name="section" content="<%=currentPage.getAbsoluteParent(3).getTitle()%>" /><%
+
+	String section=currentPage.getAbsoluteParent(3).getName();
+        if(section.equalsIgnoreCase("services") && currentPage.getAbsoluteParent(4)!=null)
+           {
+			%><meta name="services" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+  			}
+	 	else if(section.equalsIgnoreCase("partners") && currentPage.getAbsoluteParent(4)!=null)
+           {
+			%><meta name="partners" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+  			}
+		else if(section.equalsIgnoreCase("newsandinsights") && currentPage.getAbsoluteParent(4)!=null)
+           {
+			%><meta name="newsandinsights" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+  			}
+        else if(section.equalsIgnoreCase("abouthds") && currentPage.getAbsoluteParent(4)!=null)
+        {
+			%><meta name="abouthds" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+  		}
+         else if(section.equalsIgnoreCase("contactus") && currentPage.getAbsoluteParent(4)!=null)
+        {
+			%><meta name="contactus" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+  		}
+         else if(section.equalsIgnoreCase("products-solutions") && currentPage.getAbsoluteParent(4)!=null)
+        {
+			%><meta name="products-solutions" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+  		}
+    }
+
+
+
+%>
+
+
