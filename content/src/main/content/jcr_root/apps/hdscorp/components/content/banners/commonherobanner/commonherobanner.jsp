@@ -17,11 +17,11 @@
 
 <c:choose>
 	<c:when test="${not empty properties.commonherobannertitle}">
-                <div class="common-hero-banner about-hds-csr clearfix" style="background-image:url('${properties.commonherobannerimagePath}');">
-                <div class="common-hero-banner-container">
+                <div class="about-hds-csr-eco server-rack clearfix" style="background-image:url('${properties.commonherobannerimagePath}');">
+                <div class="content-container container-fluid">
                     <div class="col-lg-7 col-md-7 col-xs-12 col-no-pad">
-                        <h2 class="headline">${properties.commonherobannertitle}</h2>
-                        <h3>${properties.commonherobannersubtitle}</h3>
+                        <h3>${properties.commonherobannertitle}</h3>
+                        <h2 class="headline">${properties.commonherobannersubtitle}</h2>
                         <h4 class="sub-headline">${properties.commonherobannercontent}</h4>
 
                         <c:if test="${not empty properties.commonherobannerbuttonlabel}">
@@ -36,7 +36,7 @@
 						  </c:if>
                     </div>
 
-                    <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm">
+                    <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-xs hidden-sm">
                         <div class="video-play-desktop">
                             <a href="#" class="btn-play-video">
                                 <img src="${properties.commonherobannericonpath}">                               

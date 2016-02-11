@@ -47,20 +47,70 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
-                    <commonherobannerbuttonlabel
+                    <commonbannerbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
-                        name="./commonherobannerbuttonlabel"
+                        name="./commonbannerbuttonlabel"
                         xtype="textfield"/>
-                    <commonherobannericonpath
+                    <commonbannerbuttonurl
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Video Icon Path"
-                        name="./commonherobannericonpath"
+                        fieldLabel="Button Target URL"
+                        name="./commonbannerbuttonurl"
                         xtype="pathfield"/>
-                    <commonherobannervideoembedcode
+                    <commonbannerurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./commonbannerurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <commonbannercontentalign
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Align Content on Right ?"
+                        name="./commonbannercontentalign"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <commonbannerlinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Text"
+                        name="./commonbannerlinklabel"
+                        xtype="textfield"/>
+                    <commonbannerlinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Target URL"
+                        name="./commonbannerlinkurl"
+                        xtype="pathfield"/>
+                    <commonbannerlinkurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./commonbannerlinkurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <commonbannerusevideomodal
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Use Video Modal ?"
+                        name="./commonbannerusevideomodal"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <commonbannerimageoverlaypath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}true"
+                        allowUpload="false"
+                        cropParameter=".simplebannerimageoverlaypathCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./simplebannerimageoverlayfileName2"
+                        fileReferenceParameter="./commonbannerimageoverlaypath"
+                        height="{Long}200"
+                        name="./simplebannerimageoverlaypath"
+                        rotateParameter="./simplebannerimageoverlayRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <commonbannervideoembedcode
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Video Embed code"
-                        name="./commonherobannervideoembedcode"
+                        name="./commonbannervideoembedcode"
                         xtype="textarea"/>
                 </items>
             </tab1>
