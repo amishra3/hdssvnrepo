@@ -197,6 +197,9 @@
   .news-insight-resources .news-resources-col .headline{
     font-size: 1.125rem;
   }
+	.news-insight-resources .news-resources-col .headline a {
+		color: #000;
+	}
   .news-insight-resources .news-resources-col{
     padding: 38px 15px 25px;
   }
