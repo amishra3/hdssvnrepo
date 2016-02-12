@@ -57,40 +57,6 @@
                         fieldLabel="Button Target URL"
                         name="./commonbannerbuttonurl"
                         xtype="pathfield"/>
-                    <commonbannerurltargettype
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Open in New Window ?"
-                        name="./commonbannerurltargettype"
-                        type="checkbox"
-                        xtype="selection"/>
-                    <commonbannercontentalign
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Align Content on Right ?"
-                        name="./commonbannercontentalign"
-                        type="checkbox"
-                        xtype="selection"/>
-                    <commonbannerlinklabel
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Link Text"
-                        name="./commonbannerlinklabel"
-                        xtype="textfield"/>
-                    <commonbannerlinkurl
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Link Target URL"
-                        name="./commonbannerlinkurl"
-                        xtype="pathfield"/>
-                    <commonbannerlinkurltargettype
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Open in New Window ?"
-                        name="./commonbannerlinkurltargettype"
-                        type="checkbox"
-                        xtype="selection"/>
-                    <commonbannerusevideomodal
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Use Video Modal ?"
-                        name="./commonbannerusevideomodal"
-                        type="checkbox"
-                        xtype="selection"/>
                     <commonbannerimageoverlaypath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}true"
