@@ -5,10 +5,6 @@
 
 
 
-
-
-
-
  <ul>
   <li class="active">
 <a data-catagory="${brightTalkLeftNavModel.btlpfeaturedlabel}" title="${brightTalkLeftNavModel.btlpfeaturedlabel}" class="active" href="javascript:void(0);">${brightTalkLeftNavModel.btlpfeaturedlabel}<span class="icon-accordion-closed hidden-md hidden-lg"></span>
@@ -31,7 +27,7 @@
                </c:choose>
                 </c:forEach>
            <li>
-<a data-catagory="<c:out value='${tagsNamelist}' />" title="${eventTag.key}" href="javascript:void(0);">${featureTag.key}<span class="icon-accordion-closed hidden-md hidden-lg"></span><span class="icon-accordion-opened hidden-md hidden-lg"></span></a><div class="MobileHolderWrapper"></div>
+<a data-catagory="<c:out value='${tagslist}' />" title="${eventTag.key}" href="javascript:void(0);">${featureTag.key}<span class="icon-accordion-closed hidden-md hidden-lg"></span><span class="icon-accordion-opened hidden-md hidden-lg"></span></a><div class="MobileHolderWrapper"></div>
 </li>
 
            </c:forEach>

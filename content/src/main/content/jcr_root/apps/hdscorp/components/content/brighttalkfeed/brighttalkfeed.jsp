@@ -3,38 +3,51 @@
 <%@page session="false" %>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 <%@page import="com.hdscorp.cms.constants.ServiceConstants"%> 
+<%@page import="com.hdscorp.cms.util.ServiceUtil"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Map"%>
 
+<% List<Map<String, String>> listMaps=ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.BrightTalkScheduler","storage.path"),ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME);
+pageContext.setAttribute("listMaps", listMaps); 
+ %>
 
-
-
-<div>
-    <table>
-        <tbody>
-
-        </tbody
-        </table>
+<div class="pr-list no-padding">
+    <div class="product-category-list pt-0">
+        <div class="product-category-list-container">
+            <div class="row">
+                <div class="col-md-3 webcast-listing">
+                    <cq:include path="brighttalkfeedFilters" resourceType="hdscorp/components/content/brigthtalkleftpannel" />
+                </div>
+                <!--  webcast Content to be Loaded here -->
+                <div id="contentWebCast">
+                    <div class="col-md-9 newsWrapper">
+                        <div class="noEventFilter">No webcast is found </div>
+                        <c:forEach items="${listMaps}" var="listm" varStatus="status">
+                            <div class="newsEvents ${status.first ? 'firstChild' : ''}" data-webcast="${listm.category}">
+                                <h3>${listm.title}</h3>
+                                <small>${listm.duration}</small>
+                                <h4 class="author">${listm.author}</h4>
+                                <p>${listm.summary}</p>
+                                <div class="WebcastDetails">
+                                    <p>${listm.duration}</p>
+                                    <c:choose>
+                                        <c:when test="${listm.status == 'recorded'}">
+                                            <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
+                                                <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" target="_blank" class="playvideo" title="Play">Play</a>
+                                            </div>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" title="Play">Register</a>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </div>
+                                <a href="javascript:void(0);" class="animateLink expandMe"><span class="glyphicon glyphicon-plus-sign"></span>details </a>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-   <script type="text/javascript">
- var htmlContent="";
-
-       var feedResponsefromStoredPath=<%=PageUtils.getPropertyValue(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.BrightTalkScheduler.config","storage.path"), ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME)%>;
- if(feedResponsefromStoredPath.statusCode!=undefined && feedResponsefromStoredPath.statusCode!=''){
-         htmlContent+='<tr><td>'+feedResponsefromStoredPath.statusCode+'</td><td>'+feedResponsefromStoredPath.statusReason+'</td></tr>';
-     }
-    else{
-
-
-     for(var count=0; count<feedResponsefromStoredPath.length; count++){
-
-         htmlContent+='<tr><td style="text-decoration: underline;">'+feedResponsefromStoredPath[count].title+'</tr></td><tr><td>'+feedResponsefromStoredPath[count].duration+
-             '</td></tr><tr><td>'+feedResponsefromStoredPath[count].author+'</td></tr><tr><td>'+feedResponsefromStoredPath[count].summary+
-                 '</td></tr><tr><td>recorded '+feedResponsefromStoredPath[count].updatedDate+'</td></tr><tr><td><img src='+feedResponsefromStoredPath[count].thumbnailPath+'></td></tr>';
-
-
-     }
-    }
-    $("table tbody").append(htmlContent);
-    </script>
-
