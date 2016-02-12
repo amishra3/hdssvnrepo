@@ -190,16 +190,16 @@ public abstract class GenericRestfulServiceInvokers {
     		    log.info("scheme added*********");
     		    httpClient.getConnectionManager().getSchemeRegistry().register(scheme);
                 
-               /* httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, 
-    		            new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "http"));*/
+                httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, 
+    		            new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "http"));
 				//HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "https");
-                HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]),"http");
+                //HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]),"http");
 
-				RequestConfig reqConfig = RequestConfig.custom()
+				/*RequestConfig reqConfig = RequestConfig.custom()
 						.setProxy(proxy).build();
 				
 				
-				request.setConfig(reqConfig);
+				request.setConfig(reqConfig);*/
 				
 				 log.info("end of get proxy method");
 				
