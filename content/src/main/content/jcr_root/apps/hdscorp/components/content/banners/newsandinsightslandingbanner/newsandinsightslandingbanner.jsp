@@ -17,11 +17,13 @@
 
 <c:choose>
 	<c:when test="${not empty properties.newsandinsightsbannertitle}">
-		<div class="common-hero-banner news-banner clearfix" style="background-image:url('${properties.newsandinsightsbannerimagePath}');">
-                <div class="common-hero-banner-container">
-                    <div class="col-lg-8 col-md-12 col-xs-12 col-no-pad news-content-box" >
+		<div class="common-hero-short-banner news-insight clearfix" style="background-image:url('${properties.newsandinsightsbannerimagePath}');">
+                <div class="content-container">
+                    <div class="col-lg-7 col-md-7 col-xs-12" >
         				    <h2 class="top-banner-heading">${properties.newsandinsightsbannertitle}</h2>
+                         <c:if test="${not empty properties.newsandinsightsbannersubtitle}">
                             <h1 class="headline">${properties.newsandinsightsbannersubtitle}</h1>
+                        </c:if>
                             <h4 class="sub-headline">${properties.newsandinsightsbannercontent}</h4>
                             <c:if test="${not empty properties.newsandinsightsbannerbuttonlabel}">        					
 	                            <div class="btn-square-white request">
