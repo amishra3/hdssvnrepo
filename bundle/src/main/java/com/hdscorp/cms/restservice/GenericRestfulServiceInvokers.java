@@ -153,7 +153,7 @@ public abstract class GenericRestfulServiceInvokers {
 			return httpClient.execute(postReq);
 		} else {
 			HttpGet request = new HttpGet(feedURL);
-			getProxy(request);
+			getProxy(httpClient,request);
 			if(request.getConfig()!=null && request.getConfig().getProxy()!=null){
 			log.info("Http proxy details are: host name:** :" +request.getConfig().getProxy().getHostName()+" port number:"+request.getConfig().getProxy().getPort());
 			}
@@ -162,7 +162,7 @@ public abstract class GenericRestfulServiceInvokers {
 
 	}
 
-	private CloseableHttpClient getProxy(HttpGet request ) {
+	private CloseableHttpClient getProxy(HttpClient httpClient, HttpGet request ) {
    
 		CloseableHttpClient httpclient = null;
 		    
@@ -186,14 +186,14 @@ public abstract class GenericRestfulServiceInvokers {
                
                  /*httpclient = HttpClients.custom()
                 .setDefaultCredentialsProvider(credsProvider).build();*/
-                /*Scheme scheme = new Scheme("https", 443, SSLSocketFactory.getSystemSocketFactory());
+                Scheme scheme = new Scheme("https", 443, SSLSocketFactory.getSystemSocketFactory());
     		    log.info("scheme added*********");
-    		    httpclient.getConnectionManager().getSchemeRegistry().register(scheme);*/
+    		    httpClient.getConnectionManager().getSchemeRegistry().register(scheme);
                 
                /* httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, 
     		            new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "http"));*/
 				//HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "https");
-                HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]),"https");
+                HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]),"http");
 
 				RequestConfig reqConfig = RequestConfig.custom()
 						.setProxy(proxy).build();
