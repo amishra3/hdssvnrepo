@@ -5,31 +5,23 @@
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.BlogModel" var="blogModel" />
 
-<img src="${blogModel.bimagepath}" />
-Blog Image Path: ${blogModel.bimagepath} <br>
 
-Blog Author: ${blogModel.bautherdetails} <br>
 
-Blog Title: ${blogModel.btitle} <br>
-
-Blog Content: ${blogModel.bcontent} <br>
-
-Blog Read More: ${blogModel.breadmore} <br>
-
-Blog Read More Link: ${blogModel.breadmorelink} <br>
-
-Blog Open in new Window: ${blogModel.bopeninnew} <br>
-
+<div class="insight-common-box">
+<div class="icon">
+<img title="" alt="" src="${blogModel.bimagepath}">
+</div>
+<div class="type">${blogModel.bautherdetails}</div>
+<h5>${blogModel.btitle}</h5>
+<div class="description"> ${blogModel.bcontent}</div>
+<div class="read-more">
 <c:choose>
-    <c:when test="${blogModel.bopeninnew=='true'}">
-        <a href="${blogModel.breadmorelink}" target="_blank">${blogModel.breadmore}</a>
+<c:when test="${blogModel.bopeninnew=='true'}">        
+<a href="${blogModel.breadmorelink}" class="animateLink" target="_blank">${blogModel.breadmore} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
 </c:when>
-
-    <c:otherwise>
-         <a href="${blogModel.breadmorelink}">${blogModel.breadmore}</a>
-
-    </c:otherwise>
-
+<c:otherwise>         
+<a href="${blogModel.breadmorelink}" class="animateLink">${blogModel.breadmore} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+</c:otherwise>
 </c:choose>
-
-
+</div>
+</div>
