@@ -15,12 +15,6 @@
                 <items
                     jcr:primaryType="cq:WidgetCollection"
                     xtype="multifieldpanel">
-                    <btlpfeaturedlabel
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
-                        fieldLabel="Feature"
-                        name="./btlpfeaturedlabel"
-                        xtype="textfield"/>
                     <btlpfeaturedtypes
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Feature Types"
