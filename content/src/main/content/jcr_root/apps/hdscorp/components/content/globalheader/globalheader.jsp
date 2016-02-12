@@ -74,7 +74,7 @@
 						class="icon nav-search"></span></li>
 				</ul>
 			</div>
-	
+
 			<button class="navbar-toggle collapsed nav-button" type="button"
 				data-toggle="collapse" data-target="#bs-navbar"
 				aria-controls="bs-navbar" aria-expanded="false" id="hdsMobileNaV">

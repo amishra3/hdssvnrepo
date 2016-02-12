@@ -20,9 +20,9 @@ var hds = window.hds || {};
             $hdsBody.removeClass('hds-MegaMenu-push-toleft');
         },
         buildMobileNav: function() {
-
             $('.globalNavWrapper').clone().appendTo('.hds-mobile-navigation');
             var cloneTopnav = $('.hds-quick-navigation ul').find('li').clone().appendTo('.hds-mobile-navigation > ul.removePosRelative');
+            $('ul.removePosRelative').removeClass('hidden-xs hidden-sm');
             $('ul.removePosRelative').find('li').removeClass('active');
             $('ul.removePosRelative').find('li.search').remove();
 
