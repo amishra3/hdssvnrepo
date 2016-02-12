@@ -16,7 +16,7 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 	 * Return to Top button funionality
 	 */
 	
-	$('.cta-scroll-top, .cta-scroll-top-mobile').on('click', function() {
+	$(document).on('click','.cta-scroll-top, .cta-scroll-top-mobile', function() {
 		$(window).scrollTo(0, 0, {
 			duration: 1000
 		});
