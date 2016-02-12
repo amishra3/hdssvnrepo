@@ -8,17 +8,27 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Dictionary;
 
+import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import org.osgi.service.cm.Configuration;
@@ -145,15 +155,17 @@ public abstract class GenericRestfulServiceInvokers {
 			HttpGet request = new HttpGet(feedURL);
 			getProxy(request);
 			if(request.getConfig()!=null && request.getConfig().getProxy()!=null){
-			log.info("Http proxy details are: host name:" +request.getConfig().getProxy().getHostName()+" port number:"+request.getConfig().getProxy().getPort());
+			log.info("Http proxy details are: host name:** :" +request.getConfig().getProxy().getHostName()+" port number:"+request.getConfig().getProxy().getPort());
 			}
 			return httpClient.execute(request);
 		}
 
 	}
 
-	private void getProxy(HttpGet request) {
-
+	private CloseableHttpClient getProxy(HttpGet request ) {
+   
+		CloseableHttpClient httpclient = null;
+		    
 		Configuration config;
 		try {
 			config = configurationAdmin.getConfiguration(HTTPCLIENT_PID);
@@ -164,16 +176,39 @@ public abstract class GenericRestfulServiceInvokers {
 				final String proxyHost = config.getProperties()
                         .get(propProxyHost).toString();
                 final String[] proxyValue = proxyHost.split(":");
-				HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "https");
+                
+                /*CredentialsProvider credsProvider = new BasicCredentialsProvider();
+                credsProvider.setCredentials(
+                        new AuthScope(proxyValue[0],  Integer.parseInt(proxyValue[1])),
+                        new UsernamePasswordCredentials("Infra", "wwwadmin"));
+                */
+                     
+               
+                 /*httpclient = HttpClients.custom()
+                .setDefaultCredentialsProvider(credsProvider).build();*/
+                /*Scheme scheme = new Scheme("https", 443, SSLSocketFactory.getSystemSocketFactory());
+    		    log.info("scheme added*********");
+    		    httpclient.getConnectionManager().getSchemeRegistry().register(scheme);*/
+                
+               /* httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, 
+    		            new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "http"));*/
+				//HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]), "https");
+                HttpHost proxy = new HttpHost(proxyValue[0], Integer.parseInt(proxyValue[1]),"https");
 
 				RequestConfig reqConfig = RequestConfig.custom()
 						.setProxy(proxy).build();
+				
+				
 				request.setConfig(reqConfig);
+				
+				 log.info("end of get proxy method");
+				
 			}
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
+		return httpclient;
 
 	}
 
