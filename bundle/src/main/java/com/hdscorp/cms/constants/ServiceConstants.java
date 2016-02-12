@@ -199,4 +199,11 @@ public final class ServiceConstants {
 	public static final String DATE_FORMAT_FROM_EVENT = "MM/dd/yy";
 	public static final String DATE_FORMAT_TO_EVENT = "MM/dd/yyyy";
 
+	/**
+	 * News and Insights Constraints
+	 */
+	
+	public static final String DATE_FORMAT_TO_FULL_MONTH_YEAR = "MMMM d, yyyy";
+	
+
 }
