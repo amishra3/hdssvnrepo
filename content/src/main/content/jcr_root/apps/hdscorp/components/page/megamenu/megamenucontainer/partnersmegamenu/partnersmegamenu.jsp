@@ -21,12 +21,8 @@
 
 
 %>
-<%
-JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
-%>
-<c:set var="pageprops"
-	value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
-<c:set var="domain" value="${pageprops.domain}" />
+
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
 
 <c:set var="partnersubnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmptsubnavlabel-mgmptsubnavlink-mgmptopeninnewwindow-mgmptalttext")%>" />

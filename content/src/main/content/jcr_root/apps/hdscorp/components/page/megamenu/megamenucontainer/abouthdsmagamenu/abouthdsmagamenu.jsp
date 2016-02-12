@@ -19,13 +19,8 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
-<%
-JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 
-%>
-<c:set var="pageprops"
-	value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
-<c:set var="domain" value="${pageprops.domain}" />
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
 <c:set var="subnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmahsubnavlabel-mgmahsubnavlink-mgmahalttext-mgmahopeninnewwindow")%>" />
 <c:set var="aboutrightsection"
@@ -43,6 +38,7 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 <!-- 		class="icon-accordion-closed"></span> <span -->
 <!-- 		class="icon-accordion-opened"></span> -->
 <!-- </a> -->
+
 <div class="hds-megaMenuWrapper"
 	style="background-image:url(${domain}${properties.mgmahbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmpsnavtitle}"
@@ -165,4 +161,3 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 	</div>
 </div>
 <!-- </li> -->
-
