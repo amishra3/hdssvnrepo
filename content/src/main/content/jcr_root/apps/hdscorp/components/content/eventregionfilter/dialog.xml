@@ -56,13 +56,6 @@
                                     key="econtenttag"
                                     name="./econtenttag"
                                     xtype="tags"/>
-                                <eregionttag
-                                    jcr:primaryType="cq:Widget"
-                                    allowBlank="{Boolean}false"
-                                    fieldLabel="Event Region Tag"
-                                    key="eregionttag"
-                                    name="./eregionttag"
-                                    xtype="tags"/>
                             </items>
                         </fieldConfig>
                     </eventtypes>

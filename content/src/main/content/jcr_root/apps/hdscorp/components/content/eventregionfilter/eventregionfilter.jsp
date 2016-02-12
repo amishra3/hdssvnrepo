@@ -1,24 +1,19 @@
-
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false"%>
-<%@ taglib prefix="xss"
-	uri="http://www.adobe.com/consulting/acs-aem-commons/xss"%>
-<%@page
-	import="com.day.cq.search.result.SearchResult,com.day.cq.search.result.Hit,java.util.List"%>
+<%@ taglib prefix="xss" uri="http://www.adobe.com/consulting/acs-aem-commons/xss"%>
+<%@page import="com.day.cq.search.result.SearchResult,com.day.cq.search.result.Hit,java.util.List"%>
 
 <%@page import="com.hdscorp.cms.util.PropertyResolver"%>
 
-<%@page
-	import="com.hdscorp.cms.slingmodels.EventDataModel,java.util.ArrayList"%>
-<%@page
-	import="com.hdscorp.cms.dao.EventNode,com.hdscorp.cms.util.ViewHelperUtil,com.hdscorp.cms.search.SearchServiceHelper"%>
+<%@page import="com.hdscorp.cms.slingmodels.EventDataModel,java.util.ArrayList"%>
+<%@page import="com.hdscorp.cms.dao.EventNode,com.hdscorp.cms.util.ViewHelperUtil,com.hdscorp.cms.search.SearchServiceHelper"%>
 
-<%@page
-	import="java.util.List,com.day.cq.search.facets.Facet,com.day.cq.search.facets.Bucket,java.util.Map,com.day.cq.tagging.TagManager,com.day.cq.tagging.Tag"%>
+<%@page import="java.util.List,com.day.cq.search.facets.Facet,com.day.cq.search.facets.Bucket,java.util.Map,com.day.cq.tagging.TagManager,com.day.cq.tagging.Tag"%>
 
-<sling:adaptTo adaptable="${resource}"
-	adaptTo="com.hdscorp.cms.slingmodels.EventRegionFilterComponent"
-	var="eventRegionFilterModel" />
+
+<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.EventRegionFilterComponent" var="eventRegionFilterModel" />
+
+
 <div class="tabbing-container">
 	<div class="content-container">
 		<div class="custom-nav-tabs">
