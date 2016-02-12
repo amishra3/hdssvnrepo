@@ -10,9 +10,9 @@
 <c:choose>
 	<c:when test="${not empty properties.abouthdsherobannertitle}">
 
-		 <div class="common-hero-banner about-hds-csr clearfix" style="background: url('${properties.abouthdsherobannermagePath}')">
+		 <div class="common-hero-banner about-hds-csr clearfix" style="background-image: url('${properties.abouthdsherobannermagePath}')">
 		     <div class="common-hero-banner-container">
-		         <div class="col-lg-7 col-md-7 col-xs-12">
+		         <div class="col-lg-6 col-md-6 col-xs-12">
 		             <h2 class="headline">${properties.abouthdsherobannertitle}</h2>
                       <h3>${properties.abouthdsbannersubtitle}</h3>
 		             <h4 class="sub-headline">${properties.abouthdsherobannercontent}</h4>
