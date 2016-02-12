@@ -44,10 +44,10 @@
 
 @media only screen and (max-width: 768px) {
     .hds-global-header .breadcrumb-container {
-        /*top: 200px;*/ top:60px;
+        /*top: 200px;*/ top:100px;
     }
     .navbar-toggle {
-        background-color: #cc0000;
+        background-color: #cc000	0;
         padding: 12px 11px 12px 10px;
         margin: 0;
         border-radius: 0px;
