@@ -29,3 +29,4 @@ news-insight-lp.css
 common-component.css
 app.css
 partner-lp.css
+newsEvents01.css
