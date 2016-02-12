@@ -21,7 +21,8 @@
 		    <%// IF there is no selector, dont include this as the defaul one would be showed %>
 		    <%// Mark the description which belongs to parent category, if available %>
 		    
-		    <c:if test="${model.noTags ne true}">
+<%-- 		    <c:if test="${model.noTags ne true && fn:length(slingRequest.requestPathInfo.selectors) < 2}"> --%>
+			<c:if test="${model.noTags ne true && fn:length(slingRequest.requestPathInfo.selectors) < 2}">
 			    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="descloopcnt">
 			    	<div class="catdesc ${descriptionObj.defaultDesc eq true?' catdefaultdesc':'hidden' }" data-desctag="${fn:join(descriptionObj.categoryTag, ',')}">
 			    		${descriptionObj.description}
