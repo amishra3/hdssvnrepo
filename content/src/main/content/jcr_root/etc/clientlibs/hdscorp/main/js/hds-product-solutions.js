@@ -110,12 +110,12 @@ var hds = window.hds || {};
         loadSubContent: function() {
             sizeCatagoryList = $(".category-products-listing .product").size();
             x = 3;
-            $('.product:lt(' + x + ')').show();
+            $('.product:lt(' + x + ')').show('medium');
              hds.loadDataFilters.bindHTMLLoad();
              hds.loadDataFilters.udatePageCount();
             $(document).delegate('#loadMoreBtn', 'click', function() {
                 x = (x + 5 <= sizeCatagoryList) ? x + 5 : sizeCatagoryList;
-                $('.product:lt(' + x + ')').show();
+                $('.product:lt(' + x + ')').show('medium');
                 hds.loadDataFilters.udatePageCount();
                 if (x == sizeCatagoryList) {
                     $('#loadMoreBtn').hide();
@@ -177,7 +177,7 @@ var hds = window.hds || {};
                     $('.product').addClass('alphasort');
                     $('.headerSort').show();
                     if ($('.product-listing input.filters').filter(':checked').length <= 0) {
-                        $(".product").show()
+                        $(".product").show('medium')
                     }
                     $('#loadMoreBtn').hide();
                 }
@@ -334,7 +334,7 @@ var hds = window.hds || {};
                 //Multiple Description Logic END
                 
                 return result;
-            }).show();
+            }).show('medium');
             if ($(".product:visible").length === 0) {
                 $('#loadCatagoryContent').find('.no-matched-result').remove();
                 $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
