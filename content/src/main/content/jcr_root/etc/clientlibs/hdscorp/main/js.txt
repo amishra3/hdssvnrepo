@@ -14,3 +14,4 @@ social-innovation.js
 press-release.js
 news-insight-news.js
 about-hds-awards.js
+about-hds-csr.js
