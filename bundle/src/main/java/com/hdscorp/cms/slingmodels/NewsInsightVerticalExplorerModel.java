@@ -13,12 +13,14 @@ import org.apache.sling.models.annotations.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.dao.PressReleaseModel;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.ServiceUtil;
 
 /**
  * Sling model for NewsInsightVerticalExplorer Component
+ * 
  * @author gokula.nand
  *
  */
@@ -44,12 +46,11 @@ public class NewsInsightVerticalExplorerModel {
 	@Named("nibtlabeltargeturl")
 	@Default(values = { "Target URL" })
 	private String targetURL;
-	
+
 	@Inject
 	@Named("nibteventtype")
 	@Default(values = { "Event Type" })
 	private String eventType;
-	
 
 	private PressReleaseModel pressReleaseTop;
 
@@ -72,19 +73,17 @@ public class NewsInsightVerticalExplorerModel {
 	@Named("nibticonreadmorelabel")
 	@Default(values = { "Read More" })
 	private String readMoreBottomLabel;
-	
+
 	@Inject
 	@Named("nibttopeninnewwindow")
 	@Default(values = { "false" })
 	private String openinnewwindow;
 
-	
 	@Inject
 	@Named("nibtbeventtype")
 	@Default(values = { "Event Type" })
 	private String eventTypeBottom;
-	
-	
+
 	private PressReleaseModel pressReleaseBottom;
 
 	public String getBackgroundImagePath() {
@@ -119,8 +118,6 @@ public class NewsInsightVerticalExplorerModel {
 		return readMoreBottomLabel;
 	}
 
-	
-	
 	public String getEventType() {
 		return eventType;
 	}
@@ -128,59 +125,93 @@ public class NewsInsightVerticalExplorerModel {
 	public String getOpeninnewwindow() {
 		return openinnewwindow;
 	}
-	
 
 	public String getEventTypeBottom() {
 		return eventTypeBottom;
 	}
 
 	public PressReleaseModel getPressReleaseTop() {
-
-		if(getEventType().equalsIgnoreCase("Press Release")){
+		Resource resource = null;
+		if (getEventType().equalsIgnoreCase("Press Release")) {
 			pressReleaseTop = new PressReleaseModel();
-			Resource resource = JcrUtilService.getResourceResolver().resolve(getTargetURL() + "/jcr:content/pressrelease");
+			resource = JcrUtilService.getResourceResolver().resolve(getTargetURL() + "/jcr:content/pressrelease");
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
-				
+
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 
 				pressReleaseTop.setTitle(properties.get("pressreleasetitle", (String) null).toString());
 
 				Calendar cal = (Calendar) properties.get("pressreleasedate");
 				try {
-					pressReleaseTop.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(), "MMMM d, yyyy"));
+					pressReleaseTop.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(),
+							ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 				} catch (ParseException e) {
 					log.info("Exception occurs duing getting value from Node: " + e);
 				}
 
 			}
 
-			
-		}
-		return pressReleaseTop;
-	
-	}
+		} else if (getEventType().equalsIgnoreCase("Event")) {
 
-	public PressReleaseModel getPressReleaseBottom() {
-		
-		if(getEventTypeBottom().equalsIgnoreCase("Press Release")){
-		Resource resource = JcrUtilService.getResourceResolver()
-				.resolve(getTargetBottomURL() + "/jcr:content/pressrelease");
-		if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
-			pressReleaseBottom = new PressReleaseModel();
-			ValueMap properties = resource.adaptTo(ValueMap.class);
+			pressReleaseTop = new PressReleaseModel();
+			resource = JcrUtilService.getResourceResolver().resolve(getTargetURL() + "/jcr:content/event");
+			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+				ValueMap properties = resource.adaptTo(ValueMap.class);
+				pressReleaseTop.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
+				try {
+					pressReleaseTop.setPubDate(ServiceUtil.getDisplayDateFormat(
+							properties.get("jcr:eventenddate", (String) null).toString(),
+							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
+				} catch (ParseException e) {
+					log.info("Exception occurs duing getting value from Node: " + e);
+				}
 
-			pressReleaseBottom.setTitle(properties.get("pressreleasetitle", (String) null).toString());
-			
-			Calendar cal = (Calendar) properties.get("pressreleasedate");
-			try {
-				pressReleaseBottom.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(), "MMMM d, yyyy"));
-			} catch (ParseException e) {
-				log.info("Exception occurs duing getting value from Node: " + e);
 			}
 
 		}
-		
+		return pressReleaseTop;
+
 	}
+
+	public PressReleaseModel getPressReleaseBottom() {
+		Resource resource = null;
+		if (getEventTypeBottom().equalsIgnoreCase("Press Release")) {
+			resource = JcrUtilService.getResourceResolver().resolve(getTargetBottomURL() + "/jcr:content/pressrelease");
+			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+				pressReleaseBottom = new PressReleaseModel();
+				ValueMap properties = resource.adaptTo(ValueMap.class);
+
+				pressReleaseBottom.setTitle(properties.get("pressreleasetitle", (String) null).toString());
+
+				Calendar cal = (Calendar) properties.get("pressreleasedate");
+				try {
+					pressReleaseBottom.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(),
+							ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
+				} catch (ParseException e) {
+					log.info("Exception occurs duing getting value from Node: " + e);
+				}
+
+			}
+
+		} else if (getEventTypeBottom().equalsIgnoreCase("Event")) {
+			pressReleaseBottom = new PressReleaseModel();
+			resource = JcrUtilService.getResourceResolver().resolve(getTargetBottomURL() + "/jcr:content/event");
+			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+
+				ValueMap properties = resource.adaptTo(ValueMap.class);
+
+				pressReleaseBottom.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
+
+				try {
+					pressReleaseBottom.setPubDate(ServiceUtil.getDisplayDateFormat(
+							properties.get("jcr:eventenddate", (String) null).toString(),
+							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
+				} catch (ParseException e) {
+					log.info("Exception occurs duing getting value from Node: " + e);
+				}
+
+			}
+		}
 		return pressReleaseBottom;
 	}
 
