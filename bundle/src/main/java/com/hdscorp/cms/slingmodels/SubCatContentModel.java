@@ -80,7 +80,7 @@ public class SubCatContentModel {
 				Page reourcePage = hit.getResource().adaptTo(Page.class);
 			    String pageTitle = reourcePage.getTitle();
 			    String pagePath = reourcePage.getPath();
-			   
+			    productNode.setProductDescription((String)reourcePage.getProperties().get("subtext"));
 			    
 			    Resource descriptionListResource = reourcePage.getContentResource("productdescriptions") ;
 			    String[] productMultiDescriptionList = new String[0];
@@ -89,9 +89,7 @@ public class SubCatContentModel {
 			    	ValueMap descriptioNodeProps= descriptionListResource.adaptTo(ValueMap.class);
 			    	if(descriptioNodeProps.containsKey("productDefaultDescription")) {
 			    		productNode.setProductDescription(descriptioNodeProps.get("productDefaultDescription").toString());
-			    	} else {
-			    		productNode.setProductDescription((String)reourcePage.getProperties().get("subtext"));
-			    	}
+			    	} 
 			    	if(desctags.length>0 && !desctags[0].isEmpty()) {
 				    	productMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
 				    	
