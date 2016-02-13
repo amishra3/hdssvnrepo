@@ -43,7 +43,8 @@
                                     key="categoryTag"
                                     layout="anchor"
                                     name="cq:tags"
-                                    xtype="tags"/>
+                                    xtype="tags"
+								/>
                                 <productDescription
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"
@@ -61,4 +62,13 @@
             </tab1>
         </items>
     </items>
+    <listeners jcr:primaryType="nt:unstructured" beforesubmit="function(dialog) {                           
+			var tagsArray = dialog.findByType('tags');
+			var mergedString= '';
+			$.each(tagsArray ,function(index,value) {
+     			mergedString = mergedString+','+value.getValue();   
+			});
+			
+			return HDSCORP.findDuplicatesInArray(mergedString);  
+    }"/>
 </jcr:root>

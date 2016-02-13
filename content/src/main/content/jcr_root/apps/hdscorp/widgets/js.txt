@@ -14,3 +14,4 @@ CustomMenuMultiField.js
 CustomCompositeField.js
 CustomMultiField.js
 nestedmultifield.js
+hdscorpvalidations.js
