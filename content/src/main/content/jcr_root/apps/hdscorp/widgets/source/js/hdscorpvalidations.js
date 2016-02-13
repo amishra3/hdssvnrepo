@@ -19,3 +19,10 @@ HDSCORP.findDuplicatesInArray = function(mergedString) {
 	}
 	
 };
+
+
+
+HDSCORP.prodsoltagvalidation = function(mergedString) {
+	var mergedArray= mergedString.split(',');
+	alert("-----"+mergedArray);	
+};

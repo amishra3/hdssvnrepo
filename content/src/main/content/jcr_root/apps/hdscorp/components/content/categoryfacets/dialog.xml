@@ -106,6 +106,7 @@
                                                 allowBlank="{Boolean}false"
                                                 anchor="100%"
                                                 fieldLabel="Tag Id"
+                                                fieldDescription="&lt;b style=color:red;font-size:15px&gt;Use Only One Tag Per Sub-Category&lt;/b&gt;"
                                                 key="sub-category-tag"
                                                 layout="anchor"
                                                 name="cq:tags"
