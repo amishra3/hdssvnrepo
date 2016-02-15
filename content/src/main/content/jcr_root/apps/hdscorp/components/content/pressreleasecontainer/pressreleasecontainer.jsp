@@ -58,9 +58,6 @@
                     <!-- Press Release List Content to Loaded here -->
                     <div id="contentCatagory">
                         <c:if test="${not empty includetargetURL}">
-                        	<% 
-                        	System.out.println(":::::::::::::::::::"+(String)pageContext.getAttribute("includetargetURL"));
-                        	%>
 							<sling:include path="${includetargetURL}"/>
 						</c:if>
                     </div>
