@@ -5,6 +5,16 @@ public class NewsContainerNode {
 
 	private String filterText;
 
+	private String fullFilterUrl;
+	
+	public String getFullFilterUrl() {
+		return fullFilterUrl;
+	}
+
+	public void setFullFilterUrl(String fullFilterUrl) {
+		this.fullFilterUrl = fullFilterUrl;
+	}
+
 	public String getFilterUrl() {
 		return filterUrl;
 	}

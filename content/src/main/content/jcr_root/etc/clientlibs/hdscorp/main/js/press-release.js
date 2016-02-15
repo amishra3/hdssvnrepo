@@ -3,14 +3,15 @@ var hds = window.hds || {};
 (function(window, document, $, hds) {
     hds.pressrelease = {
         init: function() {
-            hds.pressrelease.loadCatagoryHTML();
+            //hds.pressrelease.loadCatagoryHTML();
+            hds.pressrelease.bindHTMLLoad();
             hds.pressrelease.bindEventsOnResize();
             hds.pressrelease.bindClick();
         },
         loadCatagoryHTML: function() {        	
             hds.pressrelease.processHTML($('.linkLeft a').eq(0).attr('data-loadhtml'), 0);
-            $('.linkLeft a').eq(0).addClass('active');
-            $('.linkLeft a').eq(0).parent().addClass('active');
+            //$('.linkLeft a').eq(0).addClass('active');
+            //$('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
             $("#contentCatagory").html(" ").load(url + " .pr-archives-list", function() {

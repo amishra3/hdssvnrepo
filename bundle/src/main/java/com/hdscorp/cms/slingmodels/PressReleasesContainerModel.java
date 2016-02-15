@@ -62,9 +62,11 @@ public class PressReleasesContainerModel {
 		for (int i = year; i> (year-navYears) ; i--) {
 			NewsContainerNode newsContainerNode = new NewsContainerNode();
 			if(fullText!=null) {
-			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+i)+"?fullText= "+fullText);
+				newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+i)+"?fullText= "+fullText);
+				newsContainerNode.setFullFilterUrl(this.searchPagePath + "."+i+"?fullText= "+fullText);
 			} else {
 				newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+i));
+				newsContainerNode.setFullFilterUrl(this.searchPagePath + "."+i);
 			}
 			newsContainerNode.setFilterText(String.valueOf(i));
 			filterUrls.add(newsContainerNode);
@@ -72,8 +74,10 @@ public class PressReleasesContainerModel {
 		NewsContainerNode newsContainerNode = new NewsContainerNode();
 		if(fullText!=null){
 			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+"archive"+"."+navYears)+"?fullText= "+fullText);
+			newsContainerNode.setFullFilterUrl(this.searchPagePath + "."+"archive"+"."+navYears+"?fullText= "+fullText);
 		}else {
 			newsContainerNode.setFilterUrl(PathResolver.getShortURLPath(this.searchPagePath + "."+"archive"+"."+navYears));
+			newsContainerNode.setFullFilterUrl(this.searchPagePath + "."+"archive"+"."+navYears);
 		}
 		
 		newsContainerNode.setFilterText(this.archiveLabel);
