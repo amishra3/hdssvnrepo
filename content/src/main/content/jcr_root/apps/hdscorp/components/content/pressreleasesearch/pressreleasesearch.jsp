@@ -25,8 +25,12 @@
 <div class="col-md-9 pr-archives-list">
 	<div class="pr-archives-list-items">
 		<c:forEach var="news" items="${model.newsList}" varStatus="loopcnt">
-
-			<div class="pr">
+        
+         
+         <div class="pr">
+         <c:when test="${searchType == 'awards'}">
+		<div class="award-logo"><img src="${news.imgpath}" alt=""/></div>
+		</c:when>
 				<div class="pr-date">${news.newsDate}</div>
 				<h3>${news.newsTitle}</h3>
 				<a href="${news.newsDetailPath}" class="animateLink">${model.readMoreText}<span
@@ -34,6 +38,9 @@
 					class="glyphicon glyphicon-menu-right animateIcon"></span>
 				</a>
 			</div>
+			
+			
+			
 		</c:forEach>
 	</div>
 	<c:if test="${resultSize!=0 and resultSize > itemsVisibleonLoad}">

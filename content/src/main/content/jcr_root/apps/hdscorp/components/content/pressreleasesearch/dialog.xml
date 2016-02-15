@@ -69,7 +69,11 @@
 					        <two
 					            jcr:primaryType="nt:unstructured"
 					            text="News"
-					            value="News"/>   
+					            value="News"/> 
+					         <three
+					            jcr:primaryType="nt:unstructured"
+					            text="Awards"
+					            value="awards"/>    
 					    </options>
                 </searchType>       
                 </items>
