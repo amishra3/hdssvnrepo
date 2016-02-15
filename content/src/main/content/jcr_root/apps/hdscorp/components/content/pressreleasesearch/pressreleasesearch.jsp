@@ -28,9 +28,9 @@
         
          
          <div class="pr">
-         <c:when test="${searchType == 'awards'}">
+        <c:if test="${searchType == 'awards'}">
 		<div class="award-logo"><img src="${news.imgpath}" alt=""/></div>
-		</c:when>
+        </c:if>
 				<div class="pr-date">${news.newsDate}</div>
 				<h3>${news.newsTitle}</h3>
 				<a href="${news.newsDetailPath}" class="animateLink">${model.readMoreText}<span
