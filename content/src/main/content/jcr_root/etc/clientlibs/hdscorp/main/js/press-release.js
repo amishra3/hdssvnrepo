@@ -3,15 +3,15 @@ var hds = window.hds || {};
 (function(window, document, $, hds) {
     hds.pressrelease = {
         init: function() {
-            //hds.pressrelease.loadCatagoryHTML();
-            hds.pressrelease.bindHTMLLoad();
+            hds.pressrelease.loadCatagoryHTML();
             hds.pressrelease.bindEventsOnResize();
             hds.pressrelease.bindClick();
+            hds.pressrelease.loadMorePressRelease();
         },
         loadCatagoryHTML: function() {        	
             hds.pressrelease.processHTML($('.linkLeft a').eq(0).attr('data-loadhtml'), 0);
-            //$('.linkLeft a').eq(0).addClass('active');
-            //$('.linkLeft a').eq(0).parent().addClass('active');
+            $('.linkLeft a').eq(0).addClass('active');
+            $('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
             $("#contentCatagory").html(" ").load(url + " .pr-archives-list", function() {
@@ -40,7 +40,20 @@ var hds = window.hds || {};
                         $('.MobileHolderWrapper').empty().removeAttr('style');                        
                     }
                 });
+                hds.pressrelease.loadMorePressRelease();
             }
+        },
+        loadMorePressRelease: function() {
+            sizePrList = $(".pr").hide().size();
+            var x = 3;
+            $('.pr:lt(' + x + ')').show('medium');
+            $(document).on('click','#loadMorePrBtn', function() {
+                x = (x + 5 <= sizePrList) ? x + 5 : sizePrList;
+                $('.pr:lt(' + x + ')').show('medium');
+                if (x == sizePrList) {
+                    $('#loadMorePrBtn').hide();
+                }
+            });
         },
         bindEventsOnResize: function() {
             $(window).resize(function() {
@@ -90,7 +103,7 @@ var hds = window.hds || {};
             	searchTermPreValue = searchTerm;
             });
             
-            
+
             $('#fulltext').on("change keyup", function(){
             	$('.pr-search .glyphicon-search').click();//Trigger search button click event
             })
