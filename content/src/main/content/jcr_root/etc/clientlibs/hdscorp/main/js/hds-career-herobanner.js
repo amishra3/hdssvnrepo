@@ -79,7 +79,7 @@ var hds = window.hds || {};
 }(window, document, jQuery, hds));
 
 $(function() {
-    if ($("#bannerCarsoul")) {
+    if ($("#bannerCarsoul").length>0) {
         hds.careerHomeBanner.init();
     }
 })
