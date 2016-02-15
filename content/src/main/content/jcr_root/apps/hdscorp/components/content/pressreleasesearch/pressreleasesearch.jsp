@@ -38,7 +38,7 @@
 	</div>
 	<c:if test="${resultSize!=0 and resultSize > itemsVisibleonLoad}">
 		<div class="pr-load-more">
-			<div class="learn-more-red-link">
+			<div class="learn-more-red-link" id="loadMorePrBtn">
 				<a href="javascript:void(0);">${model.loadMoreLabel}</a>
 			</div>
 		</div>
