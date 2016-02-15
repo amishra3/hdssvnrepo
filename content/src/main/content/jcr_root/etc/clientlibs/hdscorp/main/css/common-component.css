@@ -320,7 +320,7 @@ line-height: 1;
   background: #ffffff;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
   padding: 0 0 0 45px;
-  min-height: 768px;
+  min-height: 0;
 }
 
 .pr-archives-list .pr-archives-list-items .pr{
