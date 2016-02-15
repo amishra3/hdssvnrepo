@@ -3,7 +3,8 @@ var hds = window.hds || {};
 (function(window, document, $, hds) {
     hds.pressrelease = {
         init: function() {
-            hds.pressrelease.loadCatagoryHTML();
+            //hds.pressrelease.loadCatagoryHTML();
+            hds.pressrelease.bindHTMLLoad();
             hds.pressrelease.bindEventsOnResize();
             hds.pressrelease.bindClick();
             hds.pressrelease.loadMorePressRelease();
