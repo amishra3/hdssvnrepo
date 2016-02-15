@@ -5,7 +5,15 @@ public class NewsNode {
 	private String newsTitle;
 
 	private String newsDetailPath;
-	
+	private String description;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	private String newsDate;
 	

@@ -41,6 +41,7 @@ public class SearchServiceHelper {
 	private static final String ORDER_BY_PROPERTY = "@jcr:content/jcr:lastModified";
 	private static final String PR_ORDER_BY_PROPERTY = "@jcr:content/pressrelease/pressreleasedate";
 	private static final String NEWS_ORDER_BY_PROPERTY = "@jcr:content/newsdetail/newsdate";
+	private static final String AWARDS_ORDER_BY_PROPERTY = "@jcr:content/awarddetail/awarddate";
 	private static final String ORDER_BY_SORT = "desc";
 	private static final String ARCHIVE = "archive";
 
@@ -108,11 +109,16 @@ public class SearchServiceHelper {
 		searchParams.put("property.operation", "exists");
 		searchParams.put("orderby.sort", "desc");
 		searchParams.put("orderby", PR_ORDER_BY_PROPERTY);
-        } else {
+        } else if(searchType.equalsIgnoreCase("news")) {
         	searchParams.put("property", "jcr:content/newsdetail/newstitle");
     		searchParams.put("property.operation", "exists");
     		searchParams.put("orderby.sort", "desc");
     		searchParams.put("orderby", NEWS_ORDER_BY_PROPERTY);
+        }else {
+        	searchParams.put("property", "jcr:content/awarddetail/awardtitle");
+    		searchParams.put("property.operation", "exists");
+    		searchParams.put("orderby.sort", "desc");
+    		searchParams.put("orderby", AWARDS_ORDER_BY_PROPERTY);
         }
         if(offSet!=null){
         	searchParams.put("p.offset",offSet);
@@ -138,12 +144,18 @@ public class SearchServiceHelper {
 			searchParams.put("group." + groupCnt + "_group.2_fulltext.relPath","jcr:content/pressrelease/@pressreleasetitle");
 			searchParams.put("group." + groupCnt + "_group.3_fulltext",fullText);
 			searchParams.put("group." + groupCnt+ "_group.3_fulltext.relPath","jcr:content/pressrelease/@pressreleasedesc");
-		}else if(fullText!=null && !searchType.equalsIgnoreCase("pressRelease")){
+		}else if(fullText!=null && searchType.equalsIgnoreCase("news")){
 		    searchParams.put("group." + groupCnt + "_group.p.or", "true");
 			searchParams.put("group." + groupCnt + "_group.1_fulltext",fullText);
 			searchParams.put("group." + groupCnt+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
 			searchParams.put("group." + groupCnt + "_group.2_fulltext",fullText);
 			searchParams.put("group." + groupCnt + "_group.2_fulltext.relPath","jcr:content/newsdetail/@newstitle");
+		} else if(fullText!=null && searchType.equalsIgnoreCase("awards")) {
+			searchParams.put("group." + groupCnt + "_group.p.or", "true");
+			searchParams.put("group." + groupCnt + "_group.1_fulltext",fullText);
+			searchParams.put("group." + groupCnt+ "_group.1_fulltext.relPath", "jcr:content/@cq:tags");
+			searchParams.put("group." + groupCnt + "_group.2_fulltext",fullText);
+			searchParams.put("group." + groupCnt + "_group.2_fulltext.relPath","jcr:content/awarddetail/@awardtitle");
 		}
       
 		if(filter!=null) {
