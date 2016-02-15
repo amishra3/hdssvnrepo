@@ -20,7 +20,7 @@ try {
 	pressReleasesService.getPressReleasesResponse("https://www.hds.com/corporate/rss-and-subscriptions/news/", "news");
 
 } catch (Exception ex) {
-	System.out.println("+++++++++++++++IN ERROR BLOCK"+ ex.getMessage());
+// 	System.out.println("+++++++++++++++IN ERROR BLOCK"+ ex.getMessage());
 }
 
 %>
