@@ -134,7 +134,7 @@ public class PressReleasesSearchModel {
 				}
 
 			}
-			} else {
+			} else if(searchType.equalsIgnoreCase("news")){
 				SearchResult result = searchServiceHelper.getPressReleases(
 						viewtype, newsPath, noOfYears, fullText,null,"0","news");
 				List<Hit> hits = result.getHits();
@@ -166,6 +166,45 @@ public class PressReleasesSearchModel {
 						
 						
 						newsNode.setNewsDetailPath(properties.get("newslink",
+								(String) null).toString());
+						newsList.add(newsNode);
+					}
+
+				}
+			} else {
+				SearchResult result = searchServiceHelper.getPressReleases(
+						viewtype, newsPath, noOfYears, fullText,null,"0","awards");
+				List<Hit> hits = result.getHits();
+	              
+				newsList = new ArrayList<NewsNode>();
+
+				for (Hit hit : hits) {
+
+					Resource resource = JcrUtilService.getResourceResolver()
+							.resolve(
+									hit.getResource().getPath()
+											+ "/jcr:content/awarddetail");
+					if (!resource
+							.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+
+						NewsNode newsNode = new NewsNode();
+						ValueMap properties = resource.adaptTo(ValueMap.class);
+
+						newsNode.setNewsTitle(properties.get("awardtitle",
+								(String) null).toString());
+						newsNode.setImgpath(properties.get("awardimg",
+								(String) null).toString());
+
+						Calendar cal  =(Calendar) properties.get("awarddate");
+						
+						
+						
+						newsNode.setNewsDate(ServiceUtil.getStringFromDate(cal.getTime(),
+								"MMMM d, yyyy"));
+
+						
+						
+						newsNode.setNewsDetailPath(properties.get("awardlink",
 								(String) null).toString());
 						newsList.add(newsNode);
 					}

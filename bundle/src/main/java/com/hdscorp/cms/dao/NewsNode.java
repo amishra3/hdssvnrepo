@@ -3,12 +3,20 @@ package com.hdscorp.cms.dao;
 public class NewsNode {
 	
 	private String newsTitle;
-
+    private String imgpath;
 	private String newsDetailPath;
 	private String description;
 
 	public String getDescription() {
 		return description;
+	}
+
+	public String getImgpath() {
+		return imgpath;
+	}
+
+	public void setImgpath(String imgpath) {
+		this.imgpath = imgpath;
 	}
 
 	public void setDescription(String description) {
