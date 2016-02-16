@@ -9,7 +9,7 @@
 <c:choose>
 	<c:when test="${not empty properties.aboutushextitlecontent}">
 
-		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl")%>" />	
+		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl-seemorenewwin")%>" />	
 		<c:set var="bannertypeclass" value="behind-scene-hexagon"/>
 		<c:if test="${not empty properties.bannertype}">
 			<c:set var="bannertypeclass1" value="${properties.bannertype}"/>
@@ -19,10 +19,10 @@
             <c:if test="${not empty properties.aboutushextitlecontent}">
             <div class="content-container">
             	<h2>${properties.aboutushextitlecontent}</h2>
+                <c:if test="${not empty properties.aboutushexsubtitlecontent}">
+                    <p class="col-sm-10 col-sm-offset-1">${properties.aboutushexsubtitlecontent}</p>
+                </c:if>
             </div>
-            </c:if>
-            <c:if test="${not empty properties.aboutushexsubtitlecontent}">
-            	<p class="col-sm-10 col-sm-offset-1">${properties.aboutushexsubtitlecontent}</p>
             </c:if>
 
             <div class="${bannertypeclass}-list">
@@ -51,7 +51,7 @@
                                 <c:if test="${not empty placardurllabel}">
 
 								<div class="read-more">
-									<a href="${placardtargeturl}" class="animateLink">${placardurllabel}
+									<a href="${placardtargeturl}" target="${placardList.seemorenewwin==1?'_blank':'_self'}" class="animateLink">${placardurllabel}
 										<span class="glyphicon glyphicon-menu-right animateIcon"
 										aria-hidden="true"></span>
 									</a>
