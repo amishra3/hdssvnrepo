@@ -3,6 +3,7 @@
 
 <c:set var="columncontent" value="${widgets:getMultiFieldPanelValues(resource, 'columncontent')}"/>
 
+
 <div class="hitachi-honor clearfix">
 <div class="content-container">
     <div class="col-md-8 col-md-offset-2 clearfix">
@@ -16,12 +17,14 @@
 	<c:otherwise>
 
 			<c:forEach items="${columncontent}" var="items">
-
-             <div class="col-sm-4 col-no-pad">
+                <c:if test="${not empty items.columncontentdescription}">
+            	 <div class="col-sm-4 col-no-pad">
              <div class="hitachi-honor-box">
                  <p>${items.columncontentdescription}</p>
              </div>
              </div>
+            </c:if>
+
 
 			</c:forEach>
 
