@@ -703,6 +703,13 @@ line-height: 120%;
 font-weight: 500;
 }
 
+.common-hero-short-banner .request {
+    margin-right: 35px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
 
 @media only screen and (max-width: 991px) {
   .common-hero-short-banner {
