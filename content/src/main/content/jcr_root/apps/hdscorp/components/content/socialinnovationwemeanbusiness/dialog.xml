@@ -29,6 +29,7 @@
                             <items jcr:primaryType="cq:WidgetCollection">
                                 <columncontentvalue
                                     jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
                                     fieldLabel="Highlighted Text"
                                     key="columncontentvalue"
                                     name="./columncontentvalue"
@@ -36,6 +37,7 @@
                                     xtype="textfield"/>
                                 <columncontentvaluetitle
                                     jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
                                     fieldLabel="Non Highlighted Text"
                                     key="columncontentvaluetitle"
                                     name="./columncontentvaluetitle"
@@ -43,6 +45,7 @@
                                     xtype="textfield"/>
                                 <columncontentdescription
                                     jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
                                     fieldLabel="Description"
                                     key="columncontentdescription"
                                     name="./columncontentdescription"
