@@ -27,13 +27,15 @@
                         <div class="video-play hidden-lg">
                             <a href="#" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
                         </div>
-						
+
+                        <c:if test="${not empty properties.socialinnovationbannerbuttonlabel}">
                         <div class="btn-square-white request btn-play-video">
                             <a href="#">${properties.socialinnovationbannerbuttonlabel}</a>
                         </div>
-						
+						</c:if> 
                     </div>
-					
+
+
                     <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm">
                         <div class="video-play-desktop">
                             <a href="#" class="btn-play-video">
@@ -41,17 +43,18 @@
                             </a>
                         </div>
                     </div>
-
+                    
                 </div>
             </div>
 
+                <c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
 			    <div class="hero-social-innovation video clearfix">
                 <div class="hero-social-innovation-container">
                     <a href="#" class="close-hero"><span class="sprite icon-close-hero"></span></a>
                      ${properties.socialinnovationbannervideoembedcode}
                 </div>
-            </div> 
-
+                </div> 
+                </c:if> 
     </c:when>
 
     <c:otherwise>

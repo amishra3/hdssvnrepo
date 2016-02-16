@@ -14,6 +14,7 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <socialinnovationbannertitle
                         jcr:primaryType="cq:Widget"
+                        allowBlank="false"
                         fieldLabel="Social Innovation Title"
                         name="./socialinnovationbannertitle"
                         xtype="textfield"/>
