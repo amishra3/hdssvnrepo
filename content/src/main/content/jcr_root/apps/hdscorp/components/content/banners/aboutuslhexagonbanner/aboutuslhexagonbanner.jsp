@@ -42,22 +42,28 @@
 	
 	
 							<div class="hexagon320">
-								<div class="icon">
-									<img src="${placardIconPath}" alt="${placardIconalt}" title="${placardIconalt}">
-								</div>
-								<h4>${placardTitle}</h4>
-								<p>${placardcontent}</p>
+                                <div class="hexagon-content">
+                                    <div class="icon">
+                                        <img src="${placardIconPath}" alt="${placardIconalt}" title="${placardIconalt}">
+                                    </div>
+                                    <h4>${placardTitle}</h4>
+                                    <p>${placardcontent}</p>
 
-                                <c:if test="${not empty placardurllabel}">
+    
+                                    <c:if test="${not empty placardurllabel}">
 
-								<div class="read-more">
-									<a href="${placardtargeturl}" target="${placardList.seemorenewwin==1?'_blank':'_self'}" class="animateLink">${placardurllabel}
-										<span class="glyphicon glyphicon-menu-right animateIcon"
-										aria-hidden="true"></span>
-									</a>
-								</div>
-                                </c:if> 
+    
+                                    <div class="read-more">
+                                        <a href="${placardtargeturl}" target="${placardList.seemorenewwin==1?'_blank':'_self'}" class="animateLink">${placardurllabel}
+                                            <span class="glyphicon glyphicon-menu-right animateIcon"
+                                            aria-hidden="true"></span>
 
+                                        </a>
+                                    </div>
+
+
+                                    </c:if>
+                                </div>
 							</div>
 		    			</c:forEach>
 					</div>
