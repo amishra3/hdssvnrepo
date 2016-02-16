@@ -30,9 +30,12 @@
                 <div class="si-comm-box-content">
                      <div class="title">${column.socialinovationtilestitle}</div>
                      <div class="description">${column.socialinovationtilesdescription}</div>
+
+                     <c:if test="${not empty column.seemorelabel}">
                      <div class="read-more">
                        <a class="animateLink" href="${linkUrl}" target="${column.seemoreurlopeninnew==1?'_blank':'_self'}">${column.seemorelabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
                      </div>
+                     </c:if>       
                  </div>
              </div>
          </div>
