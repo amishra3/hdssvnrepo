@@ -46,6 +46,9 @@
   margin: 15px 0px;
 }
 
+.business-specific .specific-benefit ul li a{color:#ffffff; text-decoration:underline;}
+.business-specific .specific-benefit ul li a:hover{text-decoration:none;}
+
 .navContain {
   position: absolute;
   top: 0;
