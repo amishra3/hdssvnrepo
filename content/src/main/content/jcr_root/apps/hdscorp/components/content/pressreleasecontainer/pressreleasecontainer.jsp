@@ -44,7 +44,7 @@
 	                        	
 	                        	
 	                            <li class="linkLeft ${activeFilter?' active':''}">
-	                                <a href="javascript:void(0)" data-loadhtml="${filterUrl.filterUrl}" class="${activeFilter?' active':''}">
+	                                <a href="${filterUrl.filterUrl}" data-loadhtml="${filterUrl.filterUrl}" class="${activeFilter?' active':''}">
 	                                ${filterUrl.filterText}
 	                                <span class="icon-accordion-closed hidden-md hidden-lg"></span>
 	                                <span class="icon-accordion-opened hidden-md hidden-lg"></span>
