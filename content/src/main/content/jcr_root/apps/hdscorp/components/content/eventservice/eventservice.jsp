@@ -44,4 +44,4 @@
             <!--/ All Events are Loaded here -->
         </div>
     </c:forEach>   
-
+</div>
