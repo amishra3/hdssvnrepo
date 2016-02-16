@@ -174,6 +174,12 @@ public final class PageConstants {
      */
     
     public static final String PROPERTY_JCREVENT_PATH ="/jcr:content/event";
+    
+    /**
+     * constant for location path
+     */
+    
+    public static final String PROPERTY_JCRLOCATION_PATH ="/jcr:content/locations";
     		
     /**
      * private constructor to prevent instantiation of class.
