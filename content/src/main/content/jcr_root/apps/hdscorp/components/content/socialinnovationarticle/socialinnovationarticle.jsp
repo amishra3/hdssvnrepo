@@ -24,12 +24,16 @@
                             <div class="desc col-sm-10 col-no-pad">${properties.articledescription}</div>
                         </div>                        
                     </div>
+
+                    <c:if test="${not empty properties.articlereadbuttonlabel}">
                     <div class="col-sm-offset-4 col-sm-4 col-no-pad">
                         <div class="btn-square-white si-article-more">
                             <a href="${linkUrl}" target="${properties.articlereadbuttonurlopeninnew?'_blank':'_self'}">${properties.articlereadbuttonlabel}</a>
                         </div>
                     </div>
+                    </c:if> 
                 </div>
+
             </div>
 
 	</c:when>

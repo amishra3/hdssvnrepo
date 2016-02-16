@@ -14,6 +14,7 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <articletitle
                         jcr:primaryType="cq:Widget"
+                        allowBlank="false"
                         fieldLabel="Article Headline"
                         name="./articletitle"
                         xtype="textfield"/>
@@ -24,6 +25,7 @@
                         xtype="textarea"/>
                     <articlebackgroundimage
                         jcr:primaryType="cq:Widget"
+                        allowBlank="false"
                         fieldLabel="Background Image"
                         name="./articlebackgroundimage"
                         xtype="pathfield"/>
