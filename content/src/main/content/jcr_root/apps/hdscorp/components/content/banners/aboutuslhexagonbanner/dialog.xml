@@ -31,15 +31,15 @@
                         <options jcr:primaryType="cq:WidgetCollection">
                             <advance-tech-hexagon
                                 jcr:primaryType="nt:unstructured"
-                                text="Advance Tech Hexagon"
+                                text="About HDS SI Hexagon"
                                 value="advance-tech-hexagon"/>
                             <behind-scene-hexagon
                                 jcr:primaryType="nt:unstructured"
-                                text="About US behind Scene Hexagon"
+                                text="About HDS LP Hexagon"
                                 value="behind-scene-hexagon"/>
                             <behind-scene-hexagon-scr
                                 jcr:primaryType="nt:unstructured"
-                                text="HDS SCR Hexagon  Banner"
+                                text="About HDS CSR Hexagon"
                                 value="behind-scene-hexagon about-hds-csr-hexagon"/>
                         </options>
                     </bannertype>
