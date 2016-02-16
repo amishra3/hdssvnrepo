@@ -84,6 +84,10 @@
   padding:0 15px;
 }
 
+.hexagon320 .hexagon-content{
+  margin-top:-50px;
+  padding: 0 15px;
+}
 .hexagon320:last-child{margin-right: 0;}
 
 .hexagon320 .icon{
@@ -92,6 +96,8 @@
   text-align: center;
   top: -65px;
   width: 100%;
+  position:relative;
+  top:-10px;
 }
 
 
@@ -105,8 +111,9 @@
     font-size: 1.313rem;
     font-weight: 700;
     line-height: 1;
-    margin: 25px 0 15px;
+    margin: 5px 0 20px;
     text-align: center;
+	position:relative;
 }
 
 .hexagon320 p {
