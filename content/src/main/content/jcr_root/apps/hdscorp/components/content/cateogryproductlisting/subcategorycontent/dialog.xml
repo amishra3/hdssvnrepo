@@ -87,8 +87,8 @@
                         xtype="textfield"/>
                     <desctags
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Please select tag for the the product description"
-                        fieldDescription="Please select only one tag for the the product description"
+                        fieldLabel="Please select tag for the product description"
+                        fieldDescription="Please select only one tag for the product description"
                         name="./desctags"
                         xtype="tags"/>
                 </items>
