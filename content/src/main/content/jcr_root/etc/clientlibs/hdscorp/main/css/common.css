@@ -1,5 +1,5 @@
 /* HEADER AND FOOTER CSS*/
-
+*:focus {outline: none;}
 .hds-global-header .breadcrumb-container {
     position: absolute;
     top: 110px;
