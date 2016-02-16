@@ -32,8 +32,8 @@
                                     <div class="icon hidden-md hidden-lg">
                                         <img src="/content/dam/hdscorp/icon-content-type.png" alt="" title="">
                                     </div>
-                                    <div class="type">${newsInsightVerticalExplorer.iconImageLabel} ${newsInsightVerticalExplorer.pressReleaseTop.pubDate}</div>
-                                   <div class="spotlight-title">${newsInsightVerticalExplorer.pressReleaseTop.title} <a href="${newsInsightVerticalExplorer.targetURL}" class="animateLink"><span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></div>                                                                                                       
+                                    <div class="type">${newsInsightVerticalExplorer.iconImageLabel} ${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
+                                    <div class="spotlight-title">${newsInsightVerticalExplorer.newsInsightExplorerTop.title} <a href="${newsInsightVerticalExplorer.targetURL}" class="animateLink"><span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></div>                                    
                                 </div>
                             </div>
                             <div class="news-insight-explore-spotlight spotlight-normal">
@@ -44,8 +44,8 @@
                                     <div class="icon hidden-sm hidden-md hidden-lg">
                                         <img src="${newsInsightVerticalExplorer.iconBottomImagePath}" alt="" title="">
                                     </div>                              
-                                    <div class="type">${newsInsightVerticalExplorer.iconImageBottomLabel} ${newsInsightVerticalExplorer.pressReleaseBottom.pubDate}</div>
-                                    <div class="spotlight-title">${newsInsightVerticalExplorer.pressReleaseBottom.title}</div>
+                                    <div class="type">${newsInsightVerticalExplorer.iconImageBottomLabel} ${newsInsightVerticalExplorer.newsInsightExplorerBottom.pubDate}</div>
+                                    <div class="spotlight-title">${newsInsightVerticalExplorer.newsInsightExplorerBottom.title}</div>
                                     <div class="read-more">
                                     <c:choose>
                                         <c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
