@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.hdscorp.cms.constants.ServiceConstants;
-import com.hdscorp.cms.dao.PressReleaseModel;
+import com.hdscorp.cms.dao.NewsInsightExplorerModel;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.ServiceUtil;
 
@@ -52,7 +52,7 @@ public class NewsInsightVerticalExplorerModel {
 	@Default(values = { "Event Type" })
 	private String eventType;
 
-	private PressReleaseModel pressReleaseTop;
+	private NewsInsightExplorerModel newsInsightExplorerTop;
 
 	@Inject
 	@Named("nibticonbimagepath")
@@ -84,7 +84,7 @@ public class NewsInsightVerticalExplorerModel {
 	@Default(values = { "Event Type" })
 	private String eventTypeBottom;
 
-	private PressReleaseModel pressReleaseBottom;
+	private NewsInsightExplorerModel newsInsightExplorerBottom;
 
 	public String getBackgroundImagePath() {
 		return backgroundImagePath;
@@ -130,20 +130,21 @@ public class NewsInsightVerticalExplorerModel {
 		return eventTypeBottom;
 	}
 
-	public PressReleaseModel getPressReleaseTop() {
+	public NewsInsightExplorerModel getNewsInsightExplorerTop() {
+
 		Resource resource = null;
 		if (getEventType().equalsIgnoreCase("Press Release")) {
-			pressReleaseTop = new PressReleaseModel();
+			newsInsightExplorerTop = new NewsInsightExplorerModel();
 			resource = JcrUtilService.getResourceResolver().resolve(getTargetURL() + "/jcr:content/pressrelease");
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 
-				pressReleaseTop.setTitle(properties.get("pressreleasetitle", (String) null).toString());
+				newsInsightExplorerTop.setTitle(properties.get("pressreleasetitle", (String) null).toString());
 
 				Calendar cal = (Calendar) properties.get("pressreleasedate");
 				try {
-					pressReleaseTop.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(),
+					newsInsightExplorerTop.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(),
 							ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 				} catch (ParseException e) {
 					log.info("Exception occurs duing getting value from Node: " + e);
@@ -153,13 +154,13 @@ public class NewsInsightVerticalExplorerModel {
 
 		} else if (getEventType().equalsIgnoreCase("Event")) {
 
-			pressReleaseTop = new PressReleaseModel();
+			newsInsightExplorerTop = new NewsInsightExplorerModel();
 			resource = JcrUtilService.getResourceResolver().resolve(getTargetURL() + "/jcr:content/event");
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 				ValueMap properties = resource.adaptTo(ValueMap.class);
-				pressReleaseTop.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
+				newsInsightExplorerTop.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
 				try {
-					pressReleaseTop.setPubDate(ServiceUtil.getDisplayDateFormat(
+					newsInsightExplorerTop.setPubDate(ServiceUtil.getDisplayDateFormat(
 							properties.get("jcr:eventenddate", (String) null).toString(),
 							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 				} catch (ParseException e) {
@@ -169,23 +170,23 @@ public class NewsInsightVerticalExplorerModel {
 			}
 
 		}
-		return pressReleaseTop;
-
+		return newsInsightExplorerTop;
 	}
 
-	public PressReleaseModel getPressReleaseBottom() {
+	public NewsInsightExplorerModel getNewsInsightExplorerBottom() {
+
 		Resource resource = null;
 		if (getEventTypeBottom().equalsIgnoreCase("Press Release")) {
 			resource = JcrUtilService.getResourceResolver().resolve(getTargetBottomURL() + "/jcr:content/pressrelease");
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
-				pressReleaseBottom = new PressReleaseModel();
+				newsInsightExplorerBottom = new NewsInsightExplorerModel();
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 
-				pressReleaseBottom.setTitle(properties.get("pressreleasetitle", (String) null).toString());
+				newsInsightExplorerBottom.setTitle(properties.get("pressreleasetitle", (String) null).toString());
 
 				Calendar cal = (Calendar) properties.get("pressreleasedate");
 				try {
-					pressReleaseBottom.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(),
+					newsInsightExplorerBottom.setPubDate(ServiceUtil.getStringFromDate(cal.getTime(),
 							ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 				} catch (ParseException e) {
 					log.info("Exception occurs duing getting value from Node: " + e);
@@ -194,16 +195,16 @@ public class NewsInsightVerticalExplorerModel {
 			}
 
 		} else if (getEventTypeBottom().equalsIgnoreCase("Event")) {
-			pressReleaseBottom = new PressReleaseModel();
+			newsInsightExplorerBottom = new NewsInsightExplorerModel();
 			resource = JcrUtilService.getResourceResolver().resolve(getTargetBottomURL() + "/jcr:content/event");
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 
-				pressReleaseBottom.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
+				newsInsightExplorerBottom.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
 
 				try {
-					pressReleaseBottom.setPubDate(ServiceUtil.getDisplayDateFormat(
+					newsInsightExplorerBottom.setPubDate(ServiceUtil.getDisplayDateFormat(
 							properties.get("jcr:eventenddate", (String) null).toString(),
 							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 				} catch (ParseException e) {
@@ -212,7 +213,7 @@ public class NewsInsightVerticalExplorerModel {
 
 			}
 		}
-		return pressReleaseBottom;
+		return newsInsightExplorerBottom;
 	}
 
 }
