@@ -40,12 +40,16 @@
 								</div>
 								<h4>${placardTitle}</h4>
 								<p>${placardcontent}</p>
+
+                                <c:if test="${not empty placardurllabel}">
 								<div class="read-more">
 									<a href="${placardtargeturl}" target="${openinnewwindow==1?'_blank':'_self'}" class="animateLink">${placardurllabel}
 										<span class="glyphicon glyphicon-menu-right animateIcon"
 										aria-hidden="true"></span>
 									</a>
 								</div>
+                                </c:if> 
+
 							</div>
 		    			</c:forEach>
 					</div>

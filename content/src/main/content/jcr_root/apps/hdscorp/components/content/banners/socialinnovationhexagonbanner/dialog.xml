@@ -57,6 +57,7 @@
                                 xtype="textarea"/>
                             <placardIconPath
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="Placard Icon Path"
                                 name="./placardIconPath"
                                 xtype="pathfield"/>
