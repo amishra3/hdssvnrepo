@@ -43,6 +43,11 @@
             fieldLabel="View Alll Press Releases label"
             name="./viewallprlabel"
             xtype="textfield"/> 
+        <keywords
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Keywords"
+            name="./keywords"
+            xtype="textarea"/>    
         <viewallprlink
              jcr:primaryType="cq:Widget"
              fieldLabel="View All Press Releases Link"

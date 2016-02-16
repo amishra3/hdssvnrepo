@@ -53,7 +53,7 @@
 
       <meta http-equiv="content-type" content="text/html; charset=UTF-8"<%=xs%>>
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <meta name="keywords" content="<%= StringEscapeUtils.escapeHtml4(WCMUtils.getKeywords(currentPage, false)) %>"<%=xs%>>
+      <meta name="keywords" content="<%= StringEscapeUtils.escapeHtml4(pageProperties.get("keywords", "")) %>"<%=xs%>>
       <meta name="title" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:title", "")) %>"<%=xs%>>
       <meta name="description" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:description", "")) %>"<%=xs%>>
 	  <meta name="google" value="notranslate" />
