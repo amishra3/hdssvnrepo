@@ -43,6 +43,10 @@
 .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics{
   margin-bottom: 55px;
 }
+.about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .col-sm-6{
+  padding-left:0;
+  padding-right:0;
+}
 .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container p{
   font-size: 1.125rem;
 }
@@ -164,7 +168,7 @@
     font-family: "museo-slab",Helvetica,Arial,sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     text-align: center;
     width: 100%;
     text-transform: uppercase;
