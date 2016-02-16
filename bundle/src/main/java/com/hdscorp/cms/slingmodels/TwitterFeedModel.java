@@ -1,14 +1,4 @@
-/*
- * Decompiled with CFR 0_110.
- * 
- * Could not load the following classes:
- *  com.hdscorp.cms.util.MultifieldUtil
- *  javax.inject.Inject
- *  javax.inject.Named
- *  org.apache.sling.api.resource.Resource
- *  org.apache.sling.models.annotations.Default
- *  org.apache.sling.models.annotations.Model
- */
+
 package com.hdscorp.cms.slingmodels;
 
 import com.hdscorp.cms.util.MultifieldUtil;
@@ -18,47 +8,100 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 
-@Model(adaptables={Resource.class})
-public class TwitterFeedModel
-extends MultifieldUtil {
-    @Inject
-    @Named(value="twtitle")
-    @Default(values={"twtitle"})
-    private String title;
-    @Inject
-    @Named(value="jcr:imagePath3")
-    @Default(values={"Background image path"})
-    private String bGImagePath;
-    @Inject
-    @Named(value="twimportpath")
-    @Default(values={"Twitter Import Path"})
-    private String importPath;
-    @Inject
-    @Named(value="twtwittericonpath")
-    @Default(values={"Twitter Icon Path"})
-    private String iconPath;
-    @Inject
-    @Named(value="twsocialfollowuslabel")
-    @Default(values={"Social FollowUS Label"})
-    private String socialFollowUsLabel;
+@Model(adaptables = { Resource.class })
+public class TwitterFeedModel extends MultifieldUtil {
+	@Inject
+	@Named(value = "jcr:twtitle")
+	@Default(values = { "Twitter Title" })
+	private String title;
+	@Inject
+	@Named(value = "jcr:imagePath3")
+	@Default(values = { "Background image path" })
+	private String bGImagePath;
+	
+	@Inject
+	@Named(value = "jcr:twtwittericonpath")
+	@Default(values = { "Twitter Icon Path" })
+	private String iconPath;
+	
 
-    public String getSocialFollowUsLabel() {
-        return this.socialFollowUsLabel;
-    }
+	@Inject
+	@Named(value = "jcr:twyearsmessage")
+	@Default(values = { "Years" })
+	private String twYearsMessage;
 
-    public String getTitle() {
-        return this.title;
-    }
+	@Inject
+	@Named(value = "jcr:twmonthsmessage")
+	@Default(values = { "Months" })
+	private String twMonthsMessage;
 
-    public String getbGImagePath() {
-        return this.bGImagePath;
-    }
+	@Inject
+	@Named(value = "jcr:twweeksmessage")
+	@Default(values = { "Weeks" })
+	private String twWeeksMessage;
 
-    public String getImportPath() {
-        return this.importPath;
-    }
+	@Inject
+	@Named(value = "jcr:twdaysmessage")
+	@Default(values = { "Days" })
+	private String twDaysMessage;
 
-    public String getIconPath() {
-        return this.iconPath;
-    }
+	@Inject
+	@Named(value = "jcr:twhoursmessage")
+	@Default(values = { "Hours" })
+	private String twHoursMessage;
+
+	@Inject
+	@Named(value = "jcr:twminsmessage")
+	@Default(values = { "Minitues" })
+	private String twMinsMessage;
+
+	@Inject
+	@Named(value = "jcr:twagomessage")
+	@Default(values = { "Ago" })
+	private String twAgoMessage;
+
+	
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public String getbGImagePath() {
+		return this.bGImagePath;
+	}
+
+	
+
+	public String getIconPath() {
+		return this.iconPath;
+	}
+
+	public String getTwYearsMessage() {
+		return twYearsMessage;
+	}
+
+	public String getTwMonthsMessage() {
+		return twMonthsMessage;
+	}
+
+	public String getTwWeeksMessage() {
+		return twWeeksMessage;
+	}
+
+	public String getTwDaysMessage() {
+		return twDaysMessage;
+	}
+
+	public String getTwHoursMessage() {
+		return twHoursMessage;
+	}
+
+	public String getTwMinsMessage() {
+		return twMinsMessage;
+	}
+
+	public String getTwAgoMessage() {
+		return twAgoMessage;
+	}
+
 }
