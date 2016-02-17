@@ -42,7 +42,13 @@
                         name="./featuredprimage"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredprimage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>           
-                    
+                    <priconimage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Press Releases Icon Img"
+                        name="./priconimage"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./priconimage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/> 
                     <featuredpressrelease
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"

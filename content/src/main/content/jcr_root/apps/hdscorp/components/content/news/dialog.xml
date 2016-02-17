@@ -27,7 +27,13 @@
                         name="./featurednewsimage"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featurednewsimage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>           
-                    
+                    <newsiconimage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="News Icon Img"
+                        name="./newsiconimage"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./newsiconimage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/> 
                     <featurednews
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"

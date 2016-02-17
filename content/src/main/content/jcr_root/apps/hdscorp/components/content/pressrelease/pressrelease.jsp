@@ -9,7 +9,7 @@
 		<div class="col-sm-12">
 			<div class="icon-border">
 				<h3>
-					<img src="images/sprites/icon-press.png" />${model.pressReleasesLabel}<span
+					<img src="${model.priconimage}" />${model.pressReleasesLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span>
 				</h3>

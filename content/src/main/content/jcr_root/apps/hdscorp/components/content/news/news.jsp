@@ -8,7 +8,7 @@
       <div class="news-press-container hds-news-section">
                 <div class="content-container">
                     <div class="col-sm-12">
-                   <div class="icon-border"> <h3><img src="images/sprites/icon-press.png"/>${model.hdsInNewsText}</h3></div>
+                   <div class="icon-border"><h3><img src="${model.newsiconimage}"/>${model.hdsInNewsText}</h3></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="image-container b-box1">
