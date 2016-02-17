@@ -7,7 +7,9 @@
 
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
-
+<%String bannerimage=properties.get("jcr:imagePath3", "");
+request.setAttribute("bannerimage",bannerimage);
+%>
 
 <c:set var="linkUrl" value="${properties.newsandinsightsbannerbuttonurl}" />
 
@@ -17,7 +19,7 @@
 
 <c:choose>
 	<c:when test="${not empty properties.newsandinsightsbannertitle}">
-		<div class="common-hero-short-banner news-insight clearfix" style="background-image:url('${properties.newsandinsightsbannerimagePath}');">
+		<div class="common-hero-short-banner news-insight clearfix" style="background-image:url('${requestScope.bannerimage}')">
                 <div class="content-container">
                     <div class="col-lg-7 col-md-7 col-xs-12" >
         				    <h2 class="top-banner-heading">${properties.newsandinsightsbannertitle}</h2>

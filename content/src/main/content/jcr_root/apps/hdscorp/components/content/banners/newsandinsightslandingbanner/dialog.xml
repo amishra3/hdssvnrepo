@@ -22,6 +22,21 @@
                         fieldLabel="News and insights Sub Title Content"
                         name="./newsandinsightsbannersubtitle"
                         xtype="textfield"/>
+                    <newsinsigthsbannerimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="./imagePath3/imageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:imagePath3"
+                        height="{Long}200"
+                        name="./newsinsigthsbannerimage"
+                        rotateParameter="./imagePath3/imageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
                     <newsandinsightsbannercontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Content"
@@ -32,22 +47,6 @@
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
                             xtype="cqinclude"/>
                     </newsandinsightsbannercontent>
-                    <newsandinsightsbannerimagePath
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
-                        allowUpload="false"
-                        cropParameter="./newsandinsightsbannerimageCrop2"
-                        ddGroups="[media]"
-                        fieldLabel="Banner Image"
-                        fileNameParameter="./newsandinsightsbannerimagefileName2"
-                        fileReferenceParameter="./newsandinsightsbannerimagePath"
-                        height="{Long}200"
-                        name="./newsandinsightsbannerimagePath"
-                        rotateParameter="./newsandinsightsbannerimageRotate2"
-                        sizeLimit="100"
-                        title="Image"
-                        width="{Long}200"
-                        xtype="html5smartimage"/>
                     <newsandinsightsbannerbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
