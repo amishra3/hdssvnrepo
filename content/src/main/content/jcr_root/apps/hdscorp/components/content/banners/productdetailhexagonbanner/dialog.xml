@@ -123,6 +123,12 @@
                         name="./secondarycontentalign"
                         type="checkbox"
                         xtype="selection"/>
+                    <ispremiumasset
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Is Premium?"
+                        name="./ispremiumasset"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
