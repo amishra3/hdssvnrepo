@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="News Insights Vertical Explorer Component"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <bottom
+                jcr:primaryType="cq:Panel"
+                title="Tab">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <nveiconbimagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Image Path"
+                        name="./nveiconbimagepath"
+                        xtype="pathfield"/>
+                    <nveiconbimagelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Label"
+                        name="./nveiconbimagelabel"
+                        xtype="textfield"/>
+                    <nvelabelbtargeturl
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item URL"
+                        name="./nvelabelbtargeturl"
+                        xtype="pathfield"/>
+                    <nveiconreadmorelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Read More Label"
+                        name="./nveiconreadmorelabel"
+                        xtype="textfield"/>
+                    <nveopeninnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window?"
+                        key="nveopeninnewwindow"
+                        name="./nveopeninnewwindow"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                    <nveeventtype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Type"
+                        key="nveeventtype"
+                        name="./nveeventtype"
+                        type="select"
+                        width="300"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <opt1
+                                jcr:primaryType="nt:unstructured"
+                                text="Event"
+                                value="Event"/>
+                            <opt2
+                                jcr:primaryType="nt:unstructured"
+                                text="Press Release"
+                                value="Press Release"/>
+                        </options>
+                    </nveeventtype>
+                </items>
+            </bottom>
+        </items>
+    </items>
+</jcr:root>
