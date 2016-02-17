@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <abouthdscarrerbannertitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./abouthdscarrerbannertitle"
+                        xtype="textfield"/>
+                    <abouthdscarrerbannersubtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner HeadLine"
+                        name="./abouthdscarrerbannersubtitle"
+                        xtype="textfield"/>
+                    <abouthdscarrerbannercontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Content"
+                        name="./abouthdscarrerbannercontent"
+                        xtype="richtext">
+                        <rtePlugins
+                            jcr:primaryType="nt:unstructured"
+                            path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
+                            xtype="cqinclude"/>
+                    </abouthdscarrerbannercontent>
+                    <abouthdscarrerbannerimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="./imagePath3/imageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:imagePath3"
+                        height="{Long}200"
+                        name="./abouthdscarrerbannerimage"
+                        rotateParameter="./imagePath3/imageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <abouthdscarrerbannerlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./abouthdscarrerbannerlabel"
+                        xtype="textfield"/>
+                    <abouthdscarrerbannerbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./abouthdscarrerbannerbuttonurl"
+                        xtype="pathfield"/>
+                    <abouthdscarrerbannerurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./abouthdscarrerbannerurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
