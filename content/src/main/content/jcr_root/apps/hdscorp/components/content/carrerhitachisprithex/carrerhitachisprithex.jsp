@@ -29,9 +29,7 @@
 
                             <div class="hexagon320">
                                 <h4>${chsHexagonObject.key}</h4>
-                                <p>
                                     ${chsHexagonObject.value}
-                                </p>
                             </div>
 
                 </c:forEach>

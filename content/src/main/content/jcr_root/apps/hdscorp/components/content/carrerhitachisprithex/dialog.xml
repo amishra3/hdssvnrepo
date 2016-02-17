@@ -57,7 +57,7 @@
                                     fieldLabel="Description"
                                     key="chshexagondescription"
                                     name="./chshexagondescription"
-                                    xtype="textarea"/>
+                                    xtype="richtext"/>
                             </items>
                         </fieldConfig>
                     </hexagondata>
