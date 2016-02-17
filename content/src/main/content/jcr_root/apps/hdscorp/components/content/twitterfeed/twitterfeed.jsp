@@ -68,7 +68,7 @@
          //htmlContent+='<tr><td style="text-decoration: underline;">Twitter ID  :: '+feedResponsefromStoredPath[count].twitterID+'</tr></td><tr><td> Twitter Media Url ::'+feedResponsefromStoredPath[count].twitterMediaUrl+'</td></tr><tr><td>Twitter MessageText  :: '+feedResponsefromStoredPath[count].twitterMessageText+'</tr></td><tr><td>Twitter Posted Date  :: '+feedResponsefromStoredPath[count].twitterPostedDate+'</td></tr><tr><td>Posted ::  '+postedDate+' ' +propertyValue
          //   '</td></tr>';
 
-         htmlContentTwitter+='<div class="hexagon320"> <div class="tweet-content"><div class="icon"><img src="${twitterFeedModel.iconPath}" alt="" title=""></div><h4></h4><p>'+twitterPostMsg+' <br/><br/>'+postedDate+' ' +propertyValue+'</p></div></div>';
+         htmlContentTwitter+='<div class="hexagon320"> <div class="tweet-content"><div class="icon"><img src="${twitterFeedModel.iconPath}" alt="" title=""></div><h4>${properties.twtwitterhandlelabel}</h4><p>'+twitterPostMsg+' <br/><br/>'+postedDate+' ' +propertyValue+'</p></div></div>';
 
     }
     $(".col-sm-10").append(htmlContentTwitter);
