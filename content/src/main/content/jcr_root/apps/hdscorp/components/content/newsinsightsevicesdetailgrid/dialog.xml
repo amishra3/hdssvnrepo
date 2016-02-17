@@ -44,6 +44,11 @@
                                 fieldLabel="Content Title"
                                 name="./columntitle"
                                 xtype="textfield"/>
+                            <columndescription
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Content Description"
+                                name="./columndescription"
+                                xtype="textarea"/>
                             <ctatext
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="CTA Title"
@@ -53,7 +58,7 @@
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="CTA Link"
                                 name="./ctalink"
-                                xtype="textfield"/>
+                                xtype="pathfield"/>
                             <seemorenewwin
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Open in New Window ?"
