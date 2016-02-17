@@ -19,14 +19,13 @@
 	
 	
 	jQuery(document).ready(function($){
-		if($('.navContain').length!==0){
+	if($('.navContain').length!==0){
 	var secondaryNav = $('.navContain'),
 		secondaryNavTopPosition = secondaryNav.offset().top,
 		taglineOffesetTop = $('.hero-product-solutions').offset().top + $('.hero-product-solutions').height() + parseInt($('.hero-product-solutions').css('paddingTop').replace('px', '')),
 		contentSections = $('.accordion-level'),
 		endScroll = $('.stop'),
-		endScrollPos = endScroll.offset().top - 50,
-		extraGap = $('.hds-global-header');
+		endScrollPos = endScroll.offset().top;
 
 	$(window).on('scroll', function(){
 		if($(window).scrollTop() > secondaryNavTopPosition && $(window).scrollTop() < endScrollPos) {
@@ -44,7 +43,7 @@
 			var actual = $(this),
 				actualHeight = actual.height() + parseInt(actual.css('paddingTop').replace('px', '')) + parseInt(actual.css('paddingBottom').replace('px', '')),
 				actualAnchor = secondaryNav.find('a[href="#'+actual.attr('id')+'"]');
-			if ( ( actual.offset().top - secondaryNav.height() + extraGap.height() <= $(window).scrollTop() ) && ( actual.offset().top +  actualHeight - secondaryNav.height() > $(window).scrollTop() ) ) {
+			if ( ( actual.offset().top - secondaryNav.height() <= $(window).scrollTop() ) && ( actual.offset().top +  actualHeight - secondaryNav.height() > $(window).scrollTop() ) ) {
 				actualAnchor.addClass('active');
 			}else {
 				actualAnchor.removeClass('active');
@@ -52,15 +51,15 @@
 		});
 	}
 	secondaryNav.find('ul a').on('click', function(event){
-        event.preventDefault();
+		event.preventDefault();
         var target= $(this.hash);
         $('body,html').animate({
-        	'scrollTop': target.offset().top - secondaryNav.height() + extraGap.height() + 4
+			'scrollTop': target.offset().top + 4
         	}, 400
-        ); 
+        );
     });
-		};
-		});
+	}
+});
 
 
 	/*if($('.navContain').length!==0){
