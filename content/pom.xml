@@ -131,7 +131,7 @@
                         <embedded>
                             <groupId>com.hdscorp</groupId>
                             <artifactId>hdscorp-bundle</artifactId>
-                            <target>/apps/hdscorp/install/25</target>
+                            <target>/apps/hdscorp/install</target>
                         </embedded>
                     </embeddeds>
 
