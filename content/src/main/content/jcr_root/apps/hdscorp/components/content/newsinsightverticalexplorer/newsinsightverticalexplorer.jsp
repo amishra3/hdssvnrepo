@@ -33,7 +33,7 @@
                                         <img src="/content/dam/hdscorp/icon-content-type.png" alt="" title="">
                                     </div>
                                     <div class="type">${newsInsightVerticalExplorer.iconImageLabel} ${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
-                                    <div class="spotlight-title">${newsInsightVerticalExplorer.newsInsightExplorerTop.title} <a href="${newsInsightVerticalExplorer.targetURL}" class="animateLink"><span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></div>                                    
+                                    <div class="spotlight-title"><a href="${newsInsightVerticalExplorer.targetURL}" class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></div>
                                 </div>
                             </div>
                             <div class="news-insight-explore-spotlight spotlight-normal">
@@ -60,7 +60,3 @@
 
                                 </div>
                             </div>
-
-
-
-
