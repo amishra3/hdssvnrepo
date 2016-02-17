@@ -49,6 +49,10 @@ public class PressReleasesModel {
 	@Default(values = { "" })
 	private String featuredPrImage;
 	@Inject
+	@Named(value = "priconimage")
+	@Default(values = { "" })
+	private String priconimage;
+	@Inject
 	@Named(value = "featuredpressrelease")
 	@Default(values = { "" })
 	private String featuredPressRelease;
@@ -172,5 +176,8 @@ public class PressReleasesModel {
 	public String getViewAllPrLink() {
 		
 		return PathResolver.getShortURLPath(viewAllPrLink);
+	}
+	public String getPriconimage() {
+		return priconimage;
 	}
 }

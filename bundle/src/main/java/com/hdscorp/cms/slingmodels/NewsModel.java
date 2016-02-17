@@ -50,7 +50,12 @@ public class NewsModel {
 	@Inject
 	@Named("featurednewsimage")
 	@Default(values = { "" })
-	private String featuredNewsImage;
+	private String featuredNewsImage; 
+	@Inject
+	@Named("newsiconimage")
+	@Default(values = { "" })
+	private String newsiconimage;
+	
 	@Inject
 	@Named("featurednews")
 	@Default(values = { "" })
@@ -180,5 +185,8 @@ System.out.println("no of hits****"+hits.size());
 	}
 	public String getNewsLookupPath() {
 		return newsLookupPath;
+	}
+	public String getNewsiconimage() {
+		return newsiconimage;
 	}
 }
