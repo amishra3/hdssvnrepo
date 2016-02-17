@@ -121,7 +121,7 @@
 	 * stickyNav scrolling functionality
 	 */
 
-	$('.stickyNav a').on('click', function(e){
+	/*$('.stickyNav a').on('click', function(e){
 		e.preventDefault();
 		var
 		 	scrollOffset = 0,
@@ -136,7 +136,7 @@
 		else { scrollOffset = 0; }
 
 		$(window).scrollTo( element, 1000, { offset: scrollOffset } );
-	});
+	});*/
 
 
 	/* Read More Less Code Start */
