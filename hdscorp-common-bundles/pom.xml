@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hdscorp.platform</groupId>
+  <artifactId>hdscorp-common-bundles</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>HDSCORP common bundles </name>
+  <description>HDSCORP common bundles</description>
+
+ 
+  <properties>
+		
+		<project.groupId>com.hdscorp.platform</project.groupId>
+		
+		<install.dir>
+			${project.build.directory}/classes/jcr_root/apps/hdscorp-common-bundles/install
+		</install.dir>
+
+  </properties>
+
+  <build>
+		<resources>
+			<!-- filter meta information to get some properties into the files -->
+			<resource>
+				<directory>
+					${basedir}/src/main/content/META-INF
+				</directory>
+				<targetPath>META-INF</targetPath>
+				<filtering>true</filtering>
+			</resource>
+			<!-- exclude .vlt control files and tests -->
+			<resource>
+				<directory>
+					${basedir}/src/main/content/jcr_root
+				</directory>
+				<excludes>
+			    	<!-- <exclude>apps/sling/**</exclude> -->
+                    <exclude>apps/system/**</exclude>
+					<exclude>var/**</exclude> 
+					<exclude>**/.vlt</exclude>
+					<exclude>**/.vltignore</exclude>
+					<exclude>**/.DS_Store</exclude>										
+				</excludes>
+				<targetPath>jcr_root</targetPath>
+			</resource>
+		</resources>
+
+  </build>
+
+
+	<!-- ====================================================================== -->
+	<!-- D E P E N D E N C I E S                                                -->
+	<!-- ====================================================================== -->
+
+	 <dependencies>
+
+	</dependencies> 
+
+</project>
