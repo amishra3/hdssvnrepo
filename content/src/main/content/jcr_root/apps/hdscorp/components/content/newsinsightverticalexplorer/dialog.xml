@@ -49,6 +49,10 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Press Release"
                                 value="Press Release"/>
+                            <op2
+                                jcr:primaryType="nt:unstructured"
+                                text="Event"
+                                value="Event"/>
                         </options>
                     </nibteventtype>
                 </items>
@@ -102,6 +106,10 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Press Release"
                                 value="Press Release"/>
+                            <op2
+                                jcr:primaryType="nt:unstructured"
+                                text="Event"
+                                value="Event"/>
                         </options>
                     </nibtbeventtype>
                 </items>
