@@ -115,11 +115,11 @@ ul.stickyNav li:first-child a {
   margin-left: 0;
 }
 
-ul.stickyNav li.active {
+ul.stickyNav li a.active {
   background-color: #fff;
 }
 
-ul.stickyNav li.active:after {
+ul.stickyNav li a.active:after {
   content: '';
   width: 0;
   height: 0;
@@ -133,11 +133,11 @@ ul.stickyNav li.active:after {
     margin-left:-12px;
 }
 
-ul.stickyNav li.active a {
+ul.stickyNav li a.active{
   color: #ce0000;
 }
 
-ul.stickyNav li:hover {
+ul.stickyNav li:hover a{
   background-color: #fff;
 }
 
