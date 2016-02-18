@@ -10,15 +10,15 @@
                     </div>
 
                     <div class="col-md-6">
-                        <div class="career-commitment-spotlight hidden-xs hidden-sm" style="background-image: url(${model.featuredPrImage});">
+                        <div class="career-commitment-spotlight hidden-xs hidden-sm" style="background-image: url(${model.featuredimage});">
                             <div class="spotlight-content">
                                 <div class="company-logo">
-                                    <img src="images/milleniails-logo.png" alt="">
+                                    <img src="${model.featurediconimage}" alt="">
                                 </div>
                                 <div class="name"></div>
                                 <div class="title">
                                     <a href="#" class="animateLink">${model.featuredAward.newsTitle} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></a></div>
-                                <div class="description">${model.featuredAward.featuredawarddesc}</div>
+                                <div class="description">${model.featuredawarddesc}</div>
                             </div>
                         </div>
 
@@ -40,7 +40,7 @@
                             <div class="clearfix"></div>
                             <div class="view-all">
                                 <div class="btn-square-red view-all-awards">
-                                    <a href="${model.viewalllabel}">${model.viewalllink}</a>
+                                    <a href="${model.viewalllink}">${model.viewalllabel}</a>
                                 </div>
                             </div>
                         </div>
