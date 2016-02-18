@@ -46,8 +46,12 @@
   margin: 15px 0px;
 }
 
-.business-specific .specific-benefit .col-md-8 ul li a{color:#ffffff; text-decoration:underline;}
-.business-specific .specific-benefit .col-md-8 ul li a:hover{text-decoration:none;}
+
+.business-specific .specific-benefit a{color:#ffffff; text-decoration:underline;}
+.business-specific .specific-benefit a:hover{text-decoration:none;}
+
+.business-specific .specific-benefit ul li.hexagon a{color:#ce0000; text-decoration:none;}
+.business-specific .specific-benefit ul li.hexagon a:hover{text-decoration:none;}
 
 .navContain {
   position: absolute;
