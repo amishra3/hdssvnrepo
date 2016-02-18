@@ -119,6 +119,10 @@
     font-weight:700;
     letter-spacing:2px;
 }
+.footer .footer-blue .talk .view-phone a{
+	font-size: 0.8em;
+}
+
 .footer .footer-blue .talk strong {
     font-weight: 700;
 }
@@ -132,7 +136,7 @@
 
 .footer .footer-blue .buttons {
     position: relative;
-    top: -2px;
+    top: 11px;
 }
 
 .footer .footer-blue .buttons .reseller {
@@ -301,7 +305,7 @@
         margin: 0 0 30px 1em;
     }
 	.footer .footer-blue .talk .view-phone{
-		font-size:0.7em;
+		font-size:0.8em;
 	}
 }
 
@@ -338,7 +342,7 @@
     }
     .footer .footer-blue .buttons .information {
         display: inline-block;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
     .footer .footer-white .footer-container .links,
     .footer .footer-white .footer-container .copyright {
