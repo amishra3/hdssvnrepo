@@ -1,7 +1,13 @@
 package com.hdscorp.cms.restservice;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Dictionary;
+
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,6 +35,15 @@ import facebook4j.internal.org.json.JSONObject;
 public class FacebookWebService {
 private static final Logger log = LoggerFactory.getLogger(FacebookWebService.class);
 
+
+@Reference
+ConfigurationAdmin configurationAdmin;
+final String propProxyHost = "proxy.host";
+
+final String propProxyEnabled = "proxy.enabled";
+private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
+
+
 /**Useful for get service response based below parameter.
  * 
  * @param facebookPostName
@@ -43,12 +58,21 @@ private static final Logger log = LoggerFactory.getLogger(FacebookWebService.cla
 		log.info("Execution start for getFacebookFeed() ");
 		JSONArray jsonArray = new JSONArray();
 		if (getFacebookInstance(appId, appSecret, accessToken) != null) {
-			ResponseList<Post> results = getFacebookInstance(appId, appSecret, accessToken).getFeed(facebookPostName,
+			ResponseList<Post> results = getFacebookInstance(appId, appSecret, accessToken).getPosts(facebookPostName,
 					new Reading().limit(Integer.parseInt(postLimt)));		
 		
 			try {
 				for (Post post : results) {
 				
+					/*log.info("facebook result start");
+					log.info("post title:::"+post.getMessage());
+					log.info("post description :::"+post.getMessage());
+					log.info("post link:::"+post.getLink());
+					log.info("post thumbnail:::"+post.getPicture());
+					log.info("post type:::"+post.getType());
+					
+					log.info("facebook result end");*/
+					
 					JSONObject jsonObject = new JSONObject();
 					jsonObject.put(ServiceConstants.JSON_FB_ID, post.getId());
 					jsonObject.put(ServiceConstants.JSON_FB_POST_ID, post.getId().substring(post.getId().indexOf("_")+1));
@@ -83,6 +107,7 @@ private static final Logger log = LoggerFactory.getLogger(FacebookWebService.cla
 		configurationBuilder.setOAuthPermissions(ServiceConstants.FB_PERSMISSION_STRING);
 		configurationBuilder.setUseSSL(true);
 		configurationBuilder.setJSONStoreEnabled(true);
+		getProxy(configurationBuilder);
 		return configurationBuilder;
 	}
 /**
@@ -99,5 +124,31 @@ private static final Logger log = LoggerFactory.getLogger(FacebookWebService.cla
 		Facebook facebook = ff.getInstance();
 		return facebook;
 	}
+	
+	private ConfigurationBuilder getProxy(ConfigurationBuilder configurationBuilder){
+		org.osgi.service.cm.Configuration config;
+		try {
+			config = configurationAdmin.getConfiguration(HTTPCLIENT_PID);
+			Dictionary props = config.getProperties();
+			if ((Boolean) props.get(propProxyEnabled)) {
+				final String proxyHost = config.getProperties()
+                        .get(propProxyHost).toString();		
+				log.info("propProxyHost::"+propProxyHost);
+               final String proxyPort=proxyHost.substring(proxyHost.indexOf(":"));   
+               log.info("proxyPort::"+proxyPort);
+               configurationBuilder.setHttpProxyHost(proxyHost);
+               configurationBuilder.setHttpProxyPort(Integer.parseInt(proxyPort));
+               //configurationBuilder.setHttpProxyUser(PROXY_USER);
+              // configurationBuilder.setHttpProxyPassword(PROXY_PASS);                  
+			}		
+			}
+		catch(Exception e){
+			StringWriter stack = new StringWriter();
+			e.printStackTrace(new PrintWriter(stack));
+			log.error("Error occurs while getting proxy:  "+stack.toString());
+				}
+		return configurationBuilder;
+			}
+
 	
 }
