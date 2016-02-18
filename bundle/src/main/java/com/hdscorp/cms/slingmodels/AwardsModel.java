@@ -16,6 +16,7 @@ import com.day.cq.search.result.SearchResult;
 import com.hdscorp.cms.dao.NewsNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.JcrUtilService;
+import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
 @Model(adaptables = {Resource.class })
 public class AwardsModel {
@@ -37,6 +38,11 @@ public class AwardsModel {
 	@Named(value = "featuredimage")
 	@Default(values = { "" })
 	private String featuredimage;
+	@Inject
+	@Named(value = "featurediconimage")
+	@Default(values = { "" })
+	private String featurediconimage;
+	
 	@Inject
 	@Named(value = "featuredaward")
 	@Default(values = { "" })
@@ -62,7 +68,7 @@ public class AwardsModel {
 	private NewsNode featuredAward;
 	public NewsNode getFeaturedAward() {
 		
-		
+		if(!featuredaward.isEmpty()){
 		
 		Resource resource = JcrUtilService.getResourceResolver()
 				.resolve(
@@ -79,7 +85,7 @@ public class AwardsModel {
 			
 						
 		}
-		
+		}
 		return featuredAward;
 	}
 
@@ -112,27 +118,26 @@ public class AwardsModel {
 	}
 
 	public String getViewalllink() {
-		return viewalllink;
+		return PathResolver.getShortURLPath(viewalllink);
 	}
 
 	public String getAwardslookuppath() {
 		return awardslookuppath;
 	}
 
-	public List<NewsNode> getAwardsList() {
-		return awardsList;
-	}
+	
 
-	public List<NewsNode> getPressReleaseList() {
+	public List<NewsNode> getAwardsList() {
 		
 		try{
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 				.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		SearchResult result = searchServiceHelper.getPressReleases(
 				null, awardslookuppath, 0, null,this.noofawardsshown,"0","awards");
+		
 		List<Hit> hits = result.getHits();
 		awardsList = new ArrayList<NewsNode>();
-
+         
 		for (Hit hit : hits) {
 
 			Resource resource = JcrUtilService.getResourceResolver()
@@ -147,7 +152,7 @@ public class AwardsModel {
 
 				awardNode.setNewsTitle(properties.get("awardtitle",
 						(String) null).toString());
-				awardNode.setNewsTitle(properties.get("awarddec",
+				awardNode.setDescription(properties.get("awarddescription",
 						(String) null).toString());
 				
 				awardNode.setNewsDetailPath(properties.get("awardlink",
