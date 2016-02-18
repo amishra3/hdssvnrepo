@@ -12,7 +12,7 @@
 </c:if>
 <c:set var="editbarstyle" value="" />
 
-<div class="hds-community-section">
+<div class="hds-community-section" style="background-image: url('${properties.sectionbackground}');">
 	<div class="hds-community-container container-fluid">
 		<div class="hds-title">${properties.sectiontitle}</div>
 
