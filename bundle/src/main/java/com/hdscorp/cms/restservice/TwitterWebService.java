@@ -2,6 +2,11 @@ package com.hdscorp.cms.restservice;
 
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.util.ServiceUtil;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Dictionary;
+
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.commons.json.JSONArray;
@@ -15,6 +20,7 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
+import twitter4j.conf.ConfigurationBuilder;
 
 /**
  * This service is basically used for get all feed data from Twitter
@@ -33,7 +39,22 @@ public class TwitterWebService extends GenericRestfulServiceInvokers {
 	 */
 	public Twitter getTwitterInstance() {
 		log.info("[TwitterService]:getTwitterInstance method  Starting.");
-		Twitter twitter = new TwitterFactory().getInstance();
+		
+		 ConfigurationBuilder conbuild = new  ConfigurationBuilder(); 
+				               /* conbuild.setHttpProxyHost("http.corp.hds.com"); 
+				                 conbuild.setHttpProxyPort(8080); 
+				                 
+				                 conbuild.setHttpProxyUser("Infra"); 
+				                 conbuild.setHttpProxyPassword("wwwadmin"); 
+				                  conbuild.setOAuthConsumerKey("mtu5dhs8kuieZKyprangmE1yP"); 
+				                   conbuild.setOAuthConsumerSecret("OMXEQdM3XukOMtWFjEEFki9eitOZOreT6nwMqKpHCAOlVsWktP");
+				                   */ 
+				                 getProxy(conbuild);
+				                 TwitterFactory tf = new TwitterFactory(conbuild.build()); 
+				                 
+				                 
+				                 Twitter twitter = tf.getInstance();
+		//Twitter twitter = new TwitterFactory().getInstance();
 
 		return twitter;
 	}
@@ -51,6 +72,7 @@ public class TwitterWebService extends GenericRestfulServiceInvokers {
 	public String getTwitterResponse(String consumerkey, String consumerSecret, String accessTokenKey,
 			String accessTokenSecret, String postsLimit) {
 		log.info("[TwitterService]:getTwitterResponse method  Starting.");
+		
 		Twitter twitter = getTwitterInstance();
 		ResponseList<Status> twitterResponse = null;
 		if (twitter != null) {
@@ -108,4 +130,24 @@ public class TwitterWebService extends GenericRestfulServiceInvokers {
 		return feedList.toString();
 	}
 
+	private ConfigurationBuilder getProxy(ConfigurationBuilder configurationBuilder){
+		org.osgi.service.cm.Configuration config;
+		try {
+			config = configurationAdmin.getConfiguration(ServiceConstants.HTTPCLIENT_PID);
+			Dictionary props = config.getProperties();
+			if ((Boolean) props.get(ServiceConstants.PROP_PROXY_ENABLED)) {
+				final String proxyHost = config.getProperties()
+                        .get(ServiceConstants.PROP_PROXY_HOST).toString();		         
+               configurationBuilder.setHttpProxyHost(proxyHost.substring(0, proxyHost.indexOf(":")));
+               configurationBuilder.setHttpProxyPort(Integer.parseInt(proxyHost.substring(proxyHost.indexOf(":")+1)));                   
+			}		
+			}
+		catch(Exception e){
+			StringWriter stack = new StringWriter();
+			e.printStackTrace(new PrintWriter(stack));
+			log.error("Error occurs while getting proxy:  "+stack.toString());
+				}
+		return configurationBuilder;
+			}
+	
 }

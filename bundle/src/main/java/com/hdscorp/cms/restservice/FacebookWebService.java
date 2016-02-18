@@ -38,10 +38,6 @@ private static final Logger log = LoggerFactory.getLogger(FacebookWebService.cla
 
 @Reference
 ConfigurationAdmin configurationAdmin;
-final String propProxyHost = "proxy.host";
-
-final String propProxyEnabled = "proxy.enabled";
-private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 
 
 /**Useful for get service response based below parameter.
@@ -62,21 +58,15 @@ private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 					new Reading().limit(Integer.parseInt(postLimt)));		
 		
 			try {
-				for (Post post : results) {
-				
-					/*log.info("facebook result start");
-					log.info("post title:::"+post.getMessage());
-					log.info("post description :::"+post.getMessage());
-					log.info("post link:::"+post.getLink());
-					log.info("post thumbnail:::"+post.getPicture());
-					log.info("post type:::"+post.getType());
-					
-					log.info("facebook result end");*/
-					
-					JSONObject jsonObject = new JSONObject();
+				for (Post post : results) {							
+					JSONObject jsonObject = new JSONObject();					
 					jsonObject.put(ServiceConstants.JSON_FB_ID, post.getId());
 					jsonObject.put(ServiceConstants.JSON_FB_POST_ID, post.getId().substring(post.getId().indexOf("_")+1));
-					jsonObject.put(ServiceConstants.JSON_FB_MESSAGE, post.getMessage());
+					jsonObject.put(ServiceConstants.JSON_FB_MESSAGE, post.getDescription());
+					jsonObject.put(ServiceConstants.JSON_FB_TITLE, post.getMessage());
+					jsonObject.put(ServiceConstants.JSON_FB_LINK, post.getLink());
+					jsonObject.put(ServiceConstants.JSON_FB_THUMBNAIL, post.getPicture());
+					jsonObject.put(ServiceConstants.JSON_FB_TYPE, post.getType());					
 					jsonObject.put(ServiceConstants.JSON_FB_CreatedDate,
 							ServiceUtil.getDisplayDateFormat(post.getCreatedTime().toString(),
 									ServiceConstants.FEED_RESPONSE_TIME_FORMAT,
@@ -128,15 +118,13 @@ private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 	private ConfigurationBuilder getProxy(ConfigurationBuilder configurationBuilder){
 		org.osgi.service.cm.Configuration config;
 		try {
-			config = configurationAdmin.getConfiguration(HTTPCLIENT_PID);
+			config = configurationAdmin.getConfiguration(ServiceConstants.HTTPCLIENT_PID);
 			Dictionary props = config.getProperties();
-			if ((Boolean) props.get(propProxyEnabled)) {
+			if ((Boolean) props.get(ServiceConstants.PROP_PROXY_ENABLED)) {
 				final String proxyHost = config.getProperties()
-                        .get(propProxyHost).toString();		         
+                        .get(ServiceConstants.PROP_PROXY_HOST).toString();		         
                configurationBuilder.setHttpProxyHost(proxyHost.substring(0, proxyHost.indexOf(":")));
-               configurationBuilder.setHttpProxyPort(Integer.parseInt(proxyHost.substring(proxyHost.indexOf(":")+1)));
-               //configurationBuilder.setHttpProxyUser(PROXY_USER);
-              // configurationBuilder.setHttpProxyPassword(PROXY_PASS);                  
+               configurationBuilder.setHttpProxyPort(Integer.parseInt(proxyHost.substring(proxyHost.indexOf(":")+1)));                   
 			}		
 			}
 		catch(Exception e){
@@ -146,6 +134,5 @@ private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 				}
 		return configurationBuilder;
 			}
-	
 	
 }

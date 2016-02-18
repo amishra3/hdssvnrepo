@@ -146,6 +146,10 @@ public final class ServiceConstants {
 	public static final String JSON_FB_POST_ID = "postId";
 	public static final String JSON_FB_CreatedDate = "createdDate";
 	public static final String JSON_FB_MESSAGE = "message";
+	public static final String JSON_FB_TITLE = "tilte";
+	public static final String JSON_FB_LINK = "link";
+	public static final String JSON_FB_THUMBNAIL = "thumbnail";
+	public static final String JSON_FB_TYPE = "type";	
 	public static final String FB_PERSMISSION_STRING = "email, publish_stream, id, name, first_name, last_name, read_stream , generic";
 	public static final String FB_POST_FEED_DISPLAY_DATE_FORMAT = "MMMM d, yyyy";
 	public static final String SAVE_FB_FEED_DATA_PROPERTY_NAME = "facebookResonse";
@@ -205,5 +209,13 @@ public final class ServiceConstants {
 	
 	public static final String DATE_FORMAT_TO_FULL_MONTH_YEAR = "MMMM d, yyyy";
 	
+	
+	/**
+	 * Proxy constraints
+	 */
+	
+	public static final String PROP_PROXY_HOST = "proxy.host";
+	public static final String PROP_PROXY_ENABLED = "proxy.enabled";
+	public static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 
 }
