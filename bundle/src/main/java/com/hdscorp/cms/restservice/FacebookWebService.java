@@ -132,12 +132,9 @@ private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 			Dictionary props = config.getProperties();
 			if ((Boolean) props.get(propProxyEnabled)) {
 				final String proxyHost = config.getProperties()
-                        .get(propProxyHost).toString();		
-				log.info("propProxyHost::"+propProxyHost);
-               final String proxyPort=proxyHost.substring(proxyHost.indexOf(":"));   
-               log.info("proxyPort::"+proxyPort);
-               configurationBuilder.setHttpProxyHost(proxyHost);
-               configurationBuilder.setHttpProxyPort(Integer.parseInt(proxyPort));
+                        .get(propProxyHost).toString();		         
+               configurationBuilder.setHttpProxyHost(proxyHost.substring(0, proxyHost.indexOf(":")));
+               configurationBuilder.setHttpProxyPort(Integer.parseInt(proxyHost.substring(proxyHost.indexOf(":")+1)));
                //configurationBuilder.setHttpProxyUser(PROXY_USER);
               // configurationBuilder.setHttpProxyPassword(PROXY_PASS);                  
 			}		
@@ -149,6 +146,6 @@ private static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 				}
 		return configurationBuilder;
 			}
-
+	
 	
 }
