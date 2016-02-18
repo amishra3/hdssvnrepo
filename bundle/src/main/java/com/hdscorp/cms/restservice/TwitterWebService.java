@@ -40,15 +40,7 @@ public class TwitterWebService extends GenericRestfulServiceInvokers {
 	public Twitter getTwitterInstance() {
 		log.info("[TwitterService]:getTwitterInstance method  Starting.");
 		
-		 ConfigurationBuilder conbuild = new  ConfigurationBuilder(); 
-				               /* conbuild.setHttpProxyHost("http.corp.hds.com"); 
-				                 conbuild.setHttpProxyPort(8080); 
-				                 
-				                 conbuild.setHttpProxyUser("Infra"); 
-				                 conbuild.setHttpProxyPassword("wwwadmin"); 
-				                  conbuild.setOAuthConsumerKey("mtu5dhs8kuieZKyprangmE1yP"); 
-				                   conbuild.setOAuthConsumerSecret("OMXEQdM3XukOMtWFjEEFki9eitOZOreT6nwMqKpHCAOlVsWktP");
-				                   */ 
+		 ConfigurationBuilder conbuild = new  ConfigurationBuilder(); 				              
 				                 getProxy(conbuild);
 				                 TwitterFactory tf = new TwitterFactory(conbuild.build()); 
 				                 
