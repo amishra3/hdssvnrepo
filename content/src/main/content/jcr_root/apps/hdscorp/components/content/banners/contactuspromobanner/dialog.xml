@@ -22,6 +22,22 @@
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
                             xtype="cqinclude"/>
                     </contactbannercontent>
+                    <contactusbannerphonelinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Find A Seller Link Label"
+                        name="./phonelinktext"
+                        xtype="textfield"/>
+                    <contactusbannerphonelinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Find A Seller Link Target URL"
+                        name="./phonelinkurl"
+                        xtype="pathfield"/>
+                    <contactusphonelinkurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./phonetargettype"
+                        type="checkbox"
+                        xtype="selection"/>
                     <contactusbannerbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Get Information Button Label"

@@ -23,18 +23,23 @@
 </c:if>
 
 
+
+
 <c:choose>
 	<c:when test="${not empty properties.contactbannercontent}">
 
   		<div class="footer-blue col-xs-12 col-sm-12 col-md-12 col-lg-12">
   			<div class="footer-container content-container col-md-12">
                 <div class="talk">
-                ${properties.contactbannercontent}
+                	${properties.contactbannercontent}
+                    <div class="view-phone">
+						<a href="${properties.phonelinkurl}" class="reseller animateLink" target="${properties.phonetargettype?'_blank':'_self'}">${properties.phonelinktext}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                    </div>
                 </div>
 
   				<div class="buttons">
   					<a href="${buttonUrl}" class="information btn-square -white hidden-sm hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
-  					<a href="${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext}<span class="sprite icon-caret-white hidden-xs animateIcon"></span></a>
+  					<a href="${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
   					<a href="${buttonUrl}" class="information btn-square-white hidden-xs" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
   				</div>
   			</div>
