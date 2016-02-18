@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
     height="600"
     title="News Insights Landing Explore Container"
@@ -38,6 +38,25 @@
                                     key="nilesectionlink"
                                     name="./nilesectionlink"
                                     xtype="pathfield"/>
+                                <nileopeninnewwindow
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Open in New Window"
+                                    key="nileopeninnewwindow"
+                                    name="./nileopeninnewwindow"
+                                    type="select"
+                                    width="300"
+                                    xtype="selection">
+                                    <options jcr:primaryType="cq:WidgetCollection">
+                                        <opt1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="YES"
+                                            value="1"/>
+                                        <opt2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="NO"
+                                            value="2"/>
+                                    </options>
+                                </nileopeninnewwindow>
                             </items>
                         </fieldConfig>
                     </nivcmuultifield>

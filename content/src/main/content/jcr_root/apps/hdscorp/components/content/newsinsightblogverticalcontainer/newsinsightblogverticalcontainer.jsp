@@ -8,26 +8,33 @@
 
 
 
-<div class="explore-insight">
-    <div class="explore-insight-container container-fluid">
-        <div class="row">
-            <c:forEach items="${newsInsightContainerModel.nivcList}" var="nivcMultifield" varStatus="multfieldStatus">
-                <c:forEach items="${nivcMultifield}" var="nivcMultiObject" varStatus="multiStatus">
-                    <div class="container-fluid">
-                        <h2><a href="${nivcMultiObject.value}" class="animateLink">${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
-                    </div>
-                    <div class="col-sm-6">    
-                        <cq:include path="newsandinsightfirst${multfieldStatus.count}" resourceType="foundation/components/parsys" />
-                    </div>
-                    <div class="col-sm-6"> 
-                        <cq:include path="newsandinsightsecond${multfieldStatus.count}" resourceType="foundation/components/parsys" />
-                    </div>
-                </c:forEach>
-                
-            </c:forEach>
-        </div>
+ <div class="explore-insight">
+          <div class="explore-insight-container container-fluid">
+  <div class="row">
+<c:forEach items="${newsInsightContainerModel.nivcList}" var="nivcMultifield" varStatus="multfieldStatus">
+    <c:forEach items="${nivcMultifield}" var="nivcMultiObject" varStatus="multiStatus">
+<div class="container-fluid">
+    <c:choose>
+    <c:when test="${fn:substringAfter(nivcMultiObject.value, ':') == '1'}"> 
+<a href="${nivcMultiObject.value}" target="_blank"><h2>${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
+        </c:when>
+        <c:otherwise>
+<a href="${nivcMultiObject.value}"><h2>${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
+       </c:otherwise>
+    </c:choose>
     </div>
-</div> 
+        <div class="col-sm-6">    
+    <cq:include path="newsandinsightfirst${multfieldStatus.count}" resourceType="foundation/components/parsys" />
+       </div>
+         <div class="col-sm-6"> 
+    <cq:include path="newsandinsightsecond${multfieldStatus.count}" resourceType="foundation/components/parsys" />
+ 	 </div>
+        </c:forEach>
+
+</c:forEach>
+  </div>
+  </div>
+   </div> 
 
 
 
