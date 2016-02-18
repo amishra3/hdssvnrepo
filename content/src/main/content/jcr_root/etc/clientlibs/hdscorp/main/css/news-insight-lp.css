@@ -531,18 +531,24 @@
 .news-insight-explore .news-insight-explore-spotlight .spotlight-content a{color:#ffffff; outline: 0 none; text-decoration: none;}
 .news-insight-explore .news-insight-explore-spotlight .spotlight-content a:hover {color: #ffffff;}
 
+.news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content {
+    position: static !important;
+    padding: 25px 30px;
+	min-height:185px;
+}
+
 .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .read-more{
   font-size: 0.8125rem;
 }
 .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .read-more a{
-  color: #ce0000;
+  color: #cc0000;
   font-weight: 800;
   outline: 0 none;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content a:hover {color: #AC1F25;}
+.news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .read-more a:hover {color: #AC1F25;}
 
 @media only screen and (max-width: 1024px) {
   .news-insight-explore h2{
@@ -640,7 +646,7 @@
     font-size: 0.875rem;
   }
   .news-insight-explore .news-insight-explore-spotlight .spotlight-content .spotlight a{
-    color: #cc0000;
+    color: #000000;
     outline: 0 none;
     text-decoration: none;
     text-transform: uppercase;
@@ -648,11 +654,14 @@
   .news-insight-explore .news-insight-explore-spotlight .spotlight-mobile{
     min-height: 350px;
   }
-  .news-insight-explore .news-insight-explore-spotlight .spotlight-content a{color:#cc0000; outline: 0 none; text-decoration: none; font-size: 0.8125rem;}
-  .news-insight-explore .news-insight-explore-spotlight .spotlight-content a:hover {color:#AC1F25;}
+  .news-insight-explore .news-insight-explore-spotlight .spotlight-content a{color:#000000; outline: 0 none; text-decoration: none; font-size: 0.8125rem;}
+  .news-insight-explore .news-insight-explore-spotlight .spotlight-content a:hover {color:#000000;}
 
   .news-insight-explore .news-insight-explore-spotlight.spotlight-normal{
     min-height: 0;
+  }
+  .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content {
+    min-height:0;
   }
 
   .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .spotlight-title{
