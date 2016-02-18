@@ -4,35 +4,43 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+
 /**
  * Sling model for Blog component
+ * 
  * @author gokula.nand
  *
  */
-@Model(adaptables=Resource.class)
+@Model(adaptables = Resource.class)
 public class BlogModel {
-	
-	@Inject @Named("jcr:bimagepath") @Default(values="/content/dam/geometrixx-outdoors/logo.png")	
+
+	@Inject
+	@Named("jcr:bimagepath")
 	private String bimagepath;
-	
-	@Inject @Named("jcr:bautherdetails") @Default(values="Blog Authors")
+
+	@Inject
+	@Named("jcr:bautherdetails")
 	private String bautherdetails;
-	
-	@Inject @Named("jcr:btitle") @Default(values="Blog")
+
+	@Inject
+	@Named("jcr:btitle")
 	private String btitle;
-	
-	@Inject @Named("jcr:bcontent") @Default(values="Content")
+
+	@Inject
+	@Named("jcr:bcontent")
 	private String bcontent;
-	
-	@Inject @Named("jcr:breadmore") @Default(values="Read More")
+
+	@Inject
+	@Named("jcr:breadmore")
 	private String breadmore;
-	
-	@Inject @Named("jcr:breadmorelink") @Default(values="http://www.hds.com")
+
+	@Inject
+	@Named("jcr:breadmorelink")
 	private String breadmorelink;
-	
-	@Inject @Named("jcr:bopeninnew") @Default(values="false")
+
+	@Inject
+	@Named("jcr:bopeninnew")
 	private String bopeninnew;
 
 	public String getBimagepath() {
@@ -62,6 +70,5 @@ public class BlogModel {
 	public String getBopeninnew() {
 		return bopeninnew;
 	}
-		
-	
+
 }
