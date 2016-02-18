@@ -39,7 +39,8 @@ public class NewsInsightExplorerVerticalContainerModel {
 
 			try {
 				JSONObject json = new JSONObject(listofObject[index]);
-				map.put(json.getString("nilesectionlabel"), json.getString("nilesectionlink"));
+				log.info("json.getStri::"+json.getString("nileopeninnewwindow"));
+				map.put(json.getString("nilesectionlabel"), json.getString("nilesectionlink").concat(":").concat(json.getString("nileopeninnewwindow")));
 				nivcList.add(map);
 			} catch (Exception e) {
 				log.info("Exception during parsing the JSON " + e);
