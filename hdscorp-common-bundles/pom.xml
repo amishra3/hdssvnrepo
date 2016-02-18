@@ -2,6 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.hdscorp.platform</groupId>
   <artifactId>hdscorp-common-bundles</artifactId>
+  <packaging>content-package</packaging>
   <version>1.0.0-SNAPSHOT</version>
   <name>HDSCORP common bundles </name>
   <description>HDSCORP common bundles</description>
@@ -14,38 +15,80 @@
 		<install.dir>
 			${project.build.directory}/classes/jcr_root/apps/hdscorp-common-bundles/install
 		</install.dir>
-
+        <crx.host>localhost</crx.host>
+		<crx.port>4502</crx.port>
+		<crx.username>admin</crx.username>
+		<crx.password>admin</crx.password>
+		<publish.crx.host>localhost</publish.crx.host>
+		<publish.crx.port>4503</publish.crx.port>
+		<publish.crx.username>admin</publish.crx.username>
+		<publish.crx.password>admin</publish.crx.password>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>adobe</id>
+			<name>Adobe Public Repository</name>
+			<url>https://repo.adobe.com/nexus/content/groups/public/</url>
+			<layout>default</layout>
+		</pluginRepository>
+	</pluginRepositories>
+
+
   <build>
-		<resources>
-			<!-- filter meta information to get some properties into the files -->
-			<resource>
-				<directory>
-					${basedir}/src/main/content/META-INF
-				</directory>
-				<targetPath>META-INF</targetPath>
-				<filtering>true</filtering>
-			</resource>
-			<!-- exclude .vlt control files and tests -->
-			<resource>
-				<directory>
-					${basedir}/src/main/content/jcr_root
-				</directory>
-				<excludes>
-			    	<!-- <exclude>apps/sling/**</exclude> -->
-                    <exclude>apps/system/**</exclude>
-					<exclude>var/**</exclude> 
-					<exclude>**/.vlt</exclude>
-					<exclude>**/.vltignore</exclude>
-					<exclude>**/.DS_Store</exclude>										
-				</excludes>
-				<targetPath>jcr_root</targetPath>
-			</resource>
-		</resources>
+  
+     <resources>
+            <resource>
+                <directory>src/main/content/jcr_root</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/.vlt</exclude>
+                    <exclude>**/.vltignore</exclude>
+                </excludes>
+            </resource>
+        </resources>
+		
+		<plugins>
 
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>hdscorp-packages</group>
+                    <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+
+                    <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
+                </configuration>
+            </plugin>
+        </plugins>
+         
   </build>
-
+ <profiles>
+        <profile>
+            <id>autoInstallCommonBundles</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.day.jcr.vault</groupId>
+                        <artifactId>content-package-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-content-package</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        </profiles>
 
 	<!-- ====================================================================== -->
 	<!-- D E P E N D E N C I E S                                                -->
