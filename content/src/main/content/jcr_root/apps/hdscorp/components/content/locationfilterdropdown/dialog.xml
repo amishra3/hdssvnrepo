@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    width="1000"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <locregionfilter
+                jcr:primaryType="cq:Panel"
+                title="Region Filter">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <locallregionslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="ALL Regions Label"
+                        name="./jcr:locallregionslabel"
+                        xtype="textfield"/>
+                    <regions
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Regions"
+                        name="./jcr:locregions"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <locregionlabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region Label"
+                                    key="locregionlabel"
+                                    name="./locregionlabel"
+                                    xtype="textfield"/>
+                                <locregiontag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region Tag"
+                                    key="locregiontag"
+                                    name="./locregiontag"
+                                    xtype="tags"/>
+                                <loccountries
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Countries"
+                                    key="countries"
+                                    xtype="multifield">
+                                    <fieldConfig
+                                        jcr:primaryType="cq:Widget"
+                                        border="true"
+                                        hideLabel="true"
+                                        layout="form"
+                                        xtype="multifieldpanel">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <loccountrylabel
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                dname="header"
+                                                fieldLabel="Country Label"
+                                                key="country-label"
+                                                layout="anchor"
+                                                name="./country-label"
+                                                xtype="textfield"/>
+                                            <loccountrytag
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                fieldLabel="Country Tag"
+                                                key="country-tag"
+                                                layout="anchor"
+                                                name="cq:tags"
+                                                xtype="tags"/>
+                                            <loclocations
+                                                jcr:primaryType="cq:Widget"
+                                                fieldLabel="Locations"
+                                                key="locations"
+                                                xtype="multifield">
+                                                <fieldConfig
+                                                    jcr:primaryType="cq:Widget"
+                                                    border="true"
+                                                    hideLabel="true"
+                                                    layout="form"
+                                                    xtype="multifieldpanel">
+                                                    <items jcr:primaryType="cq:WidgetCollection">
+                                                        <loclocationlabel
+                                                            jcr:primaryType="cq:Widget"
+                                                            allowBlank="{Boolean}false"
+                                                            anchor="100%"
+                                                            dname="header"
+                                                            fieldLabel="Location Label"
+                                                            key="location-label"
+                                                            layout="anchor"
+                                                            name="./location-label"
+                                                            xtype="textfield"/>
+                                                        <locationtags
+                                                            jcr:primaryType="cq:Widget"
+                                                            allowBlank="{Boolean}false"
+                                                            anchor="100%"
+                                                            fieldLabel="Location Tag"
+                                                            key="location-tag"
+                                                            layout="anchor"
+                                                            name="cq:tags"
+                                                            xtype="tags"/>
+                                                    </items>
+                                                </fieldConfig>
+                                            </loclocations>
+                                        </items>
+                                    </fieldConfig>
+                                </loccountries>
+                            </items>
+                        </fieldConfig>
+                    </regions>
+                </items>
+            </locregionfilter>
+        </items>
+    </items>
+</jcr:root>
