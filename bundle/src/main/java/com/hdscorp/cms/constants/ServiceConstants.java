@@ -115,6 +115,8 @@ public final class ServiceConstants {
 	public static final String TW_FEED_POSTED_ONE_YEAR_MESSAGE = "year ago";
 	public static final String TW_FEED_POSTED_MONTHS_MESSAGE = "months ago";
 	public static final String TW_FEED_POSTED_ONE_MONTH_MESSAGE = "month ago";
+	public static final String TW_FEED_POSTED_WEEKS_MESSAGE = "weeks ago";
+	 public static final String TW_FEED_POSTED_ONE_WEEK_MESSAGE = "week ago";
 	public static final String TW_FEED_POSTED_HOURS_MESSAGE = "hours ago";
 	public static final String TW_FEED_POSTED_ONE_HOUR_MESSAGE = "hour ago";
 	public static final String TW_FEED_POSTED_MINS_MESSAGE = "mins ago";
@@ -130,6 +132,7 @@ public final class ServiceConstants {
 	public static final String TWITTER_MESSAGE_TEXT = "twitterMessageText";
 	public static final String TWITTER_MEDIA_URL = "twitterMediaUrl";
 	public static final String TWITTER_SAVE_FEED_DATA_PROPERTY_NAME = "twitterResponse";
+	
 
 	/*
 	 * Facebook constraints
@@ -203,19 +206,33 @@ public final class ServiceConstants {
 	public static final String DATE_FORMAT_FROM_EVENT = "MM/dd/yy";
 	public static final String DATE_FORMAT_TO_EVENT = "MM/dd/yyyy";
 
+
+	/**
+	 * Location Constraints
+	 */
+	public static final String LOCATION_JCR_REGION = "jcr:locregion";
+	public static final String LOCATION_JCR_COUNTRY = "jcr:loccountry";
+	public static final String LOCATION_JCR_LOCATIONS= "jcr:loclocations";
+	public static final String LOCATION_JCR_LOCATIONIMAGE = "jcr:locationimage";
+	public static final String LOCATION_JCR_LOCATIONIMAGEALTTEXT = "jcr:locimagealttext";
+	public static final String LOCATION_JCR_LOCATIONDETAIL = "jcr:locationdetail";
+	public static final String LOCATION_JCR_LOCATIONLATITUDE = "jcr:locationlatitude";
+	public static final String LOCATION_JCR_LOCATIONLONGITUDE = "jcr:locationlongitude";
+	public static final String LOCATION_JCR_LOCATIONPHONENUMBER = "jcr:locphonenumber";
+	
+
+
 	/**
 	 * News and Insights Constraints
 	 */
 	
 	public static final String DATE_FORMAT_TO_FULL_MONTH_YEAR = "MMMM d, yyyy";
 	
-	
-	/**
+/**
 	 * Proxy constraints
 	 */
 	
 	public static final String PROP_PROXY_HOST = "proxy.host";
 	public static final String PROP_PROXY_ENABLED = "proxy.enabled";
 	public static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
-
 }
