@@ -23,12 +23,6 @@
 			  </div>
 			<!--TECH SPEC TABLE END-->
 
-
-              <div class="tbd-dl btn-square btn-square-white">
-                  <a href="${properties.downloadspecctatargeturl}" target="${properties.downloadspecctaopeninnew?'_blank':'_self'}">${properties.downloadspecctalabel}</a>
-              </div>
-
-
 			 <div class="vsp-soft-products">
 			 	<cq:include path="techspeccontentpar" resourceType="hdscorp/components/content/productdetailtechspecaccordincontent" />
 			 </div>

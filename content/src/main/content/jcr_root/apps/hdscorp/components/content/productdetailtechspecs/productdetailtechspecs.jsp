@@ -71,6 +71,8 @@ node.save();
 		</table>
 	</div>
 	<c:if test="${showviewallbutton and !techspeconlypage}">
-		<a href ="${currentPage.path}.techspec.html">${properties.viewalllinklabel}</a>
+        <div class="tbd-dl btn-square btn-square-white">
+			<a href ="${currentPage.path}.techspec.html" target="${properties.viewopeninnew?'_blank':'_self'}">${properties.viewalllinklabel}</a>
+        </div>
 	</c:if>
 </div>
