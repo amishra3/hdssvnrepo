@@ -20,9 +20,17 @@
 	
 	jQuery(document).ready(function($){
 	if($('.navContain').length!==0){
+		var heroBannerClass;
+        if($('.hero-product-solutions').length!==0){
+			heroBannerClass=".hero-product-solutions";
+        }else{
+			heroBannerClass=".common-hero-banner";
+        }
+
+
 	var secondaryNav = $('.navContain'),
 		secondaryNavTopPosition = secondaryNav.offset().top,
-		taglineOffesetTop = $('.hero-product-solutions').offset().top + $('.hero-product-solutions').height() + parseInt($('.hero-product-solutions').css('paddingTop').replace('px', '')),
+		taglineOffesetTop = $(heroBannerClass).offset().top + $(heroBannerClass).height() + parseInt($(heroBannerClass).css('paddingTop').replace('px', '')),
 		contentSections = $('.accordion-level'),
 		endScroll = $('.stop'),
 		endScrollPos = endScroll.offset().top;
