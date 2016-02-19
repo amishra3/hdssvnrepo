@@ -25,7 +25,7 @@
             </div>
             </c:if>
 
-            <div class="${bannertypeclass}-list">
+            <div class="${bannertypeclass1}-list">
             	<div class="content-container">
                 	<div class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
 

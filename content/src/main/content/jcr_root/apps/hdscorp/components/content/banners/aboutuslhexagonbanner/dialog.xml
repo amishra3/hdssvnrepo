@@ -12,16 +12,6 @@
                 jcr:primaryType="cq:Panel"
                 title="Tab 1">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <aboutushextitlecontent
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Banner Title"
-                        name="./aboutushextitlecontent"
-                        xtype="textfield"/>
-                    <aboutushexsubtitlecontent
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Banner Sub-Title"
-                        name="./aboutushexsubtitlecontent"
-                        xtype="textarea"/>
                     <bannertype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Select the banner type/"
@@ -41,8 +31,22 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="About HDS CSR Hexagon"
                                 value="behind-scene-hexagon about-hds-csr-hexagon"/>
+                            <career-benefits-hexagon
+                                jcr:primaryType="nt:unstructured"
+                                text="About HDS Career Hexagon"
+                                value="career-benefits-hexagon"/>
                         </options>
                     </bannertype>
+                    <aboutushextitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./aboutushextitlecontent"
+                        xtype="textfield"/>
+                    <aboutushexsubtitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Sub-Title"
+                        name="./aboutushexsubtitlecontent"
+                        xtype="textarea"/>
                     <aboutusheximagePath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
