@@ -18,12 +18,7 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 
-<%
-JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
-%>
-<c:set var="pageprops"
-	value="<%=dataAccessor.getPage(currentPage.getAbsoluteParent(3).getPath())%>" />
-<c:set var="domain" value="${pageprops.domain}" />
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
 
 <c:set var="subnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservsubnavlabel-mgmservsubnavlink-mgmservalttext-mgmservopeninnewwindow")%>" />
@@ -35,11 +30,6 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 		value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmservnavpath").toString())%>" />
 </c:if>
 
-<%-- <li><a href="${properties.mgmservnavpath}" --%>
-<%-- 	title="${properties.mgmpsnavtitle}">${properties.mgmservnavtitle} <span --%>
-<!-- 		class="icon-accordion-closed"></span> <span -->
-<!-- 		class="icon-accordion-opened"></span> -->
-<!-- </a> -->
 <div class="hds-megaMenuWrapper"
 	style="background-image:url(${domain}${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmservnavtitle}"
@@ -76,7 +66,7 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 								<c:when test="${subnavlinks.mgmservopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmservsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${subnavlinks.mgmservsubnavlink}.html"
 										title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
@@ -84,7 +74,7 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 								<c:otherwise>
 									<li><a
 										target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmservsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${subnavlinks.mgmservsubnavlink}.html"
 										title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -136,7 +126,7 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 											<p>
 												<a
 													target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
-													href="${domain}${rightsection.mgmservviewfeaturedproductslink}.html"
+													href="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${rightsection.mgmservviewfeaturedproductslink}.html"
 													title="${rightsection.mgmservviewfeaturedproductslabel}"
 													class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
 													aria-hidden="true"
@@ -147,7 +137,7 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 											<p>
 												<a
 													target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
-													href="${domain}${rightsection.mgmservviewfeaturedproductslink}"
+													href="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${rightsection.mgmservviewfeaturedproductslink}.html"
 													title="${rightsection.mgmservviewfeaturedproductslabel}.html"
 													class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
 													aria-hidden="true"
@@ -168,4 +158,3 @@ JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 		</div>
 	</div>
 </div>
-<!-- </li> -->

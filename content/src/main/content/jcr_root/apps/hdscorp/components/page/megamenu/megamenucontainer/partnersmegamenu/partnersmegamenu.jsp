@@ -1,10 +1,10 @@
 <%--
 
   Product And Solutions MegaMenu component.
-
   This is Product And Solutions MegaMenu
 
 --%>
+
 <%@page import="com.hdscorp.cms.dao.JCRDataAccessor"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PropertyResolver"%>
@@ -15,12 +15,6 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
-
-<%
-// 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
-
-
-%>
 
 <c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
 
@@ -35,10 +29,6 @@
 </c:if>
 
 
-<%-- <li><a href="${properties.mgmptnavpath}.html" title="${properties.mgmptnavtitle}">${properties.mgmptnavtitle} --%>
-<!--     	<span class="icon-accordion-closed"></span> -->
-<!--     	<span class="icon-accordion-opened"></span> -->
-<!--     </a> -->
 <div class="hds-megaMenuWrapper"
 	style="background-image:url(${domain}${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmptnavtitle}"
@@ -79,7 +69,7 @@
 								<c:when test="${subnavlinks.mgmptopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmptsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${subnavlinks.mgmptsubnavlink}.html"
 										class="animateLink" title="${subnavlinks.mgmptalttext}">${subnavlinks.mgmptsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
@@ -87,7 +77,7 @@
 								<c:otherwise>
 									<li><a
 										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmptsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${subnavlinks.mgmptsubnavlink}.html"
 										title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -126,7 +116,7 @@
 										<p>
 											<a
 												target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}"
-												href="${domain}${partnerrighsection.mgmptmultisubnavlink1}.html"
+												href="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${partnerrighsection.mgmptmultisubnavlink1}.html"
 												title="${partnerrighsection.mgmptmultisubnavlabel1}"
 												class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
 												aria-hidden="true"
@@ -137,7 +127,7 @@
 										<p>
 											<a
 												target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}"
-												href="${domain}${partnerrighsection.mgmptmultisubnavlink1}.html"
+												href="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${partnerrighsection.mgmptmultisubnavlink1}.html"
 												title="${partnerrighsection.mgmptmultisubnavlabel1}"
 												class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
 												aria-hidden="true"
@@ -154,10 +144,3 @@
 		</div>
 	</div>
 </div>
-<!-- </li> -->
-
-
-
-
-
-

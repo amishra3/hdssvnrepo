@@ -29,10 +29,6 @@
 </c:if>
 
 
-<%-- <li><a href="${properties.mgmnewsinsightsnavpath}.html" title="${properties.mgmnewsinsightsnavtitle}">${properties.mgmnewsinsightsnavtitle} --%>
-<!--     	<span class="icon-accordion-closed"></span> -->
-<!--     	<span class="icon-accordion-opened"></span> -->
-<!--     </a> -->
 <div class="hds-megaMenuWrapper"
 	style="background-image:url(${domain}${properties.mgmnewsinsightsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmnewsinsightsnavtitle}"
@@ -76,7 +72,7 @@
 
 									<li><a
 										target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmnewsinsightssubnavlink}"
+										href="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${subnavlinks.mgmnewsinsightssubnavlink}"
 										title="${subnavlinks.mgmnewsinsightsalttext}"
 										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
 											aria-hidden="true"
@@ -85,7 +81,7 @@
 								<c:otherwise>
 									<li><a
 										target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmnewsinsightssubnavlink}"
+										href="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${subnavlinks.mgmnewsinsightssubnavlink}"
 										title="${subnavlinks.mgmnewsinsightsalttext}"
 										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
 											aria-hidden="true"
@@ -124,7 +120,7 @@
 									<p>
 										<a
 											target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}"
-											href="${domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}"
+											href="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}"
 											title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
 											aria-hidden="true"
@@ -135,13 +131,12 @@
 									<p>
 										<a
 											target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}"
-											href="${domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}"
+											href="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}"
 											title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 									</p>
-
 
 								</c:otherwise>
 							</c:choose>
@@ -152,10 +147,3 @@
 		</div>
 	</div>
 </div>
-<!-- </li> -->
-
-
-
-
-
-

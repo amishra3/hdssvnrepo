@@ -26,12 +26,6 @@
 		value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("mgmpsnavpath").toString())%>" />
 </c:if>
 
-
-<!-- <li> -->
-<%-- 	<a href="${properties.mgmpsnavpath}.html" title="${properties.mgmpsnavtitle}">${properties.mgmpsnavtitle} --%>
-<!--     	<span class="icon-accordion-closed"></span> -->
-<!--     	<span class="icon-accordion-opened"></span> -->
-<!--     </a> -->
 <div class="hds-megaMenuWrapper"
 	style="background-image:url(${domain}${properties.mgmpsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmpsnavtitle}"
@@ -68,7 +62,7 @@
 								<c:when test="${subnavlinks.mgmpsopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmpsopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmpssubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${subnavlinks.mgmpssubnavlink}.html"
 										title="${subnavlinks.subnavlinks}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
@@ -76,7 +70,7 @@
 								<c:otherwise>
 									<li><a
 										target="${subnavlinks.mgmpsopeninnewwindow==1?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmpssubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${subnavlinks.mgmpssubnavlink}.html"
 										title="${subnavlinks.mgmpsalttext}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -108,7 +102,7 @@
 								<p>
 									<a
 										target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}"
-										href="${domain}${properties.mgmpsviewfeaturedproductslink}.html"
+										href="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${properties.mgmpsviewfeaturedproductslink}.html"
 										title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span
 										aria-hidden="true"
 										class="glyphicon glyphicon-new-window animateIcon"></span></a>
@@ -118,7 +112,7 @@
 								<p>
 									<a
 										target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}"
-										href="${domain}${properties.mgmpsviewfeaturedproductslink}.html"
+										href="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${properties.mgmpsviewfeaturedproductslink}.html"
 										title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span
 										aria-hidden="true"
 										class="glyphicon glyphicon-menu-right animateIcon"></span></a>
@@ -131,10 +125,3 @@
 		</div>
 	</div>
 </div>
-<!-- </li> -->
-
-
-
-
-
-

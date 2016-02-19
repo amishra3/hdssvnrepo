@@ -80,7 +80,7 @@
 								<c:when test="${subnavlinks.mgmahopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmahopeninnewwindow?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmahsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmahsubnavlink, 'http')?'':domain}${subnavlinks.mgmahsubnavlink}.html"
 										title="${subnavlinks.mgmahalttext}" class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
@@ -89,7 +89,7 @@
 								<c:otherwise>
 									<li><a
 										target="${subnavlinks.mgmahopeninnewwindow?'_blank':'_self'}"
-										href="${domain}${subnavlinks.mgmahsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmahsubnavlink, 'http')?'':domain}${subnavlinks.mgmahsubnavlink}.html"
 										title="${subnavlinks.mgmahalttext}" class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
@@ -124,7 +124,7 @@
 									<p>
 										<a
 											target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}"
-											href="${domain}${aboutrightsection.mgmahviewfeaturedproductslink}.html"
+											href="${fn:contains(aboutrightsection.mgmahviewfeaturedproductslink, 'http')?'':domain}${aboutrightsection.mgmahviewfeaturedproductslink}.html"
 											title="${aboutrightsection.mgmahviewfeaturedproductslabel}"
 											class="animateLink">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
 											aria-hidden="true"
@@ -138,7 +138,7 @@
 									<p>
 										<a
 											target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}"
-											href="${domain}${aboutrightsection.mgmahviewfeaturedproductslink}.html"
+											href="${fn:contains(aboutrightsection.mgmahviewfeaturedproductslink, 'http')?'':domain}${aboutrightsection.mgmahviewfeaturedproductslink}.html"
 											title="${aboutrightsection.mgmahviewfeaturedproductslabel}"
 											class="animateLink">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
 											aria-hidden="true"

@@ -27,10 +27,6 @@
 </c:if>
 
 
-<%-- <li><a href="${properties.mgmcontactusnavpath}.html" title="${properties.mgmcontactusnavtitle}">${properties.mgmcontactusnavtitle} --%>
-<!--     	<span class="icon-accordion-closed"></span> -->
-<!--     	<span class="icon-accordion-opened"></span> -->
-<!--     </a> -->
 <div class="hds-megaMenuWrapper"
 	style="background-image:url(${domain}${properties.mgmcontactusbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmcontactusnavtitle}"
@@ -68,7 +64,7 @@
 									<c:when test="${subnavlinks.mgmcontactusopeninnewwindow==1}">
 										<li><a
 											target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}"
-											href="${domain}${subnavlinks.mgmcontactussubnavlink}.html"
+											href="${fn:contains(aboutrightsection.mgmcontactussubnavlink, 'http')?'':domain}${subnavlinks.mgmcontactussubnavlink}.html"
 											title="${subnavlinks.mgmcontactusalttext}"
 											class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
 												aria-hidden="true"
@@ -78,7 +74,7 @@
 									<c:otherwise>
 										<li><a
 											target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}"
-											href="${domain}${subnavlinks.mgmcontactussubnavlink}.html"
+											href="${fn:contains(aboutrightsection.mgmcontactussubnavlink, 'http')?'':domain}${subnavlinks.mgmcontactussubnavlink}.html"
 											title="${subnavlinks.mgmcontactusalttext}"
 											class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
 												aria-hidden="true"
@@ -117,7 +113,7 @@
 									<p>
 										<a
 											target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}"
-											href="${domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html"
+											href="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html"
 											title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
 											aria-hidden="true"
@@ -129,7 +125,7 @@
 									<p>
 										<a
 											target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}"
-											href="${domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html"
+											href="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html"
 											title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
 											aria-hidden="true"
@@ -147,4 +143,3 @@
 		</div>
 	</div>
 </div>
-<!-- </li> -->
