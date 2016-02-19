@@ -169,7 +169,18 @@ public class ServiceUtil {
 				feedPostedTime.append(p.getMonths()).append(ServiceConstants.EMPTY_SPACE)
 						.append(ServiceConstants.TW_FEED_POSTED_MONTHS_MESSAGE);
 
-		} else if (p.getDays() >= 1) {
+		}
+		 else if (p.getWeeks() >= 1) {
+			   if (p.getWeeks() == 1)
+			    feedPostedTime.append(p.getWeeks()).append(ServiceConstants.EMPTY_SPACE)
+			      .append(ServiceConstants.TW_FEED_POSTED_ONE_WEEK_MESSAGE);
+			   else
+			    feedPostedTime.append(p.getWeeks()).append(ServiceConstants.EMPTY_SPACE)
+			      .append(ServiceConstants.TW_FEED_POSTED_WEEKS_MESSAGE);
+
+			  }
+		
+		else if (p.getDays() >= 1) {
 			if (p.getDays() == 1)
 				feedPostedTime.append(p.getDays()).append(ServiceConstants.EMPTY_SPACE)
 						.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
