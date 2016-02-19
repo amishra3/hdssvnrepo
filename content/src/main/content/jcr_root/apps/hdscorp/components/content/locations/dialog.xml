@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Locations"
+    width="600"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <locations
+                jcr:primaryType="cq:Panel"
+                title="Locations">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <locationimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="./imagePath3/imageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Location Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:locationimage"
+                        height="{Long}200"
+                        name="./jcr:locationimage"
+                        rotateParameter="./imagePath3/imageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <locimagealttext
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Image ALT text"
+                        name="./jcr:locimagealttext"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locimagealttext = dialog.getField('./jcr:locimagealttext')&#xa; var locimagealttextvalue = locimagealttext.getValue();&#xa; if($.trim(locimagealttextvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <locationdetail
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Detail"
+                        name="./jcr:locationdetail"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locationdetail = dialog.getField('./jcr:locationdetail')&#xa; var locationdetailvalue = locationdetail.getValue();&#xa; if($.trim(locationdetailvalue )==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="richtext"/>
+                    <locationlongitude
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Longitude"
+                        name="./jcr:locationlongitude"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locationlongitude = dialog.getField('./jcr:locationlongitude')&#xa; var locationlongitudevalue = locationlongitude.getValue();&#xa; if($.trim(locationlongitudevalue )==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <locationlatitude
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Latitude"
+                        name="./jcr:locationlatitude"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locationlatitude = dialog.getField('./jcr:locationlatitude')&#xa; var locationlatitudevalue = locationlatitude.getValue();&#xa; if($.trim(locationlatitudevalue )==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <locphonenumber
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Phone Number"
+                        name="./jcr:locphonenumber"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="nt:unstructured"
+                            xtype="richtext"/>
+                    </locphonenumber>
+                    <locregion
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Region"
+                        name="./jcr:locregion"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locimagealttext = dialog.getField('./jcr:locimagealttext')&#xa; var locimagealttextvalue = locimagealttext.getValue();&#xa; if($.trim(locimagealttextvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="tags"/>
+                    <loccountry
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Country"
+                        name="./jcr:loccountry"
+                        xtype="tags"/>
+                    <loclocations
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location"
+                        name="./jcr:loclocations"
+                        xtype="tags"/>
+                </items>
+            </locations>
+        </items>
+    </items>
+</jcr:root>
