@@ -4,18 +4,27 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class)
+/**
+ * Useful for LocationData Model
+ * 
+ * @author ramana
+ *
+ */
 public class LocationNode {
 	private String locationImage;
 	private String imageAltText;
 	private String locationDetail;
 	private String locationLongitude;
 	private String locationLatitude;
+
 	private String[] locationRegion;
+	private String[] locationCountry;
+	private String[] location;
 	private String[] locationPhoneNumber;
-	private String locationCountry;
-	private String location;
-    private String locationRegionTagID;
-    private String locationRegionTagName;
+
+	private String locationRegionTagID;
+	private String locationRegionTagName;
+
 	public String getLocationImage() {
 		return locationImage;
 	}
@@ -64,8 +73,6 @@ public class LocationNode {
 		this.locationRegion = locationRegion;
 	}
 
-
-
 	public String[] getLocationPhoneNumber() {
 		return locationPhoneNumber;
 	}
@@ -74,19 +81,19 @@ public class LocationNode {
 		this.locationPhoneNumber = locationPhoneNumber;
 	}
 
-	public String getLocationCountry() {
+	public String[] getLocationCountry() {
 		return locationCountry;
 	}
 
-	public void setLocationCountry(String locationCountry) {
+	public void setLocationCountry(String[] locationCountry) {
 		this.locationCountry = locationCountry;
 	}
 
-	public String getLocation() {
+	public String[] getLocation() {
 		return location;
 	}
 
-	public void setLocation(String location) {
+	public void setLocation(String[] location) {
 		this.location = location;
 	}
 
@@ -106,5 +113,4 @@ public class LocationNode {
 		this.locationRegionTagName = locationRegionTagName;
 	}
 
-	
 }
