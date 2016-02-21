@@ -31,5 +31,7 @@ common-component.css
 partner-lp.css
 newsEvents01.css
 about-hds-career.css
-app.css
 bootstrap-select.css
+service-training.css
+partner-program.css
+app.css

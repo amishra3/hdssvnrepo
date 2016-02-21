@@ -1,0 +1,189 @@
+.services-training-banner{ background-image: url("../images/service-training-banner.png"); z-index:2}
+.training{text-align:left!important;   padding: 60px 0 84px!important;}
+.service-support-main .serv-training-overview h2, h3{font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 35px;
+    text-transform: uppercase;
+	color:#000;
+	text-align:left;
+	margin: 0;
+    padding: 0 0 40px;
+}
+.service-support-main .serv-training-overview h3{font-size: 1.2em; font-family: "museo-sans",Helvetica,Arial,sans-serif;text-transform: capitalize; margin: 0; padding:0; }
+
+.training-search {
+    border: 5px solid #e6e6e6;
+    margin: 30px 0 35px;
+    min-height: 65px;
+	position:relative;
+}
+.training-search > input {
+    border: medium none;
+    font-size: 1.125rem;
+    min-height: 65px;
+    padding-left: 15px;
+    padding-right: 62px;
+    text-align: center;
+    width: 100%;
+	color:#000000;
+}
+.training-search span.glyphicon.glyphicon-search {
+    color: #cc0000;
+    cursor: pointer;
+    font-size: 2.2em;
+    position: absolute;
+    right: 14px;
+    top: 15px;
+    transform: rotate(90deg);
+}
+.service-support-main .serv-training-overview p{
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    padding-bottom: 35px;
+    text-align: left;
+	margin:0;
+	padding:0 0 60px;
+}
+.service-training-partner{min-height:auto!important; text-align:left;  padding: 30px 0 40px 30px !important;}
+
+.serv-training-overview .daterangepicker {float:none; display:table;  }
+.serv-training-overview .daterangepicker{ margin: 0 0 45px;}
+.serv-training-overview .daterangepicker .daterangepicker_input{width:100%;}
+.serv-training-overview .daterangepicker .daterangepicker_input input[type="text"]{width:100%;}
+.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right { margin:0; float:none; display:table-cell; vertical-align:middle;  
+}
+.serv-training-overview .daterangepicker span{float:none; display:table-cell;  text-align:center; vertical-align:middle; margin: 12px; }
+.train-partner .col-md-5{padding:0 15px 0 0;}
+.serv-training-overview .service-btn{background:none!important; font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 13px; border:none; text-transform:uppercase; font-weight: 700;}
+.serv-training-overview button span.glyphicon{ display:inline-block; color:#cc0d0d;}
+.serv-training-overview {
+    border-right: 1px solid #999999;
+    padding: 0 40px 0 10px;
+}
+.serv-training-overview.last{border:none}
+
+.training-resources{background-color:#ac1f25; padding:70px 0;}
+.train-resrcprdct-bx{color: #333333; margin:0 15px 0 0;  box-shadow: 0 1px 2px #5a5959; margin-bottom:;}
+.training-resources h2{ font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 35px;
+    text-align: center;
+    text-transform: uppercase;
+	color:#fff;
+}
+.train-resrcprdct-bx .imageHolder img{width:100%}
+.train-resrcprdct-bx .prdct-inner{padding: 30px 17px 25px; background-color:#ffffff;}
+.train-resrcprdct-bx .prdct-inner h3{font-family: "museo-sans",Helvetica,Arial,sans-serif; font-size:20px; padding:0 0 18px; margin:0; text-transform: capitalize;}
+.train-resrcprdct-bx .prdct-inner p{font-size:13px; padding:0;}
+.train-resrcprdct-bx .prdct-inner a {
+    color: #ce0000;
+    font-weight: 800;
+    outline: 0 none;
+    text-decoration: none;
+	text-transform:uppercase;
+	font-family: "museo-sans",Helvetica,Arial,sans-serif; 
+	letter-spacing: 0.1em;
+}
+.train-resrcprdct-bx .prdct-inner a:hover {
+    color: #ac1f25;
+}
+.no-padding{padding:0;}
+
+
+.service-chart{background:#fff; padding:70px 0 120px;;}
+.service-chart h2{
+	color: #000;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+	font-size: 3.6em;
+    font-weight: 100;
+	margin:0;
+	padding-bottom: 47px;
+}
+.service-chart p {font-size:12px;  margin: 0 0 58px;}
+.service-chart p span{font-family: "museo-sans",Helvetica,Arial,sans-serif; text-transform:uppercase;}
+.service-chart h3{
+	color: #000;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0 0 10px;
+    text-transform: capitalize;
+}
+.service-chart .table-bordered {
+    border: 1px solid #f1f1f1; border-top:5px solid #f78e1e; margin: 0 0 60px;
+}
+
+.service-chart .table-striped > tbody > tr:nth-of-type(2n+1) > th {
+    background-color: transparent;
+    color: #1d1d1d;
+}
+.service-chart .table-striped > tbody > tr:nth-of-type(2n) > th {
+    background-color: transparent;
+    color: #1d1d1d;
+}
+
+.service-chart .table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #f1f1f1;
+	color:#666;
+}
+.service-chart .table-striped > tbody > tr:nth-of-type(2n) {
+    background-color: #fff;
+	color:#666;
+}
+.service-chart .table-bordered > thead > tr > td, .service-chart .table-bordered > tbody > tr > td, .service-chart .table-bordered > tfoot > tr > td{border:none;}
+.red{color:#ce0000;  display: inline-block;
+    vertical-align: middle;
+}
+.grey{color:#666; font-size:14px;}
+.circle{border-radius:100px; -webkit-border-radius:100px; -moz-border-radius:100px;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 5px;
+    padding: 2px 7px;
+    text-transform: uppercase;
+}
+.blue{background-color:#008eaa; color:#fff;}
+.yellow{background-color:#f78e1e; color:#fff;}
+.service-chart .table-striped > tbody > tr > td{text-align:left;}
+.service-chart  table tr td table tr td{padding:10px 0;}
+.large-caption{text-transform:uppercase;}
+.center{text-align:center;}
+.service-training-partner h3.headline{padding:0; text-transform:capitalize;}
+.search-course-btn {
+    display: inline-block;
+    min-width: 160px;
+}
+
+
+@media only screen and (max-width: 768px){
+	.train-resrcprdct-bx{margin:0 0 15px 0;}
+	.service-chart  table tr td table tr{display:inline-block!important;}
+	.service-chart .table-bordered > thead > tr > td, .service-chart .table-bordered > tbody > tr > td, .service-chart .table-bordered > tfoot > tr > td{border-bottom:1px solid #999999; padding-bottom:10px;}
+	.service-chart .table-striped > tbody > tr > th{text-align:left; border-bottom:1px solid #999999; }
+	.service-chart h2{font-size:2.5em}
+	.service-training-partner{margin:0 0 15px 0;}
+	.serv-training-overview {
+    border-bottom: 1px solid #999999; border-right:none;
+    padding: 40px 0;
+	}
+	.training-learn{text-align:center;}
+	.service-support-main .serv-training-overview p{font-size:1.1em;}
+	.service-support-main .serv-training-overview h2{font-size:1.2em;}
+	.accordion-level:nth-last-child .accordion-menu-container::after{background-color:transparent;}
+	.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right{width:45%;}
+	.src-btn{text-align:center; margin:20px 0 0 0;}
+
+}
+@media only screen and (min-width: 768px){
+	.train-resrcprdct-bx{margin:0 15px 0 0;}
+	.serv-training-overview {
+    border-bottom:none; border-right: 1px solid #999999;
+    
+	}
+	.service-training-partner{margin-bottom:15px;}
+	.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right{width:45%;}
+}	
