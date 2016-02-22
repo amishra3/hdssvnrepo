@@ -9,7 +9,7 @@
 		<div class="resources-category">
 			<div class="resources-category-heading">${properties.columntitle}</div>
 
-			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1")%>" />
+			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1-thirdparty")%>" />
 					<c:forEach var="column" items="${contentColumns}" varStatus="loop">
 						<c:set var="linkUrl" value="${column.seemoretargeturl}"/>
                          
@@ -18,18 +18,18 @@
 						</c:if>	
 						<div class="resources-category-box">
 	                      <div class="resources-category-icon">
-							<img src="${column.contenticonpath}" alt="${column.contenticonpathalttext}" title="${column.contenticonpath}"/>
+							<img src="${column.contenticonpath}" alt="${column.contenticonpathalttext}" title="${column.contenttitle}"/>
 	                      </div>
 	                      <div class="resources-category-title">${column.contenttitle}</div>
 	                      <div class="resources-category-description">${column.columncontent}</div>
                             <c:choose>
                             	<c:when test="${not empty linkUrl && not empty column.seemorelabel}">
                                       <div class="resources-category-more">
-                                            <a class="animateLink" href="${linkUrl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                                            <a class="animateLink" href="${linkUrl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                       </div>
                                 </c:when>
                                 <c:otherwise>
-                                   
+
                                  </c:otherwise>
 								</c:choose>
 	                    </div>
