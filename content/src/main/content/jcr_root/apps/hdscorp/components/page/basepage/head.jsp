@@ -45,6 +45,7 @@
 	    favIcon = null;
 	} 
 %>
+<c:set var="titleprefix" value="<%= pageProperties.getInherited("titleprefix", "") %>" />
 <head>
       <meta charset="utf-8"/>
       <meta name="format-detection" content="telephone=yes" />
@@ -54,7 +55,6 @@
       <meta http-equiv="content-type" content="text/html; charset=UTF-8"<%=xs%>>
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="keywords" content="<%= StringEscapeUtils.escapeHtml4(pageProperties.get("keywords", "")) %>"<%=xs%>>
-     
       <meta name="description" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:description", "")) %>"<%=xs%>>
 	  <meta name="google" value="notranslate" />
 	  <meta name="referrer" content="origin"/>
@@ -69,6 +69,6 @@
 		<link rel="icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
 		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
       <% } %>
-      <title><%= (StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")) == null || StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")).equals("")) ? StringEscapeUtils.escapeHtml4(currentPage.getTitle()):StringEscapeUtils.escapeHtml4(properties.get("pageTitle", ""))%></title>
+      <title>${titleprefix}<%= (StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")) == null || StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")).equals("")) ? StringEscapeUtils.escapeHtml4(currentPage.getTitle()):StringEscapeUtils.escapeHtml4(properties.get("pageTitle", ""))%></title>
       
 </head>

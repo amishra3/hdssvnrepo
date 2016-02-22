@@ -4,10 +4,15 @@
     title="Global Messages">
     <items jcr:primaryType="cq:WidgetCollection">
     
-    <viewallprlabel
+    <domain
             jcr:primaryType="cq:Widget"
             fieldLabel="Link Domain Value"
             name="./domain"
+            xtype="textfield"/> 
+    <titleprefix
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Title Meta Data Prefix Value"
+            name="./titleprefix"
             xtype="textfield"/>                               
     </items>
 </jcr:root>
