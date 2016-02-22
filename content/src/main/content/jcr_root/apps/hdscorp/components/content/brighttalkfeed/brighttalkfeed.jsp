@@ -30,7 +30,7 @@ pageContext.setAttribute("listMaps", listMaps);
                                 <h4 class="author">${listm.author}</h4>
                                 <p>${listm.summary}</p>
                                 <div class="WebcastDetails">
-                                    <p>${listm.duration}</p>
+                                   
                                     <c:choose>
                                         <c:when test="${listm.status == 'recorded'}">
                                             <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
