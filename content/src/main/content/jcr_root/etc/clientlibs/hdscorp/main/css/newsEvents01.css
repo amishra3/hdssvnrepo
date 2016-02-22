@@ -209,6 +209,10 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     text-transform: none;
     color: #333333;
 }
+#webcasts-demand .newsEvents p span.morecontent span{
+    display: none;
+}
+
 
 .custom-nav-tabs .nav-tabs > li.active > a,
 .custom-nav-tabs .nav-tabs > li.active > a:hover,
@@ -1215,6 +1219,10 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 
 .custom_selectBox_red .dropdown-menu {
     border-radius: 0;
+}
+
+.WebcastDetails{
+display:none;
 }
 
 @media screen and (max-width:991px) {
