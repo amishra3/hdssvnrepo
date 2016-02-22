@@ -16,24 +16,33 @@
                         <c:set var="ctat" value="${slinks.ctatext}" />
                         <c:set var="newwin" value="${slinks.seemorenewwin}" />
                         <c:set var="ctalink" value="${slinks.ctalink}" />
-                        <div class="col-sm-4">
+   					    <c:choose>
+                            <c:when test="${not empty title && not empty icopath}">
+											                        <div class="col-sm-4">
                            			 <div class="news-resources-col" data-href="">
                                          <div class="imageHolder"><img src="${icopath}" alt="${icoalt}" title="${icoalt}"></div>
                                              <h3 class="headline hidden-xs">${title}</h3>
-                                         <h3 class="headline hidden-sm hidden-md hidden-lg"><a href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${title}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h3>
+                                         <h3 class="headline hidden-sm hidden-md hidden-lg"><a href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${title} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h3>
                                          ${description}
-                                       <c:choose>
-                            	<c:when test="${not empty ctalink && not empty ctat}">
-                                      <div class="resources-category-more">
-                                            <a class="animateLink hidden-xs" href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${ctat} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+                                           <c:choose>
+                                            <c:when test="${not empty ctalink && not empty ctat}">
+                                                  <div class="resources-category-more">
+                                                        <a class="animateLink hidden-xs" href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${ctat} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+                                                  </div>
+                                             </c:when>
+                                             <c:otherwise>
+            
+                                             </c:otherwise>
+                                          </c:choose>
                                       </div>
+                                          </div>
+									
+                                     
                                 </c:when>
                                 <c:otherwise>
                                    
                                  </c:otherwise>
 								</c:choose>
-                                         </div>
-                                      </div>
 					</c:forEach>
         	</div>
 
