@@ -34,7 +34,7 @@
 				class="hero-product-solutions-container ${properties.simplebannercontentalign?'floatright':''}">
 
 
-				<div class="col-lg-7 col-md-7 col-xs-12 overRideleft">
+				<div class="col-lg-6 col-md-6 col-xs-12 overRideleft">
 
 					<h1 class="headline">${properties.simplebannertitle}</h1>
 					<h3>${properties.simplebannersubtitle}</h3>
@@ -81,7 +81,7 @@
 
 				<c:if test="${not empty properties.simplebannerusevideomodal}">
 					<div
-						class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm video-section"
+						class="col-lg-6 col-md-6 col-xs-12 hidden-xs hidden-sm video-section"
 						style="background-image:url('${properties.simplebannerimageoverlaypath}');">
 						<c:choose>
 							<c:when test="${not empty properties.simplebannervideoembedcode}">
