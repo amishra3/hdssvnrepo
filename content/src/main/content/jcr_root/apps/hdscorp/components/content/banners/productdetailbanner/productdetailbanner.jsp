@@ -71,8 +71,7 @@
 							<!-- <a href="${linkUrl}" target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel} <span class="sprite icon-caret-white"></span></a> -->
 							<a class="animateLink" href="${linkUrl}"
 								target="${properties.simplebannerlinkurltargettype?'_blank':'_self'}">${properties.simpllebannerlinklabel}
-								<span class="glyphicon glyphicon-menu-right animateIcon"
-								aria-hidden="true"></span>
+								<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
 							</a>
 						</div>
 					</c:if>
