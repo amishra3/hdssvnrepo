@@ -33,7 +33,7 @@
 	                  <h4 class="sub-headline ${contentalignclass}">${properties.simplebannercontent}</h4>
 	                  <c:if test="${not empty properties.simpllebannerbuttonlabel}">
 		                  <div class="btn-square-white learn-more-white-link ${contentalignclass}">
-		                      <a href="${linkUrl}">${properties.simpllebannerbuttonlabel}</a>
+		                      <a href="${linkUrl}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">${properties.simpllebannerbuttonlabel}</a>
 		                  </div>
 	                  </c:if>
 					</div>
