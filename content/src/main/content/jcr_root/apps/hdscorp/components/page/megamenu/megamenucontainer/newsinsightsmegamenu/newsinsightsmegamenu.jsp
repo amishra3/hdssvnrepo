@@ -37,13 +37,13 @@
 		<div class="content-container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="megamenu-heading hidden-xs hidden-sm">
-						<div class="icon">
+					<div class="megamenu-heading">
+						<div class="icon hidden-xs hidden-sm">
 							<img src="${domain}${properties.mgmnewsinsightstitleiconpath}"
 								title="${properties.mgmnewsinsightstitle}">
 						</div>
 						<div class="title">
-							<h2>${properties.mgmnewsinsightstitle}</h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmnewsinsightstitle}">${properties.mgmnewsinsightstitle}</a></h2>
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span>
 						</div>
@@ -54,12 +54,9 @@
 						<c:forEach var="subnavlinks" items="${subnavlinks}"
 							varStatus="count">
 							<c:choose>
-
 								<c:when test="${empty subnavlinks.mgmnewsinsightssubnavlabel}">
 
 								</c:when>
-
-
 								<c:when test="${subnavlinks.mgmnewsinsightssubnavlink=='#'}">
 									<li><a href="javascript:void(0)"
 										title="${subnavlinks.mgmnewsinsightssubnavlabel}"
@@ -67,7 +64,6 @@
 											aria-hidden="true"
 											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
 								</c:when>
-
 								<c:when test="${subnavlinks.mgmnewsinsightsopeninnewwindow==1}">
 
 									<li><a
@@ -76,35 +72,23 @@
 										title="${subnavlinks.mgmnewsinsightsalttext}"
 										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
-								</c:when>
-								<c:otherwise>
-									<li><a
-										target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${subnavlinks.mgmnewsinsightssubnavlink}"
-										title="${subnavlinks.mgmnewsinsightsalttext}"
-										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-								</c:otherwise>
+											class="glyphicon ${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
+								</c:when>								
 							</c:choose>
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-8 col-xs-12 spotlightNavigation">
+				<div class="col-md-8 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgnewsmobilebackgroundimagepath}">
 					<c:forEach var="subnavlinks2" items="${subnavlinks2}"
 						varStatus="count">
 						<div class="col-xs-12 col-md-6">
 							<h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmnewsinsightsheadline}</h3>
 							<div class="hidden-xs hidden-sm">${subnavlinks2.mgmnewsinsightsdescription}</div>
 							<c:choose>
-
 								<c:when
 									test="${empty subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">
 
 								</c:when>
-
-
 								<c:when
 									test="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'}">
 									<p>
@@ -114,7 +98,6 @@
 											class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 									</p>
 								</c:when>
-
 								<c:when
 									test="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1}">
 									<p>
@@ -124,21 +107,9 @@
 											title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
 											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+											class="glyphicon ${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'glyphicon-menu-right':'glyphicon-menu-right'} animateIcon"></span></a>
 									</p>
 								</c:when>
-								<c:otherwise>
-									<p>
-										<a
-											target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}"
-											href="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}"
-											title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}"
-											class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-									</p>
-
-								</c:otherwise>
 							</c:choose>
 						</div>
 					</c:forEach>

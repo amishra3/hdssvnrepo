@@ -34,13 +34,13 @@
 		<div class="content-container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="megamenu-heading hidden-xs hidden-sm">
-						<div class="icon">
+					<div class="megamenu-heading">
+						<div class="icon hidden-xs hidden-sm">
 							<img src="${domain}${properties.mgmpstitleiconpath}"
 								title="${properties.mgmpstitle}">
 						</div>
 						<div class="title">
-							<h2>${properties.mgmpstitle}</h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmpstitle}">${properties.mgmpstitle}</a></h2>
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span>
 						</div>
@@ -65,22 +65,13 @@
 										href="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${subnavlinks.mgmpssubnavlink}.html"
 										title="${subnavlinks.subnavlinks}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
+											class="glyphicon ${subnavlinks.mgmpsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
 								</c:when>
-								<c:otherwise>
-									<li><a
-										target="${subnavlinks.mgmpsopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${subnavlinks.mgmpssubnavlink}.html"
-										title="${subnavlinks.mgmpsalttext}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-								</c:otherwise>
-
 							</c:choose>
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-6 col-xs-12 spotlightNavigation">
+				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgmobilebackgroundimagepath}">
 					<div class="col-xs-12 col-md-12">
 						<h3 class="hidden-xs hidden-sm">${properties.mgmpsheadline}</h3>
 						<div class="hidden-xs hidden-sm">${properties.mgmpsdescription}</div>
@@ -103,21 +94,11 @@
 									<a
 										target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}"
 										href="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${properties.mgmpsviewfeaturedproductslink}.html"
-										title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span
+										title="${properties.mgmpsviewfeaturedproductslabel}" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span
 										aria-hidden="true"
-										class="glyphicon glyphicon-new-window animateIcon"></span></a>
+										class="glyphicon ${properties.mgmpsopeninnewwindowouter?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 								</p>
 							</c:when>
-							<c:otherwise>
-								<p>
-									<a
-										target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}"
-										href="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${properties.mgmpsviewfeaturedproductslink}.html"
-										title="VIEW FEATURED PRODUCT" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span
-										aria-hidden="true"
-										class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-								</p>
-							</c:otherwise>
 						</c:choose>
 					</div>
 				</div>

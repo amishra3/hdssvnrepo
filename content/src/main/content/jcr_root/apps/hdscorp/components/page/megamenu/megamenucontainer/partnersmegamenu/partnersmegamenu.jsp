@@ -37,13 +37,13 @@
 		<div class="content-container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="megamenu-heading hidden-xs hidden-sm">
-						<div class="icon">
+					<div class="megamenu-heading">
+						<div class="icon hidden-xs hidden-sm">
 							<img src="${domain}${properties.mgmpttitleiconpath}"
 								title="${properties.mgmpttitle}">
 						</div>
 						<div class="title">
-							<h2>${properties.mgmpttitle}</h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmpttitle}">${properties.mgmpttitle}</a></h2>
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span>
 						</div>
@@ -54,12 +54,9 @@
 						<c:forEach var="subnavlinks" items="${partnersubnavlinks}"
 							varStatus="count">
 							<c:choose>
-
-
 								<c:when test="${empty subnavlinks.mgmptsubnavlabel}">
 
 								</c:when>
-
 								<c:when test="${subnavlinks.mgmptsubnavlink=='#'}">
 									<li><a href="javascript:void(0)"
 										title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span
@@ -72,21 +69,13 @@
 										href="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${subnavlinks.mgmptsubnavlink}.html"
 										class="animateLink" title="${subnavlinks.mgmptalttext}">${subnavlinks.mgmptsubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
-								</c:when>
-								<c:otherwise>
-									<li><a
-										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${subnavlinks.mgmptsubnavlink}.html"
-										title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-								</c:otherwise>
+											class="glyphicon ${subnavlinks.mgmptopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
+								</c:when>							
 							</c:choose>
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-6 col-xs-12 spotlightNavigation">
+				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgpartmobilebackgroundimagepath}">
 					<div class="col-xs-12 col-md-12">
 						<h3 class="hidden-xs hidden-sm">${properties.mgmptheadline}</h3>
 
@@ -100,7 +89,6 @@
 										test="${empty partnerrighsection.mgmptmultisubnavlabel1}">
 
 									</c:when>
-
 									<c:when test="${partnerrighsection.mgmptmultisubnavlink1=='#'}">
 										<p>
 											<a href="javascript:void(0)"
@@ -110,7 +98,6 @@
 												class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 										</p>
 									</c:when>
-
 									<c:when
 										test="${partnerrighsection.mgmptmultiopeninnewwindow==1}">
 										<p>
@@ -120,24 +107,12 @@
 												title="${partnerrighsection.mgmptmultisubnavlabel1}"
 												class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
 												aria-hidden="true"
-												class="glyphicon glyphicon-new-window animateIcon"></span></a>
+												class="glyphicon ${partnerrighsection.mgmptmultiopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>
-									</c:when>
-									<c:otherwise>
-										<p>
-											<a
-												target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}"
-												href="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${partnerrighsection.mgmptmultisubnavlink1}.html"
-												title="${partnerrighsection.mgmptmultisubnavlabel1}"
-												class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
-												aria-hidden="true"
-												class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-										</p>
-									</c:otherwise>
+									</c:when>									
 								</c:choose>
 							</div>
 						</c:forEach>
-
 					</div>
 				</div>
 			</div>

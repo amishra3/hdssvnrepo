@@ -40,6 +40,11 @@
                         fieldLabel="Background Image Path"
                         name="./mgmnewsinsightsbackgroundimagepath"
                         xtype="pathfield"/>
+                    <mgnewsmobilebackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Mobile BackGround Image Path"
+                        name="./mgnewsmobilebackgroundimagepath"
+                        xtype="pathfield"/>
                     <subnav
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./subnav"

@@ -38,13 +38,13 @@
 		<div class="content-container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="megamenu-heading hidden-xs hidden-sm">
-						<div class="icon">
+					<div class="megamenu-heading">
+						<div class="icon hidden-xs hidden-sm">
 							<img src="${domain}${properties.mgmservtitleiconpath}"
 								title="${properties.mgmservtitle}">
 						</div>
 						<div class="title">
-							<h2>${properties.mgmservtitle}</h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmservtitle}">${properties.mgmservtitle}</a></h2>
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span>
 						</div>
@@ -69,49 +69,31 @@
 										href="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${subnavlinks.mgmservsubnavlink}.html"
 										title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
-								</c:when>
-								<c:otherwise>
-									<li><a
-										target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${subnavlinks.mgmservsubnavlink}.html"
-										title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-
-								</c:otherwise>
+											class="glyphicon ${subnavlinks.mgmservopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
+								</c:when>								
 							</c:choose>
-
-
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-6 col-xs-12 spotlightNavigation">
+				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgsermobilebackgroundimagepath}">
 
 					<c:forEach var="rightsection" items="${rightsection}"
 						varStatus="count">
 						<div class="col-xs-12 col-md-6">
 							<h3 class="hidden-xs hidden-sm">${rightsection.mgmservheadline}</h3>
 							<div class="hidden-xs hidden-sm">${rightsection.mgmservdescription}</div>
-
-
 							<c:choose>
 								<c:when test="${not empty rightsection.mgmservphonenumber}">
-
 									<p>
 										<a href="javascript:void(0)" title="Phone Number"
 											class="animateLink">${rightsection.mgmservphonenumber}</a>
 									</p>
-
 								</c:when>
 								<c:otherwise>
 									<c:choose>
-
 										<c:when
 											test="${empty rightsection.mgmservviewfeaturedproductslabel}">
-
 										</c:when>
-
 										<c:when
 											test="${rightsection.mgmservviewfeaturedproductslink=='#'}">
 											<p>
@@ -122,7 +104,6 @@
 											</p>
 										</c:when>
 										<c:when test="${rightsection.mgmservopeninnewwindows==1}">
-
 											<p>
 												<a
 													target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
@@ -130,20 +111,9 @@
 													title="${rightsection.mgmservviewfeaturedproductslabel}"
 													class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
 													aria-hidden="true"
-													class="glyphicon glyphicon-new-window animateIcon"></span></a>
+													class="glyphicon ${rightsection.mgmservopeninnewwindows==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 											</p>
-										</c:when>
-										<c:otherwise>
-											<p>
-												<a
-													target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
-													href="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${rightsection.mgmservviewfeaturedproductslink}.html"
-													title="${rightsection.mgmservviewfeaturedproductslabel}.html"
-													class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
-													aria-hidden="true"
-													class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-											</p>
-										</c:otherwise>
+										</c:when>										
 									</c:choose>
 
 								</c:otherwise>
@@ -151,8 +121,6 @@
 						</div>
 
 					</c:forEach>
-
-
 				</div>
 			</div>
 		</div>

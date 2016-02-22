@@ -83,6 +83,11 @@
                         fieldLabel="BackGround Image Path"
                         name="./mgmahbackgroundimagepath"
                         xtype="pathfield"/>
+                    <mgabtmobilebackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Mobile BackGround Image Path"
+                        name="./mgabtmobilebackgroundimagepath"
+                        xtype="pathfield"/>
                     <mgmahmultidescription
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./mgmahmultidescription"

@@ -83,6 +83,11 @@
                         fieldLabel="BackGround Image Path"
                         name="./mgmservbackgroundimagepath"
                         xtype="pathfield"/>
+                    <mgsermobilebackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Mobile BackGround Image Path"
+                        name="./mgsermobilebackgroundimagepath"
+                        xtype="pathfield"/>
                     <mgmservmultidecscription
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./subnav"

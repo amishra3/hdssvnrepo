@@ -83,6 +83,11 @@
                         fieldLabel="BackGround Image Path"
                         name="./mgmpsbackgroundimagepath"
                         xtype="pathfield"/>
+                    <mgmobilebackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Mobile BackGround Image Path"
+                        name="./mgmobilebackgroundimagepath"
+                        xtype="pathfield"/>
                     <mgmpsheadline
                         jcr:primaryType="cq:Widget"
                         fieldLabel="HeadLine"

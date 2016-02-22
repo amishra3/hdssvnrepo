@@ -35,13 +35,13 @@
 		<div class="content-container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="megamenu-heading hidden-xs hidden-sm">
-						<div class="icon">
+					<div class="megamenu-heading">
+						<div class="icon hidden-xs hidden-sm">
 							<img src="${domain}${properties.mgmcontactusiconpath}"
 								title="${properties.mgmcontactustitle}">
 						</div>
 						<div class="title">
-							<h2>${properties.mgmcontactustitle}</h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmcontactustitle}">${properties.mgmcontactustitle}</a></h2>
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span>
 						</div>
@@ -68,25 +68,14 @@
 											title="${subnavlinks.mgmcontactusalttext}"
 											class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
 												aria-hidden="true"
-												class="glyphicon glyphicon-new-window animateIcon"></span></a></li>
+												class="glyphicon ${subnavlinks.mgmcontactusopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
 
-									</c:when>
-									<c:otherwise>
-										<li><a
-											target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}"
-											href="${fn:contains(aboutrightsection.mgmcontactussubnavlink, 'http')?'':domain}${subnavlinks.mgmcontactussubnavlink}.html"
-											title="${subnavlinks.mgmcontactusalttext}"
-											class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
-												aria-hidden="true"
-												class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-
-									</c:otherwise>
-
+									</c:when>	
 								</c:choose>
 							</c:forEach></li>
 					</ul>
 				</div>
-				<div class="col-md-9 col-xs-12 spotlightNavigation">
+				<div class="col-md-9 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgconmobilebackgroundimagepath}">
 					<c:forEach var="subnavlinks2" items="${subnavlinks2}"
 						varStatus="count">
 						<div class="col-xs-12 col-md-4">
@@ -98,7 +87,6 @@
 									test="${empty subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
 
 								</c:when>
-
 								<c:when
 									test="${subnavlinks2.mgmcontactusviewfeaturedproductslink=='#'}">
 									<p>
@@ -117,25 +105,10 @@
 											title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
 											aria-hidden="true"
-											class="glyphicon glyphicon-new-window animateIcon"></span></a>
+											class="glyphicon ${subnavlinks2.mgmcontactusopeninnewwindow2==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</p>
-
 								</c:when>
-								<c:otherwise>
-									<p>
-										<a
-											target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}"
-											href="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html"
-											title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}"
-											class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-									</p>
-
-								</c:otherwise>
-
 							</c:choose>
-
 						</div>
 					</c:forEach>
 				</div>
