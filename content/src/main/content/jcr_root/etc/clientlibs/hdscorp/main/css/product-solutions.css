@@ -393,6 +393,7 @@ ul.stickyNav li:hover a{
   }
   .specific-quote p .icon-quote.close-quote{
     top:-2px;
+	background-position:-364px -86px;
   }
 
   .specific-quote .content-container [class*="col-"] {
