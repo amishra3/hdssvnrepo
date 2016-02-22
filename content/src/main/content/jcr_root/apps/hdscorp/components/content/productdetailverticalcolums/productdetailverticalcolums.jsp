@@ -18,7 +18,7 @@
 						</c:if>	
 						<div class="resources-category-box">
 	                      <div class="resources-category-icon">
-							<img src="${column.contenticonpath}" alt="${column.contenticonpathalttext}" title="${column.contenttitle}"/>
+							<img src="${column.contenticonpath}" alt="${column.contenticonpathalttext}" title="${column.contenticonpathalttext}"/>
 	                      </div>
 	                      <div class="resources-category-title">${column.contenttitle}</div>
 	                      <div class="resources-category-description">${column.columncontent}</div>
