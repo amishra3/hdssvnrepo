@@ -14,6 +14,7 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <servicedetailbannertitle
                         jcr:primaryType="cq:Widget"
+                        allowBlank="false"
                         fieldLabel="Service Detail Banner Title"
                         name="./servicedetailbanner"
                         xtype="textfield"/>
@@ -48,22 +49,6 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
-                    <servicedetailbannerbuttonlabel
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Label"
-                        name="./servicedetailbannerbuttonlabel"
-                        xtype="textfield"/>
-                    <servicedetailbannerbuttonurl
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Target URL"
-                        name="./servicedetailbannerbuttonurl"
-                        xtype="pathfield"/>
-                    <servicedetailbannerurltargettype
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Open in New Window ?"
-                        name="./servicedetailbannerurltargettype"
-                        type="checkbox"
-                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
