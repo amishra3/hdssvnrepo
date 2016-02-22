@@ -52,15 +52,6 @@
 			</div>
 		</div>
 
-		<c:if test="${not empty properties.abouthdbannerusevideomodal}">
-	      <div class="hero-product-solutions video clearfix" style="background-image:url('${properties.abouthdsherobannermagePath}');}">
-	      	<div class="hero-product-solutions-container">
-	      		<a href="#" class="close-hero"><span class="sprite icon-close-hero"></span></a>
-	      			${properties.abouthdsbannervideoembedcode}
-	      	</div>
-	      </div>
-		</c:if>
-
 
 	</c:when>
 

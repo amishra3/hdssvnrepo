@@ -64,39 +64,6 @@
                         name="./abouthdsbannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
-                    <abouthdsbannercontentalign
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Align Content on Right ?"
-                        name="./abouthdsbannercontentalign"
-                        type="checkbox"
-                        xtype="selection"/>
-                    <abouthdbannerusevideomodal
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Use Video Modal ?"
-                        name="./abouthdbannerusevideomodal"
-                        type="checkbox"
-                        xtype="selection"/>
-                    <abouthdsbannerimageoverlaypath
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}true"
-                        allowUpload="false"
-                        cropParameter=".simplebannerimageoverlaypathCrop2"
-                        ddGroups="[media]"
-                        fieldLabel="Banner Image"
-                        fileNameParameter="./simplebannerimageoverlayfileName2"
-                        fileReferenceParameter="./abouthdsbannerimageoverlaypath"
-                        height="{Long}200"
-                        name="./simplebannerimageoverlaypath"
-                        rotateParameter="./simplebannerimageoverlayRotate2"
-                        sizeLimit="100"
-                        title="Image"
-                        width="{Long}200"
-                        xtype="html5smartimage"/>
-                    <abouthdbannervideoembedcode
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Video Embed code"
-                        name="./abouthdsbannervideoembedcode"
-                        xtype="textarea"/>
                 </items>
             </tab1>
         </items>
