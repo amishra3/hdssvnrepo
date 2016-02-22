@@ -3,7 +3,7 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 <%@include file="/apps/foundation/global.jsp"%>
 <c:set var="serviceLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-columniconalt-columntitle-columncontent-ctatext-ctalink-seemorenewwin-columndescription")%>" />
-<div class="news-insight-resources news-insights-section clearfix" style="background-image:url(${properties.sectionbackground})">
+<div id ="nsight" class="news-insight-resources news-insights-section clearfix" style="background-image:url(${properties.sectionbackground})">
 	<div class="cs-container content-container">
         <div class="container-fluid">
         <h2>${properties.sectiontitle}</h2>
