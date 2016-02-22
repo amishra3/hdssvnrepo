@@ -14,14 +14,42 @@
 	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>" />
 </c:if> 
 
+<c:set var="bannertype" value="${properties.type}" />
+<c:set var="bannerbackgroundstyle" value="" />
+
+<c:if test = "${bannertype == 'customdamimage'}">
+	<c:set var="bannerbackgroundstyle" value=" style='background-image: url(${properties.bannerbackgroundimage})''" />
+</c:if>
+
+
+<c:if test = "${bannertype=='white'}">
+
+	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-1 clearfix" />
+</c:if>
+<c:if test = "${bannertype=='black'}">
+
+	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-2 clearfix" />
+</c:if>
+<c:if test = "${bannertype=='red'}">
+
+	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-3 clearfix" />
+</c:if>
+
+<c:if test = "${bannertype=='blue'}">
+
+	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-4 clearfix" />
+</c:if>
+
+<c:if test = "${bannertype=='customdamimage'}">
+
+	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-4 clearfix" />
+</c:if>
+
+
 <c:choose>
 	<c:when test="${not empty properties.quoteheadline}">
 
-        <c:if test="${not empty properties.type}">
-			<c:set var="csrquote" value="${properties.type}"/>
-		</c:if>
-
-    <div class="${csrquote} clearfix">
+    <div class="${csrquote}" ${bannerbackgroundstyle}>
     <div class="about-hds-csr-quote-container">
         <div class="col-md-10 col-md-offset-1 clearfix">
             <h2 class="headline">${properties.quoteheadline}</h2>

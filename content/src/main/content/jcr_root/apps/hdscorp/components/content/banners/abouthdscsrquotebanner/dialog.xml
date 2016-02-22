@@ -21,22 +21,31 @@
                         <options jcr:primaryType="cq:WidgetCollection">
                             <csrquote1
                                 jcr:primaryType="nt:unstructured"
-                                text="CSR Quote 1 (White)"
-                                value="about-hds-csr-quote csr-quote-1"/>
+                                text="White"
+                                value="white"/>
                             <csrquote2
                                 jcr:primaryType="nt:unstructured"
-                                text="CSR Quote 2 (Black)"
-                                value="about-hds-csr-quote csr-quote-2"/>
+                                text="Black"
+                                value="black"/>
                             <csrquote3
                                 jcr:primaryType="nt:unstructured"
-                                text="CSR Quote 3 (Red)"
-                                value="about-hds-csr-quote csr-quote-3"/>
+                                text="Red"
+                                value="red"/>
                             <csrquote4
                                 jcr:primaryType="nt:unstructured"
-                                text="CSR Quote 4 (Blue)"
-                                value="about-hds-csr-quote csr-quote-4"/>
+                                text="Blue"
+                                value="blue"/>
+                            <customdamimage
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom (DAM Image)"
+                                value="customdamimage"/>
                         </options>
                     </type>
+                    <bannerbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Background Image (If Custom Image selected above.)"
+                        name="./bannerbackgroundimage"
+                        xtype="ddpathfield"/>
                     <quoteheadline
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Quote Headline"
