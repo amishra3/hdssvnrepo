@@ -23,13 +23,46 @@
             var htmlContent="";
             var feedResponsefromStoredPath=<%=PageUtils.getPropertyValue(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.FacebookSheduler","facebook.storage.path"),ServiceConstants.SAVE_FB_FEED_DATA_PROPERTY_NAME )%>;
 
+
             for(var count=0; count<feedResponsefromStoredPath.length; count++){
-                 var facebookPostMsg=feedResponsefromStoredPath[count].message;
-           		var facebookPostURL=facebookPostMsg.substring(facebookPostMsg.indexOf('http'),facebookPostMsg.length);
-                var facebookHREFLink='<a href='+facebookPostURL+' target="_blank">'+facebookPostURL+'</a>';
-				facebookPostMsg=facebookPostMsg.replace(facebookPostURL,facebookHREFLink);
-                htmlContent+='<div class="col-sm-4"><div class="comment_box"><div class="icon"><img src="${facebookFeedModel.iconPath}" alt="" title=""></div><div class="type">'+feedResponsefromStoredPath[count].createdDate+'</div><div class="description">'+facebookPostMsg+
-                    '</div></div></div>';
+                var facebookPostMsg="";
+                var title="";
+                var link="";
+                var thumbnail="";
+                var desc="";
+                if(feedResponsefromStoredPath[count].message!=null){
+                    facebookPostMsg=feedResponsefromStoredPath[count].message;				
+                    facebookPostMsg=facebookPostMsg.replace("\r\n", "\r\n");
+
+                }
+
+                if(feedResponsefromStoredPath[count].tilte!=null){
+                    title=feedResponsefromStoredPath[count].tilte;
+                }
+
+
+                  if(feedResponsefromStoredPath[count].link!=null){
+                    link=feedResponsefromStoredPath[count].link;
+                }
+
+                 if(feedResponsefromStoredPath[count].thumbnail!=null){
+                    thumbnail=feedResponsefromStoredPath[count].thumbnail;
+                }
+
+
+                if(facebookPostMsg.length> 235){
+			     facebookPostMsg=facebookPostMsg.substring(0,235)+"...";
+                }
+
+                var facebookHREFLink='<a href='+link+' target="_blank">'+link+'</a>';              
+				title=title.replace(link,facebookHREFLink);
+
+
+                var postId=feedResponsefromStoredPath[count].postId;
+
+
+                htmlContent+='<div class="col-sm-4"><div class="comment_box"><div class="icon"><img src="${facebookFeedModel.iconPath}" alt="" title=""></div><div class="type"> FACEBOOK POST, '+feedResponsefromStoredPath[count].createdDate+'</div><div class="description">'+title+
+                    '</div><div><img src="'+thumbnail+'"></div><div class="inner-comment">'+facebookPostMsg+'</div><div class="links"><a href="https://www.facebook.com/124181477968641/posts/'+postId+'" target="_blank">Like/Share/Comment CTA<span class="glyphicon glyphicon-new-window animateIcon"></span></a></div></div></div>';
             }
             $(".stay-inner-coloum").append(htmlContent);
         </script>
