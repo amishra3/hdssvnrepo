@@ -14,9 +14,11 @@
 		<p class="product-copy-main">${properties.columntitle}</p>
 		<p class="product-copy-sub">${properties.columncontent}</p>
 		<p class="product-link">
+            <c:if test="${not empty properties.articleurllabel}">
 			<a class="animateLink" href="${articleurl}"	target="${properties.articleurlopeninnew?'_blank':'_self'}">${properties.articleurllabel}
 				<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>
 			</a>
+            </c:if> 
 		</p>
 	</div>
 </div>
