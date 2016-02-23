@@ -18,6 +18,7 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +41,13 @@ public class AddTitleWorkflowProcess extends AbstractAssetWorkflowProcess
 		else
 			return false;
 		//Node metadataNode;
-		metadataNode.setProperty("dc:title",metadataNode.getProperty("hds:title").getValue());
+		ValueMap metaProperties = (ValueMap)metadata.adaptTo(ValueMap.class);
+		String hdsTitle = metaProperties.get("hds:title", "");
+		if(hdsTitle==null && hdsTitle.length()<1){
+			hdsTitle = metaProperties.get("hds%3Atitle", "");
+		}
+		System.out.println("hdsTitle  is "+hdsTitle);
+		metadataNode.setProperty("dc:title",hdsTitle);
 		Node originalBinary = (Node)original.adaptTo(Node.class);
 
 		return true;
