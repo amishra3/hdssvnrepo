@@ -105,10 +105,10 @@ margin-bottom: 10px;
 
 /* Content Panel*/
 .news-press-container .content-panel strong { font-size: 0.751em; font-weight: bolder;}
-.news-press-container .content-panel p { font-size: 1.004em; font-weight: 700; min-height:44px; margin-bottom: 15px; font-family: "museo-sans",Helvetica,Arial,sans-serif;}
+.news-press-container .content-panel p { font-size: 1.004em; font-weight: 700; min-height:50px; margin-bottom: 15px; font-family: "museo-sans",Helvetica,Arial,sans-serif;}
 
 .news-press-container .content-panel a { color: #ce0000;font-family: "museo-sans",Helvetica,Arial,sans-serif; font-size: 0.8485rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;}
-.news-press-container .content-panel { margin-bottom: 55px;}
+.news-press-container .content-panel { margin-bottom: 50px;}
 .news-press-container .content-panel:last-child{margin-bottom: 0px;}
 /* End */
 
