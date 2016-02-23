@@ -17,7 +17,7 @@
 <div class="col-sm-6 ${editbarstyle}">
 	<div class="resources-all cs-selection-box">
 		<a class="animateLink" href="${linkUrl}" target="${properties.ctatargeturlopeninnew?'_blank':'_self'}">
-            ${properties.ctalabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>
+			${properties.ctalabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 		</a>
 	</div>
 </div>
