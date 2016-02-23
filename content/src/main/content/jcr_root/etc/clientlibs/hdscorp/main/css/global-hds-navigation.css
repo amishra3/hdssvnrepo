@@ -764,7 +764,7 @@ HDS Global Header and Navigation
     .hds-megaMenu .megamenu-heading .title h2 {
         font-size: 1.065rem;
     }
-    .content-container{
+    .hds-megaMenu .content-container{
            background: #fff;
     }  
 
