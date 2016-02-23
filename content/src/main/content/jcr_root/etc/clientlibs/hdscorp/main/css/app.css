@@ -249,4 +249,8 @@
 	.rightborder {
         border-right: none !important;
     }
+    
+    .techspeconly .spec-container {
+		margin-top: 60px;
+	}
 }
