@@ -4,7 +4,9 @@
 .hexagonredbg{background-color:#a61e23;}
 .hexagondyellowbg{background-color:#30302f;}
 .hexagonblackbg{background-color:#323231;}
-
+.specific-quote p .icon-quote.close-quote{
+	background-position:-364px -130px;
+}
 .business-specific .specific-benefit {
   color: #ffffff;
   padding: 25px 15px 40px;
@@ -393,7 +395,6 @@ ul.stickyNav li:hover a{
   }
   .specific-quote p .icon-quote.close-quote{
     top:-2px;
-	background-position:-364px -86px;
   }
 
   .specific-quote .content-container [class*="col-"] {
