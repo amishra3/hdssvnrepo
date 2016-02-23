@@ -29,16 +29,21 @@
 		
 		<c:forEach var="pressRelease" items="${model.pressReleaseList}"
 			varStatus="loopcnt">
+                <c:set var="title" value="${pressRelease.newsTitle}"/>
+				<c:set var="count" value="${fn:length(title)}"/>
+                <c:if test="${count gt 130}">
+					<c:set var="title" value="${fn:substring(title, 0, 130)}..."/>
+					</c:if>
 			<div class="col-sm-6 content-panel">
 				<strong>${pressRelease.newsDate}</strong>
-				<p>${pressRelease.newsTitle}</p>
+				<p>${title}</p>
 				<a class="animateLink" href="${pressRelease.newsDetailPath}">${model.readMoreLabel}
 					<span class="glyphicon glyphicon-menu-right animateIcon"
 					aria-hidden="true"></span>
 				</a>
 			</div>
 		</c:forEach>
-		
+
 		<div class="clearfix"></div>
 		<div class="col-sm-12">
 			<div class="view-all-pr">

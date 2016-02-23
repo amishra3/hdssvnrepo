@@ -22,9 +22,14 @@
                     </div>
                     
                      <c:forEach var="news" items="${model.newsList}" varStatus="loopcnt">
+                         <c:set var="title" value="${news.newsTitle}"/>
+                            <c:set var="count" value="${fn:length(title)}"/>
+                              <c:if test="${count gt 130}">
+                                <c:set var="title" value="${fn:substring(title, 0, 130)}..."/>
+                              </c:if>
                     <div class="col-sm-6 content-panel">
                         <strong>${news.newsDate}</strong>
-                        <p>${news.newsTitle}</p>
+                        <p>${title}</p>
                         <a class="animateLink" href="${news.newsDetailPath}">${model.readMoreLabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
                     </div>
                     </c:forEach>
