@@ -46,7 +46,7 @@ public class AddTitleWorkflowProcess extends AbstractAssetWorkflowProcess
 		if(hdsTitle==null && hdsTitle.length()<1){
 			hdsTitle = metaProperties.get("hds%3Atitle", "");
 		}
-		System.out.println("hdsTitle  is "+hdsTitle);
+//		System.out.println("hdsTitle  is "+hdsTitle);
 		metadataNode.setProperty("dc:title",hdsTitle);
 		Node originalBinary = (Node)original.adaptTo(Node.class);
 
