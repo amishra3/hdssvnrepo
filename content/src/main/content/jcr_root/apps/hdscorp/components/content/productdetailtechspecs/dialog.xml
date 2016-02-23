@@ -43,6 +43,38 @@
                     </developer>
                 </items>
             </developer>
+			<tab2
+                jcr:primaryType="cq:Panel"
+                title="Tech Spec Footnotes">
+                <items jcr:primaryType="cq:WidgetCollection">
+					<numberofcolumnsintable
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="How many columns are there in spec table?"
+                        name="./numberofcolumnsintable"
+                        xtype="textfield"/>                
+			        <multilinks
+			            jcr:primaryType="cq:Widget"
+			            customMultiFieldName="./multilinks2"
+			            fieldLabel="Footnotes"
+			            name="./multilinks2"
+			            xtype="custommultifield">
+			            <fieldConfig jcr:primaryType="cq:WidgetCollection">
+			                <footnotenumber
+			                    jcr:primaryType="cq:Widget"
+			                    fieldLabel="Footnote number"
+			                    name="./footnotenumber"
+			                    width="{Long}200"
+			                    xtype="textfield"/>
+			                <footnotecontent
+			                    jcr:primaryType="cq:Widget"
+			                    fieldLabel="Footnote Content"
+			                    name="./footnotecontent"
+			                    width="{Long}200"
+			                    xtype="textarea"/>
+			            </fieldConfig>
+			        </multilinks>                        
+                </items>
+            </tab2>
         </items>
     </items>
 </jcr:root>

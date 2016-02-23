@@ -1,5 +1,6 @@
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
+<%@page import="com.hdscorp.cms.util.PageUtils"%>
 <%@page import="org.apache.sling.api.resource.Resource"%>
 
 <%@page import="javax.jcr.Node"%>
@@ -14,6 +15,7 @@ node.save();
 %>
 
 <c:set var="specrowstoshow" value="${properties.techspecrowstoshow}"/>
+<c:set var="footnotecontentlist" value="<%=PageUtils.convertMultiWidgetToList(properties,"footnotenumber-footnotecontent")%>" />
 
 <c:if test="${empty specrowstoshow}">
 	<c:set var="specrowstoshow" value="1"/>
@@ -21,6 +23,7 @@ node.save();
 
 <c:set var="showviewallbutton" value="${false}"/>
 <c:set var="techspeconlypage" value="${requestScope['techspeconlypage']}" />
+<c:set var="totalcolums" value="${properties.numberofcolumnsintable}" />
 
 <wcmmode:edit>
 	<c:set var="techspeconlypage" value="${true}" />
@@ -59,6 +62,7 @@ node.save();
 											</c:if>
 										</div>
 									</td>
+									
 								</c:forEach>
 							</tr>
 						</c:when>
@@ -67,6 +71,19 @@ node.save();
 						</c:otherwise>
 					</c:choose>																				
 				</c:forEach>
+				<c:if test="${fn:length(footnotecontentlist) > 0}">
+					<tr>
+						<td colspan="${totalcolums}">	
+							<p>
+							<c:forEach var="footnoteItem" items="${footnotecontentlist}" varStatus="foorNoteCnt">
+									<c:set var="footnotenumber" value="${footnoteItem.footnotenumber}" />
+									<c:set var="footnotecontent" value="${footnoteItem.footnotecontent}" />
+									<i><sup>${footnotenumber}</sup>${footnotecontent}</i><br>
+							</c:forEach>
+							</p>
+						</td>
+					</tr>
+				</c:if>
 			</tbody>
 		</table>
 	</div>

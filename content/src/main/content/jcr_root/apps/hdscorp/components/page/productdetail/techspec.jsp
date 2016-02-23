@@ -10,7 +10,7 @@ if(pageTemplatePath!=null){
 <cq:include script="head.jsp"/>
 <c:set var="techspeconlypage" value="${true}" scope="request"/>
 
-<body class="<%=pageTemplatePath %> contentwidepage techspeconly">
+<body class="<%=pageTemplatePath %> contentwidepage techspeconly spec-section" id="tech-specifications">
 	<div class="one-column">
 		<cq:include script="header.jsp" />
 		<cq:include script="techspeccontent.jsp" />
