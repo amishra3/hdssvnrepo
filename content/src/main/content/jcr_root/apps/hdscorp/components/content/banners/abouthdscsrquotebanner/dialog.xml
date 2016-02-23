@@ -65,7 +65,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="CTA Target URL"
                         name="./ctatargeturl"
-                        xtype="textfield"/>
+                        xtype="pathfield"/>
                     <openinnewwindow
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open In New Window?"
