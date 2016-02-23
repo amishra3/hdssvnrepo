@@ -15,6 +15,11 @@
                 <items
                     jcr:primaryType="cq:WidgetCollection"
                     xtype="multifieldpanel">
+                    <newsbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Background Image  Path"
+                        name="./newsbackgroundimage"
+                        xtype="pathfield"/>
                     <nevcmultifield
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Add Section"

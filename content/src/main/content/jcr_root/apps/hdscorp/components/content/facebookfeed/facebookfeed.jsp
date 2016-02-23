@@ -69,4 +69,5 @@
     </div>
 <cq:include path="sociallinksconfig" resourceType="/apps/hdscorp/components/content/sociallinksconfig" />
         </div>
+        </div>
 
