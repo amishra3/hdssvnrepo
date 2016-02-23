@@ -43,7 +43,7 @@ public class AddTitleWorkflowProcess extends AbstractAssetWorkflowProcess
 		//Node metadataNode;
 		ValueMap metaProperties = (ValueMap)metadata.adaptTo(ValueMap.class);
 		String hdsTitle = metaProperties.get("hds:title", "");
-		if(hdsTitle==null && hdsTitle.length()<1){
+		if(hdsTitle==null || hdsTitle.length()<1){
 			hdsTitle = metaProperties.get("hds%3Atitle", "");
 		}
 //		System.out.println("hdsTitle  is "+hdsTitle);
