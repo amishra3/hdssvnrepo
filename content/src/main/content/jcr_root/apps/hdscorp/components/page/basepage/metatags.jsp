@@ -29,6 +29,8 @@
 
 <%
 	Tag[] tags = currentPage.getTags();
+	String services="";
+	String topic="";
 	for (Tag tag : tags) {
 
 		if (tag.getTagID().contains("content-type")) {
@@ -37,16 +39,9 @@
 <%
 	} else if (tag.getTagID().contains("services")) {
 			if (tag.getParent() != null) {
-%>
-<meta name="services"
-	content="<%=tag.getParent().getTitle()%>/<%=tag.getTitle()%>" />
-<%
-	} else {
-%>
-<meta name="services" content="<%=tag.getTitle()%>" />
-<%
-	}
-		} else if (tag.getTagID().contains("region")) {
+			services= tag.getTitle();
+			}
+	} else if (tag.getTagID().contains("region")) {
 %>
 <meta name="region" content="<%=tag.getTitle()%>" />
 <%
@@ -66,7 +61,6 @@
 				"product-and-solutions")) {
             String tagTitle=tag.getTitle();
             Tag parent=tag.getParent();
-            String topic="";
             while(parent!=null)
             {
                 if(parent.getTitle().equals("Common"))
@@ -86,7 +80,6 @@
             }
              %>
             <meta name="products-and-solutions" content="<%=tagTitle%>" />
-            <meta name="topic" content="<%=topic%>" />
             <%
 
 		}
@@ -98,15 +91,20 @@
 	String section=currentPage.getAbsoluteParent(3).getName();
         if(section.equalsIgnoreCase("services") && currentPage.getAbsoluteParent(4)!=null)
            {
-			%><meta name="services" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
-  			}
+        	String servicesSection=currentPage.getAbsoluteParent(4).getTitle();
+        	if(servicesSection.indexOf(services)==-1)
+        	{
+        		servicesSection=servicesSection+","+services;
+        	}
+			%><meta name="services" content="<%=servicesSection%>"/><%
+  		}
 	 	else if(section.equalsIgnoreCase("partners") && currentPage.getAbsoluteParent(4)!=null)
            {
 			%><meta name="partners" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
   			}
 		else if(section.equalsIgnoreCase("newsandinsights") && currentPage.getAbsoluteParent(4)!=null)
            {
-			%><meta name="newsandinsights" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+			%><meta name="news-and-insights" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
   			}
         else if(section.equalsIgnoreCase("abouthds") && currentPage.getAbsoluteParent(4)!=null)
         {
@@ -118,7 +116,12 @@
   		}
          else if(section.equalsIgnoreCase("products-solutions") && currentPage.getAbsoluteParent(4)!=null)
         {
-			%><meta name="products-solutions" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
+        	 String pSection=currentPage.getAbsoluteParent(4).getTitle();
+         	if(pSection.indexOf(topic)==-1)
+         	{
+         		pSection=pSection+","+topic;
+         	}
+			%><meta name="topic" content="<%=pSection%>"/><%
   		}
     }
 
