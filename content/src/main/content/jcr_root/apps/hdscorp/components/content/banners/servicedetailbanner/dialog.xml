@@ -33,18 +33,15 @@
                         fieldLabel="Service Detail Banner Content"
                         name="./servicedetailbannercontent"
                         xtype="textfield"/>
-                    <servicedetailbannerimagePath
+                    <servicedetailbannerimage
                         jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
                         allowUpload="false"
-                        cropParameter="./servicedetailbannerimageCrop2"
                         ddGroups="[media]"
                         fieldLabel="Banner Image"
-                        fileNameParameter="./servicedetailbannerimagefileName2"
-                        fileReferenceParameter="./servicedetailbannerimagePath"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:imageFileRef"
                         height="{Long}200"
-                        name="./servicedetailbannerimagePath"
-                        rotateParameter="./servicedetailbannerimageRotate2"
+                        name="./servicedetailbannerimage"
                         sizeLimit="100"
                         title="Image"
                         width="{Long}200"

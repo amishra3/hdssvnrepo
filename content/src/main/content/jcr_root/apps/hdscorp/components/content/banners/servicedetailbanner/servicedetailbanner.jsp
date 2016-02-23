@@ -7,12 +7,14 @@
 
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
-
+<%String bannerimage=properties.get("jcr:imageFileRef", "");
+request.setAttribute("bannerimage",bannerimage);
+%>
 
 
 <c:choose>
 	<c:when test="${not empty properties.servicedetailbanner}">
-	    <div class="common-hero-banner service-detail-banner clearfix" style="background-image:url('${properties.servicedetailbannerimagePath}');">
+	    <div class="common-hero-banner service-detail-banner clearfix" style="background-image:url('${requestScope.bannerimage}');">
             <div class="common-hero-banner-container">
                <div class="col-lg-7 col-md-8 col-xs-12">
                   <div class="top-banner-heading">
