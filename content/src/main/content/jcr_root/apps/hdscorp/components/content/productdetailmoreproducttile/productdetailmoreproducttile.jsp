@@ -15,8 +15,7 @@
 		<p class="product-copy-sub">${properties.columncontent}</p>
 		<p class="product-link">
             <c:if test="${not empty properties.articleurllabel}">
-			<a class="animateLink" href="${articleurl}"	target="${properties.articleurlopeninnew?'_blank':'_self'}">${properties.articleurllabel}
-				<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>
+			<a class="animateLink" href="${articleurl}"	target="${properties.articleurlopeninnew?'_blank':'_self'}">${properties.articleurllabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 			</a>
             </c:if> 
 		</p>

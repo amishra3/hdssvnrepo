@@ -26,7 +26,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Display Text for the Link"
                         name="./articleurllabel"
-                        xtype="textfield"/>                
+                        xtype="textfield"/>
                     <articleurl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Target URL for the Article"
@@ -37,7 +37,13 @@
                         fieldLabel="Open in New Window ?"
                         name="./articleurlopeninnew"
                         type="checkbox"
-                        xtype="selection"/>                                                                
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
