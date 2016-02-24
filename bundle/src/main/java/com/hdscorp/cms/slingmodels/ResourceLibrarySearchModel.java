@@ -38,7 +38,10 @@ public class ResourceLibrarySearchModel {
 	private ResourceResolver resourceResolver;	
 	
 	private List<ResourceNode> resouceList;
+	private int totalNoOfResuts;
 	
+	
+
 	private boolean noTags;
 	
 	public boolean isNoTags() {
@@ -90,7 +93,7 @@ public class ResourceLibrarySearchModel {
 			LOG.debug("-------------Resouce SEARCH CALL COMPLETED-----"+result.getTotalMatches());
 			
 			resouceList = new ArrayList<ResourceNode>();
-						
+			this.totalNoOfResuts = 	hits.size();		
 			for (Hit hit : hits) {
 				ResourceNode resourceNode = new ResourceNode();
 				
@@ -119,5 +122,8 @@ public class ResourceLibrarySearchModel {
 			LOG.error(e.getMessage());
 		}
 		return resouceList;
+	}
+	public int getTotalNoOfResuts() {
+		return totalNoOfResuts;
 	}
 }
