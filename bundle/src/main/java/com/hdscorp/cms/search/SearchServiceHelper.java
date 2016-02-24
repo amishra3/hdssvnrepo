@@ -305,6 +305,11 @@ public class SearchServiceHelper {
 				searchParams.put("group." + groupCnt
 						+ "_group.6_fulltext.relPath",
 						"jcr:content/metadata/@pdf:Keywords");
+				searchParams.put("group." + groupCnt + "_group.7_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.7_fulltext.relPath",
+						"jcr:content/metadata/@dc:description");
 			}
 		}
 	}
@@ -446,6 +451,7 @@ public class SearchServiceHelper {
 			searchParams.put("p.offset", returnOffset);
 			searchParams.put("p.limit", returnLimit);
 		} else {
+			searchParams.put("p.offset", "0");
 			searchParams.put("p.limit", "-1");
 		}
 		// searchParams.put("group.p.and", "true");

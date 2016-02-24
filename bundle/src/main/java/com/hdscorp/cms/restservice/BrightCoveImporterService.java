@@ -59,10 +59,27 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 			saxParser.parse(new InputSource(new StringReader(wsResponse)),
 					brightCoveSaxHandler);
 			log.info("video list size"+brightCoveSaxHandler.videoList.size());
+			Session session = JcrUtilService.getSession();
+			Node parentNode = session.getNode(storagePath);
+			if(parentNode!=null) {
+				parentNode.remove();
+				session.save();
+				parentNode = session.getNode(storagePath.substring(0,storagePath.lastIndexOf("/")));
+				
+				if(parentNode!=null){
+					
+				parentNode = parentNode.addNode(storagePath.substring(storagePath.lastIndexOf("/")+1), "sling:Folder");
+				
+				session.save();
+				
+			}
+			}
+			
+			
 			for (BrightCoveVideoNode brightCoveVideoNode : brightCoveSaxHandler.videoList) {
 				
 				
-				createVideoNode(JcrUtilService.getSession(),storagePath,brightCoveVideoNode);
+				createVideoNode(session,storagePath,brightCoveVideoNode);
 		
 		
 }
@@ -77,7 +94,8 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 
 private void createVideoNode (Session session,String storagePath, BrightCoveVideoNode brightCoveVideoNode ) {
 	 try {
-	final Node parentNode = session.getNode(storagePath);
+	 Node parentNode = session.getNode(storagePath);
+	
 	if(parentNode!=null) {
 		
 		
@@ -100,6 +118,7 @@ private void createVideoNode (Session session,String storagePath, BrightCoveVide
 		metaDataNode.setProperty("cq:tags",brightCoveVideoNode.getKeywords());
 		metaDataNode.setProperty("titleId",brightCoveVideoNode.getTitleId());
 		metaDataNode.setProperty("duration",brightCoveVideoNode.getDuration());
+		metaDataNode.setProperty("resourceType","video");
 		
 		session.save();
 	} 
