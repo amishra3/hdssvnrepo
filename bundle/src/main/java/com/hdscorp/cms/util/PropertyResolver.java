@@ -467,30 +467,5 @@ public final class PropertyResolver {
 		    String number = padding + aIdx.toString();
 		    aBuilder.append("&#" + number + ";");
 	 }
-	 
-	 /**
-	  * Used check whether grid item exists in repository or not
-	  * @param path
-	  * @param resourceResolver
-	  * @return true|false
-	  */
-	 public static boolean isGridItemExists(String path,ResourceResolver resourceResolver){
-		 boolean status=false;
-		 try{
-			 if(StringUtils.isNotEmpty(path)){
-				 if(path.contains(GlobalConstants.RECIPES) || path.contains(GlobalConstants.ARTICLES)){
-					 if(null!=resourceResolver.getResource(path)) status=true;
-					 path=path.replace(GlobalConstants.STRUCTURE_DATA+GlobalConstants.PATH_SEPERATOR, "");
-					 if(status && null==resourceResolver.getResource(path)){
-						 status=false;
-					 }
-				 }else{
-					 if(null!=resourceResolver.getResource(path)) status=true;
-				 }
-			 }
-		 }catch (Exception e) {
-			LOG.error("Error while checking item in repository " +e);
-		}
-		 return status;
-	 }
+
 }

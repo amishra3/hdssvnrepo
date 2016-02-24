@@ -12,10 +12,26 @@ public class ELTagHelper {
     public static String shortURL( String longURL)
     {
     	String shortURL = PathResolver.getShortURLPath(longURL);
-//    	if(shortURL.startsWith("/hdscorp") && shortURL.contains("en-us")){
-//    		shortURL = shortURL.replace("en-us", "en_us");
-//    	} 
     	return shortURL;
     }
 
+    public static String bgImgAtrr(String desktopImagePath,String mobileImagePath)
+    {
+    	String bgImgAtrr = "";
+    	//Check if mobile Image path is empty or null. If yes, set the desktop image as mobile
+    	//TBD - Mobile image Path empty then create a mobile resolution URL using ACS commons 
+    	//adaptive image service and use that as mobile image path
+    	return bgImgAtrr;
+    }
+
+    
+    public static String imgAtrr(String desktopImagePath,String mobileImagePath)
+    {
+    	String imgAtrr = "";
+    	//Check if mobile Image path is empty or null. If yes, set the desktop image as mobile
+    	//TBD - Mobile image Path empty then create a mobile resolution URL using ACS commons 
+    	//adaptive image service and use that as mobile image path    	
+    	return imgAtrr;
+    }
+    
 }
