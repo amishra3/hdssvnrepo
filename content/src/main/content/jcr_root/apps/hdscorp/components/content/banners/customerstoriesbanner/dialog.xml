@@ -69,6 +69,12 @@
                         name="./readcasestudylinkopeninnew"
                         type="checkbox"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <bannerbackgroundimage
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Provide Background Image (If Custom Image selected above.)"
