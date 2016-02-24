@@ -112,7 +112,7 @@
 						
 						<li>
 						    <a 
-						    	href="${fn:contains(childPage.path, 'http')?'':domain}${childPage.path}.html"
+						    	href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"
 						    	title="${navTitle}">${navTitle}
 						    	<span class="icon-accordion-closed"></span>
 						    	<span class="icon-accordion-opened"></span>
