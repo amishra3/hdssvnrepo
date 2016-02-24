@@ -74,7 +74,7 @@ node.save();
 				<c:if test="${fn:length(footnotecontentlist) > 0}">
 					<tr>
 						<td colspan="${totalcolums}">	
-							<p>
+							<p class="textleftalign">
 							<c:forEach var="footnoteItem" items="${footnotecontentlist}" varStatus="foorNoteCnt">
 									<c:set var="footnotenumber" value="${footnoteItem.footnotenumber}" />
 									<c:set var="footnotecontent" value="${footnoteItem.footnotecontent}" />
