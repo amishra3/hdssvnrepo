@@ -38,6 +38,8 @@ public final class PathResolver {
 		String pageUrlPath = null;
 		try{
 			final ResourceResolver resourceResolver = JcrUtilService.getResourceResolver();
+			LOG.debug("resourceResolver retunred---- "+resourceResolver);
+			
 	   		pageUrlPath= getShortUrl(pageFullPath, resourceResolver);
 	   		if(!pageUrlPath.startsWith("/")){
 	   			pageUrlPath="/"+pageUrlPath;
@@ -53,10 +55,7 @@ public final class PathResolver {
 		   		shortURLPath="/"+shortURLPath;
 	   		}
 		   	if(shortURLPath.contains(EN_US)) {
-		   		shortURLPath = shortURLPath.replace(EN_US, EN);
-		   	}
-		   	if(shortURLPath.contains(GlobalConstants.STRUCTURE_DATA) && (shortURLPath.contains(GlobalConstants.RECIPES) || shortURLPath.contains(GlobalConstants.ARTICLES))){
-		   		shortURLPath=shortURLPath.replaceAll("/structureddata/", "/");
+//		   		shortURLPath = shortURLPath.replace(EN_US, EN);
 		   	}
             //LOG.info("Returning short path ::" + shortURLPath);
 		}catch(Exception e){

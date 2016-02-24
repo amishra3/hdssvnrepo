@@ -12,9 +12,9 @@ public class ELTagHelper {
     public static String shortURL( String longURL)
     {
     	String shortURL = PathResolver.getShortURLPath(longURL);
-    	if(shortURL.startsWith("/hdscorp") && shortURL.contains("en-us")){
-    		shortURL = shortURL.replace("en-us", "en_us");
-    	} 
+//    	if(shortURL.startsWith("/hdscorp") && shortURL.contains("en-us")){
+//    		shortURL = shortURL.replace("en-us", "en_us");
+//    	} 
     	return shortURL;
     }
 
