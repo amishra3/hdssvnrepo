@@ -13,7 +13,7 @@ import org.apache.sling.models.annotations.Model;
 import com.hdscorp.cms.util.MultifieldUtil;
 
 @Model(adaptables = Resource.class)
-public class ResourceListeningAndFilterModel extends MultifieldUtil {
+public class ResourceLibraryModel extends MultifieldUtil {
 	@Inject
 	@Named("resultsmessage")
 	@Default(values = { "resultsmessage" })
