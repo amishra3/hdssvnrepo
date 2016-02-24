@@ -1,5 +1,7 @@
 package com.hdscorp.cms.tag;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.hdscorp.cms.util.PathResolver;
 
 public class ELTagHelper {
@@ -18,9 +20,7 @@ public class ELTagHelper {
     public static String bgImgAtrr(String desktopImagePath,String mobileImagePath)
     {
     	String bgImgAtrr = "";
-    	//Check if mobile Image path is empty or null. If yes, set the desktop image as mobile
-    	//TBD - Mobile image Path empty then create a mobile resolution URL using ACS commons 
-    	//adaptive image service and use that as mobile image path
+    	String mobileImageURL= getMobileImagePath(desktopImagePath,mobileImagePath);
     	return bgImgAtrr;
     }
 
@@ -28,10 +28,18 @@ public class ELTagHelper {
     public static String imgAtrr(String desktopImagePath,String mobileImagePath)
     {
     	String imgAtrr = "";
-    	//Check if mobile Image path is empty or null. If yes, set the desktop image as mobile
-    	//TBD - Mobile image Path empty then create a mobile resolution URL using ACS commons 
-    	//adaptive image service and use that as mobile image path    	
+    	String mobileImageURL= getMobileImagePath(desktopImagePath,mobileImagePath);
     	return imgAtrr;
     }
     
+    public static String getMobileImagePath(String desktopImagePath,String mobileImagePath){
+    	String mobileImageURL="";
+    	if(mobileImagePath==null || StringUtils.isEmpty(mobileImagePath)){
+    		//TBD - Get acs commons mobile rendition URL and use that if mobile specific image is not authored.
+    		mobileImageURL = desktopImagePath;
+    	}else{
+    		mobileImageURL = mobileImagePath;
+    	}
+    	return mobileImageURL;
+    }
 }
