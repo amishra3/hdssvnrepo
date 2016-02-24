@@ -5,5 +5,5 @@
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="sling:Mapping"
-    sling:internalRedirect="[/content/dam,/content/dam/hdscorp,/content/dam/hdscorp/en_us]"
+    sling:internalRedirect="[/content/dam/public,/content/dam/hdscorp]"
     sling:match="hdscorp"/>
