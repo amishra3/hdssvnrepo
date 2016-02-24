@@ -51,11 +51,12 @@
     			</div>
     	
     			<div class="scroll-down">
+    				<a href="javascript:void(0);"><span class="sprite icon-arrow-down"></span></a>
     			</div>
     		</div>
-    	</div>
+    	</div> 
 
-        <div class="hero-homepage list-content-container"></div>
+<!--         <div class="hero-homepage list-content-container"></div> -->
     	
 	</c:when>
 	<c:otherwise>
