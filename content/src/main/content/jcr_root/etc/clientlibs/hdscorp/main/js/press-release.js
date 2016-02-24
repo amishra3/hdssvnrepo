@@ -104,10 +104,15 @@ var hds = window.hds || {};
             	searchTermPreValue = searchTerm;
             });
             
-
-            $('#fulltext').on("change keyup", function(){
-            	$('.pr-search .glyphicon-search').click();//Trigger search button click event
-            })
+            $('#fulltext').keyup(function(e){
+            	  if(e.keyCode == 13)
+            	    {
+            		  $('.pr-search .glyphicon-search').click();//Trigger search button click event
+            	    }
+            });
+//            $('#fulltext').on("change keyup", function(){
+//            	$('.pr-search .glyphicon-search').click();//Trigger search button click event
+//            }) 
         }
         
     }
