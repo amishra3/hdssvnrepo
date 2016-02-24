@@ -3,4 +3,4 @@
     jcr:primaryType="sling:OsgiConfig"
     feed.url="https://www.brighttalk.com/channel/12821/feed"
     scheduler.expression="0 35 14 * * ?"
-    storage.path="/content/hdscorp/en_us/test/jcr:content/"/>
+    storage.path="/content/hdscorp/en_us/lookup/brighttalkfeeddata/jcr:content/"/>
