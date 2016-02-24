@@ -20,7 +20,7 @@
 			<cq:include path="communitycontentpar" resourceType="hdscorp/components/content/column-control" />
             <div class="hds-community-join">
                 <a class="animateLink" href="http://community.hds.com/" target="_blank">
-                    JOIN THE COMMUNITY AND START A CONVERSATION<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
+                    JOIN THE COMMUNITY AND START A CONVERSATION <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
                 </a>
             </div>
 		</div>
