@@ -4,7 +4,7 @@
     jcr:primaryType="cq:Template"
     jcr:title="Location Page Template"
     allowedPaths="[/content/hdscorp(/.*)?]"
-    ranking="{Long}2">
+    ranking="{Long}14">
     <jcr:content
         jcr:primaryType="cq:PageContent"
         sling:resourceType="hdscorp/components/page/locationpage"/>

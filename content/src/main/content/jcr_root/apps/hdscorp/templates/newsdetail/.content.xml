@@ -3,7 +3,7 @@
     jcr:description="This is the template for creating news detail pages."
     jcr:primaryType="cq:Template"
     jcr:title="News Detail"    
-    ranking="{Long}1">
+    ranking="{Long}12">
     <jcr:content
         jcr:primaryType="cq:PageContent"
         sling:resourceType="hdscorp/components/page/newsdetail"/>
