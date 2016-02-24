@@ -235,4 +235,33 @@ public final class ServiceConstants {
 	public static final String PROP_PROXY_HOST = "proxy.host";
 	public static final String PROP_PROXY_ENABLED = "proxy.enabled";
 	public static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
+	
+	
+	/** MLL Service Constraints
+	 * 
+	 */
+	public static final String FILE_CSV_PATH = "file.csv.path";
+	
+	public static final String DATE_FORMAT_FROM_LML = "MM/dd/yyyy HH:mm:ss";
+	public static final String DATE_FORMAT_TO_LML = "MMddyyyy";
+	public static final String LML_NODE_SEPERATOR = "-";
+	
+	public static final String LML_KEYWORD= "Keyword";
+	public static final String LML_DELIVERY_STYLE= "deliveryStyle";	
+	public static final String LML_GLOBAL_ID= "globalId";
+	public static final String LML_TRANING_TITLE= "trainingTitle";
+	public static final String LML_TRANING_DESC= "trainingDesc";
+	public static final String LML_ILT_FACILITY_COUNTRY= "iltFacilityCountry";
+	public static final String LML_ILT_FACILITY_CITY= "iltFacilityCity";
+	public static final String LML_ILT_FACILITY_NAME= "iltFacilityName";
+	public static final String LML_LANGUAGE= "language";
+	public static final String LML_TRANING_START_DATE= "trainingStartDate";
+	public static final String LML_TRANING_END_DATE= "trainingEndDate";
+	public static final String LML_COST_CURRENCY= "costCurrency";
+	public static final String LML_TRANING_PRICE= "trainingPrice";
+	public static final String LML_COURSE_DEEP_LINK= "courseDeeplink";
+	
+
+	
+	
 }

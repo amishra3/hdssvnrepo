@@ -128,12 +128,6 @@ public class LMSImporterService {
 		try {
 			final Node parentNode = session.getNode(storagePath);
 			if (parentNode != null) {
-				// String nodeName = LMLbean.getGlobalId() +
-				// ServiceConstants.LML_NODE_SEPERATOR
-				// +
-				// ServiceUtil.getDisplayDateFormat(LMLbean.getTrainingStartDate(),
-				// ServiceConstants.DATE_FORMAT_FROM_LML,
-				// ServiceConstants.DATE_FORMAT_TO_LML);
 
 				long nodeName = Calendar.getInstance().getTimeInMillis();
 
@@ -145,14 +139,7 @@ public class LMSImporterService {
 					parentRootNode = session.getNode(storagePath + LMLbean.getIltFacilityCountry() + "/");
 				}
 
-				Node rootChildNode = null;
-
-				if (PageUtils.doesNodeExist(parentRootNode, String.valueOf(nodeName)) == -1) {
-					rootChildNode = parentRootNode.addNode(String.valueOf(nodeName), JcrConstants.NT_UNSTRUCTURED);
-				} else {
-					log.info("Node is already exist::" + nodeName);
-					rootChildNode = session.getNode(parentRootNode.getPath() + "/" + nodeName + "/");
-				}
+				Node rootChildNode = parentRootNode.addNode(String.valueOf(nodeName), JcrConstants.NT_UNSTRUCTURED);
 
 				rootChildNode.setProperty(ServiceConstants.LML_KEYWORD, LMLbean.getKeyword());
 				rootChildNode.setProperty(ServiceConstants.LML_DELIVERY_STYLE, LMLbean.getDeliveryStyle());
