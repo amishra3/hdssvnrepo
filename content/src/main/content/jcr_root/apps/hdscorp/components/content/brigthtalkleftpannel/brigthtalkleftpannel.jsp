@@ -8,6 +8,12 @@
 
 
 <ul>
+    		<li class="active"><a data-catagory="All Webcast"
+				title="Featured" href="javascript:void(0);" class="active">Featured<span
+					class="icon-accordion-closed hidden-md hidden-lg"></span><span
+					class="icon-accordion-opened hidden-md hidden-lg"></span></a>
+			<div class="MobileHolderWrapper"></div></li>
+
 	<c:forEach items="${brightTalkLeftNavModel.featuredTag}"
 		var="featuredTag">
 		<c:forEach items="${featuredTag}" var="featureTag">

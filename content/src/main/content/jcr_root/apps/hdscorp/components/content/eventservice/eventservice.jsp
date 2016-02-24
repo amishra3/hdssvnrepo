@@ -38,7 +38,7 @@
                             </div>                            
                         </div>
                     </div>
-                    <a class="animateLink expandMe" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>details </a>
+                    <a class="animateLink expandMe less" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>details </a>
                 </div>
             </c:forEach>
             <!--/ All Events are Loaded here -->

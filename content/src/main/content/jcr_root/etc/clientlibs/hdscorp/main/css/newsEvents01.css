@@ -1221,6 +1221,10 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     border-radius: 0;
 }
 
+.custom_selectBox_red .caret::before{
+content:"";
+}
+
 .WebcastDetails{
 display:none;
 }
@@ -1287,4 +1291,25 @@ display:none;
         padding-right: 11px;
         padding-top: 20px;
     }
+}
+.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .filter-option{
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	color: #cc0000;
+	font-weight: 800;
+}
+
+.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret{
+	background: url("../images/select-down-arrow.png") no-repeat 0 9px;
+	width: 20px;
+    height: 18px;
+    display: inline-block;
+}
+.event-date-panel  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+	width: auto;
+}
+
+.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret .caret{
+	border: none;
 }

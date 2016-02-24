@@ -40,16 +40,18 @@ var hds = window.hds || {};
             });
         },
         displayBlockContent: function() {
-            $(document).on('click', '.expandMe', function() {
+            $(document).on('click', '.newsEvents .expandMe', function() {
                 var self = $(this);
                 var $parentTag = self.parents('.newsEvents').find('.eventDetails');
-                $parentTag.toggle(function() {
-                    if ($(this).css('display') === 'none') {
-                        self.find('.glyphicon').removeClass('glyphicon-minus-sign').addClass('glyphicon-plus-sign');
-                    } else {
-                        self.find('.glyphicon').removeClass('glyphicon-plus-sign').addClass('glyphicon-minus-sign');
-                    }
-                })
+                if (self.hasClass('less')) {
+                    self.removeClass('less');                    
+                } else {
+                   self.addClass('less');                    
+                    setTimeout( function() { self.parents('.newsEvents').find('h3').focus() }, 500 );
+                       }
+               self.find('.glyphicon').toggleClass('glyphicon-minus-sign');
+               self.parents('.newsEvents').find('.eventDetails').toggle().focus();
+
             });
         },
         loadMoreMonths: function() {
