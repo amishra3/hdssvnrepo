@@ -27,7 +27,7 @@
 </c:if>
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${properties.mgmpsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmpsbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmpsnavtitle}"
 	data-parent-path="${mgmpsnavpath}">
 	<div class="hds-megaMenu">
@@ -36,7 +36,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${properties.mgmpstitleiconpath}"
+							<img src="${domain}${hdscorp:shortURL(properties.mgmpstitleiconpath)}"
 								title="${properties.mgmpstitle}">
 						</div>
 						<div class="title">
@@ -62,7 +62,7 @@
 								<c:when test="${subnavlinks.mgmpsopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmpsopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${subnavlinks.mgmpssubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmpssubnavlink)}"
 										title="${subnavlinks.subnavlinks}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmpsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
@@ -71,7 +71,7 @@
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgmobilebackgroundimagepath}">
+				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgmobilebackgroundimagepath)}">
 					<div class="col-xs-12 col-md-12">
 						<h3 class="hidden-xs hidden-sm">${properties.mgmpsheadline}</h3>
 						<div class="hidden-xs hidden-sm">${properties.mgmpsdescription}</div>
@@ -93,7 +93,7 @@
 								<p>
 									<a
 										target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}"
-										href="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${properties.mgmpsviewfeaturedproductslink}.html"
+										href="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(properties.mgmpsviewfeaturedproductslink)}"
 										title="${properties.mgmpsviewfeaturedproductslabel}" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span
 										aria-hidden="true"
 										class="glyphicon ${properties.mgmpsopeninnewwindowouter?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>

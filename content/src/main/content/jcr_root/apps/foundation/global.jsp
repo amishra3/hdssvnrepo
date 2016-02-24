@@ -55,6 +55,7 @@
         com.day.cq.wcm.api.designer.Style,
         com.day.cq.wcm.api.components.ComponentContext,
         com.day.cq.wcm.api.components.EditContext,
+        com.hdscorp.cms.tag.ELTagHelper,
         com.day.cq.wcm.api.WCMMode"
 %><%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling" %><%
 %><%@taglib prefix="cq" uri="http://www.day.com/taglibs/cq/1.0" %><%
@@ -64,6 +65,8 @@
 %><%@ taglib prefix="wcmmode" uri="http://www.adobe.com/consulting/acs-aem-commons/wcmmode" %><%
 %><%@ taglib prefix="xss" uri="http://www.adobe.com/consulting/acs-aem-commons/xss" %><%
 %><%@ taglib prefix="widgets" uri="http://www.adobe.com/consulting/acs-aem-commons/widgets" %><%
+%><%@ page import="com.hdscorp.cms.tag.ELTagHelper"%>
+<%@ taglib prefix="hdscorp" uri="http://www.hds.com/hdscorptaglib"%><%
 %><cq:defineObjects /><%
 
 //add more initialization code here

@@ -31,7 +31,7 @@
 </c:if>
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${properties.mgmservbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmservbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmservnavtitle}"
 	data-parent-path="${mgmservnavpath}">
 	<div class="hds-megaMenu">
@@ -40,7 +40,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${properties.mgmservtitleiconpath}"
+							<img src="${domain}${hdscorp:shortURL(properties.mgmservtitleiconpath)}"
 								title="${properties.mgmservtitle}">
 						</div>
 						<div class="title">
@@ -66,7 +66,7 @@
 								<c:when test="${subnavlinks.mgmservopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${subnavlinks.mgmservsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmservsubnavlink)}"
 										title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmservopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
@@ -75,7 +75,7 @@
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgsermobilebackgroundimagepath}">
+				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgsermobilebackgroundimagepath)}">
 
 					<c:forEach var="rightsection" items="${rightsection}"
 						varStatus="count">
@@ -107,7 +107,7 @@
 											<p>
 												<a
 													target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
-													href="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${rightsection.mgmservviewfeaturedproductslink}.html"
+													href="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(rightsection.mgmservviewfeaturedproductslink)}"
 													title="${rightsection.mgmservviewfeaturedproductslabel}"
 													class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
 													aria-hidden="true"

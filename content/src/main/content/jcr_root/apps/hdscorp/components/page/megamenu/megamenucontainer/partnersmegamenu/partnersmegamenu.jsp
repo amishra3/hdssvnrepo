@@ -30,7 +30,7 @@
 
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${properties.mgmptbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmptbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmptnavtitle}"
 	data-parent-path="${mgmptnavpath}">
 	<div class="hds-megaMenu">
@@ -39,7 +39,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${properties.mgmpttitleiconpath}"
+							<img src="${domain}${hdscorp:shortURL(properties.mgmpttitleiconpath)}"
 								title="${properties.mgmpttitle}">
 						</div>
 						<div class="title">
@@ -66,7 +66,7 @@
 								<c:when test="${subnavlinks.mgmptopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${subnavlinks.mgmptsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmptsubnavlink)}"
 										class="animateLink" title="${subnavlinks.mgmptalttext}">${subnavlinks.mgmptsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmptopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
@@ -75,7 +75,7 @@
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgpartmobilebackgroundimagepath}">
+				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgpartmobilebackgroundimagepath)}">
 					<div class="col-xs-12 col-md-12">
 						<h3 class="hidden-xs hidden-sm">${properties.mgmptheadline}</h3>
 
@@ -103,7 +103,7 @@
 										<p>
 											<a
 												target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}"
-												href="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${partnerrighsection.mgmptmultisubnavlink1}.html"
+												href="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${hdscorp:shortURL(partnerrighsection.mgmptmultisubnavlink1)}"
 												title="${partnerrighsection.mgmptmultisubnavlabel1}"
 												class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
 												aria-hidden="true"

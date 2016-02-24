@@ -30,7 +30,7 @@
 
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${properties.mgmnewsinsightsbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmnewsinsightsbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmnewsinsightsnavtitle}"
 	data-parent-path="${mgmnewsinsightsnavpath}">
 	<div class="hds-megaMenu">
@@ -39,7 +39,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${properties.mgmnewsinsightstitleiconpath}"
+							<img src="${domain}${hdscorp:shortURL(properties.mgmnewsinsightstitleiconpath)}"
 								title="${properties.mgmnewsinsightstitle}">
 						</div>
 						<div class="title">
@@ -68,7 +68,7 @@
 
 									<li><a
 										target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${subnavlinks.mgmnewsinsightssubnavlink}"
+										href="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmnewsinsightssubnavlink)}"
 										title="${subnavlinks.mgmnewsinsightsalttext}"
 										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
 											aria-hidden="true"
@@ -78,7 +78,7 @@
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-8 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgnewsmobilebackgroundimagepath}">
+				<div class="col-md-8 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgnewsmobilebackgroundimagepath)}">
 					<c:forEach var="subnavlinks2" items="${subnavlinks2}"
 						varStatus="count">
 						<div class="col-xs-12 col-md-6">
@@ -103,7 +103,7 @@
 									<p>
 										<a
 											target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}"
-											href="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink}"
+											href="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink)}"
 											title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
 											aria-hidden="true"

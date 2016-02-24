@@ -32,15 +32,8 @@
 </c:if>
 
 
-
-<%-- <li><a href="${properties.mgmahnavpath}.html" --%>
-<%-- 	title="${properties.mgmpsnavtitle}">${properties.mgmahnavtitle} <span --%>
-<!-- 		class="icon-accordion-closed"></span> <span -->
-<!-- 		class="icon-accordion-opened"></span> -->
-<!-- </a> -->
-
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${properties.mgmahbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmahbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmpsnavtitle}"
 	data-parent-path="${mgmahnavpath}">
 	<div class="hds-megaMenu">
@@ -49,7 +42,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${properties.mgmahtitleiconpath}"
+							<img src="${domain}${hdscorp:shortURL(properties.mgmahtitleiconpath)}"
 								title="${properties.mgmahtitle}">
 						</div>
 						<div class="title">
@@ -77,7 +70,7 @@
 								<c:when test="${subnavlinks.mgmahopeninnewwindow==1}">
 									<li><a
 										target="${subnavlinks.mgmahopeninnewwindow?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmahsubnavlink, 'http')?'':domain}${subnavlinks.mgmahsubnavlink}.html"
+										href="${fn:contains(subnavlinks.mgmahsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmahsubnavlink)}"
 										title="${subnavlinks.mgmahalttext}" class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmahopeninnewwindow?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
@@ -87,7 +80,7 @@
 						</c:forEach>
 					</ul>
 				</div>
-				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgabtmobilebackgroundimagepath}">
+				<div class="col-md-6 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgabtmobilebackgroundimagepath)}">
 
 					<c:forEach var="aboutrightsection" items="${aboutrightsection}"
 						varStatus="count">
@@ -111,7 +104,7 @@
 								<p>
 										<a
 											target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}"
-											href="${fn:contains(aboutrightsection.mgmahviewfeaturedproductslink, 'http')?'':domain}${aboutrightsection.mgmahviewfeaturedproductslink}.html"
+											href="${fn:contains(aboutrightsection.mgmahviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(aboutrightsection.mgmahviewfeaturedproductslink)}"
 											title="${aboutrightsection.mgmahviewfeaturedproductslabel}"
 											class="animateLink">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
 											aria-hidden="true"
@@ -126,4 +119,3 @@
 		</div>
 	</div>
 </div>
-<!-- </li> -->

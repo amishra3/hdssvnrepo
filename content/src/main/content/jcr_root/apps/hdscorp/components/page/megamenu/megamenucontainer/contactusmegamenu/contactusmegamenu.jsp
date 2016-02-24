@@ -28,7 +28,7 @@
 
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${properties.mgmcontactusbackgroundimagepath}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmcontactusbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmcontactusnavtitle}"
 	data-parent-path="${mgmcontactusnavpath}">
 	<div class="hds-megaMenu">
@@ -37,7 +37,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${properties.mgmcontactusiconpath}"
+							<img src="${domain}${hdscorp:shortURL(properties.mgmcontactusiconpath)}"
 								title="${properties.mgmcontactustitle}">
 						</div>
 						<div class="title">
@@ -64,7 +64,7 @@
 									<c:when test="${subnavlinks.mgmcontactusopeninnewwindow==1}">
 										<li><a
 											target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}"
-											href="${fn:contains(aboutrightsection.mgmcontactussubnavlink, 'http')?'':domain}${subnavlinks.mgmcontactussubnavlink}.html"
+											href="${fn:contains(aboutrightsection.mgmcontactussubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmcontactussubnavlink)}"
 											title="${subnavlinks.mgmcontactusalttext}"
 											class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
 												aria-hidden="true"
@@ -75,7 +75,7 @@
 							</c:forEach></li>
 					</ul>
 				</div>
-				<div class="col-md-9 col-xs-12 spotlightNavigation" data-style="${domain}${properties.mgconmobilebackgroundimagepath}">
+				<div class="col-md-9 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgconmobilebackgroundimagepath)}">
 					<c:forEach var="subnavlinks2" items="${subnavlinks2}"
 						varStatus="count">
 						<div class="col-xs-12 col-md-4">
@@ -101,7 +101,7 @@
 									<p>
 										<a
 											target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}"
-											href="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${subnavlinks2.mgmcontactusviewfeaturedproductslink}.html"
+											href="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"
 											title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}"
 											class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
 											aria-hidden="true"
