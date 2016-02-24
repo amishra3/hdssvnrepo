@@ -1,5 +1,5 @@
 .services-training-banner{ background-image: url("../images/service-training-banner.png"); z-index:2}
-.training{text-align:left!important;   padding: 60px 0 84px!important;}
+div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 .service-support-main .serv-training-overview h2{font-family: "museo-slab",Helvetica,Arial,sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
