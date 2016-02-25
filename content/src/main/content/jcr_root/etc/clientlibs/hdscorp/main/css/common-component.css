@@ -53,6 +53,10 @@ line-height: 1;
 line-height: 120%;
 }
 
+.common-hero-banner .common-hero-banner-container .headline sup{
+  font-size: 1.125rem;
+  top: -25px;
+}
 .common-hero-banner .common-hero-banner-container h3 {
 margin-bottom: 10px;
 font-family: 'museo-slab', Helvetica, Arial, sans-serif;
@@ -679,6 +683,10 @@ line-height: 1;
 line-height: 120%;
 }
 
+.common-hero-short-banner .headline sup{
+  font-size: 1.125rem;
+  top: -25px;
+}
 .common-hero-short-banner  > h3 {
 margin-bottom: 10px;
 font-family: 'museo-slab', Helvetica, Arial, sans-serif;
