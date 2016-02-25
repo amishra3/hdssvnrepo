@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
@@ -25,6 +26,7 @@ public class PartnerGridModel {
 	private ResourceResolver resourceResolver;	
 		
 	@Inject
+	@Named("pdgtargetparentdirectory")
 	@Default(values = { "/content/hdscorp/en_us/partner" })
 	private String targetparentdirectory;
 
