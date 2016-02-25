@@ -19,3 +19,4 @@ news-events.js
 hds-career-herobanner.js
 hds-webcast.js
 news-insight-lp.js
+hds-partner-hero-banner.js
