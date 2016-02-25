@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Partner Detail Grid"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab
+                jcr:primaryType="cq:Panel"
+                title="Partner Detail Grid">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <pdgtargetparentdirectory
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Target Parent Directory"
+                        name="./pdgtargetparentdirectory"
+                        xtype="pathfield"/>
+                    <pdgsectiontitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        anchor="100%"
+                        fieldLabel="Section Title"
+                        layout="anchor"
+                        name="./pdgsectiontitle"
+                        xtype="textfield"/>
+                    <imagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./partnerimageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./partnerimagefileName2"
+                        fileReferenceParameter="./jcr:imagePath"
+                        height="{Long}200"
+                        name="./partnerimagename"
+                        rotateParameter="./partnerimageRotate"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                </items>
+            </tab>
+        </items>
+    </items>
+</jcr:root>
