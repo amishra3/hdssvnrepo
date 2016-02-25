@@ -55,8 +55,27 @@ public class LMSImporterService {
 
 		List<LMSBean> listLMLbean = readCSVFile(cvsFilePath);
 
+		Session session = JcrUtilService.getSession();
+		Node parentNode = null;
+		Node jcrNode = null;
+		try {
+
+			parentNode = session.getNode(storagePath.substring(0, storagePath.indexOf("jcr:content")));
+			jcrNode = session.getNode(storagePath);
+			if (jcrNode != null) {
+				jcrNode.remove();
+				session.save();
+				parentNode.addNode("jcr:content", "cq:PageContent");
+				session.save();
+			}
+		} catch (Exception e) {
+			StringWriter stack = new StringWriter();
+			e.printStackTrace(new PrintWriter(stack));
+			log.error("Error " + stack.toString());
+		}
+
 		for (LMSBean LMLbean : listLMLbean) {
-			createLMLNode(JcrUtilService.getSession(), storagePath, LMLbean);
+			createLMLNode(session, storagePath, LMLbean);
 		}
 
 	}
@@ -99,13 +118,7 @@ public class LMSImporterService {
 				row++;
 				if (row > 1) {
 					listLMLbean.add(LMSbean);
-					log.info(LMSbean.getKeyword() + "" + LMSbean.getDeliveryStyle() + "" + LMSbean.getGlobalId() + ""
-							+ LMSbean.getTrainingTitle() + "" + LMSbean.getTrainingDesc() + ""
-							+ LMSbean.getIltFacilityCity() + "" + LMSbean.getIltFacilityCountry() + ""
-							+ LMSbean.getIltFacilityName() + "" + LMSbean.getLanguage() + ""
-							+ LMSbean.getTrainingStartDate() + "" + LMSbean.getTrainingEndDate() + ""
-							+ LMSbean.getCostCurrency() + "" + LMSbean.getTrainingPrice() + ""
-							+ LMSbean.getCourseDeeplink());
+					log.info("LMS keyword :" + LMSbean.getKeyword());
 				}
 			}
 		} catch (Exception ex) {
@@ -137,6 +150,7 @@ public class LMSImporterService {
 					parentRootNode = parentNode.addNode(LMLbean.getIltFacilityCountry(), JcrConstants.NT_UNSTRUCTURED);
 				} else {
 					parentRootNode = session.getNode(storagePath + LMLbean.getIltFacilityCountry() + "/");
+
 				}
 
 				Node rootChildNode = parentRootNode.addNode(String.valueOf(nodeName), JcrConstants.NT_UNSTRUCTURED);
