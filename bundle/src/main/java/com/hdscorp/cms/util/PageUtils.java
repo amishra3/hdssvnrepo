@@ -205,6 +205,29 @@ public final class PageUtils {
         return list;
     }
 
+    public static List<Map<String, String>> convertMultiWidgetToList(String[] property) throws JSONException {
+
+    	final List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+    	HashMap<String, String> map;
+        for (String item : property) {
+        	JSONObject jObject = new JSONObject(item);
+            Iterator<?> keys = jObject.keys();
+            map = new HashMap<String, String>();
+            while( keys.hasNext() ){
+            	
+                String key = (String)keys.next();
+                String value = jObject.getString(key); 
+                map.put(key, value);
+
+            }
+            list.add(map);
+		}
+		return list;
+        
+
+       
+    }
+    
     /**
      * <p>
      * This method takes multi-widget property as input and outputs a list of

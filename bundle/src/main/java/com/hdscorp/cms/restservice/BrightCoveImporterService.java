@@ -112,10 +112,11 @@ private void createVideoNode (Session session,String storagePath, BrightCoveVide
 		
 		metaDataNode.setProperty(JcrConstants.JCR_TITLE,brightCoveVideoNode.getTitle());
 		metaDataNode.setProperty("dc:title",brightCoveVideoNode.getTitle());
-		metaDataNode.setProperty("jcr:description",brightCoveVideoNode.getDescription());
+		metaDataNode.setProperty("dc:description",brightCoveVideoNode.getDescription());
 		metaDataNode.setProperty("guid",brightCoveVideoNode.getGuid());
 		metaDataNode.setProperty("pubDate",brightCoveVideoNode.getPubDate());
-		metaDataNode.setProperty("cq:tags",brightCoveVideoNode.getKeywords());
+		String[] tags = {brightCoveVideoNode.getKeywords()};
+		metaDataNode.setProperty("cq:tags",tags);
 		metaDataNode.setProperty("titleId",brightCoveVideoNode.getTitleId());
 		metaDataNode.setProperty("duration",brightCoveVideoNode.getDuration());
 		metaDataNode.setProperty("resourceType","video");

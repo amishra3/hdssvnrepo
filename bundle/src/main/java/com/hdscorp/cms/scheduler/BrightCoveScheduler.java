@@ -30,7 +30,7 @@ import com.hdscorp.cms.util.ServiceUtil;
 @Properties({
 		@Property(name = ServiceConstants.FEED_URL_KEY, description = "Default feed URL is provided you can change it accordingly", value = "http://api.brightcove.com/services/library?command=search_videos&output=mrss&token=J-KzSklqGjvSZ83MDVgB1Z3dYwbchmoH_8O2TX0j_JZflnvN9eqcNQ.."),
 		@Property(name = ServiceConstants.FEED_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 25 13 * * ?"),
-		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "/content/dam/hdscorp/en_us/assets/videos") })
+		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "/content/dam/public/en_us/resources/videos") })
 
 public class BrightCoveScheduler {
 	private static final Logger log = LoggerFactory.getLogger(BrightCoveScheduler.class);

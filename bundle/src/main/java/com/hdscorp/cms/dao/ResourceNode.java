@@ -12,6 +12,24 @@ public class ResourceNode {
 	
 	private String resourceType;
 	
+	private String contentType;
+	private String featuredBGImage;
+	public String getFeaturedBGImage() {
+		return featuredBGImage;
+	}
+
+	public void setFeaturedBGImage(String featuredBGImage) {
+		this.featuredBGImage = featuredBGImage;
+	}
+
+	public String getContentType() {
+		return contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
+
 	public String getResourceTitle() {
 		return resourceTitle;
 	}
