@@ -14,8 +14,10 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <newsandinsightsbannertitle
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="News and insights Title"
                         name="./newsandinsightsbannertitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsandinsightsbannertitle = dialog.getField('./newsandinsightsbannertitle')&#xa; var newsandinsightsbannertitlevalue = newsandinsightsbannertitle.getValue();&#xa; if($.trim(newsandinsightsbannertitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <newsandinsightsbannersubtitle
                         jcr:primaryType="cq:Widget"
