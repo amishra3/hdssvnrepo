@@ -28,8 +28,7 @@
                   <span class="software"></span>
                 </div>
                 <div class="cs-highlight-box-message">
-                  <span>${properties.customerstatementtext}
-                  </span>
+                  <span class="sprite icon-quote open-quote"></span>${properties.customerstatementtext}<span class="sprite icon-quote open-quote"></span>
                 </div>
                 <div class="cs-highlight-box-author">
                   <span>${properties.customerstatementauthortext}</span>
