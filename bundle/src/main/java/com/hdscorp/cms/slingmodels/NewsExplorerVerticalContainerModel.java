@@ -40,7 +40,7 @@ public class NewsExplorerVerticalContainerModel {
 
 			try {
 				JSONObject json = new JSONObject(listofObject[index]);
-				map.put(json.getString("nevcsectionlabel"), json.getString("nevcsectionlink"));
+				map.put(json.getString("nevcsectionlabel"), json.getString("nevcsectionlink").concat("$").concat(json.getString("nevcopeninnewwindow")));
 				nevcList.add(map);
 			} catch (Exception e) {
 				log.info("Exception during parsing the JSON " + e);
