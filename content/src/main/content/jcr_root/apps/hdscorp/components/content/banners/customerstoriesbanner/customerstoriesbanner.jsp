@@ -35,7 +35,7 @@
                   <span>${properties.customerstatementauthortext}</span>
                 </div>
                 <div class="cs-highlight-box-read">
-                  <a class="animateLink" href="${properties.readasestudylinktargeturl}" target="${properties.readcasestudylinkopeninnew?'_blank':'_self'}">${properties.readcasestudylinktext}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
+                  <a class="animateLink" href="${properties.readasestudylinktargeturl}" target="${properties.readcasestudylinkopeninnew?'_blank':'_self'}">${properties.readcasestudylinktext}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                 </div>
               </div>
 
