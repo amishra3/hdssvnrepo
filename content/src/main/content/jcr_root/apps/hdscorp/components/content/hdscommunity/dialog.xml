@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="dialog"
+    width="900"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <hctitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Community Title"
+                        name="./hctitle"
+                        xtype="textfield"/>
+                    <hcmultifield
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./hcmultifield"
+                        fieldLabel="Community"
+                        name="./hcmultifield"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <hcmtitle
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="hcmtitle"
+                                fieldLabel="Title"
+                                key="hcmtitle"
+                                name="./hcmtitle"
+                                xtype="textfield"/>
+                            <hccontent
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="hccontent"
+                                fieldLabel="Description"
+                                key="hccontent"
+                                name="./hccontent"
+                                xtype="richtext"/>
+                            <hclinklabel
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="hclinklabel"
+                                fieldLabel="Read Blog Label"
+                                key="hclinklabel"
+                                name="./hclinklabel"
+                                xtype="textfield"/>
+                            <hclink
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="strlink"
+                                fieldLabel="Read Blog Link"
+                                key="hclink"
+                                name="./hclink"
+                                xtype="pathfield"/>
+                            <hcopeninnewwindow
+                                jcr:primaryType="cq:Widget"
+                                dname="hcopeninnewwindow"
+                                fieldLabel="Open in New Window"
+                                key="hcopeninnewwindow"
+                                name="./hcopeninnewwindow"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </hcopeninnewwindow>
+                        </fieldConfig>
+                    </hcmultifield>
+                    <hcjoinlabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Join the  community label"
+                        name="./hcjoinlabel"
+                        xtype="textfield"/>
+                    <hcjoinlink
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Join the  community link"
+                        name="./hcjoinlink"
+                        xtype="textfield"/>
+                    <hccomopeninnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window?"
+                        key="hccomopeninnewwindow"
+                        name="./hccomopeninnewwindow"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
