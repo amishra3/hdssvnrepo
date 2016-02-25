@@ -113,6 +113,11 @@
                         fieldLabel="Video Embed code"
                         name="./simplebannervideoembedcode"
                         xtype="textarea"/>
+                    <thirdpartyvideolink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Third Party Video"
+                        name="./thirdpartyvideolink"
+                        xtype="pathfield"/>
                 </items>
             </tab1>
         </items>
