@@ -6,3 +6,7 @@
 
 
 <cq:include path="productdescriptions" resourceType="hdscorp/components/content/partnerdescriptioncontent/partnerdescription" />
+
+${properties.backgroundimagepath}<br/>
+${properties.partnericonimagepath}<br/>
+${properties.partnericonimagealttext}

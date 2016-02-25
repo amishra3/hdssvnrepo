@@ -22,8 +22,8 @@ import org.slf4j.LoggerFactory;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
-import com.hdscorp.cms.dao.ProductDescription;
-import com.hdscorp.cms.dao.ProductNode;
+import com.hdscorp.cms.dao.PartnerDescription;
+import com.hdscorp.cms.dao.PartnerNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
@@ -43,7 +43,7 @@ public class PartnersContentModel {
 	@Default(values = {""})
 	private String[] desctags;
 	
-	private List<ProductNode> products;
+	private List<PartnerNode> partners;
 
 	public String[] getSubcattags() {
 		
@@ -56,16 +56,16 @@ public class PartnersContentModel {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SubCatContentModel.class);
 	
-	public List<ProductNode> getProducts() throws RepositoryException, JsonParseException, JsonMappingException, IOException {
+	public List<PartnerNode> getProducts() throws RepositoryException, JsonParseException, JsonMappingException, IOException {
 		
 		try {
 			LOG.debug("-------------INSIDE getProducts in SubCatContentModel.Making the Search Service call");
 
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			
-			String paths[] = {"/content/hdscorp/en_us/products-solutions"};
+			String paths[] = {"/content/hdscorp/en_us/lookup/partners"};
 			String tags[] = subcattags ;
-			String template= "/apps/hdscorp/templates/productdetail";
+			String template= "/apps/hdscorp/templates/partnerdetail";
 			String type[] = {"cq:Page"};
 			boolean doPagination = false;
 			
@@ -73,31 +73,32 @@ public class PartnersContentModel {
 			
 			LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
 			List<Hit> hits = result.getHits();
-			products = new ArrayList<ProductNode>();
+			partners = new ArrayList<PartnerNode>();
 			
 			for (Hit hit : hits) {
-				ProductNode productNode = new ProductNode();
+				PartnerNode partnerNode = new PartnerNode();
 				Page reourcePage = hit.getResource().adaptTo(Page.class);
 			    String pageTitle = reourcePage.getTitle();
 			    String pagePath = reourcePage.getPath();
-			    productNode.setProductDescription((String)reourcePage.getProperties().get("subtext"));
+			    partnerNode.setPartnerDescription((String)reourcePage.getProperties().get("subtext"));
+			    partnerNode.setPartnerDescription((String)reourcePage.getProperties().get("subtext"));
 			    
 			    Resource descriptionListResource = reourcePage.getContentResource("productdescriptions") ;
-			    String[] productMultiDescriptionList = new String[0];
+			    String[] partnerMultiDescriptionList = new String[0];
 			    ObjectMapper mapper = new ObjectMapper();
 			    if(descriptionListResource!=null){
 			    	ValueMap descriptioNodeProps= descriptionListResource.adaptTo(ValueMap.class);
 			    	if(descriptioNodeProps.containsKey("productDefaultDescription")) {
-			    		productNode.setProductDescription(descriptioNodeProps.get("productDefaultDescription").toString());
+			    		partnerNode.setPartnerDescription(descriptioNodeProps.get("productDefaultDescription").toString());
 			    	} 
 			    	if(desctags.length>0 && !desctags[0].isEmpty()) {
-				    	productMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
+				    	partnerMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
 				    	
-					    for(String desc:productMultiDescriptionList){
-					    	ProductDescription prodDescObj = mapper.readValue(desc, ProductDescription.class);
+					    for(String desc:partnerMultiDescriptionList){
+					    	PartnerDescription prodDescObj = mapper.readValue(desc, PartnerDescription.class);
 					    	
 					    	if(Arrays.asList(prodDescObj.getCategoryTag()).contains(desctags[0])) {
-					    		productNode.setProductDescription(prodDescObj.getDescription());
+					    		partnerNode.setPartnerDescription(prodDescObj.getDescription());
 					    		break;
 					    	}
 					    }
@@ -108,16 +109,16 @@ public class PartnersContentModel {
 			    if(pagePath.startsWith("/content")){
 			    	pagePath=PathResolver.getShortURLPath(pagePath);
 			    }
-			    productNode.setProductTitle(pageTitle);
-			    productNode.setProductPath(pagePath);
+			    partnerNode.setPartnerTitle(pageTitle);
+			    partnerNode.setPartnerPath(pagePath);
 			    
-			    products.add(productNode);
+			    partners.add(partnerNode);
 			    
 			}
 		} catch (Exception e) {
 			LOG.error("----IN EXCEPTION BLOCK----"+e.getCause());
 			LOG.error(e.getMessage());
 		}
-		return products;
+		return partners;
 	}
 }

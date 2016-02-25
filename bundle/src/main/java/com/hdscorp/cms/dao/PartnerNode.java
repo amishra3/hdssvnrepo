@@ -5,21 +5,71 @@ import java.util.ArrayList;
 
 public class PartnerNode {
 	
-	private String productTitle;
+
+	private String partnerTitle;
 	
-	private String productPath;
+	private String partnerPath;
 	
-	private String productDescription;
+	private String partnerDescription;
+	
+	private String partnerBackgroundImagePath;
+
+	private String partnerIconImagePath;
+	
+	private String partnerIconImageAltText;
 
 	private String[] productTags;
 	
-	private ArrayList<ProductDescription> descriptionList;
+	private ArrayList<PartnerDescription> descriptionList;
+
 	
-	public ArrayList<ProductDescription> getDescriptionList() {
+	public String getPartnerTitle() {
+		return partnerTitle;
+	}
+
+	public void setPartnerTitle(String partnerTitle) {
+		this.partnerTitle = partnerTitle;
+	}
+
+	public String getPartnerPath() {
+		return partnerPath;
+	}
+
+	public void setPartnerPath(String partnerPath) {
+		this.partnerPath = partnerPath;
+	}
+
+	
+	public String getPartnerBackgroundImagePath() {
+		return partnerBackgroundImagePath;
+	}
+
+	public void setPartnerBackgroundImagePath(String partnerBackgroundImagePath) {
+		this.partnerBackgroundImagePath = partnerBackgroundImagePath;
+	}
+
+	public String getPartnerIconImagePath() {
+		return partnerIconImagePath;
+	}
+
+	public void setPartnerIconImagePath(String partnerIconImagePath) {
+		this.partnerIconImagePath = partnerIconImagePath;
+	}
+
+	public String getPartnerIconImageAltText() {
+		return partnerIconImageAltText;
+	}
+
+	public void setPartnerIconImageAltText(String partnerIconImageAltText) {
+		this.partnerIconImageAltText = partnerIconImageAltText;
+	}
+
+	
+	public ArrayList<PartnerDescription> getDescriptionList() {
 		return descriptionList;
 	}
 
-	public void setDescriptionList(ArrayList<ProductDescription> descriptionList) {
+	public void setDescriptionList(ArrayList<PartnerDescription> descriptionList) {
 		this.descriptionList = descriptionList;
 	}
 
@@ -31,28 +81,13 @@ public class PartnerNode {
 		this.productTags = productTags;
 	}
 
-	public String getProductTitle() {
-		return productTitle;
+
+	public String getPartnerDescription() {
+		return partnerDescription;
 	}
 
-	public void setProductTitle(String productTitle) {
-		this.productTitle = productTitle;
-	}
-
-	public String getProductPath() {
-		return productPath;
-	}
-
-	public void setProductPath(String productPath) {
-		this.productPath = productPath;
-	}
-
-	public String getProductDescription() {
-		return productDescription;
-	}
-
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
+	public void setPartnerDescription(String partnerDescription) {
+		this.partnerDescription = partnerDescription;
 	}
 
 }
