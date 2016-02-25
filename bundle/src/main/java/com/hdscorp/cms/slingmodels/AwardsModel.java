@@ -43,6 +43,10 @@ public class AwardsModel {
 	@Default(values = { "" })
 	private String featurediconimage;
 	
+	public String getFeaturediconimage() {
+		return featurediconimage;
+	}
+
 	@Inject
 	@Named(value = "featuredaward")
 	@Default(values = { "" })
