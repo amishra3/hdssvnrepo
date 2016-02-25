@@ -14,7 +14,7 @@
 	<a href="${fn:substringBefore(nivcMultiObject.value, "/:")}" target="_blank"><h2>${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
     </c:when>
         <c:otherwise>
-            <a href="${fn:substringBefore(nivcMultiObject.value, "/:")}" target="_self"><h2>${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
+            <h2><a href="${fn:substringBefore(nivcMultiObject.value, "/:")}" target="_self" class="animateLink">${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
         </c:otherwise>
     </c:choose>
     <cq:include path="firstpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsinsightverticalexplorer" />
