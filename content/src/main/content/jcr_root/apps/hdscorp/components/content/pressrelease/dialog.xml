@@ -13,7 +13,6 @@
                 jcr:primaryType="cq:Panel"
                 title="Press Release">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    
                     <pressreleaseslabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -28,10 +27,10 @@
                         name="./readmorelabel"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./readmorelabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
-					<viewallprlabel
+                    <viewallprlabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="View Alll Press Releases label"
+                        fieldLabel="View All Press Releases label"
                         name="./viewallprlabel"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./viewallprlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
@@ -41,14 +40,14 @@
                         fieldLabel="Featured PR Backgroung image"
                         name="./featuredprimage"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredprimage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="pathfield"/>           
+                        xtype="pathfield"/>
                     <priconimage
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Press Releases Icon Img"
                         name="./priconimage"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./priconimage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="pathfield"/> 
+                        xtype="pathfield"/>
                     <featuredpressrelease
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -56,35 +55,34 @@
                         name="./featuredpressrelease"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredpressrelease')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
-                   <featuredprdesc
+                    <featuredprdesc
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel=" Featured Press Release Description"
                         name="./featuredprdesc"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredprdesc')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="richtext"/>      
+                        xtype="richtext"/>
                     <viewallprlink
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="View All Press Releases Link"
                         name="./viewallprlink"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./viewallprlink')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="pathfield"/> 
+                        xtype="pathfield"/>
                     <pressreleaseslookuppath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Press Releases look up path"
                         name="./pressreleaseslookuppath"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./pressreleaseslookuppath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="pathfield"/>          
-			        <noofpressreleasesshown
+                        xtype="pathfield"/>
+                    <noofpressreleasesshown
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Number Of Press Releases Shown"
                         name="./noofpressreleasesshown"
-                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./noofpressreleasesshown')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="numberfield"/>                                   
-                    
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./noofpressreleasesshown')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==0)&#xa; {&#xa; alert(&quot;No. of Press Releases Shown must be greater than Zero&quot;);&#xa; return false;&#xa; }&#xa;else if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="numberfield"/>
                 </items>
             </pressrelease>
         </items>
