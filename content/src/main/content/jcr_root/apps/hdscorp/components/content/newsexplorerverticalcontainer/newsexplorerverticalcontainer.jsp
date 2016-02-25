@@ -10,7 +10,18 @@
 						<c:forEach items="${newsExplorerVerticalModel.nevcList}" var="nevcMultifield" varStatus="multfieldStatus">
 							<c:forEach items="${nevcMultifield}" var="nevcMultiObject" varStatus="multiStatus">
 						<div class="col-sm-4">
-						<a href="${nevcMultiObject.value}"><h2>${nevcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
+
+                           hhh ${nevcMultiObject.value}
+                            <c:choose>
+    <c:when test="${fn:substringAfter(nevcMultiObject.value, '$') == '1'}"> 
+    <a href="${fn:substringBefore(nevcMultiObject.value, "$")}" target="_blank"><h2>${nevcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
+    </c:when>
+        <c:otherwise>
+<a href="${fn:substringBefore(nevcMultiObject.value, "$")}"><h2>${nevcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></h2></a>
+        </c:otherwise>
+    </c:choose>
+
+
 
 						 <cq:include path="newsfirstpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsverticalexplorer" />
 						 <cq:include path="newssecondpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsverticalexplorer" />
