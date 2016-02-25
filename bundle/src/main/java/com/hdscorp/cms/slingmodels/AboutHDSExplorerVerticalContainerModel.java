@@ -40,7 +40,7 @@ public class AboutHDSExplorerVerticalContainerModel {
 
 			try {
 				JSONObject json = new JSONObject(listofObject[index]);
-				map.put(json.getString("ahesectionlabel"), json.getString("ahesectionlink").concat(":").concat(json.getString("aheopeninnewwindow")));				
+				map.put(json.getString("ahesectionlabel"), json.getString("ahesectionlink").concat("$").concat(json.getString("aheopeninnewwindow")));				
 				ahecList.add(map);
 			} catch (Exception e) {
 				log.info("Exception during parsing the JSON " + e);
