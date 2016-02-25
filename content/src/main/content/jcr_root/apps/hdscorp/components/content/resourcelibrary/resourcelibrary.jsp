@@ -4,10 +4,10 @@
 <%@ taglib prefix="xss"
 	uri="http://www.adobe.com/consulting/acs-aem-commons/xss"%>
 
-<sling:adaptTo adaptable="${resource}"
-	adaptTo="com.hdscorp.cms.slingmodels.ResourceLibraryModel"
-	var="resourceLibraryModel" />
-
+<c:set var="contentrenderingpagepath" value="${properties.contentrenderingpagepath}" scope="request"/>
+<c:set var="featuredlabel" value="${properties.featuredlabel}" scope="request"/>
+<c:set var="featuredoverlaypath" value="${properties.featuredoverlaypath}" scope="request"/>
+<c:set var="isResourceLibraryPage" value="true" scope="request"/>
 <div class="product-search-area clearfix">
                 <div class="content-container">
                     <div class="container-fluid">
@@ -21,16 +21,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="Container-Results container-fluid overRideRight">
-                    	
+                    <div class="resources-results content-container overRideRight clearfix">
+                                	
                     	
                     	<c:if test="${empty properties.contentrenderingpagepath}">
                     		<c:set var="contentrenderingpagepath" value="/content/hdscorp/en_us/lookup/resourcelibraryrenderer" scope="request"/>
                     	</c:if>
-                    
+                        <c:if test="${empty properties.featuredoverlaypath}">
+                    		<c:set var="featuredoverlaypath" value="/content/hdscorp/en_us/lookup/resourcelibraryrenderer" scope="request"/>
+                    	</c:if>
                     	<cq:include path="subcategoryfilterpar" resourceType="hdscorp/components/content/categoryfacets" />
-                        
-                        
+  
                       
                     </div>
                 </div>

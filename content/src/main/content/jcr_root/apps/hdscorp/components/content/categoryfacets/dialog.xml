@@ -28,6 +28,7 @@
                         fieldLabel="All Categories ID"
                         name="./allCategoriesid"
                         xtype="textfield"/>
+                    
                     <contents
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Categories"

@@ -28,9 +28,19 @@
 	<c:set var="includetargetURL" value="${contentrenderingpagepath}.html" scope="request"/>
 </c:if>
 
-<div class="col-md-3 product-listing">
-	<ul id="asideLinks-product">
-		<li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${contentrenderingpagepath}.html"> ${properties.allCategoriesLabel} </a></li>
+		<c:choose>
+		    <c:when test="${isResourceLibraryPage}">
+		    <div class="col-md-3 resources-listing">
+			<ul id="asideLinks-product">
+		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${featuredoverlaypath}.html"> ${featuredlabel} </a></li>
+		       </c:when>
+		    
+		    <c:otherwise>
+		    <div class="col-md-3 product-listing">
+			<ul id="asideLinks-product">
+		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${contentrenderingpagepath}.html"> ${properties.allCategoriesLabel} </a></li>
+		    </c:otherwise>
+		</c:choose>
 
 		<c:forEach items="${model.categories}" var="data" varStatus="status">
 
