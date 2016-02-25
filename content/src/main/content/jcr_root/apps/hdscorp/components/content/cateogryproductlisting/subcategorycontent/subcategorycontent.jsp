@@ -53,7 +53,7 @@
 	         <p>${properties.subcategorybanneresubtext}</p>
              <c:if test="${not empty properties.subcatbuttonlabel}">
 	         <div class="btn-square-red learn-more-promo">
-	             <a href="${linkUrl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}</a>
+	            <a href="${linkUrl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' '}</a>
 	          </div>
               </c:if>
 	     </div>
