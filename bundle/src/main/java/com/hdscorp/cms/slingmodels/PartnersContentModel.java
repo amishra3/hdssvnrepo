@@ -56,7 +56,7 @@ public class PartnersContentModel {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SubCatContentModel.class);
 	
-	public List<PartnerNode> getProducts() throws RepositoryException, JsonParseException, JsonMappingException, IOException {
+	public List<PartnerNode> getPartners() throws RepositoryException, JsonParseException, JsonMappingException, IOException {
 		
 		try {
 			LOG.debug("-------------INSIDE getProducts in SubCatContentModel.Making the Search Service call");
