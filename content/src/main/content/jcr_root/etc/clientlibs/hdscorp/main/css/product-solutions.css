@@ -953,10 +953,15 @@ ul.stickyNav li:hover a{
   color: #ffffff;
 }
 
-.resources-all span.glyphicon.glyphicon-menu-right.animateIcon, .resources-all span.glyphicon.glyphicon-new-window{
+.resources-all span.glyphicon.glyphicon-menu-right.animateIcon{
+    top: 4px;
+    font-size: 1.2em;
+}
+
+.resources-all span.glyphicon.glyphicon-new-window{
     top: 2px;
-    font-size: 0.8125rem;
-    font-weight: 100;
+    font-size:0.8125rem;
+	line-height:1.975em;
 }
 
 @media only screen and (max-width: 1024px) {
