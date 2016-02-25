@@ -12,7 +12,7 @@
 	<div class="content-container">					
     <h2>${properties.biotilestitle}</h2>
 
-    <c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"leadername-leaderimagepath-leaderdesgniation-leaderviewbiotext-leaderviewbiotargeturl-openinnewwindow")%>" />    
+    <c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"leadername-leaderimagepath-leaderdesgniation-leaderviewbiotext-leaderviewbiotargeturl-leaderopeninnewwindow")%>" />    
 			<c:forEach var="column" items="${contentColumn}" varStatus="loop">
 
                 <c:set var="linkUrl" value="${column.leaderviewbiotargeturl}"/>
@@ -28,7 +28,15 @@
                 <h2 class="leaders-name">${column.leadername}</h2>
 
                     <div class="view-bio">
-                    <a class="animateLink" href="${linkUrl}" target="${column.openinnewwindow==1?'_blank':'_self'}"> ${column.leaderviewbiotext}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+                    <c:choose>
+
+<c:when test="${column.leaderopeninnewwindow=='1'}">
+<a class="animateLink" href="${linkUrl}" target="_blank"> ${column.leaderviewbiotext}<span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
+</c:when>
+<c:otherwise>
+<a class="animateLink" href="${linkUrl}"> ${column.leaderviewbiotext}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+</c:otherwise>
+</c:choose>
                     </div>
                         <div class="clearfix"></div>
                             <p>${column.leaderdesgniation}</p>
