@@ -70,7 +70,7 @@ public class NewsModel {
 	@Default(values = { "10" })
 	private String noofitemsshown;
 	@Inject
-	@Named(value = "loadMoreLabel")
+	@Named(value = "loadmorelabel")
 	@Default(values = { "Load More" })
 	private String loadMoreLabel;
 
