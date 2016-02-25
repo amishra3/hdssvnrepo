@@ -28,7 +28,7 @@ import com.hdscorp.cms.restservice.LMSImporterService;
 @Component(label = "LMS Scheduler", description = "This service basically is used for consuming data from CSV file", metatype = true, immediate = true)
 @Service(LMSScheduler.class)
 @Properties({
-		@Property(name = ServiceConstants.FILE_CSV_PATH, description = "Default CSV file path is provided and you can change it accordingly", value = "/content/dam/hdscorp/en_us/LML/ProdDataCSV.csv"),
+		@Property(name = ServiceConstants.FILE_CSV_PATH, description = "Default CSV file path is provided and you can change it accordingly", value = "/content/dam/hdscorp/en_us/lms/ProdDataCSV.csv"),
 		@Property(name = ServiceConstants.FEED_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 25 13 * * ?"),
 		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "/content/hdscorp/en_us/lookup/lms/jcr:content/") })
 
