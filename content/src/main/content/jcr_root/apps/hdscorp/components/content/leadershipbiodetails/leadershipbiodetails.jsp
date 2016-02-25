@@ -1,50 +1,62 @@
 <%--
-
-  Leadership BIO details component component.
-
-  Leadership BIO details component
-
+Leadership BIO details component
 --%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 
-<h1> LeaderShip BIO Details Component </h1>
-
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.LeaderShipBIODetailsModel" var="leaderShipBIODetailsModel" />
 
-BIO Image:  ${leaderShipBIODetailsModel.lbdimage} <br>
+<c:choose>
+	<c:when test="${not empty leaderShipBIODetailsModel.lbdTitle}">
+     <div class="leader-detail">
+                <div class="content-container container-fluid">
+                    <div class="row">
+                        <div class="profile-name hidden-sm hidden-md hidden-lg">
+                            <h1>${leaderShipBIODetailsModel.lbdTitle}</h1>
+                        </div>
+                        <div class="leader-info hidden-sm hidden-md hidden-lg">
+                            ${leaderShipBIODetailsModel.lbdJobTitle}
+                        </div>
+                        <div class="share-links mt_mb hidden-sm hidden-md hidden-lg">
+                              <strong>${currentStyle.lbdfollowlabel}</strong>
+                                <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
+    							<a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
+    							<a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
+                     </div>
+						<div class="col-sm-4">
+                            <div class="leader-profile"><img src="${leaderShipBIODetailsModel.lbdimage}" alt=""></div>
+                        </div>
+                        <div class="col-sm-8">                            
+                            <div class="profile-name hidden-xs">
+                                <h1>${leaderShipBIODetailsModel.lbdTitle}</h1>
+                            </div>
+    						<div class="leader-info hidden-xs">
+                                ${leaderShipBIODetailsModel.lbdJobTitle}
+                            </div>
 
-<img src="${leaderShipBIODetailsModel.lbdimage}" /><br>
-
-BIO Title:  ${leaderShipBIODetailsModel.lbdTitle} <br>
-
-BIO Job Title:  ${leaderShipBIODetailsModel.lbdJobTitle} <br>
-
-BIO Location:  ${leaderShipBIODetailsModel.lbdJobLocation} <br>
-
-BIO Twitter Follow URL:  ${leaderShipBIODetailsModel.lbdTwiterFollowURL} <br>
-
-BIO Facebook URL:  ${leaderShipBIODetailsModel.lbdFacebookFollowURL} <br>
-
-BIO Linkedin URL:  ${leaderShipBIODetailsModel.lbdLinkedinFollowURL} <br>
-
-BIO Content:  ${leaderShipBIODetailsModel.lbdContent} <br>
-
-BIO Follow Label (Default to Follow):  ${currentStyle.lbdfollowlabel} <br>
-
-
-BIO View ALL link Label:  ${currentStyle.lbdviewalllinklabel} <br>
-
-BIO View ALL link URL:  ${currentStyle.lbdviewalllinkurl} <br>
-
-BIO View ALL link Open in New Window ?:  ${currentStyle.lbdviewalllinkopeninnewwindow} <br>
-
-
-   <c:choose> 
-  <c:when test="${currentStyle.lbdviewalllinkopeninnewwindow == 'on'}">
-		<a href="${currentStyle.lbdviewalllinkurl}" target="_blank">${currentStyle.lbdviewalllinklabel}</a>
-     </c:when>
-  <c:otherwise>
-	<a href="${currentStyle.lbdviewalllinkurl}">${currentStyle.lbdviewalllinklabel}</a>
-  </c:otherwise>
+    						<div class="share-links mt_mb hidden-xs">
+    						      <strong>FOLLOW ASIM</strong>
+    							 <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
+    							<a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
+    							<a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
+                            </div>
+						<div class="leaders_description">
+                            <p>${leaderShipBIODetailsModel.lbdContent}</p>
+                            </div>
+                            <div class="view-all-executive">
+                                <a href="${currentStyle.lbdviewalllinkurl}" target="${currentStyle.lbdviewalllinkopeninnewwindow}" class="animateLink"><span aria-hidden="true" class="glyphicon glyphicon-menu-left animateIconLeft"></span>${currentStyle.lbdviewalllinklabel}</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </c:when>
+		
+	<c:otherwise>
+		<wcmmode:edit>
+			<p>
+				<span class="cq-text-placeholder-ipe">Configure Leadership BIO details component</span>
+			</p>
+		</wcmmode:edit>
+	</c:otherwise>
 </c:choose>
