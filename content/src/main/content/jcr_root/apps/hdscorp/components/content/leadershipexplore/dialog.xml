@@ -19,6 +19,12 @@
                         fieldLabel="Background Image"
                         name="./lesectionbgimage"
                         xtype="pathfield"/>
+                    <lesctionimagealttext
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Image Alt Text"
+                        name="./lesctionimagealttext"
+                        xtype="textfield"/>
                     <lesectionlabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"

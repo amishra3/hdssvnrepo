@@ -3,7 +3,7 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 <c:set var="leadershipList"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"leiconimage-leiconimagelabel-leicondate-lecontent-lereadmorelabel-lereadmorelabellink-leopeninnewwindow")%>" />
+	value="<%=PageUtils.convertMultiWidgetToList(properties,"leiconimage-leiconimagelabel-lesctionimagealttext-leicondate-lecontent-lereadmorelabel-lereadmorelabellink-leopeninnewwindow")%>" />
 
 
 
@@ -42,7 +42,7 @@
 				<div class="col-sm-4">
 					<div class="pr-common-box">
 						<div class="icon">
-							<img src="${leadershipList.leiconimage}" alt="" title="">
+							<img src="${leadershipList.leiconimage}" alt="${properties.lesctionimagealttext}" title="${properties.lesctionimagealttext}">
 						</div>
 
 						<div class="type">${leadershipList.leiconimagelabel},
@@ -56,7 +56,7 @@
 								<c:when test="${leadershipList.leopeninnewwindow == '1'}">
 
 									<a class="animateLink" href="${leadershipList.lereadmorelabellink}"
-										target="_blank">${leadershipList.lereadmorelabel }<span
+										target="_blank" >${leadershipList.lereadmorelabel }<span
 										aria-hidden="true"
 										class="glyphicon glyphicon-share animateIcon"></span></a>
 
