@@ -31,7 +31,7 @@
                     <c:choose>
 
 <c:when test="${column.leaderopeninnewwindow=='1'}">
-<a class="animateLink" href="${linkUrl}" target="_blank"> ${column.leaderviewbiotext}<span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
+<a class="animateLink" href="${linkUrl}" target="_blank"> ${column.leaderviewbiotext} <span aria-hidden="true" class="glyphicon glyphicon-new-window"></span></a>
 </c:when>
 <c:otherwise>
 <a class="animateLink" href="${linkUrl}"> ${column.leaderviewbiotext}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>

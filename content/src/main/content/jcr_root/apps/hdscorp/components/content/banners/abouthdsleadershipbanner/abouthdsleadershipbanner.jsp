@@ -16,10 +16,30 @@ request.setAttribute("bannerimage",bannerimage);
 	<c:when test="${not empty properties.abouthdsleadershipbannerheading}">
 	    <div class="common-hero-banner about-leader-banner server-rack clearfix" style="background-image:url('${requestScope.bannerimage}');">
                 <div class="common-hero-banner-container">
-                    <div class="col-lg-8 col-md-12 col-xs-12 col-no-pad about-leadership">
+                    <div class="col-lg-6 col-md-6 col-xs-12 overRideleft">
                         <h2 class="top-banner-heading">${properties.abouthdsleadershipbannerheading}</h2>
                         <h1 class="headline">${properties.abouthdsleadershipbannerheadline}</h1>
-                        <h4 class="sub-headline">${properties.abouthdsleadershipbannersubheadline}</h4>    					
+                        <h4 class="sub-headline">${properties.abouthdsleadershipbannersubheadline}</h4>    
+
+					<c:if test="${not empty properties.leaderbuttonlabel}">
+						<div class="btn-square-white request">
+							<a href="${properties.leaderbuttonurl}"
+								target="${properties.thirdparty?'_blank':'_self'}">
+								${properties.leaderbuttonlabel} </a>
+						</div>
+					</c:if>
+
+                    <c:if test="${not empty properties.leaderlinktext}">
+						<div class="buy-through">
+							<a class="animateLink" href="${properties.leaderlinkurl}"
+								target="${properties.thirdpartylink?'_blank':'_self'}">${properties.leaderlinktext}
+								${properties.thirdpartylink?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
+							</a>
+						</div>
+					</c:if>
+
+
+
                     </div>
                 </div>
        </div>

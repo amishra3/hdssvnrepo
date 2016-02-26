@@ -41,6 +41,38 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <abouthdsleadershipbannerbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./leaderbuttonlabel"
+                        xtype="textfield"/>
+                    <abouthdsleadershipbanneurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./leaderbuttonurl"
+                        xtype="pathfield"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <abouthdsleadershipbannerlinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./leaderlinktext"
+                        xtype="textfield"/>
+                    <abouthdsleadershipbannelinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./leaderlinkurl"
+                        xtype="pathfield"/>
+                    <thirdpartylink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdpartylink"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
