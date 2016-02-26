@@ -80,7 +80,16 @@ public class LeaderShipBIODetailsModel {
 	@Default(values = "Linkedin Alt")	
 	private String lbdlinkedinalt;
 	
+	@Inject
+	@Named("jcr:lbdimagealt")
+	@Default(values = "Image Alt")	
+	private String lbdimagealt;
 	
+	
+	public String getLbdimagealt() {
+		return lbdimagealt;
+	}
+
 	public String getLbdtwitteralt() {
 		return lbdtwitteralt;
 	}
@@ -133,6 +142,8 @@ public class LeaderShipBIODetailsModel {
 	public String getLbdContent() {
 		return lbdContent;
 	}
+	
+	
 
 
 }
