@@ -85,7 +85,7 @@
 }
 
 .hexagon320 .hexagon-content{
-  margin-top:-50px;
+  margin-top:-75px;
   padding: 0;
 }
 .hexagon320:last-child{margin-right: 0;}
@@ -97,7 +97,7 @@
   top: -65px;
   width: 100%;
   position:relative;
-  top:-10px;
+  top:0px;
 }
 
 
@@ -111,7 +111,7 @@
     font-size: 1.313rem;
     font-weight: 700;
     line-height: 1;
-    margin: 5px 0 20px;
+    margin: 10px 0 10px;
     text-align: center;
 	position:relative;
 }
@@ -127,7 +127,7 @@
 .hexagon320 .read-more {
     font-size: 0.8125rem;
     font-weight: 800;
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
 }
 
