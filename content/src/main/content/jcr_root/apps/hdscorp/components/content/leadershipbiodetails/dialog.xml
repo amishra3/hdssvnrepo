@@ -19,6 +19,12 @@
                         fieldLabel="BIO Image"
                         name="./jcr:lbdimage"
                         xtype="pathfield"/>
+                    <lbdimagealt
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="BIO Image Alt"
+                        name="./jcr:lbdimagealt"
+                        xtype="textfield"/>
                     <lbdtitle
                         jcr:primaryType="cq:Widget"
                         allowBlank="false"

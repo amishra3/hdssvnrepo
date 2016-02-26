@@ -24,7 +24,7 @@ Leadership BIO details component
     							<a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
                      </div>
 						<div class="col-sm-4">
-                            <div class="leader-profile"><img src="${leaderShipBIODetailsModel.lbdimage}" alt=""></div>
+                            <div class="leader-profile"><img src="${leaderShipBIODetailsModel.lbdimage}" alt="${leaderShipBIODetailsModel.lbdimagealt}" title="${leaderShipBIODetailsModel.lbdimagealt}"></div>
                         </div>
                         <div class="col-sm-8">                            
                             <div class="profile-name hidden-xs">
@@ -35,7 +35,7 @@ Leadership BIO details component
                             </div>
 
     						<div class="share-links mt_mb hidden-xs">
-    						      <strong>FOLLOW ASIM</strong>
+    						      <strong>${currentStyle.lbdfollowlabel}</strong>
     							 <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
     							<a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
     							<a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
