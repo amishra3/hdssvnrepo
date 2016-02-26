@@ -75,7 +75,7 @@ public class ResourceLibrarySearchModel  {
 		LOG.info("-------------INSIDE Resouce Library  SEARCH Model");
 		
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-		
+		String fullText = request.getParameter("fulltext");
 		String viewtype = "";
 		String[] selectorArray = request.getRequestPathInfo().getSelectors();
 		String tags[] =  {""};
@@ -94,7 +94,7 @@ public class ResourceLibrarySearchModel  {
 		String type[] = {"dam:Asset"};
 		
 		
-		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,null,type,null,doPagination,null,null,resourceResolver,null,null);
+		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,null,type,fullText,doPagination,null,null,resourceResolver,null,null);
 		List<Hit> hits = result.getHits();
 		
 		LOG.info("-------------Hits Size-----"+result.getHits().size());

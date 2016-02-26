@@ -38,7 +38,7 @@ public class SearchServiceHelper {
 	private static final Logger LOG = LoggerFactory
 			.getLogger(SearchServiceHelper.class);
 	private static final String TYPE = "cq:Page";
-	private static final String ORDER_BY_PROPERTY = "@jcr:content/jcr:lastModified";
+	private static final String ORDER_BY_PROPERTY = "@jcr:score";
 	private static final String PR_ORDER_BY_PROPERTY = "@jcr:content/pressrelease/pressreleasedate";
 	private static final String NEWS_ORDER_BY_PROPERTY = "@jcr:content/newsdetail/newsdate";
 	private static final String AWARDS_ORDER_BY_PROPERTY = "@jcr:content/awarddetail/awarddate";
@@ -425,6 +425,18 @@ public class SearchServiceHelper {
 			groupCnt++;
 		}
 
+		if(types != null && types.length == 1) {
+			if (!types[0].equals(TYPE)) {
+				
+			
+			searchParams.put("group." + groupCnt + "_group.1_property", "jcr:content/metadata/dc:title");
+			searchParams.put("group." + groupCnt + "_group.1_property.operation", "exists");
+			
+			groupCnt++;
+			}
+		}
+		
+		
 		if (template != null && !template.isEmpty()) {
 			searchParams.put("group." + groupCnt + "_group.1_property",
 					"@jcr:content/cq:template");
@@ -433,6 +445,7 @@ public class SearchServiceHelper {
 			groupCnt++;
 		}
 
+		
 		if (searchKeyword != null) {
 			searchParams.put("group." + groupCnt + "_group.p.or", "true");
 			if (types != null && types.length == 1) {
