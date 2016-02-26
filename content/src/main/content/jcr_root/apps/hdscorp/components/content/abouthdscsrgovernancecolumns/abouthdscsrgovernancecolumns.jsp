@@ -19,7 +19,7 @@
 			<c:forEach items="${columncontent}" var="items">
                 <c:if test="${not empty items.columncontentdescription}">
             	 <div class="col-sm-4 col-no-pad">
-             <div class="hitachi-honor-box">
+             <div class="hitachi-honor-box ${items.newwin==1?'no-border-container':''}">
                  <p>${items.columncontentdescription}</p>
              </div>
              </div>
