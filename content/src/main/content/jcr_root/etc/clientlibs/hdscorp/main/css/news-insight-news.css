@@ -162,6 +162,10 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 .stay_touch_container .comment_box{ background: #fff none repeat scroll 0 0; border-top: 10px solid #008eaa; padding: 20px; min-height: 340px;}
 .stay_touch_container .comment_box .icon > img { float: left; margin-right: 10px;}
 .stay_touch_container .comment_box .type{ float: left; font-size: 0.75rem; font-weight: bold; margin-top: 16px;}
+.stay_touch_container .comment_box .post-img{
+    float: left;
+    margin-bottom: 10px;
+}
 .stay_touch_container .comment_box .description{ color: #000000; font-size: 1rem; font-weight: 700; margin: 12px 0; float:left; width:100%; font-family: "museo-sans",Helvetica,Arial,sans-serif;}
 .stay_touch_container .comment_box .inner-comment {
   display: inline-block;
