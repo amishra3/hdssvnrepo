@@ -10,6 +10,11 @@
                 jcr:primaryType="cq:Panel"
                 title="Footer Social Connect">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <socialtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./socialtitle"
+                        xtype="textfield"/>
                     <socialmultilinks
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./socialmultilinks"

@@ -12,7 +12,7 @@
 <%@ taglib prefix="wcm" uri="http://www.adobe.com/consulting/acs-aem-commons/wcm" %>
 
 <c:set var="footerCategory" value="<%=properties.get("footerCategory")%>" />
-<c:set var="footerNavLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linkName-linkUrl")%>" />
+<c:set var="footerNavLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linkName-linkUrl-thirdparty")%>" />
 
 <c:choose>
 	<c:when test="${not empty footerCategory}">
@@ -29,10 +29,9 @@
 
 					<li><a	href="<%=PathResolver.getShortURLPath(pageContext.getAttribute("navUrl").toString())%>"
 						title="${navlinks.linkName}">${navlinks.linkName}</a></li>
-
 				</c:when>
 				<c:otherwise>
-					<li><a href="${navUrl}" title="${navlinks.linkName}">${navlinks.linkName}</a>
+					<li><a href="${navUrl}"  target="${navlinks.thirdparty==1?'_blank':'_self'}" title="${navlinks.linkName}">${navlinks.linkName}${navlinks.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 					</li>
 				</c:otherwise>
 

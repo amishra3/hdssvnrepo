@@ -9,7 +9,7 @@
 
 
 <c:set var="socialmultilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linktargeturl-linkIconPath-linkicontext")%>" />
-
+<p class="hide-small">${properties.socialtitle}</p>
 <ul class="social-icons hide-small">
 	<c:forEach var="externalLink" items="${socialmultilinks}">
 		<c:set var="linktargeturl" value="${externalLink.linktargeturl}" />
