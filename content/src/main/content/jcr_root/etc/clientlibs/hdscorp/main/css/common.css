@@ -222,13 +222,15 @@
     text-transform: uppercase;
 }
 
-.footer .footer-gray .footer-container .nav-list-container .nav-list > li a {
+.footer .footer-gray .footer-container .nav-list-container .nav-list > li a, .footer .footer-gray .footer-container .social p {
     color: #ffffff;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 0.75em;
     line-height: 1;
 }
+
+.footer .footer-gray .footer-container .nav-list-container .nav-list > li a:hover{text-decoration:underline;}
 
 .footer .footer-gray .footer-container .social {
     float: right;
@@ -237,6 +239,8 @@
 .footer .footer-gray .footer-container .social ul{
     margin-bottom:0;
 }
+
+.footer .footer-gray .footer-container .social p{text-align:right;}
 
 .footer .footer-gray .footer-container .social a {
     margin-left: 20px;
@@ -373,6 +377,9 @@
     .footer .footer-gray .footer-container .hide-small {
         display: none !important;
     }
+	.footer-logo .hitachi-footer-logo{
+		margin:0;
+	}
 }
 
 button.cta-scroll-top {
@@ -719,6 +726,7 @@ button.cta-scroll-top .text-return {
     background-position: -176px 0px;
     width: 210px;
     height: 20px;
+    margin-top:27px;
 }
 
 .hitachi-footer-logo-mobile {
