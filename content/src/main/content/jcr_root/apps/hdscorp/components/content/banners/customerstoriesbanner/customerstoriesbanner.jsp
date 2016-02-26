@@ -27,9 +27,11 @@
                   <span class="hidden-xs"></span>
                   <span class="software"></span>
                 </div>
-                <div class="cs-highlight-box-message">
-                  <span class="sprite icon-quote open-quote"></span>${properties.customerstatementtext}<span class="sprite icon-quote close-quote"></span>
-                </div>
+ 				<c:if test="${not empty properties.customerstatementtext}">
+                    <div class="cs-highlight-box-message">
+                      <span class="sprite icon-quote open-quote"></span>${properties.customerstatementtext}<span class="sprite icon-quote close-quote"></span>
+                    </div>
+				</c:if>
                 <div class="cs-highlight-box-author">
                   <span>${properties.customerstatementauthortext}</span>
                 </div>
