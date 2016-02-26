@@ -109,7 +109,7 @@
 				</c:if>
 			</div>
 		</div>
-
+		<c:if test="${empty properties.thirdpartyvideolink}">
 		<c:if test="${not empty properties.simplebannerusevideomodal}">
 			<div class="hero-product-solutions video clearfix"
 				style="background-image:url('${properties.simplebannermagePath}');">
@@ -126,6 +126,7 @@
 					</c:choose>
 				</div>
 			</div>
+		</c:if>
 		</c:if>
 
 
