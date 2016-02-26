@@ -62,7 +62,7 @@
 
 
                 htmlContent+='<div class="col-sm-4"><div class="comment_box"><div class="icon"><img src="${facebookFeedModel.iconPath}" alt="" title=""></div><div class="type"> FACEBOOK POST, '+feedResponsefromStoredPath[count].createdDate+'</div><div class="description">'+title+
-                    '</div><div><img src="'+thumbnail+'"></div><div class="inner-comment">'+facebookPostMsg+'</div><div class="links"><a href="https://www.facebook.com/124181477968641/posts/'+postId+'" target="_blank">Like/Share/Comment CTA<span class="glyphicon glyphicon-new-window animateIcon"></span></a></div></div></div>';
+                    '</div><div class="post-img"><img src="'+thumbnail+'"></div><div class="inner-comment">'+facebookPostMsg+'</div><div class="links"><a href="https://www.facebook.com/124181477968641/posts/'+postId+'" target="_blank">Like/Share/Comment CTA<span class="glyphicon glyphicon-new-window animateIcon"></span></a></div></div></div>';
             }
             $(".stay-inner-coloum").append(htmlContent);
         </script>
