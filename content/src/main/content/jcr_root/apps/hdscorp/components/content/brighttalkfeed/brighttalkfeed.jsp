@@ -34,11 +34,11 @@ pageContext.setAttribute("listMaps", listMaps);
                                     <c:choose>
                                         <c:when test="${listm.status == 'recorded'}">
                                             <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
-                                                <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo" title="Play">Play</a>
+                                                <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a>
                                             </div>
                                         </c:when>
                                         <c:otherwise>
-                                            <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" title="Play">Register</a>
+                                            <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" class="brighttalklink" title="Play">Register</a>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>

@@ -47,7 +47,7 @@ var hds = window.hds || {};
                 $this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
                 $this.parents('.newsEvents').find('p span.moreellipses').toggle();
                 $this.parents('.newsEvents').find('p span.morecontent span').toggle();
-				$this.parents('.newsEvents').find('a.playvideo').on( "click", function(event) {
+				$this.parents('.newsEvents').find('a.brighttalklink').on( "click", function(event) {
 					event.preventDefault();
 					var $this = $(this);
 					var videoComid = $this.attr('comid') ;
