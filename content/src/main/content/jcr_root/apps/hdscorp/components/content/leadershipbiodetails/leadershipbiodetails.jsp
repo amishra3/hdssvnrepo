@@ -3,8 +3,11 @@ Leadership BIO details component
 --%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
+<%@page import="com.hdscorp.cms.util.PathResolver"%>
+<%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.LeaderShipBIODetailsModel" var="leaderShipBIODetailsModel" />
+
 
 <c:choose>
 	<c:when test="${not empty leaderShipBIODetailsModel.lbdTitle}">
@@ -51,7 +54,7 @@ Leadership BIO details component
                 </div>
             </div>
         </c:when>
-		
+
 	<c:otherwise>
 		<wcmmode:edit>
 			<p>

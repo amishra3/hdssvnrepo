@@ -24,7 +24,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="BIO View ALL link URL"
                         name="./lbdviewalllinkurl"
-                        xtype="textfield"/>
+                        xtype="pathfield"/>
                     <lbdviewalllinkopeninnewwindow
                         jcr:primaryType="cq:Widget"
                         fieldLabel="BIO View ALL link Open in New Window ?"
