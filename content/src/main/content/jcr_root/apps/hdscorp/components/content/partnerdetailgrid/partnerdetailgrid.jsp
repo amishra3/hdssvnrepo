@@ -5,7 +5,7 @@
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.PartnerGridModel" var="PartnerGridModel" />
 
 
-<div class="services-list-section partner-section clearfix">
+<div class="services-list-section partner-section clearfix" style="background-image: url('${properties.partnergridimagepath}');">
     <div class="cs-container content-container">
 
                     <!--Row Starts-->

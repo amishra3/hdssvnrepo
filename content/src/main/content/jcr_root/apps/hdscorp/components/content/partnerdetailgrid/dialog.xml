@@ -34,7 +34,7 @@
                         ddGroups="[media]"
                         fieldLabel="Banner Image"
                         fileNameParameter="./partnerimagefileName2"
-                        fileReferenceParameter="./jcr:imagePath"
+                        fileReferenceParameter="./partnergridimagepath"
                         height="{Long}200"
                         name="./partnerimagename"
                         rotateParameter="./partnerimageRotate"
