@@ -13,8 +13,8 @@ div.cs-highlight-box-message .icon-quote.close-quote {
   top: -5px;
   margin-left:0;
 }
-div.cs-highlight-box-message span.open-quote{background-image:url(main/images/sprite.png); background-repeat:no-repeat; background-position:-364px -175px;}
-div.cs-highlight-box-message span.close-quote{background-image:url(main/images/sprite.png); background-repeat:no-repeat; background-position:-365px -194px;}
+div.cs-highlight-box-message span.open-quote{background-image:url(../images/sprite.png); background-repeat:no-repeat; background-position:-364px -175px;}
+div.cs-highlight-box-message span.close-quote{background-image:url(../images/sprite.png); background-repeat:no-repeat; background-position:-365px -194px;}
 .business-specific {
   background-color: #168ba2;
 }
