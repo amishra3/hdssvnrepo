@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
     height="500"
     width="800"
@@ -12,6 +12,28 @@
                 jcr:primaryType="cq:Panel"
                 title="Tab 1">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <quoteype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Quoteype Type"
+                        name="./quoteype"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <specificquote
+                                jcr:primaryType="nt:unstructured"
+                                text="Specific Quote"
+                                value="specific-quote"/>
+                            <specificquotepartnerquote
+                                jcr:primaryType="nt:unstructured"
+                                text="Partner Quote"
+                                value="specific-quote partner-quote"/>
+                        </options>
+                    </quoteype>
+                    <quoteheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Quote Headline"
+                        name="./quoteheadline"
+                        xtype="textfield"/>
                     <quotecontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Quote Content"
@@ -43,7 +65,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Provide Background Color (If Custom Color selected above.)"
                         name="./quotecolorbackgroundpicker"
-                        xtype="colorfield"/>                                            
+                        xtype="colorfield"/>
                     <quoteheroimage
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}true"
@@ -60,6 +82,22 @@
                         title="Quote Hero Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <quotebuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Quote Button Label"
+                        name="./quotebuttonlabel"
+                        xtype="textfield"/>
+                    <quotebuttontargeturl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Quote Button Target URL"
+                        name="./quotebuttontargeturl"
+                        xtype="pathfield"/>
+                    <openinnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open In New Window?"
+                        name="./openinnewwindow"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
