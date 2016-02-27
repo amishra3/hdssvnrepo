@@ -40,3 +40,18 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
     phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
 	//})( jQuery, ResponsiveBootstrapToolkit );
 })(jQuery);
+
+$(document).ready(function () {
+    $('a[rel=modal]').on('click', function(evt) {
+        evt.preventDefault();
+        var modal = $('#modal').modal();
+        modal
+            .find('.modal-body')
+            .load($(this).attr('href'), function (responseText, textStatus) {
+                if ( textStatus === 'success' || textStatus === 'notmodified') 
+                {
+                    modal.show();
+                }
+        });
+    });
+});

@@ -11,6 +11,14 @@
 <% List<Map<String, String>> listMaps=ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.BrightTalkScheduler","storage.path"),ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME);
 pageContext.setAttribute("listMaps", listMaps); 
  %>
+ 
+<c:set var='playerpath' value='${properties.playerpagepath}'/>
+<c:if test="${empty properties.playerpagepath}">
+	<c:set var='playerpath' value='/content/hdscorp/en_us/lookup/Webcast'/>
+</c:if>
+
+<c:set var='playerpath' value='${hdscorp:shortURL(playerpath)}'/>
+
 
 <div class="pr-list no-padding">
     <div class="product-category-list pt-0">
@@ -36,11 +44,12 @@ pageContext.setAttribute("listMaps", listMaps);
                                             <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
 												<%--<a rel="modal" href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a> --%>
 												<!-- Make the URL of the rendering page authorable -->
-                                                <a rel="modal" href="/content/hdscorp/en_us/lookup/brighttalkoverlay.html?wcmmode=disabled&commid=${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a>
+                                                <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?wcmmode=disabled&commid=${listm.communicationId}" target="_blank" class="playvideo" title="Play">Play</a>
                                             </div>
                                         </c:when>
                                         <c:otherwise>
-                                            <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" class="brighttalklink" title="Play">Register</a>
+											<%--<a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" class="brighttalklink" title="Play">Register</a> --%>
+                                            <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?wcmmode=disabled&commid=${listm.communicationId}" target="_blank" title="Play">Register</a>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
@@ -55,18 +64,4 @@ pageContext.setAttribute("listMaps", listMaps);
 </div>
 
  <script>
-        $(document).ready(function () {
-            $('a[rel=modal]').on('click', function(evt) {
-                evt.preventDefault();
-                var modal = $('#modal').modal();
-                modal
-                    .find('.modal-body')
-                    .load($(this).attr('href'), function (responseText, textStatus) {
-                        if ( textStatus === 'success' || textStatus === 'notmodified') 
-                        {
-                            modal.show();
-                        }
-                });
-            });
-        });
     </script>
