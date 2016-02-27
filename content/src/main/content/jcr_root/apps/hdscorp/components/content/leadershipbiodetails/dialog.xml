@@ -31,6 +31,12 @@
                         fieldLabel="BIO Title"
                         name="./jcr:lbdtitle"
                         xtype="textfield"/>
+                    <lbdfallowname
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="BIO Follow Name"
+                        name="./jcr:lbdfallowname"
+                        xtype="textfield"/>
                     <lbdjobtitle
                         jcr:primaryType="cq:Widget"
                         allowBlank="false"
