@@ -47,17 +47,17 @@ var hds = window.hds || {};
                 $this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
                 $this.parents('.newsEvents').find('p span.moreellipses').toggle();
                 $this.parents('.newsEvents').find('p span.morecontent span').toggle();
-				$this.parents('.newsEvents').find('a.brighttalklink').on( "click", function(event) {
-					event.preventDefault();
-					var $this = $(this);
-					var videoComid = $this.attr('comid') ;
-					//Make this configurale, thorugh dialog
-					var brightalkOverlayURL = "/content/hdscorp/en_us/lookup/brighttalkoverlay.html?wcmmode=disabled&commid="+videoComid;
-					//Open the above URL in Modal
-					//alert(videoComid);
-					//window.location= brightalkOverlayURL ;
-					
-				});
+//				$this.parents('.newsEvents').find('a.brighttalklink').on( "click", function(event) {
+//					event.preventDefault();
+//					var $this = $(this);
+//					var videoComid = $this.attr('comid') ;
+//					//Make this configurale, thorugh dialog
+//					var brightalkOverlayURL = "/content/hdscorp/en_us/lookup/brighttalkoverlay.html?wcmmode=disabled&commid="+videoComid;
+//					//Open the above URL in Modal
+//					//alert(videoComid);
+//					//window.location= brightalkOverlayURL ;
+//					
+//				});
                 return false;
             })
         },

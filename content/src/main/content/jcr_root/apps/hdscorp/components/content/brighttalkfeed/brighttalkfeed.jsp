@@ -34,7 +34,9 @@ pageContext.setAttribute("listMaps", listMaps);
                                     <c:choose>
                                         <c:when test="${listm.status == 'recorded'}">
                                             <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
-                                                <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a>
+												<%--<a rel="modal" href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a> --%>
+												<!-- Make the URL of the rendering page authorable -->
+                                                <a rel="modal" href="/content/hdscorp/en_us/lookup/brighttalkoverlay.html?wcmmode=disabled&commid=${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a>
                                             </div>
                                         </c:when>
                                         <c:otherwise>
@@ -51,3 +53,20 @@ pageContext.setAttribute("listMaps", listMaps);
         </div>
     </div>
 </div>
+
+ <script>
+        $(document).ready(function () {
+            $('a[rel=modal]').on('click', function(evt) {
+                evt.preventDefault();
+                var modal = $('#modal').modal();
+                modal
+                    .find('.modal-body')
+                    .load($(this).attr('href'), function (responseText, textStatus) {
+                        if ( textStatus === 'success' || textStatus === 'notmodified') 
+                        {
+                            modal.show();
+                        }
+                });
+            });
+        });
+    </script>
