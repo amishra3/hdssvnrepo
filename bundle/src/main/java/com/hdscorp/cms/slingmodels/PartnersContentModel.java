@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
+import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.PartnerDescription;
 import com.hdscorp.cms.dao.PartnerNode;
@@ -38,20 +39,21 @@ public class PartnersContentModel {
 	private ResourceResolver resourceResolver;	
 	
 	@Inject
-	private String[] subcattags;
+	private String[] partnertags;
 	@Inject
 	@Default(values = {""})
-	private String[] desctags;
+	private String[] partnerdesctags;
+					 
 	
 	private List<PartnerNode> partners;
 
-	public String[] getSubcattags() {
+	public String[] getPartnertags() {
 		
-		return subcattags;
+		return partnertags;
 	}
 
-	public String[] getDesctags() {
-		return desctags;
+	public String[] getPartnerdesctags() {
+		return 	partnerdesctags;
 	}
 
 	private static final Logger LOG = LoggerFactory.getLogger(SubCatContentModel.class);
@@ -64,7 +66,7 @@ public class PartnersContentModel {
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			
 			String paths[] = {"/content/hdscorp/en_us/lookup/partners"};
-			String tags[] = subcattags ;
+			String tags[] = partnertags ;
 			String template= "/apps/hdscorp/templates/partnerdetail";
 			String type[] = {"cq:Page"};
 			boolean doPagination = false;
@@ -80,10 +82,21 @@ public class PartnersContentModel {
 				Page reourcePage = hit.getResource().adaptTo(Page.class);
 			    String pageTitle = reourcePage.getTitle();
 			    String pagePath = reourcePage.getPath();
-			    partnerNode.setPartnerDescription((String)reourcePage.getProperties().get("subtext"));
-			    partnerNode.setPartnerDescription((String)reourcePage.getProperties().get("subtext"));
+			    String[] partnerTags= (String[])reourcePage.getProperties().get("cq:tags");
 			    
-			    Resource descriptionListResource = reourcePage.getContentResource("productdescriptions") ;
+			    Resource parResource = reourcePage.getContentResource("par") ;
+			    Resource partnerMetaDeta = parResource.getChild("partnerdescriptionco") ;
+			    ValueMap partnerMetaDetaMap= partnerMetaDeta.adaptTo(ValueMap.class);
+			    partnerNode.setPartnerBackgroundImagePath((String)partnerMetaDetaMap.get("backgroundimagepath", ""));
+			    partnerNode.setPartnerIconImagePath((String)partnerMetaDetaMap.get("partnericonimagepath", ""));
+			    partnerNode.setPartnerIconImageAltText((String)partnerMetaDetaMap.get("partnericonimagealttext", ""));
+			    partnerNode.setPartnerTags(partnerTags);
+			    
+			    Resource descriptionListResource = null;
+			    if(partnerMetaDeta!=null){
+			    	descriptionListResource = partnerMetaDeta.getChild("productdescriptions") ;	
+			    }
+			    
 			    String[] partnerMultiDescriptionList = new String[0];
 			    ObjectMapper mapper = new ObjectMapper();
 			    if(descriptionListResource!=null){
@@ -91,13 +104,13 @@ public class PartnersContentModel {
 			    	if(descriptioNodeProps.containsKey("productDefaultDescription")) {
 			    		partnerNode.setPartnerDescription(descriptioNodeProps.get("productDefaultDescription").toString());
 			    	} 
-			    	if(desctags.length>0 && !desctags[0].isEmpty()) {
+			    	if(partnerdesctags.length>0 && !partnerdesctags[0].isEmpty()) {
 				    	partnerMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
 				    	
 					    for(String desc:partnerMultiDescriptionList){
 					    	PartnerDescription prodDescObj = mapper.readValue(desc, PartnerDescription.class);
 					    	
-					    	if(Arrays.asList(prodDescObj.getCategoryTag()).contains(desctags[0])) {
+					    	if(Arrays.asList(prodDescObj.getCategoryTag()).contains(partnerdesctags[0])) {
 					    		partnerNode.setPartnerDescription(prodDescObj.getDescription());
 					    		break;
 					    	}

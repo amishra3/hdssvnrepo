@@ -18,7 +18,7 @@ public class PartnerNode {
 	
 	private String partnerIconImageAltText;
 
-	private String[] productTags;
+	private String[] partnerTags;
 	
 	private ArrayList<PartnerDescription> descriptionList;
 
@@ -73,12 +73,12 @@ public class PartnerNode {
 		this.descriptionList = descriptionList;
 	}
 
-	public String[] getProductTags() {
-		return productTags;
+	public String[] getPartnerTags() {
+		return partnerTags;
 	}
 
-	public void setProductTags(String[] productTags) {
-		this.productTags = productTags;
+	public void setPartnerTags(String[] partnerTags) {
+		this.partnerTags = partnerTags;
 	}
 
 

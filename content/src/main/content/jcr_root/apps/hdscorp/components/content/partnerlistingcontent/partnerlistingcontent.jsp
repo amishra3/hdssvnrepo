@@ -1,13 +1,17 @@
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
-<%@page import="com.hdscorp.cms.util.PathResolver"%>
-<%@ page import="com.hdscorp.cms.slingmodels.PartnerGridModel"%>
-<%@page import="com.hdscorp.cms.search.SearchServiceHelper"%>
-<%@page import="com.day.cq.wcm.api.Page"%>
-<%@page import="com.day.cq.search.result.SearchResult"%>
-<%@page import="com.day.cq.search.result.Hit"%>
-<%@page import="java.util.List"%>
 
 
+<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.PartnersContentModel" var="partnersContentModel" />
 
-<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.PartnerGridModel" var="partnerGridModel" /> 
+<c:forEach var="partner" items="${partnersContentModel.partners}" varStatus="loopcnt">
+
+<h3>${partner.partnerTitle}</h3>
+<p>${partner.partnerDescription}</p>
+<p>${partner.partnerIconImageAltText}</p>
+<p>${partner.partnerBackgroundImagePath}</p>
+<p>${partner.partnerIconImagePath}</p>
+	<c:forEach items="${partner.partnerTags}" var="partnerTag">
+		<p>${partnerTag}</p>	
+	</c:forEach>
+</c:forEach> 
