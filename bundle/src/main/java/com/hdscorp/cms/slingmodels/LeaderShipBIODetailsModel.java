@@ -25,6 +25,13 @@ public class LeaderShipBIODetailsModel {
 	@Default(values = "Title")
 	private String lbdTitle;
 
+	
+	@Inject
+	@Named("jcr:lbdfallowname")
+	@Default(values = "follow name")
+	private String lbdfallowname;
+	
+	
 	@Inject
 	@Named("jcr:lbdjobtitle")
 	@Default(values = "Job Title")
@@ -144,6 +151,10 @@ public class LeaderShipBIODetailsModel {
 	}
 	
 	
+
+	public String getLbdfallowname() {
+		return lbdfallowname;
+	}
 
 
 }
