@@ -9,18 +9,22 @@
   background-size: cover;
 }
 
-.top-banner-heading{
-  font-weight:500;
-  font-family:'museo-sans', Helvetica, Arial, sans-serif;
-  font-size:2.2rem;
-  margin-top:0;
-  color: #ffffff;
-}
-
 .common-hero-banner .common-hero-banner-container {
   position: relative;
   margin: 0 auto;
   max-width: 1280px;
+}
+
+.common-hero-banner .common-hero-banner-container .video-play {
+  margin-bottom: 50px;
+}
+
+.common-hero-banner .common-hero-banner-container .top-banner-heading{
+  font-weight:500;
+  font-family:'museo-sans', Helvetica, Arial, sans-serif;
+  font-size:2.2rem;
+  margin:0;
+  color: #ffffff;
 }
 
 .common-hero-banner .common-hero-banner-container  h1,
@@ -171,9 +175,10 @@ width: 80%;
 }
 
 @media only screen and (max-width: 1024px) {
-.common-hero-banner .common-hero-banner-container {
-  margin-left: -15px;
-}
+	.common-hero-banner .common-hero-banner-container {
+	  margin-left: -15px;
+	  margin-right: -15px;
+	}
 }
 
 @media only screen and (min-width: 992px) {
@@ -185,13 +190,18 @@ display: block;
 @media only screen and (max-width: 992px) {
 .common-hero-banner {
 min-height: 0;
-padding-top: 130px;
-padding-bottom: 80px;
+padding-top: 120px;
+padding-bottom: 50px;
 background-position: top right;
 }
 .common-hero-banner .common-hero-banner-container {
 text-align: center;
 }
+.common-hero-banner .common-hero-banner-container .top-banner-heading{
+  font-size: 1.2rem;
+  text-align:left;
+}
+
 .common-hero-banner .common-hero-banner-container .headline {
 margin-top: 40px;
 }
@@ -229,17 +239,9 @@ margin-bottom: 10px;
 font-size: 1.5em;
 line-height: 1;
 }
-.top-banner-heading {
-font-size: 1.2rem;
-}
 }
 
 @media only screen and (max-width: 768px) {
-.common-hero-banner {
-padding-top: 210px;
-padding-bottom: 50px;
-}
-
 .common-hero-banner .common-hero-banner-container h3 {
 font-size: 1em;
 line-height: 1;
@@ -660,6 +662,14 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
+.common-hero-short-banner .top-banner-heading{
+  font-weight:500;
+  font-family:'museo-sans', Helvetica, Arial, sans-serif;
+  font-size:2.2rem;
+  margin:0;
+  color: #ffffff;
+}
+
 .common-hero-short-banner   h1,
 .common-hero-short-banner   h2,
 .common-hero-short-banner   h4,
@@ -718,30 +728,42 @@ font-weight: 500;
     transition: background-color 0.3s linear, color 0.3s linear;
 }
 
+@media only screen and (max-width: 1024px) {
+	.common-hero-short-banner  .content-container{
+		margin-left:-15px;
+		margin-right:-15px;
+	}
+}
+
 @media only screen and (max-width: 991px) {
-  .common-hero-short-banner {
-  min-height: 0;
-  padding-top: 130px;
-  padding-bottom: 80px;
-  background-position: top right;
-  }
-  .common-hero-short-banner  {
-  text-align: center;
-  }
-  .common-hero-short-banner  .headline {
-    margin-top: 50px;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    line-height: 1;
-  }
+	.common-hero-short-banner {
+		min-height: 0;
+		padding-top: 120px;
+		padding-bottom: 80px;
+		background-position: top right;
+		text-align: center;
+	}
+	.common-hero-short-banner  .content-container{
+		margin-left:-15px;
+		margin-right:-15px;
+	}
+	.common-hero-short-banner .top-banner-heading{
+		font-size: 1.2rem;
+		text-align:left;
+	}
+	.common-hero-short-banner  .headline {
+		margin-top: 50px;
+		margin-bottom: 10px;
+		font-size: 1.5em;
+		line-height: 1;
+	}  
 }
 
 @media only screen and (max-width: 768px) {
   .common-hero-short-banner {
-    padding-top: 210px;
+    padding-top: 120px;
     padding-bottom: 50px;
   }
-
   .common-hero-short-banner  h3 {
     font-size: 1em;
     line-height: 1;

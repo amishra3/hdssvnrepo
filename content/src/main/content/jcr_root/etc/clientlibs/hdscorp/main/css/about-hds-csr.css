@@ -156,6 +156,10 @@
   margin-top: 25px;
 }
 
+.hitachi-honor-box.no-border-container{
+	border-right:none;
+}
+
 /* About HDS CSR Hexagon */
 .behind-scene-hexagon.about-hds-csr-hexagon{
     background-image: url("../images/about-hds-csr-bg1.jpg");
@@ -184,7 +188,9 @@
   text-align: center;
   width: 100%;
   text-transform: uppercase;
+  display:block;
 }
+
 
 
 /* About HDS CSR Articles Section */
