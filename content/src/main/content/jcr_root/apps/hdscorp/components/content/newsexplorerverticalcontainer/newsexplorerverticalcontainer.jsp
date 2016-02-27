@@ -11,7 +11,6 @@
 							<c:forEach items="${nevcMultifield}" var="nevcMultiObject" varStatus="multiStatus">
 						<div class="col-sm-4">
 
-                           hhh ${nevcMultiObject.value}
                             <c:choose>
     <c:when test="${fn:substringAfter(nevcMultiObject.value, '$') == '1'}"> 
     <a href="${fn:substringBefore(nevcMultiObject.value, "$")}" target="_blank"><h2>${nevcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
