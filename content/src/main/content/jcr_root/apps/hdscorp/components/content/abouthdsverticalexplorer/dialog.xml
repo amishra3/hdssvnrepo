@@ -24,6 +24,12 @@
                         fieldLabel="Item Image Path"
                         name="./aheiconbimagepath"
                         xtype="pathfield"/>
+                    <aheiconbdeviceimagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Image Path"
+                        name="./deviceimagepath"
+                        xtype="pathfield"/>
                     <aheiconbimagelabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"

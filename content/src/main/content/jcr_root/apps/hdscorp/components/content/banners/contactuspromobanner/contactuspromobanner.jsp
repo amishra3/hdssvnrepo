@@ -38,9 +38,9 @@
                 </div>
 
   				<div class="buttons">
-  					<a href="${buttonUrl}" class="information btn-square -white hidden-sm hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
+  					<a href="${buttonUrl}" class="information btn-square -white hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
   					<a href="${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
-  					<a href="${buttonUrl}" class="information btn-square-white hidden-xs" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
+  					<a href="${buttonUrl}" class="information btn-square-white hidden-xs hidden-sm" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
   				</div>
   			</div>
   		</div>

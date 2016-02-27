@@ -13,9 +13,9 @@ request.setAttribute("bannerimage",bannerimage);
 <c:choose>
 	<c:when test="${not empty properties.abouthdsherobannertitle}">
 
-		 <div class="common-hero-short-banner about-hds clearfix" style="background: url('${requestScope.bannerimage}')">
+		 <div class="common-hero-short-banner about-hds clearfix" style="background-image: url('${requestScope.bannerimage}')">
 		     <div class="content-container">
-		         <div class="col-lg-7 col-md-7 col-xs-12">
+		         <div class="col-lg-6 col-md-6 col-xs-12">
 		             <h2 class="headline">${properties.abouthdsherobannertitle}</h2>
 		             <h4 class="sub-headline">${properties.abouthdsherobannercontent}</h4>
 		         </div>

@@ -13,17 +13,24 @@
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.AboutHDSVerticalExplorerModel" var="aboutHDSVerticalExplorerModel" />
 
- 					<div class="about-hds-events blog-left" style="background-image: url('${aboutHDSVerticalExplorerModel.backgroundImagePath}')">                             
-                                <div class="about-hds-events-content">                                                                        
-                                    <div class="date-stamp hidden-xs">
-                                        <img alt="${aboutHDSVerticalExplorerModel.iconImageLabel}" src="${aboutHDSVerticalExplorerModel.iconImagePath}">
-                                        <span>${aboutHDSVerticalExplorerModel.iconImageLabel}, ${aboutHDSVerticalExplorerModel.iconImageDate}</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="title">
-                                      ${aboutHDSVerticalExplorerModel.iconImageDesc}
-                                    </div>
-                                </div>
-                            </div>
+<div class="about-hds-events blog-left" style="background-image: url('${aboutHDSVerticalExplorerModel.backgroundImagePath}')">                             
+	<div class="hidden-sm hidden-md hidden-lg">
+		<img src="${aboutHDSVerticalExplorerModel.backgroundImagePath}" alt="" class="img-responsive">
+	</div>
 
+    <div class="about-hds-events-content"> 
+        <div class="date-stamp hidden-sm hidden-md hidden-lg">
+			<span><img src="${properties.deviceimagepath}" alt=""></span>
+			<span>${aboutHDSVerticalExplorerModel.iconImageLabel}, ${aboutHDSVerticalExplorerModel.iconImageDate}</span>
+		</div>
 
+        <div class="date-stamp hidden-xs">
+            <img alt="${aboutHDSVerticalExplorerModel.iconImageLabel}" src="${aboutHDSVerticalExplorerModel.iconImagePath}">
+            <span>${aboutHDSVerticalExplorerModel.iconImageLabel}, ${aboutHDSVerticalExplorerModel.iconImageDate}</span>
+        </div>
+        <div class="clearfix"></div>
+        <div class="title">
+            ${aboutHDSVerticalExplorerModel.iconImageDesc}
+        </div>
+    </div>
+</div>
