@@ -150,7 +150,7 @@
   position: relative;
 }
 
-.hero-product-solutions.server-rack .hero-product-solutions-container {
+.hero-product-solutions .hero-product-solutions-container {
   position: static;
   padding-left: 15px;
 }
