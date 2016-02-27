@@ -38,7 +38,7 @@ Leadership BIO details component
                             </div>
 
     						<div class="share-links mt_mb hidden-xs">
-    						      <strong>${currentStyle.lbdfollowlabel}</strong>
+    						      <strong>${currentStyle.lbdfollowlabel} ${leaderShipBIODetailsModel.lbdfallowname}</strong>
     							 <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
     							<a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
     							<a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
