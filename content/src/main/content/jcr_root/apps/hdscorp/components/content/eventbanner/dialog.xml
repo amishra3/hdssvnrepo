@@ -14,8 +14,10 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <eventbannertitle
                         jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
                         fieldLabel="Event Title"
                         name="./eventbannertitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var eventbannertitle = dialog.getField('./eventbannertitle')&#xa; var eventbannertitlevalue = eventbannertitle.getValue();&#xa; if($.trim(eventbannertitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <eventmaintitle
                         jcr:primaryType="cq:Widget"
@@ -37,17 +39,17 @@
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
                             xtype="cqinclude"/>
                     </eventbannercontent>
-                    <eventbannerimagePath
+                    <eventbannerimage
                         jcr:primaryType="cq:Widget"
                         allowUpload="false"
-                        cropParameter="./eventbannerimageCrop2"
+                        cropParameter="0"
                         ddGroups="[media]"
                         fieldLabel="Banner Image"
-                        fileNameParameter="./eventbannerimagefileName2"
-                        fileReferenceParameter="./eventbannerimagePath"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./eventbannerimage"
                         height="{Long}200"
-                        name="./eventbannerimagePath"
-                        rotateParameter="./eventbannerimageRotate2"
+                        name="./newsinsigthsbannerimage"
+                        rotateParameter="0"
                         sizeLimit="100"
                         title="Image"
                         width="{Long}200"

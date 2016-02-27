@@ -17,7 +17,7 @@
 
 <c:choose>
 	<c:when test="${not empty properties.eventbannertitle}">
-        <div class="common-hero-banner news-banner clearfix" style="background-image:url(${properties.eventbannerimagePath});">
+        <div class="common-hero-banner news-banner clearfix" style="background-image:url(${properties.eventbannerimage});">
                 <div class="common-hero-banner-container">
                     <div class="col-lg-12 col-md-12 col-xs-12 news-content-box" >
         				    <h2 class="top-banner-heading">${properties.eventbannertitle}</h2>
