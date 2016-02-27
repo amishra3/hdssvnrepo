@@ -27,10 +27,10 @@
                             <div class="share-this-page clearfix">
                                 <div class="heading">Share this page</div>
                                 <div class="share-links">
-                                    <a href="javascript:void(0);"><img src="images/sprites/twitter-pr-share.png" alt="" title=""></a>
-                                    <a href="javascript:void(0);"><img src="images/sprites/facebook-pr-share.png" alt="" title=""></a>
-                                    <a href="javascript:void(0);"><img src="images/sprites/linkedin-pr-share.png" alt="" title=""></a>
-                                    <a href="javascript:void(0);"><img src="images/sprites/blog-pr-share.png" alt="" title=""></a>
+                                    <a href="javascript:void(0);"><img src="/etc/clientlibs/hdscorp/main/images/sprites/twitter-pr-share.png" alt="twitter" title="twitter"></a>
+                                    <a href="javascript:void(0);"><img src="/etc/clientlibs/hdscorp/main/images/sprites/facebook-pr-share.png" alt="facebook" title="facebook"></a>
+                                    <a href="javascript:void(0);"><img src="/etc/clientlibs/hdscorp/main/images/sprites/linkedin-pr-share.png" alt="linkedin" title="linkedin"></a>
+                                    <a href="javascript:void(0);"><img src="/etc/clientlibs/hdscorp/main/images/sprites/blog-pr-share.png" alt="blog" title="blog"></a>
                                 </div>
                             </div>
                             <div class="press-contact">
