@@ -36,7 +36,7 @@ pageContext.setAttribute("listMaps", listMaps);
                                 <h3>${listm.title}</h3>
                                 <small>${listm.duration}</small>
                                 <h4 class="author">${listm.author}</h4>
-                                <p>${listm.summary}</p>
+                                <p>${listm.summary}<br><br><small>Recorded ${listm.updatedDate}</small></p>
                                 <div class="WebcastDetails">
                                    
                                     <c:choose>
