@@ -32,7 +32,7 @@
 			if (parentPageHandle != null) {
 				breadcrumbContent.append(" > ");
 				parentPath = PathResolver.getShortURLPath(parentPageHandle.getPath());
-				breadcrumbContent.append("<a href='" + parentPath + "'>"+ parentPageHandle.getTitle() + "</a>");
+				breadcrumbContent.append("<a class='breadcrumblink' href='" + parentPath + "'>"+ parentPageHandle.getTitle() + "</a>");
 			}
 		}
 	%>

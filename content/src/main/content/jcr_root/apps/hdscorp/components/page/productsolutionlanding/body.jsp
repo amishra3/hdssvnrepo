@@ -19,4 +19,5 @@ if(pageTemplatePath!=null){
 		<cq:include script="content.jsp" />
 		<cq:include script="footer.jsp" />
 	</div>
+	<script type="text/javascript">_satellite.pageBottom();</script>
 </body>

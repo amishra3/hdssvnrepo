@@ -20,4 +20,5 @@ if(pageTemplatePath!=null){
 		<cq:include script="footer.jsp" />
 	</div>
 	<!-- <cq:includeClientLib js="hdscorp.main" /> -->
+	<script type="text/javascript">_satellite.pageBottom();</script>
 </body>
