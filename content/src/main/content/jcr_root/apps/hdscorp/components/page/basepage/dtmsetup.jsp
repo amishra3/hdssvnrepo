@@ -7,7 +7,7 @@
 <% 
 	String pageTemplate = (String)currentPage.getProperties().get("cq:template", "");
 	String pageType = "";
-// 	System.out.println(pageTemplate);
+//  	System.out.println(pageTemplate);
 	if(pageTemplate!=null){
 		pageType=pageTemplate.substring(pageTemplate.lastIndexOf("/")+1);
 	}
