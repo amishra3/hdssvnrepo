@@ -34,4 +34,5 @@ about-hds-career.css
 bootstrap-select.css
 service-training.css
 partner-program.css
+industry-solutions.css
 app.css

@@ -42,4 +42,12 @@ public class ELTagHelper {
     	}
     	return mobileImageURL;
     }
+    
+    public static String removeDoubleQuotes(String inputString){
+    	String returnString = inputString.replaceAll("\"", "");
+    	returnString = inputString.replaceAll("&#34;", "");
+    	
+    	return returnString;
+    }
+
 }

@@ -21,5 +21,10 @@
         <function-class>com.hdscorp.cms.tag.ELTagHelper</function-class>
         <function-signature>java.lang.String imgAtrr(java.lang.String, java.lang.String)</function-signature>
     </function>
+    <function>
+        <name>removeDoubleQuotes</name>
+        <function-class>com.hdscorp.cms.tag.ELTagHelper</function-class>
+        <function-signature>java.lang.String removeDoubleQuotes(java.lang.String)</function-signature>
+    </function>
     
 </taglib>
