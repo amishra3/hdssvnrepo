@@ -476,7 +476,8 @@ public class SearchServiceHelper {
 			searchParams.put("orderby", ORDER_BY_PROPERTY);
 		}
 		if (orderBySort != null && !orderBySort.isEmpty()) {
-			searchParams.put("orderby.sort", ORDER_BY_SORT);
+// Not needed as by default sort would be ascending			
+//			searchParams.put("orderby.sort", ORDER_BY_SORT);
 		} else {
 			searchParams.put("orderby.sort", "desc");
 		}

@@ -71,7 +71,7 @@ public class PartnersContentModel {
 			String type[] = {"cq:Page"};
 			boolean doPagination = false;
 			
-			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,null,null);
+			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,"@jcr:content/jcr:title","asc");
 			
 			LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
 			List<Hit> hits = result.getHits();
