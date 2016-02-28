@@ -25,6 +25,7 @@ digitalData.site = {
 	}
 }
 
+var primaryCat="";
 
 function getCurrentBreadcrumb() {
 	var hierarchy = "home:";
