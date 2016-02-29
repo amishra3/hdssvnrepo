@@ -46,26 +46,33 @@ public class ResourceLibrarySearchModel  {
 	@Default(values = { "" })
 	private String resourcesPath;
 	
-	
+	private String[] selectorTags;
 
 	
 	
 	
+	public String[] getSelectorTags() {
+		return selectorTags;
+	}
+
 	private boolean noTags;
 	
 	public boolean isNoTags() {
 		String[] selectorArray = request.getRequestPathInfo().getSelectors();
 		if(selectorArray==null || selectorArray.length==0){
+			
 			return true;
 		}else{
+			String viewtype = selectorArray[0];
+			viewtype = viewtype.replaceAll("\\|", "/").replaceAll("[\\[\\](){}]","");
+			this.selectorTags = viewtype.split(",");
+			
 			return false;
 		}
 		
 	}
 
-	public void setNoTags(boolean noTags) {
-		this.noTags = noTags;
-	}
+	
 	
 	private static final Logger LOG = LoggerFactory.getLogger(ResourceLibrarySearchModel.class);
 
@@ -84,6 +91,7 @@ public class ResourceLibrarySearchModel  {
 			viewtype = selectorArray[0];
 			viewtype = viewtype.replaceAll("\\|", "/").replaceAll("[\\[\\](){}]","");
 			tags = viewtype.split(",");
+			
 		}else{
 			tags = null;
 		}
