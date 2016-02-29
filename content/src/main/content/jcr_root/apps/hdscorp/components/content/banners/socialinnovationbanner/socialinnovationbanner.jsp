@@ -17,16 +17,18 @@
 
 <c:choose>
 	<c:when test="${not empty properties.socialinnovationbannertitle}">
-                <div class="hero-social-innovation server-rack clearfix" style="background-image:url('${properties.socialinnovationbannerimagePath}');">
-                <div class="hero-social-innovation-container">
-                    <div class="col-lg-7 col-md-7 col-xs-12 col-no-pad">
+                <div class="common-hero-banner server-rack clearfix" style="background-image:url('${properties.socialinnovationbannerimagePath}');">
+                <div class="common-hero-banner-container">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
                         <h2 class="headline">${properties.socialinnovationbannertitle}</h2>
                         <h3>${properties.socialinnovationbannersubtitle}</h3>
                         <h4 class="sub-headline">${properties.socialinnovationbannercontent}</h4>
-						
-                        <div class="video-play hidden-lg">
+
+                        <c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
+                        <div class="video-play hidden-lg hidden-md">
                             <a href="#" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
                         </div>
+                            </c:if> 
 
                         <c:if test="${not empty properties.socialinnovationbannerbuttonlabel}">
                         <div class="btn-square-white request btn-play-video">
@@ -35,21 +37,21 @@
 						</c:if> 
                     </div>
 
-
-                    <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm">
+					<c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
+                    <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm video-section">
                         <div class="video-play-desktop">
                             <a href="#" class="btn-play-video">
                                 <img src="${properties.socialinnovationbannericonpath}">                               
                             </a>
                         </div>
                     </div>
-                    
+                    </c:if> 
                 </div>
             </div>
 
                 <c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
-			    <div class="hero-social-innovation video clearfix">
-                <div class="hero-social-innovation-container">
+			    <div class="common-hero-banner video clearfix" style="background-image:url('${properties.socialinnovationbannerimagePath}');">
+                <div class="common-hero-banner-container">
                     <a href="#" class="close-hero"><span class="sprite icon-close-hero"></span></a>
                      ${properties.socialinnovationbannervideoembedcode}
                 </div>

@@ -12,12 +12,12 @@
 		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl-openinnewwindow")%>" />
 
 		<div class="advance-tech-hexagon clearfix">
-			<div class="content-container">
+			<div class="content-container clearfix">
             	<h2>${properties.hexagonbannertitle}</h2>
 				<p class="col-sm-10 col-sm-offset-1">${properties.hexagonbannerdescription}</p>
             </div>
             
-            <div class="advance-tech-hexagon-list">
+            <div class="advance-tech-hexagon-list clearfix">
             	<div class="content-container">
                 	<div class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
 
