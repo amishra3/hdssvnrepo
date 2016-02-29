@@ -1,21 +1,3 @@
-/* Hero Social Innovation CSS*/
-.common-hero-short-banner.about-hds{
-  background-image: url("../images/about-hds-hero-bg.jpg");
-}
-
-
-@media only screen and (max-width: 1280px) {
-  .common-hero-short-banner.about-hds .content-container{
-    margin-left: -15px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .common-hero-short-banner.about-hds{
-    background-position:top left;
-  }
-}
-
 /* About HDS - Behind the Scene - Pentagon Section CSS*/
 .behind-scene-hexagon{
   position: relative;

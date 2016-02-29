@@ -74,6 +74,12 @@
   .about-hds-leaders {
     padding-bottom: 30px;
   }
+  .leaders-info-panel h2.leaders-name {
+    font-size: 1rem;
+  }
+  .leaders-info-panel p{
+    font-size:  0.875rem;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -94,16 +100,10 @@
     padding: 18px 15px 10px;
     min-height: 85px;
   }
-  .leaders-info-panel h2.leaders-name {
-    font-size: 1rem;
-  }
   .leaders-info-panel .view-bio{
     font-size: 0.6875rem;
     font-weight: 600;
   }
-  .leaders-info-panel p{
-    font-size:  0.875rem;
-  } 
 }
 
 @media only screen and (max-width: 480px) {
