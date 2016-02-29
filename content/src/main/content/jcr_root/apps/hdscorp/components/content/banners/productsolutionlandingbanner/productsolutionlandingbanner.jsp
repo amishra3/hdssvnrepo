@@ -16,9 +16,9 @@
 
 <c:choose>
 	<c:when test="${not empty properties.simplebannertitle}">
-		<div class="product-hero-banner server-rack clearfix" style="background-image: url('${properties.simplebannermagePath}');">
-          <div class="product-hero-container">
-              <div class="col-lg-8 col-md-12 col-xs-12 overRideleft">
+		<div class="common-hero-short-banner server-rack clearfix" style="background-image: url('${properties.simplebannermagePath}');">
+          <div class="content-container">
+              <div class="col-lg-6 col-md-6 col-xs-12">
                   <h2 class="headline">${properties.simplebannertitle}</h2>
                   <p class="sub-text">${properties.simplebannersubtitle}</p>
                   <div class="btn-square-white request">
