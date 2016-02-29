@@ -11,7 +11,8 @@
 			$heroHomepage.siblings('.list-content-container').hide();
 		})
 
-		$generalList.click(function(){
+		$generalList.click(function(event){
+			event.preventDefault();
 			var tabClass = $(this).attr('data-class');
 			var tabHtml = $(this).next('.hiddencontent').html();
 			$heroHomepage.siblings('.list-content-container').addClass(tabClass).append(tabHtml).fadeIn(1000);

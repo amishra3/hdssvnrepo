@@ -56,7 +56,7 @@
     		</div>
     	</div> 
 
-<!--         <div class="hero-homepage list-content-container"></div> -->
+         <div class="hero-homepage list-content-container"></div> 
     	
 	</c:when>
 	<c:otherwise>
