@@ -39,8 +39,12 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 	 */
     phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
 	//})( jQuery, ResponsiveBootstrapToolkit );
+
 })(jQuery);
 
+/**
+* Modal Box
+*/
 $(document).ready(function () {
     $('a[rel=modal]').on('click', function(evt) {
         evt.preventDefault();
@@ -55,3 +59,16 @@ $(document).ready(function () {
         });
     });
 });
+
+
+/**
+* Equal Column Height
+*/
+function equalColumns(htmlElements){
+    $(htmlElements).removeAttr('style');
+    var heights = $(htmlElements).map(function() {
+        return $(this).height();
+    }).get(),
+        maxHeight = Math.max.apply(null, heights);
+    $(htmlElements).height(maxHeight);
+}

@@ -2,7 +2,7 @@ $(function() {
 	/**
 	 * Functionality for hero banner area
 	 */
-	var $heroProducts = $('.hero-social-innovation');
+	var $heroProducts = $('.common-hero-banner');
 	if ($heroProducts.length) {
 		$('.close-hero').click(function() {
 			$heroProducts.siblings('.server-rack').show();
@@ -19,4 +19,18 @@ $(function() {
 		$('body').addClass('mac-os');
 	}
 
+    /* SI Today Equal Boxes */
+    window.addEventListener("resize", function() {
+        setTimeout(function(){
+			equalColumns('.si-comm-box-content .description');
+        }, 500);
+	}, false);
+
+    setTimeout(function(){
+    	equalColumns('.si-comm-box-content .description');
+    }, 500);
+
 });
+
+
+
