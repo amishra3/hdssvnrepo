@@ -21,8 +21,7 @@
                                 <div class="description">${model.featuredawarddesc}</div>
                             </div>
                         </div>
-
-                                          
+                                         
                     </div>
                     <div class="col-md-6">
                         <div class="company-list">

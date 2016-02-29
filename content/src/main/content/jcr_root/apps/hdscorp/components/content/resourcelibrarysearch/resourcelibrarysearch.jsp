@@ -10,9 +10,23 @@
 
 
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.ResourceLibrarySearchModel" var="model" />
+<c:if test="${!model.noTags}">
+<c:set var="featuredoverlaypath" value="${properties.featuredoverlaypath}"/>
+<c:if test="${empty featuredoverlaypath}">
+                    		<c:set var="featuredoverlaypath" value="/content/hdscorp/en_us/lookup/featuredcontent" />
+                    	</c:if>
+<c:forEach items="${model.selectorTags}" var="tags" varStatus="status">
+				<c:set var="featuredTargetURL" value="${featuredoverlaypath}.${fn:replace(tags, '/', '|')}.html"/>
+				<c:set var="featuredTargetURL" value="${fn:replace(featuredTargetURL, '\"', '')}"/>
+                 <sling:include path="${featuredTargetURL}" />				
+</c:forEach>
 
+
+</c:if>
 
 <c:forEach var="resource" items="${model.resouceList}" varStatus="loopcnt">
+
+
 
 <div class="category-resources-listing">
                     <div class="section prodnsolcategorycontent">
