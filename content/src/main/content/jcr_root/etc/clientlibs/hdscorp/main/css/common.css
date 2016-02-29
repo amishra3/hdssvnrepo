@@ -20,6 +20,11 @@
 	text-align:left;
 }
 
+.hds-global-header .breadcrumb-container .breadcrumb.black,
+.hds-global-header .breadcrumb-container .breadcrumb.black a {
+    color: #414141 ;
+}
+
 .hds-global-header .breadcrumb-container .breadcrumb a {
     margin: 0 10px;
     color: #ffffff;
@@ -29,10 +34,6 @@
 
 .hds-global-header .breadcrumb-container .breadcrumb a:first-child {
     margin-left: 0;
-}
-
-.hds-global-header .breadcrumb-container .breadcrumb.black, .header .breadcrumb-container .breadcrumb.black a{
-    color: #414141;
 }
 
 @media only screen and (max-width: 992px) {
