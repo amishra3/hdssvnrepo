@@ -13,10 +13,10 @@
 
                             <c:choose>
     <c:when test="${fn:substringAfter(nevcMultiObject.value, '$') == '1'}"> 
-    <a href="${fn:substringBefore(nevcMultiObject.value, "$")}" target="_blank"><h2>${nevcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></h2></a>
+    <h2><a href="${fn:substringBefore(nevcMultiObject.value, "$")}" target="_blank">${nevcMultiObject.key} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></h2>
     </c:when>
         <c:otherwise>
-<a href="${fn:substringBefore(nevcMultiObject.value, "$")}"><h2>${nevcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></h2></a>
+	<h2><a href="${fn:substringBefore(nevcMultiObject.value, "$")}" class="animateLink">${nevcMultiObject.key} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h2>
         </c:otherwise>
     </c:choose>
 
