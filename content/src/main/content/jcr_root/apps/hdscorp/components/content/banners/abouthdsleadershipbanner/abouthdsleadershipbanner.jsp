@@ -16,7 +16,7 @@ request.setAttribute("bannerimage",bannerimage);
 	<c:when test="${not empty properties.abouthdsleadershipbannerheading}">
 	    <div class="common-hero-banner about-leader-banner server-rack clearfix" style="background-image:url('${requestScope.bannerimage}');">
                 <div class="common-hero-banner-container">
-                    <div class="col-lg-6 col-md-6 col-xs-12 overRideleft">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
                         <h2 class="top-banner-heading">${properties.abouthdsleadershipbannerheading}</h2>
                         <h1 class="headline">${properties.abouthdsleadershipbannerheadline}</h1>
                         <h4 class="sub-headline">${properties.abouthdsleadershipbannersubheadline}</h4>    

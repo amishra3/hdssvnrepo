@@ -44,16 +44,15 @@
                     </simplebannercontent>
                     <simplebannermagePath
                         jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
                         allowUpload="false"
-                        cropParameter="./simplebannermageimageCrop2"
+                        cropParameter="0"
                         ddGroups="[media]"
                         fieldLabel="Banner Image"
-                        fileNameParameter="./simplebannermagefileName2"
+                        fileNameParameter="./imagePath3/fileName2"
                         fileReferenceParameter="./simplebannermagePath"
                         height="{Long}200"
-                        name="./simplebannermagePath"
-                        rotateParameter="./simplebannermageimageRotate2"
+                        name="./simplebannermage"
+                        rotateParameter="0"
                         sizeLimit="100"
                         title="Image"
                         width="{Long}200"
@@ -79,7 +78,7 @@
                         fieldLabel="Align Content on Right?"
                         name="./contentalign"
                         type="checkbox"
-                        xtype="selection"/>                        
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
