@@ -53,7 +53,7 @@
                         xtype="pathfield"/>
                     <thirdparty
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Show third party icon?"
+                        fieldLabel="Open in New Window?"
                         name="./thirdparty"
                         type="checkbox"
                         xtype="selection"/>
