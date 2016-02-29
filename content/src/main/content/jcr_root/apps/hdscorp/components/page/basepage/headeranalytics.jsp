@@ -5,7 +5,7 @@
 
 <% 
 Set<String> runModes = sling.getService(SlingSettingsService.class).getRunModes();
-if(runModes.contains("prod")){
+if(runModes.contains("prod") && !runModes.contains("author")){
 	//Include PROD satellite code
 %>
 	<script
