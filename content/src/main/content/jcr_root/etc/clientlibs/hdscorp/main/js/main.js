@@ -40,6 +40,13 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
     phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
 	//})( jQuery, ResponsiveBootstrapToolkit );
 
+    /**
+	 * Black Color Breadcrumb
+	 */
+    if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions").length > 0){
+        $('.breadcrumb-container .breadcrumb').addClass('black');
+    }
+
 })(jQuery);
 
 /**
