@@ -14,6 +14,8 @@
 <c:set var="selectorString" value="${slingRequest.requestPathInfo.selectors[0]}"/>
 
 
+
+
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.PressReleasesContainerModel" var="model" />
 
 <div class="pr-list">       
@@ -56,10 +58,15 @@
                           </ul>
                     </div>
                     <!-- Press Release List Content to Loaded here -->
+
                     <div id="contentCatagory">
                         <c:if test="${not empty includetargetURL}">
 							<sling:include path="${includetargetURL}"/>
+                            	
 						</c:if>
+
+
+
                     </div>
                 </div>
             </div>
