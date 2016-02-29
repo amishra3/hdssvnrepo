@@ -210,6 +210,10 @@
 	margin-top: 60px;
 }
 
+.hero-homepage.list-content-container{
+	display:none;
+}
+
 @media only screen and (min-width: 768px) {
 
 	.pr-list-container{
