@@ -14,7 +14,9 @@
     <div class="managed-cloud-services background-img services-det-bg1 clearfix" style="background-image:url('${properties.quotebackgroundimage}');">
     <div class="managed-cloud-services-container">
         <h2 class="headline">${properties.quoteheadline}</h2>
-        <p>${properties.quotecontent}</p> 
+       <p> <span class="sprite icon-quote open-quote"></span>${properties.quotecontent}<span
+				class="sprite icon-quote close-quote"></span></p>
+
     </div>
     </div>
 

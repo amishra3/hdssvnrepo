@@ -22,7 +22,7 @@
 			<div class="common-hero-banner-container ${properties.abouthdsbannercontentalign?'floatright':''}">
 
 
-               		 <div class="col-lg-6 col-md-6 col-xs-12 overRideleft">
+               		 <div class="col-lg-6 col-md-6 col-xs-12">
 
                     <h1 class="headline">${properties.abouthdsherobannertitle}</h1>
                     <h3>${properties.abouthdsbannersubtitle}</h3>
