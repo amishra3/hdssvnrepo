@@ -14,7 +14,7 @@
 <br><br>Award Img ::${properties.awardimg}
 <br><br>Award Description ::${properties.awarddescription}
 <br><br>Award Date ::${properties.awarddate.time}
-<br><br>Open In New Window:::${properties.awardlinktargettype}
+<br><br>Open In New Window:::${properties.linktargettype}
 
 
 

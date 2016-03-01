@@ -49,11 +49,11 @@
                         name="./awarddate"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./awarddate')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="datetime"/>
-                    <awardlinktargettype
+                    <linktargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window"
-                        key="awardlinktargettype"
-                        name="./awardlinktargettype"
+                        key="linktargettype"
+                        name="./linktargettype"
                         type="checkbox"
                         width="300"
                         xtype="selection"/>
