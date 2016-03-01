@@ -11,7 +11,7 @@ $(function() {
 
 		$('.btn-play-video').click(function() {
 			$heroProducts.siblings('.video').show();
-			$heroProducts.siblings('.overview, .server-rack').hide();
+			$heroProducts.siblings('.overview, .server-rack').hide()
 		});
 	}
 
@@ -23,11 +23,13 @@ $(function() {
     window.addEventListener("resize", function() {
         setTimeout(function(){
 			equalColumns('.si-comm-box-content .description');
+            equalColumns('.advance-tech-hexagon .hexagon-content p');
         }, 500);
 	}, false);
 
     setTimeout(function(){
     	equalColumns('.si-comm-box-content .description');
+        equalColumns('.hexagon-content p');
     }, 500);
 
 });

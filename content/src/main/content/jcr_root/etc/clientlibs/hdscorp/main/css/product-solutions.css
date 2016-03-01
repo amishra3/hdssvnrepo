@@ -406,6 +406,7 @@ ul.stickyNav li:hover a{
   .specific-quote cite{
     text-align: center;
     line-height: 1.2em;
+    margin-right: 0;
   }
   .specific-quote p .icon-quote.open-quote{
     margin-left: 0;

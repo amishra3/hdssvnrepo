@@ -191,6 +191,11 @@
   display:block;
 }
 
+@media only screen and (max-width: 767px) {
+ .resources-section .acs-commons-resp-colctrl-col:last-child .resources-category:after {
+        background:transparent;
+    }
+}
 
 
 /* About HDS CSR Articles Section */
