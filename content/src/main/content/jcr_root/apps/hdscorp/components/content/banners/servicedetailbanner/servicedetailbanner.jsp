@@ -23,6 +23,13 @@ request.setAttribute("bannerimage",bannerimage);
                   <h1 class="headline">${properties.servicedetailbannerheadline}</h1>
 		          <h3>${properties.servicedetailbannersubheadline}</h3>
                   <h4 class="sub-headline">${properties.servicedetailbannercontent}</h4>
+                   <c:if test="${not empty properties.servicedetaibuttonlabel}">
+						<div class="btn-square-white request">
+							<a href="${properties.servicedetaibuttonurl}"
+								target="${properties.servicedetaitargettype?'_blank':'_self'}">
+								${properties.servicedetaibuttonlabel} </a>
+						</div>
+					</c:if>
                </div>
            </div>
        </div>

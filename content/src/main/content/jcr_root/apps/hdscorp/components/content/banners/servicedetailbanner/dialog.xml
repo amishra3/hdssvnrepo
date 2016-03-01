@@ -46,6 +46,22 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <servicedetaibuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./servicedetaibuttonlabel"
+                        xtype="textfield"/>
+                    <simplebannerbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./servicedetaibuttonurl"
+                        xtype="pathfield"/>
+                    <servicedetaitargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./servicedetaitargettype"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
