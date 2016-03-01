@@ -35,7 +35,7 @@
 			<div class="col-sm-6 content-panel">
 				<strong>${pressRelease.newsDate}</strong>
 				<p>${title}</p>
-				<a class="animateLink" href="${pressRelease.newsDetailPath}">${model.readMoreLabel}
+				<a class="animateLink" href="${pressRelease.newsDetailPath}" target="${pressRelease.openInNewTab?'_blank':'_self'}">${model.readMoreLabel}
 					<span class="glyphicon glyphicon-menu-right animateIcon"
 					aria-hidden="true"></span>
 				</a>

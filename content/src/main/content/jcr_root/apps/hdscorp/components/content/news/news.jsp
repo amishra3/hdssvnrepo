@@ -30,7 +30,7 @@
                     <div class="col-sm-6 content-panel">
                         <strong>${news.newsDate}</strong>
                         <p>${title}</p>
-                        <a class="animateLink" href="${news.newsDetailPath}">${model.readMoreLabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                        <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreLabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
                     </div>
                     </c:forEach>
                    <div class="clearfix"></div>

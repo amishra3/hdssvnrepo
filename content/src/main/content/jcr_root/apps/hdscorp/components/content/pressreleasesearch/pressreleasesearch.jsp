@@ -33,7 +33,7 @@
         </c:if>
 				<div class="pr-date">${news.newsDate}</div>
 				<h3>${news.newsTitle}</h3>
-				<a href="${news.newsDetailPath}" class="animateLink">${model.readMoreText}<span
+				<a href="${news.newsDetailPath}" class="animateLink" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreText}<span
 					aria-hidden="true"
 					class="glyphicon glyphicon-menu-right animateIcon"></span>
 				</a>

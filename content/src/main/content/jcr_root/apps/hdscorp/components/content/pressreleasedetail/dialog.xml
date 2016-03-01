@@ -40,7 +40,14 @@
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./pressreleasedesc')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="richtext"/>
                     
-                  
+                  <linktargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window"
+                        key="linktargettype"
+                        name="./linktargettype"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
                     
                 </items>
             </pressrelease>

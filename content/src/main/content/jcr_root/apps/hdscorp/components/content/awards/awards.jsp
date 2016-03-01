@@ -31,7 +31,7 @@
                                 <div class="name">${award.newsTitle}</div>
                                 <div class="description">${award.description}</div>
                                 <div class="read-more">
-                                    <a class="animateLink" href="${award.newsDetailPath}">${model.readmorelabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+                                    <a class="animateLink" href="${award.newsDetailPath}" target="${award.openInNewTab?'_blank':'_self'}">${model.readmorelabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
                                 </div>
                             </div>
                             </c:forEach>
