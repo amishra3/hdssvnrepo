@@ -13,4 +13,5 @@ if(pageTemplatePath!=null){
 		<cq:include script="content.jsp" />
 		<cq:include script="footer.jsp" />
 	</div>
+	   <cq:include script="footeranalytics.jsp" />
 </body>
