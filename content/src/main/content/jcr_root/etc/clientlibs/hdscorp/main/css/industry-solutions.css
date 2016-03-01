@@ -265,22 +265,7 @@
 	 border-radius:0;
 	 -webkit-border-radius:0;
 	 -moz-border-radius:0;
-	}
-	.icon-quote {background:url(../images/mb-quotes.png) no-repeat;}
-	.specific-quote p .icon-quote.close-quote {
-    top: 6px;
-	}
-	.specific-quote p{
-	font-size: 15px;
-    line-height: 18px;
-	}
-	.specific-quote p .icon-quote.open-quote {
-    left: 8px;
-    top: -3px;
-	}
-	.specific-quote p .icon-quote.close-quote {
-    margin-left: 4px;
-	}
+	}	
 	.solution-offer .fb-container .fb-category-container::after {
     margin: 0 auto 20px;
 	}
