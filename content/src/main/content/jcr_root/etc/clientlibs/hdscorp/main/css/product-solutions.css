@@ -353,7 +353,7 @@ ul.stickyNav li:hover a{
 .specific-quote p {
   position: relative;
   display: block;
-  width: 64%;
+  width: 70%;
   margin: 25px auto;
   font-family: 'Myriad Pro', arial, sans-serif;
   font-size: 1.5em;
@@ -368,7 +368,7 @@ ul.stickyNav li:hover a{
 }
 
 .specific-quote p .icon-quote.open-quote {
-  top: -13px;
+  top: -5px;
   left: 0;
   margin-left: -22px;
 }
