@@ -3,7 +3,7 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 <c:set var="leadershipList"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"leiconimage-leiconimagelabel-lesctionimagealttext-leicondate-lecontent-lereadmorelabel-lereadmorelabellink-leopeninnewwindow")%>" />
+	value="<%=PageUtils.convertMultiWidgetToList(properties,"leiconimage-leiconimagelabel-lesctionimagealttext-leicondate-lecontent-lereadmorelabel-lereadmorelabellink-leopeninnewwindow-leiconimagealt")%>" />
 
 
 
@@ -42,7 +42,7 @@
 				<div class="col-sm-4">
 					<div class="pr-common-box">
 						<div class="icon">
-							<img src="${leadershipList.leiconimage}" alt="${properties.lesctionimagealttext}" title="${properties.lesctionimagealttext}">
+							<img src="${leadershipList.leiconimage}" alt="${leadershipList.leiconimagealt}" title="${leadershipList.leiconimagealt}">
 						</div>
 
 						<div class="type">${leadershipList.leiconimagelabel},

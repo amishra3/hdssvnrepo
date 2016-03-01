@@ -60,6 +60,14 @@
                                 key="leiconimage"
                                 name="./leiconimage"
                                 xtype="pathfield"/>
+                            <leiconimagealt
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="leiconimagealt"
+                                fieldLabel="Icon Alt Text"
+                                key="leiconimagealt"
+                                name="./leiconimagealt"
+                                xtype="textfield"/>
                             <leiconimagelabel
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"
