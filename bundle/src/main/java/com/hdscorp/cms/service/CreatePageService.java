@@ -38,9 +38,12 @@ public class CreatePageService {
 			Page page = null;
 			String pageTitle = pressReleaseModel.getTitle();
 			
-		 
+		 if(type.equalsIgnoreCase("pressRelease")){
 			pageName = pressReleaseModel.getLink().substring(pressReleaseModel.getLink().lastIndexOf('/'), pressReleaseModel.getLink().lastIndexOf('.')); ;
-			
+		 } else{
+			 pageName= pressReleaseModel.getTitle();
+		 }
+		 
 			pageName = pageName.replaceAll("[^-a-zA-Z0-9 ]+", "");
 			pageName = pageName.toLowerCase().replaceAll("\\s+", "-");
 			page = createPath(pagePath, session, template, pageName, pageTitle);
@@ -69,6 +72,7 @@ public class CreatePageService {
 					"hdscorp/components/content/pressreleasedetail");
 			pressRelease.setProperty("pressreleasedesc",
 				getPressReleaseDesc(pressReleaseModel.getLink()));
+			
 			}else {
 				Node newsDetail = jcrContent.addNode("newsdetail",
 						"nt:unstructured");
@@ -88,6 +92,7 @@ public class CreatePageService {
 				//pressRelease.setProperty("pressreleasedate", pubDate);
 				newsDetail.setProperty("sling:resourceType",
 						"hdscorp/components/content/newsdetail");
+				newsDetail.setProperty("linktargettype", true);
 				
 			}
 

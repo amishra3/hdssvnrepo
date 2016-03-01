@@ -6,6 +6,15 @@ public class NewsNode {
     private String imgpath;
 	private String newsDetailPath;
 	private String description;
+	private boolean openInNewTab;
+
+	public boolean isOpenInNewTab() {
+		return openInNewTab;
+	}
+
+	public void setOpenInNewTab(boolean openInNewTab) {
+		this.openInNewTab = openInNewTab;
+	}
 
 	public String getDescription() {
 		return description;

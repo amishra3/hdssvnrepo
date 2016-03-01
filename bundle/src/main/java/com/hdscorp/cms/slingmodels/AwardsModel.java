@@ -161,6 +161,11 @@ public class AwardsModel {
 				
 				awardNode.setNewsDetailPath(properties.get("awardlink",
 						(String) null).toString());
+				if(properties.containsKey("linktargettype")){
+					awardNode.setOpenInNewTab(true);
+				} else {
+					awardNode.setOpenInNewTab(false);
+				}
 				awardsList.add(awardNode);
 			}
 

@@ -130,6 +130,11 @@ public class PressReleasesSearchModel {
 							"MMMM d, yyyy"));
 					Page reourcePage = hit.getResource().adaptTo(Page.class);
 					newsNode.setNewsDetailPath(PathResolver.getShortURLPath(reourcePage.getPath()));
+					if(properties.containsKey("linktargettype")){
+						newsNode.setOpenInNewTab(true);
+					} else {
+						newsNode.setOpenInNewTab(false);
+					}
 					newsList.add(newsNode);
 				}
 
@@ -167,6 +172,11 @@ public class PressReleasesSearchModel {
 						
 						newsNode.setNewsDetailPath(properties.get("newslink",
 								(String) null).toString());
+						if(properties.containsKey("linktargettype")){
+							newsNode.setOpenInNewTab(true);
+						} else {
+							newsNode.setOpenInNewTab(false);
+						}
 						newsList.add(newsNode);
 					}
 
@@ -206,6 +216,11 @@ public class PressReleasesSearchModel {
 						
 						newsNode.setNewsDetailPath(properties.get("awardlink",
 								(String) null).toString());
+						if(properties.containsKey("linktargettype")){
+							newsNode.setOpenInNewTab(true);
+						} else {
+							newsNode.setOpenInNewTab(false);
+						}
 						newsList.add(newsNode);
 					}
 

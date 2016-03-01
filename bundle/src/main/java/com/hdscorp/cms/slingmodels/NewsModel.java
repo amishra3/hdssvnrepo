@@ -138,6 +138,11 @@ System.out.println("no of hits****"+hits.size());
 
 					newsNode.setNewsDetailPath(properties.get("newslink",
 							(String) null).toString());
+					if(properties.containsKey("linktargettype")){
+						newsNode.setOpenInNewTab(true);
+					}else {
+						newsNode.setOpenInNewTab(false);
+					}
 					newsList.add(newsNode);
 				}
 
