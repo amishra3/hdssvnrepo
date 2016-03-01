@@ -50,30 +50,22 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-12 megamenu-list">
+
 					<ul class="single-col">
-						<c:forEach var="subnavlinks" items="${subnavlinks}"
-							varStatus="count">
-							<c:choose>
-								<c:when test="${empty subnavlinks.mgmnewsinsightssubnavlabel}">
+						<c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
+                                <c:choose>
+								<c:when test="${not empty subnavlinks.mgmnewsinsightssubnavlabel}">
+                                    <c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmnewsinsightssubnavlink)}" />
+									 <li>
+                                    	<a
+										target="${subnavlinks.mgmnewsinsightsopeninnewwindow?'_blank':'_self'}"
+                                         href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
+										title="${subnavlinks.mgmnewsinsightsalttext}" class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
+											aria-hidden="true"
+											class="glyphicon ${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+									</li>
 
 								</c:when>
-								<c:when test="${subnavlinks.mgmnewsinsightssubnavlink=='#'}">
-									<li><a href="javascript:void(0)"
-										title="${subnavlinks.mgmnewsinsightssubnavlabel}"
-										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-								</c:when>
-								<c:when test="${subnavlinks.mgmnewsinsightsopeninnewwindow==1}">
-
-									<li><a
-										target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmnewsinsightssubnavlink)}"
-										title="${subnavlinks.mgmnewsinsightsalttext}"
-										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon ${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
-								</c:when>								
 							</c:choose>
 						</c:forEach>
 					</ul>

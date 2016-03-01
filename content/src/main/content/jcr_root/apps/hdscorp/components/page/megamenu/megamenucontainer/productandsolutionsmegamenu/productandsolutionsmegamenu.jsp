@@ -47,25 +47,21 @@
 					</div>
 				</div>
 				<div class="col-md-6 col-xs-12 megamenu-list">
+
 					<ul>
-						<c:forEach var="subnavlinks" items="${subnavlinks}"
-							varStatus="count">
-							<c:choose>
-								<c:when test="${empty subnavlinks.mgmpssubnavlabel}">
-								</c:when>
-								<c:when test="${subnavlinks.mgmpssubnavlink=='#'}">
-									<li><a href="javascript:void(0)" class="animateLink"
-										title="${subnavlinks.mgmpssubnavlabel}">${subnavlinks.mgmpssubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-								</c:when>
-								<c:when test="${subnavlinks.mgmpsopeninnewwindow==1}">
-									<li><a
+						<c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
+                                <c:choose>
+								<c:when test="${not empty subnavlinks.mgmpssubnavlabel}">
+                                    <c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmpssubnavlink)}" />
+									 <li>
+                                    	<a
 										target="${subnavlinks.mgmpsopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmpssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmpssubnavlink)}"
-										title="${subnavlinks.subnavlinks}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
+                                         href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
+										title="${subnavlinks.mgmpssubnavlabel}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon ${subnavlinks.mgmpsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
+											class="glyphicon ${subnavlinks.mgmpsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+                                    </li>
+
 								</c:when>
 							</c:choose>
 						</c:forEach>

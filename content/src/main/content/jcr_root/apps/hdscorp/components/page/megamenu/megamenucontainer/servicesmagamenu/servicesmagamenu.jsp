@@ -52,25 +52,19 @@
 				</div>
 				<div class="col-md-6 col-xs-12 megamenu-list">
 					<ul>
-						<c:forEach var="subnavlinks" items="${subnavlinks}"
-							varStatus="count">
+						<c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
 							<c:choose>
-								<c:when test="${empty subnavlinks.mgmservsubnavlabel}">
-								</c:when>
-								<c:when test="${subnavlinks.mgmservsubnavlink=='#'}">
-									<li><a href="javascript:void(0)" class="animateLink"
-										title="${subnavlinks.mgmservsubnavlabel}">${subnavlinks.mgmservsubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-								</c:when>
-								<c:when test="${subnavlinks.mgmservopeninnewwindow==1}">
-									<li><a
+								<c:when test="${not empty subnavlinks.mgmservsubnavlabel}">
+									<c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmservsubnavlink)}" />
+									<li>
+                                    	<a
 										target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmservsubnavlink)}"
+                                         href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
 										title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon ${subnavlinks.mgmservopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
-								</c:when>								
+											class="glyphicon ${subnavlinks.mgmservopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+                                    </li>
+                                </c:when>
 							</c:choose>
 						</c:forEach>
 					</ul>

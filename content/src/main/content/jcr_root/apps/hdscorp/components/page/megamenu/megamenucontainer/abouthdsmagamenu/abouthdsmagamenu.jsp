@@ -55,25 +55,18 @@
 
 				<div class="col-md-6 col-xs-12 megamenu-list">
 					<ul>
-						<c:forEach var="subnavlinks" items="${subnavlinks}"
-							varStatus="count">
-							<c:choose>
-								<c:when test="${empty subnavlinks.mgmahsubnavlabel}">
-
-								</c:when>
-								<c:when test="${subnavlinks.mgmahsubnavlink=='#'}">
-									<li><a href="javascript:void(0)" class="animateLink"
-										title="${subnavlinks.mgmahsubnavlabel}">${subnavlinks.mgmahsubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-								</c:when>
-								<c:when test="${subnavlinks.mgmahopeninnewwindow==1}">
-									<li><a
-										target="${subnavlinks.mgmahopeninnewwindow?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmahsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmahsubnavlink)}"
+						<c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
+                                <c:choose>
+								<c:when test="${not empty subnavlinks.mgmahsubnavlabel}">
+                                    <c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmahsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmahsubnavlink)}" />
+                                    <li>
+                                    	<a
+										target="${subnavlinks.mgmahopeninnewwindow==1?'_blank':'_self'}"
+                                         href="${subnavlinks.mgmahsubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
 										title="${subnavlinks.mgmahalttext}" class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon ${subnavlinks.mgmahopeninnewwindow?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
+											class="glyphicon ${subnavlinks.mgmahopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+									</li>
 
 								</c:when>
 							</c:choose>

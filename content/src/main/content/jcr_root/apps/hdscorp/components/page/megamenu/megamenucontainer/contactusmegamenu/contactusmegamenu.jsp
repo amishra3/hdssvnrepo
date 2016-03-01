@@ -48,31 +48,27 @@
 					</div>
 				</div>
 				<div class="col-md-3 col-xs-12 megamenu-list">
+
 					<ul class="single-col">
-						<li><c:forEach var="subnavlinks" items="${subnavlinks}"
-								varStatus="count">
-								<c:choose>
-									<c:when test="${empty subnavlinks.mgmcontactussubnavlabel}">
 
-									</c:when>
-									<c:when test="{subnavlinks.mgmcontactussubnavlink=='#'}">
-										<li><a href="javascript:void(0)" class="animateLink"
-											title="${subnavlinks.mgmcontactusalttext}">${subnavlinks.mgmcontactussubnavlabel}<span
-												aria-hidden="true"
-												class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
-									</c:when>
-									<c:when test="${subnavlinks.mgmcontactusopeninnewwindow==1}">
-										<li><a
-											target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}"
-											href="${fn:contains(aboutrightsection.mgmcontactussubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmcontactussubnavlink)}"
-											title="${subnavlinks.mgmcontactusalttext}"
-											class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
-												aria-hidden="true"
-												class="glyphicon ${subnavlinks.mgmcontactusopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
+                            <c:forEach var="subnavlinks" items="${subnavlinks}" varStatus="count">
+                                <c:choose>
 
-									</c:when>	
-								</c:choose>
-							</c:forEach></li>
+								<c:when test="${not empty subnavlinks.mgmcontactussubnavlabel}">
+                                    <c:set var="pageUrlVal" value="${fn:contains(aboutrightsection.mgmcontactussubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmcontactussubnavlink)}" />
+									 <li>
+                                    	<a
+										target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}"
+                                         href="${subnavlinks.mgmcontactussubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
+										title="${subnavlinks.mgmcontactusalttext}" class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
+												aria-hidden="true"
+												class="glyphicon ${subnavlinks.mgmcontactusopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+									</li>
+
+								</c:when>
+							</c:choose>
+						</c:forEach>
+
 					</ul>
 				</div>
 				<div class="col-md-9 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgconmobilebackgroundimagepath)}">

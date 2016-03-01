@@ -50,27 +50,22 @@
 					</div>
 				</div>
 				<div class="col-md-6 col-xs-12 megamenu-list">
-					<ul>
-						<c:forEach var="subnavlinks" items="${partnersubnavlinks}"
-							varStatus="count">
-							<c:choose>
-								<c:when test="${empty subnavlinks.mgmptsubnavlabel}">
 
-								</c:when>
-								<c:when test="${subnavlinks.mgmptsubnavlink=='#'}">
-									<li><a href="javascript:void(0)"
+					<ul>
+						<c:forEach var="subnavlinks" items="${partnersubnavlinks}" varStatus="count">
+                                <c:choose>
+								<c:when test="${not empty subnavlinks.mgmptsubnavlabel}">
+                                    <c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmptsubnavlink)}" />
+									 <li>
+                                    	<a
+										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
+                                         href="${subnavlinks.mgmptsubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
 										title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span
 											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a></li>
+											class="glyphicon ${subnavlinks.mgmptopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+									</li>
+
 								</c:when>
-								<c:when test="${subnavlinks.mgmptopeninnewwindow==1}">
-									<li><a
-										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
-										href="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmptsubnavlink)}"
-										class="animateLink" title="${subnavlinks.mgmptalttext}">${subnavlinks.mgmptsubnavlabel}<span
-											aria-hidden="true"
-											class="glyphicon ${subnavlinks.mgmptopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a></li>
-								</c:when>							
 							</c:choose>
 						</c:forEach>
 					</ul>
