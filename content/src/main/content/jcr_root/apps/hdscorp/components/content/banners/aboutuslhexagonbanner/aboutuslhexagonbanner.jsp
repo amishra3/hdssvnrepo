@@ -55,8 +55,8 @@
     
                                     <div class="read-more">
                                         <a href="${placardtargeturl}" target="${placardList.seemorenewwin==1?'_blank':'_self'}" class="animateLink">${placardurllabel}
-                                            <span class="glyphicon glyphicon-menu-right animateIcon"
-                                            aria-hidden="true"></span>
+                                            <span aria-hidden="true"
+											class="glyphicon ${placardList.seemorenewwin==1?'glyphicon-new-window':'glyphicon-menu-right animateIcon'}"></span>
 
                                         </a>
                                     </div>

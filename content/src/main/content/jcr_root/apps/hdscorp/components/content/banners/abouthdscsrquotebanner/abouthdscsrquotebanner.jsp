@@ -53,8 +53,8 @@
     <div class="about-hds-csr-quote-container">
         <div class="col-md-10 col-md-offset-1 clearfix">
             <h2 class="headline">${properties.quoteheadline}</h2>
-            <p>${properties.quotecontent}</p>
-
+            <p> <span class="sprite icon-quote open-quote"></span>${properties.quotecontent}<span
+				class="sprite icon-quote close-quote"></span></p>
             <c:if test="${not empty properties.ctalabel}">
             <div class="learn-more">
                  <div class="learn-more-csr-quote btn-square-white">
