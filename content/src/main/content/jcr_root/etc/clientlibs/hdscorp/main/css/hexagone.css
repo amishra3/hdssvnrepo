@@ -166,6 +166,12 @@
   z-index: -1;
 }
 
+@media only screen and (max-width: 1024px) {
+    .hexagon320 {
+    	background: #ffffff;
+    }
+}
+	
 @media only screen and (max-width: 991px) {
   .hexagon320{
     margin-bottom: 175px;
