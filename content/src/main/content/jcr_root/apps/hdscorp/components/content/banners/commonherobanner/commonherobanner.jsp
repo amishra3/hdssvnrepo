@@ -31,6 +31,14 @@
                         <h2 class="headline">${properties.commonherobannersubtitle}</h2>
                         <h4 class="sub-headline">${properties.commonherobannercontent}</h4>
 
+                                 <c:if test="${not empty properties.commonbannerbuttonlabel}">
+                                <div class="btn-square-white request">
+                                    <a href="${properties.commonbannerbuttonurl}" target="${properties.commonbannertargettype?'_blank':'_self'}">
+                                        ${properties.commonbannerbuttonlabel}
+                                    </a>
+                                </div>
+                            </c:if>
+
                         <c:if test="${not empty properties.commonherobannerbuttonlabel}">
                         <div class="video-play hidden-lg">
                             <a href="javascript:void(0);" class="btn-play-video"> <span class="sprite video-play-small"></span></a>

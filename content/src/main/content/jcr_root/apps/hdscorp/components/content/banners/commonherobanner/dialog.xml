@@ -57,6 +57,12 @@
                         fieldLabel="Button Target URL"
                         name="./commonbannerbuttonurl"
                         xtype="pathfield"/>
+                    <commonbannertargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./commonbannertargettype"
+                        type="checkbox"
+                        xtype="selection"/>
                     <commonbannerimageoverlaypath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}true"
