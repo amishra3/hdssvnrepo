@@ -373,7 +373,7 @@
   z-index: 9;
   position: relative;
   min-height: 480px;
-  padding: 75px 0 0;
+  padding: 75px 0 55px;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
