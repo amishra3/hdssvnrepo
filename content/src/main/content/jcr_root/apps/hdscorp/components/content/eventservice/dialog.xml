@@ -11,7 +11,25 @@
         <items jcr:primaryType="cq:WidgetCollection">
             <tab1
                 jcr:primaryType="cq:Panel"
-                title="BrightTalk Feed"/>
+                title="Event Service">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <esnoeventfoundmessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="NO Event Found Message"
+                        name="./esnoeventfoundmessage"
+                        xtype="textfield"/>
+                    <esdetailslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Details Label"
+                        name="./esdetailslabel"
+                        xtype="textfield"/>
+                    <eseventlookuppath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Lookup Path"
+                        name="./eseventlookuppath"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
         </items>
     </items>
 </jcr:root>
