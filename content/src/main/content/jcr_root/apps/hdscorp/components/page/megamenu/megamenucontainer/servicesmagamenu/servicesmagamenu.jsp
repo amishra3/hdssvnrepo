@@ -18,7 +18,11 @@
 <%@ page import="java.util.Iterator"%>
 <%@page import="javax.servlet.jsp.PageContext"%>
 
+<c:set var="domain" value="" />
+<c:set var="port" value="<%= request.getServerPort() %>" />
+<c:if test="${empty port || port == 80}">
 <c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+</c:if>
 
 <c:set var="subnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmservsubnavlabel-mgmservsubnavlink-mgmservalttext-mgmservopeninnewwindow")%>" />

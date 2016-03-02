@@ -12,7 +12,11 @@
 <%@page import="javax.servlet.jsp.PageContext"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
+<c:set var="domain" value="" />
+<c:set var="port" value="<%= request.getServerPort() %>" />
+<c:if test="${empty port || port == 80}">
 <c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+</c:if>
 <c:set var="subnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactussubnavlabel-mgmcontactussubnavlink-mgmcontactusopeninnewwindow-mgmcontactusalttext")%>" />
 <c:set var="subnavlinks2"
