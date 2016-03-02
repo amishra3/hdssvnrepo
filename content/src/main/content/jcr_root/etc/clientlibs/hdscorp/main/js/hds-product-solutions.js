@@ -200,15 +200,18 @@ var hds = window.hds || {};
                 return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
             };
 
-            $(document).on('keyup change', '#searchFilter', function(event) {
-                var getSearchFilter = $(this).val();
-                if (getSearchFilter.length > 0) {
-                    hds.loadDataFilters.checkSearchEmpty();
-                } else {
-                   hds.loadDataFilters.checkSearchEmpty();
-
-                }
-                event.preventDefault();
+            $(document).on('keypress', '#searchFilter', function(event) {
+            	var keycode = (event.keyCode ? event.keyCode : event.which);
+            	if(keycode == 13) {
+	            	event.preventDefault();
+	                var getSearchFilter = $(this).val();
+	                if (getSearchFilter.length > 0) {
+	                    hds.loadDataFilters.checkSearchEmpty();
+	                } else {
+	                   hds.loadDataFilters.checkSearchEmpty();
+	
+	                }                
+            	}
             });
         },
         checkSearchEmpty: function() {
