@@ -116,7 +116,7 @@ try {
 
         this.columnContent = new CQ.form.MultiField({
             fieldLabel : "Add Columns",
-            fieldDescription : "Click '+' to add columns<br/><p style='color:blue;font-weight: bold;'>Add Cell Content in the following format - 'Cell heading ~! Cell Content'. Use &lt;br/&gt; for line breaks.</p> <br/>Example - <p style='color:blue;font-weight: bold;'>G200 ~! 264 SFF &lt;br/&gt; 252 LFF</p>",
+            fieldDescription : "Click '+' to add columns<br/><p style='color:blue;font-weight: bold;'>Add Cell Content in the following format - 'Cell heading ~! Cell Content'. Use &lt;br/&gt; for line breaks.</p> <br/>Example - <p style='color:blue;font-weight: bold;'>G200 ~! 264 SFF &lt;br/&gt; 252 LFF</p> <br/>Example - <p style='color:blue;font-weight: bold;'>If comma is needed , use the following instead - @_ </p>",
             width : 400,
             fieldConfig: {
                 "xtype" : "textfield",

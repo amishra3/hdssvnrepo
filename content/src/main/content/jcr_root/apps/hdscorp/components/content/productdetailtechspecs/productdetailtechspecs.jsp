@@ -49,6 +49,7 @@ node.save();
 		
 								<c:set var="columnItems" value="${fn:split(columnContent,',')}" />
 								<c:forEach var="columnItem" items="${columnItems}" varStatus="columnstatus">
+									<c:set var="columnItem" value="${fn:replace(columnItem,'@_',',')}" />
 									<td>
 										<div class="product-specs clearfix">
 											<c:set var="cellContent" value="${fn:split(columnItem,'~!')}" />
