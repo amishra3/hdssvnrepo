@@ -90,6 +90,8 @@ public final class ServiceConstants {
 	public static final String GET_METHOD_TYPE = "Get";
 	public static final String FEED_PARAMETER = "";
 	public static final String SAVE_FEED_DATA_PROPERTY_NAME = "serviceResponse";
+	public static final String FEED_UPCOMING = "upcoming";
+	public static final String FEED_RECORDED = "recorded";
 
 	public static final String SAVE_BLOG_FEED_DATA_PROPERTY_NAME = "blogResponse";
 
