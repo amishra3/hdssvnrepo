@@ -24,18 +24,19 @@ request.setAttribute("bannerimage",bannerimage);
 			     <div class="top-banner-heading hidden-xs hidden-sm">${properties.industrysolutionsherobannertopheading}</div>
                     <h1 class="headline">${properties.industrysolutionsherobannerheadline}</h1>
                     <h4 class="sub-headline">${properties.industrysolutionsherobannersubheadline}</h4>
-			
+                  		<c:if test="${not empty properties.industrysolutionsherobannerlabel}">
+                              <div class="btn-square-white request">
+                                  <a href="${buttonUrl}" target="${properties.industrysolutionsherobannerurltargettype?'_blank':'_self'}">
+                                      ${properties.industrysolutionsherobannerlabel}
+                                   </a>
+                               </div>
+                       </c:if>
+
                  </div>
            </div>
         </div>
 
-       <c:if test="${not empty properties.industrysolutionsherobannerlabel}">
-              <div class="btn-square-white request">
-                  <a href="${buttonUrl}" target="${properties.industrysolutionsherobannerurltargettype?'_blank':'_self'}">
-                      ${properties.industrysolutionsherobannerlabel}
-                   </a>
-               </div>
-       </c:if>
+
 
 	</c:when>
 
