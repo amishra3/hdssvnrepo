@@ -11,14 +11,6 @@
 <% List<Map<String, String>> listMaps=ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.BrightTalkScheduler","storage.path"),ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME,ServiceConstants.FEED_RECORDED);
 pageContext.setAttribute("listMaps", listMaps); 
  %>
- 
-<c:set var='playerpath' value='${properties.playerpagepath}'/>
-<c:if test="${empty properties.playerpagepath}">
-	<c:set var='playerpath' value='/content/hdscorp/en_us/lookup/Webcast'/>
-</c:if>
-
-<c:set var='playerpath' value='${hdscorp:shortURL(playerpath)}'/>
-
 
 <div class="pr-list no-padding">
     <div class="product-category-list pt-0">
@@ -33,23 +25,22 @@ pageContext.setAttribute("listMaps", listMaps);
                         <div class="noEventFilter">No webcast is found </div>
                         <c:forEach items="${listMaps}" var="listm" varStatus="status">
                             <div class="newsEvents ${status.first ? 'firstChild' : ''}" data-webcast="${listm.category}">
+
                                 <h3>${listm.title}</h3>
                                 <small>${listm.duration}</small>
                                 <h4 class="author">${listm.author}</h4>
                                 <p>${listm.summary}<br><br><small>Recorded ${listm.updatedDate}</small></p>
-                                <div class="WebcastDetails">
-                                   
+
+                                <div class="WebcastDetails"> 
+
                                     <c:choose>
                                         <c:when test="${listm.status == 'recorded'}">
-                                            <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
-												<%--<a rel="modal" href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a> --%>
-												<!-- Make the URL of the rendering page authorable -->
-                                                <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?wcmmode=disabled&commid=${listm.communicationId}" target="_blank" class="playvideo" title="Play">Play</a>
+                                           <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
+                                               <a href="javascript:javascript:void(0);" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="Play">Play</a>
                                             </div>
                                         </c:when>
                                         <c:otherwise>
-											<%--<a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" class="brighttalklink" title="Play">Register</a> --%>
-                                            <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?wcmmode=disabled&commid=${listm.communicationId}" target="_blank" title="Play">Register</a>
+                                            <a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" class="brighttalklink" title="Play">Register</a>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
@@ -57,11 +48,27 @@ pageContext.setAttribute("listMaps", listMaps);
                             </div>
                         </c:forEach>
                     </div>
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
- <script>
-    </script>
+ <!-- Modal html start here -->
+            <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="plan-info" aria-hidden="true">
+                <div class="modal-dialog modal-full-screen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" 
+                              data-dismiss="modal" aria-hidden="true">
+                              <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- /# content goes here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal html end here -->

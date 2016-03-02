@@ -12,12 +12,14 @@ var hds = window.hds || {};
                 ellipsestext :'...',
                 moreText: "more",
                 lessText: "less",
+                playBtn: '#webcasts-demand .playvideo'
 
             }
             this.options = $.extend(defaults, options);
             hds.webcastEvents.truncateText();
             hds.webcastEvents.showFilteredContent();
             hds.webcastEvents.showDetails();
+            hds.webcastEvents.showModal();
 
         },
         truncateText:function(){
@@ -47,6 +49,21 @@ var hds = window.hds || {};
                 $this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
                 $this.parents('.newsEvents').find('p span.moreellipses').toggle();
                 $this.parents('.newsEvents').find('p span.morecontent span').toggle();
+                return false;
+            })
+        },
+        showModal:function(){
+            var playBtn=this.options.playBtn;
+            $(document).on('click', playBtn, function(evt) {
+
+                evt.preventDefault();
+                var modal = $('#modal').modal();
+                var commId= $(this).attr('comid');
+                modal.find('.modal-body').html('<script type="text/javascript" src="https://www.brighttalk.com/clients/js/embed/embed.js"></script><object class="BrightTALKEmbed" width="656" height="627"><param name="player" value="webcast_player"/>   <param name="domain" value="https://www.brighttalk.com"/>   <param name="channelid" value="12821"/>   <param name="communicationid" value="'+commId+'"/>    <param name="autoStart" value="false"/>    <param name="theme" value=""/></object>');
+                    modal.show();
+
+
+
                 return false;
             })
         },
