@@ -6,10 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +43,34 @@ public class EventDataModel {
 
 	private List<EventNode> eventNodes;
 
+	@Inject
+	@Named("eseventlookuppath")
+	@Default(values = { "/content/hdscorp/en_us/lookup/events" })
+	private String eventLookupPath;
+
+	@Inject
+	@Named("esnoeventfoundmessage")
+	@Default(values = { "No Event is found" })
+	private String noeventfoundMsg;
+
+	@Inject
+	@Named("esdetailslabel")
+	@Default(values = { "Detail" })
+	private String detailsLabel;
+
 	private HashMap<String, List<EventNode>> eventFinalNodesData;
+
+	public String getEventLookupPath() {
+		return eventLookupPath;
+	}
+
+	public String getNoeventfoundMsg() {
+		return noeventfoundMsg;
+	}
+
+	public String getDetailsLabel() {
+		return detailsLabel;
+	}
 
 	public List<EventNode> getEventNodes() {
 
@@ -50,8 +79,9 @@ public class EventDataModel {
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 				.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		log.info("Execution of getEventDetails");
-		String paths[] = { "/content/hdscorp/en_us/lookup/events" };
-		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, null, null, null, null, true, null,
+		String paths[] = { getEventLookupPath() };
+		String type[] = { "cq:Page" };
+		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, null, null, type, null, true, null,
 				null, resourceResolver, null, null);
 		TagManager tm = resourceResolver.adaptTo(TagManager.class);
 
@@ -80,12 +110,14 @@ public class EventDataModel {
 					for (int index = 0; index < eventType.length; index++) {
 						Tag tag = tm.resolve((String) eventType[index]);
 
-						if (index == 0) {
-							tagId.append(tag.getTagID());
-							tagName.append(tag.getName());
-						} else {
-							tagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
-							tagName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+						if (tag != null) {
+							if (index == 0) {
+								tagId.append(tag.getTagID());
+								tagName.append(tag.getName());
+							} else {
+								tagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
+								tagName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+							}
 						}
 					}
 
@@ -128,12 +160,14 @@ public class EventDataModel {
 					StringBuffer eventRegiontaName = new StringBuffer();
 					for (int index = 0; index < regionType.length; index++) {
 						Tag tag = tm.resolve((String) regionType[index]);
-						if (index == 0) {
-							eventRegiontagId.append(tag.getTagID());
-							eventRegiontaName.append(tag.getName());
-						} else {
-							eventRegiontagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
-							eventRegiontaName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+						if (tag != null) {
+							if (index == 0) {
+								eventRegiontagId.append(tag.getTagID());
+								eventRegiontaName.append(tag.getName());
+							} else {
+								eventRegiontagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
+								eventRegiontaName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+							}
 						}
 					}
 					eventNode.setEventRegiontagId(eventRegiontagId.toString());
