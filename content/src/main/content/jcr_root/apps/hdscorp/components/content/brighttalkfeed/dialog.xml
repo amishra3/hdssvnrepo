@@ -16,5 +16,25 @@
             name="./playeropeninmodal"
             type="checkbox"
             xtype="selection"/>
+        <nowebcastfoundmessage
+            jcr:primaryType="cq:Widget"
+            fieldLabel="NO Webcast Found Message"
+            name="./nowebcastfoundmessage"
+            xtype="textfield"/>
+        <playlabel
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Play Label"
+            name="./playlabel"
+            xtype="textfield"/>
+        <registerlabel
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Register Label"
+            name="./registerlabel"
+            xtype="textfield"/>
+        <detailslabel
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Details Label"
+            name="./detailslabel"
+            xtype="textfield"/>
     </items>
 </jcr:root>
