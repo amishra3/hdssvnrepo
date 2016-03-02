@@ -17,7 +17,12 @@
 <div class="tabbing-container">
 	<div class="content-container">
 		<div class="custom-nav-tabs">
-			<cq:include path="eventtabpanel" resourceType="hdscorp/components/content/eventtabspannel"/>
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#upcoming-events">Upcoming
+						Events</a></li>
+				<li><a data-toggle="tab" href="#webcasts-demand">Webcasts
+						on-demand</a></li>
+			</ul>
 		</div>
 		<div class="tab-content">
 			<div id="upcoming-events" class="tab-pane fade in active">
@@ -54,7 +59,7 @@
 								<div class="bs-docs-example custom_selectBox_red">
 									<select class="selectpicker" id="filterRegion"
 										name="filterRegion">
-										<option value="">Filter by region</option>
+										<option value="">${eventRegionFilterModel.efilterbylabel}</option>
 										<c:forEach items="${eventRegionFilterModel.regionTag}"
 											var="eventTags">
 											<c:forEach items="${eventTags}" var="eventTag">
@@ -130,7 +135,7 @@
 										resourceType="hdscorp/components/content/eventservice" />
 									<div id="loadMoreMonth" class="btn-square-red load-more-link">
 										<a title="See Next 3 Months of Events"
-											href="javascript:void(0);">See Next 3 Months of Events</a>
+                                        href="javascript:void(0);">${eventRegionFilterModel.seenextthreemonth}</a>
 									</div>
 
 								</div>

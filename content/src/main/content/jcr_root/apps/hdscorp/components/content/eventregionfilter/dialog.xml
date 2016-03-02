@@ -97,6 +97,12 @@
                             </items>
                         </fieldConfig>
                     </regions>
+                    <efseenextthreemonthmessage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="See Next Message"
+                        name="./efseenextthreemonthmessage"
+                        xtype="textfield"/>
                 </items>
             </regionfilter>
         </items>
