@@ -10,6 +10,7 @@ if(runModes.contains("prod") && !runModes.contains("author")){
 %>
 	<script
 		src="//assets.adobedtm.com/e171f6759c6c455550c5f666e64e8a56fe657d2f/satelliteLib-7f2faccf998d3a358edac4d790c59020820ff755.js"></script>
+	
 <%	
 
 }else{
@@ -17,6 +18,7 @@ if(runModes.contains("prod") && !runModes.contains("author")){
 %>
 	<script
 		src="//assets.adobedtm.com/e171f6759c6c455550c5f666e64e8a56fe657d2f/satelliteLib-7f2faccf998d3a358edac4d790c59020820ff755-staging.js"></script>
+	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <%	
 }
 %>
