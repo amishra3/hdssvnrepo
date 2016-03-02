@@ -13,7 +13,8 @@ Industry Solution Offer Component
 
 <c:choose>
     <c:when test="${industrySolutionOfferModel.isoShowBlog==1}">
-<div class="features-solutions">
+
+        <div class="features-solutions" style="background-image: url('${properties.isobgimage}')">
 						<div class="content-container clearfix">
                         <div class="col-md-12"><h2>${industrySolutionOfferModel.title}</h2></div>
                         <div class="col-md-12 col-no-pad">
@@ -51,7 +52,7 @@ Industry Solution Offer Component
 
   <c:when test="${industrySolutionOfferModel.isoShowBlog==2}">
 
-      <div class="solution-offer grey-bg">
+      <div class="solution-offer grey-bg" style="background-image: url('${properties.isobgimage}')">
                         <div class="content-container container-fluid">
                             <h2>${industrySolutionOfferModel.title}</h2>
                             <div class="fb-category-container" id="fixedRate1">
@@ -90,7 +91,7 @@ Industry Solution Offer Component
 </c:when>
 
     <c:otherwise>
-   <div class="solution-offer" id="features-benefits">
+   <div class="solution-offer" id="features-benefits" style="background-image: url('${properties.isobgimage}')">
                         <div class="content-container container-fluid">
                             <h2>${industrySolutionOfferModel.title}</h2>
                             <div class="fb-category-container" id="fixedRate0">

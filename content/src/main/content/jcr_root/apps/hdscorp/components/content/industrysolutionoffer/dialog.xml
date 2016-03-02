@@ -23,6 +23,11 @@
                         fieldLabel="Sub Title"
                         name="./isosubtitle"
                         xtype="textfield"/>
+                    <isobgimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BackGround Image"
+                        name="./isobgimage"
+                        xtype="pathfield"/>
                     <isodescription
                         jcr:primaryType="cq:Widget"
                         allowBlank="false"
