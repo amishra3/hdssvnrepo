@@ -17,12 +17,7 @@
 <div class="tabbing-container">
 	<div class="content-container">
 		<div class="custom-nav-tabs">
-			<ul class="nav nav-tabs">
-				<li class="active"><a data-toggle="tab" href="#upcoming-events">Upcoming
-						Events</a></li>
-				<li><a data-toggle="tab" href="#webcasts-demand">Webcasts
-						on-demand</a></li>
-			</ul>
+			<cq:include path="eventtabpanel" resourceType="hdscorp/components/content/eventtabspannel"/>
 		</div>
 		<div class="tab-content">
 			<div id="upcoming-events" class="tab-pane fade in active">
