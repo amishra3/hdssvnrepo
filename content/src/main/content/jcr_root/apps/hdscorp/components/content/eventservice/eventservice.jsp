@@ -12,7 +12,7 @@
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.EventDataModel" var="eventDataModel" />
 
 <div class="col-md-9 newsWrapper">
-    <div class="noEventFilter">No Event is found </div>    
+    <div class="noEventFilter">${eventDataModel.noeventfoundMsg} </div>    
     <c:forEach items="${eventDataModel.eventFinalNodesData}" var="eventAlldata">
         <div class="newsWrapper-listing">
             <div class="events_months">                
@@ -38,7 +38,7 @@
                             </div>                            
                         </div>
                     </div>
-                    <a class="animateLink expandMe less" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>details </a>
+                    <a class="animateLink expandMe less" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>${eventDataModel.detailsLabel} </a>
                 </div>
             </c:forEach>
             <!--/ All Events are Loaded here -->
