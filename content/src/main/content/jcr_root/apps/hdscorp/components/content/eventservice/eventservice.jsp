@@ -11,6 +11,9 @@
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.EventDataModel" var="eventDataModel" />
 
+
+
+
 <div class="col-md-9 newsWrapper">
     <div class="noEventFilter">${eventDataModel.noeventfoundMsg} </div>    
     <c:forEach items="${eventDataModel.eventFinalNodesData}" var="eventAlldata">
