@@ -81,10 +81,11 @@ public class EventDataModel {
 		log.info("Execution of getEventDetails");
 		String paths[] = { getEventLookupPath() };
 		String type[] = { "cq:Page" };
+				
 		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, null, null, type, null, true, null,
 				null, resourceResolver, null, null);
-		TagManager tm = resourceResolver.adaptTo(TagManager.class);
-
+		if( result.getHits().size()>0){
+		TagManager tm = resourceResolver.adaptTo(TagManager.class);		
 		List<Hit> hits = result.getHits();
 		eventNodes = new ArrayList<EventNode>();
 
@@ -182,12 +183,14 @@ public class EventDataModel {
 
 			eventNodes.add(eventNode);
 		}
+	}
 		return eventNodes;
 	}
 
 	public HashMap<String, List<EventNode>> getEventFinalNodesData() {
 		EventNode EventObject = new EventNode();
 		List<EventNode> listOfNodes = getEventNodes();
+		if(listOfNodes!=null && listOfNodes.size()>0){
 		Collections.sort(listOfNodes, EventObject.new CompareByMonth());
 		Collections.sort(listOfNodes, EventObject.new CompareByYear());
 		eventFinalNodesData = new HashMap<String, List<EventNode>>();
@@ -200,6 +203,7 @@ public class EventDataModel {
 			} else {
 				eventFinalNodesData.get(eventNode.getEventMonth()).add(eventNode);
 			}
+		}
 		}
 
 		/*
