@@ -217,7 +217,7 @@ public class ServiceUtil {
 	}
 
 	public static List<Map<String, String>> getBrightTalkMapFromJSON(ResourceResolver resourceResolver,
-			String storagePath, String savedProperty) {
+			String storagePath, String savedProperty,String webcastStatus) {
 		log.info("Start execution of getBrightTalkMapFromJSON()");
 		List<Map<String, String>> listMap = new ArrayList<>();
 		
@@ -235,6 +235,7 @@ public class ServiceUtil {
 			for (int i = 0; i < jsonArray.length(); i++) {
 				Map<String, String> map = new HashMap<String, String>();
 				JSONObject item = jsonArray.getJSONObject(i);
+				if(webcastStatus!=null && !webcastStatus.isEmpty() && webcastStatus.equalsIgnoreCase(item.getString(ServiceConstants.JSON_STATUS))){
 				map.put(ServiceConstants.JSON_TITLE, item.getString(ServiceConstants.JSON_TITLE));
 				map.put(ServiceConstants.JSON_UPDATED_DATE, item.getString(ServiceConstants.JSON_UPDATED_DATE));
 				map.put(ServiceConstants.JSON_AUTHOR, item.getString(ServiceConstants.JSON_AUTHOR));
@@ -252,6 +253,8 @@ public class ServiceUtil {
 				map.put(ServiceConstants.JSON_THUMBNAIL_PATH, item.getString(ServiceConstants.JSON_THUMBNAIL_PATH));
 				map.put(ServiceConstants.JSON_PREVIEW_IMAGE_PATH, item.getString(ServiceConstants.JSON_PREVIEW_IMAGE_PATH));
 				listMap.add(map);
+				}
+				
 			}
 		} catch (Exception e) {
 			log.info("Exception while creating map::" + e);
