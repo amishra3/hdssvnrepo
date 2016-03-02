@@ -21,6 +21,7 @@ public class ELTagHelper {
     {
     	String bgImgAtrr = "";
     	String mobileImageURL= getMobileImagePath(desktopImagePath,mobileImagePath);
+    	bgImgAtrr="data-image-desktop='"+desktopImagePath+"'"+" data-image-mobile="+"'"+mobileImageURL+"'";    	
     	return bgImgAtrr;
     }
 
