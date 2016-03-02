@@ -28,12 +28,7 @@
                     <h3>${properties.abouthdsbannersubtitle}</h3>
                     <h4 class="sub-headline"><cq:text property="abouthdsherobannercontent" placeholder="click here to set text" /></h4>
 
-                    <c:if test="${not empty properties.abouthdbannerusevideomodal}">
-                        <div class="video-play hidden-lg">
-                            <a href="#" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
-                        </div>
-                    </c:if>
-    
+
                     <c:if test="${not empty properties.abouthdsbannerbuttonlabel}">
                         <div class="btn-square-white request">
                             <a href="${buttonUrl}" target="${properties.abouthdsbannerurltargettype?'_blank':'_self'}">

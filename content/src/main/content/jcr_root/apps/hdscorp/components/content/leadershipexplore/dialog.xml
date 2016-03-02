@@ -19,12 +19,6 @@
                         fieldLabel="Background Image"
                         name="./lesectionbgimage"
                         xtype="pathfield"/>
-                    <lesctionimagealttext
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
-                        fieldLabel="Image Alt Text"
-                        name="./lesctionimagealttext"
-                        xtype="textfield"/>
                     <lesectionlabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -80,7 +74,7 @@
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"
                                 dname="leicondate"
-                                fieldLabel="Icon Date"
+                                fieldLabel="Date"
                                 key="leicondate"
                                 name="./leicondate"
                                 xtype="textfield"/>

@@ -56,9 +56,9 @@
 								<c:when test="${leadershipList.leopeninnewwindow == '1'}">
 
 									<a class="animateLink" href="${leadershipList.lereadmorelabellink}"
-										target="_blank" >${leadershipList.lereadmorelabel }<span
+										target="_blank" >${leadershipList.lereadmorelabel } <span
 										aria-hidden="true"
-										class="glyphicon glyphicon-share animateIcon"></span></a>
+										class="glyphicon glyphicon-share"></span></a>
 
 								</c:when>
 								<c:otherwise>
