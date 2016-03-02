@@ -57,6 +57,11 @@ public class EventRegionFilterComponent extends MultifieldUtil {
 	private String efilterbylabel;
 
 	@Inject
+	@Named("efseenextthreemonthmessage")
+	@Default(values = { "See Next 3 Months of Events" })
+	private String seenextthreemonth;
+	
+	@Inject
 	@Named("eventtypes")
 	@Default(values = { "eventtypes" })
 	private String[] eventtypes;
@@ -96,6 +101,11 @@ public class EventRegionFilterComponent extends MultifieldUtil {
 
 	public String getEshownto() {
 		return eshownto;
+	}
+
+
+	public String getSeenextthreemonth() {
+		return seenextthreemonth;
 	}
 
 	public List<Map<String, List<TagResults>>> getEventTag() {
