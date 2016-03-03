@@ -49,6 +49,14 @@
                                 key="featureditembgimage"
                                 name="./featureditembgimage"
                                 xtype="pathfield"/>
+                            <featurediconimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="featurediconimage"
+                                fieldLabel="Featured Icon Image"
+                                key="featurediconimage"
+                                name="./featurediconimage"
+                                xtype="pathfield"/>    
                                 </items>
                        </fieldConfig>
                     </featuredresources>

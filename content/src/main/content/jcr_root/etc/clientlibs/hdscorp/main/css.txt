@@ -33,4 +33,6 @@ bootstrap-select.css
 service-training.css
 partner-program.css
 industry-solutions.css
+hds-resources.css
+partner-detail.css
 app.css

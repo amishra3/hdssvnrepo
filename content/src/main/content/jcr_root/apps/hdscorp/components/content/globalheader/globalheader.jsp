@@ -40,7 +40,7 @@
 
 <c:set var="domain" value="" />
 <c:set var="port" value="<%= request.getServerPort() %>" />
-<c:if test="${empty port || port == 80}">
+<c:if test="${empty port || port == 4502}">
 <c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
 </c:if>
 

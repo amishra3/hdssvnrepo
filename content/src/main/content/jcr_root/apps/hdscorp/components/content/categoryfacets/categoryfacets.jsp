@@ -30,7 +30,7 @@
 
 		<c:choose>
 		    <c:when test="${isResourceLibraryPage}">
-		    <div class="col-md-3 resources-listing">
+		    <div class="resources-listing">
 			<ul id="asideLinks-product">
 		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${featuredoverlaypath}.html"> ${featuredlabel} </a></li>
 		       </c:when>
@@ -53,8 +53,7 @@
 					<c:set var="includetargetURL" value="${categoryTargetURL}" scope="request"/>
 					<c:set var="activeclass" value=" class='active'"/>
 				</c:if>
-				
-
+		
 
 				<li ${activeclass}>
 				

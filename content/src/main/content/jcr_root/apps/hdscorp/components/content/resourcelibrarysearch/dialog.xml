@@ -55,7 +55,14 @@
                         name="./contenttype"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./contenttype')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="tags"/> 
-                                                                                                                             
+                      <industrytag
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Industry Type Tag Name Space"
+                        fieldDescription="Add only one Tag"
+                        name="./industrytag"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./industrytag')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="tags"/>                                                                                                        
                       <featuredoverlaypath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
