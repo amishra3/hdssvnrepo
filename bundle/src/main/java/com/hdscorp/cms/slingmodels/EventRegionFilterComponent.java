@@ -137,11 +137,13 @@ public class EventRegionFilterComponent extends MultifieldUtil {
 					for (int count = 0; count < strings.length; count++) {
 						TagResults tags = new TagResults();
 						Tag tag = tm.resolve((String) strings[count]);
+						if(tag!=null){
 						tags.setTagId(tag.getTagID());
 						tags.setTagName(tag.getName());
 						tags.setTitle(tag.getTitle());
 						tagsResult.add(tags);
 						sb.append(tag.getTagID() + "-" + tag.getName());
+						}
 					}
 					if (!resultMap.containsKey(labelKey)) {
 						resultMap.put(labelKey, tagsResult);
@@ -186,11 +188,13 @@ public class EventRegionFilterComponent extends MultifieldUtil {
 					for (int count = 0; count < strings.length; count++) {
 						TagResults tags = new TagResults();
 						Tag tag = tm.resolve((String) strings[count]);
+						if(tag!=null){
 						tags.setTagId(tag.getTagID());
 						tags.setTagName(tag.getName());
 						tags.setTitle(tag.getTitle());
 						tagsResult.add(tags);
 						sb.append(tag.getTagID() + "-" + tag.getName());
+						}
 					}
 					if (!resultMap.containsKey(labelKey)) {
 						resultMap.put(labelKey, tagsResult);
