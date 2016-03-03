@@ -73,13 +73,13 @@ public class ProductQueryServlet extends SlingAllMethodsServlet {
 		
 		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,null,template,null,null,doPagination,null,null,resourceResolver,null,null);
 		Iterator<Resource> reIT= result.getResources();
-		TagManager tMgr = tmf.getTagManager(adminSession);
+		out.println("<span style='color:red;font-size:1.5em;font-weight:600;'>TOTLE PROUCTS FOUND - "+result.getHits().size()+"</span><br>");
 		
 		int cnt = 1 ; 
 		while (reIT.hasNext())
 		  {
+				Resource res = (Resource) reIT.next();
 		    try {
-				Resource res = (Resource) reIT.next();		    
 				out.println(cnt+"- "+res.getName()+"-- ");
 				String[] pageTags= {""};
 				Page reourcePage = res.adaptTo(Page.class);
@@ -88,16 +88,18 @@ public class ProductQueryServlet extends SlingAllMethodsServlet {
 				}else{
 					
 				}
-				out.println(pageTags.length + "<br>");
-			} catch (Exception e) {
+				out.println(pageTags.length + "====");
+				out.println(res.getPath() + "<br>");
+			} catch (Exception ex) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+//				System.out.println("Error in case "+ res.getName()+" -- "+res.getPath());
+				out.println("<span style='color:red'>Error in getting tags for this resource.</span>"+res.getPath()+"<br>");
 			}
 		    
 		    cnt++;
 		  }
 		
-		System.out.println("-----------------"+result.getHits().size());
+		
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
