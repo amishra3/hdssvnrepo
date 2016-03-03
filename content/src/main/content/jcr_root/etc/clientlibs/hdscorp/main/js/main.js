@@ -65,6 +65,15 @@ $(document).ready(function () {
                 }
         });
     });
+	
+	/*function to use on email address click to open*/
+	$("a[rel=emailHome]").click(function(){
+		var emailadd=$(this).attr("lang").replace("(at)","@");
+		setTimeout(function(){
+		window.open("mailto:"+emailadd,"_self");},
+		1000);
+	});
+	
 });
 
 
