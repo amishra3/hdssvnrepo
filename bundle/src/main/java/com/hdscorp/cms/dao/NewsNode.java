@@ -7,6 +7,15 @@ public class NewsNode {
 	private String newsDetailPath;
 	private String description;
 	private boolean openInNewTab;
+	private boolean newWinIcon;
+	
+	public boolean isNewWinIcon() {
+		return newWinIcon;
+	}
+
+	public void setNewWinIcon(boolean newWinIcon) {
+		this.newWinIcon = newWinIcon;
+	}
 
 	public boolean isOpenInNewTab() {
 		return openInNewTab;

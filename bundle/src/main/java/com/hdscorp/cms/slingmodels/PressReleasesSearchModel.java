@@ -221,6 +221,12 @@ public class PressReleasesSearchModel {
 						} else {
 							newsNode.setOpenInNewTab(false);
 						}
+						
+						if(properties.containsKey("thirdparty")){
+							newsNode.setNewWinIcon(true);
+						} else {
+							newsNode.setNewWinIcon(false);
+						}
 						newsList.add(newsNode);
 					}
 
