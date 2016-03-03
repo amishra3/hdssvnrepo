@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="{Long}650"
+    title="Sub Categories"
+    width="{Long}800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Sub Categories">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contents
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Categories"
+                        name="./legalcategories"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="true"
+                            layout="form"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <subcatdisplaylabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    dname="header"
+                                    fieldLabel="Sub Cateogry Label"
+                                    key="subcatdisplaylabel"
+                                    xtype="textfield"/>
+                                <subcatcontenturl
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    dname="header"
+                                    fieldLabel="Path to the Sub Cateogry Content"
+                                    key="subcatcontenturl"
+                                    xtype="pathfield"/>
+                                <subcatid
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    dname="header"
+                                    fieldLabel="Sub Cateogry ID"
+                                    key="subcatid"
+                                    xtype="textfield"/>
+                                <subcategories
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Sub Categories"
+                                    key="legalsubcategories"
+                                    xtype="multifield">
+                                    <fieldConfig
+                                        jcr:primaryType="cq:Widget"
+                                        border="true"
+                                        hideLabel="true"
+                                        layout="form"
+                                        xtype="multifieldpanel">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <legalsubcatdisplaylabel
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                dname="header"
+                                                fieldLabel="Sub Cateogry Label"
+                                                key="legalsubcatdisplaylabel"
+                                                layout="anchor"
+                                                xtype="textfield"/>
+                                            <legalsubcatcontenturl
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                dname="header"
+                                                fieldLabel="Path to the Sub Cateogry Content"
+                                                key="legalsubcatcontenturl"
+                                                layout="anchor"
+                                                xtype="pathfield"/>
+                                            <legalsubcatid
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                dname="header"
+                                                fieldLabel="Sub Cateogry ID"
+                                                key="legalsubcatid"
+                                                layout="anchor"
+                                                xtype="textfield"/>
+                                        </items>
+                                    </fieldConfig>
+                                </subcategories>
+                            </items>
+                        </fieldConfig>
+                    </contents>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
