@@ -17,6 +17,11 @@
                         fieldLabel="Content Section Title"
                         name="./sectiontitle"
                         xtype="textfield"/>
+                    <sectionsubtext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content Section Sub Text"
+                        name="./sectionsubtext"
+                        xtype="textfield"/>
                     <downloadspectargeturl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Spec Download Target URL"

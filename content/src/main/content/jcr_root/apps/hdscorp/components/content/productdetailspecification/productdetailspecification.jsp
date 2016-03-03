@@ -10,7 +10,7 @@
 
 	<div class="spec-container container-fluid">
               <div class="spec-title hidden-xs">
-                  ${properties.sectiontitle}
+                  ${properties.sectiontitle}<br>${properties.sectionsubtext}
                   <div class="spec-download-pdf">
                     <p><a class="animateLink" href="${downloadspectargeturl}" target="${properties.downloadspeclinkopeninnew?'_blank':'_self'}">${properties.downloadspeclinklabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
                   </div>
