@@ -10,10 +10,39 @@ public class ResourceNode {
 
 	private String[] resourceTags;
 	
+	
 	private String resourceType;
 	
 	private String contentType;
+	private String contentTypeTag;
+	public String getContentTypeTag() {
+		return contentTypeTag;
+	}
+
+	public void setContentTypeTag(String contentTypeTag) {
+		this.contentTypeTag = contentTypeTag;
+	}
+
+	public String getIndustryTag() {
+		return industryTag;
+	}
+
+	public void setIndustryTag(String industryTag) {
+		this.industryTag = industryTag;
+	}
+
+	private String industryTag;
 	private String featuredBGImage;
+	private String featuredIconImage;
+	
+	public String getFeaturedIconImage() {
+		return featuredIconImage;
+	}
+
+	public void setFeaturedIconImage(String featuredIconImage) {
+		this.featuredIconImage = featuredIconImage;
+	}
+
 	public String getFeaturedBGImage() {
 		return featuredBGImage;
 	}

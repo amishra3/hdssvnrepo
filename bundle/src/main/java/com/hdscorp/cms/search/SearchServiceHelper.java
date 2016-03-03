@@ -284,7 +284,7 @@ public class SearchServiceHelper {
 						searchKeyword);
 				searchParams.put("group." + groupCnt
 						+ "_group.2_fulltext.relPath",
-						"jcr:content/metadata/@jcr:title");
+						"jcr:content/metadata/@dc:title");
 				searchParams.put("group." + groupCnt + "_group.3_fulltext",
 						searchKeyword);
 				searchParams.put("group." + groupCnt

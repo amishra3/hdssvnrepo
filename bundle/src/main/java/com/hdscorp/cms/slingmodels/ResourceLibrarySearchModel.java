@@ -42,6 +42,10 @@ public class ResourceLibrarySearchModel  {
 	@Default(values = { "" })
 	private String[] contenttype;
 	@Inject
+	@Named("industrytag")
+	@Default(values = { "" })
+	private String[] industrytag;
+	@Inject
 	@Named("resourcesPath")
 	@Default(values = { "" })
 	private String resourcesPath;
@@ -113,7 +117,7 @@ public class ResourceLibrarySearchModel  {
 		this.totalNoOfResuts = 	hits.size();		
 		for (Hit hit : hits) {
 		
-			ResourceNode resourceNode = ResourceLibraryHelperModel.getResourceNode(hit.getResource(),this.contenttype,tagManager);
+			ResourceNode resourceNode = ResourceLibraryHelperModel.getResourceNode(hit.getResource(),this.contenttype,this.industrytag,tagManager);
 			if(resourceNode!=null){
 			resouceList.add(resourceNode);
 			}

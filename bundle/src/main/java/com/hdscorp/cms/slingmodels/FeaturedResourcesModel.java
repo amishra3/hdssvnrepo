@@ -34,6 +34,9 @@ public class FeaturedResourcesModel  {
 	@Named("contenttype")
 	@Default(values = { "" })
 	private String[] contenttype;
+	
+	private String[] industrytag = {};
+
 	private List<ResourceNode> featuredResouceList;
 
 	public List<ResourceNode> getFeaturedResouceList() {
@@ -64,11 +67,14 @@ public class FeaturedResourcesModel  {
 
 				if (!resource
 						.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
-					ResourceNode resourceNode = ResourceLibraryHelperModel.getResourceNode(resource,
-							contenttype, tagManager);
+					ResourceNode resourceNode = ResourceLibraryHelperModel.getResourceNode(resource,contenttype,industrytag, tagManager);
 					if (resourceNode != null) {
 						resourceNode.setFeaturedBGImage(map
 								.get("featureditembgimage"));
+								
+						resourceNode.setFeaturedIconImage(map
+										.get("featurediconimage"));		
+						
 						if(tags!=null){
 						if(Arrays.asList(resourceNode.getResourceTags()).contains(tags[0])){
 							
