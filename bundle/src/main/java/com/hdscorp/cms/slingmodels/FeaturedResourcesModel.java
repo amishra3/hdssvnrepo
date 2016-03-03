@@ -94,7 +94,7 @@ public class FeaturedResourcesModel  {
 
 			e.printStackTrace();
 		}
-		System.out.println("featured length" + featuredResouceList.size());
+		
 		return featuredResouceList;
 	}
 

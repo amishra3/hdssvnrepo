@@ -1,5 +1,8 @@
 package com.hdscorp.cms.slingmodels;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
@@ -32,26 +35,34 @@ public class ResourceLibraryHelperModel {
 			resourceNode.setResourcePath(resource.getPath());
 			if (properties.containsKey("cq:tags")) {
 				String[] assetTags = (String[]) properties.get("cq:tags");
+                boolean hasContentType = false;
+				
+				List<String> industryTadIds = new ArrayList<>();
 				resourceNode.setResourceTags(assetTags);
-
+				int i = 0;
 				for (String item : assetTags) {
-
-					if (item.contains(contenttype[0])) {
-
-						Tag tag = tagManager.resolve(item);
-						if (tag != null) {
+					Tag tag = tagManager.resolve(item);
+					if (tag != null) {
+						if (contenttype.length > 0
+								&& item.contains(contenttype[0])) {
+							
 							resourceNode.setContentType(tag.getTitle());
 							resourceNode.setContentTypeTag(tag.getTagID());
+							hasContentType = true;
+						}
+						if (industryTag.length > 0
+								&& item.contains(industryTag[0])) {
+
+							industryTadIds.add(tag.getTagID());
+                           
+							
 						}
 					}
-					if (industryTag.length > 0 && item.contains(industryTag[0])) {
-
-						Tag tag = tagManager.resolve(item);
-						if (tag != null) {
-
-							resourceNode.setIndustryTag(tag.getTagID());
-						}
+					if(!hasContentType){
+						resourceNode.setContentType("Video");
 					}
+					
+					resourceNode.setIndustryTags(industryTadIds.toArray(new String[0]));
 				}
 
 			}

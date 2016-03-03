@@ -15,6 +15,18 @@ public class ResourceNode {
 	
 	private String contentType;
 	private String contentTypeTag;
+	
+	private String[] industryTags;
+	public String[] getIndustryTags() {
+		return industryTags;
+	}
+
+	public void setIndustryTags(String[] industryTags) {
+		this.industryTags = industryTags;
+	}
+
+	private String featuredBGImage;
+	private String featuredIconImage;
 	public String getContentTypeTag() {
 		return contentTypeTag;
 	}
@@ -23,17 +35,9 @@ public class ResourceNode {
 		this.contentTypeTag = contentTypeTag;
 	}
 
-	public String getIndustryTag() {
-		return industryTag;
-	}
+	
 
-	public void setIndustryTag(String industryTag) {
-		this.industryTag = industryTag;
-	}
-
-	private String industryTag;
-	private String featuredBGImage;
-	private String featuredIconImage;
+	
 	
 	public String getFeaturedIconImage() {
 		return featuredIconImage;
