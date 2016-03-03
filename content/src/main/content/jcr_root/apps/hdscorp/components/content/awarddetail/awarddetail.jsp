@@ -15,6 +15,7 @@
 <br><br>Award Description ::${properties.awarddescription}
 <br><br>Award Date ::${properties.awarddate.time}
 <br><br>Open In New Window:::${properties.linktargettype}
+<br><br>Show third party icon?:::${properties.thirdparty}
 
 
 
