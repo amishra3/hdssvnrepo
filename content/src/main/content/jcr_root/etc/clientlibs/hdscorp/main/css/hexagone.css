@@ -81,7 +81,7 @@
   float: left;
   margin-right: 52px;
   float: left;
-  padding:0 15px;
+  padding:0 10px;
 }
 
 .hexagon320 .hexagon-content{
@@ -108,7 +108,7 @@
 .hexagon320 h4 {
     color: #000000;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 1.313rem;
+    font-size: 1.125em;
     font-weight: 700;
     line-height: 1;
     margin: 10px 0 10px;
@@ -118,10 +118,11 @@
 
 .hexagon320 p {
     color: #333333;
-    font-family: Helvetica,Arial,sans-serif;
-    font-size: 1.125rem;
-    line-height: 130%;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-size: 1.125em;
+    line-height: 1.4em;
     margin:0;
+	font-weight:100;
 }
 
 .hexagon320 .read-more {
