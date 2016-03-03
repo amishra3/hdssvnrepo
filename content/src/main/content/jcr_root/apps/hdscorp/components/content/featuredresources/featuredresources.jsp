@@ -23,7 +23,7 @@
                             <img title="" alt="" src="${resource.featuredIconImage}">
                         </div>
                         <div class="type">${resource.contentType}</div>
-                        <div class="spotlight-title"><a href="${resource.resourcePath}" class="animateLink"> <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></div>
+                        <div class="spotlight-title"><a href="${resource.resourcePath}" class="animateLink">${resource.resourceTitle} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></div>
                     </div>
                 </div>
             </div>

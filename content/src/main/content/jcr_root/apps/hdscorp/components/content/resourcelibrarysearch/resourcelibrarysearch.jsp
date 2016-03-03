@@ -31,7 +31,12 @@
 		<c:if test="${not empty  resourceTags}">
 			<c:set var="resourceTags" value="${fn:join(resourceTags, ',')}" />
 		</c:if>
-       <div class="resource" data-indstry="${resource.industryTag}" data-contenttype="${resource.contentTypeTag}" data-subfilter="${resourceTags}">
+		<c:set var="industryTags" value="${resource.industryTags}" />
+		<c:if test="${not empty  industryTags}">
+			<c:set var="industryTags" value="${fn:join(industryTags, ',')}" />
+		</c:if>
+		
+       <div class="resource" data-indstry="${industryTags}" data-contenttype="${resource.contentTypeTag}" data-subfilter="${resourceTags}">
                 <div class="type">${resource.contentType}</div>
                 <h3><a href="${resource.resourcePath}" class="animateLink">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
                 <div class="deafultdesc">
