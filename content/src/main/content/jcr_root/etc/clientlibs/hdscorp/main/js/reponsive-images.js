@@ -5,12 +5,19 @@ $(function() {
 
         if (windowSize <= 320) {
 		    imgName = $('.rsImg').attr('data-image-mobile');
-			$('.rsImg').css("background-image", "url('"+imgName+"')");
+			
+			$('.rsImg').each(function (index, value){
+				$(this).css("background-image", "url('"+imgName+"')");
+			});
+			
 			return false;
         }
         else if (windowSize > 321) {
 		   imgName = $('.rsImg').attr('data-image-desktop');
-		   $('.rsImg').css("background-image", "url('"+imgName+"')");
+		   $('.rsImg').each(function (index, value){
+			   $(this).css("background-image", "url('"+imgName+"')");
+		   });
+
 		   return false;
         }
     }
