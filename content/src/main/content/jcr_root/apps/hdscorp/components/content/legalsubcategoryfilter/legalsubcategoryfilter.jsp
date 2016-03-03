@@ -57,7 +57,7 @@
 
 
     <c:choose>
-    <c:when test="{loopCatCount.index==0}">
+    <c:when test="${loopCatCount.index==0}">
  <li class="noBorder active">
         </c:when>
         <c:otherwise>
