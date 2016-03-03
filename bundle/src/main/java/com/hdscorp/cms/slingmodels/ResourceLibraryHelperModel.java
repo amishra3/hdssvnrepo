@@ -61,8 +61,12 @@ public class ResourceLibraryHelperModel {
 					if(!hasContentType){
 						resourceNode.setContentType("Video");
 					}
+					if(industryTadIds.size()>0){
+						resourceNode.setIndustryTags(industryTadIds.toArray(new String[0]));
+					} else {
+						resourceNode.setIndustryTags(new String[] {""});
+					}
 					
-					resourceNode.setIndustryTags(industryTadIds.toArray(new String[0]));
 				}
 
 			}
