@@ -29,6 +29,7 @@
                     <div class="col-md-4 partnerLogo col-md-push-8">
                         <a href="javascript:void(0);" class="partnerLogo"></a>
                     </div>
+					<c:if test="${not empty column.ctalabel}">
                     <div class="col-md-8 col-md-pull-4">
                         <h2>${column.bannertitle}</h2>
                         <p>${column.bannerdescription}</p>
@@ -36,6 +37,7 @@
                             <a href="${linkUrl}" target="${column.openinnewwindow==true?'_blank':'_self'}">${column.ctalabel}</a>
                         </div>
                     </div>
+					</c:if> 
                 </div>
             </div>                   
           </c:forEach>
