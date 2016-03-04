@@ -1,2 +1,3 @@
 #base=js
 vendor/modernizr.js
+vendor/jquery.cookie.js
