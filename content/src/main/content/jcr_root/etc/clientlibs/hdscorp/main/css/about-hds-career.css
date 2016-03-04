@@ -21,9 +21,9 @@
     font-weight: 700;
     font-size: 24px;
     text-transform: uppercase;
-	margin:0 50px 0 0;
+	margin:5px 50px 0 0;
 	padding:0;
-	color:#fff;
+	color:#fff; float:left;
 }
 
 @media only screen and (max-width: 767px) {
@@ -33,6 +33,7 @@
 	text-align:center;
 	font-size:15px;
 	display:block;
+	float:none;
 	}
 	.new-abouthds-banner .cta-btn{   display: block;
     margin: 0 auto !important;
@@ -803,4 +804,5 @@
         top:-35px;
         right:5%;
     }
+	.hitachi-spirit-hexagon .hitachi-spirit-hexagon-list h4 br{display:none;}
 }
