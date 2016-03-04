@@ -23,19 +23,16 @@
                         <fieldConfig jcr:primaryType="cq:WidgetCollection">
                             <columntitle
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="Title"
                                 name="./columntitle"
                                 xtype="textfield"/>
                             <columndescription
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="Description"
                                 name="./columndescription"
                                 xtype="textarea"/>
-                            <columnmagepath
-                                jcr:primaryType="cq:Widget"
-                                fieldLabel="Image Path"
-                                name="./columnmagepath"
-                                xtype="pathfield"/>
                             <ctalabel
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="CTA Label"
@@ -48,6 +45,7 @@
                                 xtype="pathfield"/>
                             <openininewwindow
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="Open in New Window ?"
                                 name="./openininewwindow"
                                 type="select"

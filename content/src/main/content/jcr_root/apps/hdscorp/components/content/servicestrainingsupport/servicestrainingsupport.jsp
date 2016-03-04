@@ -23,6 +23,7 @@
 					
 					<h3 class="headline">${column.columntitle}</h3>
 					<p>${column.columndescription}</p>
+<c:if test="${not empty column.ctalabel}">
 <c:choose>
 <c:when test="${column.openininewwindow=='1'}">
 <div class="support-connect-login col-no-pad"><a class="animateLink" href="${linkUrl}" target="_blank">${column.ctalabel}<span class="glyphicon glyphicon-share animateIcon" aria-hidden="true"></span></a></div>
@@ -31,7 +32,9 @@
 <div class="support-connect-login col-no-pad"><a class="animateLink" href="${linkUrl}">${column.ctalabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></div>
 </c:otherwise>
 </c:choose>
+</c:if>
                 </div>
+
 			</div> 
 		    </div>
             </c:forEach>
