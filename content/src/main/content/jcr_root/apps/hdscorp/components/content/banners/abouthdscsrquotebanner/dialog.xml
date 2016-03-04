@@ -48,6 +48,7 @@
                         xtype="ddpathfield"/>
                     <quoteheadline
                         jcr:primaryType="cq:Widget"
+                        allowBlank="false"
                         fieldLabel="Quote Headline"
                         name="./quoteheadline"
                         xtype="textfield"/>
