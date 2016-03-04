@@ -24,10 +24,11 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
     min-height: 65px;
     padding-left: 15px;
     padding-right: 62px;
-    text-align: center;
+    text-align: left;
     width: 100%;
 	color:#000000;
 }
+
 .training-search span.glyphicon.glyphicon-search {
     color: #cc0000;
     cursor: pointer;
