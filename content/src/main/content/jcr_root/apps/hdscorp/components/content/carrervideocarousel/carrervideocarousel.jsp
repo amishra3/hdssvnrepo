@@ -45,7 +45,7 @@
 
 <c:forEach var="carrerCarosuelTitle" items="${carrerCarosuelTitles}">
 <div class="col-md-2 smMobile">
-      <a href="javascript:void(0);" class="name itm0 active">${carrerCarosuelTitle.carrerpagebartitle}</a>
+      <a href="javascript:void(0);" class="name">${carrerCarosuelTitle.carrerpagebartitle}</a>
  </div>
 
 </c:forEach>
