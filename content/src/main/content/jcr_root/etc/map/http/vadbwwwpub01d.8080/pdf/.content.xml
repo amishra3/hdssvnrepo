@@ -6,4 +6,4 @@
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="sling:Mapping"
     sling:internalRedirect="[/content/dam/public/en_us/pdfs]"
-    sling:match="pdf"/>
+    sling:match="en-us/pdf"/>

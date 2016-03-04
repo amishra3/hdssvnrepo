@@ -1,6 +1,7 @@
 package com.hdscorp.cms.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -88,7 +89,11 @@ public class ProductQueryServlet extends SlingAllMethodsServlet {
 				}else{
 					
 				}
+				out.println(res.getPath() + "<br>");
 				out.println(pageTags.length + "====");
+//				Arrays.asList(pageTags).forEach(n -> out.println(n));
+				
+				out.println(res.getPath() + "<br>");
 				out.println(res.getPath() + "<br>");
 			} catch (Exception ex) {
 				// TODO Auto-generated catch block
