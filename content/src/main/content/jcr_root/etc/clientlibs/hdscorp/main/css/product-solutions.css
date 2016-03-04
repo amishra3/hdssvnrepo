@@ -1,7 +1,18 @@
+.specs_h2{
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-size: 1.50rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-bottom: 30px;
+}
 div.cs-highlight-box-message .icon-quote.open-quote,
 div.cs-highlight-box-message .icon-quote.close-quote {
   position: relative;
 }
+
+
 
 div.cs-highlight-box-message .icon-quote.open-quote {
   top: -10px;
