@@ -440,6 +440,8 @@
     padding-bottom:20px;
     background:#ffffff;
   }
+  .about-hds-latest .about-hds-events .about-hds-events-content .title a{color:#414141;}
+  .about-hds-latest .about-hds-events .about-hds-events-content .title a:hover{color:#414141;}
   .about-hds-events-content .date-stamp.hidden-sm.hidden-md.hidden-lg > span {
       display: table-cell;
       vertical-align: top;
