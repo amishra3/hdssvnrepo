@@ -128,7 +128,7 @@
     border: medium none;
     min-height: 65px;
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-size: 1.125rem;
     font-family: Arial, sans-serif;
     padding-right: 62px;
@@ -145,7 +145,6 @@
     font-size: 1.125rem;
 }
 
-
 /* firefox 19+ */
 
 #custom-search-input .pr-search :-ms-input-placeholder {
@@ -160,6 +159,39 @@
     color: #414141;
     font-size: 1.125rem;
 }
+
+
+#custom-search-input .pr-search input::-webkit-input-placeholder {
+color: #414141 !important;
+}
+
+#custom-search-input .pr-search input:focus::-webkit-input-placeholder {
+color: #cccccc !important;
+}
+ 
+#custom-search-input .pr-search input:-moz-placeholder { /* Firefox 18- */
+color: #414141 !important;  
+}
+
+#custom-search-input .pr-search input:focus:-moz-placeholder { /* Firefox 18- */
+color: #cccccc !important;  
+}
+ 
+#custom-search-input .pr-search input::-moz-placeholder {  /* Firefox 19+ */
+color: #414141 !important;  
+}
+#custom-search-input .pr-search input:focus::-moz-placeholder {  /* Firefox 19+ */
+color: #cccccc !important;  
+}
+ 
+#custom-search-input .pr-search input:-ms-input-placeholder {  
+color: #414141 !important;  
+}
+#custom-search-input .pr-search input:focus:-ms-input-placeholder {  
+color: #cccccc !important;  
+}
+
+
 
 .container-content-search {
     display: block;
