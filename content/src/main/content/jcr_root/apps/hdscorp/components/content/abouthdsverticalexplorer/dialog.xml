@@ -48,6 +48,12 @@
                         fieldLabel="Item Description"
                         name="./aheiconbimagedesc"
                         xtype="textfield"/>
+                    <aheiconbimagedesclink
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Item Description Link"
+                        name="./aheiconbimagedesclink"
+                        xtype="textfield"/>
                 </items>
             </abouthds>
         </items>

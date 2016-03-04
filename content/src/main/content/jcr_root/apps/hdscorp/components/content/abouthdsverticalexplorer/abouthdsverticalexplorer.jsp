@@ -30,7 +30,8 @@
         </div>
         <div class="clearfix"></div>
         <div class="title">
-            ${aboutHDSVerticalExplorerModel.iconImageDesc}
+            <a href="${properties.aheiconbimagedesclink}">${aboutHDSVerticalExplorerModel.iconImageDesc}</a>
+
         </div>
     </div>
 </div>
