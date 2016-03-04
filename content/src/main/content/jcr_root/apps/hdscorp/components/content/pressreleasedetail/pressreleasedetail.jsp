@@ -1,9 +1,7 @@
- Hdscorp event component
+<%--Press Release Details component--%>
 
---%><%
-%><%@include file="/apps/foundation/global.jsp"%><%
-%><%@page session="false" %><%
-%>
+<%@include file="/apps/foundation/global.jsp"%>
+<%@page session="false" %>
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.PressReleaseDetailModel" var="pressRelease" />
            
