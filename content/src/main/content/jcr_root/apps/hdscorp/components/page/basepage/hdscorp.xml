@@ -3,6 +3,18 @@
     jcr:primaryType="cq:Panel"
     title="HDS Corp">
     <items jcr:primaryType="cq:WidgetCollection">
+            <websitelangtext
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Language Code for the website"
+            fieldDescription="Set this on the root of the website."
+            name="./websitelangtext"
+            xtype="textfield"/>     
+        <websitecountrytext
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Country Code for the website"
+            fieldDescription="Set this on the root of the website."
+            name="./websitecountrytext"
+            xtype="textfield"/>
         <navigation
             jcr:primaryType="cq:Widget"
             fieldLabel="Navigation DropDown Path"

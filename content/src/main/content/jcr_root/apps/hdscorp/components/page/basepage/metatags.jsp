@@ -130,3 +130,5 @@
 %>
 
 
+<meta name="language" content="<%= pageProperties.getInherited("websitelangtext", "")%>"/>
+<meta name="country" content="<%= pageProperties.getInherited("websitecountrytext", "") %>"/>
