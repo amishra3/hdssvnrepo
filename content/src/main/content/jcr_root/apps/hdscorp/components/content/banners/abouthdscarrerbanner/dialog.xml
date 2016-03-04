@@ -47,6 +47,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <abouthdscarrerbannerpromotext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Promo Text"
+                        name="./promotext"
+                        xtype="textfield"/>
                     <abouthdscarrerbannerlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
