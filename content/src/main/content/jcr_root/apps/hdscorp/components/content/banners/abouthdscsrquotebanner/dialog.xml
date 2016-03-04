@@ -56,6 +56,12 @@
                         fieldLabel="Quote Content"
                         name="./quotecontent"
                         xtype="textarea"/>
+                    <hidequote
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Quotes?"
+                        name="./hidequotes"
+                        type="checkbox"
+                        xtype="selection"/>
                     <ctalabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="CTA Label"

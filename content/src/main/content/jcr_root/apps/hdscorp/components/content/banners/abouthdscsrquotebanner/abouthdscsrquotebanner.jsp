@@ -44,8 +44,7 @@
 
 	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-4 clearfix" />
 </c:if>
-
-
+<c:set var="quotelength" value="${fn:length(quotesdel)}"/>    
 <c:choose>
 	<c:when test="${not empty properties.quoteheadline}">
 
@@ -53,8 +52,16 @@
     <div class="about-hds-csr-quote-container">
         <div class="col-md-10 col-md-offset-1 clearfix">
             <h2 class="headline">${properties.quoteheadline}</h2>
-            <p> <span class="sprite icon-quote open-quote"></span>${properties.quotecontent}<span
+            <c:choose>
+  <c:when test="${quotelength gt 0}">
+    <p>${properties.quotecontent}</p>
+  </c:when>
+  
+  <c:otherwise>
+    <p><span class="sprite icon-quote open-quote"></span>${properties.quotecontent}<span
 				class="sprite icon-quote close-quote"></span></p>
+  </c:otherwise>
+</c:choose>
             <c:if test="${not empty properties.ctalabel}">
             <div class="learn-more">
                  <div class="learn-more-csr-quote btn-square-white">
