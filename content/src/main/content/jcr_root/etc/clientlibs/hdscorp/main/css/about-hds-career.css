@@ -1,3 +1,66 @@
+.new-abouthds-banner .cta-btn{ display: inline-block;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 260px; }
+.new-abouthds-banner .resource-icon {
+    background-image: url(../images/sprite.png);
+    background-position: -87px -214px;
+    width: 27px;
+    height: 34px;
+}
+
+.red-bg{float:left; width:100%; padding:50px 0 50px 0;  margin: 0 0 30px; background:rgba(204, 0, 0, 0.5);}
+.common-hero-banner.new-abouthds-banner {padding-left:0; padding-right:0;}
+.new-abouthds-banner .common-hero-banner-container {
+    margin-left: 0!important; padding:0px 30px 50px;
+}
+.new-abouthds-banner .cta-text{float:left; width:100%; }
+.new-abouthds-banner .cta-text h4{
+	display:inline-block; 
+	font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+	margin:0 50px 0 0;
+	padding:0;
+	color:#fff;
+}
+
+@media only screen and (max-width: 767px) {
+	
+.new-abouthds-banner .cta-text h4 {
+	margin:0 0 5px 0;
+	text-align:center;
+	font-size:15px;
+	display:block;
+	}
+	.new-abouthds-banner .cta-btn{   display: block;
+    margin: 0 auto !important;
+    max-width: 66% !important;} 
+	.red-bg { margin: 0 0 50px;
+    padding: 20px 0;
+
+	}
+.new-abouthds-banner .common-hero-banner-container{padding:0px 0px 50px;}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	
+	.new-abouthds-banner .common-hero-banner-container .request{
+    display: inline-block!important;
+	}	
+	
+	.new-abouthds-banner .red-bg { margin: 0 0 50px;
+   	 padding: 40px 0;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	.new-abouthds-banner .cta-text h4 {
+    font-size:17px;
+	}
+
+}
+
 .common-hero-banner.about-hds-career {
     background-image: url("../images/about-hds-career.jpg");
     z-index: 2;
