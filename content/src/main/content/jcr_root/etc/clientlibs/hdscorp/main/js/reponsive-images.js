@@ -4,17 +4,16 @@ $(function() {
         var windowSize = $(window).width();
 
         if (windowSize <= 320) {
-		    imgName = $('.rsImg').attr('data-image-mobile');
-			
 			$('.rsImg').each(function (index, value){
+				imgName = $(this).attr('data-image-mobile');
 				$(this).css("background-image", "url('"+imgName+"')");
 			});
 			
 			return false;
         }
         else if (windowSize > 321) {
-		   imgName = $('.rsImg').attr('data-image-desktop');
 		   $('.rsImg').each(function (index, value){
+			   imgName = $(this).attr('data-image-desktop');
 			   $(this).css("background-image", "url('"+imgName+"')");
 		   });
 
