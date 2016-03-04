@@ -8,7 +8,7 @@ var hds = window.hds || {};
                 filterleftSide: '.newsEvents', 
                 paginationWrapper: '#loadResourceContent',
                 myPageName : "#page-",
-                itemsPerPage: 10,
+                itemsPerPage: pageSize,
                 filterTopLeft:'.filters-section',
                 filterTarget:'.resource'           
             }

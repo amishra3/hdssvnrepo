@@ -8,7 +8,9 @@
 <c:set var="featuredlabel" value="${properties.featuredlabel}" scope="request"/>
 <c:set var="featuredoverlaypath" value="${properties.featuredoverlaypath}" scope="request"/>
 <c:set var="isResourceLibraryPage" value="true" scope="request"/>
-
+<script>
+var pageSize = <%=properties.get("pagesize","10")%>;
+</script>
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.ResourceLibraryModel" var="model" />
     
       

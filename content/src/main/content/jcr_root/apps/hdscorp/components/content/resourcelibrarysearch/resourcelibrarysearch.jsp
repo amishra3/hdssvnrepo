@@ -5,13 +5,11 @@
 <c:set var="nextLabel" value="${properties.nextlabel}" scope="request"/>
 <c:set var="readMoreText" value="${properties.readMoreText}" scope="request"/>
 <c:set var="resourcesPath" value="${properties.resourcespath}" scope="request"/>
-<c:set var="pageSize" value="${properties.pagesize}" scope="request"/>
+
 <c:set var="contenttype" value="${properties.contenttype}" scope="request"/>
 <c:set var="industrytag" value="${properties.industrytag}" scope="request"/>
 
-<script>
-var pageSize = <%=properties.get("pagesize","10")%>;
-</script>
+
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.ResourceLibrarySearchModel" var="model" />
 <c:if test="${!model.noTags}">
 <c:set var="featuredoverlaypath" value="${properties.featuredoverlaypath}"/>
