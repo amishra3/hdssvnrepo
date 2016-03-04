@@ -375,6 +375,8 @@
     margin-top: 10px;
 }
 
+.about-hds-latest  .about-hds-events .about-hds-events-content .title a, .about-hds-latest  .about-hds-events .about-hds-events-content .title a:hover{color:#FFF;}
+
 @media only screen and (max-width: 991px) {
   .about-hds-latest  {
     padding-top: 22px;
