@@ -21,6 +21,12 @@
                         fieldLabel="Showing From"
                         name="./eshownfrom"
                         xtype="textfield"/>
+                    <eshownto
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Showing To"
+                        name="./eshownto"
+                        xtype="textfield"/>
                     <eupdatelabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
