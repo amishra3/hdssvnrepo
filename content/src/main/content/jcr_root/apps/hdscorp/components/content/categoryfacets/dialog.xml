@@ -61,6 +61,14 @@
                                     layout="anchor"
                                     name="./display-title"
                                     xtype="textfield"/>
+                                 <featuredoverlaypath
+			                        jcr:primaryType="cq:Widget"
+			                        anchor="100%"
+			                        dname="header"
+			                        fieldLabel="Featured Overlay Path"
+			                        key="featuredoverlaypath"
+			                        name="./featuredoverlaypath"
+			                        xtype="pathfield"/>     
                                 <cftags
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"

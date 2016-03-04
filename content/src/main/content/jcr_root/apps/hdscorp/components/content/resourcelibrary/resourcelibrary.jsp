@@ -109,7 +109,10 @@
                     <div class="spolightresults">
                         <div class="res-spotlight-group clearfix" id="featuredCards">
                             
-                            
+                            <c:set var="includetargetURL" value="${requestScope['includetargetURL']}" />
+                                    <c:if test="${not empty includetargetURL}">
+                                   		<sling:include path="${includetargetURL}" />
+                                    </c:if>
                             
                             
                         </div>

@@ -30,6 +30,7 @@
 
 		<c:choose>
 		    <c:when test="${isResourceLibraryPage}">
+		    <c:set var="includetargetURL" value="${featuredoverlaypath}.html" scope="request"/>
 		    <div class="resources-listing">
 			<ul id="asideLinks-product">
 		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${featuredoverlaypath}.html"> ${featuredlabel} </a></li>
@@ -58,13 +59,19 @@
 				<li ${activeclass}>
 				
 				<c:set var="currentCategoryID" value="${xss:filterHTML(xssAPI,data['category-id'])}"/>
+				
+				<c:set var="categoryFeaturedOverlayPath" value="" />
+		        <c:if test="${not empty data['featuredoverlaypath']}">
+					<c:set var="categoryFeaturedOverlayPath" value="${xss:filterHTML(xssAPI,data['featuredoverlaypath'])}.html" />
+				</c:if>
+				
 				<% 
 				String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
 				String currentCategoryID = (String)pageContext.getAttribute("currentCategoryID");
 				pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
 				%>
 					
-					<a href="${currentCategoryUrl}#${currentCategoryID}" data-href="${categoryTargetURL}" id="${currentCategoryID}" name="${currentCategoryID}">
+					<a href="${currentCategoryUrl}#${currentCategoryID}" featured-href="${categoryFeaturedOverlayPath}" data-href="${categoryTargetURL}" id="${currentCategoryID}" name="${currentCategoryID}">
 							${xss:filterHTML(xssAPI,data['display-title'])} 
 							<span class="icon-accordion-closed"></span> 
 							<span class="icon-accordion-opened"></span>
