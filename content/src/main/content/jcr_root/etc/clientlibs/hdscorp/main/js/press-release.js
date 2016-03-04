@@ -46,10 +46,11 @@ var hds = window.hds || {};
         },
         loadMorePressRelease: function() {
             sizePrList = $(".pr").hide().size();
-            var x = 10;
+			console.log(sizePrList);
+            var x = 3;
             $('.pr:lt(' + x + ')').show('medium');
             $(document).on('click','#loadMorePrBtn', function() {
-                x = (x + 10 <= sizePrList) ? x + 10 : sizePrList;
+                x = (x + 5 <= sizePrList) ? x + 5 : sizePrList;
                 $('.pr:lt(' + x + ')').show('medium');
                 if (x == sizePrList) {
                     $('#loadMorePrBtn').hide();
