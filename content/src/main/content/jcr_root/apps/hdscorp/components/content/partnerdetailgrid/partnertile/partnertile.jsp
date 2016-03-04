@@ -21,9 +21,8 @@
                           <div class="col-sm-4">
                             <div class="section-service-col">
                                 <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${partnerObj.categoryTitle}"></div>
-                                <h3 class="headline">${partnerObj.categoryTitle}<span class="glyphicon glyphicon-menu-right"></span></h3>
+                                <h3 class="headline"><a class="animateLink" href="${linkUrl}">${partnerObj.categoryTitle}<span class="glyphicon glyphicon-menu-right"></span></a></h3>
                                 <p>${properties.categorysubtitle}</p>
                             </div>
                         </div>
 
-    

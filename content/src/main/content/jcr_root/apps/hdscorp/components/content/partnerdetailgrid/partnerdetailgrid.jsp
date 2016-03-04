@@ -9,7 +9,7 @@
     <div class="cs-container content-container">
 
                     <!--Row Starts-->
-					<h2>EXPLORE OUR CURRENT PROGRAMS AND PARTNERS</h2>
+        <h2>${properties.pdgsectiontitle}</h2>
 
 				<c:forEach var="partner" items="${PartnerGridModel.categories}" varStatus="loopcnt">
 					<c:if test="${(loopcnt.index == 0) || (loopcnt.index mod 3 == 0)}">
@@ -31,11 +31,11 @@
 
 
 					</c:if>	
-        
+
 
 				</c:forEach> 
-	
-	
+
+
            </div>
 
                 <!--/.Row ends-->
