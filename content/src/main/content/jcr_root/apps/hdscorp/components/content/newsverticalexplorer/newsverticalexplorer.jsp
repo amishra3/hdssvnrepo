@@ -30,11 +30,12 @@
                                 <div class="description">${newsVerticalExplorer.newsInsightExplorer.title}</div>
                                 <div class="read-more">
                                     <c:choose>
+                                    	<c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
                                         <c:when test="${newsVerticalExplorer.openinnewwindow}">
-									 <a href="${newsVerticalExplorer.targetURL}" target="_blank" class="animateLink">${newsVerticalExplorer.readMoreLabel} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+									 		<a href="${newsVerticalExplorer.targetURL}" target="_blank" class="animateLink">${newsVerticalExplorer.readMoreLabel} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
                                         </c:when>
                                         <c:otherwise>
-                                        <a href="${newsVerticalExplorer.targetURL}" class="animateLink">${newsVerticalExplorer.readMoreLabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                                        	<a href="${newsVerticalExplorer.targetURL}" class="animateLink">${newsVerticalExplorer.readMoreLabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
                                         </c:otherwise>
                                     </c:choose>
 
