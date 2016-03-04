@@ -259,6 +259,7 @@ if($('.resources-category-box').length!==0){
             equalColumns('.pr-explore-container .pr-common-box');
 			equalColumns('.news-insight-explore .spotlight-content');
 			equalColumns('.news-insight-explore .spotlight-normal .spotlight-content');
+        equalColumns('.about-hds-latest .about-hds-events-content');
         }, 500);
 	}, false);
 
@@ -270,6 +271,7 @@ if($('.resources-category-box').length!==0){
         equalColumns('.pr-explore-container .pr-common-box');
 		equalColumns('.news-insight-explore .spotlight-content');
 		equalColumns('.news-insight-explore .spotlight-normal .spotlight-content');
+        equalColumns('.about-hds-latest .about-hds-events-content');
     }, 500);
 
 })(jQuery);
