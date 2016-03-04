@@ -256,6 +256,8 @@ if($('.resources-category-box').length!==0){
 			equalColumns('.cs-selections .cs-selection-box');
         	equalColumns('.mes-section .product-box');
 			equalColumns('.community-common-box');
+            equalColumns('.pr-explore-container .pr-common-box');
+			equalColumns('.news-insight-explore .spotlight-content');
         }, 500);
 	}, false);
 
@@ -264,6 +266,8 @@ if($('.resources-category-box').length!==0){
     	equalColumns('.cs-selections .cs-selection-box');
         equalColumns('.mes-section .product-box');
 		equalColumns('.community-common-box');
+        equalColumns('.pr-explore-container .pr-common-box');
+		equalColumns('.news-insight-explore .spotlight-content');
     }, 500);
 
 })(jQuery);
