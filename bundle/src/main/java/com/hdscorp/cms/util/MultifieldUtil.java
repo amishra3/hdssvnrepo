@@ -36,7 +36,10 @@ public class MultifieldUtil {
 						for (Iterator<String> iterator = parsed.keys(); iterator.hasNext();) {
 							String key = iterator.next();
 							String innerValue = parsed.getString(key);
+							
+							if(!innerValue.isEmpty() && !innerValue.startsWith("/")){
 							Object json = new JSONTokener(innerValue).nextValue();
+							
 							 if (json instanceof JSONArray) {
 								JSONArray jsonArray = (JSONArray) json;
 								List<Map<String, Object>> subCategoriesList = new ArrayList<Map<String, Object>>();
@@ -61,7 +64,9 @@ public class MultifieldUtil {
 
 								columnMap.put(key, innerValue);
 							}
-						
+							} else {
+								columnMap.put(key, innerValue);
+							}
 						}
 						results.add(columnMap);
 					}
