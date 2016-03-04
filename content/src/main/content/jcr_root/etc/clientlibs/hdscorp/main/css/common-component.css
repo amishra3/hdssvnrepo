@@ -608,7 +608,7 @@ line-height: 1;
     border: medium none;
     min-height: 65px;
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-size: 1.125rem;
     padding-left: 15px;
     padding-right: 62px;
@@ -629,6 +629,36 @@ line-height: 1;
 .pr-search input:-moz-placeholder {
     color: #414141;
     font-size: 1.125rem;
+}
+
+.pr-search > input::-webkit-input-placeholder {
+color: #414141 !important;
+}
+
+.pr-search > input:focus::-webkit-input-placeholder {
+color: #cccccc !important;
+}
+ 
+.pr-search > input:-moz-placeholder { /* Firefox 18- */
+color: #414141 !important;  
+}
+
+.pr-search > input:focus:-moz-placeholder { /* Firefox 18- */
+color: #cccccc !important;  
+}
+ 
+.pr-search > input::-moz-placeholder {  /* Firefox 19+ */
+color: #414141 !important;  
+}
+.pr-search > input:focus::-moz-placeholder {  /* Firefox 19+ */
+color: #cccccc !important;  
+}
+ 
+.pr-search > input:-ms-input-placeholder {  
+color: #414141 !important;  
+}
+.pr-search > input:focus:-ms-input-placeholder {  
+color: #cccccc !important;  
 }
 
 @media only screen and (max-width: 480px) {
