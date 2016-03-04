@@ -42,6 +42,14 @@
                                 key="hccontent"
                                 name="./hccontent"
                                 xtype="richtext"/>
+                            <hcbackgroundimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="hcbackgroundimage"
+                                fieldLabel="Image Path"
+                                key="hcbackgroundimage"
+                                name="./hcbackgroundimage"
+                                xtype="pathfield"/>
                             <hclinklabel
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"

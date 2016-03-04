@@ -8,12 +8,7 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 
-
-
-
-
-
-<c:set var="communityList" value="<%=PageUtils.convertMultiWidgetToList(properties,"hccontent-hcmtitle-hclinklabel-hclink-hcopeninnewwindow")%>" />
+<c:set var="communityList" value="<%=PageUtils.convertMultiWidgetToList(properties,"hccontent-hcmtitle-hclinklabel-hclink-hcopeninnewwindow-hcbackgroundimage")%>" />
 
 
   <div class="hds-community-section">
@@ -23,7 +18,7 @@
 
   <c:forEach items="${communityList}" var="multifieldData1">
                         <div class="col-sm-6">
-                            <div class="hds-community-blog blog-left">
+                            <div class="hds-community-blog blog-left" style="background-image:url('${multifieldData1.hcbackgroundimage}');">
                                 <div class="hds-community-blog-content">
 								<div class="hds-community-blog-title">${multifieldData1.hcmtitle}</div>
     							<div class="hds-community-blog-description">${multifieldData1.hccontent}</div>
