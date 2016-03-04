@@ -4,28 +4,30 @@
     title="Accordin"
     xtype="dialog">
     <items jcr:primaryType="cq:TabPanel">
-    <items jcr:primaryType="cq:WidgetCollection">
-        <multilinks
-            jcr:primaryType="cq:Widget"
-            customMultiFieldName="./multilinks"
-            fieldLabel="Links"
-            name="./multilinks"
-            xtype="custommultifield">
-            <fieldConfig jcr:primaryType="cq:WidgetCollection">
-                <tabName
-                    jcr:primaryType="cq:Widget"
-                    fieldLabel="Tab Display Name"
-                    name="./tabName"
-                    width="{Long}200"
-                    xtype="textfield"/>
-                <tabAnchor
-                    jcr:primaryType="cq:Widget"
-                    fieldLabel="Tab Content Anchor Name"
-                    name="./tabAnchor"
-                    width="{Long}200"
-                    xtype="textfield"/>
-            </fieldConfig>
-        </multilinks>
-    </items>
+        <items jcr:primaryType="cq:WidgetCollection">
+            <multilinks
+                jcr:primaryType="cq:Widget"
+                customMultiFieldName="./multilinks"
+                fieldLabel="Links"
+                name="./multilinks"
+                xtype="custommultifield">
+                <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                    <tabName
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Tab Display Name"
+                        name="./tabName"
+                        width="{Long}200"
+                        xtype="textfield"/>
+                    <tabAnchor
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Tab Content Anchor Name"
+                        name="./tabAnchor"
+                        width="{Long}200"
+                        xtype="textfield"/>
+                </fieldConfig>
+            </multilinks>
+        </items>
     </items>
 </jcr:root>
