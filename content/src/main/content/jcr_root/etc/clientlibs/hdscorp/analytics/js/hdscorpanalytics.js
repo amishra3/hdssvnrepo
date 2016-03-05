@@ -308,10 +308,11 @@ function searchClick(searchTerm, searchAction,result,searchType,tracktEvent){
 
 }
 function getCurrentBreadcrumb() {
-	var hierarchy = "home";
-	$( "a.breadcrumblink" ).each(function( index ) {
-		  
-		  hierarchy=hierarchy+":"+$( this ).text();
+	var hierarchy="";
+	$( "a.breadcrumblink").each(function( index ) {
+         if(hierarchy.length>0)
+			hierarchy=hierarchy+":";
+		  hierarchy=hierarchy+$.trim($(this).text());
 	});
     if(isProductDetail())
 	{
@@ -322,8 +323,10 @@ function getCurrentBreadcrumb() {
         }
 	_g.HTTP.setCookie("vcategory","","/","-1");
 	}
-    hierarchy=hierarchy+":"+pageTitle;
-	console.log( "hierarchy----"+hierarchy );
+    if(hierarchy.length>0)
+			hierarchy=hierarchy+":";
+    hierarchy=hierarchy+pageTitle;
+	console.log( "hierarchy---->>"+hierarchy );
     return hierarchy;
 }
 
