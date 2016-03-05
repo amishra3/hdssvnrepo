@@ -44,7 +44,8 @@
 
 	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-4 clearfix" />
 </c:if>
-<c:set var="quotelength" value="${fn:length(quotesdel)}"/>    
+<c:set var="quotecon" value="${properties.hidequotes}"/>  
+<c:set var="quotelength" value="${fn:length(quotecon)}"/>    
 <c:choose>
 	<c:when test="${not empty properties.quoteheadline}">
 
