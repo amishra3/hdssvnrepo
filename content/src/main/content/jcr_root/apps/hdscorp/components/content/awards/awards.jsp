@@ -13,14 +13,33 @@
                         <div class="career-commitment-spotlight hidden-xs hidden-sm" style="background-image: url(${model.featuredimage});">
                             <div class="spotlight-content">
                                 <div class="company-logo">
-                                    <img src="${model.featurediconimage}" alt="">
+                                    <img src="${model.featurediconimage}" alt="${properties.featuredimagealtalt}">
                                 </div>
-                                <div class="name"></div>
+                                <div class="name">${properties.featuredawardtitle}</div>
                                 <div class="title">
                                     <a href="#" class="animateLink">${model.featuredAward.newsTitle} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></a></div>
                                 <div class="description">${model.featuredawarddesc}</div>
                             </div>
                         </div>
+
+                        <div class="career-commitment-spotlight hidden-md hidden-lg">
+                            <div style="background-image:url(${model.featuredimage});" class="spotlight-mobile hidden-md hidden-lg">
+                                <div class="company-logo">
+                                    <img class="img-responsive" alt="${properties.featuredimagealtalt}" src="${properties.featurediconimagedevice}">
+                                </div>
+                            </div>
+                            <div class="spotlight-content">
+                                <div class="name">${properties.featuredawardtitle}</div>
+                                <div class="title">${model.featuredAward.newsTitle}</div>
+                                <div class="description">${model.featuredawarddesc}</div>
+                                <div class="learn-more">
+                                    <div class="btn-square-red">
+                                        <a href="#">${properties.readmorelabel}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                                          
                     </div>
                     <div class="col-md-6">
