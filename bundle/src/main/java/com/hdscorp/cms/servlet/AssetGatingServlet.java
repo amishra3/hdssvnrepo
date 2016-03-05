@@ -36,7 +36,8 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		//7. If GA cookie found make a call to the reg DB with the GA cookie and the PDF resource name
 		//8. If regdb responds that user has already registered, forward to the PDF resource
 		String pdfPath= request.getRequestURI();
-		System.out.println("-----pdfPath---"+pdfPath);
+		String forwardPath = pdfPath;
+		
 		try {
 			if(pdfPath.toLowerCase().contains(".pdf")){
 				ResourceResolver resourceResolver = request.getResourceResolver();
@@ -46,17 +47,16 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 				if(asset!=null){
 					String resourceTitle = asset.getMetadataValue("dc:title");
 					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
+					//if asset is gated then, set forwardPath to the form page
+					forwardPath = "/content/hdscorp/en_us/home.html";
 				}else{
 					options.setForceResourceType("dam/asset");
 				}
 				
-				
-				options.setForceResourceType("dam/asset");
 			}else{
 				options.setForceResourceType("dam/asset");
-				String forwardPath = "";			
 			}
-			request.getRequestDispatcher(request.getResource(), options).forward(request, response);
+			request.getRequestDispatcher(forwardPath, options).forward(request, response);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
