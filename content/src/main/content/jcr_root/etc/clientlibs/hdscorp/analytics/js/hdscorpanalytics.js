@@ -1,10 +1,28 @@
 var digitalData = digitalData || {};
 var data=getCurrentBreadcrumb();
 
-data = data.replace(/[`‐~!@#$®™%^&*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
+data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 data = data.replace(/\s{2,}/g,' ');
 items = data.split(":");
 count = items.length;
+var activeLinkText="top";
+var desktopType="Desktop";
+var orientation;
+var screenSize;
+var delay=4000;
+$(document).ready(function() {
+if (/Mobi/.test(navigator.userAgent)) {
+    desktopType="Mobile";
+}
+if (Math.abs(window.orientation) === 90) {
+	orientation="Landscape";
+}
+else{
+    orientation="Portrait";
+}
+
+var screenSize = jQuery(window).width() +"x" +jQuery(window).height();
+
 console.log("count"+count);
 for(index=0;index<count;index++)
 {
@@ -33,56 +51,28 @@ if(subSection=="")
 	subSection=pageTitle;
 if(subSubSection=="")
 	subSubSection=pageTitle;
+
+if(isProductCategory())
+{
+	setVirtualCategoryEvent();
+
+    var cLeftNav = $('ul[id=asideLinks]');
+	cLeftNav.each(function() {
+
+	 	var links = $(this).find("a");
+	 	links.each(function() {
+
+            $(this).click(function(){
+                setTimeout(function() {
+                setVirtualCategoryEvent();
+    			 }, 1000);
+             });
+        });
+	});
+}
 if(errorPage!='undefined' && errorPage!=null && errorPage)
 {
- if(redirectUrl=="/pdf-removed.html")
- {
-	 digitalData.page={
-		pageInfo:{
-			pageName: pageTitle,
-			pageType: "document error",
-			hierarchy:items,
-			pageLoadEvent: "document error",
-			errorMessage:"document not available" 
-			},
-			category:{
-			primaryCategory: primaryCategory,
-			subSection: subSection,
-			subSubSection: subSubSection
-			}
-			}
-			digitalData.site={
-			siteInfo:{
-			language:"en",
-			server:"HDS",
-			country:"US:doc-error"
-			}
-		}
- }
- else
- {
- 	 digitalData.page={
-		pageInfo:{
-			pageName: pageTitle,
-			pageType: "404 error",
-			hierarchy:items,
-			pageLoadEvent: "404 error",
-			errorMessage:"Page Not Found" 
-			},
-			category:{
-			primaryCategory: primaryCategory,
-			subSection: subSection,
-			subSubSection: subSubSection
-			}
-			}
-			digitalData.site={
-			siteInfo:{
-			language:"en",
-			server:"HDS",
-			country:"US:404error"
-			}
-		}
- }
+
 }
 else
 {
@@ -90,32 +80,43 @@ else
 	pageInfo:{
 	pageName: pageTitle,
 	pageType: primaryCategory,
-	hierarchy:items,
+	hier1:items,
 	},
 	category:{
 	primaryCategory: primaryCategory,
-	subSection: subSection,
-	subSubSection: subSubSection
+	subSection: subSection
 	}
 	}
 	digitalData.site={
-	siteInfo:{
-	language:"en",
-	server:"HDS",
-	country:"US"
+        siteInfo:{
+        language:"en",
+        server:"HDS",
+        country:"US"
+        },
+        dimensions:{
+        deviceType:desktopType,
+        screensize:screenSize,
+        Orientation:orientation
+        }
 	}
-	}
-	if(pageTitle=="home" || pageTitle=="Home")
-	{
-			digitalData["page"]["pageInfo"]["pageLoadEvent"]=primaryCategory+" view";
-	}
-	
+	digitalData.user={
+        userInfo:{
+            authStatus:"guest"
+        }
+    }
+
+if(isProductDetail())
+{
+	digitalData["page"]["category"]["productName"]=pageTitle;
+    
+}
+
 }
 console.log("digitalData-------"+JSON.stringify(digitalData));
 
-$(document).ready(function() {
+
 //Mega Menu Links Custom Tracking
-	var megaMenuItems = $(".hds-megaMenuWrapper");
+	var megaMenuItems = $(".hds-main-navigation");
 	megaMenuItems.each(function() {
      var listitem = $(this).find("a");
      if( listitem.length>0)
@@ -126,53 +127,164 @@ $(document).ready(function() {
 		 {
 		 	linktext= $(this).children().attr("title");
 		 }
-		$(this).click(function(){globalMenuClick("linkclick","US>MM>"+linktext,pageTitle); });
-	  });
-	 }
+          if(linktext=="" || linktext.length==0)
+		 {
+		 	linktext= $(this).children().text();
+		 }
+			$(this).click(function(){globalMenuClick("linkclick","US>MM>"+linktext,pageTitle,"link","mega menu"); });
+		});                 
+     }
+    });	
 
-
-	});	
-	
 	//Footer links tracking
-	/*var footerItems = jQuery("div[id=fatFooter],div[class=footleft]");
+	var footerItems = jQuery("div.footer");
 	footerItems.each(function() {
 	var links = jQuery(this).find("a");
 	   links.each(function() {
 		 var linktext = jQuery(this).text();
-		 $(this).click(function(){globalMenuClick("linkclick","US>FT>"+linktext,pageTitle); });
-	  });
-	 
-	});	*/
+           if(linktext=="" || linktext.length==0)
+		 {
+		 	linktext= jQuery(this).children().attr("title");
+		 }
+		 $(this).click(function(){globalMenuClick("linkclick","US>FT>"+linktext,pageTitle,"link","footer"); });
+	  })
+
+	});	
 	//Tabs Custom Tracking
 	var tabs = $(".stickNav-container");
 	tabs.each(function() {
-	 	var links = jQuery(this).find("a")
-       // console.log("***********"+links.text());
+	 	var links = $(this).find("a")
+       links.each(function() {
+		 	$(this).click(function(){tabClick(primaryCategory,$(this),pageTitle,"Tabclick"); });
+	  	});
+
+	});
+    $(window).on('scroll', function(){
+        var tabs = $(".stickNav-container");
+		var activeLink = tabs.find("a.active");
+       // console.log("activeLink=="+activeLink.text());
+ 		//console.log("activeLinkText=="+activeLinkText);
+        if(activeLink.text()!="" && activeLinkText!=activeLink.text())
+        {
+             activeLinkText=activeLink.text();
+            setTimeout(function() {
+                if(activeLinkText==activeLink.text())
+                {
+                    console.log("Tracking tabs");
+                    
+                    tabClick(primaryCategory,activeLink,pageTitle,"Tabscroll");
+                }
+
+			}, delay);
+
+        }
+
+       });
+
+//products search
+$(document).on('keypress', '#searchFilter', function(event) {
+    if(event.which == 13) {
+     setTimeout(function() {
+	var searchTerm=$('#searchFilter').val();
+	var result=$('#TotalCount').text();
+         if(result==0)
+             result="zero";
+     searchClick(searchTerm, "search box",result,'product','productSearchClick');
+         }, 1000); 
+    }            
+    });
+
+	var checkboxes = $('.product-listing input.filters');
+	checkboxes.each(function() {
+		 $(this).click(function(){
+			if ($(this).is(':checked')) {
+                var text = $(this).find("span").text();
+       			var result=$('#TotalCount').text();
+         		if(result==0)
+           		  result="zero";
+                searchClick(text, "sub-category filter",result,'product','productSearchClick');
+            }
+         });
+
+		});	
+    var pLeftNav = $('ul[id=asideLinks-product]');
+	pLeftNav.each(function() {
+	 	var links = $(this).find("a");
 	 	links.each(function() {
-		 	$(this).click(function(){tabClick(primaryCategory,$(this),pageTitle); });
+            $(this).click(function(){
+                var text = $(this).text();
+                setTimeout(function() {
+                var result=$('#TotalCount').text();
+                 if(result==0)
+                     result="zero";
+                	searchClick(text, "category filter",result,'product','productSearchClick');
+    			 }, 1000);
+             });
+        });
+	});	
+
+    var pAlphaList = $('.result-product ul.sortAlpha');
+	pAlphaList.each(function() {
+		var links = $(this).find("a");
+	 	links.each(function() {
+
+        $(this).click(function(){
+             var text = $(this).text();
+
+            setTimeout(function() {
+            	var result=$('#TotalCount').text();
+         		if(result==0)
+            	 result="zero";
+        		productSearchClick(text, "a-z filter",result,'product');
+			 }, 1000); 
+        });
+        //}
 	  	});
 		});	
-	});
-function globalMenuClick(eventname,triggername,page)
+
+
+});	
+
+//Events Search
+$(document).on('click', '#updateResults', function(event) {
+    setTimeout(function() {
+	var searchTerm="";
+	var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
+         if(result==0)
+             result="zero";
+    searchClick(searchTerm, "search box",result,'product','productSearchClick');
+         }, 1000); 
+    });
+
+$('#filterRegion').on('change', function(event) {
+    setTimeout(function() {
+	var searchTerm=$("#filterRegion").val();
+	var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
+         if(result==0)
+             result="zero";
+     searchClick(searchTerm, "search box",result,'product','productSearchClick');
+         }, 1000); 
+    });
+//globalMenuClick(eventname,triggername,page)
+function globalMenuClick(eventname,triggerName,page,triggertype,Position){
+    digitalData.eventData= {
+    eventName:eventname,
+    eventAction:triggername,
+    eventPage:page,
+    eventType:triggertype,
+    eventPostion:Position
+    } 
+    _satellite.track('globalMenuClick');
+}
+	function tabClick(primarycategory,link,pagename,eventName)
 	{
-        console.log("megmenu clicked---"+triggername);
-		digitalData.eventData={
-		eventName: eventname,
-		eventAction: triggername,
-		eventPage: page
-		}
-		_satellite.track('globalMenuClick ');
-	}
-	function tabClick(primarycategory,link,pagename)
-	{
-        console.log("tab clicked----"+link.text());
-	digitalData.event=[];
+        digitalData.event=[];
 		digitalData.event.push({
 			category:{
 			primaryCategory:primarycategory
 			},
-			eventInfo:{
-				eventName:"Tabclick"
+			eventInfo:{ 
+				eventName:eventName
 			},
 			tabInfo:{
 			tabName: link.text(),
@@ -181,23 +293,69 @@ function globalMenuClick(eventname,triggername,page)
 			})
 	_satellite.track('Tab Click');
 	}
-function productSearchClick(searchTerm, searchAction,result){
-        digitalData.eventData= {
+
+function searchClick(searchTerm, searchAction,result,searchType,tracktEvent){
+    	console.log("searchTerm----------"+searchTerm);
+    	console.log("result---------"+result);
+		digitalData.eventData= {
             searchTerm:searchTerm,
             searchAction:searchAction,
             searchResult:result,
-            searchResultType:'product'
+            searchType:searchType,
+            searchPage:pageTitle
         } 
-        _satellite.track('productSearchClick');
-    }
+        _satellite.track(tracktEvent);
 
+}
 function getCurrentBreadcrumb() {
 	var hierarchy = "home";
 	$( "a.breadcrumblink" ).each(function( index ) {
 		  
 		  hierarchy=hierarchy+":"+$( this ).text();
 	});
+    if(isProductDetail())
+	{
+        var vcategory=_g.HTTP.getCookie("vcategory");
+        if(vcategory!="")
+        {
+    		hierarchy=hierarchy+":"+vcategory;
+        }
+	_g.HTTP.setCookie("vcategory","","/","-1");
+	}
     hierarchy=hierarchy+":"+pageTitle;
 	console.log( "hierarchy----"+hierarchy );
     return hierarchy;
+}
+
+function isProductDetail()
+{
+    if($("body.productdetail").size()>0)
+        return true;
+    else
+        return false;
+}
+function isProductCategory()
+{
+    if($("body.productcategory").size()>0)
+        return true;
+    else
+        return false;
+}
+
+function setVirtualCategoryEvent()
+{
+    var cListing = $('.category-products-listing');
+	cListing.each(function() {
+     var listitem = $(this).find("a");
+     if( listitem.length>0)
+	 {
+		 listitem.each(function() {
+             var linktext = jQuery(this).text();
+             $(this).click(function(){
+                   var activeCategory=$('li[class="linkLeft active"').find("a");
+                     _g.HTTP.setCookie("vcategory",$.trim(activeCategory.text()),"/");
+             });
+		 });                 
+      }
+    });
 }
