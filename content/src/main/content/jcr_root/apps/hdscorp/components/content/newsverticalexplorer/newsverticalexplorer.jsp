@@ -20,7 +20,7 @@
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsVerticalExplorerModel" var="newsVerticalExplorer" />
 
-
+<c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
 
    <div class="pr-common-box hidden-xs hidden-sm">
                                 <div class="icon">
@@ -30,7 +30,6 @@
                                 <div class="description">${newsVerticalExplorer.newsInsightExplorer.title}</div>
                                 <div class="read-more">
                                     <c:choose>
-                                    	<c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
                                         <c:when test="${newsVerticalExplorer.openinnewwindow}">
 									 		<a href="${linkUrl}" target="_blank" class="animateLink">${newsVerticalExplorer.readMoreLabel} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
                                         </c:when>
