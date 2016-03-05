@@ -43,7 +43,7 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
     /**
 	 * Black Color Breadcrumb
 	 */
-    if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions").length > 0){
+    if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions, .bannerCarsoul").length > 0){
         $('.breadcrumb-container .breadcrumb').addClass('black');
     }
 
