@@ -43,8 +43,6 @@ import com.hdscorp.cms.util.ViewHelperUtil;
 public class ProductQueryServlet extends SlingAllMethodsServlet {
 	private static final long serialVersionUID = -2128122335811219481L;
 
-	@Reference
-	private JcrResourceResolverFactory resolverFactory;
 	
 	@Reference
 	private SlingRepository repository;
@@ -62,9 +60,7 @@ public class ProductQueryServlet extends SlingAllMethodsServlet {
     PrintWriter out = response.getWriter();
     
     try {    
-    	adminSession = repository.loginAdministrative(null);
-        ResourceResolver resourceResolver = resolverFactory.getResourceResolver(adminSession);
-
+        ResourceResolver resourceResolver = request.getResourceResolver();
 	    SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		String paths[] = {"/content/hdscorp/en_us/products-solutions"};
 		String template= "/apps/hdscorp/templates/productdetail";
