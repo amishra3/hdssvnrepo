@@ -3,7 +3,7 @@ $(function() {
     	var imgName = "";
         var windowSize = $(window).width();
 
-        if (windowSize <= 320) {
+        if (windowSize <= 500) {
 			$('.rsImg').each(function (index, value){
 				imgName = $(this).attr('data-image-mobile');
 				$(this).css("background-image", "url('"+imgName+"')");
@@ -11,7 +11,7 @@ $(function() {
 			
 			return false;
         }
-        else if (windowSize > 321) {
+        else if (windowSize > 500) {
 		   $('.rsImg').each(function (index, value){
 			   imgName = $(this).attr('data-image-desktop');
 			   $(this).css("background-image", "url('"+imgName+"')");
