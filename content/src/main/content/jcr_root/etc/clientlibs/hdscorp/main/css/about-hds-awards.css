@@ -16,7 +16,7 @@
 }
 
 .award-logo {
-  float: left;
+  display:table-cell;
   margin-right: 25px;
 }
 
@@ -74,7 +74,3 @@
     padding: 0 15px;
   }
 }
-
-
-
-
