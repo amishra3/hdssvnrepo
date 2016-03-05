@@ -39,24 +39,25 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		String forwardPath = pdfPath;
 		
 		try {
-			if(pdfPath.toLowerCase().contains(".pdf")){
-				ResourceResolver resourceResolver = request.getResourceResolver();
-				Resource res = resourceResolver.getResource(pdfPath);
-				Asset asset = res.adaptTo(Asset.class);
-				//If the resoure exists
-				if(asset!=null){
-					String resourceTitle = asset.getMetadataValue("dc:title");
-					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
-					//if asset is gated then, set forwardPath to the form page
-					forwardPath = "/content/hdscorp/en_us/home.html";
-				}else{
-					options.setForceResourceType("dam/asset");
-				}
-				
-			}else{
-				options.setForceResourceType("dam/asset");
-			}
-			request.getRequestDispatcher(forwardPath, options).forward(request, response);
+//			if(pdfPath.toLowerCase().contains(".pdf")){
+//				ResourceResolver resourceResolver = request.getResourceResolver();
+//				Resource res = resourceResolver.getResource(pdfPath);
+//				Asset asset = res.adaptTo(Asset.class);
+//				//If the resoure exists
+//				if(asset!=null){
+//					String resourceTitle = asset.getMetadataValue("dc:title");
+//					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
+//					//if asset is gated then, set forwardPath to the form page
+//					forwardPath = "/content/hdscorp/en_us/home.html";
+//				}else{
+//					options.setForceResourceType("dam/asset");
+//				}
+//				
+//			}else{
+//				options.setForceResourceType("dam/asset");
+//			}
+//			request.getRequestDispatcher(forwardPath, options).forward(request, response);
+			request.getRequestDispatcher(request.getResource(), options).forward(request, response);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
