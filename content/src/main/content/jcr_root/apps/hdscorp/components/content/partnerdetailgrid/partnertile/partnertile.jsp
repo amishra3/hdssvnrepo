@@ -18,7 +18,7 @@
 	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
 </c:if>
 
-                          <div class="col-sm-4">
+                          <div class="col-sm-4 col-centered">
                             <div class="section-service-col">
                                 <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${partnerObj.categoryTitle}"></div>
                                 <h3 class="headline"><a class="animateLink" href="${linkUrl}">${partnerObj.categoryTitle}<span class="glyphicon glyphicon-menu-right"></span></a></h3>
