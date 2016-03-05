@@ -15,7 +15,7 @@
         <!--Banner Carsoul Starts here-->
         <div id="partnerHeroBanner">
 
-<c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"partnerpagebartitle-bannertitle-bannerdescription-bannerimagepath-ctalabel-ctatargeturl-openinnewwindow")%>" />    
+<c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"partnerpagebartitle-bannertitle-bannerdescription-bannerimagepath-ctalabel-ctatargeturl-openinnewwindow-imagepath")%>" />    
 		<c:forEach var="column" items="${contentColumn}" varStatus="loop">
 
          <c:set var="linkUrl" value="${column.ctatargeturl}"/>
@@ -27,7 +27,7 @@
            <div class="bannerSectionImage" style="background-image:url('${column.bannerimagepath}'); background-repeat: no-repeat;">
                     <div class="content-container hero-content-partner">
                     <div class="col-md-4 partnerLogo col-md-push-8">
-                        <a href="javascript:void(0);" class="partnerLogo"></a>
+                        <a class="partnerLogo"><img src="${column.imagepath}"></a>
                     </div>
 					<c:if test="${not empty column.ctalabel}">
                     <div class="col-md-8 col-md-pull-4">

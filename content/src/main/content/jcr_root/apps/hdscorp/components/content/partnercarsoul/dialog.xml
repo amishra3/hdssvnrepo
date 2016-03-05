@@ -36,10 +36,15 @@
                                 fieldLabel="Bannner Description"
                                 name="./bannerdescription"
                                 xtype="textarea"/>
+                            <smallimagepath
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Image Path"
+                                name="./imagepath"
+                                xtype="pathfield"/>
                             <bannerimagepath
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"
-                                fieldLabel="Image Path"
+                                fieldLabel="Banner Image Path"
                                 name="./bannerimagepath"
                                 xtype="pathfield"/>
                             <ctalabel
