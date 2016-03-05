@@ -29,44 +29,36 @@
 </c:if>
 
 <div class="col-md-9 pr-archives-list">
-	<div class="pr-archives-list-items">
-		<c:forEach var="news" items="${model.newsList}" varStatus="loopcnt">
-
-
-			<div class="pr">
-				<c:if test="${searchType == 'awards'}">
-					<div class="award-logo">
-						<img src="${news.imgpath}" alt="" />
-					</div>
-				</c:if>
-				<div class="pr-date">${news.newsDate}</div>
-				<h3>${news.newsTitle}</h3>
-				<c:if test="${not empty news.newsDetailPath}">
-				<a href="${news.newsDetailPath}" class="animateLink"
-					target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreText}${news.newWinIcon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}
-
-				</a>
-				</c:if>
-			</div>
-
-
-
-		</c:forEach>
-	</div>
-	<c:if test="${resultSize!=0 and resultSize > itemsVisibleonLoad}">
-		<div class="pr-load-more">
-			<div class="learn-more-red-link" id="loadMorePrBtn">
-				<a href="javascript:void(0);">${model.loadMoreLabel}</a>
-			</div>
-		</div>
-	</c:if>
-
-	<c:if test="${resultSize==0}">
-		<div class="no-matched-result"
-			style="padding: 50px 0; text-align: center;">${noResultMessage}</div>
-	</c:if>
+    <div class="pr-archives-list-items">
+        <c:forEach var="news" items="${model.newsList}" varStatus="loopcnt">
+            <div class="pr">
+                <c:if test="${searchType == 'awards'}">
+                    <div class="award-logo">
+                        <img src="${news.imgpath}" alt="" />
+                    </div>
+                </c:if>
+                <div class="pr-content">
+                    <div class="pr-date">${news.newsDate}</div>
+                    <h3>${news.newsTitle}</h3>
+                    <c:if test="${not empty news.newsDetailPath}">
+                        <a href="${news.newsDetailPath}" class="animateLink" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreText}
+                            ${news.newWinIcon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}
+                        </a>
+                    </c:if>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+    <c:if test="${resultSize!=0 and resultSize > itemsVisibleonLoad}">
+        <div class="pr-load-more">
+            <div class="learn-more-red-link" id="loadMorePrBtn">
+                <a href="javascript:void(0);">${model.loadMoreLabel}</a>
+            </div>
+        </div>
+    </c:if>
+    
+    <c:if test="${resultSize==0}">
+        <div class="no-matched-result"
+        style="padding: 50px 0; text-align: center;">${noResultMessage}</div>
+    </c:if>
 </div>
-
-
-
-
