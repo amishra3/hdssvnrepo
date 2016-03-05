@@ -62,10 +62,6 @@
     padding-left: 0;
 }
 
-.services-list-section .col-sm-4:last-child {
-    padding-right: 0;
-}
-
 .services-list-section .section-service-col{
   box-shadow: none;
   text-align: center;
