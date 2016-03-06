@@ -16,7 +16,7 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
 import com.day.cq.dam.api.Asset;
 
-@SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" }, extensions="pdf")
+@SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" })
 @Properties({
 		@Property(name = "service.pid", value = "com.hdscorp.cms.servlet.AssetGatingServlet", propertyPrivate = false),
 		@Property(name = "service.description", value = "Asset Gating Servlet", propertyPrivate = false),
@@ -39,29 +39,37 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		String forwardPath = pdfPath;
 		
 		try {
-//			if(pdfPath.toLowerCase().contains(".pdf")){
-//				ResourceResolver resourceResolver = request.getResourceResolver();
-//				Resource res = resourceResolver.getResource(pdfPath);
-//				Asset asset = res.adaptTo(Asset.class);
-//				//If the resoure exists
-//				if(asset!=null){
-//					String resourceTitle = asset.getMetadataValue("dc:title");
-//					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
-//					//if asset is gated then, set forwardPath to the form page
-//					forwardPath = "/content/hdscorp/en_us/home.html";
-//				}else{
-//					options.setForceResourceType("dam/asset");
-//				}
-//				
-//			}else{
-//				options.setForceResourceType("dam/asset");
-//			}
-//			request.getRequestDispatcher(forwardPath, options).forward(request, response);
-			request.getRequestDispatcher(request.getResource(), options).forward(request, response);
+			if(pdfPath.toLowerCase().contains(".pdf")){
+				ResourceResolver resourceResolver = request.getResourceResolver();
+				Resource res = resourceResolver.getResource(pdfPath);
+				Asset asset = res.adaptTo(Asset.class);
+				//If the resoure exists
+				if(asset!=null){
+					String resourceTitle = asset.getMetadataValue("dc:title");
+					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
+					//if asset is gated then, set forwardPath to the form page
+					if(resourceTitle.contains("criteria")){
+						forwardPath = "/content/hdscorp/en_us/home.html";
+						request.getRequestDispatcher(forwardPath).forward(request, response);						
+					}else{
+						//Setting the PDF resource type to following will skip this servlet and will go to the normal pdf flow.
+						options.setForceResourceType("dam/asset");
+						request.getRequestDispatcher(request.getResource(), options).forward(request, response);
+					}
+				}else{
+					options.setForceResourceType("dam/asset");
+					request.getRequestDispatcher(request.getResource()).forward(request, response);
+				}
+				
+			}else{
+				options.setForceResourceType("dam/asset");
+				request.getRequestDispatcher(request.getResource(),options).forward(request, response);
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
 			System.out.println("-----In ERROR BLOCK------"+e.getMessage());
+			request.getRequestDispatcher(request.getResource(), options).forward(request, response);
 		}
 		//9. If regdb responds that user has not registered, forward to the user to the marketo form (Should be a configurable property)
 				
