@@ -47,10 +47,10 @@ var hds = window.hds || {};
         loadMorePressRelease: function() {
             sizePrList = $(".pr").hide().size();
 			console.log(sizePrList);
-            var x = 3;
+            var x = 10;
             $('.pr:lt(' + x + ')').show('medium');
             $(document).on('click','#loadMorePrBtn', function() {
-                x = (x + 5 <= sizePrList) ? x + 5 : sizePrList;
+                x = (x + 10 <= sizePrList) ? x + 10 : sizePrList;
                 $('.pr:lt(' + x + ')').show('medium');
                 if (x == sizePrList) {
                     $('#loadMorePrBtn').hide();

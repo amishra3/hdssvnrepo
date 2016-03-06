@@ -262,6 +262,7 @@ if($('.resources-category-box').length!==0){
         	equalColumns('.about-hds-latest .about-hds-events-content');
             equalColumns('.services-list-section .section-service-col');
             equalColumns('.service-support-main .section-service-col');
+            equalColumns('.explore-insight .insight-common-box');
         }, 500);
 	}, false);
 
@@ -276,6 +277,7 @@ if($('.resources-category-box').length!==0){
         equalColumns('.about-hds-latest .about-hds-events-content');
         equalColumns('.services-list-section .section-service-col');
         equalColumns('.service-support-main .section-service-col');
+        equalColumns('.explore-insight .insight-common-box');
     }, 500);
 
 })(jQuery);

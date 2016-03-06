@@ -48,14 +48,14 @@ var hds = window.hds || {};
         },
         loadMoreAwards:function () {
          var sizeAwardsList = $(".pr").hide().size(),
-            x = 4;
+            x = 10;
             $('#loadMoreAwardsBtn').removeAttr('style');
             $('.pr:lt(' + x + ')').show();
-            if(sizeAwardsList <= 4){
+            if(sizeAwardsList <= 10){
                 $('#loadMoreAwardsBtn').hide();
             }
             $(document).on('click','#loadMoreAwardsBtn', function() {
-                x = (x + 5 <= sizeAwardsList) ? x + 5 : sizeAwardsList;
+                x = (x + 10 <= sizeAwardsList) ? x + 10 : sizeAwardsList;
                 $('.pr:lt(' + x + ')').show();                
                 if (x == sizeAwardsList) {
                     $('#loadMoreAwardsBtn').hide();
