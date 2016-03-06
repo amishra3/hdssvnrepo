@@ -42,7 +42,7 @@
     padding: 20px 0;
 
 	}
-.new-abouthds-banner .common-hero-banner-container{padding:0px 0px 50px;}
+.new-abouthds-banner .common-hero-banner-container{padding:0px 15px 50px 0px;}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
 	
@@ -53,6 +53,7 @@
 	.new-abouthds-banner .red-bg { margin: 0 0 50px;
    	 padding: 40px 0;
 	}
+	.new-abouthds-banner .common-hero-banner-container{padding-right:50px;}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px){
@@ -110,21 +111,22 @@
     .career-benefits-hexagon-list .hex-contain .hexagon320:last-child {
         margin-right: 0;
     }
+	
 }
 
 @media only screen and (max-width: 991px) {
-    .career-benefits-hexagon h2 {
+    .career-benefits-hexagon h2{
         font-size: 1.875rem;
     }
-    .career-benefits-hexagon p {
+    .career-benefits-hexagon p{
         margin-bottom: 50px;
     }
-    .career-benefits-hexagon .career-benefits-hexagon-list {
+    .career-benefits-hexagon .career-benefits-hexagon-list, .career-benefits-hexagon .behind-scene-hexagon-list{
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 270px;
-    }
+	}
 }
 
 .career-featured-jobs {
@@ -224,6 +226,8 @@
     .career-featured-jobs .col-sm-4 .career-jobs:last-child{
 
     }
+	.csr-governance-resource div.acs-commons-resp-colctrl-row>div{width:98%;}
+	.new-abouthds-banner .common-hero-banner-container{margin-right:0 !important}
 }
 
 .career-commitment {
@@ -377,6 +381,7 @@
         line-height: 110%;
         color: #000000;
     }
+	.career-commitment .career-commitment-spotlight .description p:last-child{font-weight:300;}
     .career-commitment .career-commitment-spotlight .learn-more {               
         text-align: center;
     }

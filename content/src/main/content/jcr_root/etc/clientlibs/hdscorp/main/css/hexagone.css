@@ -175,7 +175,7 @@
 	
 @media only screen and (max-width: 991px) {
   .hexagon320{
-    margin-bottom: 175px;
+    margin-bottom: 176px;
     width: 270px;
     height: 144px;
     margin-right:0;
@@ -200,7 +200,7 @@
   }
 
   .hexagon320:after {
-    bottom: -76px;
+    bottom: -75px;
     border-left: 135px solid transparent;
     border-right: 135px solid transparent;
     border-top: 76px solid #ffffff;

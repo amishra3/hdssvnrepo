@@ -1,4 +1,7 @@
 /* Common Hero Tall Banner CSS*/
+@media only screen and (max-width: 992px) {
+body{overflow-x:hidden;}
+}
 .common-hero-banner {
   z-index: 2;
   position: relative;
@@ -690,7 +693,7 @@ color: #cccccc !important;
   }
   .pr-list .pr-list-container .pr-search span.glyphicon.glyphicon-search{
     font-size: 1.5em;
-    top: 6px; right: 6px;
+    top: 12px; right: 12px;
   }
 
   .pr-list .pr-list-container .pr-search > input {

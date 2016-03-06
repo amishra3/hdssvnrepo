@@ -1248,9 +1248,11 @@ display:none;
         border: 1px solid #fff;
     }
     .pr-list .pr-list-container .pr-search > input {
-        background: #c50000;
-        color: #fff;
+        background: #ffffff;
+        color: #000;
         text-transform: uppercase;
+		border:3px solid #ccc;
+		padding:10px;
     }
     .pr-list .pr-list-container.res-container .pr-search *::-moz-placeholder {
         color: #fff;

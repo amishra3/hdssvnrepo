@@ -863,6 +863,7 @@ ul.stickyNav li:hover a{
   .cs-section .cs-container .cs-all .cs-all-box{
     min-width: 375px;
   }
+  
 }
 
 @media only screen and (max-width: 480px) {
@@ -1028,7 +1029,7 @@ ul.stickyNav li:hover a{
     margin-bottom: 25px;
   }
   .resources-section .resources-container .resources-category .resources-category-box div[class|="resources-category"] {
-    margin-bottom: 13px;
+    margin-bottom: 13px; width:100%; 
   }
   .resources-section .resources-container .resources-category .resources-category-box div[class|="resources-category"]:last-child {
     margin-bottom: 0;
@@ -1038,7 +1039,7 @@ ul.stickyNav li:hover a{
     display: inline-block;
   }
   .resources-section .resources-container .resources-category .resources-category-box .resources-category-title {
-    margin-left: 5px;
+    margin-left: 0px;
     display: inline-block;
   }
   .resources-section .resources-container .resources-all,
