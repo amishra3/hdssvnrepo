@@ -7,6 +7,7 @@
 	<div class="cs-container content-container">
         <div class="container-fluid">
         <h2>${properties.sectiontitle}</h2>
+        <div class="row-centered">
 
 					<c:forEach var="slinks" items="${serviceLinks}">
                         <c:set var="icopath" value="${slinks.contenticonpath}" />
@@ -18,7 +19,7 @@
                         <c:set var="ctalink" value="${slinks.ctalink}" />
    					    <c:choose>
                             <c:when test="${not empty title && not empty icopath}">
-											                        <div class="col-sm-4">
+											                        <div class="col-sm-4 col-centered">
                            			 <div class="news-resources-col" data-href="">
                                          <div class="imageHolder"><img src="${icopath}" alt="${icoalt}" title="${icoalt}"></div>
                                              <h3 class="headline hidden-xs">${title}</h3>
@@ -47,6 +48,8 @@
         	</div>
 
 
+    </div>
+    
     </div>
 
 
