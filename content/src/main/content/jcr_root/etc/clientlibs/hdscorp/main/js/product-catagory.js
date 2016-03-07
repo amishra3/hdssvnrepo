@@ -48,7 +48,7 @@ var hds = window.hds || {};
             });
         },
         bindClick: function() {
-            $(document).on('click','.linkLeft a', function(event) {
+            $(document).on('click','.linkLeft > a', function(event) {
                 var self = $(this);                
                     if (!$(this).hasClass('active')) {
                         $('.linkLeft a').removeClass('active');
