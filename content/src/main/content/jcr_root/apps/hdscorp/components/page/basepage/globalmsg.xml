@@ -3,16 +3,30 @@
     jcr:primaryType="cq:Panel"
     title="Global Messages">
     <items jcr:primaryType="cq:WidgetCollection">
-    
-    <domain
+        <domain
             jcr:primaryType="cq:Widget"
             fieldLabel="Link Domain Value"
             name="./domain"
-            xtype="textfield"/> 
-    <titleprefix
+            xtype="textfield"/>
+        <titleprefix
             jcr:primaryType="cq:Widget"
             fieldLabel="Title Meta Data Prefix Value"
             name="./titleprefix"
-            xtype="textfield"/>                               
+            xtype="textfield"/>
+        <returntotoplabel
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Return to Top Label"
+            name="./returntotoplabel"
+            xtype="textfield"/>
+        <footerlinksmsg
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Footer Links Message"
+            name="./footerlinksmsg"
+            xtype="textfield"/>
+        <joincommunitymsg
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Join Community Message"
+            name="./joincommunitymsg"
+            xtype="textfield"/>
     </items>
 </jcr:root>
