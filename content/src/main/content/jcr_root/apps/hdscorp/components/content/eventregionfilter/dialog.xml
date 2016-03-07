@@ -111,6 +111,36 @@
                         xtype="textfield"/>
                 </items>
             </regionfilter>
+            <tabpanel
+                jcr:primaryType="cq:Panel"
+                title="Tab Panel">
+                <items
+                    jcr:primaryType="cq:WidgetCollection"
+                    xtype="multifieldpanel">
+                    <etpmultifield
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Add Tab"
+                        name="./etpmultifield"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <etptabname
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Tab Name"
+                                key="etptabname"
+                                name="./etptabname"
+                                xtype="textfield"/>
+                            <etptabid
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Tab Id"
+                                key="etptabid"
+                                name="./etptabid"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </etpmultifield>
+                </items>
+            </tabpanel>
         </items>
     </items>
 </jcr:root>

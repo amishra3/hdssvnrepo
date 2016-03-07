@@ -2,6 +2,7 @@
 <%@page session="false"%>
 <%@ taglib prefix="xss" uri="http://www.adobe.com/consulting/acs-aem-commons/xss"%>
 <%@page import="com.day.cq.search.result.SearchResult,com.day.cq.search.result.Hit,java.util.List"%>
+<%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 <%@page import="com.hdscorp.cms.util.PropertyResolver"%>
 
@@ -17,7 +18,22 @@
 <div class="tabbing-container">
 	<div class="content-container">
 		<div class="custom-nav-tabs">
-		<cq:include path="eventtabpanel" resourceType="hdscorp/components/content/eventtabspannel"/>
+		<c:set var="tabEventList" value="<%=PageUtils.convertMultiWidgetToList(properties,"etptabname-etptabid")%>" />
+
+<ul class="nav nav-tabs">
+
+<c:forEach var="tabList" items="${tabEventList}" varStatus="loopCounter">
+    <c:choose>
+    <c:when test="${loopCounter.count==1}">
+<li class="active"><a data-toggle="tab" href="${tabList.etptabid}">${tabList.etptabname}</a></li>
+    </c:when>
+ <c:otherwise>
+    <li><a data-toggle="tab" href="${tabList.etptabid}">${tabList.etptabname}</a></li>
+        </c:otherwise>
+    </c:choose>
+
+</c:forEach>
+</ul>
 		</div>
 		<div class="tab-content">
 			<div id="upcoming-events" class="tab-pane fade in active">
