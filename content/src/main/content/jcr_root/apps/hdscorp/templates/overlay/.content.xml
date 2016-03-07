@@ -6,5 +6,5 @@
     ranking="{Long}3">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="hdscorp/components/page/resourcelibrary"/>
+        sling:resourceType="hdscorp/components/page/overlay"/>
 </jcr:root>
