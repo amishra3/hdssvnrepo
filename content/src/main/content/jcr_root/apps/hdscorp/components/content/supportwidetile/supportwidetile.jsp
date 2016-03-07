@@ -18,7 +18,7 @@
 			<div class="col-sm-6 support-phone-no col-no-pad">${properties.phonenumbertext}</div>
 		</c:if>
 		<c:if test="${not empty properties.tileurllabel}">
-			<div class="col-sm-6 support-connect-login col-no-pad"><a href="${linkUrl}" target="${not empty properties.urlopennewtab?'_blank':'_self'} class="animateLink">${properties.tileurllabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></div>
+			<div class="col-sm-6 support-connect-login col-no-pad"><a href="${linkUrl}" target="${not empty properties.urlopennewtab?'_blank':'_self'}" class="animateLink">${properties.tileurllabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></div>
 		</c:if>
       </div>
   </div>
