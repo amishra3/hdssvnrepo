@@ -4,7 +4,7 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 
-
+<c:set var="joincommunitymsg" value="<%= pageProperties.getInherited("joincommunitymsg", "JOIN THE COMMUNITY AND START A CONVERSATION") %>" />
 <div class="stop"></div>
 <c:set var="linkUrl" value="${properties.joincommunitytargeturl}"/>
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
@@ -20,7 +20,7 @@
 			<cq:include path="communitycontentpar" resourceType="hdscorp/components/content/column-control" />
             <div class="hds-community-join">
                 <a class="animateLink" href="http://community.hds.com/" target="_blank">
-                    JOIN THE COMMUNITY AND START A CONVERSATION <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                    ${joincommunitymsg} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
                 </a>
             </div>
 		</div>
