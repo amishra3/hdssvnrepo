@@ -23,16 +23,19 @@
                         <fieldConfig jcr:primaryType="cq:WidgetCollection">
                             <partnerpagebartitle
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="Partner Bar Title"
                                 name="./partnerpagebartitle"
                                 xtype="textfield"/>
                             <bannertitle
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="Banner Title"
                                 name="./bannertitle"
                                 xtype="textfield"/>
                             <bannerdescription
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="Bannner Description"
                                 name="./bannerdescription"
                                 xtype="textarea"/>
@@ -49,6 +52,7 @@
                                 xtype="pathfield"/>
                             <ctalabel
                                 jcr:primaryType="cq:Widget"
+                                allowBlank="false"
                                 fieldLabel="CTA Label"
                                 name="./ctalabel"
                                 xtype="textfield"/>
