@@ -7,7 +7,7 @@ if(pageTemplatePath!=null){
 }
 %>
 
-<body class="page-products-solutions">
+<body class="<%=pageTemplatePath %> page-products-solutions">
     <div class="hds-MobileMenu hds-megaMenu-right">
         <div class="closeHDSMenu">
             <a href="javascript:void(0);" title="Close" id="closeHDSMenu">Close</a>
