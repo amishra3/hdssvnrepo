@@ -11,11 +11,11 @@
 %><%@page session="false"%>
 
 <c:set var="columns" value="<%=properties.get("columns")%>" />
-
+<c:set var="footerlinksmsg" value="<%= pageProperties.getInherited("footerlinksmsg", "Specify footer columns") %>" />
 
 <c:choose>
 	<c:when test="${empty columns}">
-            Please specify column split for footer links
+        ${footerlinksmsg} 
         </c:when>
 	<c:otherwise>
 	
