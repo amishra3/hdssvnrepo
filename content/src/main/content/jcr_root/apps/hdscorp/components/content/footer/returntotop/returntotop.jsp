@@ -6,11 +6,11 @@
 <%@ page import="org.apache.sling.api.resource.ResourceResolver,
 					com.day.cq.wcm.commons.WCMUtils,
 					com.day.cq.wcm.api.components.Toolbar"%>
-
+<c:set var="returntotoplabel" value="<%= pageProperties.getInherited("returntotoplabel", "Return to Top") %>" />
 
 <c:if test="${empty pageProperties.hidereturntotop}">
 		<button class="cta-scroll-top">
 			<div class="icon-arrow-scroll-top"></div>
-			<span class="text-return">return to top</span>
+    <span class="text-return">${returntotoplabel}</span>
 		</button>
 </c:if>
