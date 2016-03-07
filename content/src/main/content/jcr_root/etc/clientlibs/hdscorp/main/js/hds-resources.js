@@ -22,16 +22,17 @@ var hds = window.hds || {};
             $(optionSelected).hide();
             $(optionSelected).each(function(index, el) {
                 if ($(this).attr('id') === arg) {
-                    //$(this).slideDown('slow'); 
+                    // $(this).slideDown('slow');
                     $(this).show();
                 } else {
-                    //$(this).slideUp(2000);                     
+                    // $(this).slideUp(2000);
                     $(this).hide();
                 }
                 return
             });
         },
         _processClickAside: function(url) {
+
             $("#prodnsolcategorycontent").html(" ").load(url + " .resourceLibraryContent", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {
                     $('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());
@@ -43,6 +44,8 @@ var hds = window.hds || {};
             });
         },
         _processCatagoryCards: function(url) {
+
+           
             $("#featuredCards").html(" ").load(url + " .resourceLibraryfeatered", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {
                     console.log("Cards Loaded");
@@ -50,6 +53,7 @@ var hds = window.hds || {};
                 if ($.trim($(".resourceLibraryfeatered").html()) == '') {
                     $("#featuredCards").hide();
                 } else {
+
                     $("#featuredCards").show();
                 }
             });
@@ -290,6 +294,8 @@ var hds = window.hds || {};
                 if (!self.parent('li').hasClass('active')) {
                     $('#asideLinks-product li').removeClass('active')
                     var $url = $(this).attr('data-href');
+                    var $featuredurl = $(this).attr('featured-href');
+
                     self.parent('li').addClass('active');
                     self.addClass('active');
                     if ($(this).parent().has('ul').length) {
@@ -298,7 +304,14 @@ var hds = window.hds || {};
                         $(this).parent().find('.icon-accordion-closed').css('display', 'none');
                     }
                     hds.resourceLib._processClickAside($url);
-                    hds.resourceLib._processCatagoryCards($url);
+                    if($featuredurl !="")
+                    {
+                       hds.resourceLib._processCatagoryCards($featuredurl);
+                    } else {
+
+                         $("#featuredCards").hide();
+                    }
+
                 }
                 event.preventDefault();
             });
@@ -306,7 +319,7 @@ var hds = window.hds || {};
             $(document).on('click', '.resource-filters > a', function(e) {
                 e.stopPropagation();
                 var filterId = $(this).data('refilter');
-                //hds.resourceLib._showFilterDropDown(this);
+                // hds.resourceLib._showFilterDropDown(this);
                 $('.filters-section').each(function(index) {
                     if ($(this).attr("id") == filterId) {
                         $(this).slideDown(200);
@@ -338,7 +351,10 @@ var hds = window.hds || {};
             });
 
             function removeTag(checkBoxValue) {
-                /* we stored the checkbox value as data attribute,  use that to filter*/
+                /*
+				 * we stored the checkbox value as data attribute, use that to
+				 * filter
+				 */
                 $('span.filterKeyword').filter(function() {
                     return $(this).data('value') === checkBoxValue;
                 }).slideUp(function() {
@@ -348,7 +364,10 @@ var hds = window.hds || {};
 
             function addTag(checkBoxValue) {
                 $newTag = $("<span class='filterKeyword'>" + checkBoxValue + "<span class='closetag'>x</span></span>");
-                /* store the value in elment data so we can reference back to checkbox */
+                /*
+				 * store the value in elment data so we can reference back to
+				 * checkbox
+				 */
                 $newTag.data('value', checkBoxValue);
                 $('#filterTag .keyword-filter').append($newTag);
             }
