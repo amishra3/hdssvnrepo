@@ -266,7 +266,7 @@ $('#filterRegion').on('change', function(event) {
          }, 1000); 
     });
 //globalMenuClick(eventname,triggername,page)
-function globalMenuClick(eventname,triggerName,page,triggertype,Position){
+function globalMenuClick(eventname,triggername,page,triggertype,Position){
     digitalData.eventData= {
     eventName:eventname,
     eventAction:triggername,
