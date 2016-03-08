@@ -263,7 +263,11 @@ public final class ServiceConstants {
 	public static final String LML_TRANING_PRICE= "trainingPrice";
 	public static final String LML_COURSE_DEEP_LINK= "courseDeeplink";
 	
+	/**
+	 * Shorten URL
+	 */
 
+	public static final String SHORTEN_URL= "http://hds.co/yourls-api.php?signature=3608141f9d&action=shorturl&url=";
 	
 	
 }
