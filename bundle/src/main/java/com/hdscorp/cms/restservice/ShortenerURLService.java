@@ -20,7 +20,7 @@ public class ShortenerURLService  extends GenericRestfulServiceInvokers{
 		String shortURL="";
 		if(pageURL!=null && !pageURL.isEmpty()){		
 		shortURL=getWSResponse(ServiceConstants.SHORTEN_URL.concat(pageURL), ServiceConstants.GET_METHOD_TYPE, ServiceConstants.FEED_PARAMETER);
-		log.info("short url::"+log);
+		log.info("short url::"+shortURL);
 		}
 		return shortURL;
 	}
