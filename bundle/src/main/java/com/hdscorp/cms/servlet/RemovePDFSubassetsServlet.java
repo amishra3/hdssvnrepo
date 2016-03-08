@@ -73,6 +73,11 @@ public class RemovePDFSubassetsServlet extends SlingAllMethodsServlet {
     	
     	String searchPath = request.getParameter("path");
     	String performDelete = request.getParameter("delete");
+    	String defaultPath = "/content/dam/public/en_us/pdfs";
+    	
+    	if(searchPath==null || searchPath.trim().length()==0){
+    		searchPath = defaultPath ;
+    	}
     	
     	adminSession = repository.loginAdministrative(null);
     	int deleteCnt=0;
@@ -81,7 +86,7 @@ public class RemovePDFSubassetsServlet extends SlingAllMethodsServlet {
 	    SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		
 		
-		String sqlStatement= "SELECT * FROM nt:unstructured WHERE jcr:path LIKE '" + "/content/dam/public/en_us/pdfs%subassets/page%'";
+		String sqlStatement= "SELECT * FROM nt:unstructured WHERE jcr:path LIKE '" + searchPath+"%subassets/page%'";
 		QueryManager queryManager = adminSession.getWorkspace().getQueryManager();
 		Query query = queryManager.createQuery(sqlStatement, Query.SQL);
 		
