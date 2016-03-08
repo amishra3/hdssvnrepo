@@ -4,7 +4,8 @@
 
 <c:set var="nextLabel" value="${properties.nextlabel}" scope="request"/>
 <c:set var="readMoreText" value="${properties.readMoreText}" scope="request"/>
-<c:set var="resourcesPath" value="${properties.resourcespath}" scope="request"/>
+<c:set var="pdfspath" value="${properties.pdfspath}" scope="request"/>
+<c:set var="videospath" value="${properties.videospath}" scope="request"/>
 
 <c:set var="contenttype" value="${properties.contenttype}" scope="request"/>
 <c:set var="industrytag" value="${properties.industrytag}" scope="request"/>

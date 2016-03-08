@@ -16,9 +16,16 @@
                     <resourcepath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Resources Path"
-                        name="./resourcespath"
-                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./resourcespath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        fieldLabel="PDF Resources Path"
+                        name="./pdfspath"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./pdfspath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <videospath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Video Resources Path"
+                        name="./videospath"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./videospath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
                     <readmoretext
                         jcr:primaryType="cq:Widget"
