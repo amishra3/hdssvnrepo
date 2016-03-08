@@ -26,5 +26,11 @@
         <function-class>com.hdscorp.cms.tag.ELTagHelper</function-class>
         <function-signature>java.lang.String removeDoubleQuotes(java.lang.String)</function-signature>
     </function>
+
+    <function>
+        <name>concatString</name>
+        <function-class>com.hdscorp.cms.tag.ELTagHelper</function-class>
+        <function-signature>java.lang.String concatString(java.lang.String,java.lang.String)</function-signature>
+    </function>
     
 </taglib>

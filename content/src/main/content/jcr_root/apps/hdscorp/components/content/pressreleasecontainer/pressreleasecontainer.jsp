@@ -12,8 +12,11 @@
 <c:set var="archiveLabel" value="${properties.archiveLabel}" scope="request"/>
 <c:set var="searchPagePath" value="${properties.searchPagePath}" scope="request"/>
 <c:set var="selectorString" value="${slingRequest.requestPathInfo.selectors[0]}"/>
+<c:set var="currentPageUrl" value="${currentPage.path}"/>
 
 
+
+ 
 
 
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.PressReleasesContainerModel" var="model" />
@@ -45,8 +48,13 @@
 	                        	</c:if>
 	                        	
 	                        	
+	                        	<c:set var="filterHrefURL" value="${hdscorp:shortURL(currentPage.path)}"/>
+	                        	<c:set var="selectorHrefString" value="${hdscorp:concatString(filterUrl.filterText, '.html')}"/>
+								<c:set var="filterHrefURL" value="${fn:replace(filterHrefURL,'html',selectorHrefString)}"/>
+								
+	                        	
 	                            <li class="linkLeft ${activeFilter?' active':''}">
-	                                <a href="${filterUrl.filterUrl}" data-loadhtml="${filterUrl.filterUrl}" class="${activeFilter?' active':''}">
+	                                <a href="${filterHrefURL}" data-loadhtml="${filterUrl.filterUrl}" class="${activeFilter?' active':''}">
 	                                ${filterUrl.filterText}
 	                                <span class="icon-accordion-closed hidden-md hidden-lg"></span>
 	                                <span class="icon-accordion-opened hidden-md hidden-lg"></span>

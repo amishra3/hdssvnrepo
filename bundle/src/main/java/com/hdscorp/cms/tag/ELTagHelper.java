@@ -51,4 +51,9 @@ public class ELTagHelper {
     	return returnString;
     }
 
+    public static String concatString(String string1 , String string2 ){
+    	return new StringBuilder().append(string1).append(string2).toString();
+    	
+    }
+
 }
