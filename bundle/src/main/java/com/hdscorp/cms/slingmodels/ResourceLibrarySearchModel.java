@@ -46,9 +46,13 @@ public class ResourceLibrarySearchModel  {
 	@Default(values = { "" })
 	private String[] industrytag;
 	@Inject
-	@Named("resourcesPath")
-	@Default(values = { "" })
-	private String resourcesPath;
+	@Named("pdfspath")
+	@Default(values = { "/content/dam/public/en_us/pdfs" })
+	private String pdfspath;
+	@Inject
+	@Named("videospath")
+	@Default(values = { "/content/dam/public/en_us/videos" })
+	private String videospath;
 	
 	private String[] selectorTags;
 
@@ -100,7 +104,7 @@ public class ResourceLibrarySearchModel  {
 			tags = null;
 		}
 		
-		String paths[] = {resourcesPath};
+		String paths[] = {pdfspath,videospath};
 		
 		boolean doPagination = false;
 		String type[] = {"dam:Asset"};
