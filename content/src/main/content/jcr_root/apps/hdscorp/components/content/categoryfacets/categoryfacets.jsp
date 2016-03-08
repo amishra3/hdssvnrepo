@@ -33,7 +33,7 @@
 		    <c:set var="includetargetURL" value="${featuredoverlaypath}.html" scope="request"/>
 		    <div class="resources-listing">
 			<ul id="asideLinks-product">
-		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" featured-href="${featuredoverlaypath}.html" data-href="${featuredoverlaypath}.html"> ${featuredlabel} </a></li>
+		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" featured-href="${featuredoverlaypath}.html" data-href=""> ${featuredlabel} </a></li>
 		       </c:when>
 		    
 		    <c:otherwise>

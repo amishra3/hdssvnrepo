@@ -303,7 +303,15 @@ var hds = window.hds || {};
                         $(this).parent().find('.icon-accordion-opened').css('display', 'inline-block');
                         $(this).parent().find('.icon-accordion-closed').css('display', 'none');
                     }
+                    if($url !="")
+                    {
                     hds.resourceLib._processClickAside($url);
+                    } else {
+                    	$("#prodnsolcategorycontent").html("");
+                    	$("#loadResourceContent").html("");
+                    	$('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());                     
+                        
+                    }
                     if($featuredurl !="")
                     {
                        hds.resourceLib._processCatagoryCards($featuredurl);
