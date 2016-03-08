@@ -10,15 +10,26 @@
 			<div class="icon-border">
 				<h3>
 					<img src="${model.priconimage}" />${model.pressReleasesLabel}
+                    <span class="glyphicon glyphicon-menu-right animateIcon"></span>
 				</h3>
 			</div>
 		</div>
-		
+
 		<div class="col-sm-6">
 			<div class="image-container">
 				<img src="${model.featuredPrImage}" alt="" />
 				<div class="inner-content-area">
-					<div class="date_box">${model.featuredPR.newsDate}</div>
+
+					<div class="date_box">					
+                        <div class="date-stamp hidden-sm hidden-md hidden-lg">
+			              <span><img src="${properties.featuredprdevice}"></span>
+                              <span>${model.featuredPR.newsDate}</span>
+		                </div>						
+						<div class="date-stamp hidden-xs">
+                         ${model.featuredPR.newsDate}
+                        </div>		
+                    </div>
+
 					<div class="title">${model.featuredPR.newsTitle}</div>
 					<div class="description">${model.featuredPrDesc}</div>
 				</div>
@@ -45,7 +56,7 @@
 		<div class="clearfix"></div>
 		<div class="col-sm-12">
 			<div class="view-all-pr">
-				<div class="btn-square-black">
+				<div class="btn-square-red">
 					<a href="${model.viewAllPrLink}">${model.viewAllPrLabel}</a>
 				</div>
 			</div>

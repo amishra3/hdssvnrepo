@@ -30,7 +30,7 @@
         </div>
         <div class="clearfix"></div>
         <div class="title">
-            <a href="${properties.aheiconbimagedesclink}">${aboutHDSVerticalExplorerModel.iconImageDesc}</a>
+            <a href="${properties.aheiconbimagedesclink}" class="animateLink">${aboutHDSVerticalExplorerModel.iconImageDesc}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 
         </div>
     </div>

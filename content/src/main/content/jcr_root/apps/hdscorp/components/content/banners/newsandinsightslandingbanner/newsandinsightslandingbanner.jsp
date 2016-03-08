@@ -28,7 +28,7 @@ request.setAttribute("bannerimage",bannerimage);
                         </c:if>
                             <h4 class="sub-headline">${properties.newsandinsightsbannercontent}</h4>
                             <c:if test="${not empty properties.newsandinsightsbannerbuttonlabel}">        					
-	                            <div class="btn-square-white request">
+	                            <div class="btn-square-white request cta-news">
 	                             <a href="${linkUrl}" target="${properties.newsandinsightsbannerurltargettype?'_blank':'_self'}">
 	                                ${properties.newsandinsightsbannerbuttonlabel}</a>
 	                            </div>

@@ -12,9 +12,20 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="image-container b-box1">
-						<img src="${model.featuredNewsImage}"alt=""/>
+						<img src="${model.featuredNewsImage}" alt=""/>
                             <div class="inner-content-area">
-							<div class="date_box">${model.featuredNews.newsDate}</div>
+
+                               <div class="date_box">					
+                                    <div class="date-stamp hidden-sm hidden-md hidden-lg">
+                                      <span><img src="${properties.newsicondevice}"></span>
+                                          <span>${model.featuredNews.newsDate}</span>
+                                    </div>						
+                                    <div class="date-stamp hidden-xs">
+                                     ${model.featuredNews.newsDate}
+                                    </div>		
+                                </div> 
+
+
                                  <div class="title">${model.featuredNews.newsTitle}</div>
                                 <div class="description">${model.featuredNewsDesc}</div>
                             </div>
@@ -36,7 +47,7 @@
                    <div class="clearfix"></div>
                         <div class="col-sm-12">
                             <div class="view-all-pr">
-                                <div class="btn-square-black">
+                                <div class="btn-square-red">
                                     <a href="${model.viewAllNewsLink}">${model.viewAllNewsLabel}</a>
                                 </div>
                             </div>

@@ -12,11 +12,11 @@
 				<div class="col-sm-4">
 
 					<c:set var="targetlink" value="${fn:substringBefore(nivcMultiObject.value, '$')}"/>
-					
+                    <c:set var="newwin" value="${fn:substringAfter(nivcMultiObject.value, '$')}"/>
 					<c:if test="${fn:startsWith(targetlink,'/content/')}">
 						<c:set var="targetlink" value="${hdscorp:shortURL(targetlink)}" />
 					</c:if>
-					<a href="${targetlink}" target="_blank">
+					<a href="${targetlink}" target="${newwin==1?'_blank':'_self'}">
 						<h2>${nivcMultiObject.key}
 							<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
 						</h2>
