@@ -110,8 +110,10 @@ public class RemovePDFSubassetsServlet extends SlingAllMethodsServlet {
 					if(adminSession.itemExists(subAssetPath)){
 						out.println("==ASSETS EXISTS=="+subAssetPath+"<br/>");
 						try {
-							adminSession.removeItem(nodePath);
-							adminSession.save();
+							if(performDelete!=null && performDelete.equalsIgnoreCase("true")){
+								adminSession.removeItem(nodePath);
+								adminSession.save();								
+							}
 							deleteCnt++;
 						} catch (Exception e) {
 							// TODO Auto-generated catch block
@@ -121,7 +123,7 @@ public class RemovePDFSubassetsServlet extends SlingAllMethodsServlet {
 				}
 			}
 		
-			out.println("==========Resource Count======"+nodeIterator.getSize());
+			out.println("==========Resource Count======"+nodeIterator.getSize()+"<br/>");
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
