@@ -163,6 +163,13 @@
     }
 }
 
+@media only screen and (min-width: 992px) {   
+	.about-hds-csr-eco.server-rack h3{
+		padding-left:4px;
+	}
+}
+
+
 @media only screen and (max-width: 1024px) {
     .about-hds-career-leader .content-container{
 		margin-left:-15px;
@@ -375,6 +382,7 @@
     margin-top: 10px;
 }
 
+.about-hds-latest .about-hds-events .about-hds-events-content .title a span{font-size:1.25rem;}
 .about-hds-latest  .about-hds-events .about-hds-events-content .title a, .about-hds-latest  .about-hds-events .about-hds-events-content .title a:hover{color:#FFF;}
 
 @media only screen and (max-width: 991px) {
@@ -422,6 +430,8 @@
   .about-hds-latest  .about-hds-events .about-hds-events-content .date-stamp span{
     font-size: 0.6875rem;
   }
+  .about-hds-latest .about-hds-events .about-hds-events-content .title a span{font-size:0.875rem; top:2px;}
+  
 }
 
 @media only screen and (max-width: 767px) {
