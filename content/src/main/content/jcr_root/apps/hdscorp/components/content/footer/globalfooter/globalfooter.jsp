@@ -13,7 +13,11 @@
 
 <c:set var="footerCategory" value="<%=properties.get("footerCategory")%>" />
 <c:set var="footerNavLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linkName-linkUrl-thirdparty")%>" />
-
+<c:set var="domain" value="" />
+<c:set var="port" value="<%= request.getServerPort() %>" />
+<c:if test="${empty port || port == 80}">
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+</c:if>
 <c:choose>
 	<c:when test="${not empty footerCategory}">
 
@@ -27,11 +31,11 @@
 
 				<c:when test="${fn:startsWith(navUrl,'/content')}">
 
-					<li><a	href="<%=PathResolver.getShortURLPath(pageContext.getAttribute("navUrl").toString())%>"
+					<li><a	href="${domain}<%=PathResolver.getShortURLPath(pageContext.getAttribute("navUrl").toString())%>"
 						title="${navlinks.linkName}">${navlinks.linkName}</a></li>
 				</c:when>
 				<c:otherwise>
-					<li><a href="${navUrl}"  target="${navlinks.thirdparty==1?'_blank':'_self'}" title="${navlinks.linkName}">${navlinks.linkName}${navlinks.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+					<li><a href="${domain}${navUrl}"  target="${navlinks.thirdparty==1?'_blank':'_self'}" title="${navlinks.linkName}">${navlinks.linkName}${navlinks.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 					</li>
 				</c:otherwise>
 

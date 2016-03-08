@@ -21,7 +21,11 @@
 <c:if test="${fn:startsWith(buttonUrl,'/content/')}">
 	<c:set var="buttonUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("buttonUrl").toString())%>" />
 </c:if>
-
+<c:set var="domain" value="" />
+<c:set var="port" value="<%= request.getServerPort() %>" />
+<c:if test="${empty port || port == 80}">
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+</c:if>
 
 
 
@@ -33,14 +37,14 @@
                 <div class="talk">
                 	${properties.contactbannercontent}
                     <div class="view-phone">
-						<a href="${properties.phonelinkurl}" class="reseller animateLink" target="${properties.phonetargettype?'_blank':'_self'}">${properties.phonelinktext}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+						<a href="${domain}${properties.phonelinkurl}" class="reseller animateLink" target="${properties.phonetargettype?'_blank':'_self'}">${properties.phonelinktext}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
                     </div>
                 </div>
 
   				<div class="buttons">
-  					<a href="${buttonUrl}" class="information btn-square -white hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
-  					<a href="${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
-  					<a href="${buttonUrl}" class="information btn-square-white hidden-xs hidden-sm" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
+  					<a href="${domain}${buttonUrl}" class="information btn-square -white hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
+  					<a href="${domain}${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+  					<a href="${domain}${buttonUrl}" class="information btn-square-white hidden-xs hidden-sm" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
   				</div>
   			</div>
   		</div>

@@ -12,7 +12,11 @@
 
 <c:set var="footerLinks" value="<%=properties.get("footer")%>" />
 <c:set var="copyrighttext" value="<%=properties.get("copyrighttext")%>" />
-
+<c:set var="domain" value="" />
+<c:set var="port" value="<%= request.getServerPort() %>" />
+<c:if test="${empty port || port == 80}">
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+</c:if>
 <c:choose>
 	<c:when test="${not empty footerLinks}">
 		<c:set var="corporateFooterLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urlLabel-pageUrl")%>" />
@@ -28,7 +32,7 @@
                                <c:set var="linkUrl" value="${linkUrl}"/>
    						</c:otherwise>
 					</c:choose>
-               		<a href="${linkUrl}">${link.urlLabel}</a> <c:if test="${!loop.last}">|</c:if>
+               		<a href="${domain}${linkUrl}">${link.urlLabel}</a> <c:if test="${!loop.last}">|</c:if>
 				</c:forEach>
 			</p>					
 	</c:when>
