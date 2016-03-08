@@ -1,5 +1,5 @@
 <%--
-  News and insights landing banner.
+  Event landing banner.
 --%>
 <%@page session="false"%>
 
@@ -17,9 +17,9 @@
 
 <c:choose>
 	<c:when test="${not empty properties.eventbannertitle}">
-        <div class="common-hero-banner news-banner clearfix" style="background-image:url(${properties.eventbannerimage});">
+        <div class="common-hero-banner services-training-banner clearfix" style="background-image:url(${properties.eventbannerimage});">
                 <div class="common-hero-banner-container">
-                    <div class="col-lg-12 col-md-12 col-xs-12 news-content-box" >
+                    <div class="col-lg-6 col-md-6 col-xs-12" >
         				    <h2 class="top-banner-heading">${properties.eventbannertitle}</h2>
                         	<h3 class="sub-headline" style="color:#fff;">${properties.eventmaintitle}</h3>
                             <h1 class="headline">${properties.eventbannersubtitle}</h1>
