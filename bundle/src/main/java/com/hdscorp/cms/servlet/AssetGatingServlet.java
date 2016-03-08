@@ -16,7 +16,7 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
 import com.day.cq.dam.api.Asset;
 
-@SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" })
+@SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" },extensions="pdf")
 @Properties({
 		@Property(name = "service.pid", value = "com.hdscorp.cms.servlet.AssetGatingServlet", propertyPrivate = false),
 		@Property(name = "service.description", value = "Asset Gating Servlet", propertyPrivate = false),
