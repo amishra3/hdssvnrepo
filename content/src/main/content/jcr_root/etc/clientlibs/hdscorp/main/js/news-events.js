@@ -123,24 +123,27 @@ var hds = window.hds || {};
                 $('.news-listing li:eq(0)').addClass('active');
                 $('.noEventFilter').hide();
                 $('.newsWrapper-listing').show();
-                
+                alert($(this).attr('data-startdate'));
                 var startFilter = $(this).attr('data-startdate').split('/');
                 var endFilter = $(this).attr('data-enddate').split('/');
                 startFilter = new Date(startFilter[2], startFilter[0] - 1, startFilter[1]);
                 endFilter = new Date(endFilter[2], endFilter[0] - 1, endFilter[1]);
-               console.log(startDate+'<=====>'+startFilter+'<=====>'+ endDate+'<=====>'+endFilter);
+                console.log(startDate+'<=====>'+startFilter+'<=====>'+ endDate+'<=====>'+endFilter);
                 return ((startFilter >= startDate) && (endFilter <= endDate)) || (startFilter <= endDate)
             }).show();
             
-            $('.newsWrapper-listing').each(function(index, el) {
-                if ($(this).find('.newsEvents:visible').length <= 0) {
-                    $(this).hide();
-                }
-            });
-            if ($('.newsEvents:visible').length <= 0) {
-                $('.noEventFilter').show();
-            }
-            hds.newsEvents.CheckLoadMoreMonths();
+            /* hide months if no event */
+                	$('.newsWrapper-listing').each(function(index, el) {
+							if ($(this).find('.newsEvents:visible').length <= 0) {
+								$(this).hide();
+							}
+					});
+					if ($('.newsEvents:visible').length <= 0) {
+						$('.noEventFilter').show();
+					}
+					/* //hide months if no event */
+      
+            //hds.newsEvents.CheckLoadMoreMonths();
         },
         sortFilter: function() {
              var target = this.options.element;
@@ -154,13 +157,33 @@ var hds = window.hds || {};
                     })
                 }
                 $('.news-listing li').removeClass('active');
+				
+				/* show all containers */
+                $('.noEventFilter').hide();
+                $('.newsWrapper-listing').show();
+				/* //show all containers */
+				
                 var searchFilter = $(this).attr('data-catagory');
                 $(this).parents('li').addClass('active');
+				$('#filterRegion').selectpicker('val', '');
                 if (searchFilter !== "All Events") {
                     $(target).hide().filter(function(index) {
                         var endFilter = $(this).attr('data-events');
                         return endFilter === searchFilter;
                     }).show();
+					
+					/* hide months if no event */
+                	$('.newsWrapper-listing').each(function(index, el) {
+							if ($(this).find('.newsEvents:visible').length <= 0) {
+								$(this).hide();
+							}
+					});
+					if ($('.newsEvents:visible').length <= 0) {
+						$('.noEventFilter').show();
+					}
+					/* //hide months if no event */
+						
+						
                 } else {
                     $(target).show();
                     $('.newsWrapper-listing').show();
@@ -178,12 +201,34 @@ var hds = window.hds || {};
             $(document).on('change', '#filterRegion', function(event) {
                 $('.news-listing li').removeClass('active');
                 var searchFilter = $('#filterRegion').val();
+				
+				
+				
+				/* show all containers */
+                $('.noEventFilter').hide();
+                $('.newsWrapper-listing').show();
+				/* //show all containers */
+				
                 $('.news-listing ul li:first-child').addClass('active');
                 if (searchFilter !== "") {
                     $(target).hide().filter(function(index){
                         var endFilter = $(this).attr('data-region');
                         return endFilter === searchFilter;
                     }).show();
+					
+					
+					
+					/* hide months if no event */
+                	$('.newsWrapper-listing').each(function(index, el) {
+							if ($(this).find('.newsEvents:visible').length <= 0) {
+								$(this).hide();
+							}
+					});
+					if ($('.newsEvents:visible').length <= 0) {
+						$('.noEventFilter').show();
+					}
+					/* //hide months if no event */
+					
                 } else {
                     $(target).show();
                     $('.newsWrapper-listing').show();
