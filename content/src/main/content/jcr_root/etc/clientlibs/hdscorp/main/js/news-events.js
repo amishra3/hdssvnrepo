@@ -123,7 +123,6 @@ var hds = window.hds || {};
                 $('.news-listing li:eq(0)').addClass('active');
                 $('.noEventFilter').hide();
                 $('.newsWrapper-listing').show();
-                alert($(this).attr('data-startdate'));
                 var startFilter = $(this).attr('data-startdate').split('/');
                 var endFilter = $(this).attr('data-enddate').split('/');
                 startFilter = new Date(startFilter[2], startFilter[0] - 1, startFilter[1]);
