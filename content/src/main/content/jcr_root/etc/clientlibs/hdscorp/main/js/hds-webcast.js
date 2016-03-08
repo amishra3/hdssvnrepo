@@ -7,7 +7,7 @@ var hds = window.hds || {};
             var defaults = {
                 element: '#webcasts-demand .newsEvents',
                 elementListAnchor: '.webcast-listing li a',
-                detailsBtn: '#webcasts-demand .expandMe',
+                detailsBtn: '#webcasts-demand .newsWrapper .expandMes',
                 countParagraph: 270,
                 ellipsestext :'...',
                 moreText: "more",
@@ -17,9 +17,11 @@ var hds = window.hds || {};
             }
             this.options = $.extend(defaults, options);
             hds.webcastEvents.truncateText();
+			hds.webcastEvents.bindWebcastsOnResize();
             hds.webcastEvents.showFilteredContent();
             hds.webcastEvents.showDetails();
             hds.webcastEvents.showModal();
+			hds.webcastEvents.bindWebCatsLoad();
 
         },
         truncateText:function(){
@@ -40,15 +42,24 @@ var hds = window.hds || {};
             $(document).on('click', showDetails, function() {
                 var $this = $(this);
                 if ($this.hasClass('less')) {
-                    $this.removeClass('less');                    
+                    $this.removeClass('less');
+					$this.find('.glyphicon').removeClass('glyphicon-plus-sign').addClass('glyphicon-minus-sign');
+					//$this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
+					$(this).prev().css( "display", "block" );
+					alert('one');
+					
                 } else {
-                    $this.addClass('less');                    
+					alert('two');
+                    $this.addClass('less');
+					$(this).prev().css( "display", "none" );
+					$this.find('.glyphicon').removeClass('glyphicon-minus-sign').addClass('glyphicon-plus-sign');
                     setTimeout( function() { $this.parents('.newsEvents').find('h3').focus() }, 500 );
-                       }
-                $this.find('.glyphicon').toggleClass('glyphicon-minus-sign');
-                $this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
-                $this.parents('.newsEvents').find('p span.moreellipses').toggle();
-                $this.parents('.newsEvents').find('p span.morecontent span').toggle();
+					//$this.parents('.newsEvents').find('.WebcastDetails').hide();
+                }
+                //$this.find('.glyphicon').toggleClass('glyphicon-minus-sign');
+                //$this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
+                //$this.parents('.newsEvents').find('p span.moreellipses').toggle();
+                //$this.parents('.newsEvents').find('p span.morecontent span').toggle();
                 return false;
             })
         },
@@ -61,9 +72,6 @@ var hds = window.hds || {};
                 var commId= $(this).attr('comid');
                 modal.find('.modal-body').html('<script type="text/javascript" src="https://www.brighttalk.com/clients/js/embed/embed.js"></script><object class="BrightTALKEmbed" width="100%" height="627"><param name="player" value="webcast_player"/>   <param name="domain" value="https://www.brighttalk.com"/>   <param name="channelid" value="12821"/>   <param name="communicationid" value="'+commId+'"/>    <param name="autoStart" value="false"/>    <param name="theme" value=""/></object>');
                     modal.show();
-
-
-
                 return false;
             })
         },
@@ -71,28 +79,39 @@ var hds = window.hds || {};
             if ($(window).width() < 991) {
                 $('.webcast-listing li').each(function() {
                     if ($(this).hasClass('active')) {
-                        $(this).find('.MobileHolderWrapper').append($('#contentWebCast').html());
-                        $('#contentWebCast').empty();
+                        if($(this).find('.MobileHolderWrapper').empty()){
+							$(this).find('.MobileHolderWrapper').append($('#contentWebCast').html());
+						}
+						$('#contentWebCast').hide();
+						$(this).find('.MobileHolderWrapper').show();
                     }
                 });
             } else {
                 $('.webcast-listing li').each(function() {
                     if ($(this).hasClass('active')) {
-                        $('#contentWebCast').append($(this).find('.MobileHolderWrapper').html());
-                        $('.MobileHolderWrapper').empty();
+						$('#contentWebCast').append($(this).find('.MobileHolderWrapper').html());
+                        $('.MobileHolderWrapper').hide();
+						$('#contentWebCast').show();
                     }
                 })
             }
         },
+
+        bindWebcastsOnResize: function() {
+            $(window).resize(function() {
+                hds.webcastEvents.bindWebCatsLoad();
+            });
+        },
+		
         showFilteredContent: function() {
             var listAnchor=this.options.elementListAnchor;
             var targetList = this.options.element;
-            $(listAnchor).on('click', function(event) {
+            $(listAnchor).on('click', function(event) {				
                 if ($(window).width() < 991) {  
                  $(listAnchor).each(function() {
                     if ($(this).hasClass('active')) {
                         $('#contentWebCast').append($(this).find('.MobileHolderWrapper').html());
-                        $('.MobileHolderWrapper').empty();
+                        $('.MobileHolderWrapper').hide();
                     }
                     })
                 }
@@ -100,7 +119,6 @@ var hds = window.hds || {};
                     var searchFilter=$(this).attr('data-catagory');
                     $(this).parents('li').addClass('active');
                 if (searchFilter !== "All Webcast") {
-
                     $('#webcasts-demand .newsEvents').hide().filter(function(index) {
                         var self = $(this);
                         var endFilter = self.attr('data-webcast').split(',');
@@ -124,4 +142,3 @@ $(function() {
     hds.webcastEvents.init();
     }
 })
-

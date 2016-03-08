@@ -14,6 +14,7 @@ var hds = window.hds || {};
             hds.newsEvents.loadMoreMonths();
             hds.newsEvents.bindFilters();
             hds.newsEvents.sortFilter();
+            hds.newsEvents.regionFilter();
             hds.newsEvents.bindHTMLLoad();
             hds.newsEvents.bindEventsOnResize();
             hds.newsEvents.displayBlockContent();            
@@ -44,13 +45,17 @@ var hds = window.hds || {};
                 var self = $(this);
                 var $parentTag = self.parents('.newsEvents').find('.eventDetails');
                 if (self.hasClass('less')) {
-                    self.removeClass('less');                    
+                    self.removeClass('less');
+					$(this).prev().css( "display", "block" );
+					self.find('.glyphicon').removeClass('glyphicon-plus-sign').addClass('glyphicon-minus-sign');
                 } else {
-                   self.addClass('less');                    
-                    setTimeout( function() { self.parents('.newsEvents').find('h3').focus() }, 500 );
-                       }
-               self.find('.glyphicon').toggleClass('glyphicon-minus-sign');
-               self.parents('.newsEvents').find('.eventDetails').toggle().focus();
+                   self.addClass('less');
+					$(this).prev().css( "display", "none" );
+					self.find('.glyphicon').removeClass('glyphicon-minus-sign').addClass('glyphicon-plus-sign');
+                   setTimeout( function() { self.parents('.newsEvents').find('h3').focus() }, 500 );
+                 }
+               //self.find('.glyphicon').toggleClass('glyphicon-minus-sign');
+               //self.parents('.newsEvents').find('.eventDetails').toggle().focus();
 
             });
         },
@@ -86,6 +91,7 @@ var hds = window.hds || {};
                 $('.news-listing li').each(function() {
                     if ($(this).hasClass('active')) {
                         $(this).find('.MobileHolderWrapper').append($('#newsEventCatagory').html());
+						$(this).find('.MobileHolderWrapper').show();
                         $('#newsEventCatagory').empty();
                     }
                 });
@@ -93,6 +99,7 @@ var hds = window.hds || {};
                 $('.news-listing li').each(function() {
                     if ($(this).hasClass('active')) {
                         $('#newsEventCatagory').append($(this).find('.MobileHolderWrapper').html());
+						$('#newsEventCatagory').show();
                         $('.MobileHolderWrapper').empty();
                     }
                 })
@@ -101,7 +108,7 @@ var hds = window.hds || {};
         bindEventsOnResize: function() {
             $(window).resize(function() {
                 hds.newsEvents.bindHTMLLoad();
-                hds.newsEvents.displayBlockContent();
+                //hds.newsEvents.displayBlockContent();
             });
         },
         searchFilterRange: function(startDate, endDate) {
@@ -137,7 +144,7 @@ var hds = window.hds || {};
         },
         sortFilter: function() {
              var target = this.options.element;
-            $(document).on('click', '.news-listing  li  a', function(event) {
+            $(document).on('click', '.news-listing  li > a', function(event) {
                  if ($(window).width() < 991) {  
                  $('.news-listing li').each(function() {
                     if ($(this).hasClass('active')) {
@@ -161,7 +168,30 @@ var hds = window.hds || {};
                     $('#date-range200, #date-range201').val(" ");
                 }
                 hds.newsEvents.bindHTMLLoad();
-                hds.newsEvents.displayBlockContent();
+                //hds.newsEvents.displayBlockContent();
+
+                event.preventDefault();
+            });
+        },
+        regionFilter: function() {
+             var target = this.options.element;
+            $(document).on('change', '#filterRegion', function(event) {
+                $('.news-listing li').removeClass('active');
+                var searchFilter = $('#filterRegion').val();
+                $('.news-listing ul li:first-child').addClass('active');
+                if (searchFilter !== "") {
+                    $(target).hide().filter(function(index){
+                        var endFilter = $(this).attr('data-region');
+                        return endFilter === searchFilter;
+                    }).show();
+                } else {
+                    $(target).show();
+                    $('.newsWrapper-listing').show();
+                    $('.noEventFilter').hide();
+                    $('#date-range200, #date-range201').val(" ");
+                }
+                hds.newsEvents.bindHTMLLoad();
+               // hds.newsEvents.displayBlockContent();
 
                 event.preventDefault();
             });
