@@ -23,3 +23,4 @@ hds-webcast.js
 news-insight-lp.js
 hds-partner-hero-banner.js
 hds-resources.js
+legal.js
