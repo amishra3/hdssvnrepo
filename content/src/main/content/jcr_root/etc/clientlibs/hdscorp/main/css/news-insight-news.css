@@ -193,11 +193,29 @@ color:#000000;
 }
 
 .news-press-container .image-container .inner-content-area .title{
-    font-size: 1.25rem;
+    font-size: 1.313rem;
 	color: #000000;
-	line-height: 1;
+	line-height: 1.1em;	
+}
+
+.news-press-container .image-container .inner-content-area .title .glyphicon-menu-right.animateIcon{
+   	font-size: 0.95rem;
+    font-weight: bold;	
+}
+
+.news-press-container .image-container .inner-content-area .title a{
+	color:#000000;
+}
+
+.news-press-container .date_box .date-stamp.hidden-sm > span{
+	font-size: 0.6875rem;
+	color: #414141;
+	display: table-cell;
+    vertical-align: top;
+	padding-right: 8px;
 	
 }
+
 
 
 }
