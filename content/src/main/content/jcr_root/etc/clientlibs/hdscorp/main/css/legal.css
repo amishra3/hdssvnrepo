@@ -82,7 +82,7 @@
     z-index: 9;
 }
 
-..no-touch Container-legal-terms .leftsidelisting ul > li.active > a:after {
+.no-touch Container-legal-terms .leftsidelisting ul > li.active > a:after {
     content: '';
     display: block;
     position: absolute;
