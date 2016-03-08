@@ -6,6 +6,11 @@
 <%@page session="false"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
+<c:set var="domain" value="" />
+<c:set var="port" value="<%= request.getServerPort() %>" />
+<c:if test="${empty port || port == 80}">
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+</c:if>
 
 
 <c:set var="socialmultilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linktargeturl-linkIconPath-linkicontext")%>" />
@@ -16,7 +21,7 @@
 		<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
         <c:set var="imageAltText" value="${externalLink.linkicontext}"/>
 		<a href="${linktargeturl}" target="_blank"> 
-            <img alt="${imageAltText}" title="${imageAltText}" src="${linkIconPath}"/>
+            <img alt="${imageAltText}" title="${imageAltText}" src="${domain}${linkIconPath}"/>
 		</a>
 	</c:forEach>
 </ul>
