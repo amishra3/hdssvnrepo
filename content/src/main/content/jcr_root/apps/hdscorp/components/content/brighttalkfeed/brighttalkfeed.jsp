@@ -41,7 +41,8 @@ pageContext.setAttribute("listMaps", listMaps);
 
                                     <c:choose>
                                         <c:when test="${listm.status == 'recorded'}">
-                                            <div class="bgcastDetails" style="background-image: url('${listm.previewImagePath}')">
+                                            <div class="bgcastDetails">
+                                            	<img src="${listm.previewImagePath}" alt=""/>
                                                 <%--<a rel="modal" href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="${properties.playlabel}">${properties.playlabel}</a> --%>
 												<!-- Make the URL of the rendering page authorable -->
                                                 <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?wcmmode=disabled&commid=${listm.communicationId}" target="_blank" class="playvideo" title="${properties.playlabel}">${properties.playlabel}</a>
