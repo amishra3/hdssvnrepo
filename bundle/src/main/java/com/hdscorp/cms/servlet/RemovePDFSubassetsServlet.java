@@ -109,6 +109,7 @@ public class RemovePDFSubassetsServlet extends SlingAllMethodsServlet {
 //					if(JcrUtils.getNodeIfExists(subAssetPath, JcrUtilService.getSession())!=null){
 					if(adminSession.itemExists(subAssetPath)){
 						out.println("==ASSETS EXISTS=="+subAssetPath+"<br/>");
+						out.flush();
 						try {
 							if(performDelete!=null && performDelete.equalsIgnoreCase("true")){
 								adminSession.removeItem(nodePath);
