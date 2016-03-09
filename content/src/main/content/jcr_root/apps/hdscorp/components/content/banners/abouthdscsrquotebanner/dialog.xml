@@ -46,6 +46,11 @@
                         fieldLabel="Provide Background Image (If Custom Image selected above.)"
                         name="./bannerbackgroundimage"
                         xtype="ddpathfield"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./bannermobileimage"
+                        xtype="ddpathfield"/>
                     <quoteheadline
                         jcr:primaryType="cq:Widget"
                         allowBlank="false"

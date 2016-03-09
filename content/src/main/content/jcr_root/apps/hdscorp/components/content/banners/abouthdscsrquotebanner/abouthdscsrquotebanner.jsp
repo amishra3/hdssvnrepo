@@ -18,7 +18,8 @@
 <c:set var="bannerbackgroundstyle" value="" />
 
 <c:if test = "${bannertype == 'customdamimage'}">
-	<c:set var="bannerbackgroundstyle" value=" style='background-image: url(${properties.bannerbackgroundimage})''" />
+	<%--<c:set var="bannerbackgroundstyle" value=" style='background-image: url(${properties.bannerbackgroundimage})''" />--%>
+    <c:set var="bannerbackgroundstyle" value="style='background-image: url();' ${hdscorp:bgImgAtrr(properties.bannerbackgroundimage,properties.bannermobileimage)} >
 </c:if>
 
 
@@ -42,7 +43,7 @@
 
 <c:if test = "${bannertype=='customdamimage'}">
 
-	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-4 clearfix" />
+	<c:set var="csrquote" value="about-hds-csr-quote csr-quote-4 clearfix rsImg" />
 </c:if>
 <c:set var="quotecon" value="${properties.hidequotes}"/>  
 <c:set var="quotelength" value="${fn:length(quotecon)}"/>    
