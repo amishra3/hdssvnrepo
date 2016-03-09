@@ -74,6 +74,13 @@ $(document).ready(function () {
 		1000);
 	});
 	
+	
+    $('a[rel=iframemodal]').on('click', function(evt) {
+        evt.preventDefault();
+        var modal = $('#modal').modal();
+        modal.find('.modal-body').html("<iframe src='https://pages.hds.com/hds-contact-sales.html?locale=us' height='700px' frameborder='0'></iframe>");
+        modal.show(); 
+    });
 });
 
 
