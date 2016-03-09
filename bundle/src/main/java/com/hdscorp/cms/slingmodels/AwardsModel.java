@@ -166,6 +166,11 @@ public class AwardsModel {
 				} else {
 					awardNode.setOpenInNewTab(false);
 				}
+				if(properties.containsKey("thirdparty")){
+					awardNode.setNewWinIcon(true);
+				} else {
+					awardNode.setNewWinIcon(false);
+				}
 				awardsList.add(awardNode);
 			}
 
