@@ -78,7 +78,7 @@
     top: -3px;
     width: 100%;
     height: 0;
-    border-top: 3px solid #f1f1f1;
+    border-top: 3px solid #414141;
     z-index: 9;
 }
 
@@ -102,6 +102,12 @@
 .Container-legal-terms .leftsidelisting ul > li.active > a {
     color: #ffffff;
     border-bottom: none;
+    font-size: 0.75rem;
+}
+
+.Container-legal-terms .leftsidelisting ul > li.active > a {
+    color: #ffffff;
+    border-bottom: 0;
     font-size: 0.75rem;
 }
 
@@ -141,7 +147,7 @@
     background: #7e7e7e;
     margin-right: -20px;
     margin-left: -20px;
-    padding: 4px 0;
+    padding: 3px 0 0;
 }
 
 .product-list-section {
@@ -224,8 +230,8 @@
     z-index: 9;
 }
 
-.no-touch .leftsidelisting ul > li.active > a:after,
-.no-touch .leftsidelisting ul > li.leftDefault > a:after {
+.leftsidelisting ul > li.active > a:after,
+.leftsidelisting ul > li.leftDefault > a:after {
     content: '';
     display: block;
     position: absolute;
@@ -340,17 +346,26 @@
 }
 
 @media (min-width:992px) {
-	#legal a span.icon-accordion-closed, #legal a span.icon-accordion-opened{display:none !important}
-	#legal .leftsidelisting li.active:first-child a:after{display:none;}
-	#legal .leftsidelisting li.active:first-child li a:after{display:inline;}
-	#legal.Container-legal-terms .leftsidelisting ul>li.active:not(:first-child):before{border:none;}
+    #legal a span.icon-accordion-closed, #legal a span.icon-accordion-opened{display:none !important}
+    #legal .leftsidelisting li.active:first-child a:after{display:none;}
+    #legal .leftsidelisting li.active:first-child li a:after{display:inline;}
+    #legal.Container-legal-terms .leftsidelisting ul>li.active:not(:first-child):before{border:3px solid #414141;}
+    #legal.Container-legal-terms .leftsidelisting ul > li > ul > li.active:not(:first-child):before{border:2px solid #414141;}  
 }
 
 @media (max-width:991px) {
-	.Container-legal-terms .leftsidelisting .MobileHolderWrapper ul > li > ul {
-		display: block;
-	}
-	#legalContentCatagory #loading{min-height:100px;}
+    .Container-legal-terms .leftsidelisting .MobileHolderWrapper ul > li > ul {
+        display: block;
+    }
+    #legalContentCatagory #loading{
+        min-height:100px;
+    }
+    .result-legal_pages ul > li > ul > li {
+        list-style-type: circle;
+    }
+    .result-legal_pages ul > li > ul > li > ul > li {
+        list-style-type: disc;
+    }
 }
 @media (max-width:768px) {
     .Container-Results {
