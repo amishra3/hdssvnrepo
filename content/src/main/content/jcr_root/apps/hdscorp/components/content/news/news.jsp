@@ -39,7 +39,13 @@
                                 <c:set var="title" value="${fn:substring(title, 0, 130)}..."/>
                               </c:if>
                     <div class="col-sm-6 content-panel">
-                        <strong>${news.newsDate}</strong>
+
+                        <div class="date-stamp hidden-sm hidden-md hidden-lg">
+                           <span><img src="${properties.newsicondevice}"></span>
+                           <span><strong>${news.newsDate}</strong></span>
+                      </div>
+                      <div class="date-stamp hidden-xs"><strong>${news.newsDate}</strong></div>
+
                         <p>${title}</p>
                         <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreLabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
                     </div>
