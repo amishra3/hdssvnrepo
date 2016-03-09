@@ -21,7 +21,7 @@ else{
     orientation="Portrait";
 }
 
-var screenSize = jQuery(window).width() +"x" +jQuery(window).height();
+var screenSize = screen.width+"x" +screen.height;
 
 console.log("count"+count);
 for(index=0;index<count;index++)
@@ -186,11 +186,11 @@ $(document).on('keypress', '#searchFilter', function(event) {
     if(event.which == 13) {
      setTimeout(function() {
 	var searchTerm=$('#searchFilter').val();
-	var result=$('#TotalCount').text();
+	var result=$('#actualCount').text();
          if(result==0)
              result="zero";
      searchClick(searchTerm, "search box",result,'product','productSearchClick');
-         }, 1000); 
+         }, 1500); 
     }            
     });
 
@@ -199,7 +199,7 @@ $(document).on('keypress', '#searchFilter', function(event) {
 		 $(this).click(function(){
 			if ($(this).is(':checked')) {
                 var text = $(this).find("span").text();
-       			var result=$('#TotalCount').text();
+       			var result=$('#actualCount').text();
          		if(result==0)
            		  result="zero";
                 searchClick(text, "sub-category filter",result,'product','productSearchClick');
@@ -214,11 +214,11 @@ $(document).on('keypress', '#searchFilter', function(event) {
             $(this).click(function(){
                 var text = $(this).text();
                 setTimeout(function() {
-                var result=$('#TotalCount').text();
+                var result=$('#actualCount').text();
                  if(result==0)
                      result="zero";
                 	searchClick(text, "category filter",result,'product','productSearchClick');
-    			 }, 1000);
+    			 }, 1500);
              });
         });
 	});	
@@ -232,11 +232,11 @@ $(document).on('keypress', '#searchFilter', function(event) {
              var text = $(this).text();
 
             setTimeout(function() {
-            	var result=$('#TotalCount').text();
+            	var result=$('#actualCount').text();
          		if(result==0)
             	 result="zero";
         		productSearchClick(text, "a-z filter",result,'product');
-			 }, 1000); 
+			 }, 1500); 
         });
         //}
 	  	});
@@ -266,7 +266,7 @@ $('#filterRegion').on('change', function(event) {
          }, 1000); 
     });
 //globalMenuClick(eventname,triggername,page)
-function globalMenuClick(eventname,triggername,page,triggertype,Position){
+function globalMenuClick(eventname,triggerName,page,triggertype,Position){
     digitalData.eventData= {
     eventName:eventname,
     eventAction:triggername,
