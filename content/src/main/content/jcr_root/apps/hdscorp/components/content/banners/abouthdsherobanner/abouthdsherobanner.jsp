@@ -13,7 +13,8 @@ request.setAttribute("bannerimage",bannerimage);
 <c:choose>
 	<c:when test="${not empty properties.abouthdsherobannertitle}">
 
-		 <div class="common-hero-short-banner about-hds clearfix" style="background-image: url('${requestScope.bannerimage}')">
+		<%-- <div class="common-hero-short-banner about-hds clearfix" style="background-image: url('${requestScope.bannerimage}')">--%>
+       <div class="common-hero-short-banner about-hds clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.abouthdsherobannermobileimage)} >
 		     <div class="content-container">
 		         <div class="col-lg-6 col-md-6 col-xs-12">
 		             <h2 class="headline">${properties.abouthdsherobannertitle}</h2>
