@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <pdfformmessage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Form Message"
+                        name="./pdfformmessage"
+                        xtype="textfield"/>
+                    <pdfviewallresourcelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="View All Resource Label"
+                        name="./pdfviewallresourcelabel"
+                        xtype="textfield"/>
+                    <pdfviewallresourcelink
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="View All Resource Link"
+                        name="./pdfviewallresourcelink"
+                        xtype="pathfield"/>
+                    <pdfurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./pdfurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <pdffilloutdownloadtext
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Fill Out Form Text"
+                        name="./pdffilloutdownloadtext"
+                        xtype="textfield"/>
+                    <pdfthanksyoumsg
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Thanks you Message"
+                        name="./pdfthanksyoumsg"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
