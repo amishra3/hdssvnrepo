@@ -16,11 +16,10 @@
 					<c:if test="${fn:startsWith(targetlink,'/content/')}">
 						<c:set var="targetlink" value="${hdscorp:shortURL(targetlink)}" />
 					</c:if>
-					<a href="${targetlink}" target="${newwin==1?'_blank':'_self'}">
-						<h2>${nivcMultiObject.key}
-							<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
-						</h2>
-					</a>
+					<h2><a class="animateLink" href="${targetlink}" target="${newwin==1?'_blank':'_self'}">
+						${nivcMultiObject.key}
+							<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>						
+					</a></h2>
 					<cq:include path="firstpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsinsightverticalexplorer" />
 				</div>
 			</c:forEach>
@@ -30,8 +29,3 @@
 	</div>
 	<div class="orange-sep">&nbsp;</div>
 </div>
-
-
-
-
-

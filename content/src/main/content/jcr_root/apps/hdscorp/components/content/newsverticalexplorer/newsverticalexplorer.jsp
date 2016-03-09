@@ -22,7 +22,7 @@
 
 <c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
 
-<div class="pr-common-box hidden-xs hidden-sm">
+<div class="pr-common-box hidden-xs">
 	<div class="icon">
 		<img src="${newsVerticalExplorer.iconImagePath}" alt="" title="">
 	</div>
