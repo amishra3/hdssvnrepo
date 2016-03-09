@@ -133,8 +133,8 @@ var hds = window.hds || {};
             }
         },
         udatePageCount: function() {
-            var totalCount = $('.current .product').length;
-            var actualCount = $('.current .product:visible').length;
+            var totalCount = $('div.product').size();
+            var actualCount = $('div.product:visible').size();
             $("#TotalCount").html(' ').html(totalCount);
             $("#actualCount").html(' ').html(actualCount);
         },
@@ -152,7 +152,7 @@ var hds = window.hds || {};
                 $('.result-product .navLinks').show();
                 hds.loadDataFilters.udatePageCount();
                 if ($(".product:visible").length === 0) {
-                    $('.result-product .navLinks,.headerSort').hide();
+                   // $('.result-product .navLinks,.headerSort').hide();
                     $('#loadCatagoryContent').find('.no-matched-result').remove();
                     $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
                 }
@@ -213,6 +213,18 @@ var hds = window.hds || {};
 	                }                
             	}
             });
+            $(document).on('click', '.glyphicon-search', function(event) {
+                //alert("..");
+            	event.preventDefault();
+	                var getSearchFilter = $('#searchFilter').val();
+	                if (getSearchFilter.length > 0) {
+	                    hds.loadDataFilters.checkSearchEmpty();
+	                } else {
+	                   hds.loadDataFilters.checkSearchEmpty();
+
+	                }                
+
+            });
         },
         checkSearchEmpty: function() {
             var alphaSelected = null,
@@ -245,10 +257,14 @@ var hds = window.hds || {};
             }
             
             hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
-
             setTimeout(function() {
                 hds.loadDataFilters.controlCount();
-            }, 500);
+                 if ($(".product:visible").length === 0) {
+                $('#loadCatagoryContent').find('.no-matched-result').remove();
+                $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+            }
+
+            }, 1000);
         },
         
         updateSearchFilters: function(parm1, parm2, param3) {
@@ -281,17 +297,17 @@ var hds = window.hds || {};
                                 };
                                 var getSearchFilter = $('#searchFilter').val();
                                 self.show();
-                                $('#loadMoreBtn').hide();
-                                self.find(".filterText:not(:Contains(" + getSearchFilter + "))").parent().parent().slideUp();
-                                self.find(".filterText:Contains(" + getSearchFilter + ")").parent().parent().slideDown();
-                                setTimeout(function() {
-                                    hds.loadDataFilters.udatePageCount();
-                                }, 500);
+								$('#loadMoreBtn').hide();
+                                self.find(".filterText:not(:Contains('" + getSearchFilter + "'))").parent().show();
+                                self.find(".filterText:not(:Contains('" + getSearchFilter + "'))").parent().slideUp(function() { $(this).parent().slideUp();});
+                                self.find(".filterText:Contains('" + getSearchFilter + "')").parent().slideDown(function() { $(this).parent().slideDown();});
+
+
                             }
                         }
                     }
                 });
-                
+
                 var totalFilterSelected = $('.product-listing input.filters').filter(':checked').length;
                 //Multiple Description Logic START
                 if(filters.category && totalFilterSelected < 2){
@@ -335,13 +351,12 @@ var hds = window.hds || {};
             		}
                 }
                 //Multiple Description Logic END
-                
+
                 return result;
             }).show('medium');
-            if ($(".product:visible").length === 0) {
-                $('#loadCatagoryContent').find('.no-matched-result').remove();
-                $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
-            }
+           // hds.loadDataFilters.udatePageCount();
+
+
         }
     }
 
