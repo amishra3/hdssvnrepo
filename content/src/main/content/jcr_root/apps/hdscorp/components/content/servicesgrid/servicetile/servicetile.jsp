@@ -7,11 +7,7 @@
 <c:set var="linkUrl" value="${serviceObj.categoryPath}" />
 <c:set var="seealllinklabel" value="${requestScope['seealllinklabel']}" />
 <c:set var="loopindex" value="${requestScope['loopindex']}" />
-<c:set var="tilepaddingclass" value="" />
 
-<c:if test="${(loopindex != 0) && (loopindex mod 3 == 0)}">	
-	<c:set var="tilepaddingclass" value=" col-sm-offset-2" />
-</c:if>
 
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
@@ -20,7 +16,7 @@
 												
 												
 
-<div class="col-sm-4 ${tilepaddingclass}">
+<div class="col-sm-4 col-centered">
             <div class="section-service-col">
             	<a href="${linkUrl}" >
 			         <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${serviceObj.categoryTitle}"></div>
