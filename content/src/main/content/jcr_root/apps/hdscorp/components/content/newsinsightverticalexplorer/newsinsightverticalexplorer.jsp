@@ -31,7 +31,7 @@
 				title="">
 		</div>
 		<div class="icon hidden-md hidden-lg">
-			<img src="/content/dam/hdscorp/icon-content-type.png" alt="" title="">
+			<img src="${properties.nibticonimagedevice}" alt="" title="">
 		</div>
 		<div class="type">${newsInsightVerticalExplorer.iconImageLabel}
 			${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
