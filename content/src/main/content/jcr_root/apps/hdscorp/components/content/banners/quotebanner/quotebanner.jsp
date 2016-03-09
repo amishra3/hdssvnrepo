@@ -14,7 +14,9 @@
 <c:set var="bannerbackgroundstyle" value="" />
 
 <c:if test = "${bannertype eq 'customdamimage' or empty bannertype}">
-	<c:set var="bannerbackgroundstyle" value=" style='background-image: url(${properties.quoteheroimagereference})'" />
+	<%-- <c:set var="bannerbackgroundstyle" value=" style='background-image: url(${properties.quoteheroimagereference})'" /> --%>
+	<c:set var="bannerbackgroundstyle" value=" style='background-image: url();' ${hdscorp:bgImgAtrr(properties.quoteheroimagereference,properties.quoteheromobileimage)}" />
+
 </c:if>
 
 <c:if test = "${bannertype eq 'custombkgcolor'}">
@@ -22,11 +24,11 @@
 </c:if>
 
 <c:if test = "${quoteype=='specific-quote'}">
-	<c:set var="quote" value="specific-quote" />
+	<c:set var="quote" value="specific-quote rsImg" />
 </c:if>
 
 <c:if test = "${quoteype=='specific-quote partner-quote'}">
-	<c:set var="quote" value="specific-quote partner-quote" />
+	<c:set var="quote" value="specific-quote partner-quote rsImg" />
 </c:if>
 
 
