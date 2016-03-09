@@ -17,7 +17,7 @@ var hds = window.hds || {};
        updateTitleOnLoad: function(url) {
         	$('.category-heading > h2').html(" ").html($('.product-listing > ul > li.active').find('a').text());
         },
-        
+
         loadCatagoryContent: function(url) {
             var getURL = "";
             if (typeof url === 'undefined') {
@@ -255,7 +255,7 @@ var hds = window.hds || {};
              if ($.trim($searchBox).length < 0) {
                 haveTextInInput = null;
             }
-            
+             $('.product').find('li').addClass("filterText");
             hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
             setTimeout(function() {
                 hds.loadDataFilters.controlCount();
@@ -298,10 +298,14 @@ var hds = window.hds || {};
                                 var getSearchFilter = $('#searchFilter').val();
                                 self.show();
 								$('#loadMoreBtn').hide();
-                                self.find(".filterText:not(:Contains('" + getSearchFilter + "'))").parent().show();
-                                self.find(".filterText:not(:Contains('" + getSearchFilter + "'))").parent().slideUp(function() { $(this).parent().slideUp();});
-                                self.find(".filterText:Contains('" + getSearchFilter + "')").parent().slideDown(function() { $(this).parent().slideDown();});
-
+                                self.find(".filterText").parent().show();
+                                var excludeList= self.find(".filterText:not(:Contains('" + getSearchFilter + "'))");
+                                 if(excludeList.length>0)
+                               		self.find("a.filterText").parent().slideUp(function() { $(this).parent().slideUp();});
+                                
+                                 var includeList=self.find(".filterText:Contains('" + getSearchFilter + "')");
+                                 if(includeList.length>0)
+                                     self.find("a.filterText").parent().slideDown(function() { $(this).parent().slideDown();});
 
                             }
                         }
