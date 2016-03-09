@@ -9,7 +9,7 @@
 	<div class="content-container clearfix">
 		<div class="col-sm-12 partners">
 			<div class="heading">
-                 <h2><img src="images/partner-ico.png" alt="">${properties.partnercattitle}</h2>
+                 <h2><img src="${properties.partnercaticonpath}" alt="">${properties.partnercattitle}</h2>
                  <div class="filter">
 	                 <div class="btn-group"> 
 						<button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="btn dropdown-toggle service-btn" type="button">${properties.partnerfilterlabel}<span aria-hidden="true" class="glyphicon glyphicon-chevron-down hidden-xs hidden-sm"></span></button> 	
@@ -36,7 +36,7 @@
 	   <div class="clearfix"></div>
 		<div class="col-sm-12 col-no-pad">
 			<div class="more-solutions">
-				<a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+				<a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}" target="${properties.openinnewwindow?'_blank':'_self'}">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
 			</div>
 		</div>
 	</div>

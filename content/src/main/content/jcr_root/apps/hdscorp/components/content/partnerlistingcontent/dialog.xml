@@ -23,8 +23,8 @@
                         fieldDescription="This is the Partner Section Icon."
                         fieldLabel="Partner Section Icon Path"
                         name="./partnercaticonpath"
-                        xtype="ddpathfield"/>                   
-					<partnertags
+                        xtype="ddpathfield"/>
+                    <partnertags
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Please select partner tags applicable."
                         name="./partnertags"
@@ -46,14 +46,20 @@
                         fieldDescription="This is the lear more label."
                         fieldLabel="Learn More Link Label"
                         name="./learnmorelinklabel"
-                        xtype="textfield"/>                                                                   
+                        xtype="textfield"/>
+                    <openinnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./openinnewwindow"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
             <tab2
                 jcr:primaryType="cq:Panel"
                 title="Partner Category Filter Config">
                 <items jcr:primaryType="cq:WidgetCollection">
-					<partnerfilterlabel
+                    <partnerfilterlabel
                         jcr:primaryType="cq:Widget"
                         fieldDescription="This is the Filter label."
                         fieldLabel="Filter Title"
@@ -80,7 +86,7 @@
                                     key="partnerfiltertitle"
                                     layout="anchor"
                                     name="./partnerfiltertitle"
-                                    xtype="textfield"/>                            
+                                    xtype="textfield"/>
                                 <cftags
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"
@@ -92,9 +98,9 @@
                                     xtype="tags"/>
                             </items>
                         </fieldConfig>
-                    </contents>                          
+                    </contents>
                 </items>
-            </tab2>            
+            </tab2>
         </items>
     </items>
 </jcr:root>
