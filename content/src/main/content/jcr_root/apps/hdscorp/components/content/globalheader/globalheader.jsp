@@ -74,7 +74,7 @@
 					</c:forEach>
 	
 					<li class="search"><input type="text"
-						placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}"><span
+						placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}" id="gsaSearchBox"><span
 						class="icon nav-search"></span></li>
 				</ul>
 			</div>
