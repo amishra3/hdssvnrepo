@@ -19,7 +19,7 @@
                                      <c:if test="${not empty fn:trim(blogModel.breadmore)}">
                                             <div class="more-solutions">
                                                 <c:choose>
-							<c:when test="${blogModel.bopeninnew=='true'}">  
+							<c:when test="${blogModel.bopeninnew=='1'}">  
 						<a href="${blogModel.breadmorelink}" target="_blank" class="animateAnchor bottomPos text-center">${blogModel.breadmore} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
 						</c:when>
 					<c:otherwise>  
