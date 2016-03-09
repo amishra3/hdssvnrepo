@@ -35,14 +35,27 @@
 
         <c:if test="${not empty properties.quoteheadline}">
         <p>${properties.quoteheadline}</p>
-		<div class="partner-btn">
-			<div class="btn-square-transparent request clearfix">
-				<a href="${linkUrl}" class="animateLink" target="${properties.openinnewwindow?'_blank':'_self'}">${properties.quotebuttonlabel}<span class="glyphicon glyphicon-share animateIcon hidden-xs hidden-sm" aria-hidden="true"></span> </a>
-			</div>
+        </c:if>   
+<c:if test="${not empty properties.quotebuttonlabel}">
+<c:choose>
+<c:when test="${properties.openininewwindow=='1'}">
+<div class="partner-btn">
+	<div class="btn-square-transparent request clearfix">
+		<a href="${linkUrl}" class="animateLink" target="_blank">${properties.quotebuttonlabel}<span class="glyphicon glyphicon-share animateIcon" aria-hidden="true"></span></a>
+	</div>
+</div>
+</c:when>
+<c:otherwise>
+<div class="partner-btn">
+	<div class="btn-square-transparent request clearfix">
+		<a href="${linkUrl}" class="animateLink">${properties.quotebuttonlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+	</div>
+</div>
+</c:otherwise>
+</c:choose>
+</c:if>
 
 
-		</div>
-        </c:if>    
 
         <c:if test="${not empty properties.quotecontent}">
 		<p>
