@@ -27,7 +27,6 @@ if(runModes.contains("prod") && !runModes.contains("author")){
 	//Include NONPROD satellite code
 %>
 	<script src="${stgAnalyticsScriptPath}"></script>		
-	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <%	
 }
 %>
