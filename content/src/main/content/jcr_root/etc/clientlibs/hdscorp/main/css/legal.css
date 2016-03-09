@@ -15,7 +15,7 @@
     display: block;
     position: relative;
 }
-
+#legalContentCatagory #loading{min-height:200px;}
 .legal-content-area .leftsidelisting ul > li > a {
     font-size: 0.8125rem;
 }
@@ -304,10 +304,10 @@
 
 .result-legal_pages h3 {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #000;
     font-weight: bold;
-    margin: 0 0 10px 0;
+    margin:15px 0 7px 0;
 }
 
 .result-legal_pages ul {
@@ -320,7 +320,11 @@
 }
 
 .result-legal_pages ul ul {
-    margin-top: 10px;
+    margin-top: 10px; list-style-type:circle;
+}
+
+.result-legal_pages ul ul ul{
+    margin-top: 10px; list-style-type:disc;
 }
 
 .result-legal_pages ul > li {
@@ -335,6 +339,19 @@
     font-size: .875rem;
 }
 
+@media (min-width:992px) {
+	#legal a span.icon-accordion-closed, #legal a span.icon-accordion-opened{display:none !important}
+	#legal .leftsidelisting li.active:first-child a:after{display:none;}
+	#legal .leftsidelisting li.active:first-child li a:after{display:inline;}
+	#legal.Container-legal-terms .leftsidelisting ul>li.active:not(:first-child):before{border:none;}
+}
+
+@media (max-width:991px) {
+	.Container-legal-terms .leftsidelisting .MobileHolderWrapper ul > li > ul {
+		display: block;
+	}
+	#legalContentCatagory #loading{min-height:100px;}
+}
 @media (max-width:768px) {
     .Container-Results {
         padding-top: 42px;
