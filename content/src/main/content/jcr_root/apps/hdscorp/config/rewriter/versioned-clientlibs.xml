@@ -6,5 +6,5 @@
     generatorType="htmlparser"
     order="{Long}1"
     serializerType="htmlwriter"
-    transformerTypes="[linkchecker,versioned-clientlibs]" />
+    transformerTypes="[linkchecker,versioned-clientlibs,gated-pdf]" />
 
