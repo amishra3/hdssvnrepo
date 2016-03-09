@@ -504,6 +504,13 @@ line-height: 1;
   margin:0;
   min-height:55px;
 }
+.pr-explore .pr-explore-container h2 a{
+	color:#ffffff;
+}
+
+.pr-explore .pr-explore-container h2 span.glyphicon.glyphicon-new-window{
+	font-size:1rem;
+}
 .pr-explore h2 span.glyphicon.glyphicon-menu-right.animateIcon {
     top: 0px;
     font-size: 1rem;
@@ -561,6 +568,9 @@ line-height: 1;
   .pr-explore .pr-explore-container .col-sm-4{
     padding-left: 15px;
   }
+  .pr-explore.news-explore .pr-explore-container .glyphicon-menu-right.animateIcon{
+    font-size:1.125rem;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -587,6 +597,23 @@ line-height: 1;
   .pr-explore .pr-explore-container .col-sm-4{
     padding-left: 15px;
   }
+
+  .pr-explore.news-explore .pr-explore-container h2{
+       text-transform:inherit;		
+    }
+    
+    .pr-explore.news-explore .pr-explore-container h2 a{
+        color:#000;
+        font-weight:600;
+        font-size:1rem;	
+    }
+    
+    .pr-explore.news-explore .pr-explore-container .glyphicon-menu-right.animateIcon{
+        font-size:1rem;
+      }
+    .pr-explore.news-explore .pr-explore-container .glyphicon-new-window{
+        float:right;	
+    }
 }
 
 /* Common Search Input Field CSS */
