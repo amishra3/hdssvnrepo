@@ -13,7 +13,7 @@
 <c:set var="hexagoniconstyle" value="" />
 
 <c:if test = "${bannertype == 'customdamimage'}">
-	<c:set var="bannerbackgroundstyle" value=" style='background-image: url(${properties.bannerbackgroundimage})''" />
+	<c:set var="bannerbackgroundstyle" value=" style='background-image: url();' ${hdscorp:bgImgAtrr(properties.bannerbackgroundimage,properties.bannerbackgroundmobileimage)}" />
 </c:if>
 
 <c:if test = "${bannertype == 'custombkgcolor'}">
@@ -45,7 +45,7 @@
 
 <c:if test = "${bannertype=='cyan' || bannertype=='customdamimage'|| bannertype=='custombkgcolor'}">
 
-	<c:set var="hexacss" value="business-specific clearfix" />
+	<c:set var="hexacss" value="business-specific clearfix rsImg" />
 </c:if>
 
 

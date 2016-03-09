@@ -54,6 +54,11 @@
                         fieldLabel="Provide Background Image (If Custom Image selected above.)"
                         name="./bannerbackgroundimage"
                         xtype="ddpathfield"/>
+                    <bannerbackgroundmobileimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./bannerbackgroundmobileimage"
+                        xtype="ddpathfield"/>
                     <colorbackgroundpicker
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Provide Background Image (If Custom Color selected above.)"
@@ -83,6 +88,7 @@
                     </secondaryherocontent>
                     <hexagoniconpath
                         jcr:primaryType="cq:Widget"
+                        allowBlank="false"
                         fieldLabel="Hexagon Icon Path"
                         name="./hexagoniconpath"
                         xtype="ddpathfield"/>
