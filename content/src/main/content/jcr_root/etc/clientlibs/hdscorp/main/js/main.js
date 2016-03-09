@@ -78,7 +78,8 @@ $(document).ready(function () {
     $('a[rel=iframemodal]').on('click', function(evt) {
         evt.preventDefault();
         var modal = $('#modal').modal();
-        modal.find('.modal-body').html("<iframe src='https://pages.hds.com/hds-contact-sales.html?locale=us' height='700px' frameborder='0'></iframe>");
+        var targetURL= $(this).attr('href');
+        modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='700px' frameborder='0'></iframe>");
         modal.show(); 
     });
 });
