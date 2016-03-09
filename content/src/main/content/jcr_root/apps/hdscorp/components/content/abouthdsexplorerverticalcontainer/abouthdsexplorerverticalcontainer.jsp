@@ -17,10 +17,10 @@
 
     <c:choose>
     <c:when test="${fn:substringAfter(aheMultiObject.value, '$') == '1'}"> 
-<h2><a href="${fn:substringBefore(aheMultiObject.value, "$")}" target="_blank">${aheMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
+<h2><a class="animateLink" href="${fn:substringBefore(aheMultiObject.value, "$")}" target="_blank">${aheMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
     </c:when>
         <c:otherwise>
-<h2><a href="${fn:substringBefore(aheMultiObject.value, "$")}">${aheMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
+<h2><a class="animateLink" href="${fn:substringBefore(aheMultiObject.value, "$")}">${aheMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
         </c:otherwise>
     </c:choose>
 
