@@ -46,6 +46,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <servicedetailbannermobileimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./servicedetailbannermobileimage"
+                        xtype="ddpathfield"/>
                     <servicedetaibuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
