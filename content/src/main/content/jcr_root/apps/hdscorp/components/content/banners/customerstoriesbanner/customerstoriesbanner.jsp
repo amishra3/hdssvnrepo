@@ -15,7 +15,8 @@
 </c:if>
 
 
-<div class="cs-section" style="background-image: url('${properties.storiesbannermagePath}');">
+<%--<div class="cs-section" style="background-image: url('${properties.storiesbannermagePath}');">--%>
+    <div class="cs-section rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.storiesbannermagePath,properties.storiesbannermobileimage)} > 
             <div class="cs-container container-fluid">
               <div class="cs-title">${properties.customerstoriessectiontitle}</div>
               <div class="cs-highlight-box">
