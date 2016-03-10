@@ -20,6 +20,12 @@ pageContext.setAttribute("listMaps", listMaps);
 <c:set var='playerpath' value='${hdscorp:shortURL(playerpath)}'/>
 
 
+<c:set var="detailslabel" value="${properties.detailslabel}" scope="application" />
+
+<c:set var="webcastnotfound" value="${properties.nowebcastfoundmessage}" scope="application" />
+
+<c:set var="registernow" value="${properties.registerlabel}" scope="application" />
+
 <div class="pr-list no-padding">
     <div class="product-category-list pt-0">
         <div class="product-category-list-container">
