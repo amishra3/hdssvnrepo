@@ -7,12 +7,11 @@
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
-
 <c:choose>
 	<c:when test="${not empty properties.promoheadline}">
 
-    <div class="services-promo-banner promo1 clearfix" style="background-image:url('${properties.promobackgroundimage}')!important;">
-    <div class="services-promo-container">
+   <div class="services-promo-banner clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.promobackgroundimage,properties.promobackgroundmobileimage)} > 
+   <div class="services-promo-container">
     <div class="col-lg-8 col-md-12 col-xs-12 overRideleft">
         <h2 class="headline">${properties.promoheadline}</h2>
         <p class="sub-text">${properties.promosubtext}</p>
