@@ -428,9 +428,15 @@ var hds = window.hds || {};
                     }).prop('checked', false);
                     $(this).parent().fadeOut('slow');
                     $(this).parent().remove();
-                    $('#showIndustry').trigger('click');
+                    $('#showIndustry, #showContentType').trigger('click');
                 } else {
-                    $('#asideLinks-product li').eq(0).find("a").trigger('click')
+                    $('#asideLinks-product li').eq(0).find("a").trigger('click');
+                    $('#filterTag .label').css({
+                        'display': 'none'
+                    });
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, "slow");
                 }
             });
             $(document).on('click', '.clear-results', function() {
