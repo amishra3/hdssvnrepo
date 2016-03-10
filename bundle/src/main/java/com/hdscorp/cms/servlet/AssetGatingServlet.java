@@ -15,6 +15,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
 import com.day.cq.dam.api.Asset;
+import com.hdscorp.cms.util.PathResolver;
 
 @SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" },extensions="pdf")
 @Properties({
@@ -31,34 +32,39 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		//2. Check if resource path is a match with the paths which are to be monitored
 		//3. Check if is a PDF
 		//4. Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
-		//5. If #4 conditions are met, check user has the GA cookie in the request.
-		//6. If no GA cookie found, then forward the request to the page which hosts the marketo form
-		//7. If GA cookie found make a call to the reg DB with the GA cookie and the PDF resource name
-		//8. If regdb responds that user has already registered, forward to the PDF resource
+
 		String pdfPath= request.getRequestURI();
-		String forwardPath = pdfPath;
+		//Make this configurable 
+		String forwardPath = "/content/hdscorp/en_us/home";
+		String refererString = request.getHeader("Referer") ;
 		
 		try {
-			if(pdfPath.toLowerCase().contains(".pdf")){
+			if(pdfPath.toLowerCase().contains(".pdf") && !pdfPath.toLowerCase().contains(".json")){
+				//Check Referrer, if same as the current URL, then the user has already filled the form
+				//if(refererString.....){
+				//	options.setForceResourceType("dam/asset");
+				//	request.getRequestDispatcher(request.getResource(),options).forward(request, response);
+				//}
 				ResourceResolver resourceResolver = request.getResourceResolver();
 				Resource res = resourceResolver.getResource(pdfPath);
 				Asset asset = res.adaptTo(Asset.class);
 				//If the resoure exists
 				if(asset!=null){
 					String resourceTitle = asset.getMetadataValue("dc:title");
+					String isGated = asset.getMetadataValue("hds:gated");
+//					String gatedStartedDate = asset.getMetadataValue("hds:startdate");
+//					String gatedStartedDate = asset.getMetadataValue("hds:contentdate");
+					
 					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
 					//if asset is gated then, set forwardPath to the form page
 					if(resourceTitle.contains("criteria")){
-						forwardPath = "/content/hdscorp/en_us/home.html";
 						request.getRequestDispatcher(forwardPath).forward(request, response);						
 					}else{
 						//Setting the PDF resource type to following will skip this servlet and will go to the normal pdf flow.
-						options.setForceResourceType("dam/asset");
-						request.getRequestDispatcher(request.getResource(), options).forward(request, response);
+						skipServlet(request, response, options);
 					}
 				}else{
-					options.setForceResourceType("dam/asset");
-					request.getRequestDispatcher(request.getResource()).forward(request, response);
+					skipServlet(request, response, options);
 				}
 				
 			}else{
@@ -66,13 +72,14 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 				request.getRequestDispatcher(request.getResource(),options).forward(request, response);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-//			e.printStackTrace();
-			System.out.println("-----In ERROR BLOCK------"+e.getMessage());
-			request.getRequestDispatcher(request.getResource(), options).forward(request, response);
+			skipServlet(request, response, options);
 		}
-		//9. If regdb responds that user has not registered, forward to the user to the marketo form (Should be a configurable property)
-				
+	}
+	
+	private void skipServlet(SlingHttpServletRequest request,SlingHttpServletResponse response,RequestDispatcherOptions options) throws ServletException, IOException {
+		options.setForceResourceType("dam/asset");
+		request.getRequestDispatcher(request.getResource(),options).forward(request, response);
+		
 	}
 
 }
