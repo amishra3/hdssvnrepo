@@ -12,30 +12,30 @@
                 jcr:primaryType="cq:Panel"
                 title="Tab 1">
                 <items jcr:primaryType="cq:WidgetCollection">
-                      <fieldConfig
-                          jcr:primaryType="cq:Widget"
-                          xtype="multifieldpanel">
-                          <items jcr:primaryType="cq:WidgetCollection">
-                              <sectiondivider
-                                  jcr:primaryType="cq:Widget"
-                                  fieldLabel="Is this homepage banner ?"
-                                  key="ishomebanner"
-                                  name="./ishomebanner"
-                                  type="select"
-                                  xtype="selection">
-                                  <options jcr:primaryType="cq:WidgetCollection">
-                                      <Yes
-                                          jcr:primaryType="nt:unstructured"
-                                          text="Yes"
-                                          value="1"/>
-                                      <No
-                                          jcr:primaryType="nt:unstructured"
-                                          text="No"
-                                          value="2"/>
-                                  </options>
-                              </sectiondivider>
-                          </items>
-                      </fieldConfig>                                        
+                    <fieldConfig
+                        jcr:primaryType="cq:Widget"
+                        xtype="multifieldpanel">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <sectiondivider
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Is this homepage banner ?"
+                                key="ishomebanner"
+                                name="./ishomebanner"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </sectiondivider>
+                        </items>
+                    </fieldConfig>
                     <simplebannertitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hero Title Content"
@@ -50,8 +50,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Content"
                         name="./simplebannercontent"
-                        xtype="textarea">
-                    </simplebannercontent>
+                        xtype="textarea"/>
                     <simplebannermagePath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -68,6 +67,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./simplebannermobileimage"
+                        xtype="ddpathfield"/>
                     <simpllebannerbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"

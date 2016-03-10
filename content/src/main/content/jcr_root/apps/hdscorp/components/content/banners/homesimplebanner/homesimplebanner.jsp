@@ -25,8 +25,9 @@
 	<c:when test="${not empty properties.simplebannertitle}">
 
 		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath")%>" />
-
-		<div class="millennials ${!isHomeBanner?'services-training':''} clearfix" style="background-image:url('${properties.simplebannermagePath}');">
+        
+<%--<div class="millennials ${!isHomeBanner?'services-training':''} clearfix" style="background-image:url('${properties.simplebannermagePath}');">--%>
+    <div class="millennials ${!isHomeBanner?'services-training':''} clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.simplebannermobileimage)} > 
 			<div class="millennials-container content-container ${!isHomeBanner?'col-md-12':''}">
 				<div class="millennials-content">
 					<h1>
