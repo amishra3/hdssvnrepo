@@ -15,7 +15,7 @@
 
 <c:if test = "${bannertype eq 'customdamimage' or empty bannertype}">
 	<%-- <c:set var="bannerbackgroundstyle" value=" style='background-image: url(${properties.quoteheroimagereference})'" /> --%>
-	<c:set var="bannerbackgroundstyle" value=" style='background-image: url();' ${hdscorp:bgImgAtrr(properties.quoteheroimagereference,properties.quoteheromobileimage)}" />
+	<c:set var="bannerbackgroundstyle" value=" style='background-image: url();' ${hdscorp:bgImgAtrr(properties.quoteheroimagereference,properties.quotemobileimage)}" />
 
 </c:if>
 

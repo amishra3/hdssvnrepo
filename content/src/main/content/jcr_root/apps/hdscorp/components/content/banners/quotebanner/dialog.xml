@@ -82,6 +82,11 @@
                         title="Quote Hero Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./quotemobileimage"
+                        xtype="ddpathfield"/>
                     <quotebuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Quote Button Label"
