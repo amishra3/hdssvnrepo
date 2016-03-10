@@ -21,6 +21,11 @@
             <div class="events_months">                
                 <h2>${eventAlldata.key}</h2></div>
             <c:forEach items="${eventAlldata.value}" var="eventNodes">
+                 <c:choose>
+                    <c:when test="${eventNodes.isWebcast=='true'}">
+
+                    </c:when>
+                    <c:otherwise>				
                 <div data-events="${eventNodes.eventTyptagId}" 
                 data-startDate="${eventNodes.eventStartDate}" 
                 data-endDate="${eventNodes.eventEndDate}" 
@@ -43,6 +48,9 @@
                     </div>
                     <a class="animateLink expandMe less" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>${eventDataModel.detailsLabel} </a>
                 </div>
+                    </c:otherwise>
+                      </c:choose> 
+
             </c:forEach>
             <!--/ All Events are Loaded here -->
         </div>
