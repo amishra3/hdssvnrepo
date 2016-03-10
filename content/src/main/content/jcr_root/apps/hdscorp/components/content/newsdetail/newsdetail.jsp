@@ -15,5 +15,6 @@
 
 <h1>${news.newsTitle}</h1>
 <h1>${news.newsLink}</h1>
+<h1>${news.newWinIcon}</h1> 
 
 

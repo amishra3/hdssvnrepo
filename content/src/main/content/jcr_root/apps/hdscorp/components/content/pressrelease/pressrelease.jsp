@@ -30,7 +30,9 @@
                         </div>		
                     </div>
 
-					<div class="title">${model.featuredPR.newsTitle}</div>
+				<div class="title"><a class="animateLink" href="${properties.featuredpressreleaselink}" target="_self">${model.featuredPR.newsTitle}
+					<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>
+				</a></div>
 					<div class="description">${model.featuredPrDesc}</div>
 				</div>
 			</div>

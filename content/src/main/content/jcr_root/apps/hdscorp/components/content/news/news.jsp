@@ -26,7 +26,7 @@
                                 </div> 
 
 
-                                 <div class="title">${model.featuredNews.newsTitle}</div>
+<div class="title"><a class="animateLink" href="${properties.featurednewslink}" target="_self">${model.featuredNews.newsTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></div>
                                 <div class="description">${model.featuredNewsDesc}</div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                       <div class="date-stamp hidden-xs"><strong>${news.newsDate}</strong></div>
 
                         <p>${title}</p>
-                        <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreLabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                        <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreLabel}${news.newWinIcon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}</a>
                     </div>
                     </c:forEach>
                    <div class="clearfix"></div>

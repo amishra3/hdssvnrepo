@@ -13,7 +13,6 @@
                 jcr:primaryType="cq:Panel"
                 title="News Detail">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    
                     <newstitle
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -21,7 +20,6 @@
                         name="./newstitle"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./newstitle')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
-                    
                     <newsdate
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -30,8 +28,6 @@
                         name="./newsdate"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./newsdate')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="datetime"/>
-                    
-                    
                     <newslink
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -39,8 +35,7 @@
                         name="./newslink"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./newslink')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
-                    
-                  <linktargettype
+                    <linktargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window"
                         key="linktargettype"
@@ -48,7 +43,13 @@
                         type="checkbox"
                         width="300"
                         xtype="selection"/>
-                    
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </news>
         </items>

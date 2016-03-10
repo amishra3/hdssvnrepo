@@ -24,10 +24,6 @@
 			<div class="row row-no-margin">
 				<cq:include path="columncontentpar" resourceType="hdscorp/components/content/column-control" />
 			</div>
-			<div class="fb-category-more hidden-sm hidden-md hidden-lg">
-				<a href="javascript:void(0);">see more <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
-			</div>
 		</div>
 	</div>
 </div>
