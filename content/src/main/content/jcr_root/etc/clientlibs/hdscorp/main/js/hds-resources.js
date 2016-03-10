@@ -443,6 +443,9 @@ var hds = window.hds || {};
                 $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
                 $("input[name='ctyFunction']").removeAttr('checked');
                 $('#asideLinks-product li').eq(0).find("a").trigger('click');
+                $('#filterTag .label').css({
+                    'display': 'none'
+                });
                 $("html, body").animate({
                     scrollTop: 0
                 }, "slow");
