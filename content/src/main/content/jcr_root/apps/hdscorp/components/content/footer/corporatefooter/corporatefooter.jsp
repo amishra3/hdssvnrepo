@@ -34,7 +34,7 @@
                                <c:set var="linkUrl" value="${linkUrl}"/>
    						</c:otherwise>
 					</c:choose>
-               		<a href="${domain}${linkUrl}">${link.urlLabel}</a> <c:if test="${!loop.last}">|</c:if>
+               		<a href="${fn:contains(linkUrl, 'http')?'':domain}${linkUrl}">${link.urlLabel}</a> <c:if test="${!loop.last}">|</c:if>
 				</c:forEach>
 			</p>
 							
