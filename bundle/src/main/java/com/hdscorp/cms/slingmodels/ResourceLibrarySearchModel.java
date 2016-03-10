@@ -1,5 +1,6 @@
 package com.hdscorp.cms.slingmodels;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -90,7 +91,12 @@ public class ResourceLibrarySearchModel  {
 		LOG.info("-------------INSIDE Resouce Library  SEARCH Model");
 		
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-		String fullText = request.getParameter("fulltext");
+		String fullText="";
+		try {
+			fullText = URLDecoder.decode(request.getParameter("fulltext"),"UTF-8");
+		} catch (Exception e) {	
+			LOG.info("Exception while decoding the url::" +e.getMessage());
+		}
 		String viewtype = "";
 		String[] selectorArray = request.getRequestPathInfo().getSelectors();
 		String tags[] =  {""};
