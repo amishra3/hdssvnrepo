@@ -42,7 +42,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         <ul class="FilterByIndustryList">
                             <c:forEach items="${model.filterByIndustry}" var="data" varStatus="status">
                             <li class="col-xs-4"><div class="checkbox">
-                                <input class="filters" type="checkbox" name="cbxFunction"  id="${xss:filterHTML(xssAPI,data['industryid'])}" value="${xss:filterHTML(xssAPI,data['industrytag'])}">
+                                <input class="filters" type="checkbox" name="ctyFunction"  id="${xss:filterHTML(xssAPI,data['industryid'])}" value="${xss:filterHTML(xssAPI,data['industrytag'])}">
                                 <label for="${xss:filterHTML(xssAPI,data['industryid'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,data['industrylabel'])}</span></label>
                             </div></li>
                        </c:forEach>
@@ -96,7 +96,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         <ul class="FilterByContentList">
                             <c:forEach items="${model.filterByContentType}" var="data" varStatus="status">
                             <li class="col-xs-4"><div class="checkbox">
-                                <input class="filters" type="checkbox" name="cbxFunction"  id="${xss:filterHTML(xssAPI,data['contentid'])}" value="${xss:filterHTML(xssAPI,data['contenttag'])}">
+                                <input class="filters" type="checkbox" name="ctyFunction"  id="${xss:filterHTML(xssAPI,data['contentid'])}" value="${xss:filterHTML(xssAPI,data['contenttag'])}">
                                 <label for="${xss:filterHTML(xssAPI,data['contentid'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,data['contentlabel'])}</span></label>
                             </div></li>
                           </c:forEach> 

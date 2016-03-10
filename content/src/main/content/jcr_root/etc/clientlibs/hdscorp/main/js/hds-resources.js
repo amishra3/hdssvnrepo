@@ -338,7 +338,7 @@ var hds = window.hds || {};
 
             $(document).on('click', '#asideLinks-product li > a', function(event) {
                 $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
-                $("input[name='cbxFunction']").removeAttr('checked');
+                $("input[name='ctyFunction']").removeAttr('checked');
                 $('#asideLinks-product li ul').slideUp();
 
                 var catText = $(this).text();
@@ -423,7 +423,7 @@ var hds = window.hds || {};
             $(document).on('click', '.closetag', function() {
                 var eleVal = $(this).parent().data('match');
                 if (eleVal) {
-                    $('input[name="cbxFunction"]').filter(function() {
+                    $('input[name="ctyFunction"]').filter(function() {
                         return this.value === eleVal;
                     }).prop('checked', false);
                     $(this).parent().fadeOut('slow');
@@ -433,7 +433,14 @@ var hds = window.hds || {};
                     $('#asideLinks-product li').eq(0).find("a").trigger('click')
                 }
             });
-
+            $(document).on('click', '.clear-results', function() {
+                $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
+                $("input[name='ctyFunction']").removeAttr('checked');
+                $('#asideLinks-product li').eq(0).find("a").trigger('click');
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
+            });
 
             $(window).resize(function() {
                 hds.resourceLib._closeOverLayPopup();
@@ -443,7 +450,7 @@ var hds = window.hds || {};
             })
             $(document).on('click', '#showIndustry, #showContentType', function(event) {
                 var arrVal = [];
-                $('input[name="cbxFunction"]:checked').each(function() {
+                $('input[name="ctyFunction"]:checked').each(function() {
                     arrVal.push($(this).attr('id'));
                 });
                 hds.resourceLib._getCheckboxValue(arrVal);
