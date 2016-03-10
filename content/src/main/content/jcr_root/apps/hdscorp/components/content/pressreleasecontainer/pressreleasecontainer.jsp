@@ -13,9 +13,13 @@
 <c:set var="searchPagePath" value="${properties.searchPagePath}" scope="request"/>
 <c:set var="selectorString" value="${slingRequest.requestPathInfo.selectors[0]}"/>
 <c:set var="pageClass" value=" ispressreleasepage"/>
-<c:if test="${not empty properties.isnewspage}">
-	<c:set var="pageClass" value=" isnewspage"/>
+<c:if test="${properties.landingpagetype=='awards'}">
+	<c:set var="pageClass" value=" isawardspage"/>
 </c:if>
+<c:if test="${properties.landingpagetype=='news'}">
+	<c:set var="pageClass" value="isnewspage"/>
+</c:if>
+
 
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.PressReleasesContainerModel" var="model" />
 
