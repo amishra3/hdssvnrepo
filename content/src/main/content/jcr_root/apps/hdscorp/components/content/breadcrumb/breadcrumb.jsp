@@ -12,7 +12,7 @@
 	<%
 		//Current Node should not be included in the breadcrumb
 		int currentPageDepth = currentPage.getDepth()-1;
-	
+
 		StringBuffer breadcrumbContent = new StringBuffer("");
 		String rootLabel = (String) properties.get("rootLabel",
 				String.class);
@@ -21,7 +21,7 @@
 		if (rootTargetUrl != null) {
 			rootTargetUrl = PathResolver.getShortURLPath(rootTargetUrl);
 		}
-		breadcrumbContent.append("<a href='" + rootTargetUrl + "'>"
+		breadcrumbContent.append("<a class='breadcrumblink' href='" + rootTargetUrl + "'>"
 				+ rootLabel + "</a>");
 	
 		Page parentPageHandle = null;
