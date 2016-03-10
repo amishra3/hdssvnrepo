@@ -92,6 +92,23 @@
     line-height: 1;
     line-height: 120%;
 }
+.service-support-main .section-service-col .headline a, 
+.services-list-section .section-service-col .headline a{
+	color:#000;
+}
+.service-support-main .section-service-col .headline .animateLink{
+	margin-top: 0px;
+    margin-bottom: 10px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+	font-size:inherit;
+    font-weight: 700;   
+    line-height: 120%;
+	text-transform: none;	
+}
+
+.service-support-main .section-service-col .headline .animateLink .glyphicon{
+	font-size: 1.1rem; 
+}
 
 .service-support-main .section-service-col p,
 .services-list-section .section-service-col p{

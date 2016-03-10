@@ -373,6 +373,7 @@
 
   .category-products{
     padding: 0 21px;
+	min-height:inherit;
   }
 
   .category-products .category-desc{
