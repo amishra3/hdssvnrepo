@@ -1,36 +1,12 @@
-<%@include file="/apps/foundation/global.jsp"%>
-<%
-%><%@page session="false"%>
-<%@page
-	import="com.hdscorp.cms.util.PageUtils,java.util.List,com.hdscorp.cms.util.PageUtils,com.hdscorp.cms.constants.ServiceConstants,org.apache.sling.commons.json.JSONArray, org.apache.sling.commons.json.JSONObject"%>
+<%@include file="/apps/foundation/global.jsp"%><%
+%><%@page session="false" %>
+
+
 
 <sling:adaptTo adaptable="${resource}"
 	adaptTo="com.hdscorp.cms.slingmodels.TwitterFeedModel"
 	var="twitterFeedModel" />
-<c:set var="daysMessage" scope="request"
-	value="${twitterFeedModel.twDaysMessage}" />
-<c:set var="monthsmessage" scope="request"
-	value="${twitterFeedModel.twMonthsMessage}" />
-<c:set var="yearsmessage" scope="request"
-	value="${twitterFeedModel.twYearsMessage}" />
-<c:set var="weeksmessage" scope="request"
-	value="${twitterFeedModel.twWeeksMessage}" />
-<c:set var="hoursmessage" scope="request"
-	value="${twitterFeedModel.twHoursMessage}" />
-<c:set var="minituesmessage" scope="request"
-	value="${twitterFeedModel.twMinsMessage}" />
-<c:set var="agoMessage" scope="request"
-	value="${twitterFeedModel.twAgoMessage}" />
 
-
-<%
-
-String str=PageUtils.getPropertyValue(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.TwitterScheduler","twitter.storagePath"),ServiceConstants.TWITTER_SAVE_FEED_DATA_PROPERTY_NAME );
-JSONArray jsonArray = new JSONArray(str);
-
-pageContext.setAttribute("mylist",PageUtils.jsonArraytoList(jsonArray));
-
-%>
 
 <div class="stay-touch-hexagon clearfix"
 	style="background-image: url('${twitterFeedModel.bGImagePath}');">
@@ -42,27 +18,27 @@ pageContext.setAttribute("mylist",PageUtils.jsonArraytoList(jsonArray));
 			<div
 				class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
 
-                    <c:forEach var="innerList" items="${mylist}">
+                    <c:forEach var="innerList" items="${twitterFeedModel.twitterFeedData}">
 
 	<c:choose>
 
 		<c:when test="${fn:contains(innerList.timeDifference, 'day')}">
-			<c:set var="propertyValue" value="${daysMessage}" />
+			<c:set var="propertyValue" value="${twitterFeedModel.twDaysMessage}" />
 		</c:when>
 		<c:when test="${fn:contains(innerList.timeDifference, 'month')}">
-			<c:set var="propertyValue" value="${monthsmessage}" />
+			<c:set var="propertyValue" value="${twitterFeedModel.twMonthsMessage}" />
 		</c:when>
 		<c:when test="${fn:contains(innerList.timeDifference, 'year')}">
-			<c:set var="propertyValue" value="${yearsmessage}" />
+			<c:set var="propertyValue" value="${twitterFeedModel.twYearsMessage}" />
 		</c:when>
 		<c:when test="${fn:contains(innerList.timeDifference, 'week')}">
-			<c:set var="propertyValue" value="${weeksmessage}" />
+			<c:set var="propertyValue" value="${twitterFeedModel.twWeeksMessage}" />
 		</c:when>
 		<c:when test="${fn:contains(innerList.timeDifference, 'hour')}">
-			<c:set var="propertyValue" value="${hoursmessage}" />
+			<c:set var="propertyValue" value="${twitterFeedModel.twHoursMessage}" />
 		</c:when>
 		<c:when test="${fn:contains(innerList.timeDifference, 'min')}">
-			<c:set var="propertyValue" value="${minituesmessage}" />
+			<c:set var="propertyValue" value="${twitterFeedModel.twMinsMessage}" />
 		</c:when>
 
 		<c:otherwise>
@@ -70,7 +46,7 @@ pageContext.setAttribute("mylist",PageUtils.jsonArraytoList(jsonArray));
 		</c:otherwise>
 	</c:choose>
 
-	<c:set var="propertyValue" value="${propertyValue} ${agoMessage}" />                        
+	<c:set var="propertyValue" value="${propertyValue} ${twitterFeedModel.twAgoMessage}" />                        
 
 	<c:set var="twitterPostMsg" value="${innerList.twitterMessageText}" />
 
@@ -116,16 +92,4 @@ pageContext.setAttribute("mylist",PageUtils.jsonArraytoList(jsonArray));
 	<cq:include path="sociallinksconfig"
 		resourceType="/apps/hdscorp/components/content/sociallinksconfig" />
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 

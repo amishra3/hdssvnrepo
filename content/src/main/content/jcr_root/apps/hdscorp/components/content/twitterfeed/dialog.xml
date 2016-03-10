@@ -49,6 +49,12 @@
                         name="./jcr:twtwittericonpath"
                         validator="&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:twtwittericonpath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
+                    <twfeedlookuppath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="TwitterFeed LookUp Path"
+                        name="./twfeedlookuppath"
+                        xtype="pathfield"/>
                     <twyearsmessage
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Years Message"
