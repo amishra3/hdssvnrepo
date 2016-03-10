@@ -35,6 +35,16 @@ public class FacebookFeedModel {
 	@Default(values = { "/content/dam/geometrixx-outdoors/logo.png" })
 	private String iconPath;
 	
+	@Inject
+	@Named("jcr:fefacebookpostlabel")
+	@Default(values = { "facebookpostLabel" })
+	private String facebookpostLabel;
+	
+
+	@Inject
+	@Named("jcr:fefacebookctalabel")
+	@Default(values = { "ctaLabel" })
+	private String ctaLabel;
 
 	
 
@@ -46,9 +56,17 @@ public class FacebookFeedModel {
 		return this.bGImagePath;
 	}
 
-	
 
 	public String getIconPath() {
 		return this.iconPath;
 	}
+	
+	public String getFacebookpostLabel() {
+		return facebookpostLabel;
+	}
+
+	public String getCtaLabel() {
+		return ctaLabel;
+	}
+
 }
