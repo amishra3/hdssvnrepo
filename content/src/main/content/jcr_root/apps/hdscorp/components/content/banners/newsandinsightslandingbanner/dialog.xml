@@ -39,6 +39,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./newsandinsightsbannermobileimage"
+                        xtype="ddpathfield"/>
                     <newsandinsightsbannercontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Content"
