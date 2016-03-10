@@ -10,11 +10,11 @@ var hds = window.hds || {};
                 myPageName: "#page-",
                 itemsPerPage: pageSize,
                 filterTopLeft: '.filters-section',
-                filterTarget: '.resource'
+                filterTarget: '.resource',
+                searchUrl: '/content/hdscorp/en_us/lookup/resourcelibraryrenderer.html'
             }
             this.options = $.extend(defaults, options);
             hds.resourceLib._bindEventsSelectors();
-            hds.resourceLib._loadDataOnsearch();
             hds.resourceLib._filterSearchResults();
         },
         _showFilterDropDown: function(arg) {
@@ -32,36 +32,44 @@ var hds = window.hds || {};
             });
         },
         _processClickAside: function(url) {
-
             $("#prodnsolcategorycontent").html(" ").load(url + " .resourceLibraryContent", function(responseText, textStatus) {
-                if (textStatus === 'success' || textStatus === 'notmodified') {
-                    $('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());
+                if (textStatus === 'success' || textStatus === 'notmodified') {                    
                     $('.resource').addClass('visible');
                     setTimeout(function() {
-                        hds.resourceLib._setPagination();
+                       hds.resourceLib._setPagination();
                     }, 500);
+                }
+                if (textStatus === 'error') {
+
                 }
             });
         },
         _processCatagoryCards: function(url) {
-
-           
             $("#featuredCards").html(" ").load(url + " .resourceLibraryfeatered", function(responseText, textStatus) {
-                if (textStatus === 'success' || textStatus === 'notmodified') {
-                    console.log("Cards Loaded");
-                }
-                if ($.trim($(".resourceLibraryfeatered").html()) == '') {
+                if (textStatus === 'success' || textStatus === 'notmodified') {}
+                if ($.trim($(".resourceLibraryfeatered").html()) === '') {
                     $("#featuredCards").hide();
                 } else {
-
                     $("#featuredCards").show();
                 }
             });
         },
         _loadDataOnsearch: function() {
-            var keyword = $.trim($("#resSearch").val());
+            var $keyword = $.trim($("#resSearch").val()),
+                paginations = this.options.paginationWrapper,
+                $searchUrl = this.options.searchUrl;
 
-
+            if ($keyword.length > 0) {
+                $(paginations).pagination('destroy');
+                $('.errorSearchField').css('display', 'none');
+                $('#featuredCards').html(" ");
+                $('#asideLinks-product > li').removeClass('active');
+                hds.resourceLib._processClickAside($searchUrl + '?fulltext=' + encodeURIComponent($keyword));
+                $('.resource-heading > h2').html(" ").html("Search Results");
+                $('#featuredCards').css('display', 'none');
+            } else {
+                $('.errorSearchField').css('display', 'block');
+            }
         },
         _processIndustryFilter: function(arg1, arg2, arg3) {
             var conditions = {
@@ -144,9 +152,6 @@ var hds = window.hds || {};
                 });
             }
             hds.resourceLib._hashPageNum();
-        },
-        _displayHidendropMenu: function() {
-
         },
         _hashPageNum: function() {
             var myPageName = this.options.myPageName;
@@ -252,7 +257,6 @@ var hds = window.hds || {};
             });
         },
         _closeOverLayPopup: function() {
-
             if (!hds.resourceLib._isEmpty($('.searchArea'))) {
                 $('#resource-search').html($('.searchArea').html());
                 $('.searchArea').html(" ");
@@ -278,7 +282,44 @@ var hds = window.hds || {};
             });
 
         },
+        _getCheckboxValue: function(arg1) {
+            if(arg1 != 0){               
+                var newHTML = $.map(arg1, function(value) {
+                    var checkBoxVal=$("#"+value).val();
+                    var checkBoxText=$("#"+value).siblings('label').text();
+                    return $("<span class='filterKeyword' data-match="+checkBoxVal+">" + checkBoxText + "<span class='closetag'>x</span></span>");
+                });
+                $('#filterTag .label').css({'display':'table-cell'});
+                $('#filterTag .keyword-filter').html(newHTML);
+            }  else{
+                if($('#filterTag .keyword-subcat').html() != ""){
+                    $('#filterTag .label').css({'display':'table-cell'});
+                }else{
+                    $('#filterTag .label').css({'display':'none'});
+                }
+            }          
+        },
+        _addTagstpFilters: function(checkBoxValue, tag) {
+            $newTag = $("<span class='filterKeyword'>" + checkBoxValue + "<span class='closetag'>x</span></span>");
+            /* store the value in elment data so we can reference back to checkbox */
+            $newTag.data('value', checkBoxValue);
+            $(tag).append($newTag);
+        },
         _bindEventsSelectors: function() {
+            $(document).on('click', '.searchResource', function(event) {
+                $('.resource-heading > h2').html(" ").html("Search Results");
+                hds.resourceLib._loadDataOnsearch();
+                event.preventDefault();
+            });
+            $(document).on('keypress', '#resSearch', function(event) {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == 13) {
+                    event.preventDefault();
+                    $('.resource-heading > h2').html(" ").html("Search Results");
+                    hds.resourceLib._loadDataOnsearch();
+                }
+            });
+
             $(document).on('click', '.launchLink', function(event) {
                 hds.resourceLib._showMobileOverlay();
                 event.preventDefault();
@@ -290,31 +331,54 @@ var hds = window.hds || {};
             });
 
             $(document).on('click', '#asideLinks-product li > a', function(event) {
-                var self = $(this);
-                if (!self.parent('li').hasClass('active')) {
-                    $('#asideLinks-product li').removeClass('active')
-                    var $url = $(this).attr('data-href');
-                    var $featuredurl = $(this).attr('featured-href');
-                    self.parent('li').addClass('active');
-                    self.addClass('active');
-                    if ($(this).parent().has('ul').length) {
-                        $(this).parent().find('ul').slideDown();
-                        $(this).parent().find('.icon-accordion-opened').css('display', 'inline-block');
-                        $(this).parent().find('.icon-accordion-closed').css('display', 'none');
-                    }
-                    if($url !=""){
-                    hds.resourceLib._processClickAside($url);
-                    } else {
-                    	$("#prodnsolcategorycontent").html("");
-                    	$("#loadResourceContent").html("");
-                    	$('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());  
-                    }
-                    if($featuredurl !=""){
-                       hds.resourceLib._processCatagoryCards($featuredurl);
-                    } else {
+                $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
+                $("input[name='cbxFunction']").removeAttr('checked');
+                $('#asideLinks-product li ul').slideUp();
 
-                         $("#featuredCards").hide();
+                var catText = $(this).text();
+                if (!$(this).parent().index() == 0) {
+                    $('#filterTag .keyword-subcat').html('').show();
+                    hds.resourceLib._addTagstpFilters(catText, '#filterTag .keyword-subcat');
+                    $('#filterTag .label').css({'display':'table-cell'});
+                }
+                var self = $(this),
+                    checkInputIfEmpty = $.trim($('#resSearch').val());
+
+
+                if (!self.parent('li').hasClass('active')) {
+
+                    $('#asideLinks-product li').removeClass('active')
+                    var $url = $(this).attr('data-href'),
+                         $featuredurl = $(this).attr('featured-href');
+                         self.parent('li').addClass('active');
+                         self.addClass('active');
+                         $('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());
+                         if ($(this).parent().has('ul').length) {
+                                $(this).parent().find('ul').slideDown();
+                        }
+
+                    if (checkInputIfEmpty.length > 0) {
+                        //Check If Input is empty
+                        $url = $url + "?fulltext=" + encodeURIComponent(checkInputIfEmpty);
+                    } else {
+                        $url = $url;
                     }
+                    if ($featuredurl !== "") {
+                        hds.resourceLib._processCatagoryCards($featuredurl);
+                    } else {
+                        $("#featuredCards").hide();
+                    }
+
+                    if ($url !== "") {
+                        hds.resourceLib._processClickAside($url);
+                    } else {
+                        $("#prodnsolcategorycontent").html(" ");
+                        $("#loadResourceContent").html(" ");
+                        $('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());
+                    }
+
+                }else{
+                    return false;
                 }
                 event.preventDefault();
             });
@@ -338,51 +402,20 @@ var hds = window.hds || {};
 
             $(document).on('click', '.filters-section', function(e) {
                 e.stopPropagation();
-            })
+            });
+
             $(document).on('click', function(e) {
                 $('.filters-section').hide();
                 $('.resource-filters > a').removeClass('active');
             });
-
-            var $checkboxes = $('[name=cbxFunction]').change(function() {
-                var value = $(this).val();
-                if (this.checked) {
-                    addTag(value);
-                } else {
-                    removeTag(value);
-                }
-            });
-
-            function removeTag(checkBoxValue) {
-                /*
-				 * we stored the checkbox value as data attribute, use that to
-				 * filter
-				 */
-                $('span.filterKeyword').filter(function() {
-                    return $(this).data('value') === checkBoxValue;
-                }).slideUp(function() {
-                    $(this).remove();
-                })
-            }
-
-            function addTag(checkBoxValue) {
-                $newTag = $("<span class='filterKeyword'>" + checkBoxValue + "<span class='closetag'>x</span></span>");
-                /*
-				 * store the value in elment data so we can reference back to
-				 * checkbox
-				 */
-                $newTag.data('value', checkBoxValue);
-                $('#filterTag .keyword-filter').append($newTag);
-            }
-
-
             // Fade out specialty tags when x is clicked
             $(document).on('click', '.closetag', function() {
-                var $element = $(this).parent(),
-                    $checkbox = $checkboxes.filter(function() {
-                        return this.value === $element.data('value');
-                    }).prop('checked', false).change();
-
+                var eleVal = $(this).parent().data('match');
+                console.log(eleVal);
+                $('input[name="cbxFunction"]').filter(function() {
+                    console.log(this.value +"==="+ eleVal)
+                    return this.value === eleVal;
+                }).prop('checked', false);
                 $(this).parent().fadeOut('slow');
                 $(this).parent().remove();
                 $('#showIndustry').trigger('click');
@@ -390,10 +423,16 @@ var hds = window.hds || {};
             $(window).resize(function() {
                 hds.resourceLib._closeOverLayPopup();
             });
-            $(document).on('click','#mobShowFilters', function(){
-                $('#showIndustry, #showContentType').trigger('click');                
+            $(document).on('click', '#mobShowFilters', function() {
+                $('#showIndustry, #showContentType').trigger('click');
             })
             $(document).on('click', '#showIndustry, #showContentType', function(event) {
+                var arrVal = [];
+                $('input[name="cbxFunction"]:checked').each(function() {
+                    arrVal.push($(this).attr('id'));
+                });
+                hds.resourceLib._getCheckboxValue(arrVal);
+
                 var $allCheckedFilters = $('.resources-listing input.filters').filter(':checked');
                 var $allCheckedIndFilters = $('.FilterByIndustryList input.filters').filter(':checked');
                 var $allCheckedContFilters = $('.FilterByContentList input.filters').filter(':checked');
@@ -422,7 +461,7 @@ var hds = window.hds || {};
                 $('#filterTag .keyword-filter').show();
                 hds.resourceLib._processIndustryFilter(checkedIndVals, checkedContVals, checkedSubVals);
 
-                if($('.overlayBox').is(':visible')){
+                if ($('.overlayBox').is(':visible')) {
                     hds.resourceLib._closeOverLayPopup();
                 }
                 event.preventDefault();

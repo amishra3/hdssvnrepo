@@ -41,12 +41,8 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                     <div class="col-sm-9 filters-list col-sm-offset-3">
                         <ul class="FilterByIndustryList">
                             <c:forEach items="${model.filterByIndustry}" var="data" varStatus="status">
-                            <c:set var="industrytag" value="${xss:encodeForHTML(xssAPI, data['industrytag'])}"/>
-                            <c:set var="industrytag" value="${hdscorp:removeDoubleQuotes(industrytag)}"/>
-                              
-                            
                             <li class="col-xs-4"><div class="checkbox">
-                                <input class="filters" type="checkbox" name="cbxFunction"  id="${xss:filterHTML(xssAPI,data['industryid'])}" value="${fn:replace(fn:replace(industrytag,'[', ''),']', '')}">
+                                <input class="filters" type="checkbox" name="cbxFunction"  id="${xss:filterHTML(xssAPI,data['industryid'])}" value="${xss:filterHTML(xssAPI,data['industrytag'])}">
                                 <label for="${xss:filterHTML(xssAPI,data['industryid'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,data['industrylabel'])}</span></label>
                             </div></li>
                        </c:forEach>
@@ -67,8 +63,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                 <div class="heading">
                     <h3>${properties.searchlabel}</h3>
                     <div class="close-search">
-                        <a href="javascript:void(0);" title="Close" class="closeOverlay">
-                            <img src="images/sprites/close.png" alt="Close"></a>
+                        <a href="javascript:void(0);" title="Close" class="closeOverlay">close</a>
                     </div>
 
                 </div>
@@ -100,15 +95,11 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                     <div class="col-sm-9 filters-list col-sm-offset-3">
                         <ul class="FilterByContentList">
                             <c:forEach items="${model.filterByContentType}" var="data" varStatus="status">
-                            
-                            
-                            <c:set var="contenttag" value="${xss:encodeForHTML(xssAPI, data['contenttag'])}"/>
-                            <c:set var="contenttag" value="${hdscorp:removeDoubleQuotes(contenttag)}"/>
                             <li class="col-xs-4"><div class="checkbox">
-                                <input class="filters" type="checkbox" name="cbxFunction"  id="${xss:filterHTML(xssAPI,data['contentid'])}" value="${fn:replace(fn:replace(contenttag,'[', ''),']', '')}">
+                                <input class="filters" type="checkbox" name="cbxFunction"  id="${xss:filterHTML(xssAPI,data['contentid'])}" value="${xss:filterHTML(xssAPI,data['contenttag'])}">
                                 <label for="${xss:filterHTML(xssAPI,data['contentid'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,data['contentlabel'])}</span></label>
                             </div></li>
-                          </c:forEach>
+                          </c:forEach> 
                             
                         </ul>
                         <div class="clearfix"></div>
@@ -119,17 +110,17 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="content-container clearfix">
                     <div class="col-md-12 col-xs-12 tagList">
-                        <div class="groupedby" id="searchTag" style="display:none;">
+                        <div class="groupedby" id="searchTag">
                             <div class="label">${properties.searchbylabel} </div>
                             <div class="keyword"></div>
                         </div>
                         <div class="groupedby" id="filterTag">
-                            <div class="label">${properties.filterbylabel} </div>
-                            <div class="keyword-filter" style="display:none;"></div>
+                            <div class="label">${properties.filterbylabel}: </div>
                             <div class="keyword-subcat"></div>
+                            <div class="keyword-filter"></div>
                         </div>                        
                     </div>
                 </div>
@@ -152,11 +143,11 @@ var pageSize = <%=properties.get("pagesize","10")%>;
             </div>
             <div class="col-md-9 col-xs-12" id="contentResourceLibrary">
                 <div class="result-resources">
-                <div id="loading" style="display: none;"></div>
+                    <div id="loading" style="display: none;"></div>
                     <div class="resource-heading">
                         <h2>${properties.featuredlabel}</h2>
                     </div>
-                    <div class="spolightresults">
+                    <div class="spolightresults" style="position:relative">
                         <div class="res-spotlight-group clearfix" id="featuredCards">
                             <c:set var="includetargetURL" value="${requestScope['includetargetURL']}" />
                             
