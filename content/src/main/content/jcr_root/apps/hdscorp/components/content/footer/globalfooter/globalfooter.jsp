@@ -30,8 +30,8 @@
 			<c:choose>
 
 				<c:when test="${fn:startsWith(navUrl,'/content')}">
-
-					<li><a	href="${domain}<%=PathResolver.getShortURLPath(pageContext.getAttribute("navUrl").toString())%>"
+					<c:set var="navUrl" value="${hdscorp:shortURL(navUrl)}" />
+					<li><a	href="${fn:contains(navUrl, 'http')?'':domain}${navUrl}"
 						title="${navlinks.linkName}">${navlinks.linkName}</a></li>
 				</c:when>
 				<c:otherwise>
