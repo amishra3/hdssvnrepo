@@ -38,6 +38,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <hexagonbannertitlemobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./hexagonbannertitlemobileimagePath"
+                        xtype="ddpathfield"/>
                     <multilinks
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./aboutushexmultilinks"

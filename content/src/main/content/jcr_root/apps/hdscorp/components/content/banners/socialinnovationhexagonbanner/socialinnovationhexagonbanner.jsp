@@ -11,7 +11,7 @@
 
 		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl-openinnewwindow")%>" />
 
-		<div class="advance-tech-hexagon clearfix">
+		<div class="advance-tech-hexagon clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.hexagonbannertitleimagePath,properties.hexagonbannertitlemobileimagePath)}  >
 			<div class="content-container clearfix">
             	<h2>${properties.hexagonbannertitle}</h2>
 				<p class="col-sm-10 col-sm-offset-1">${properties.hexagonbannerdescription}</p>
