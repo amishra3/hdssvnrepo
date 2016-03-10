@@ -46,6 +46,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./industrysolutionsherobannermobileimage"
+                        xtype="ddpathfield"/>
                     <industrysolutionsherobannerlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"

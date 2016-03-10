@@ -18,7 +18,8 @@ request.setAttribute("bannerimage",bannerimage);
 <c:choose>
 	<c:when test="${not empty properties.industrysolutionsherobannertopheading}">
 
-        <div class="common-hero-banner industry-sol clearfix" style="background: url('${requestScope.bannerimage}')">
+        <%--<div class="common-hero-banner industry-sol clearfix" style="background: url('${requestScope.bannerimage}')">--%>
+            <div class="common-hero-banner industry-sol clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.industrysolutionsherobannermobileimage)} >
            <div class="common-hero-banner-container">
               <div class="col-lg-8 col-md-10 col-xs-12">
 			     <div class="top-banner-heading hidden-xs hidden-sm">${properties.industrysolutionsherobannertopheading}</div>
