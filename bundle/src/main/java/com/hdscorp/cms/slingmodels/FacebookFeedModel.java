@@ -11,19 +11,49 @@
  */
 package com.hdscorp.cms.slingmodels;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.commons.json.JSONArray;
+import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.day.cq.wcm.api.Page;
+import com.hdscorp.cms.constants.ServiceConstants;
+import com.hdscorp.cms.util.PageUtils;
 
 @Model(adaptables = { Resource.class })
 public class FacebookFeedModel {
+	private static final Logger log = LoggerFactory.getLogger(FacebookFeedModel.class);
+	@Inject
+	private ResourceResolver resourceResolver;
+	
+	 @Inject
+	 @Named("jcr:fefacebookctalabel")
+	 @Default(values = { "ctaLabel" })
+	 private String ctaLabel;
+     @Inject
+	 @Named("jcr:fefacebookpostlabel")
+	 @Default(values = { "facebook" })
+	 private String facebookPostLabel;
 	@Inject
 	@Named("jcr:fetitle")
 	@Default(values = { "title" })
 	private String title;
+	
+	@Inject
+	@Named("jcr:fefacebookpost")
+	@Default(values = { "HitachiDataSystems" })
+	private String searchPost;
+	
 	
 	@Inject
 	@Named(value = "fbbgimage")
@@ -36,18 +66,12 @@ public class FacebookFeedModel {
 	private String iconPath;
 	
 	@Inject
-	@Named("jcr:fefacebookpostlabel")
-	@Default(values = { "facebookpostLabel" })
-	private String facebookpostLabel;
+	@Named(value = "jfacebooklookuppath")
+	@Default(values = { "/content/hdscorp/en_us/lookup/facebookpostdata" })
+	private String facebookFeedPath;
 	
-
-	@Inject
-	@Named("jcr:fefacebookctalabel")
-	@Default(values = { "ctaLabel" })
-	private String ctaLabel;
-
+	private String facebookFeedData;
 	
-
 	public String getTitle() {
 		return this.title;
 	}
@@ -56,17 +80,62 @@ public class FacebookFeedModel {
 		return this.bGImagePath;
 	}
 
+	
 
 	public String getIconPath() {
 		return this.iconPath;
 	}
+
+	public String getFacebookFeedPath() {
+		return facebookFeedPath;
+	}
+
 	
-	public String getFacebookpostLabel() {
-		return facebookpostLabel;
+	public String getSearchPost() {
+		return searchPost;
+	}
+
+	public void setSearchPost(String searchPost) {
+		this.searchPost = searchPost;
 	}
 
 	public String getCtaLabel() {
 		return ctaLabel;
 	}
+
+	
+	public String getFacebookPostLabel() {
+		return facebookPostLabel;
+	}
+
+	public List<Object> getFacebookFeedData() {
+		List<Object> feedData = null;
+		if (!facebookFeedPath.trim().equals("")) {
+			try {
+				Resource resource = resourceResolver.resolve(facebookFeedPath);
+				if (resource != null) {
+					Page page = resource.adaptTo(Page.class);
+					if (page != null) {
+						ValueMap properties = page.getProperties();
+						String feed = properties.get(ServiceConstants.SAVE_FB_FEED_DATA_PROPERTY_NAME).toString();
+
+						if (feed!=null && !feed.isEmpty() && !feed.equals("null")) {
+							JSONArray jsonArray= new JSONArray(feed);							
+							feedData = PageUtils.jsonArraytoList(jsonArray);
+
+						}
+
+					}
+				}
+
+			} catch (Exception e) {				
+				log.error("Exception  occured while readind facebook feed Data" + e);
+			}
+
+		}
+
+		return feedData;
+	}
+
 
 }
