@@ -81,7 +81,7 @@ div.cs-highlight-box-message span.close-quote{background-image:url(../images/spr
 .business-specific .specific-benefit a:hover{text-decoration:underline;}
 
 .business-specific .specific-benefit ul li.hexagon a{color:#ce0000; text-decoration:none;}
-.business-specific .specific-benefit ul li.hexagon a:hover{text-decoration:none;}
+.business-specific .specific-benefit ul li.hexagon a:hover{text-decoration:none; color: #ac1f25;}
 
 .navContain {
   position: absolute;
@@ -1288,8 +1288,8 @@ ul.stickyNav li:hover a{
     border-right: none;
     min-height: 0;
   }
-
-.rightborder{border-right:none;}
+  
+ .rightborder{border-right:none;}
 }
 
 .accordion-level .accordion-menu-container {
@@ -1381,6 +1381,10 @@ ul.stickyNav li:hover a{
     max-height: 9000px;
     transition: max-height 0.25s ease-in;
   }
+  
+  .accordion-content .fb-section:last-child .fb-container .fb-category-container::after{
+   background: transparent;
+   }
 }
 @media (min-width: 992px){
 #overview{position:relative; margin-top:-49px; padding-top:49px; z-index:1;}
