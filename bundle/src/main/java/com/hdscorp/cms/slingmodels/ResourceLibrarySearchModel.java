@@ -91,9 +91,13 @@ public class ResourceLibrarySearchModel  {
 		LOG.info("-------------INSIDE Resouce Library  SEARCH Model");
 		
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-		String fullText="";
+		String fullText=request.getParameter("fulltext");
 		try {
-			fullText = URLDecoder.decode(request.getParameter("fulltext"),"UTF-8");
+			
+			if(fullText!=null) {
+				fullText = URLDecoder.decode(request.getParameter("fulltext"),"UTF-8");
+			}
+			
 		} catch (Exception e) {	
 			LOG.info("Exception while decoding the url::" +e.getMessage());
 		}
