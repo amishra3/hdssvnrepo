@@ -18,7 +18,8 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                 <div class="content-container clearfix">
                     <div class="col-sm-7 resource-search hidden-xs hidden-sm" id="resource-search">
                         <input type="text" name="resSearch" id="resSearch" placeholder="Search resources">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-search searchResource" aria-hidden="true"></span>
+                        <div class="errorSearchField">Please enter search query</div>
                     </div>
                     <div class="hidden-md hidden-lg col-xs-12 search-overlay">
                         <div class="launchLink">
@@ -121,9 +122,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                             <div class="label">${properties.filterbylabel} </div>
                             <div class="keyword-filter" style="display:none;"></div>
                             <div class="keyword-subcat"></div>
-                        </div>
-
-                        
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -139,14 +138,14 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                 <div class="clearfix"></div>
                 <div class="clear-results hidden-sm hidden-xs">
                     <div class="btn-square-red">
-                        <a href="#" target="_self">${properties.clearallfilterslabel}</a>
+                        <a href="javascript:void(0);" target="_self">${properties.clearallfilterslabel}</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-9 col-xs-12" id="contentResourceLibrary">
                 <div class="result-resources">
                 <div id="loading" style="display: none;"></div>
-                    <div class="resource-heading hidden-xs hidden-sm">
+                    <div class="resource-heading">
                         <h2>${properties.featuredlabel}</h2>
                     </div>
                     <div class="spolightresults">
@@ -155,13 +154,10 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                             
                                     <c:if test="${not empty includetargetURL}">
                                    		<sling:include path="${includetargetURL}" />
-                                    </c:if>
-
-                            
+                                    </c:if>                            
                         </div>
                         <div class="category-resources-listing">
-                            <div class="section prodnsolcategorycontent" id="prodnsolcategorycontent">
-                                
+                            <div class="section prodnsolcategorycontent" id="prodnsolcategorycontent">                                
                             </div>
                             <div id="loadResourceContent"></div>
                         </div>

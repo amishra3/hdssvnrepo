@@ -295,7 +295,6 @@ var hds = window.hds || {};
                     $('#asideLinks-product li').removeClass('active')
                     var $url = $(this).attr('data-href');
                     var $featuredurl = $(this).attr('featured-href');
-
                     self.parent('li').addClass('active');
                     self.addClass('active');
                     if ($(this).parent().has('ul').length) {
@@ -303,23 +302,19 @@ var hds = window.hds || {};
                         $(this).parent().find('.icon-accordion-opened').css('display', 'inline-block');
                         $(this).parent().find('.icon-accordion-closed').css('display', 'none');
                     }
-                    if($url !="")
-                    {
+                    if($url !=""){
                     hds.resourceLib._processClickAside($url);
                     } else {
                     	$("#prodnsolcategorycontent").html("");
                     	$("#loadResourceContent").html("");
-                    	$('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());                     
-                        
+                    	$('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());  
                     }
-                    if($featuredurl !="")
-                    {
+                    if($featuredurl !=""){
                        hds.resourceLib._processCatagoryCards($featuredurl);
                     } else {
 
                          $("#featuredCards").hide();
                     }
-
                 }
                 event.preventDefault();
             });
