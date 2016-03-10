@@ -125,7 +125,7 @@ public class PressReleasesModel {
 							hit.getResource().getPath()
 									+ "/jcr:content/pressrelease");
 			if (!resource
-					.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+					.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING) && !hit.getResource().getPath().contains(featuredPressRelease) ) {
 
 				NewsNode newsNode = new NewsNode();
 				ValueMap properties = resource.adaptTo(ValueMap.class);

@@ -115,7 +115,7 @@ public class NewsModel {
 			List<Hit> hits = result.getHits();
 						
 			newsList = new ArrayList<NewsNode>();
-System.out.println("no of hits****"+hits.size());
+
 			for (Hit hit : hits) {
 
 				Resource resource = JcrUtilService.getResourceResolver()
@@ -123,7 +123,7 @@ System.out.println("no of hits****"+hits.size());
 								hit.getResource().getPath()
 										+ "/jcr:content/newsdetail");
 				if (!resource
-						.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+						.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING) && !hit.getResource().getPath().contains(featuredNewsPath)) {
 
 					NewsNode newsNode = new NewsNode();
 					ValueMap properties = resource.adaptTo(ValueMap.class);

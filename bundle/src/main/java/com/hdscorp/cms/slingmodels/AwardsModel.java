@@ -149,7 +149,7 @@ public class AwardsModel {
 							hit.getResource().getPath()
 									+ "/jcr:content/awarddetail");
 			if (!resource
-					.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
+					.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING) && !hit.getResource().getPath().contains(featuredaward)) {
 
 				NewsNode awardNode = new NewsNode();
 				ValueMap properties = resource.adaptTo(ValueMap.class);
