@@ -119,7 +119,7 @@ ul.stickyNav {
 ul.stickyNav li {
   display: table-cell;
   text-align: center;
-  width: 194px;
+  min-width: 194px;
   margin: 0;
   padding: 0;
   line-height: 1.5;
