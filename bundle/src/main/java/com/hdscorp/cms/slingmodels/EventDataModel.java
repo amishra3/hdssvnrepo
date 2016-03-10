@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -25,6 +26,7 @@ import com.hdscorp.cms.constants.PageConstants;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.dao.EventNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.PageUtils;
 import com.hdscorp.cms.util.ServiceUtil;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
@@ -81,129 +83,179 @@ public class EventDataModel {
 		log.info("Execution of getEventDetails");
 		String paths[] = { getEventLookupPath() };
 		String type[] = { "cq:Page" };
-				
+
 		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, null, null, type, null, true, null,
 				null, resourceResolver, null, null);
-		if( result.getHits().size()>0){
-		TagManager tm = resourceResolver.adaptTo(TagManager.class);		
-		List<Hit> hits = result.getHits();
-		eventNodes = new ArrayList<EventNode>();
+		if (result.getHits().size() > 0) {
+			TagManager tm = resourceResolver.adaptTo(TagManager.class);
+			List<Hit> hits = result.getHits();
+			eventNodes = new ArrayList<EventNode>();
 
-		for (Hit hit : hits) {
+			for (Hit hit : hits) {
 
-			EventNode eventNode = new EventNode();
-			Page reourcePage;
-			try {
-				reourcePage = hit.getResource().adaptTo(Page.class);
-				String pagePath = reourcePage.getPath();
+				EventNode eventNode = new EventNode();
+				Page reourcePage;
+				try {
+					reourcePage = hit.getResource().adaptTo(Page.class);
+					String pagePath = reourcePage.getPath();
 
-				log.info("Events path is::" + pagePath);
-				Resource res = resourceResolver.getResource(pagePath + PageConstants.PROPERTY_JCREVENT_PATH);
+					log.info("Events path is::" + pagePath);
+					Resource res = resourceResolver.getResource(pagePath + PageConstants.PROPERTY_JCREVENT_PATH);
 
-				if (res != null) {
-					ValueMap properties = res.adaptTo(ValueMap.class);
-					eventNode.setEventType(
-							(String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
-					String eventType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE,
-							String[].class);
-					StringBuffer tagId = new StringBuffer();
-					StringBuffer tagName = new StringBuffer();
-					for (int index = 0; index < eventType.length; index++) {
-						Tag tag = tm.resolve((String) eventType[index]);
+					if (res != null) {
+						ValueMap properties = res.adaptTo(ValueMap.class);
+						eventNode.setEventType(
+								(String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
+						String eventType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE,
+								String[].class);
+						StringBuffer tagId = new StringBuffer();
+						StringBuffer tagName = new StringBuffer();
+						for (int index = 0; index < eventType.length; index++) {
+							Tag tag = tm.resolve((String) eventType[index]);
 
-						if (tag != null) {
-							if (index == 0) {
-								tagId.append(tag.getTagID());
-								tagName.append(tag.getName());
-							} else {
-								tagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
-								tagName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+							if (tag != null) {
+								if (index == 0) {
+									tagId.append(tag.getTagID());
+									tagName.append(tag.getName());
+								} else {
+									tagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
+									tagName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+								}
 							}
 						}
-					}
 
-					eventNode.setEventTyptagName(tagName.toString());
-					eventNode.setEventTyptagId(tagId.toString());
-					eventNode.setEventTitle(properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));
-					String startDate = ServiceUtil.getDisplayDateFormat(
-							properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
-							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT);
-					eventNode
-							.setEventMonth(
-									ServiceUtil
-											.getMonth(Integer.parseInt(startDate.substring(0,
-													startDate.indexOf(ServiceConstants.SLASH_SEPRATOR))) - 1)
-							.toUpperCase() + ServiceConstants.EMPTY_SPACE
-							+ startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
-					eventNode.setYear(Integer
-							.parseInt(startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
-					eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(
-							properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
-							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
-					eventNode.setEventEndDate(ServiceUtil.getDisplayDateFormat(
-							properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null),
-							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
-					eventNode.setEventLocation(properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
-					eventNode
-							.setEventDescription(properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
-					eventNode.setEventImageBackground(
-							properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
-					eventNode.setEventRegisterNowLabel(
-							properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LABEL, (String) null));
-					eventNode.setEventRegisterNowLink(
-							properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LINK, (String) null));
-					eventNode.setEventRegion(
-							(String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG, String[].class));
+						eventNode.setEventTyptagName(tagName.toString());
+						eventNode.setEventTyptagId(tagId.toString());
+						eventNode.setEventTitle(properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));
+						String startDate = ServiceUtil.getDisplayDateFormat(
+								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
+								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT);
 
-					String regionType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG,
-							String[].class);
-					StringBuffer eventRegiontagId = new StringBuffer();
-					StringBuffer eventRegiontaName = new StringBuffer();
-					for (int index = 0; index < regionType.length; index++) {
-						Tag tag = tm.resolve((String) regionType[index]);
-						if (tag != null) {
-							if (index == 0) {
-								eventRegiontagId.append(tag.getTagID());
-								eventRegiontaName.append(tag.getName());
-							} else {
-								eventRegiontagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
-								eventRegiontaName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+						eventNode
+								.setEventMonth(
+										ServiceUtil
+												.getMonth(Integer
+														.parseInt(startDate.substring(0,
+																startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))
+										- 1).toUpperCase() + ServiceConstants.EMPTY_SPACE
+								+ startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
+
+						eventNode.setYear(Integer.parseInt(
+								startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
+
+						eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(
+								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
+								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
+						eventNode.setEventEndDate(ServiceUtil.getDisplayDateFormat(
+								properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null),
+								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
+						eventNode.setEventLocation(properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
+						eventNode.setEventDescription(
+								properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
+						eventNode.setEventImageBackground(
+								properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
+						eventNode.setEventRegisterNowLabel(
+								properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LABEL, (String) null));
+						eventNode.setEventRegisterNowLink(
+								properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LINK, (String) null));
+						eventNode.setEventRegion(
+								(String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG, String[].class));
+
+						String regionType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG,
+								String[].class);
+						StringBuffer eventRegiontagId = new StringBuffer();
+						StringBuffer eventRegiontaName = new StringBuffer();
+						for (int index = 0; index < regionType.length; index++) {
+							Tag tag = tm.resolve((String) regionType[index]);
+							if (tag != null) {
+								if (index == 0) {
+									eventRegiontagId.append(tag.getTagID());
+									eventRegiontaName.append(tag.getName());
+								} else {
+									eventRegiontagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
+									eventRegiontaName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+								}
 							}
 						}
-					}
-					eventNode.setEventRegiontagId(eventRegiontagId.toString());
-					eventNode.setEventRegiontagName(eventRegiontaName.toString());
+						eventNode.setEventRegiontagId(eventRegiontagId.toString());
+						eventNode.setEventRegiontagName(eventRegiontaName.toString());
 
+					}
+
+				} catch (Exception e) {
+
+					log.error("Error occured during getting value from the pages" + e);
 				}
 
-			} catch (Exception e) {
-
-				log.error("Error occured during getting value from the pages" + e);
+				eventNodes.add(eventNode);
 			}
-
-			eventNodes.add(eventNode);
 		}
-	}
 		return eventNodes;
 	}
 
 	public HashMap<String, List<EventNode>> getEventFinalNodesData() {
+		log.info("Start Execution of getEventFinalNodesData()");
 		EventNode EventObject = new EventNode();
 		List<EventNode> listOfNodes = getEventNodes();
-		if(listOfNodes!=null && listOfNodes.size()>0){
-		Collections.sort(listOfNodes, EventObject.new CompareByMonth());
-		Collections.sort(listOfNodes, EventObject.new CompareByYear());
-		eventFinalNodesData = new HashMap<String, List<EventNode>>();
-		for (int index = 0; index < listOfNodes.size(); index++) {
-			EventNode eventNode = listOfNodes.get(index);
-			if (!eventFinalNodesData.containsKey(eventNode.getEventMonth())) {
-				List<EventNode> monthlylist = new ArrayList<EventNode>();
-				monthlylist.add(eventNode);
-				eventFinalNodesData.put(eventNode.getEventMonth(), monthlylist);
-			} else {
-				eventFinalNodesData.get(eventNode.getEventMonth()).add(eventNode);
+		List<Map<String, String>> listMapsUpcoming = ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,
+				PageUtils.getPropertyValue(resourceResolver,
+						"/apps/hdscorp/config/com.hdscorp.cms.scheduler.BrightTalkScheduler", "storage.path"),
+				ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME, ServiceConstants.FEED_UPCOMING);
+		if (listMapsUpcoming != null && listMapsUpcoming.size() > 0) {
+			for (int index = 0; index < listMapsUpcoming.size(); index++) {
+				Map<String, String> hsmap = listMapsUpcoming.get(index);
+				EventNode eventNode = new EventNode();
+				eventNode
+						.setEventMonth(ServiceUtil
+								.getMonth(Integer.parseInt(hsmap.get(ServiceConstants.JSON_UPDATED_DATE).substring(0,
+										hsmap.get(ServiceConstants.JSON_UPDATED_DATE)
+												.indexOf(ServiceConstants.SLASH_SEPRATOR)))
+										- 1)
+								.toUpperCase()
+								+ ServiceConstants.EMPTY_SPACE
+								+ hsmap.get(ServiceConstants.JSON_UPDATED_DATE)
+										.substring(hsmap.get(ServiceConstants.JSON_UPDATED_DATE)
+												.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
+				eventNode.setYear(Integer.parseInt(hsmap.get(ServiceConstants.JSON_UPDATED_DATE).substring(
+						hsmap.get(ServiceConstants.JSON_UPDATED_DATE).lastIndexOf(ServiceConstants.SLASH_SEPRATOR)
+								+ 1)));
+				eventNode.setIsWebcast("true");
+				eventNode.setEventTitle(hsmap.get(ServiceConstants.JSON_TITLE));
+				eventNode.setEventStartDate(hsmap.get(ServiceConstants.JSON_UPDATED_DATE));
+				eventNode.setEventEndDate(hsmap.get(ServiceConstants.JSON_UPDATED_DATE));
+				eventNode.setAuthor(hsmap.get(ServiceConstants.JSON_AUTHOR));
+				eventNode.setSummary(hsmap.get(ServiceConstants.JSON_SUMMARY));
+				eventNode.setFeatured(hsmap.get(ServiceConstants.JSON_FEATURED));
+				eventNode.setFormat(hsmap.get(ServiceConstants.JSON_FORMAT));
+				eventNode.setDuration(hsmap.get(ServiceConstants.JSON_DURATION));
+				eventNode.setStart(hsmap.get(ServiceConstants.JSON_START));
+				eventNode.setRating(hsmap.get(ServiceConstants.JSON_RATING));
+				eventNode.setCategory(hsmap.get(ServiceConstants.JSON_CATEGORY));
+				eventNode.setCommunicationId(hsmap.get(ServiceConstants.JSON_COMMUNICATION_ID));
+				eventNode.setChannelId(hsmap.get(ServiceConstants.JSON_CHANNEL_ID));
+				eventNode.setHerfLink(hsmap.get(ServiceConstants.JSON_HERF_LINK));
+				eventNode.setThumbnailPath(hsmap.get(ServiceConstants.JSON_THUMBNAIL_PATH));
+				eventNode.setPreviewImagePath(hsmap.get(ServiceConstants.JSON_PREVIEW_IMAGE_PATH));
+				listOfNodes.add(eventNode);
+
 			}
+
 		}
+
+		if (listOfNodes != null && listOfNodes.size() > 0) {
+			Collections.sort(listOfNodes, EventObject.new CompareByMonth());
+			Collections.sort(listOfNodes, EventObject.new CompareByYear());
+			eventFinalNodesData = new HashMap<String, List<EventNode>>();
+			for (int index = 0; index < listOfNodes.size(); index++) {
+				EventNode eventNode = listOfNodes.get(index);
+				if (!eventFinalNodesData.containsKey(eventNode.getEventMonth())) {
+					List<EventNode> monthlylist = new ArrayList<EventNode>();
+					monthlylist.add(eventNode);
+					eventFinalNodesData.put(eventNode.getEventMonth(), monthlylist);
+				} else {
+					eventFinalNodesData.get(eventNode.getEventMonth()).add(eventNode);
+				}
+			}
 		}
 
 		/*
