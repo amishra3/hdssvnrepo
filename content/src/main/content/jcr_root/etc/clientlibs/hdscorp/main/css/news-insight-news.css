@@ -63,6 +63,16 @@ padding-bottom: 60px;
   font-weight: 700;
   margin-bottom: 15px;
 }
+
+.news-press-container .image-container .inner-content-area .title a{
+	color: #fff;	
+}
+
+.news-press-container .image-container .inner-content-area .title .glyphicon-menu-right.animateIcon{
+	font-size: 1rem;
+    top: 1px;	
+}
+
 .news-press-container .image-container .inner-content-area .description {
   font-family: Arial,sans-serif;
   font-size: 1.125rem;
