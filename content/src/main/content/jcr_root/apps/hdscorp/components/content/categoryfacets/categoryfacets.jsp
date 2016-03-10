@@ -76,28 +76,28 @@
 							<span class="icon-accordion-closed"></span> 
 							<span class="icon-accordion-opened"></span>
 					</a>
-					<div class="MobileHolderWrapper"></div>
-
 				    <c:if test="${selectorString== xss:filterHTML(xssAPI,data['category-id'])}">
 						<c:set var="includeURL" value="${subcat.subcatcontenturl}" />
 						<c:set var="activeSubCatIndex" value="${status.index}" />			
 					</c:if>
 					
-					
-					<ul>
-						<c:forEach items="${data['sub-category']}" var="subCategoryData" varStatus="counter">
-						<li>
-							<div class="checkbox">
-								<input class="filters" type="checkbox" name="cbxFunction"
-									id="${xss:filterHTML(xssAPI,subCategoryData['sub-category-ID'])}"
-									value="${xss:filterHTML(xssAPI,subCategoryData['sub-category-tag'])}">
-								
-								<label for="${xss:filterHTML(xssAPI,subCategoryData['sub-category-ID'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,subCategoryData['sub-category-title'])}</span></label>
-							</div>
-						</li>
-	
-						</c:forEach>
-					</ul>
+					<c:if test="${data['sub-category']}">
+						<ul>
+							<c:forEach items="${data['sub-category']}" var="subCategoryData" varStatus="counter">
+							<li>
+								<div class="checkbox">
+									<input class="filters" type="checkbox" name="cbxFunction"
+										id="${xss:filterHTML(xssAPI,subCategoryData['sub-category-ID'])}"
+										value="${xss:filterHTML(xssAPI,subCategoryData['sub-category-tag'])}">
+									
+									<label for="${xss:filterHTML(xssAPI,subCategoryData['sub-category-ID'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,subCategoryData['sub-category-title'])}</span></label>
+								</div>
+							</li>
+		
+							</c:forEach>
+						</ul>
+					</c:if>
+					<div class="MobileHolderWrapper"></div>
 				</li>
 		</c:forEach>
 
