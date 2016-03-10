@@ -13,6 +13,11 @@
                 jcr:primaryType="cq:Panel"
                 title="Tab 1">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <fefacebookpost
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Facebook Post Text"
+                        name="./jcr:fefacebookpostlabel"
+                        xtype="textfield"/>
                     <fetitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Title"
@@ -23,6 +28,11 @@
                         fieldLabel="Background Image  Path"
                         name="./fbbgimage"
                         xtype="pathfield"/>
+                    <fefacebookctalabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="CTA Label"
+                        name="./jcr:fefacebookctalabel"
+                        xtype="textfield"/>
                     <fefacbookiconpath
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Facebook Icon path"

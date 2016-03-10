@@ -32,7 +32,7 @@ pageContext.setAttribute("pageId",pageId);
  <div class="col-sm-4">
     <div class="comment_box">
      <div class="icon"><img src="${facebookFeedModel.iconPath}" alt="" title=""></div>
-     <div class="type"> FACEBOOK POST ${facebookFeed.createdDate}</div>
+     <div class="type">${facebookFeedModel.facebookpostLabel} ${facebookFeed.createdDate}</div>
 
           <c:set var='facebookHREFLink' value='<a href="${facebookFeed.link}" target="_blank">${facebookFeed.link}</a>'/>         
          <c:set var='title' value='${fn:replace(facebookFeed.tilte,facebookFeed.link,facebookHREFLink)}'/>    
@@ -49,7 +49,7 @@ pageContext.setAttribute("pageId",pageId);
             </c:otherwise>
         </c:choose>      
         <div class="inner-comment">${message}</div>
-        <div class="links"><a href="https://www.facebook.com/${pageId}/posts/${facebookFeed.postId}" target="_blank">Like/Share/Comment CTA<span class="glyphicon glyphicon-new-window animateIcon"></span></a>
+        <div class="links"><a href="https://www.facebook.com/${pageId}/posts/${facebookFeed.postId}" target="_blank">${facebookFeedModel.ctaLabel}<span class="glyphicon glyphicon-new-window animateIcon"></span></a>
         </div></div></div>
 
 
