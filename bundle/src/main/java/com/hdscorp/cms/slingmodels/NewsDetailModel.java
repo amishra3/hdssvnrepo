@@ -22,6 +22,10 @@ public class NewsDetailModel {
 	@Inject
 	@Named("newslink")
 	private String newsLink;
+	
+	@Inject
+	@Named("thirdparty")
+	private String newWinIcon;
 
 
 	public String getNewsTitle() {
@@ -35,8 +39,10 @@ public class NewsDetailModel {
 	public String getNewsLink() {
 		return newsLink;
 	}
-
 	
+	public String getNewWinIcon() {
+		return newWinIcon;
+	}
 
 	
 

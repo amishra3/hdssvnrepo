@@ -143,6 +143,11 @@ System.out.println("no of hits****"+hits.size());
 					}else {
 						newsNode.setOpenInNewTab(false);
 					}
+					if(properties.containsKey("thirdparty")){
+						newsNode.setNewWinIcon(true);
+					} else {
+						newsNode.setNewWinIcon(false);
+					}
 					newsList.add(newsNode);
 				}
 
