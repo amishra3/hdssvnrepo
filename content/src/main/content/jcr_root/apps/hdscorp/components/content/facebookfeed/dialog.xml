@@ -15,18 +15,28 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <fefacebookpost
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Facebook Post Text"
-                        name="./jcr:fefacebookpostlabel"
+                        fieldLabel="Facebook Post SearchText"
+                        name="./jcr:fefacebookpost"
                         xtype="textfield"/>
                     <fetitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Title"
                         name="./jcr:fetitle"
                         xtype="textfield"/>
+                    <fefacebookpostlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Facebook Post Text"
+                        name="./jcr:fefacebookpostlabel"
+                        xtype="textfield"/>
                     <facbackgroundimage
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Background Image  Path"
                         name="./fbbgimage"
+                        xtype="pathfield"/>
+                    <facebooklookuppath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Facebook Lookup Path"
+                        name="./jcr:facebooklookuppath"
                         xtype="pathfield"/>
                     <fefacebookctalabel
                         jcr:primaryType="cq:Widget"
