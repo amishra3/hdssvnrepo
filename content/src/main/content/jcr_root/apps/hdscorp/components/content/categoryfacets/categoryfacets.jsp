@@ -81,7 +81,7 @@
 						<c:set var="activeSubCatIndex" value="${status.index}" />			
 					</c:if>
 					
-					<c:if test="${data['sub-category']}">
+					<c:if test="${not empty data['sub-category']}">
 						<ul>
 							<c:forEach items="${data['sub-category']}" var="subCategoryData" varStatus="counter">
 							<li>
