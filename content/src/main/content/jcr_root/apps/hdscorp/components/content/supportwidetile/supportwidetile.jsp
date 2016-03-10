@@ -12,7 +12,7 @@
   <div class="col-sm-6">
       <div class="section-service-col ${properties.widetileType} clearfix">
           <div class="imageHolder"><img alt="${properties.iconimagealttitle}" src="${properties.iconimagepath}"></div>
-          <h3 class="headline">${properties.widetiletitle} <span class="glyphicon glyphicon-menu-right"></span></h3>
+          <h3 class="headline"><a href="${properties.tilelink}" target="${not empty properties.newtab?'_blank':'_self'}" class="animateLink">${properties.widetiletitle}${not empty properties.newtab?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></h3>
           <p>${properties.tilecontent}</p>
 	    <c:if test="${not empty properties.phonenumbertext}">      
 			<div class="col-sm-6 support-phone-no col-no-pad">${properties.phonenumbertext}</div>

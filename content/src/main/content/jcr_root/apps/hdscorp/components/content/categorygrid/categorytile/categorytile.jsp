@@ -10,10 +10,9 @@
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
 	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
-</c:if>
-												
-												
-<div class="col-sm-4 overRidePadding">
+</c:if> 
+								
+<div class="col-sm-4 overRidePadding col-centered">
     <div class="section-product-col panel-box" style="height: 252px;">
         <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${categoryObj.categoryTitle}"></div>
         <h3 class="headline">${categoryObj.categoryTitle}</h3>

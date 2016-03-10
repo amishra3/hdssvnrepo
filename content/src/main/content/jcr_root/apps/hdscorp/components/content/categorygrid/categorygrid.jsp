@@ -9,12 +9,11 @@
 <div class="product-list-section clearfix">
 	<div class="cs-container content-container">
 		<!--Row Starts-->
-		<div class="container-fluid overRideleft">
+		<div class="container-fluid overRideleft row-centered">
 			<c:set var="seealllinklabel" value="${properties.seealllinklabel}" scope="request" />
 			<c:forEach var="category" items="${categoryGridModel.categories}" varStatus="loopcnt">
 				<c:set var="categoryObj" value="${category}" scope="request" />
-				
-		
+
 				<cq:include path="categorypar-${loopcnt.index}" resourceType="hdscorp/components/content/categorygrid/categorytile" />
 		
 				<c:remove var="categoryObj" scope="request" />
@@ -24,14 +23,3 @@
 	</div>
     <!--/.Row ends-->
 </div>
-
-
-
-
-
-
-
-
-
-
-

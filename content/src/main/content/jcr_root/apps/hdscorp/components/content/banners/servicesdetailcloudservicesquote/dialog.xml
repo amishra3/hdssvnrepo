@@ -33,6 +33,12 @@
                         fieldLabel="Banner Mobile Image (Optional)"
                         name="./quotebackgroundmobileimage"
                         xtype="ddpathfield"/>
+                    <hidequotes
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="hide Quotes ?"
+                        name="./hideqotes"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>

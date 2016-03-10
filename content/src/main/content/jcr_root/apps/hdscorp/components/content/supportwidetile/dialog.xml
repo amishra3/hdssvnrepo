@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
     title="Support Wide Tile"
     xtype="dialog">
@@ -21,11 +21,23 @@
                         fieldLabel="Icon Image Alt Text"
                         name="./iconimagealttitle"
                         xtype="textfield"/>
-					<widetiletitle
+                    <widetiletitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Tile Title"
                         name="./widetiletitle"
-                        xtype="textfield"/>    
+                        xtype="textfield"/>
+                    <widetileurllink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Tile Link"
+                        name="./tilelink"
+                        xtype="ddpathfield"/>
+                    <newtab
+                        jcr:primaryType="cq:Widget"
+                        sling:resourceType="/libs/granite/ui/components/foundation/form/checkbox"
+                        fieldLabel="Open in new tab?"
+                        name="./newtab"
+                        type="checkbox"
+                        xtype="selection"/>
                     <tilecontent
                         jcr:primaryType="cq:Widget"
                         fieldLable="Tile Content"
@@ -53,24 +65,24 @@
                         fieldLabel="Phone Number Display Text"
                         name="./phonenumbertext"
                         xtype="textfield"/>
-                     <widetileType
+                    <widetileType
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Tile Type"
                         name="./widetileType"
                         type="select"
-					    xtype="selection">
-						    <options jcr:primaryType="cq:WidgetCollection">
-						        <one
-						            jcr:primaryType="nt:unstructured"
-						            text="White"
-						            value="dummy"/>
-						        <two
-						            jcr:primaryType="nt:unstructured"
-						            text="Blue"
-						            value="service-blue-box"/>   
-						    </options>
-                       </widetileType>                                                
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                jcr:primaryType="nt:unstructured"
+                                text="White"
+                                value="dummy"/>
+                            <two
+                                jcr:primaryType="nt:unstructured"
+                                text="Blue"
+                                value="service-blue-box"/>
+                        </options>
+                    </widetileType>
                 </items>
             </tab1>
         </items>

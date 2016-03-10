@@ -18,10 +18,8 @@
 
 <div class="col-sm-4 col-centered">
             <div class="section-service-col">
-            	<a href="${linkUrl}" >
-			         <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${serviceObj.categoryTitle}"></div>
-			         <h3 class="headline">${serviceObj.categoryTitle}<span class="glyphicon glyphicon-menu-right"></span></h3>
-			         <p>${properties.categorysubtitle}</p>
-		        </a>
+                <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${serviceObj.categoryTitle}"></div>
+            	<h3 class="headline"><a href="${linkUrl}" class="animateLink">${serviceObj.categoryTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
+                <p>${properties.categorysubtitle}</p>
     </div>
 </div>
