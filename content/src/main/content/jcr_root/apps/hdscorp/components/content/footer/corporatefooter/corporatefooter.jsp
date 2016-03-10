@@ -20,6 +20,8 @@
 <c:choose>
 	<c:when test="${not empty footerLinks}">
 		<c:set var="corporateFooterLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urlLabel-pageUrl")%>" />
+			
+			
 			<p class="links">
 				<c:forEach var="link" items="${corporateFooterLinks}" varStatus="loop">
 					<c:set var="linkUrl" value="${link.pageUrl}" />
@@ -34,7 +36,8 @@
 					</c:choose>
                		<a href="${domain}${linkUrl}">${link.urlLabel}</a> <c:if test="${!loop.last}">|</c:if>
 				</c:forEach>
-			</p>					
+			</p>
+							
 	</c:when>
 	<c:otherwise>
 		<wcmmode:edit>

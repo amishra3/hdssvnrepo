@@ -9,56 +9,23 @@
 %><%@include file="/apps/foundation/global.jsp"%>
 <%
 %><%@page session="false"%>
-
-<c:set var="columns" value="<%=properties.get("columns")%>" />
-<c:set var="footerlinksmsg" value="<%= pageProperties.getInherited("footerlinksmsg", "Specify footer columns") %>" />
-
-<c:choose>
-	<c:when test="${empty columns}">
-        ${footerlinksmsg} 
-        </c:when>
-	<c:otherwise>
-	
-	
 	
     	<div class="footer">
 
-			<cq:include path="${currentDesign.path}/jcr:content/globalfooter/contactuspromobanner" 
-				resourceType="hdscorp/components/content/banners/contactuspromobanner" />
-    	
+			<cq:include path="contactusipar" resourceType="foundation/components/iparsys" /> 
        		
     		<div class="footer-gray">
     			<div class="footer-container content-container container-fluid">
-    				<div class="nav-list-container">
-	    				<c:forEach var="i" begin="1" end="${columns}" varStatus="status">
-	    					<c:set var="path" value="brandedfooter_${i}" />
-                            <ul class="nav-list col-sm-6 col-md-3 ${i!=1? 'hide-small': ''}">
-	    						<cq:include path="${currentDesign.path}/jcr:content/globalfooter/${path}" 
-	    							resourceType="hdscorp/components/content/footer/globalfooter" />
-	    					</ul>
-	    				</c:forEach>
-
-    				</div>
-
-    				<div class="social">
-    				
-    					<cq:include path="${currentDesign.path}/jcr:content/globalfooter/footersocialconnect" 
-    						resourceType="hdscorp/components/content/footer/footersocialconnect" />
-
-    				</div>
-    				<a href="#" class="footer-logo"><span class="sprite hitachi-footer-logo"></span></a>
+    			<cq:include path="globalfooteripar" resourceType="foundation/components/iparsys" />    			    				    			
     			</div>
     		</div>
     		<div class="footer-white">
-    			<div class="footer-container content-container container-fluid">
-    				<cq:include path="${currentDesign.path}/jcr:content/globalfooter/corporatefooter"
-								resourceType="hdscorp/components/content/footer/corporatefooter" />
-    			
-    			</div>
+    			<div class="footer-container content-container container-fluid">  			
+    			<cq:include path="corporatefooteripar" resourceType="foundation/components/iparsys" /> 				
+    			</div>	
     		</div>
     	</div>
 
 		<cq:include path="${currentDesign.path}/jcr:content/globalfooter/returntotop" resourceType="hdscorp/components/content/footer/returntotop" />
 
-	</c:otherwise>
-</c:choose>
+	
