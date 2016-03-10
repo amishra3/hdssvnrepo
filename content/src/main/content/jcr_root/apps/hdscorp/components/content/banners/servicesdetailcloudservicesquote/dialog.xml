@@ -28,6 +28,11 @@
                         fieldLabel="Background Image Path"
                         name="./quotebackgroundimage"
                         xtype="pathfield"/>
+                    <quotebackgroundmobileimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./quotebackgroundmobileimage"
+                        xtype="ddpathfield"/>
                 </items>
             </tab1>
         </items>
