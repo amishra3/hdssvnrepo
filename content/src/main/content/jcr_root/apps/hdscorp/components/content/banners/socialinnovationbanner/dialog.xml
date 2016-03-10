@@ -49,6 +49,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./socialinnovationmobilebannerimagePath"
+                        xtype="ddpathfield"/>
                     <socialinnovationbannerbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
