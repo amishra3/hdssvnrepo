@@ -57,6 +57,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <simplebannermobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./simplebannermobileimagePath"
+                        xtype="ddpathfield"/>
                     <simpllebannerbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"

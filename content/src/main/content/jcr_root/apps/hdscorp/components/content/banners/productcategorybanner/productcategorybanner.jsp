@@ -12,7 +12,7 @@
 	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>" />
 </c:if>
 
-		<div class="common-hero-banner partner-program-banner clearfix" style="background-image: url('${properties.simplebannermagePath}');">
+		<div class="common-hero-banner partner-program-banner  clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.simplebannermobileimagePath)} > 
 	              <div class="common-hero-banner-container">
                       <div class="col-lg-6 col-md-6 col-xs-12">
 	                  <div class="top-banner-heading">
