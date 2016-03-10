@@ -1,15 +1,31 @@
 
 package com.hdscorp.cms.slingmodels;
 
-import com.hdscorp.cms.util.MultifieldUtil;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.day.cq.wcm.api.Page;
+import com.hdscorp.cms.constants.ServiceConstants;
+import com.hdscorp.cms.util.MultifieldUtil;
+import com.hdscorp.cms.util.PageUtils;
 
 @Model(adaptables = { Resource.class })
 public class TwitterFeedModel extends MultifieldUtil {
+	private static final Logger log = LoggerFactory.getLogger(TwitterFeedModel.class);
+	@Inject
+	private ResourceResolver resourceResolver;
+
 	@Inject
 	@Named(value = "jcr:twtitle")
 	@Default(values = { "Twitter Title" })
@@ -18,12 +34,16 @@ public class TwitterFeedModel extends MultifieldUtil {
 	@Named(value = "jcr:imagePath3")
 	@Default(values = { "Background image path" })
 	private String bGImagePath;
-	
+
 	@Inject
 	@Named(value = "jcr:twtwittericonpath")
 	@Default(values = { "Twitter Icon Path" })
 	private String iconPath;
-	
+
+	@Inject
+	@Named(value = "twfeedlookuppath")
+	@Default(values = { "/content/hdscorp/en_us/lookup/twitterfeeddata" })
+	private String feedLookUpPath;
 
 	@Inject
 	@Named(value = "jcr:twyearsmessage")
@@ -60,7 +80,7 @@ public class TwitterFeedModel extends MultifieldUtil {
 	@Default(values = { "Ago" })
 	private String twAgoMessage;
 
-	
+	private String twitterFeedData;
 
 	public String getTitle() {
 		return this.title;
@@ -69,8 +89,6 @@ public class TwitterFeedModel extends MultifieldUtil {
 	public String getbGImagePath() {
 		return this.bGImagePath;
 	}
-
-	
 
 	public String getIconPath() {
 		return this.iconPath;
@@ -104,4 +122,37 @@ public class TwitterFeedModel extends MultifieldUtil {
 		return twAgoMessage;
 	}
 
+	public String getFeedLookUpPath() {
+		return feedLookUpPath;
+	}
+
+	public List<Object> getTwitterFeedData() {
+
+		List<Object> feedData = null;
+		if (!feedLookUpPath.trim().equals("")) {
+			try {
+				Resource resource = resourceResolver.resolve(feedLookUpPath);
+				if (resource != null) {
+					Page page = resource.adaptTo(Page.class);
+					if (page != null) {
+						ValueMap properties = page.getProperties();
+						String feed = properties.get(ServiceConstants.TWITTER_SAVE_FEED_DATA_PROPERTY_NAME).toString();
+
+						if (feed!=null && !feed.isEmpty() && !feed.equals("null")) {
+							JSONArray jsonArray= new JSONArray(feed);							
+							feedData = PageUtils.jsonArraytoList(jsonArray);
+
+						}
+
+					}
+				}
+
+			} catch (Exception e) {				
+				log.error("Exception  occured while readind twitterfeed Data" + e);
+			}
+
+		}
+
+		return feedData;
+	}
 }
