@@ -42,6 +42,40 @@ public class EventNode {
 	
 	private int year;
 	
+	/**
+	 * Webcast fields
+	 */
+	
+	private String isWebcast;
+
+	private String author;
+	
+	private String summary;
+	
+	private String featured;
+	
+	private String status;
+	
+	private String format;
+	
+	private String duration;
+	
+	private String start;
+	
+	private String rating;
+	
+	private String category;
+	
+	private String communicationId;
+	
+	private String channelId;
+	
+	private String herfLink;
+	
+	private String thumbnailPath;
+	
+	private String previewImagePath;
+	
 	public String[] getEventType() {
 		return eventType;
 	}
@@ -170,7 +204,130 @@ public class EventNode {
 		this.eventRegiontagName = eventRegiontagName;
 	}
 	
+//Webcast setter/getter
 	
+	public String getIsWebcast() {
+		return isWebcast;
+	}
+
+	public void setIsWebcast(String isWebcast) {
+		this.isWebcast = isWebcast;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public String getFeatured() {
+		return featured;
+	}
+
+	public void setFeatured(String featured) {
+		this.featured = featured;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getFormat() {
+		return format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getRating() {
+		return rating;
+	}
+
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
+
+	public String getCommunicationId() {
+		return communicationId;
+	}
+
+	public void setCommunicationId(String communicationId) {
+		this.communicationId = communicationId;
+	}
+
+	public String getChannelId() {
+		return channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+	}
+
+	public String getHerfLink() {
+		return herfLink;
+	}
+
+	public void setHerfLink(String herfLink) {
+		this.herfLink = herfLink;
+	}
+
+	public String getThumbnailPath() {
+		return thumbnailPath;
+	}
+
+	public void setThumbnailPath(String thumbnailPath) {
+		this.thumbnailPath = thumbnailPath;
+	}
+
+	public String getPreviewImagePath() {
+		return previewImagePath;
+	}
+
+	public void setPreviewImagePath(String previewImagePath) {
+		this.previewImagePath = previewImagePath;
+	}
+	
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+
 	public class CompareByMonth implements Comparator<EventNode> {
 		public int compare(EventNode p1, EventNode p2) {
 			if (p1.getEventMonth().compareTo(p2.getEventMonth()) > 0) {
