@@ -46,6 +46,13 @@
                         name="./searchPagePath"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchPagePath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
+					<isnewspage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Is this news Landing page ?"
+                        key="isnewspage"
+                        name="./isnewspage"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>

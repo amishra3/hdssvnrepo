@@ -12,18 +12,16 @@
 <c:set var="archiveLabel" value="${properties.archiveLabel}" scope="request"/>
 <c:set var="searchPagePath" value="${properties.searchPagePath}" scope="request"/>
 <c:set var="selectorString" value="${slingRequest.requestPathInfo.selectors[0]}"/>
-<c:set var="currentPageUrl" value="${currentPage.path}"/>
-
-
-
- 
-
+<c:set var="pageClass" value=" ispressreleasepage"/>
+<c:if test="${not empty properties.isnewspage}">
+	<c:set var="pageClass" value=" isnewspage"/>
+</c:if>
 
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.PressReleasesContainerModel" var="model" />
 
 <div class="pr-list">       
 				<div id="loading"></div>             
-                <div class="row pr-list-container">
+                <div class="row pr-list-container ${pageClass}">
                     <h2>${model.headerText}</h2>
                     <div class="pr-search">
                         <input type="text" name ="fulltext" id="fulltext" placeholder="${model.searchText}">
