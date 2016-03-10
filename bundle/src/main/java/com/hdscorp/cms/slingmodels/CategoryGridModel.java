@@ -44,7 +44,8 @@ public class CategoryGridModel {
 		return targetparentdirectory;
 	}
 
-	
+	private static final String ORDER_BY_PROPERTY = "@jcr:content/jcr:title";
+	private static final String ORDER_BY_SORT = "asc";
 	public List<CategoryNode> getCategories() throws RepositoryException {
 
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
@@ -56,7 +57,7 @@ public class CategoryGridModel {
 		String type[] = {"cq:Page"};
 		boolean doPagination = false;
 		
-		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,null,null);
+		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver, ORDER_BY_PROPERTY ,ORDER_BY_SORT);
 		List<Hit> hits = result.getHits();
 		categories = new ArrayList<CategoryNode>();
 		
