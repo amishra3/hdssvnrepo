@@ -36,6 +36,9 @@ public class PDFMetaModel {
 
 	public PDFNode getPdfNode() {
 		String pdfPath = request.getParameter("pdfPath");
+		if(pdfPath==null || pdfPath.isEmpty() || pdfPath.equalsIgnoreCase("null")){
+			pdfPath="/content/dam/public/testpdf/batch2/success-story-waterschaps-aa-en-maas.pdf";
+		}
 		log.info("Start Execution of getPdfNode() PdfPath::" + pdfPath);
 		try {
 			if (pdfPath != null && !pdfPath.isEmpty() && pdfPath.toLowerCase().contains(".pdf")) {
