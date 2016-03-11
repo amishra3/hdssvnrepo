@@ -3,22 +3,40 @@ var data=getCurrentBreadcrumb();
 
 data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 data = data.replace(/\s{2,}/g,' ');
+data = data.toLowerCase();
 items = data.split(":");
 count = items.length;
+if(pageTitle!="Home")
+{
+    data=data.substring(data.indexOf(":")+1);
+}
+console.log("data--"+data);
+
 var activeLinkText="top";
-var desktopType="Desktop";
-var orientation;
+var isTabClicked=false;
+var desktopType="desktop";
+var orientation="landscape";
 var screenSize;
 var delay=4000;
+pageTitle=pageTitle.toLowerCase();
 $(document).ready(function() {
 if (/Mobi/.test(navigator.userAgent)) {
-    desktopType="Mobile";
-}
-if (Math.abs(window.orientation) === 90) {
-	orientation="Landscape";
+    desktopType="mobile";
+
+    if (Math.abs(window.orientation) === 90) {
+        orientation="landscape";
+    }
+    else{
+        orientation="portrait";
+    }
 }
 else{
-    orientation="Portrait";
+if (screen.height < screen.width) {
+        orientation="landscape";
+    }
+    else{
+        orientation="portrait";
+    }
 }
 
 var screenSize = screen.width+"x" +screen.height;
@@ -28,7 +46,7 @@ for(index=0;index<count;index++)
 {
  if(index>0 && index<(count-1) )
   {
-      console.log("index"+index);
+    console.log("index"+index);
   	switch(index)
   	{
   		case 1:
@@ -37,20 +55,15 @@ for(index=0;index<count;index++)
   		  case 2:
   		  subSection=items[index];
   		  break;
-  		  case 3:
-            console.log("item 3---"+items[index])
-  		  	subSubSection=items[index];
-  		  break;
-  	}
+		}
   }
 
 }
 if(primaryCategory=="")
 	primaryCategory=pageTitle;
-if(subSection=="")
+
+if(subSection=="" && items.length>=3)
 	subSection=pageTitle;
-if(subSubSection=="")
-	subSubSection=pageTitle;
 
 if(isProductCategory())
 {
@@ -80,11 +93,10 @@ else
 	pageInfo:{
 	pageName: pageTitle,
 	pageType: primaryCategory,
-	hier1:items,
+	hier1:data,
 	},
 	category:{
 	primaryCategory: primaryCategory,
-	subSection: subSection
 	}
 	}
 	digitalData.site={
@@ -105,75 +117,119 @@ else
         }
     }
 
-if(isProductDetail())
-{
-	digitalData["page"]["category"]["productName"]=pageTitle;
-    
-}
+    if(isProductDetail())
+    {
+        digitalData["page"]["category"]["productName"]=pageTitle;
+        digitalData["page"]["category"]["productInfo"]="product";
+    }
+    if(subSection!="" && subSection.length>0)
+    {
+        digitalData["page"]["category"]["subSection"]=subSection;
+        
+    }
 
 }
 console.log("digitalData-------"+JSON.stringify(digitalData));
 
 
-//Mega Menu Links Custom Tracking
-	var megaMenuItems = $(".hds-main-navigation");
-	megaMenuItems.each(function() {
+//Header Links Custom Tracking
+	$(".globalNavWrapper").each(function() {
+     var listitem = $(this).find("a");
+      if( listitem.length>0)
+	 {
+		 listitem.each(function() {
+			 var linktext = $(this).text();
+             if(linktext=="" || linktext.length==0)
+             {
+                linktext= $(this).children().attr("title");
+             }
+              if(linktext=="" || linktext.length==0)
+             {
+                linktext= $(this).children().text();
+             }
+                 linktext = $.trim(linktext);
+            $(this).click(function(){
+				var megamenuHeader=$(this).closest(".hds-megaMenu");
+                var category="";
+                console.log(megamenuHeader);
+                if(megamenuHeader && megamenuHeader!='undefined' && megamenuHeader!='null')
+        			category = megamenuHeader.find('h2').find('a').text();
+                var triggerName="us>mm>"+linktext.toLowerCase();
+                if(category!="" && category.length>0)
+					triggerName="us>mm>"+category.toLowerCase()+">"+linktext.toLowerCase();
+                globalMenuClick("linkclick",triggerName,pageTitle,"link","mega menu"); 
+
+            });
+		});                 
+     }
+    });	
+$(".hds-quick-navigation").each(function() {
      var listitem = $(this).find("a");
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
 		 var linktext = jQuery(this).text();
-         if(linktext=="" || linktext.length==0)
-		 {
-		 	linktext= $(this).children().attr("title");
-		 }
-          if(linktext=="" || linktext.length==0)
-		 {
-		 	linktext= $(this).children().text();
-		 }
-			$(this).click(function(){globalMenuClick("linkclick","US>MM>"+linktext,pageTitle,"link","mega menu"); });
+          linktext = $.trim(linktext);
+            $(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu"); });
 		});                 
      }
     });	
-
+$(".hds-main-navigation h5").each(function() {
+     var listitem = $(this).find("a");
+     if( listitem.length>0)
+	 {
+		 listitem.each(function() {
+		 linktext= $(this).children().text();
+         linktext = $.trim(linktext);
+			$(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu"); });
+		});                 
+     }
+    });	
 	//Footer links tracking
-	var footerItems = jQuery("div.footer");
-	footerItems.each(function() {
-	var links = jQuery(this).find("a");
+	jQuery("div.footer").each(function() {
+		var links = jQuery(this).find("a");
 	   links.each(function() {
 		 var linktext = jQuery(this).text();
            if(linktext=="" || linktext.length==0)
 		 {
 		 	linktext= jQuery(this).children().attr("title");
 		 }
-		 $(this).click(function(){globalMenuClick("linkclick","US>FT>"+linktext,pageTitle,"link","footer"); });
+		 $(this).click(function(){globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer"); });
 	  })
 
 	});	
-	//Tabs Custom Tracking
-	var tabs = $(".stickNav-container");
-	tabs.each(function() {
+
+//Tabs Custom Tracking
+	$(".stickNav-container").each(function() {
 	 	var links = $(this).find("a")
        links.each(function() {
-		 	$(this).click(function(){tabClick(primaryCategory,$(this),pageTitle,"Tabclick"); });
+		 	$(this).click(function(){
+                isTabClicked=true;
+                tabClick(primaryCategory,$(this),pageTitle,"Tabclick"); 
+            });
 	  	});
 
 	});
     $(window).on('scroll', function(){
         var tabs = $(".stickNav-container");
 		var activeLink = tabs.find("a.active");
-       // console.log("activeLink=="+activeLink.text());
+        //console.log("activeLink=="+activeLink.text());
  		//console.log("activeLinkText=="+activeLinkText);
         if(activeLink.text()!="" && activeLinkText!=activeLink.text())
         {
              activeLinkText=activeLink.text();
             setTimeout(function() {
-                if(activeLinkText==activeLink.text())
+                if(!isTabClicked)
                 {
-                    console.log("Tracking tabs");
-                    
-                    tabClick(primaryCategory,activeLink,pageTitle,"Tabscroll");
+                    if(activeLinkText==activeLink.text())
+                    {
+                        console.log("Tracking tabs");
+    
+                        tabClick(primaryCategory,activeLink,pageTitle,"Tabscroll");
+                    }
                 }
+                else
+                    isTabClicked=false;
 
 			}, delay);
 
@@ -181,7 +237,7 @@ console.log("digitalData-------"+JSON.stringify(digitalData));
 
        });
 
-//products search
+//products search events start here
 $(document).on('keypress', '#searchFilter', function(event) {
     if(event.which == 13) {
      setTimeout(function() {
@@ -189,26 +245,35 @@ $(document).on('keypress', '#searchFilter', function(event) {
 	var result=$('#actualCount').text();
          if(result==0)
              result="zero";
-     searchClick(searchTerm, "search box",result,'product','productSearchClick');
+     searchClick(searchTerm, "search box",result,'product','specificSearchClick');
          }, 1500); 
     }            
     });
 
-	var checkboxes = $('.product-listing input.filters');
-	checkboxes.each(function() {
+    $(document).on('click', '.prodnsolproductlisting .glyphicon-search', function(event) {
+                event.preventDefault();
+	               setTimeout(function() {
+					var searchTerm=$('#searchFilter').val();
+                    var result=$('#actualCount').text();
+                         if(result==0)
+                             result="zero";
+                     searchClick(searchTerm, "search box",result,'products & solutions','specificSearchClick');
+                         }, 1500);           
+
+            });
+	$('.product-listing input.filters').each(function() {
 		 $(this).click(function(){
 			if ($(this).is(':checked')) {
-                var text = $(this).find("span").text();
+                var text = $(this).parent().find("span").text();
        			var result=$('#actualCount').text();
          		if(result==0)
            		  result="zero";
-                searchClick(text, "sub-category filter",result,'product','productSearchClick');
+                searchClick($.trim(text), "sub-category filter",result,'products & solutions','specificSearchClick');
             }
          });
 
 		});	
-    var pLeftNav = $('ul[id=asideLinks-product]');
-	pLeftNav.each(function() {
+    $('ul[id=asideLinks-product]').each(function() {
 	 	var links = $(this).find("a");
 	 	links.each(function() {
             $(this).click(function(){
@@ -217,14 +282,13 @@ $(document).on('keypress', '#searchFilter', function(event) {
                 var result=$('#actualCount').text();
                  if(result==0)
                      result="zero";
-                	searchClick(text, "category filter",result,'product','productSearchClick');
+                	searchClick($.trim(text), "category filter",result,'products & solutions','specificSearchClick');
     			 }, 1500);
              });
         });
 	});	
 
-    var pAlphaList = $('.result-product ul.sortAlpha');
-	pAlphaList.each(function() {
+   $('.result-product ul.sortAlpha').each(function() {
 		var links = $(this).find("a");
 	 	links.each(function() {
 
@@ -235,7 +299,7 @@ $(document).on('keypress', '#searchFilter', function(event) {
             	var result=$('#actualCount').text();
          		if(result==0)
             	 result="zero";
-        		productSearchClick(text, "a-z filter",result,'product');
+        		 searchClick($.trim(text), "a-z filter",result,'products & solutions','specificSearchClick');
 			 }, 1500); 
         });
         //}
@@ -245,28 +309,101 @@ $(document).on('keypress', '#searchFilter', function(event) {
 
 });	
 
-//Events Search
+//Press Releases, Awards and News Search events start here
+
+var searchType="press release";
+var searchTrackEvent="specificSearchClick";
+if(isNewsPage())
+{
+	searchType="news";
+	searchTrackEvent="specificSearchClick";
+
+}
+else if(isAwardsPage())
+{
+	searchType="awards";
+	searchTrackEvent="specificSearchClick";
+}
+$(document).on('keypress', '#fulltext', function(event) {
+    if(event.which == 13) {
+     setTimeout(function() {
+			var searchTerm=$('#fulltext').val();
+            var result=$('.pr:visible').size();
+            if(result==0)
+                result="zero";
+         	searchClick(searchTerm, "search box",result,searchType,searchTrackEvent);
+     }, 1500);  
+    }
+    });
+
+    $(document).on('click', '.pr-list-container .glyphicon-search', function(event) {
+        event.preventDefault();
+        setTimeout(function() {
+            var searchTerm=$('#fulltext').val();
+            var result=$('.pr:visible').size();
+            if(result==0)
+                result="zero";
+           searchClick(searchTerm, "search box",result,searchType,searchTrackEvent);
+        }, 1500);           
+
+    });
+
+ 	$('.pr-list-archives ul[id=asideLinks]').each(function() {
+	 	var links = $(this).find("a");
+	 	links.each(function() {
+            $(this).click(function(){
+                var text = $(this).text();
+                setTimeout(function() {
+                var result=$('.pr:visible').size();
+                 if(result==0)
+                     result="zero";
+                	searchClick(searchTerm, "year filter",result,searchType,searchTrackEvent);
+    			 }, 1500);
+             });
+        });
+	});	
+
+
+//Events Search events start here
 $(document).on('click', '#updateResults', function(event) {
     setTimeout(function() {
-	var searchTerm="";
-	var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
+        var searchTerm="";
+        var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
          if(result==0)
              result="zero";
-    searchClick(searchTerm, "search box",result,'product','productSearchClick');
-         }, 1000); 
+        	searchClick(searchTerm, "search button",result,'event','specificSearchClick');
+      }, 1000); 
     });
 
 $('#filterRegion').on('change', function(event) {
     setTimeout(function() {
-	var searchTerm=$("#filterRegion").val();
-	var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
-         if(result==0)
-             result="zero";
-     searchClick(searchTerm, "search box",result,'product','productSearchClick');
+            var searchTerm=$(".filter-option").text();
+            var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
+            if(result==0)
+            	result="zero";
+     		searchClick($.trim(searchTerm), "Region filter",result,'event','specificSearchClick');
          }, 1000); 
     });
+
+$('.newsEvents-category-list .news-listing').each(function() {
+	 	var links = $(this).find("a");
+	 	links.each(function() {
+            $(this).click(function(){
+                console.log("left na clicked........");
+                var text = $(this).text();
+                setTimeout(function() {
+                var result=$('.pr:visible').size();
+                 if(result==0)
+                     result="zero";
+                	searchClick($.trim(text), "Event Filter",result,"event","specificSearchClick");
+    			 }, 1500);
+             });
+        });
+	});	
+
 //globalMenuClick(eventname,triggername,page)
 function globalMenuClick(eventname,triggername,page,triggertype,Position){
+
     digitalData.eventData= {
     eventName:eventname,
     eventAction:triggername,
@@ -274,6 +411,7 @@ function globalMenuClick(eventname,triggername,page,triggertype,Position){
     eventType:triggertype,
     eventPostion:Position
     } 
+   // alert("link clicked----"+JSON.stringify(digitalData.eventData));
     _satellite.track('globalMenuClick');
 }
 	function tabClick(primarycategory,link,pagename,eventName)
@@ -287,23 +425,27 @@ function globalMenuClick(eventname,triggername,page,triggertype,Position){
 				eventName:eventName
 			},
 			tabInfo:{
-			tabName: link.text(),
+			tabName: "tab-"+(link.text()).toLowerCase(),
 			pageName: pagename
 			}
 			})
+        console.log("tab tracking--"+JSON.stringify(digitalData.event));
 	_satellite.track('Tab Click');
 	}
 
 function searchClick(searchTerm, searchAction,result,searchType,tracktEvent){
-    	console.log("searchTerm----------"+searchTerm);
-    	console.log("result---------"+result);
+    	//console.log("searchTerm----------"+searchTerm);
+    	//console.log("result---------"+result);
 		digitalData.eventData= {
-            searchTerm:searchTerm,
+           // searchTerm:searchTerm,
             searchAction:searchAction,
             searchResult:result,
             searchType:searchType,
             searchPage:pageTitle
         } 
+        if(searchTerm!="")
+			digitalData["eventData"]["searchTerm"]=searchTerm;
+    console.log("search tracking--"+JSON.stringify(digitalData.eventData));
         _satellite.track(tracktEvent);
 
 }
@@ -324,9 +466,12 @@ function getCurrentBreadcrumb() {
         }
 		$.cookie("vcategory",null,{ path: '/' });
     }
-    if(hierarchy.length>0)
-			hierarchy=hierarchy+":";
-    hierarchy=hierarchy+pageTitle;
+    if(pageTitle!="Home")
+    {
+        if(hierarchy.length>0)
+                hierarchy=hierarchy+":";
+        hierarchy=hierarchy+pageTitle;
+    }
 	console.log( "hierarchy---->>"+hierarchy );
     return hierarchy;
 }
@@ -350,7 +495,20 @@ function isProductCategory()
     else
         return false;
 }
-
+function isNewsPage()
+{
+    if($(".isnewspage").size()>0)
+        return true;
+    else
+        return false;
+}
+function isAwardsPage()
+{
+    if($(".isawardspage").size()>0)
+        return true;
+    else
+        return false;
+}
 function setVirtualCategoryEvent()
 {
     var cListing = $('.category-products-listing');
