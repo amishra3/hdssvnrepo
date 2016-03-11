@@ -373,12 +373,7 @@ var hds = window.hds || {};
                     } else {
                         $url = $url;
                     }
-                    if ($featuredurl !== "") {
-                        hds.resourceLib._processCatagoryCards($featuredurl);
-                    } else {
-                        $("#featuredCards").hide();
-                    }
-
+                    
                     if ($url !== "") {
                         hds.resourceLib._processClickAside($url);
                     } else {
@@ -386,6 +381,12 @@ var hds = window.hds || {};
                         $("#loadResourceContent").html(" ");
                         $('.resource-heading > h2').html(" ").html($('#asideLinks-product > li.active').find('a').text());
                     }
+                    if ($featuredurl !== "") {
+                        hds.resourceLib._processCatagoryCards($featuredurl);
+                    } else {
+                        $("#featuredCards").hide();
+                    }
+                
 
                 } else {
                     $('#resSearch').attr('placeholder', "Search resources");
