@@ -1,5 +1,7 @@
 package com.hdscorp.cms.restservice;
 
+import java.util.Comparator;
+
 /**
  * LMS Bean used for LMS Scheduler
  * 
@@ -35,6 +37,16 @@ public class LMSBean {
 	private String trainingPrice;
 
 	private String courseDeeplink;
+
+	private String location;
+
+	private String month;
+
+	private int monthNumber;
+
+	private int year;
+
+	private String duration;
 
 	public LMSBean() {
 
@@ -170,6 +182,68 @@ public class LMSBean {
 
 	public String getCourseDeeplink() {
 		return courseDeeplink;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public int getMonthNumber() {
+		return monthNumber;
+	}
+
+	public void setMonthNumber(int monthNumber) {
+		this.monthNumber = monthNumber;
+	}
+
+	public class CompareByMonth implements Comparator<LMSBean> {
+		public int compare(LMSBean p1, LMSBean p2) {
+			return p1.getMonthNumber() - p2.getMonthNumber();
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			return super.equals(obj);
+		}
+	}
+
+	public class CompareByYear implements Comparator<LMSBean> {
+		public int compare(LMSBean p1, LMSBean p2) {
+			return p1.getYear() - p2.getYear();
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			return super.equals(obj);
+		}
 	}
 
 }
