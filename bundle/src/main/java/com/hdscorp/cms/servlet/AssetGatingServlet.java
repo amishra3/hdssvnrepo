@@ -17,7 +17,7 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import com.day.cq.dam.api.Asset;
 import com.hdscorp.cms.util.PathResolver;
 
-@SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" },extensions="pdf")
+@SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" })
 @Properties({
 		@Property(name = "service.pid", value = "com.hdscorp.cms.servlet.AssetGatingServlet", propertyPrivate = false),
 		@Property(name = "service.description", value = "Asset Gating Servlet", propertyPrivate = false),
@@ -39,9 +39,9 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		String refererString = request.getHeader("Referer") ;
 		
 		try {
-			if(pdfPath.toLowerCase().contains(".pdf") && !pdfPath.toLowerCase().contains(".json") && (pdfPath.startsWith("en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
-				if(pdfPath.startsWith("en-us/pdf")){
-					pdfPath=pdfPath.replace("en-us/pdf", "/content/dam/public/en_us/pdfs");
+			if(pdfPath.toLowerCase().contains(".pdf") && !pdfPath.toLowerCase().contains(".json") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
+				if(pdfPath.startsWith("/en-us/pdf")){
+					pdfPath=pdfPath.replace("/en-us/pdf", "/content/dam/public/en_us/pdfs");
 				}
 				//Check Referrer, if same as the current URL, then the user has already filled the form
 				//if(refererString.....){
