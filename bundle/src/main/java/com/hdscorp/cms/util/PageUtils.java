@@ -785,4 +785,24 @@ public final class PageUtils {
 		}
 		return list;
 	}
+
+	public static boolean doesPageExist(Page content, String nodeName) {
+		try {			
+			Iterator<Page> requiredRoot = content.listChildren();
+			if (requiredRoot.hasNext()) {
+				while (requiredRoot.hasNext()) {
+					Page child = requiredRoot.next();
+					if (child.getName().equalsIgnoreCase(nodeName)) {
+						return true;
+					}
+				}
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			log.error("Exception occured while checking not into the JCR: " + e);
+		}
+		return false;
+	}
 }
