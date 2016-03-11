@@ -28,14 +28,11 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 			SlingHttpServletResponse response) throws ServletException,
 			IOException {
 		final RequestDispatcherOptions options = new RequestDispatcherOptions();
-		//1. Check if this is not cyclic to avoid infinite loop
-		//2. Check if resource path is a match with the paths which are to be monitored
-		//3. Check if is a PDF
-		//4. Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
 
 		String pdfPath= request.getRequestURI();
 		//Make this configurable 
 		String forwardPath = "/content/hdscorp/en_us/home";
+		String forwardPathQueryStringKey = "?pdfPath=";
 		String refererString = request.getHeader("Referer") ;
 		
 		try {
@@ -61,7 +58,7 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
 					//if asset is gated then, set forwardPath to the form page
 					if(resourceTitle.contains("criteria")){
-						request.getRequestDispatcher(forwardPath).forward(request, response);						
+						request.getRequestDispatcher(forwardPath+forwardPathQueryStringKey+pdfPath).forward(request, response);						
 					}else{
 						//Setting the PDF resource type to following will skip this servlet and will go to the normal pdf flow.
 						skipServlet(request, response, options);
