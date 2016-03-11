@@ -21,6 +21,7 @@
 <div class="legal-content-area clearfix">
 <div class="content-container">
 	<div id="legal" class="Container-legal-terms container-fluid overRideRight">
+         <h2>Legal</h2>
 				<div class="col-md-3 leftsidelisting">
 				<ul id="asideLinks-product">
 				<c:forEach var="listCat" items="${legalSubCategoryModel.legalcategories}" varStatus="loopCatCount">
@@ -51,7 +52,13 @@
 							 <c:if test="${fn:length(listCat.listSubCat)!=0}">					
 							  <ul>
 							   <c:forEach var="subCat" items="${listCat.listSubCat}" varStatus="looSubCount">
-								   <li><a data-href="${subCat.legalURL}.html" class="leftsubtab" href="javascript:void(0);"> ${subCat.label}</a></li>
+								   <li>
+                                       <div class="checkbox">
+										<input type="radio" value="${listCat.legalURL}.html" id="${subCat.label}" name="cbxFunction" class="filters">
+											<label class="hds-icon" for="${subCat.label}"><span>${subCat.label}</span></label>
+										</div>
+
+                                       </li>
 							 </c:forEach>
 							   </ul>
 						  </c:if>

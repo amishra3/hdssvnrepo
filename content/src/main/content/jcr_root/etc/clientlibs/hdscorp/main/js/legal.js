@@ -22,8 +22,10 @@ var hds = window.hds || {};
                 var firstLegalHas = $('.leftsidelisting > ul > li').eq(0).has('ul');
                 if (firstLegal) {
                     if (firstLegalHas) {
-                        $('.leftsidelisting > ul > li > ul > li').eq('0').addClass('active');
-                        getURL = $('.leftsidelisting > ul > li > ul > li').eq('0').find('a').attr("data-href");
+                        //$('.leftsidelisting > ul > li > ul > li').eq('0').addClass('active');
+                        //getURL = $('.leftsidelisting > ul > li > ul > li').eq('0').find('a').attr("data-href");
+                        $('.leftsidelisting > ul > li > ul > li').eq('0').find('input').click();
+                        getURL = $('.leftsidelisting > ul > li > ul > li').eq('0').find('input[type="radio"]').val();
                     }
                 }
 
@@ -67,7 +69,8 @@ var hds = window.hds || {};
                     $('.leftsidelisting li').removeClass('active');
                     var content = $(this).find('ul li').eq(0).find('a').attr('data-href');
                     hds.loadDataFiltersLegal.loadCatagoryContentLegal(content);
-                     $(this).parents('li').find('ul li').eq(0).addClass('active')
+                    //$(this).parents('li').find('ul li').eq(0).addClass('active');
+                    $(this).parents('li').find('ul li').eq(0).find('input[type="radio"]').click();
                     $(this).parent().addClass('active');
                     allPanels2.removeAttr('style');
                     }else{
@@ -106,6 +109,13 @@ var hds = window.hds || {};
                     return false;
                 }
             });
+
+            $(document).on('click', '.leftsidelisting li input[type="radio"]', function() {
+                var content = $(this).val();
+                hds.loadDataFiltersLegal.setHTMLContainerLegal();
+                hds.loadDataFiltersLegal.loadCatagoryContentLegal(content);
+            })
+
         },
         bindEventsOnResizeLegal: function() {
             $(window).resize(function() {

@@ -858,6 +858,7 @@ font-weight: 500;
   }
 }
 
+/* Custom Checkboxes */
 .checkbox input[type=checkbox] {
     position: absolute;
     margin-top: 4px;
@@ -896,7 +897,49 @@ input[type="checkbox"]+label:before {
 input[type="checkbox"]:checked+label:before {
     background-position: 0 -21px;
 }
- 
+
+
+/* Custom Checkboxes for Legal Pages */
+.checkbox input[type="radio"] {
+    position: absolute;
+    margin-top: 4px;
+    margin: 6px 4px;
+}
+.checkbox input[type="radio"] {
+    margin: 3px 4px 4px!important;
+}
+input[type="radio"]+label.hds-icon {
+    background-image: none;
+}
+input[type="radio"]+label {
+    padding-left: 34px;
+}
+.checkbox label {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.92857143rem;
+    line-height: 1;
+    color: #fff;
+}
+input[type="radio"]+label:before {
+     background-image: url('../images/radio_btn_sprite.gif');
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    content: " ";
+    position: absolute;
+    display: inline-block;
+    height: 21px;
+    width: 20px;
+    left: 0;
+    top: -1px;
+}
+input[type="radio"]:checked+label:before {
+    background-position: 0 -21px;
+}
+
+
 /* centered columns styles */
 .row-centered {
     text-align:center;
