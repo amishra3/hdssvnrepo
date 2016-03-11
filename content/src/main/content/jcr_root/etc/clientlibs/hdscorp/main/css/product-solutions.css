@@ -637,7 +637,7 @@ ul.stickyNav li:hover a{
 }
 
 .spec-section .spec-container {
-  min-height: 1024px;
+  min-height: 0;
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 110px;
