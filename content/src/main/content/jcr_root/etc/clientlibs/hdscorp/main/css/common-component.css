@@ -894,9 +894,9 @@ input[type="checkbox"]+label:before {
     top: -1px;
 }
 input[type="checkbox"]:checked+label:before {
-    background-position: 0 -20px;
+    background-position: 0 -21px;
 }
-
+ 
 /* centered columns styles */
 .row-centered {
     text-align:center;
