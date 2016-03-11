@@ -30,10 +30,10 @@ import facebook4j.FacebookException;
 @Component(label = "Facebook Scheduler", description = "This service basically is used for consuming data from the facebook feed", metatype = true, immediate = true)
 @Service(FacebookSheduler.class)
 @Properties({ @Property(name =ServiceConstants.FB_POST_LIMIT_KEY, description = "Default facebook post limit", value = "3"),
-		@Property(name =ServiceConstants.FB_POST_SEARCH_KEY, description = "Default facebook search post name", value = "HitachiDataSystems"),
-		@Property(name =ServiceConstants.FB_POST_APP_ID_KEY, description = "Default appId is provided you can change it accordingly", value = "927821663969335"),
-		@Property(name =ServiceConstants.FB_POST_APP_SECRET_KEY, description = "Default appSecret is provided you can change it accordingly", value = "9f52caf6cd51c8fb68a3adbcb0020793"),
-		@Property(name =ServiceConstants.FB_POST_APP_ACCESS_TOKEN_KEY, description = "Default accessToken is provided you can change it accordingly", value = "927821663969335|He7bEf1-lxX0xj2hmJwnJPUopLs"),
+		@Property(name =ServiceConstants.FB_POST_SEARCH_KEY, description = "Default facebook search post name", value = "94005676787"),
+		@Property(name =ServiceConstants.FB_POST_APP_ID_KEY, description = "Default appId is provided you can change it accordingly", value = "950791251665098"),
+		@Property(name =ServiceConstants.FB_POST_APP_SECRET_KEY, description = "Default appSecret is provided you can change it accordingly", value = "7ff465350e35a3648dce0f3b7233ab91"),
+		@Property(name =ServiceConstants.FB_POST_APP_ACCESS_TOKEN_KEY, description = "Default accessToken is provided you can change it accordingly", value = "CAANgvVbPoMoBAKRaoLFtUXOf0EXo1Pzd0PsDxS6OgIG8tUAYxbJz3lEGPIImHhOnZCZC8ZCeY6QVxWBzStZC3UguZCx5PFpJdoJvfD2afXIXIZCzyHFHik0q6kmQI6KPAcybVT6NLtTVWAva14svaA2ya8oiro6Kb5ivezvlHwCRQeag5UnJgfpE5SqowhZAq4ZD"),
 		@Property(name =ServiceConstants.FB_POST_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 30 13 * * ?"),
 		@Property(name =ServiceConstants.FB_POST_STORAGE_PATH, description = "Default storage path", value = "/content/hdscorp/en_us/test/jcr:content/") })
 
