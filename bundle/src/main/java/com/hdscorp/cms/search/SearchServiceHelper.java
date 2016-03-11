@@ -503,6 +503,9 @@ public class SearchServiceHelper {
 		searchParams.put("type", TYPE);
 		searchParams.put("path", path);
 		int groupCnt = 1;
+		if (lowerBound!=null || upperBound!=null ) {
+			
+		
 		searchParams.put("group." + groupCnt + "_group.1_daterange.property",
 				startDate);
 		
@@ -513,11 +516,10 @@ public class SearchServiceHelper {
 		if(upperBound!=null && !upperBound.isEmpty()){
 		searchParams.put("group." + groupCnt + "_group.1_daterange.upperBound",
 				upperBound);
-		} else {
-			searchParams.put("group." + groupCnt + "_group.1_daterange.upperBound",
-					"0");
-		}
+		} 
 		groupCnt++;
+		}
+		
 		if (searchKeyword != null) {
 			searchParams.put("group." + groupCnt + "_group.p.or", "true");
 			
