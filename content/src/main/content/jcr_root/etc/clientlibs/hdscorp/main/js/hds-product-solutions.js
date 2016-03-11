@@ -6,6 +6,7 @@ var hds = window.hds || {};
 			hds.loadDataFilters.loadSubContent();
             //hds.loadDataFilters.loadCatagoryContent();
             hds.loadDataFilters.subListTab();
+            hds.loadDataFilters.searchNavigator();
             hds.loadDataFilters.filterSearchResults();
             hds.loadDataFilters.bindEventsOnResize();
             hds.loadDataFilters.manageTopTabs();
@@ -266,7 +267,14 @@ var hds = window.hds || {};
 
             }, 1000);
         },
-        
+
+        searchNavigator:function(){
+            $(document).on('click', '.btn-square-white.request', function(){
+                $("html, body").animate({
+                    scrollTop: $(".product-search-area").offset().top
+                }, "slow");
+            })
+        },
         updateSearchFilters: function(parm1, parm2, param3) {
             var filters = {
                 alpha: parm1,
@@ -369,5 +377,5 @@ var hds = window.hds || {};
 $(function() {
 	if ( $('.productsolutionlanding').length > 0){
 		hds.loadDataFilters.init();
-	}
+	}    
 })
