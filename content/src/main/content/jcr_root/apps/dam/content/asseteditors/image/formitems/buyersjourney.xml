@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Widget"
-    fieldLabel="Buyer's Journey"
-    name="./jcr:content/metadata/hds:buyersjourney"
+    defaultValue="na"
+	fieldLabel="Buyers Journey"
+    name="./dc:buyersjourney"
     type="select"
     xtype="selection">
     <options jcr:primaryType="cq:WidgetCollection">
-        <discover
+        <na
+            jcr:primaryType="nt:unstructured"
+            text="NA"
+            value="na"/>
+        <Discover
             jcr:primaryType="nt:unstructured"
             text="Discover"
             value="Discover"/>
-        <consider
+        <Consider
             jcr:primaryType="nt:unstructured"
             text="Consider"
             value="Consider"/>
-        <decide
+        <Decide
             jcr:primaryType="nt:unstructured"
             text="Decide"
             value="Decide"/>
-        <salesenabelment
+        <SalesEnablement
             jcr:primaryType="nt:unstructured"
             text="Sales Enablement"
             value="Sales Enablement"/>

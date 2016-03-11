@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Widget"
-    fieldLabel="Audience Type"
-    name="./jcr:content/metadata/hds:audiencetype"
+    defaultValue="na"
+	fieldLabel="Audience Type"
+    name="./dc:audiencetype"
     type="select"
     xtype="selection">
     <options jcr:primaryType="cq:WidgetCollection">
-        <strategic
+        <na
             jcr:primaryType="nt:unstructured"
-            text="Strategic"
-            value="Strategic"/>
-        <business
+            text="N/A"
+            value="na"/>
+        <Business
             jcr:primaryType="nt:unstructured"
             text="Business"
             value="Business"/>
-        <technical
+        <Technical
             jcr:primaryType="nt:unstructured"
             text="Technical"
             value="Technical"/>
-        <internal
+        <Strategic
+            jcr:primaryType="nt:unstructured"
+            text="Strategic"
+            value="Strategic"/>
+        <Internal
             jcr:primaryType="nt:unstructured"
             text="Internal"
             value="Internal"/>

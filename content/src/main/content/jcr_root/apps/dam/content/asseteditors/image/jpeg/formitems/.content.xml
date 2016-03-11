@@ -2,26 +2,28 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:WidgetCollection">
     <title/>
-    <description/>
-    <tags/>
-    <creator/>
-    <contributor/>
-    <language/>
-    <copyright/>
-    <owner/>
-    <terms/>
-    <expires/>
-    <onTime/>
-    <offTime/>
-    <restrictions/>
-    <tool/>
-    <keywords/>
-    <contentAuthor/>
-    <jobid/>
-    <contentdate/>
-    <startdate/>
-    <enddate/>
-    <buyersjourney/>
-    <audiencetype/>
-    <gated/>
+    <checkin/>
+	<businessowneremail/>
+    <summary/>
+	<description/>
+	<tags/>
+	<keywords/>
+	<onTime/>
+	<creationdate/>
+	<expires/>
+	<gated/>
+	<startdate/>
+	<enddate/>
+	<marcomjobid/>
+	<buyersjourney/>
+	<audiencetype/>
+	<indexing/>
+	<publishthis/>
+	<contentid/>
+	<pxcontenttype/>
+	<communicationtype/>
+    <videodetaillink/>
+	 <height/>
+    <width/>
+    <revision/>
 </jcr:root>
