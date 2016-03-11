@@ -648,6 +648,10 @@ ul.stickyNav li:hover a{
   font-weight: 100;
 }
 
+.spec-section .spec-container .table-bordered > tbody > tr > td{
+	vertical-align: middle;	
+}
+
 .spec-section .spec-container .tbd {
   text-align: center;
   height: 670px;
