@@ -180,7 +180,10 @@ $(".hds-main-navigation h5").each(function() {
 	 {
 		 listitem.each(function() {
 		 linktext= $(this).children().text();
+         linktext=linktext.replace("\t","");
+         linktext=linktext.replace("\n","");
          linktext = $.trim(linktext);
+
 			$(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu"); });
 		});                 
      }
@@ -352,12 +355,15 @@ $(document).on('keypress', '#fulltext', function(event) {
 	 	var links = $(this).find("a");
 	 	links.each(function() {
             $(this).click(function(){
-                var text = $(this).text();
+                var year = $(this).text();
+                year=year.replace("\t","");
+         		year=year.replace("\n","");
+				year=$.trim(year);
                 setTimeout(function() {
                 var result=$('.pr:visible').size();
                  if(result==0)
                      result="zero";
-                	searchClick(searchTerm, "year filter",result,searchType,searchTrackEvent);
+                	searchClick(year, "year filter",result,searchType,searchTrackEvent);
     			 }, 1500);
              });
         });
@@ -389,13 +395,15 @@ $('.newsEvents-category-list .news-listing').each(function() {
 	 	var links = $(this).find("a");
 	 	links.each(function() {
             $(this).click(function(){
-                console.log("left na clicked........");
-                var text = $(this).text();
+                var eventType = $(this).text();
+                 eventType=eventType.replace("\t","");
+         		eventType=eventType.replace("\n","");
+				eventType=$.eventType(text);
                 setTimeout(function() {
                 var result=$('.pr:visible').size();
                  if(result==0)
                      result="zero";
-                	searchClick($.trim(text), "Event Filter",result,"event","specificSearchClick");
+                	searchClick($.trim(eventType), "Event Filter",result,"event","specificSearchClick");
     			 }, 1500);
              });
         });
