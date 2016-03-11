@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.jcr.Node;
@@ -26,11 +27,13 @@ import org.supercsv.io.CsvBeanReader;
 import org.supercsv.io.ICsvBeanReader;
 import org.supercsv.prefs.CsvPreference;
 
-import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.dam.api.Asset;
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageManager;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.PageUtils;
+import com.hdscorp.cms.util.ServiceUtil;
 
 /**
  * Useful for get all the data from CSV excel sheet and store each row data in a
@@ -53,29 +56,38 @@ public class LMSImporterService {
 
 	public void saveLMLResponse(String cvsFilePath, String storagePath) {
 
-		List<LMSBean> listLMLbean = readCSVFile(cvsFilePath);
+		List<LMSBean> listLMSbean = readCSVFile(cvsFilePath);
 
 		Session session = JcrUtilService.getSession();
-		Node parentNode = null;
-		Node jcrNode = null;
 		try {
+			Resource resource = null;
+			resource = resourceResolver.resolve(storagePath);
+			Page page = resource.adaptTo(Page.class);
 
-			parentNode = session.getNode(storagePath.substring(0, storagePath.indexOf("jcr:content")));
-			jcrNode = session.getNode(storagePath);
-			if (jcrNode != null) {
-				jcrNode.remove();
-				session.save();
-				parentNode.addNode("jcr:content", "cq:PageContent");
-				session.save();
+			Iterator<Page> requiredRoot = page.listChildren();
+			if (requiredRoot.hasNext()) {
+				while (requiredRoot.hasNext()) {
+					Page child = requiredRoot.next();
+					Node childNode = child.adaptTo(Node.class);
+					childNode.remove();
+					session.save();
+				}
 			}
+
+			for (LMSBean LMSbean : listLMSbean) {
+				createLMLNode(session, storagePath, LMSbean);
+			}
+
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
 			e.printStackTrace(new PrintWriter(stack));
 			log.error("Error " + stack.toString());
-		}
 
-		for (LMSBean LMLbean : listLMLbean) {
-			createLMLNode(session, storagePath, LMLbean);
+		} finally {
+			if (null != resourceResolver) {
+				resourceResolver.close();
+			}
+
 		}
 
 	}
@@ -84,7 +96,7 @@ public class LMSImporterService {
 
 		log.info("Start execution of readCSVFile method::" + csvFileName);
 
-		List<LMSBean> listLMLbean = new ArrayList<LMSBean>();
+		List<LMSBean> listLMSbean = new ArrayList<LMSBean>();
 		ICsvBeanReader beanReader = null;
 		CellProcessor[] processors = new CellProcessor[] { null, // keyword
 				null, // DeliveryStyle
@@ -117,7 +129,7 @@ public class LMSImporterService {
 			while ((LMSbean = beanReader.read(LMSBean.class, header, processors)) != null) {
 				row++;
 				if (row > 1) {
-					listLMLbean.add(LMSbean);
+					listLMSbean.add(LMSbean);
 					log.info("LMS keyword :" + LMSbean.getKeyword());
 				}
 			}
@@ -134,43 +146,93 @@ public class LMSImporterService {
 				}
 			}
 		}
-		return listLMLbean;
+		return listLMSbean;
 	}
 
-	private void createLMLNode(Session session, String storagePath, LMSBean LMLbean) {
+	private void createLMLNode(Session session, String storagePath, LMSBean LMSbean) {
 		try {
 			final Node parentNode = session.getNode(storagePath);
+
 			if (parentNode != null) {
+				Long pageName = Calendar.getInstance().getTimeInMillis();
 
-				long nodeName = Calendar.getInstance().getTimeInMillis();
+				// this.resourceResolver =
+				// this.resourceResolverFactory.getAdministrativeResourceResolver(null);
+				Page prodPage = null;
+				Resource resource = null;
+				resource = resourceResolver.resolve(storagePath);
+				Page pg = resource.adaptTo(Page.class);
+				// session = this.resourceResolver.adaptTo(Session.class);
 
-				Node parentRootNode = null;
+				if (session != null) {
 
-				if (PageUtils.doesNodeExist(parentNode, LMLbean.getIltFacilityCountry()) == -1) {
-					parentRootNode = parentNode.addNode(LMLbean.getIltFacilityCountry(), JcrConstants.NT_UNSTRUCTURED);
-				} else {
-					parentRootNode = session.getNode(storagePath + LMLbean.getIltFacilityCountry() + "/");
+					// Create Page
+					PageManager pageManager = this.resourceResolver.adaptTo(PageManager.class);
+					if (!PageUtils.doesPageExist(pg, LMSbean.getIltFacilityCountry().replaceAll(" ", "-"))) {
+						prodPage = pageManager.create(parentNode.getPath(),
+								LMSbean.getIltFacilityCountry().replaceAll(" ", "-"), null,
+								LMSbean.getIltFacilityCountry());
+						Node pageNode = prodPage.adaptTo(Node.class);
+						// Node rootChildNode = resource.adaptTo(Node.class);
+						Node jcrNode = null;
+
+						resource = resourceResolver.getResource(prodPage.getPath().concat("/jcr:content"));
+						Node jcr = resource.adaptTo(Node.class);
+						jcr.remove();
+						session.save();
+						jcrNode = pageNode.addNode("jcr:content", "cq:PageContent");
+						session.save();
+
+					} else {
+
+						log.info("inside else" + parentNode.getPath()
+								+ LMSbean.getIltFacilityCountry().replaceAll(" ", "-"));
+						prodPage = pageManager.create(
+								parentNode.getPath().concat("/")
+										+ LMSbean.getIltFacilityCountry().replaceAll(" ", "-").concat("/"),
+								pageName.toString(), null, LMSbean.getIltFacilityCountry());
+
+						resource = resourceResolver.getResource(prodPage.getPath().concat("/jcr:content"));
+						Node jcr = resource.adaptTo(Node.class);
+						Node pageNode = prodPage.adaptTo(Node.class);
+						jcr.remove();
+						session.save();
+
+						Node jcrNode = pageNode.addNode("jcr:content", "cq:PageContent");
+						session.save();
+						resource = resourceResolver.getResource(prodPage.getPath().concat("/jcr:content"));
+
+						Node rootChildNode = resource.adaptTo(Node.class);
+						log.info("chid node testing" + rootChildNode.getPath());
+						rootChildNode.setProperty(ServiceConstants.LML_KEYWORD, LMSbean.getKeyword());
+						rootChildNode.setProperty(ServiceConstants.LML_DELIVERY_STYLE, LMSbean.getDeliveryStyle());
+						rootChildNode.setProperty(ServiceConstants.LML_GLOBAL_ID, LMSbean.getGlobalId());
+						rootChildNode.setProperty(ServiceConstants.LML_JCR_TRANING_TITLE, LMSbean.getTrainingTitle());
+						rootChildNode.setProperty(ServiceConstants.LML_JCR_TRANING_DESC, LMSbean.getTrainingDesc());
+						rootChildNode.setProperty(ServiceConstants.LML_ILT_FACILITY_COUNTRY,
+								LMSbean.getIltFacilityCountry());
+						rootChildNode.setProperty(ServiceConstants.LML_ILT_FACILITY_CITY, LMSbean.getIltFacilityCity());
+						rootChildNode.setProperty(ServiceConstants.LML_ILT_FACILITY_NAME, LMSbean.getIltFacilityName());
+						rootChildNode.setProperty(ServiceConstants.LML_LANGUAGE, LMSbean.getLanguage());
+						Calendar calendarStartDate = Calendar.getInstance();
+						calendarStartDate.setTime(ServiceUtil.getDatefromString(LMSbean.getTrainingStartDate(),
+								ServiceConstants.DATE_FORMAT_FROM_LML));
+						rootChildNode.setProperty(ServiceConstants.LML_TRANING_START_DATE, calendarStartDate);
+						Calendar calendarEndDate = Calendar.getInstance();
+						calendarEndDate.setTime(ServiceUtil.getDatefromString(LMSbean.getTrainingEndDate(),
+								ServiceConstants.DATE_FORMAT_FROM_LML));
+						rootChildNode.setProperty(ServiceConstants.LML_TRANING_END_DATE, calendarEndDate);
+						rootChildNode.setProperty(ServiceConstants.LML_COST_CURRENCY, LMSbean.getCostCurrency());
+						rootChildNode.setProperty(ServiceConstants.LML_TRANING_PRICE, LMSbean.getTrainingPrice());
+						rootChildNode.setProperty(ServiceConstants.LML_COURSE_DEEP_LINK, LMSbean.getCourseDeeplink());
+						rootChildNode.setProperty(ServiceConstants.LML_CHILD_NODE, "true");
+
+						session.save();
+					}
 
 				}
-
-				Node rootChildNode = parentRootNode.addNode(String.valueOf(nodeName), JcrConstants.NT_UNSTRUCTURED);
-
-				rootChildNode.setProperty(ServiceConstants.LML_KEYWORD, LMLbean.getKeyword());
-				rootChildNode.setProperty(ServiceConstants.LML_DELIVERY_STYLE, LMLbean.getDeliveryStyle());
-				rootChildNode.setProperty(ServiceConstants.LML_GLOBAL_ID, LMLbean.getGlobalId());
-				rootChildNode.setProperty(ServiceConstants.LML_TRANING_TITLE, LMLbean.getTrainingTitle());
-				rootChildNode.setProperty(ServiceConstants.LML_TRANING_DESC, LMLbean.getTrainingDesc());
-				rootChildNode.setProperty(ServiceConstants.LML_ILT_FACILITY_COUNTRY, LMLbean.getIltFacilityCountry());
-				rootChildNode.setProperty(ServiceConstants.LML_ILT_FACILITY_CITY, LMLbean.getIltFacilityCity());
-				rootChildNode.setProperty(ServiceConstants.LML_ILT_FACILITY_NAME, LMLbean.getIltFacilityName());
-				rootChildNode.setProperty(ServiceConstants.LML_LANGUAGE, LMLbean.getLanguage());
-				rootChildNode.setProperty(ServiceConstants.LML_TRANING_START_DATE, LMLbean.getTrainingStartDate());
-				rootChildNode.setProperty(ServiceConstants.LML_TRANING_END_DATE, LMLbean.getTrainingEndDate());
-				rootChildNode.setProperty(ServiceConstants.LML_COST_CURRENCY, LMLbean.getCostCurrency());
-				rootChildNode.setProperty(ServiceConstants.LML_TRANING_PRICE, LMLbean.getTrainingPrice());
-				rootChildNode.setProperty(ServiceConstants.LML_COURSE_DEEP_LINK, LMLbean.getCourseDeeplink());
 			}
-			session.save();
+
 		}
 
 		catch (Exception e) {
@@ -194,10 +256,6 @@ public class LMSImporterService {
 			e.printStackTrace(new PrintWriter(stack));
 			log.error("Error while reading file from DAM " + stack.toString());
 
-		} finally {
-			if (null != resourceResolver) {
-				resourceResolver.close();
-			}
 		}
 		return null;
 	}
