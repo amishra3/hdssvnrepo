@@ -1,7 +1,12 @@
 package com.hdscorp.cms.servlet;
 
 import java.io.IOException;
+import java.util.Calendar;
 
+import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
+import javax.jcr.RepositoryException;
+import javax.jcr.ValueFormatException;
 import javax.servlet.ServletException;
 
 import org.apache.felix.scr.annotations.Properties;
@@ -12,6 +17,7 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.request.RequestDispatcherOptions;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
 import com.day.cq.dam.api.Asset;
@@ -30,7 +36,7 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 
 		String pdfPath= request.getRequestURI();
 		//Make this configurable 
-		String forwardPath = "/content/hdscorp/en_us/home";
+		String forwardPath = "/content/hdscorp/en_us/newsandinsights/resources/gated-detail.html";
 		String forwardPathQueryStringKey = "?pdfPath=";
 		String refererString = request.getHeader("Referer") ;
 		
@@ -38,10 +44,10 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 			if(pdfPath.toLowerCase().contains(".pdf") && !pdfPath.toLowerCase().contains(".json") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
 				
 				if(isGated(pdfPath, request)){
-					//Check referrer logic and if that is the same, then skip the servlet
-					//skipServlet(request, response, options);
-					//Else - 
-					request.getRequestDispatcher(forwardPath+forwardPathQueryStringKey+pdfPath).forward(request, response);
+					String targetURL = forwardPath+forwardPathQueryStringKey+pdfPath ;
+//					String targetURL = forwardPath ;
+					request.setAttribute("pdfPath", pdfPath);
+					request.getRequestDispatcher(targetURL).forward(request, response);
 				}else{
 					skipServlet(request, response, options);
 				}
@@ -61,6 +67,17 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		
 	}
 	
+	private boolean checkValidReferer(String referer,String gatingParam){
+		boolean isValid = false ;
+		
+		if(referer==null)
+			referer="";
+		
+		isValid = (referer.indexOf(".hds.com")!=-1  && gatingParam!=null && gatingParam.equalsIgnoreCase("1"));
+		
+		return isValid;
+	}
+	
 	private boolean isGated(String pdfPath,SlingHttpServletRequest request) throws ServletException, IOException {
 
 		boolean isGatedReturnFlag = false ;
@@ -72,12 +89,39 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		ResourceResolver resourceResolver = request.getResourceResolver();
 		Resource res = resourceResolver.getResource(pdfPath);
 		Asset asset = res.adaptTo(Asset.class);
-		//If the resource exists
 		if(asset!=null){
-			String resourceTitle = asset.getMetadataValue("dc:title");
-			String isGated = asset.getMetadataValue("dc:gated");
-			String gatedStartedDate = asset.getMetadataValue("dc:startdate");
-			String gatedEndDate = asset.getMetadataValue("dc:enddate");
+			try {
+				Node resourceNode = res.adaptTo(Node.class) ;
+				Node metaDataNode= resourceNode.getNode("jcr:content/metadata");
+				String resourceTitle = asset.getMetadataValue("dc:title");
+				String isGated = asset.getMetadataValue("dc:gated");
+				String gatedStartedDate = asset.getMetadataValue("dc:startdate");
+				String gatedEndDate = asset.getMetadataValue("dc:enddate");
+				if(isGated!=null && isGated.equalsIgnoreCase("Yes") && gatedStartedDate!=null && gatedEndDate!=null){
+					Calendar currDate =  Calendar.getInstance();
+					Calendar startDate = metaDataNode.getProperty("dc:startdate").getValue().getDate();
+					Calendar endDate = metaDataNode.getProperty("dc:enddate").getValue().getDate();
+					
+					long startTime = startDate.getTimeInMillis();
+					long endTime = endDate.getTimeInMillis();
+					long currTime = currDate.getTimeInMillis();
+					
+					if(currTime >= startTime && currTime < endTime){
+						isGatedReturnFlag=true;
+					}	
+				}
+				
+			} catch (ValueFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (PathNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RepositoryException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 		}else{
 			isGatedReturnFlag =false;
 		}

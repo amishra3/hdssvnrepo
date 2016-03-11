@@ -35,7 +35,10 @@ public class PDFMetaModel {
 	private PDFNode pdfNode;
 
 	public PDFNode getPdfNode() {
-		String pdfPath = request.getParameter("pdfPath");		
+		String pdfPath = request.getParameter("pdfPath");	
+		if(pdfPath==null){
+			pdfPath = (String)request.getAttribute("pdfPath");
+		}
 		log.info("Start Execution of getPdfNode() PdfPath::" + pdfPath);
 		try {
 			if (pdfPath != null && !pdfPath.isEmpty() && pdfPath.toLowerCase().contains(".pdf")) {
