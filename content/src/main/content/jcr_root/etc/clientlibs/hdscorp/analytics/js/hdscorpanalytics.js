@@ -398,7 +398,7 @@ $('.newsEvents-category-list .news-listing').each(function() {
                 var eventType = $(this).text();
                  eventType=eventType.replace("\t","");
          		eventType=eventType.replace("\n","");
-				eventType=$.eventType(text);
+				eventType=$.trim(eventType);
                 setTimeout(function() {
                 var result=$('.pr:visible').size();
                  if(result==0)
