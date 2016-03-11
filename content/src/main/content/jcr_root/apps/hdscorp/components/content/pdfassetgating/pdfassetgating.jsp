@@ -29,7 +29,14 @@ request.setAttribute("pdfPath", pdfPath);
                       		<div class="gated-heading col-sm-12">
                             
                             	<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-no-pad">
-                        			<img src=" ${pdfNode.imagePath}" alt="" class="img-responsive">
+    							<c:choose>
+                                        <c:when test="${not empty pdfNode.imagePath}">
+                                        <img src="${pdfNode.imagePath}" alt="" class="img-responsive">
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img src="${properties.pdfimage}" alt="" class="img-responsive">
+                                        </c:otherwise>
+                           		 </c:choose>
                                 </div>
                                 <div class="col-lg-8 col-sm-8 col-xs-8 col-md-8"> 
                                     <h3>${pdfNode.createdDate}</h3>
@@ -69,5 +76,6 @@ request.setAttribute("pdfPath", pdfPath);
 
                     </div>
                 </div>
+       </div>
 
       </c:if>

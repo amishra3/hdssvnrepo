@@ -47,6 +47,11 @@
                         fieldLabel="Thanks you Message"
                         name="./pdfthanksyoumsg"
                         xtype="textfield"/>
+                    <pdfimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="PDF icon (Optional)"
+                        name="./pdfimage"
+                        xtype="pathfield"/>
                 </items>
             </tab1>
         </items>
