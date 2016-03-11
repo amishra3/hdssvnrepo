@@ -239,7 +239,7 @@ public final class ServiceConstants {
 	public static final String HTTPCLIENT_PID = "com.day.commons.httpclient";
 	
 	
-	/** MLL Service Constraints
+	/** MLS Service Constraints
 	 * 
 	 */
 	public static final String FILE_CSV_PATH = "file.csv.path";
@@ -262,6 +262,11 @@ public final class ServiceConstants {
 	public static final String LML_COST_CURRENCY= "costCurrency";
 	public static final String LML_TRANING_PRICE= "trainingPrice";
 	public static final String LML_COURSE_DEEP_LINK= "courseDeeplink";
+	
+	public static final String LML_JCR_TRANING_TITLE= "jcr:title";
+	public static final String LML_JCR_TRANING_DESC= "jcr:description";
+	public static final String LML_CHILD_NODE= "childNode";
+	public static final String DATE_FORMAT_TO_DISPLAY_LML = "MM/dd/yyyy";
 	
 	/**
 	 * Shorten URL
