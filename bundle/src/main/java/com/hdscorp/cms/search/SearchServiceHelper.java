@@ -502,6 +502,8 @@ public class SearchServiceHelper {
 
 		searchParams.put("type", TYPE);
 		searchParams.put("path", path);
+		searchParams.put("property", "jcr:content/jcr:title");
+		searchParams.put("property.operation", "exists");
 		int groupCnt = 1;
 		if (lowerBound!=null || upperBound!=null ) {
 			
