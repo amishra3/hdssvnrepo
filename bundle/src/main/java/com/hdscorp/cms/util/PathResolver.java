@@ -36,30 +36,34 @@ public final class PathResolver {
 	public static String getShortURLPath(final String pageFullPath){
 		String shortURLPath = null;
 		String pageUrlPath = null;
-		try{
-			final ResourceResolver resourceResolver = JcrUtilService.getResourceResolver();
-			LOG.debug("resourceResolver retunred---- "+resourceResolver);
-			
-	   		pageUrlPath= getShortUrl(pageFullPath, resourceResolver);
-	   		if(!pageUrlPath.startsWith("/")){
-	   			pageUrlPath="/"+pageUrlPath;
-	   		}
-	   		shortURLPath=resourceResolver.map(pageUrlPath);
-		   	shortURLPath= getShortUrl(shortURLPath, resourceResolver);
-		   	
-		   	if(((null != pageFullPath) && pageFullPath.endsWith(com.hdscorp.cms.constants.GlobalConstants.HTML_EXTENSION)) || pageFullPath.contains(GlobalConstants.DAM) || pageFullPath.contains(GlobalConstants.RENDITIONS) || pageFullPath.contains("#")){
-    		}else{
-                shortURLPath += GlobalConstants.HTML_EXTENSION;
-    		}
-		   	if(!shortURLPath.startsWith("/")){
-		   		shortURLPath="/"+shortURLPath;
-	   		}
-		   	if(shortURLPath.contains(EN_US)) {
-//		   		shortURLPath = shortURLPath.replace(EN_US, EN);
-		   	}
-            //LOG.info("Returning short path ::" + shortURLPath);
-		}catch(Exception e){
-            LOG.error(" Error while getting URL for the path :" + pageFullPath + " and the error message is :", e);
+		if(pageFullPath!=null && !pageFullPath.startsWith("http") && !pageFullPath.toLowerCase().contains(".com")){
+			try{
+				final ResourceResolver resourceResolver = JcrUtilService.getResourceResolver();
+				LOG.debug("resourceResolver retunred---- "+resourceResolver);
+				
+		   		pageUrlPath= getShortUrl(pageFullPath, resourceResolver);
+		   		if(!pageUrlPath.startsWith("/")){
+		   			pageUrlPath="/"+pageUrlPath;
+		   		}
+		   		shortURLPath=resourceResolver.map(pageUrlPath);
+			   	shortURLPath= getShortUrl(shortURLPath, resourceResolver);
+			   	
+			   	if(((null != pageFullPath) && pageFullPath.endsWith(com.hdscorp.cms.constants.GlobalConstants.HTML_EXTENSION)) || pageFullPath.contains(GlobalConstants.DAM) || pageFullPath.contains(GlobalConstants.RENDITIONS) || pageFullPath.contains("#")){
+	    		}else{
+	                shortURLPath += GlobalConstants.HTML_EXTENSION;
+	    		}
+			   	if(!shortURLPath.startsWith("/")){
+			   		shortURLPath="/"+shortURLPath;
+		   		}
+			   	if(shortURLPath.contains(EN_US)) {
+	//		   		shortURLPath = shortURLPath.replace(EN_US, EN);
+			   	}
+	            //LOG.info("Returning short path ::" + shortURLPath);
+			}catch(Exception e){
+	            LOG.error(" Error while getting URL for the path :" + pageFullPath + " and the error message is :", e);
+			}
+		}else{
+			shortURLPath=pageFullPath;
 		}
 		return shortURLPath;
 	  }
