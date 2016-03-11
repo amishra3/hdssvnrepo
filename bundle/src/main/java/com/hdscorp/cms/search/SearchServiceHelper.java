@@ -490,4 +490,87 @@ public class SearchServiceHelper {
 		SearchResult results = query.getResult();
 		return results;
 	}
+
+
+
+	public SearchResult getTrainingResults(String path, String searchKeyword,String startDate,
+			String lowerBound, String upperBound,
+			ResourceResolver resourceResolver, String orderByProperty,
+			String orderBySort) {
+
+		Map<String, String> searchParams = new HashMap<String, String>();
+
+		searchParams.put("type", TYPE);
+		searchParams.put("path", path);
+		int groupCnt = 1;
+		searchParams.put("group." + groupCnt + "_group.1_daterange.property",
+				startDate);
+		
+		if(lowerBound!=null && !lowerBound.isEmpty()){
+		searchParams.put("group." + groupCnt + "_group.1_daterange.lowerBound",
+				lowerBound);
+		}
+		if(upperBound!=null && !upperBound.isEmpty()){
+		searchParams.put("group." + groupCnt + "_group.1_daterange.upperBound",
+				upperBound);
+		} else {
+			searchParams.put("group." + groupCnt + "_group.1_daterange.upperBound",
+					"0");
+		}
+		groupCnt++;
+		if (searchKeyword != null) {
+			searchParams.put("group." + groupCnt + "_group.p.or", "true");
+			
+			searchParams.put("group." + groupCnt + "_group.1_fulltext",
+					searchKeyword);
+			searchParams.put("group." + groupCnt + "_group.1_fulltext.relPath",
+					"jcr:content/@jcr:title");
+			searchParams.put("group." + groupCnt + "_group.2_fulltext",
+					searchKeyword);
+			searchParams.put("group." + groupCnt + "_group.2_fulltext.relPath",
+					"jcr:content/@jcr:description");
+			searchParams.put("group." + groupCnt + "_group.3_fulltext",
+					searchKeyword);
+			searchParams.put("group." + groupCnt + "_group.3_fulltext.relPath",
+					"jcr:content/@iltFacilityCity");
+			searchParams.put("group." + groupCnt + "_group.4_fulltext",
+					searchKeyword);
+			searchParams.put("group." + groupCnt + "_group.4_fulltext.relPath",
+					"jcr:content/@iltFacilityCountry");
+			searchParams.put("group." + groupCnt + "_group.5_fulltext",
+					searchKeyword);
+			searchParams.put("group." + groupCnt + "_group.5_fulltext.relPath",
+					"jcr:content/@iltFacilityName");
+			searchParams.put("group." + groupCnt + "_group.6_fulltext",
+					searchKeyword);
+			searchParams.put("group." + groupCnt + "_group.6_fulltext.relPath",
+					"jcr:content/@Keyword");
+		}
+
+		searchParams.put("p.guesstotal", "false");
+
+		searchParams.put("p.offset", "0");
+		searchParams.put("p.limit", "-1");
+
+		if (orderByProperty != null && !orderByProperty.isEmpty()) {
+			searchParams.put("orderby", orderByProperty);
+		} else {
+			searchParams.put("orderby", ORDER_BY_PROPERTY);
+		}
+		if (orderBySort != null && !orderBySort.isEmpty()) {
+			// Not needed as by default sort would be ascending
+			// searchParams.put("orderby.sort", ORDER_BY_SORT);
+		} else {
+			searchParams.put("orderby.sort", "desc");
+		}
+		// System.out.println("before cretae query************"
+		// + searchParams.toString());
+		LOG.debug("before cretae query************" + searchParams.toString());
+		Query query = queryBuilder.createQuery(
+				PredicateGroup.create(searchParams),
+				resourceResolver.adaptTo(Session.class));
+		SearchResult results = query.getResult();
+		return results;
+	}
 }
+
