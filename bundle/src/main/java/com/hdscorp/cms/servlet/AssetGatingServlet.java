@@ -15,7 +15,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
 import com.day.cq.dam.api.Asset;
-import com.hdscorp.cms.util.PathResolver;
 
 @SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" })
 @Properties({
@@ -37,32 +36,12 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		
 		try {
 			if(pdfPath.toLowerCase().contains(".pdf") && !pdfPath.toLowerCase().contains(".json") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
-				if(pdfPath.startsWith("/en-us/pdf")){
-					pdfPath=pdfPath.replace("/en-us/pdf", "/content/dam/public/en_us/pdfs");
-				}
-				//Check Referrer, if same as the current URL, then the user has already filled the form
-				//if(refererString.....){
-				//	options.setForceResourceType("dam/asset");
-				//	request.getRequestDispatcher(request.getResource(),options).forward(request, response);
-				//}
-				ResourceResolver resourceResolver = request.getResourceResolver();
-				Resource res = resourceResolver.getResource(pdfPath);
-				Asset asset = res.adaptTo(Asset.class);
-				//If the resoure exists
-				if(asset!=null){
-					String resourceTitle = asset.getMetadataValue("dc:title");
-					String isGated = asset.getMetadataValue("hds:gated");
-//					String gatedStartedDate = asset.getMetadataValue("hds:startdate");
-//					String gatedStartedDate = asset.getMetadataValue("hds:contentdate");
-					
-					//Get resource meta information and check if PDF has isGated property set to true and the date is within gated date range set on the pdf
-					//if asset is gated then, set forwardPath to the form page
-					if(resourceTitle.contains("criteria")){
-						request.getRequestDispatcher(forwardPath+forwardPathQueryStringKey+pdfPath).forward(request, response);						
-					}else{
-						//Setting the PDF resource type to following will skip this servlet and will go to the normal pdf flow.
-						skipServlet(request, response, options);
-					}
+				
+				if(isGated(pdfPath, request)){
+					//Check referrer logic and if that is the same, then skip the servlet
+					//skipServlet(request, response, options);
+					//Else - 
+					request.getRequestDispatcher(forwardPath+forwardPathQueryStringKey+pdfPath).forward(request, response);
 				}else{
 					skipServlet(request, response, options);
 				}
@@ -81,5 +60,30 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		request.getRequestDispatcher(request.getResource(),options).forward(request, response);
 		
 	}
+	
+	private boolean isGated(String pdfPath,SlingHttpServletRequest request) throws ServletException, IOException {
+
+		boolean isGatedReturnFlag = false ;
+		
+		if(pdfPath.startsWith("/en-us/pdf")){
+			pdfPath=pdfPath.replace("/en-us/pdf", "/content/dam/public/en_us/pdfs");
+		}
+
+		ResourceResolver resourceResolver = request.getResourceResolver();
+		Resource res = resourceResolver.getResource(pdfPath);
+		Asset asset = res.adaptTo(Asset.class);
+		//If the resource exists
+		if(asset!=null){
+			String resourceTitle = asset.getMetadataValue("dc:title");
+			String isGated = asset.getMetadataValue("dc:gated");
+			String gatedStartedDate = asset.getMetadataValue("dc:startdate");
+			String gatedEndDate = asset.getMetadataValue("dc:enddate");
+		}else{
+			isGatedReturnFlag =false;
+		}
+		
+		return isGatedReturnFlag;
+	}
+
 
 }
