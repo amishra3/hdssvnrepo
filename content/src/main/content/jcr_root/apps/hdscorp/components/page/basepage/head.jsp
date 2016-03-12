@@ -71,4 +71,13 @@
       <% } %>
       <title>${titleprefix}<%= (StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")) == null || StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")).equals("")) ? StringEscapeUtils.escapeHtml4(currentPage.getTitle()):StringEscapeUtils.escapeHtml4(properties.get("pageTitle", ""))%></title>
       
+	  <c:if test="${not empty pageProperties.insertnocacheheaders}">
+		  <% 
+			  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+			  response.setHeader("Dispatcher", "no-cache");
+			  response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+			  response.setHeader("Expires", "0"); // Proxies.
+		  %>
+	  </c:if>
+      
 </head>
