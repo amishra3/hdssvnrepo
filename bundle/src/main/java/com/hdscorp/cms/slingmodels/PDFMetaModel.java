@@ -47,13 +47,11 @@ public class PDFMetaModel {
 		if(pdfPath==null){
 			pdfPath = request.getRequestURI();
 		}
-		if(pdfPath!=null){
-			pdfPath = HdsCorpCommonUtils.pdfJCRPath(pdfPath);
-		}
 		
 		log.info("Start Execution of getPdfNode() PdfPath::" + pdfPath);
 		try {
 			if (pdfPath != null && !pdfPath.isEmpty() && pdfPath.toLowerCase().contains(".pdf")) {
+				pdfPath = HdsCorpCommonUtils.pdfJCRPath(pdfPath);
 				pdfNode = new PDFNode();
 				Resource resource = resourceResolver.resolve(pdfPath);
 
