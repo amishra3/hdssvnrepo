@@ -80,6 +80,7 @@ div.cs-highlight-box-message span.close-quote{background-image:url(../images/spr
 .business-specific .specific-benefit a{color:#ffffff; text-decoration:none;}
 .business-specific .specific-benefit a:hover{text-decoration:underline;}
 
+.business-specific .specific-benefit .btn-square-white.app-label a:hover{text-decoration:none;}
 .business-specific .specific-benefit ul li.hexagon a{color:#ce0000; text-decoration:none;}
 .business-specific .specific-benefit ul li.hexagon a:hover{text-decoration:none; color: #ac1f25;}
 
@@ -311,7 +312,7 @@ ul.stickyNav li:hover a{
 }
 
 @media only screen and (max-width: 992px) {
-  .resources-section .resources-container .resources-title, .fb-section .fb-container .fb-title{display:none;}
+  /*.resources-section .resources-container .resources-title, .fb-section .fb-container .fb-title{display:none;}*/
   ul.stickyNav li {
     margin: 0 0 0 15px;
   }
