@@ -3,6 +3,7 @@ package com.hdscorp.cms.slingmodels;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -143,6 +144,9 @@ public class EventDataModel {
 						eventNode.setYear(Integer.parseInt(
 								startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
 
+						eventNode.setMonthInt((Integer
+								.parseInt(startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
+
 						eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(
 								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
 								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
@@ -205,20 +209,25 @@ public class EventDataModel {
 			for (int index = 0; index < listMapsUpcoming.size(); index++) {
 				Map<String, String> hsmap = listMapsUpcoming.get(index);
 				EventNode eventNode = new EventNode();
+				String startDate = hsmap.get(ServiceConstants.JSON_UPDATED_DATE);
+
 				eventNode
-						.setEventMonth(ServiceUtil
-								.getMonth(Integer.parseInt(hsmap.get(ServiceConstants.JSON_UPDATED_DATE).substring(0,
-										hsmap.get(ServiceConstants.JSON_UPDATED_DATE)
-												.indexOf(ServiceConstants.SLASH_SEPRATOR)))
-										- 1)
-								.toUpperCase()
-								+ ServiceConstants.EMPTY_SPACE
-								+ hsmap.get(ServiceConstants.JSON_UPDATED_DATE)
-										.substring(hsmap.get(ServiceConstants.JSON_UPDATED_DATE)
-												.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
-				eventNode.setYear(Integer.parseInt(hsmap.get(ServiceConstants.JSON_UPDATED_DATE).substring(
-						hsmap.get(ServiceConstants.JSON_UPDATED_DATE).lastIndexOf(ServiceConstants.SLASH_SEPRATOR)
-								+ 1)));
+						.setEventMonth(
+								ServiceUtil
+										.getMonth(Integer.parseInt(startDate.substring(0,
+												startDate.indexOf(ServiceConstants.SLASH_SEPRATOR))) - 1)
+										.toUpperCase() + ServiceConstants.EMPTY_SPACE
+										+ startDate
+												.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
+
+				eventNode.setYear(Integer
+						.parseInt(startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
+
+				eventNode.setMonthInt(
+						(Integer.parseInt(startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
+				eventNode.setMonthInt(
+						(Integer.parseInt(startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
+
 				eventNode.setIsWebcast("true");
 				eventNode.setEventTitle(hsmap.get(ServiceConstants.JSON_TITLE));
 				eventNode.setEventStartDate(hsmap.get(ServiceConstants.JSON_UPDATED_DATE));
@@ -245,7 +254,8 @@ public class EventDataModel {
 		if (listOfNodes != null && listOfNodes.size() > 0) {
 			Collections.sort(listOfNodes, EventObject.new CompareByMonth());
 			Collections.sort(listOfNodes, EventObject.new CompareByYear());
-			eventFinalNodesData = new HashMap<String, List<EventNode>>();
+
+			eventFinalNodesData = new LinkedHashMap<String, List<EventNode>>();
 			for (int index = 0; index < listOfNodes.size(); index++) {
 				EventNode eventNode = listOfNodes.get(index);
 				if (!eventFinalNodesData.containsKey(eventNode.getEventMonth())) {
