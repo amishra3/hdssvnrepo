@@ -1,9 +1,11 @@
 package com.hdscorp.cms.util;
 
+import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.AlgorithmParameterSpec;
+import java.util.Calendar;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -12,10 +14,20 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
+import javax.jcr.RepositoryException;
+import javax.jcr.ValueFormatException;
+import javax.servlet.ServletException;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.day.cq.dam.api.Asset;
 
 
 // A simple contains common utilities like , encryption , decryption , random numbers, hash etc
@@ -163,4 +175,75 @@ public class HdsCorpCommonUtils {
 		System.out.println(HdsCorpCommonUtils.decryptAes("Z8iwc6Uz2M+EpI1l6kLxPQ=="));
 		//System.out.println(decryptAes("DDF6C9A1DF4D57AEF043CA8610A5A0DEA097AF0B"));
 	}*/
+	
+	public static String pdfJCRPath(String pdfPath){
+		String returnPath = pdfPath ;
+		if(returnPath.startsWith("/en-us/pdf")){
+			returnPath=returnPath.replace("/en-us/pdf", "/content/dam/public/en_us/pdfs");
+			return returnPath;
+		}else{
+			return returnPath;
+		}
+	}
+	
+	public static boolean checkValidReferer(String referer,String gatingParam){
+		boolean showForm = false ;
+		if(referer==null){
+			referer="";
+		}
+		showForm = (referer.indexOf(".hds.com")!=-1  && gatingParam!=null && gatingParam.equalsIgnoreCase("1"));
+		return showForm;
+	}
+	
+	public static boolean isGated(String pdfPath,SlingHttpServletRequest request) throws ServletException, IOException {
+
+		boolean isGatedReturnFlag = false ;
+		
+		pdfPath=pdfJCRPath(pdfPath);
+
+		ResourceResolver resourceResolver = request.getResourceResolver();
+		Resource res = resourceResolver.getResource(pdfPath);
+		Asset asset = res.adaptTo(Asset.class);
+		if(asset!=null){
+			try {
+				Node resourceNode = res.adaptTo(Node.class) ;
+				Node metaDataNode= resourceNode.getNode("jcr:content/metadata");
+				String resourceTitle = asset.getMetadataValue("dc:title");
+				String isGated = asset.getMetadataValue("dc:gated");
+				String gatedStartedDate = asset.getMetadataValue("dc:startdate");
+				String gatedEndDate = asset.getMetadataValue("dc:enddate");
+				if(isGated!=null && isGated.equalsIgnoreCase("Yes") && gatedStartedDate!=null && gatedEndDate!=null){
+					Calendar currDate =  Calendar.getInstance();
+					Calendar startDate = metaDataNode.getProperty("dc:startdate").getValue().getDate();
+					Calendar endDate = metaDataNode.getProperty("dc:enddate").getValue().getDate();
+					
+					long startTime = startDate.getTimeInMillis();
+					long endTime = endDate.getTimeInMillis();
+					long currTime = currDate.getTimeInMillis();
+					
+					if(currTime >= startTime && currTime < endTime){
+						isGatedReturnFlag=true;
+					}	
+				}
+				
+			} catch (ValueFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (PathNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RepositoryException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}else{
+			isGatedReturnFlag =false;
+		}
+		
+		return isGatedReturnFlag;
+	}
+
+	
+	
 }

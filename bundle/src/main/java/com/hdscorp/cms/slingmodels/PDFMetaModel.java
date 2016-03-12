@@ -1,6 +1,8 @@
 package com.hdscorp.cms.slingmodels;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -9,8 +11,10 @@ import org.apache.sling.models.annotations.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.adobe.acs.commons.util.CookieUtil;
 import com.day.cq.dam.api.Asset;
 import com.hdscorp.cms.dao.PDFNode;
+import com.hdscorp.cms.util.HdsCorpCommonUtils;
 import com.hdscorp.cms.util.ServiceUtil;
 
 /**This sling model is used for get all meta data of PDF nodes.
@@ -39,6 +43,14 @@ public class PDFMetaModel {
 		if(pdfPath==null){
 			pdfPath = (String)request.getAttribute("pdfPath");
 		}
+		
+		if(pdfPath==null){
+			pdfPath = request.getRequestURI();
+		}
+		if(pdfPath!=null){
+			pdfPath = HdsCorpCommonUtils.pdfJCRPath(pdfPath);
+		}
+		
 		log.info("Start Execution of getPdfNode() PdfPath::" + pdfPath);
 		try {
 			if (pdfPath != null && !pdfPath.isEmpty() && pdfPath.toLowerCase().contains(".pdf")) {
