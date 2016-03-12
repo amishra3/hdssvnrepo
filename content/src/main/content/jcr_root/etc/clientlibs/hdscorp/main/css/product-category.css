@@ -394,7 +394,7 @@
 
   .category-products .category-promotion{
     border-bottom: 7px solid #f78e1e;
-    border-top: 7px solid #f78e1e;
+    /*border-top: 7px solid #f78e1e;*/
     padding: 20px 0 35px;
   }
   .category-promo-desc.col-sm-7 {

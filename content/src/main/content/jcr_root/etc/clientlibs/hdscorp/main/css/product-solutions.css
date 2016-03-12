@@ -319,6 +319,13 @@ ul.stickyNav li:hover a{
     margin-left: 0;
   }
   .cs-section .cs-container .cs-title{padding-top:40px;}
+  .resources-section.service-detail-resource .resources-container .resources-title{
+	  display:block;
+  }
+  .business-specific .business-specific-container .specific-benefit ul li.hexagon .animateAnchor{
+	  font-size: 0.875em;	  
+  }
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -396,9 +403,13 @@ ul.stickyNav li:hover a{
   font-size: 0.875em;
   line-height: 1;
   font-style: normal;
+}
 
-
-
+@media only screen and (min-width: 992px) {
+	.specific-quote {
+		padding: 40px 10px 20px;		
+	}
+	
 }
 
 @media only screen and (max-width: 768px) {
@@ -435,7 +446,7 @@ ul.stickyNav li:hover a{
   }
   .specific-benefit .content-container h2 {
     font-size: 1.875rem;
-    margin: 0 0 30px;
+    margin: 15px 0;
   }
   .specific-benefit .content-container h4 {
     font-size: 1.125rem;
