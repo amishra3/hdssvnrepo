@@ -5,9 +5,9 @@
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.ServicesGridModel" var="servicesGridModel" />
 
 
-<div class="services-list-section services-section clearfix">
+<div class="services-list-section services-section service-insights-section clearfix">
     <div class="cs-container content-container">
-
+      <div class="container-fluid">
         <!--Row Starts-->
         <h2>${properties.sectiontitle}</h2>
         <div class="row-centered">
@@ -21,7 +21,7 @@
 			 				<c:remove var="loopindex" scope="request" />            
             </c:forEach> 
         </div>
-        
+       </div> 
     </div>
     
 
