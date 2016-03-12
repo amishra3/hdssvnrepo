@@ -26,56 +26,58 @@ public class EventNode {
 
 	private String eventRegisterNowLabel;
 
-	private String eventRegisterNowLink;	
+	private String eventRegisterNowLink;
 
 	private String[] eventRegion;
-	
+
 	private String eventMonth;
 
 	private String eventTyptagId;
-	
+
 	private String eventTyptagName;
-	
+
 	private String eventRegiontagId;
-	
+
 	private String eventRegiontagName;
-	
+
 	private int year;
-	
+
+	private int monthInt;
+
 	/**
 	 * Webcast fields
 	 */
-	
+
 	private String isWebcast;
 
 	private String author;
-	
+
 	private String summary;
-	
+
 	private String featured;
-	
+
 	private String status;
-	
+
 	private String format;
-	
+
 	private String duration;
-	
+
 	private String start;
-	
+
 	private String rating;
-	
+
 	private String category;
-	
+
 	private String communicationId;
-	
+
 	private String channelId;
-	
+
 	private String herfLink;
-	
+
 	private String thumbnailPath;
-	
+
 	private String previewImagePath;
-	
+
 	public String[] getEventType() {
 		return eventType;
 	}
@@ -203,9 +205,9 @@ public class EventNode {
 	public void setEventRegiontagName(String eventRegiontagName) {
 		this.eventRegiontagName = eventRegiontagName;
 	}
-	
-//Webcast setter/getter
-	
+
+	// Webcast setter/getter
+
 	public String getIsWebcast() {
 		return isWebcast;
 	}
@@ -317,8 +319,7 @@ public class EventNode {
 	public void setPreviewImagePath(String previewImagePath) {
 		this.previewImagePath = previewImagePath;
 	}
-	
-	
+
 	public String getCategory() {
 		return category;
 	}
@@ -327,22 +328,19 @@ public class EventNode {
 		this.category = category;
 	}
 
+	public int getMonthInt() {
+		return monthInt;
+	}
+
+	public void setMonthInt(int monthInt) {
+		this.monthInt = monthInt;
+	}
 
 	public class CompareByMonth implements Comparator<EventNode> {
 		public int compare(EventNode p1, EventNode p2) {
-			if (p1.getEventMonth().compareTo(p2.getEventMonth()) > 0) {
-				return 1;
-			}
-			if (p1.getEventMonth().compareTo(p2.getEventMonth()) < 0) {
-				return -1;
-			}			
-			return 0;
+			return p1.getMonthInt() - p2.getMonthInt();
 		}
 
-		@Override
-		public boolean equals(Object obj) {
-			return super.equals(obj);
-		}
 	}
 
 	public class CompareByYear implements Comparator<EventNode> {
@@ -350,10 +348,6 @@ public class EventNode {
 			return p1.getYear() - p2.getYear();
 		}
 
-		@Override
-		public boolean equals(Object obj) {
-			return super.equals(obj);
-		}
 	}
 
 }
