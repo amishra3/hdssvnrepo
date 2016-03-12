@@ -1,16 +1,8 @@
 package com.hdscorp.cms.servlet;
 
 import java.io.IOException;
-import java.util.Calendar;
 
-import javax.jcr.Node;
-import javax.jcr.PathNotFoundException;
-import javax.jcr.RepositoryException;
-import javax.jcr.ValueFormatException;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
 
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
@@ -18,14 +10,9 @@ import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.request.RequestDispatcherOptions;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
-import com.adobe.acs.commons.util.CookieUtil;
-import com.day.cq.dam.api.Asset;
-import com.hdscorp.cms.util.CookieUtils;
+import com.hdscorp.cms.config.HdsCorpGlobalConfiguration;
 import com.hdscorp.cms.util.HdsCorpCommonUtils;
 
 @SlingServlet(resourceTypes = { "dam:Asset" }, methods = { "GET" })
@@ -41,15 +28,16 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		final RequestDispatcherOptions options = new RequestDispatcherOptions();
 
 		String pdfPath= request.getRequestURI();
-		//Make this configurable 
-		String forwardPath = "/content/hdscorp/en_us/newsandinsights/resources/gated-detail.html";
-		String refererString = request.getHeader("Referer") ;
-		String gatingParam = "g" ; 
 				
 		try {
 			if(pdfPath.toLowerCase().contains(".pdf") && !pdfPath.toLowerCase().contains(".json") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
+
+				String forwardPath = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_FORM_PATH);
+				String refererString = request.getHeader("Referer") ;
+				String gatingParam = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_SUCCESS_QUERY_PARAMETER);
+				String gatingParamVal = request.getParameter(gatingParam);
 				
-				if(HdsCorpCommonUtils.isGated(pdfPath, request) /*&& HdsCorpCommonUtils.checkValidReferer(refererString, gatingParam)*/){
+				if(HdsCorpCommonUtils.isGated(pdfPath, request) && !HdsCorpCommonUtils.checkValidReferer(refererString, gatingParamVal)){
 					String targetURL = forwardPath ;
 					request.setAttribute("pdfPath", pdfPath);
 					request.getRequestDispatcher(targetURL).forward(request,response);

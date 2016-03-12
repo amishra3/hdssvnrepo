@@ -1,13 +1,20 @@
 <%--
-
   PDF Service component.
 --%>
+
+<%@page import="com.hdscorp.cms.config.HdsCorpGlobalConfiguration"%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 
-<%String pdfPath= request.getParameter("pdfPath");
-request.setAttribute("pdfPath", pdfPath); 
- %>
+<%
+	String pdfPath= request.getParameter("pdfPath");
+	request.setAttribute("pdfPath", pdfPath);
+	
+	String requestURI = (String)request.getRequestURI();
+	String pdfRenditionImagePath = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_IMAGE_RENDITION);
+	String pdfImageRendition = requestURI+pdfRenditionImagePath; 
+ 	pageContext.setAttribute("pdfImageRendition", pdfImageRendition);
+%>
 
 
 
@@ -31,10 +38,10 @@ request.setAttribute("pdfPath", pdfPath);
                             	<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-no-pad">
     							<c:choose>
                                         <c:when test="${not empty pdfNode.imagePath}">
-                                        <img src="${pdfNode.imagePath}" alt="" class="img-responsive">
+                                        	<img src="${pdfNode.imagePath}" alt="" class="img-responsive">
                                         </c:when>
                                         <c:otherwise>
-                                            <img src="${properties.pdfimage}" alt="" class="img-responsive">
+                                            <img src="${pdfNode.imagePath}" alt="" class="img-responsive">
                                         </c:otherwise>
                            		 </c:choose>
                                 </div>

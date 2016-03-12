@@ -186,13 +186,13 @@ public class HdsCorpCommonUtils {
 		}
 	}
 	
-	public static boolean checkValidReferer(String referer,String gatingParam){
-		boolean showForm = false ;
+	public static boolean checkValidReferer(String referer,String gatingParamVal){
+		boolean skipForm = false ;
 		if(referer==null){
 			referer="";
 		}
-		showForm = (referer.indexOf(".hds.com")!=-1  && gatingParam!=null && gatingParam.equalsIgnoreCase("1"));
-		return showForm;
+		skipForm = (referer.indexOf(".hds.com")!=-1  && gatingParamVal!=null && gatingParamVal.equalsIgnoreCase("1"));
+		return skipForm;
 	}
 	
 	public static boolean isGated(String pdfPath,SlingHttpServletRequest request) throws ServletException, IOException {

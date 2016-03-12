@@ -45,6 +45,16 @@ public class HdsCorpGlobalConfiguration {
 	@Property(label = "Press Release Detail Template", value = "/apps/hdscorp/templates/pressreleasedetail", description = "Press Release Detail Template")
 	public static final String PRESS_RELEASE_DETAIL_TEMPLATE = "hdscorp.pressreleasedetail.template";		
 	
+	@Property(label = "Asset Gating Landing Form Page URI", value = "/content/hdscorp/en_us/newsandinsights/resources/gated-detail.html", description = "Asset Gating Landing Form Page URI")
+	public static final String ASSET_GATING_FORM_PATH = "hdscorp.assetgating.formapath";		
+
+	@Property(label = "Asset Gating Success Query Parameter", value = "q", description = "Asset Gating Success Query Parameter")
+	public static final String ASSET_GATING_SUCCESS_QUERY_PARAMETER = "hdscorp.assetgating.queryparam";		
+
+	@Property(label = "Asset Gating Image Rendition Path", value = "/_jcr_content/renditions/cq5dam.thumbnail.319.319.png", description = "Asset Gating Image Rendition Path")
+	public static final String ASSET_GATING_IMAGE_RENDITION = "hdscorp.assetgating.image.rendition.path";		
+
+	
 	@SuppressWarnings("rawtypes")
 	private static Dictionary properties = null;
 
