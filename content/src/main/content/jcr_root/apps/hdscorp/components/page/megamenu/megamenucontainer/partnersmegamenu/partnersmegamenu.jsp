@@ -80,7 +80,7 @@
 
 						<c:forEach var="partnerrighsection" items="${partnerrightsection}"
 							varStatus="count">
-							<div class="col-xs-12 col-md-4">
+							<div class="col-xs-12 col-md-4 override-left">
 								<div class="hidden-xs hidden-sm">${partnerrighsection.mgmptmultidescription}</div>
 								<c:choose>
 
