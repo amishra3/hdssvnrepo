@@ -54,7 +54,7 @@
 							   <c:forEach var="subCat" items="${listCat.listSubCat}" varStatus="looSubCount">
 								   <li>
                                        <div class="checkbox">
-										<input type="radio" value="${listCat.legalURL}.html" id="${subCat.label}" name="cbxFunction" class="filters">
+										<input type="radio" value="${subCat.legalURL}.html" id="${subCat.label}" name="cbxFunction" class="filters">
 											<label class="hds-icon" for="${subCat.label}"><span>${subCat.label}</span></label>
 										</div>
 
