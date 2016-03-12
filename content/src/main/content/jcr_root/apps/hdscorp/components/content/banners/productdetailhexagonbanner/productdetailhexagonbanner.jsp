@@ -59,6 +59,13 @@
    					<h2>${properties.secondaryherotitlecontent}</h2>
    					<h4>${properties.secondaryherosubtitlecontent}</h4>
    						${properties.secondaryherocontent}
+
+                    	<c:if test="${not empty properties.bannerlinklabel}">
+							<div class="btn-square-white app-label learn-more-white-link">
+								<a href="${properties.bannerlinkurl}" target="${properties.bannertargettype?'_blank':'_self'}">${properties.bannerlinklabel}${properties.bannerthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+							</div>
+						</c:if>
+
    				</div>
    				<div class="col-xs-12 col-md-4 hexContain">
    					<ul class="calculating-list">

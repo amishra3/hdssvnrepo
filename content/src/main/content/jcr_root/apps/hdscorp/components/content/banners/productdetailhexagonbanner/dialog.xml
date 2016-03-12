@@ -74,6 +74,28 @@
                         fieldLabel="Hero Sub Title"
                         name="./secondaryherosubtitlecontent"
                         xtype="textfield"/>
+                    <bannerlinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Link Label"
+                        name="./bannerlinklabel"
+                        xtype="textfield"/>
+                    <bannerlinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Link Target URL"
+                        name="./bannerlinkurl"
+                        xtype="pathfield"/>
+                    <bannertargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./bannertargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <bannerthirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./bannerthirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <secondaryherocontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hero Content"
