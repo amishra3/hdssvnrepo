@@ -51,7 +51,7 @@ var hds = window.hds || {};
 }(window, document, jQuery, hds));
 
 $(function() {
-    if ($("#partnerCarsoul")) {
+    if ($("#partnerCarsoul").length > 0) {
         hds.partnerHomeBanner.init();
     }
 })
