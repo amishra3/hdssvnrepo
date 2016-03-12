@@ -47,6 +47,13 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
         $('.breadcrumb-container .breadcrumb').addClass('black');
     }
 
+	/**
+    * Global Mobile Search Mobile Code
+    */
+    $(document).on('click','.search-mobile',function(e){
+        $(this).toggleClass('active');
+        $('.search-mobile-container').slideToggle();
+    })
 })(jQuery);
 
 /**
@@ -96,3 +103,4 @@ function equalColumns(htmlElements){
         maxHeight = Math.max.apply(null, heights);
     $(htmlElements).height(maxHeight);
 }
+
