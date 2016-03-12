@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="name">${properties.featuredawardtitle}</div>
                                 <div class="title">
-                                    <a href="#" class="animateLink">${model.featuredAward.newsTitle} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></a></div>
+                                    <a href="${properties.featuredawardlink}" class="animateLink">${model.featuredAward.newsTitle} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></a></div>
                                 <div class="description">${model.featuredawarddesc}</div>
                             </div>
                         </div>
