@@ -22,10 +22,9 @@
 
   ==============================================================================
 --%>
-<%@include file="/apps/foundation/global.jsp"%> 
+<%@include file="/apps/foundation/global.jsp"%>
 
-<%@page
-	import="com.day.cq.wcm.api.WCMMode,com.day.cq.tagging.Tag"%>
+<%@page import="com.day.cq.wcm.api.WCMMode,com.day.cq.tagging.Tag"%>
 
 <%
 	Tag[] tags = currentPage.getTags();
@@ -33,62 +32,62 @@
 	String topic="";
 	for (Tag tag : tags) {
 
-		if (tag.getTagID().contains("content-type")) {
-%>
-<meta name="content-type" content="<%=tag.getTitle()%>" />
-<%
-	} else if (tag.getTagID().contains("services")) {
-			if (tag.getParent() != null) {
-			services= tag.getTitle();
-			}
-	} else if (tag.getTagID().contains("region")) {
-%>
-<meta name="region" content="<%=tag.getTitle()%>" />
-<%
-	} else if (tag.getTagID().contains("language")) {
-%>
-<meta name="language" content="<%=tag.getTitle()%>" />
-<%
-	} else if (tag.getTagID().contains("country")) {
-%>
-<meta name="country" content="<%=tag.getTitle()%>" />
-<%
-	} else if (tag.getTagID().contains("industry")) {
-%>
-<meta name="industry" content="<%=tag.getTitle()%>" />
-<%
-	} else if (tag.getTagID().contains(
-				"product-and-solutions")) {
-            String tagTitle=tag.getTitle();
-            Tag parent=tag.getParent();
-            while(parent!=null)
-            {
-                if(parent.getTitle().equals("Common"))
-                    break;
-				if(tagTitle.length()>0)
-                {
-                    tagTitle="/"+tagTitle;
-                }
-                tagTitle=parent.getTitle()+tagTitle;
-                parent=parent.getParent();
-            }
-            if(tagTitle!=null)
-            {
-           	String tagsArr[]= tagTitle.split("/");
-           	if(tagsArr.length>1)
-           		topic=tagsArr[1];
-            }
-             %>
-            <meta name="products-and-solutions" content="<%=tagTitle%>" />
-            <%
-
+			if (tag.getTagID().contains("content-type")) {
+	%>
+				<meta name="content-type" content="<%=tag.getTitle()%>" />
+	<%
+			} else if (tag.getTagID().contains("services")) {
+				if (tag.getParent() != null) {
+					services= tag.getTitle();
+				}
+			} else if (tag.getTagID().contains("region")) {
+	%>
+				<meta name="region" content="<%=tag.getTitle()%>" />
+	<%
+			} else if (tag.getTagID().contains("language")) {
+	%>
+				<meta name="language" content="<%=tag.getTitle()%>" />
+	<%
+			} else if (tag.getTagID().contains("country")) {
+	%>
+				<meta name="country" content="<%=tag.getTitle()%>" />
+	<%
+			} else if (tag.getTagID().contains("industry")) {
+	%>
+				<meta name="industry" content="<%=tag.getTitle()%>" />
+	<%
+		} else if (tag.getTagID().contains("product-and-solutions")) {
+	            String tagTitle=tag.getTitle();
+	            Tag parent=tag.getParent();
+	            while(parent!=null)
+	            {
+	                if(parent.getTitle().equals("Common"))
+	                    break;
+					if(tagTitle.length()>0)
+	                {
+	                    tagTitle="/"+tagTitle;
+	                }
+	                tagTitle=parent.getTitle()+tagTitle;
+	                parent=parent.getParent();
+	            }
+	            if(tagTitle!=null)
+	            {
+	           	String tagsArr[]= tagTitle.split("/");
+	           	if(tagsArr.length>1)
+	           		topic=tagsArr[1];
+	            }
+	%>
+				<meta name="products-and-solutions" content="<%=tagTitle%>" />
+	<%
 		}
 	}
+
 	if(currentPage.getAbsoluteParent(3)!=null && !currentPage.getAbsoluteParent(3).isHideInNav())
 	{
-     %><meta name="section" content="<%=currentPage.getAbsoluteParent(3).getTitle()%>" /><%
-
-	String section=currentPage.getAbsoluteParent(3).getName();
+	%>
+		<meta name="section" content="<%=currentPage.getAbsoluteParent(3).getTitle()%>" />
+	<%
+		String section=currentPage.getAbsoluteParent(3).getName();
         if(section.equalsIgnoreCase("services") && currentPage.getAbsoluteParent(4)!=null)
            {
         	String servicesSection=currentPage.getAbsoluteParent(4).getTitle();
@@ -96,24 +95,34 @@
         	{
         		servicesSection=servicesSection+","+services;
         	}
-			%><meta name="services" content="<%=servicesSection%>"/><%
-  		}
+	%>
+			<meta name="services" content="<%=servicesSection%>" />
+	<%
+		}
 	 	else if(section.equalsIgnoreCase("partners") && currentPage.getAbsoluteParent(4)!=null)
            {
-			%><meta name="partners" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
-  			}
+	%>
+			<meta name="partners" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
+	<%
+		}
 		else if(section.equalsIgnoreCase("newsandinsights") && currentPage.getAbsoluteParent(4)!=null)
            {
-			%><meta name="news-and-insights" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
-  			}
+	%>
+			<meta name="news-and-insights" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
+	<%
+		}
         else if(section.equalsIgnoreCase("abouthds") && currentPage.getAbsoluteParent(4)!=null)
         {
-			%><meta name="abouthds" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
-  		}
+	%>
+			<meta name="abouthds" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
+	<%
+		}
          else if(section.equalsIgnoreCase("contactus") && currentPage.getAbsoluteParent(4)!=null)
         {
-			%><meta name="contactus" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>"/><%
-  		}
+	%>
+			<meta name="contactus" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
+	<%
+		}
          else if(section.equalsIgnoreCase("products-solutions") && currentPage.getAbsoluteParent(4)!=null)
         {
         	 String pSection=currentPage.getAbsoluteParent(4).getTitle();
@@ -121,14 +130,12 @@
          	{
          		pSection=pSection+","+topic;
          	}
-			%><meta name="topic" content="<%=pSection%>"/><%
-  		}
+	%>
+			<meta name="topic" content="<%=pSection%>" />
+	<%
+		}
     }
-
-
-
 %>
 
-
-<meta name="language" content="<%= pageProperties.getInherited("websitelangtext", "")%>"/>
-<meta name="country" content="<%= pageProperties.getInherited("websitecountrytext", "") %>"/>
+<meta name="language" content="<%=pageProperties.getInherited("websitelangtext", "")%>" />
+<meta name="country" content="<%=pageProperties.getInherited("websitecountrytext", "")%>" />
