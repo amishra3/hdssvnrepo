@@ -78,6 +78,12 @@
 			  response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
 			  response.setHeader("Expires", "0"); // Proxies.
 		  %>
+		  
+		  <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+		  <META HTTP-EQUIV="Dispatcher" CONTENT="NO-CACHE"> 
+		  <META HTTP-EQUIV="Expires" CONTENT="-1">
+		  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, no-store, must-revalidate">
+		 		  
 	  </c:if>
       
 </head>
