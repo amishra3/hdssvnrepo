@@ -21,6 +21,11 @@ import com.hdscorp.cms.util.HdsCorpCommonUtils;
 		@Property(name = "service.description", value = "Asset Gating Servlet", propertyPrivate = false),
 		@Property(name = "service.vendor", value = "HDS Corp", propertyPrivate = false) })
 public class AssetGatingServlet extends SlingSafeMethodsServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(SlingHttpServletRequest request,
 			SlingHttpServletResponse response) throws ServletException,
