@@ -31,10 +31,10 @@ import com.hdscorp.cms.util.ServiceUtil;
 @Properties(
 
 {
-		@Property(name = ServiceConstants.TWITTER_CONSUMER_KEY, description = "twitter consumerkey", value = "mtu5dhs8kuieZKyprangmE1yP"),
-		@Property(name = ServiceConstants.TWITTER_CONSUMER_SECRET, description = "consumersecret", value = "OMXEQdM3XukOMtWFjEEFki9eitOZOreT6nwMqKpHCAOlVsWktP"),
-		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_KEY, description = "accessTokenKey", value = "3704675233-MjwZevDRLXwlhk35kWfhoJG5pSJZR2BfkEtkpj4"),
-		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_SECRET, description = "accessTokenSecret", value = "PknaA05nj6csIQqeT3GMrIY863m4FrXugaepl2dGSTV3a"),
+		@Property(name = ServiceConstants.TWITTER_CONSUMER_KEY, description = "twitter consumerkey", value = "Q7yBVmniWA2TBWCgO8sl9SOXl"),
+		@Property(name = ServiceConstants.TWITTER_CONSUMER_SECRET, description = "consumersecret", value = "hvlVrHr8DbXYOtddhRL4kTUeqc4eborPDeJ4Im8ctiy2DV1wy1"),
+		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_KEY, description = "accessTokenKey", value = "15354310-bevOoaxSL9TWCfzHAgHSTBwYxRfoFpvBmuSBgrKWY"),
+		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_SECRET, description = "accessTokenSecret", value = "NrnePhQ39PGprGZxW54s9SEAvbkm5cGoeY0Kk4OswHy5p"),
 		@Property(name = ServiceConstants.TWITTER_STORAGE_PATH, description = "Default storage path", value = "/content/test-website/mywebsite/jcr:content/"),
 		@Property(name = ServiceConstants.TWITTER_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 16 13 * * ?"),
 		@Property(name = ServiceConstants.TW_POST_LIMIT , description = "number of posts", value = "3") })
