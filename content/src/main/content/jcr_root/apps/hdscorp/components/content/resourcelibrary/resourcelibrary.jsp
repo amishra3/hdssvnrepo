@@ -44,8 +44,12 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                     <div class="col-sm-9 filters-list col-sm-offset-3">
                         <ul class="FilterByIndustryList">
                             <c:forEach items="${model.filterByIndustry}" var="data" varStatus="status">
+                            
+                             <c:set var="industrytag" value="${xss:encodeForHTML(xssAPI, data['industrytag'])}"/>
+                             <c:set var="industrytag" value="${hdscorp:removeDoubleQuotes(industrytag)}"/>
+                            
                             <li class="col-xs-4"><div class="checkbox">
-                                <input class="filters" type="checkbox" name="ctyFunction"  id="${xss:filterHTML(xssAPI,data['industryid'])}" value="${xss:filterHTML(xssAPI,data['industrytag'])}">
+                                <input class="filters" type="checkbox" name="ctyFunction"  id="${xss:filterHTML(xssAPI,data['industryid'])}" value="${fn:replace(fn:replace(industrytag,'[', ''),']', '')}">
                                 <label for="${xss:filterHTML(xssAPI,data['industryid'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,data['industrylabel'])}</span></label>
                             </div></li>
                        </c:forEach>
@@ -98,8 +102,10 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                     <div class="col-sm-9 filters-list col-sm-offset-3">
                         <ul class="FilterByContentList">
                             <c:forEach items="${model.filterByContentType}" var="data" varStatus="status">
+                            <c:set var="contenttag" value="${xss:encodeForHTML(xssAPI, data['contenttag'])}"/>
+                             <c:set var="contenttag" value="${hdscorp:removeDoubleQuotes(contenttag)}"/>
                             <li class="col-xs-4"><div class="checkbox">
-                                <input class="filters" type="checkbox" name="ctyFunction"  id="${xss:filterHTML(xssAPI,data['contentid'])}" value="${xss:filterHTML(xssAPI,data['contenttag'])}">
+                                <input class="filters" type="checkbox" name="ctyFunction"  id="${xss:filterHTML(xssAPI,data['contentid'])}" value="${fn:replace(fn:replace(contenttag,'[', ''),']', '')}">
                                 <label for="${xss:filterHTML(xssAPI,data['contentid'])}" class="hds-icon"><span>${xss:filterHTML(xssAPI,data['contentlabel'])}</span></label>
                             </div></li>
                           </c:forEach> 
