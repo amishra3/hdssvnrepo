@@ -17,6 +17,23 @@
                         fieldLabel="Content Section Title"
                         name="./sectiontitle"
                         xtype="textfield"/>
+                    <type
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Customized Class"
+                        name="./type"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <services
+                                jcr:primaryType="nt:unstructured"
+                                text="Services"
+                                value="service-infra"/>
+                            <no_x0020_class
+                                jcr:primaryType="nt:unstructured"
+                                text="No Class"
+                                value=""/>
+                        </options>
+                    </type>
                     <sectionbackground
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Section Background"
