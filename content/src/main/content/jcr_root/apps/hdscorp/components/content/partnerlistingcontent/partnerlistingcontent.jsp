@@ -34,10 +34,19 @@
 	                          
 		</div>
 	   <div class="clearfix"></div>
+        <c:if test="${not empty properties.learnmorelinklabel}">
 		<div class="col-sm-12 col-no-pad">
 			<div class="more-solutions">
-				<a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}" target="${properties.openinnewwindow?'_blank':'_self'}">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+  <c:choose>
+     <c:when test="${properties.openinnewwindow=='true'}">
+          <a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}" target="_blank">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-share animateIcon" aria-hidden="true"></span></a>
+ </c:when>
+     <c:otherwise>
+          <a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+     </c:otherwise>
+ </c:choose>
 			</div>
 		</div>
+        </c:if>    
 	</div>
 </div>
