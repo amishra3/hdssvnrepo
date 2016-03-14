@@ -71,7 +71,9 @@
    					<ul class="calculating-list">
    						<li class="hexagon-transformative hexagon">
 								<span class="sprite">
+                                 <c:if test="${not empty properties.hexagoniconpath}">   
 								<img src='${properties.hexagoniconpath}' alt='${properties.hexagoniconpathalt}' title='${properties.hexagoniconpathalt}' style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;">
+                                 </c:if>   
                             </span>
    							<h4>${properties.hexagontitle}</h4>
    							<p>${properties.hexagoncontent}</p>
