@@ -111,9 +111,6 @@ var hds = window.hds || {};
             		  $('.pr-search .glyphicon-search').click();//Trigger search button click event
             	    }
             });
-//            $('#fulltext').on("change keyup", function(){
-//            	$('.pr-search .glyphicon-search').click();//Trigger search button click event
-//            }) 
         }
         
     }
