@@ -16,10 +16,13 @@ var pageSize = <%=properties.get("pagesize","10")%>;
            <div class="" id="sectionResourceLib">
             <div class="res-filters-search clearfix">
                 <div class="content-container clearfix">
-                    <div class="col-sm-7 resource-search hidden-xs hidden-sm" id="resource-search">
+                    <div class="col-sm-7 hidden-xs hidden-sm" id="resource-search">
+<div class="resource-search">
                         <input type="text" name="resSearch" id="resSearch" placeholder="Search resources">
+                        <span class="remove glyphicon glyphicon-remove glyphicon-white clearSearchIcon"></span>
                         <span class="glyphicon glyphicon-search searchResource" aria-hidden="true"></span>
-                        <div class="errorSearchField">Please enter search query</div>
+                        </div>
+                        <div class="errorSearchField alert alert-danger fade in">Please enter search query</div>
                     </div>
                     <div class="hidden-md hidden-lg col-xs-12 search-overlay">
                         <div class="launchLink">
@@ -29,11 +32,11 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                     <div class="col-sm-5 resource-filters hidden-xs hidden-sm">
                         <a class="filterby" href="javascript:void(0);" data-refilter="FilterByIndustry">
                             <span class="title">${properties.filterbyindustrylabel}</span>
-                            <span class="caret-down"></span>
+                            <span class="caret-arrow"></span>
                         </a>
                         <a class="filterby" href="javascript:void(0);" data-refilter="FilteyContentType">
                             <span class="title">${properties.filterbycontentlabel}</span>
-                            <span class="caret-down"></span>
+                            <span class="caret-arrow"></span>
                         </a>
                     </div>
                 </div>
@@ -125,7 +128,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                     </div>
                 </div>
             </div>
-            <div class="resources-results content-container overRideRight clearfix">
+            <div class="resources-results content-container container-fluid overRideRight clearfix">
                 <div class="col-md-3 asideWrapper hidden-xs hidden-sm" id="mobilerightMenu">
                    <c:if test="${empty properties.contentrenderingpagepath}">
                     		<c:set var="contentrenderingpagepath" value="/content/hdscorp/en_us/lookup/resourcelibraryrenderer" scope="request"/>
