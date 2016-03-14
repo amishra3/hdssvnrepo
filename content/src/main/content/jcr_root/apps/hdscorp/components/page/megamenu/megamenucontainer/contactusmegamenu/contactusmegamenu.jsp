@@ -45,9 +45,10 @@
 								title="${properties.mgmcontactustitle}">
 						</div>
 						<div class="title">
-							<h2><a href="javascript:void(0)" title="${properties.mgmcontactustitle}">${properties.mgmcontactustitle}</a></h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmcontactustitle}" class="animateLink">${properties.mgmcontactustitle}
 							<span aria-hidden="true"
-								class="glyphicon glyphicon-menu-right animateIcon"></span>
+								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
+							
 						</div>
 					</div>
 				</div>

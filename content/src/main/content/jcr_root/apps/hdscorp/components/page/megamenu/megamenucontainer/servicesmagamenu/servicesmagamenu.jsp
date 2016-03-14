@@ -48,9 +48,10 @@
 								title="${properties.mgmservtitle}">
 						</div>
 						<div class="title">
-							<h2><a href="javascript:void(0)" title="${properties.mgmservtitle}">${properties.mgmservtitle}</a></h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmservtitle}"  class="animateLink">${properties.mgmservtitle}
 							<span aria-hidden="true"
-								class="glyphicon glyphicon-menu-right animateIcon"></span>
+								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
+							
 						</div>
 					</div>
 				</div>

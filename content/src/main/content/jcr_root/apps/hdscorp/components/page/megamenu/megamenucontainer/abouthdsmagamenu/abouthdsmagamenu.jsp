@@ -51,9 +51,10 @@
 								title="${properties.mgmahtitle}">
 						</div>
 						<div class="title">
-							<h2><a href="javascript:void(0)" title="${properties.mgmahtitle}">${properties.mgmahtitle}</a></h2>
+							<h2><a href="javascript:void(0)" title="${properties.mgmahtitle}" class="animateLink">${properties.mgmahtitle}
 							<span aria-hidden="true"
-								class="glyphicon glyphicon-menu-right animateIcon"></span>
+								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
+							
 						</div>
 					</div>
 				</div>
