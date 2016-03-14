@@ -25,14 +25,14 @@ Industry Solution Offer Component
                                      ${industrySolutionOfferModel.description}
                                 </div>
                                 <div class="col-md-6">
-                                 <cq:include path="industrysolutionblog" resourceType="hdscorp/components/content/industrysolutionblog"/>
+                                 <cq:include path="industrysolutionblog1" resourceType="hdscorp/components/content/industrysolutionblog"/>
                                  </div>
                            <div class="col-md-12">
                             <div class="more-solutions">
 
                                          <c:choose>
-                                             <c:when test="${industrySolutionOfferModel.targetURLType}">
-                                                  <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
+                                             <c:when test="${industrySolutionOfferModel.targetURLType=='true'}">
+                                                  <a href="${industrySolutionOfferModel.targetURL}" target="_blank" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
                                          </c:when>
                                              <c:otherwise>
                                                   <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
@@ -75,8 +75,8 @@ Industry Solution Offer Component
 							<div class="col-sm-12 col-no-pad">
 								<div class="more-solutions">
 									 <c:choose>
-                                             <c:when test="${industrySolutionOfferModel.targetURLType}">
-                                                  <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
+                                             <c:when test="${industrySolutionOfferModel.targetURLType=='true'}">
+                                                  <a href="${industrySolutionOfferModel.targetURL}" target="_blank" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
                                          </c:when>
                                              <c:otherwise>
                                                   <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
@@ -100,8 +100,8 @@ Industry Solution Offer Component
 										${industrySolutionOfferModel.description}
                                      <div class="more-solutions">
                                          <c:choose>
-                                             <c:when test="${industrySolutionOfferModel.targetURLType}">
-                                                  <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
+                                             <c:when test="${industrySolutionOfferModel.targetURLType=='true'}">
+                                                  <a href="${industrySolutionOfferModel.targetURL}" target="_blank" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
                                          </c:when>
                                              <c:otherwise>
                                                   <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
