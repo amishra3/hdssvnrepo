@@ -90,6 +90,32 @@ public final class PathResolver {
 		}
 		return null;
 	  }
+
+	
+	/**
+	 * Used to get Full form of URL from the Given Short Page URL
+	 * @param pageFullPath
+	 * @return {@link String}
+	 * @throws Exception
+	 */
+	public static String getFullURLPathFromRequest(SlingHttpServletRequest request, final String shortUrlPath) throws Exception{
+		try{
+			final ResourceResolver resourceResolver = request.getResourceResolver();
+			final Resource resource = resourceResolver.resolve(request,shortUrlPath);
+			if(null != resource){
+				return resource.getPath();
+			}else{
+				if(LOG.isDebugEnabled()){
+                    LOG.debug("Resource doesn't exists..." + shortUrlPath);
+				}
+			}
+		}catch(Exception e){
+            LOG.error(" Error while getting Full URL for the path :" + shortUrlPath + " and the error message is :", e);
+		}
+		return null;
+	  }
+
+	
 	
 	private static String getShortUrl(final String pageUrl, final ResourceResolver resourceResolver){
 		String pageUrlPath=null;
