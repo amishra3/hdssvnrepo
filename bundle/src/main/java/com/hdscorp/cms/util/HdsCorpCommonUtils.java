@@ -195,14 +195,11 @@ public class HdsCorpCommonUtils {
 		return skipForm;
 	}
 	
-	public static boolean isGated(String pdfPath,SlingHttpServletRequest request) throws ServletException, IOException {
+	public static boolean isGated(String pdfPath,SlingHttpServletRequest request) throws Exception {
 
 		boolean isGatedReturnFlag = false ;
-		
-		pdfPath=pdfJCRPath(pdfPath);
-
-		ResourceResolver resourceResolver = request.getResourceResolver();
-		Resource res = resourceResolver.getResource(pdfPath);
+				
+		Resource res = PathResolver.getResourceFromShortURL(request, pdfPath);
 		Asset asset = res.adaptTo(Asset.class);
 		if(asset!=null){
 			try {

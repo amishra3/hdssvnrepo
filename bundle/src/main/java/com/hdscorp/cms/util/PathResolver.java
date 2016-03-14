@@ -94,16 +94,41 @@ public final class PathResolver {
 	
 	/**
 	 * Used to get Full form of URL from the Given Short Page URL
+	 * @param slingRequest
 	 * @param pageFullPath
 	 * @return {@link String}
 	 * @throws Exception
 	 */
-	public static String getFullURLPathFromRequest(SlingHttpServletRequest request, final String shortUrlPath) throws Exception{
+	public static String getFullURLPathFromRequest(SlingHttpServletRequest slingRequest, final String shortUrlPath) throws Exception{
+		try{
+			final Resource resource = getResourceFromShortURL(slingRequest,shortUrlPath);
+			if(null != resource){
+				return resource.getPath();
+			}else{
+				if(LOG.isDebugEnabled()){
+                    LOG.debug("Resource doesn't exists..." + shortUrlPath);
+				}
+			}
+		}catch(Exception e){
+            LOG.error(" Error while getting Full URL for the path :" + shortUrlPath + " and the error message is :", e);
+		}
+		return null;
+	  }
+
+
+	/**
+	 * Used to get Resource from Short URL
+	 * @param slingRequest
+	 * @param pageFullPath
+	 * @return {@link String}
+	 * @throws Exception
+	 */
+	public static Resource getResourceFromShortURL(SlingHttpServletRequest request, final String shortUrlPath) throws Exception{
 		try{
 			final ResourceResolver resourceResolver = request.getResourceResolver();
 			final Resource resource = resourceResolver.resolve(request,shortUrlPath);
 			if(null != resource){
-				return resource.getPath();
+				return resource;
 			}else{
 				if(LOG.isDebugEnabled()){
                     LOG.debug("Resource doesn't exists..." + shortUrlPath);
