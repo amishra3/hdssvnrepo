@@ -39,11 +39,9 @@ public class AssetGatingServlet extends SlingSafeMethodsServlet {
 		
 		String pdfPath= request.getRequestURI();
 		
-		log.debug("pdfPath is --" +pdfPath);
-				
 		try {
 			if(pdfPath.toLowerCase().contains(".pdf") && !pdfPath.toLowerCase().contains(".json") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
-				log.debug("pdfPath cleared the IF criteria");
+				log.debug("=========== pdfPath cleared the IF criteria for PDF - "+pdfPath+"===============");
 				String forwardPath = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_FORM_PATH);
 				String refererString = request.getHeader("Referer") ;
 				String gatingParam = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_SUCCESS_QUERY_PARAMETER);

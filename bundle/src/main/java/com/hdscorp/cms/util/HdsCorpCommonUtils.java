@@ -209,6 +209,7 @@ public class HdsCorpCommonUtils {
 				String isGated = asset.getMetadataValue("dc:gated");
 				String gatedStartedDate = asset.getMetadataValue("dc:startdate");
 				String gatedEndDate = asset.getMetadataValue("dc:enddate");
+				logger.debug("PDF Attributes are - "+isGated+" gatedStartedDate - "+gatedStartedDate+" gatedEndDate "+gatedEndDate);
 				if(isGated!=null && isGated.equalsIgnoreCase("Yes") && gatedStartedDate!=null && gatedEndDate!=null){
 					Calendar currDate =  Calendar.getInstance();
 					Calendar startDate = metaDataNode.getProperty("dc:startdate").getValue().getDate();
@@ -237,7 +238,7 @@ public class HdsCorpCommonUtils {
 		}else{
 			isGatedReturnFlag =false;
 		}
-		
+		logger.debug("IS PDF GATED - "+isGatedReturnFlag);
 		return isGatedReturnFlag;
 	}
 
