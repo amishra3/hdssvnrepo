@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="sling:OsgiConfig"
     scheduler.expression="5 * * * * ?"
-    twitter.accessTokenKey="3704675233-MjwZevDRLXwlhk35kWfhoJG5pSJZR2BfkEtkpj4"
-    twitter.accessTokenSecret="PknaA05nj6csIQqeT3GMrIY863m4FrXugaepl2dGSTV3a"
-    twitter.consumerkey="mtu5dhs8kuieZKyprangmE1yP"
-    twitter.consumerSecret="OMXEQdM3XukOMtWFjEEFki9eitOZOreT6nwMqKpHCAOlVsWktP"
+    twitter.accessTokenKey="15354310-bevOoaxSL9TWCfzHAgHSTBwYxRfoFpvBmuSBgrKWY"
+    twitter.accessTokenSecret="NrnePhQ39PGprGZxW54s9SEAvbkm5cGoeY0Kk4OswHy5p"
+    twitter.consumerkey="Q7yBVmniWA2TBWCgO8sl9SOXl"
+    twitter.consumerSecret="hvlVrHr8DbXYOtddhRL4kTUeqc4eborPDeJ4Im8ctiy2DV1wy1"
     twitter.postlimit="3"
     twitter.storagePath="/content/hdscorp/en_us/lookup/twitterfeeddata/jcr:content/"/>
