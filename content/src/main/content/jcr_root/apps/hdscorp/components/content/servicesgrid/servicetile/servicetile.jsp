@@ -2,8 +2,12 @@
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
+<c:set var="isEditMode" value="${false}" />
+<wcmmode:edit>
+	<c:set var="isEditMode" value="${true}" />
+</wcmmode:edit>
 
-<c:if test="${empty properties.hidetile}">
+<c:if test="${empty properties.hidetile or isEditMode}">
 
 	<c:set var="serviceObj" value="${requestScope['serviceObj']}" />
 	<c:set var="linkUrl" value="${serviceObj.categoryPath}" />
