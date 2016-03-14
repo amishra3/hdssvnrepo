@@ -124,9 +124,9 @@
 .service-support-main .section-service-col a,
 .services-list-section .section-service-col a {
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-weight: 900;
-    font-size: 0.8125em;
-    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: none;
     color: #cc0d0d;
     text-decoration: none;
 }
@@ -157,6 +157,7 @@
 .service-support-main .section-service-col .headline .glyphicon, 
 .services-list-section .section-service-col .headline .glyphicon{
   display: inline;
+  font-size: 1em;
   top: 3px;
 }
 
