@@ -8,7 +8,7 @@
 <c:set var="linkUrl" value="${properties.abouthdsbannerbuttonurl}" />
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
-	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>" />
+	<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
 
 

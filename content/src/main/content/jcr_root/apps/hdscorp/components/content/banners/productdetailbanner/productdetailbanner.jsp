@@ -13,15 +13,13 @@
 <c:set var="buttonUrl" value="${properties.simplebannerbuttonurl}" />
 
 <c:if test="${fn:startsWith(buttonUrl,'/content/')}">
-	<c:set var="buttonUrl"
-		value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("buttonUrl").toString())%>" />
+	<c:set var="buttonUrl" value="${hdscorp:shortURL(buttonUrl)}" />
 </c:if>
 
 <c:set var="linkUrl" value="${properties.simplebannerlinkurl}" />
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
-	<c:set var="linkUrl"
-		value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>" />
+		<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
 
 

@@ -9,7 +9,7 @@
 <c:set var="linkUrl" value="${properties.simplebannerbuttonurl}" />
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
-	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>" />
+	<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
 <%-- <div class="common-hero-banner partner-program-banner clearfix" style="background-image: url('${properties.simplebannermagePath}');"> --%>
 		<div class="common-hero-banner partner-program-banner  clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.simplebannermobileimagePath)} > 

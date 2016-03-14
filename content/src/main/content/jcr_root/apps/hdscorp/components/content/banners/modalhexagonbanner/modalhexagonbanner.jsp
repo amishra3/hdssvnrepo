@@ -9,7 +9,7 @@
 <c:set var="linkUrl" value="${properties.hexbuttonurl}" />
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
-	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
+	<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
 
 <c:set var="containerclass" value="" />
@@ -41,7 +41,7 @@
 						<c:set var="placardlinkurl" value="${placardList.placardlinkurl}" />
 						
 						<c:if test="${fn:startsWith(placardlinkurl,'/content/')}">
-							<c:set var="placardlinkurl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("placardlinkurl").toString())%>"/>
+							<c:set var="placardlinkurl" value="${hdscorp:shortURL(placardlinkurl)}" />
 						</c:if>
 	                                            
 	                    <li class="hexagon-connect hexagon">

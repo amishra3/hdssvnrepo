@@ -29,11 +29,11 @@
 							<c:set var="contacttargeturl2" value="${placardList.contacttargeturl2}" />
 
 							<c:if test="${fn:startsWith(contacttargeturl1,'/content/')}">
-								<c:set var="contacttargeturl1" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("contacttargeturl1").toString())%>"/>
+								<c:set var="contacttargeturl1" value="${hdscorp:shortURL(contacttargeturl1)}" />
 							</c:if>
 				
 							<c:if test="${fn:startsWith(contacttargeturl2,'/content/')}">
-								<c:set var="contacttargeturl2" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("contacttargeturl2").toString())%>"/>
+								<c:set var="contacttargeturl2" value="${hdscorp:shortURL(contacttargeturl2)}" />
 							</c:if>
 			
 			

@@ -11,7 +11,7 @@
 <c:set var="buttonUrl" value="${properties.viewallctatargeturl}" />
 
 <c:if test="${fn:startsWith(buttonUrl,'/content/')}">
-	<c:set var="buttonUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("buttonUrl").toString())%>" />
+	<c:set var="buttonUrl" value="${hdscorp:shortURL(buttonUrl)}" />
 </c:if>
 
 

@@ -6,7 +6,7 @@
 
 <c:set var="ctalabelurl" value="${properties.ctalabelurl}" />
 <c:if test="${fn:startsWith(articleurl,'/content/')}">
-	<c:set var="ctalabelurl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("ctalabelurl").toString())%>" />
+	<c:set var="ctalabelurl" value="${hdscorp:shortURL(ctalabelurl)}" />
 </c:if>
 <c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"columntitle-columndescription-columnmagepath-ctalabel-ctalabelurl-openininewwindow")%>" />    
 <div class="about-hds-articles">

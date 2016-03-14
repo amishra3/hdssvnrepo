@@ -38,7 +38,7 @@
 	                    	<c:set var="placardurllabel" value="${placardList.placardurllabel}" />
 	                    	<c:set var="placardtargeturl" value="${placardList.placardtargeturl}" />
 							<c:if test="${fn:startsWith(placardtargeturl,'/content/')}">
-								<c:set var="placardtargeturl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("placardtargeturl").toString())%>"/>
+								<c:set var="placardtargeturl" value="${hdscorp:shortURL(placardtargeturl)}" />
 							</c:if>
 	
 	

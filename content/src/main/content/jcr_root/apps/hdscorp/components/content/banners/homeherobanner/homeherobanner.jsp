@@ -12,7 +12,7 @@
 <c:set var="viewlinkUrl" value="${properties.viewalllinkurl}" />
 
 <c:if test="${fn:startsWith(viewlinkUrl,'/content/')}">
-	<c:set var="viewlinkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("viewlinkUrl").toString())%>" />
+	<c:set var="viewlinkUrl" value="${hdscorp:shortURL(viewlinkUrl)}" />
 </c:if>
 
 

@@ -12,7 +12,7 @@
 <c:set var="bannerimagePath" value="${properties.commonherobannerimagePath}" />
 
 <c:if test="${fn:startsWith(bannerimagePath,'/content/')}">
-	<c:set var="bannerimagePath" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("bannerimagePath").toString())%>" />
+	<c:set var="bannerimagePath" value="${hdscorp:shortURL(bannerimagePath)}" />
 </c:if>
 
 <c:choose>

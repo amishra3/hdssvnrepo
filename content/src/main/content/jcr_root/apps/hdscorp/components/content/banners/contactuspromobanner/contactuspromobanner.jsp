@@ -13,13 +13,13 @@
 <c:set var="linkUrl" value="${properties.contactusbannerlinkurl}" />
 
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
-	<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>" />
+	<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
 
 <c:set var="buttonUrl" value="${properties.contactusbannerbuttonurl}" />
 
 <c:if test="${fn:startsWith(buttonUrl,'/content/')}">
-	<c:set var="buttonUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("buttonUrl").toString())%>" />
+	<c:set var="buttonUrl" value="${hdscorp:shortURL(buttonUrl)}" />
 </c:if>
 <c:set var="domain" value="" />
 <c:set var="port" value="<%= request.getServerPort() %>" />
