@@ -23,10 +23,8 @@ var hds = window.hds || {};
             $(optionSelected).hide();
             $(optionSelected).each(function(index, el) {
                 if ($(this).attr('id') === arg) {
-                    // $(this).slideDown('slow');
                     $(this).show();
                 } else {
-                    // $(this).slideUp(2000);
                     $(this).hide();
                 }
                 return
@@ -35,7 +33,7 @@ var hds = window.hds || {};
         _processClickAside: function(url) {
             var paginations = this.options.paginationWrapper;
             $(paginations).pagination('destroy');
-            $('loadResourceContent').empty();
+            $('#loadResourceContent').empty();
             $("#prodnsolcategorycontent").html('').load(url + " .resourceLibraryContent", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {
                     $('.resource').addClass('visible');
@@ -43,10 +41,8 @@ var hds = window.hds || {};
                     if ($.trim($(".resourceLibraryContent").html()).length === 0) {
                         $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
                     } else {
-                        $('.category-resources-listing').find('.no-matched-result').remove();
-                        setTimeout(function() {
-                            hds.resourceLib._setPagination();
-                        }, 500);
+                        $('.category-resources-listing').find('.no-matched-result').remove();                      
+                            hds.resourceLib._setPagination();                       
                     }
                 }
                 if (textStatus === 'error') {
@@ -57,7 +53,7 @@ var hds = window.hds || {};
         _processCatagoryCards: function(url) {
             var paginations = this.options.paginationWrapper;
             $(paginations).pagination('destroy');
-            $('loadResourceContent').empty();
+            $('#loadResourceContent').empty();
             $("#featuredCards").html('').load(url + " .resourceLibraryfeatered", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {}
                 if ($.trim($(".resourceLibraryfeatered").html()) === '') {
@@ -68,19 +64,34 @@ var hds = window.hds || {};
                 }
             });
         },
+         _getSelectedURLPath: function() {
+            var $url;
+            $('#asideLinks-product  li').each(function(index, el) {
+                if ($(this).hasClass('active')&& $(this).index() > 0) {                   
+                    $url = $(this).find('a').attr('data-href');                    
+                }
+            });
+            return $url
+        },
+         _isEmptySearcURL: function (){
+            var $searchUrl= this.options.searchUrl;
+            return (hds.resourceLib._getSelectedURLPath() === undefined || hds.resourceLib._getSelectedURLPath() == null || hds.resourceLib._getSelectedURLPath().length <= 0) ? $searchUrl : hds.resourceLib._getSelectedURLPath();
+},
         _loadDataOnsearch: function() {
             var $keyword = $.trim($("#resSearch").val()),
                 paginations = this.options.paginationWrapper,
-                $searchUrl = this.options.searchUrl;
+                $defaultURL = this.options.searchUrl,
+                $searchUrl= hds.resourceLib._isEmptySearcURL();
 
             if ($keyword.length > 0) {
+                 $('#loadResourceContent').empty();
                 $(paginations).pagination('destroy');
                 $('.errorSearchField').css('display', 'none');
                 $('#featuredCards').html('');
-                //$('#asideLinks-product > li').removeClass('active');
                 hds.resourceLib._processClickAside($searchUrl + '?fulltext=' + encodeURIComponent($keyword));
                 $('.resource-heading > h2').html('').html("Search Results");
                 $('#featuredCards').css('display', 'none');
+                 $(paginations).pagination('drawPage');
             } else {
                 $('.errorSearchField').css('display', 'block');
             }
@@ -126,7 +137,7 @@ var hds = window.hds || {};
                 return result;
             }).addClass('visible');
             $(paginations).pagination('destroy');
-            $('loadResourceContent').empty();
+            $('#loadResourceContent').empty();
             if ($('.prodnsolcategorycontent .visible').length > 10) {
                 $(paginations).pagination('redraw');
             }
@@ -153,6 +164,7 @@ var hds = window.hds || {};
             var items = $('.prodnsolcategorycontent .visible');
             var numItems = items.length;
             var perPage = this.options.itemsPerPage;
+             $(paginations).pagination('destroy');
             if (numItems > perPage) {
                 items.slice(perPage).hide();
                 $(paginations).pagination({
