@@ -16,6 +16,13 @@
             fieldDescription="Please provide the path to service icon."
             fieldLabel="Service Icon Path"
             name="./categoryiconpath"
-            xtype="ddpathfield"/>            
+            xtype="ddpathfield"/>
+        <hidetile
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Do not show tile in the grid ?"
+            key="hidetile"
+            name="./hidetile"
+            type="checkbox"
+            xtype="selection"/>
     </items>
 </jcr:root>
