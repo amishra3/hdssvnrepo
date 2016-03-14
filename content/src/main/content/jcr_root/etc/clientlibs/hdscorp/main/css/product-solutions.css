@@ -339,6 +339,9 @@ ul.stickyNav li:hover a{
     padding-left: 0;
     padding-right: 0;
   }
+  .business-specific.specific-tech{
+	padding: 0; 	  
+  }  
   .specific-benefit .content-container h2 {
     font-size: 1.875rem;
     margin: 0 0 30px;
@@ -406,12 +409,6 @@ ul.stickyNav li:hover a{
   font-style: normal;
 }
 
-@media only screen and (min-width: 992px) {
-	.specific-quote {
-		padding: 40px 10px 20px;		
-	}
-	
-}
 
 @media only screen and (max-width: 768px) {
   .specific-quote {

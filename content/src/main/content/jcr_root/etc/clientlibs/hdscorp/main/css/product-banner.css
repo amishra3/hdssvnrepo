@@ -203,6 +203,9 @@
     .hero-product-solutions .hero-product-solutions-container .headline{
         font-size:3rem;
     }
+	.hero-product-solutions .hero-product-solutions-container{
+	    padding-left: 0;	  
+    }
 }
 
 @media only screen and (min-width: 992px) {

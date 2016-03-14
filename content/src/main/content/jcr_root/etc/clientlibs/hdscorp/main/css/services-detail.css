@@ -81,6 +81,12 @@
 	padding-bottom: 50px;
 }
 
+@media only screen and (max-width: 768px) {
+	.resources-section.service-detail-resource .resources-container{
+	   padding-bottom: 0;
+  }
+	
+}
 
 /* Accordion Second tab CSS */
 /* HCS CA Section */
@@ -147,8 +153,19 @@
 	    font-size: 0.875rem;
 	    margin-top: 10px;
 	}
+	
+ .news-insight-resources.service-infra .news-resources-col{
+	display: block;
+	padding: 38px 15px 25px;	
+    }
 
-
+.news-insight-resources.service-infra .news-resources-col .imageHolder, 
+.news-insight-resources.service-infra .news-resources-col .headline{
+     display: block;
+	 text-align: center;
+	 width: auto;
+	 padding: 0;
+  }
 }
 
 /* accord-service3 */
