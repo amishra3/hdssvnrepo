@@ -70,22 +70,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 							CacheInvalidator.invalidateCache(path, false);
 						}
 						
-						}
-						
-						
-						if(pagePath.startsWith("/content/dam/public/en_us")){
-						    
-						    String[] RLPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.RESOURCE_lIBRARY_PATHS));
-							
-							
-							for(String path:RLPaths){
-								
-								final String shortUrl = PathResolver.getShortURLPath(path);
-								CacheInvalidator.invalidateCache(shortUrl, true);
-								CacheInvalidator.invalidateCache(path, false);
-							}
-							
-							}else if(pagePath.contains("news-insights/press-releases")){
+						} else if(pagePath.contains("news-insights/press-releases")){
 							    
 							    String[] PRPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.PRESS_RELEASES_PATHS));
 								

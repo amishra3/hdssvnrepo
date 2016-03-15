@@ -25,6 +25,7 @@ import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.hdscorp.cms.dao.ResourceNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
 @Model(adaptables = {SlingHttpServletRequest.class, Resource.class})
@@ -33,8 +34,7 @@ public class ResourceLibrarySearchModel  {
 	@Inject
 	private SlingHttpServletRequest request;
 
-	@Inject
-	private ResourceResolver resourceResolver;	
+	
 	
 	private List<ResourceNode> resouceList;
 	private int totalNoOfResuts;
@@ -87,9 +87,12 @@ public class ResourceLibrarySearchModel  {
 
 	public List<ResourceNode> getResouceList() throws RepositoryException {
 
-		TagManager tagManager = resourceResolver.adaptTo(TagManager.class);
+		TagManager tagManager = JcrUtilService.getResourceResolver().adaptTo(
+				TagManager.class);
 		LOG.info("-------------INSIDE Resouce Library  SEARCH Model");
 		
+		
+		ResourceResolver resourceResolver = JcrUtilService.getResourceResolver();
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		String fullText=request.getParameter("fulltext");
 		try {
