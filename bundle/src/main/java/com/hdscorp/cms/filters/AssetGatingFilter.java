@@ -41,13 +41,11 @@ public class AssetGatingFilter implements Filter {
     public final void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
             ServletException {
     	
-    	log.debug("===============Filter Called===============");
     	final WCMMode mode = WCMMode.fromRequest(request);
     	try {
 			
 			if (!(request instanceof SlingHttpServletRequest) || !(response instanceof SlingHttpServletResponse)) {
 				// Not a SlingHttpServletRequest/Response, so ignore.
-				log.debug("---------------Not a SlingHttpServletRequest/Response, so ignore-----------");
 				chain.doFilter(request, response);
 				return;
 			}
@@ -87,7 +85,7 @@ public class AssetGatingFilter implements Filter {
 
         
         // Finally, proceed with the the Filter chain
-        chain.doFilter(request, response);
+    	//chain.doFilter(request, response);
     }
 
     @Override
