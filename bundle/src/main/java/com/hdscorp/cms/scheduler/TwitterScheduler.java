@@ -35,7 +35,7 @@ import com.hdscorp.cms.util.ServiceUtil;
 		@Property(name = ServiceConstants.TWITTER_CONSUMER_SECRET, description = "consumersecret", value = "hvlVrHr8DbXYOtddhRL4kTUeqc4eborPDeJ4Im8ctiy2DV1wy1"),
 		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_KEY, description = "accessTokenKey", value = "15354310-bevOoaxSL9TWCfzHAgHSTBwYxRfoFpvBmuSBgrKWY"),
 		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_SECRET, description = "accessTokenSecret", value = "NrnePhQ39PGprGZxW54s9SEAvbkm5cGoeY0Kk4OswHy5p"),
-		@Property(name = ServiceConstants.TWITTER_STORAGE_PATH, description = "Default storage path", value = "/content/test-website/mywebsite/jcr:content/"),
+		@Property(name = ServiceConstants.TWITTER_STORAGE_PATH, description = "Default storage path", value = "/content/hdscorp/en_us/lookup/twitterfeeddata/jcr:content/"),
 		@Property(name = ServiceConstants.TWITTER_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 16 13 * * ?"),
 		@Property(name = ServiceConstants.TW_POST_LIMIT , description = "number of posts", value = "3") })
 public class TwitterScheduler {
