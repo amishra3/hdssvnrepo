@@ -74,7 +74,6 @@ public class AssetGatingFilter implements Filter {
 				}
 
 			}else{
-				log.debug("===============Skipping the Filter===============");
 				chain.doFilter(request, response);
 				return;				
 			}			
@@ -82,7 +81,6 @@ public class AssetGatingFilter implements Filter {
 		} catch (Exception ex) {
 			log.error("Asset Gating Filter Error Block - " + ex.getMessage());
 		}
-
         
         // Finally, proceed with the the Filter chain
     	//chain.doFilter(request, response);
