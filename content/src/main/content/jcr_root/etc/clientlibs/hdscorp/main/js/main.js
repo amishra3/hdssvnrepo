@@ -48,6 +48,13 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
     }
 
 	/**
+	 * Breadcrumb Check for Specification Detail
+	 */
+    if ($("body#tech-specifications").length > 0){
+        $('.breadcrumb-container .breadcrumb').removeClass('black');
+    }
+
+	/**
     * Global Mobile Search Mobile Code
     */
     $(document).on('click','.search-mobile',function(e){
