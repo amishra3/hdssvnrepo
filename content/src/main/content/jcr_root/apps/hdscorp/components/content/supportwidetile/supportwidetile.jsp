@@ -16,7 +16,7 @@
 	<c:choose>
 
 		<c:when test="${not empty properties.tilelink}">
-          <h3 class="headline"><a href="${properties.tilelink}" target="${not empty properties.newtab?'_blank':'_self'}" class="animateLink">${properties.widetiletitle}${not empty properties.newtab?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></h3>
+          <h3 class="headline"><a href="${properties.tilelink}" target="${not empty properties.newtab?'_blank':'_self'}" class="animateLink">${properties.widetiletitle}${not empty properties.tilethirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></h3>
         </c:when>
 
 		<c:otherwise>
@@ -29,7 +29,7 @@
 			<div class="col-sm-6 support-phone-no col-no-pad">${properties.phonenumbertext}</div>
 		</c:if>
 		<c:if test="${not empty properties.tileurllabel}">
-			<div class="col-sm-6 support-connect-login col-no-pad"><a href="${linkUrl}" target="${not empty properties.urlopennewtab?'_blank':'_self'}" class="animateLink">${properties.tileurllabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></div>
+			<div class="col-sm-6 support-connect-login col-no-pad"><a href="${linkUrl}" target="${not empty properties.urlopennewtab?'_blank':'_self'}" class="animateLink">${properties.tileurllabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></div>
 		</c:if>
       </div>
   </div>

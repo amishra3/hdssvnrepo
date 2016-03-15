@@ -38,6 +38,13 @@
                         name="./newtab"
                         type="checkbox"
                         xtype="selection"/>
+                    <tilethirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./tilethirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <tilecontent
                         jcr:primaryType="cq:Widget"
                         fieldLable="Tile Content"
@@ -58,6 +65,13 @@
                         sling:resourceType="/libs/granite/ui/components/foundation/form/checkbox"
                         fieldLabel="Open in new tab?"
                         name="./urlopennewtab"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
                         type="checkbox"
                         xtype="selection"/>
                     <phonenumbertext

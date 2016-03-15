@@ -8,17 +8,12 @@ Industry Solution Offer Component
 
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.IndustrySolutionOfferModel" var="industrySolutionOfferModel" />
-
-
-
 <c:choose>
     <c:when test="${industrySolutionOfferModel.isoShowBlog==1}">
-
         <div class="features-solutions" style="background-image: url('${properties.isobgimage}')">
 						<div class="content-container clearfix">
                         <div class="col-md-12"><h2>${industrySolutionOfferModel.title}</h2></div>
-                        <div class="col-md-12 col-no-pad">
-							
+                        <div class="col-md-12 col-no-pad">							
                             <div class="feature-category">
                                 <div class="col-md-6">
                                 	<h3>${industrySolutionOfferModel.subTitle}</h3>
@@ -28,21 +23,9 @@ Industry Solution Offer Component
                                  <cq:include path="industrysolutionblog1" resourceType="hdscorp/components/content/industrysolutionblog"/>
                                  </div>
                            <div class="col-md-12">
-                            <div class="more-solutions">
-
-                                         <c:choose>
-                                             <c:when test="${industrySolutionOfferModel.targetURLType=='true'}">
-                                                  <a href="${industrySolutionOfferModel.targetURL}" target="_blank" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
-                                         </c:when>
-                                             <c:otherwise>
-                                                  <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-                                             </c:otherwise>
-
-                                         </c:choose>
-
-
-
-                               </div>
+                                <div class="more-solutions">
+                                     <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'} </a>
+                                </div>
                              </div>
                               </div>
                             </div>
@@ -74,15 +57,7 @@ Industry Solution Offer Component
 
 							<div class="col-sm-12 col-no-pad">
 								<div class="more-solutions">
-									 <c:choose>
-                                             <c:when test="${industrySolutionOfferModel.targetURLType=='true'}">
-                                                  <a href="${industrySolutionOfferModel.targetURL}" target="_blank" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
-                                         </c:when>
-                                             <c:otherwise>
-                                                  <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-                                             </c:otherwise>
-
-                                         </c:choose>
+									<a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 								</div>
 							</div>
                         </div>
@@ -99,18 +74,7 @@ Industry Solution Offer Component
                                     <h3>${industrySolutionOfferModel.subTitle}</h3>
 										${industrySolutionOfferModel.description}
                                      <div class="more-solutions">
-                                         <c:choose>
-                                             <c:when test="${industrySolutionOfferModel.targetURLType=='true'}">
-                                                  <a href="${industrySolutionOfferModel.targetURL}" target="_blank" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-share animateIcon"></span></a>
-                                         </c:when>
-                                             <c:otherwise>
-                                                  <a href="${industrySolutionOfferModel.targetURL}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-                                             </c:otherwise>
-
-                                         </c:choose>
-
-
-
+                                     <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                     </div>
                                 </div>
                             </div>

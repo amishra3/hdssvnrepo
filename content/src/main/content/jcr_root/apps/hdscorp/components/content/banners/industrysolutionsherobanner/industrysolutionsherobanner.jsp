@@ -28,7 +28,7 @@ request.setAttribute("bannerimage",bannerimage);
                   		<c:if test="${not empty properties.industrysolutionsherobannerlabel}">
                               <div class="btn-square-white request">
                                   <a href="${buttonUrl}" target="${properties.industrysolutionsherobannerurltargettype?'_blank':'_self'}">
-                                      ${properties.industrysolutionsherobannerlabel}
+                                      ${properties.industrysolutionsherobannerlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}
                                    </a>
                                </div>
                        </c:if>

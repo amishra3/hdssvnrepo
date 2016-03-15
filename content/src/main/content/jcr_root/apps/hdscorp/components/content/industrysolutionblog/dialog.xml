@@ -67,6 +67,12 @@
                                 value="2"/>
                         </options>
                     </bopeninnew>
+                    <bthirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./bthirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </blog>
         </items>

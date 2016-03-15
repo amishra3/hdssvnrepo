@@ -54,6 +54,12 @@
                         type="checkbox"
                         width="300"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <isoshowblog
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Select Blog"
