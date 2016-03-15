@@ -38,3 +38,4 @@ partner-detail.css
 app.css
 legal.css
 gated-detail.css
+training-detail.css
