@@ -110,7 +110,6 @@
                     </secondaryherocontent>
                     <hexagoniconpath
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
                         fieldLabel="Hexagon Icon Path"
                         name="./hexagoniconpath"
                         xtype="ddpathfield"/>
