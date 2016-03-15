@@ -221,21 +221,25 @@ $(".hds-main-navigation h5").each(function() {
         if(activeLink.text()!="" && activeLinkText!=activeLink.text())
         {
              activeLinkText=activeLink.text();
-            setTimeout(function() {
-                if(!isTabClicked)
-                {
+             
+            	 setTimeout(function() {
+        		 
                     if(activeLinkText==activeLink.text())
                     {
+                    	if(!isTabClicked)
+                        {
                         console.log("Tracking tabs");
     					var tabTitle = "tab-"+activeLink.text().toLowerCase().replace(/\s/g,"-")+" scroll";
     					console.log("tabTitle=="+tabTitle);
                         tabClick(primaryCategory,tabTitle,pageTitle,"Tabscroll");
+                        }
+                        	else
+                                isTabClicked=false;
                     }
-                    isTabClicked=false;
-                }
-               
-			}, delay);
-
+                
+                    
+            	 }, delay);
+                        
         }
 
        });
