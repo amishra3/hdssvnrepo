@@ -32,6 +32,7 @@ import com.hdscorp.cms.util.ViewHelperUtil;
 
 /**
  * Sling model for getting all search based on keyword and date filters for LMS.
+ * 
  * @author gokula.nand
  *
  */
@@ -51,8 +52,8 @@ public class LMSDataModel {
 
 	@Inject
 	@Named("tdsearchlookuppath")
-	@Default(values = { "/content/hdscorp/en_us/lmstest" })
-	private String searchLookUpPath;
+	@Default(values = { "/content/hdscorp/en_us/lookup/lmsdata" })
+	private String searchlookuppath;
 
 	@Inject
 	@Named("tdnoofitemsshowinpage")
@@ -89,9 +90,42 @@ public class LMSDataModel {
 	@Default(values = { "Language:" })
 	private String languageLabel;
 
+	public String getNoOfItemsShown() {
+		return noOfItemsShown;
+	}
+
+	public String getNoResultsMsg() {
+		return noResultsMsg;
+	}
+
+	public String getLoadMoreLabel() {
+		return loadMoreLabel;
+	}
+
+	public String getDateLabel() {
+		return dateLabel;
+	}
+
+	public String getLocationLabel() {
+		return locationLabel;
+	}
+
+	public String getDurationLabel() {
+		return durationLabel;
+	}
+
+	public String getLanguageLabel() {
+		return languageLabel;
+	}
+
+	public String getSearchLookUpPath() {
+		return searchlookuppath;
+	}
+
 	public List<LMSBean> getLmsBeanNode() {
 		log.info("Start Execution of getLmsBeanNode() method");
-		String lookupPath = getSearchLookUpPath();
+		String lookupPath = this.searchlookuppath;
+		log.info("lookup path is::" + lookupPath);
 
 		String searchKeyword = request.getParameter("searchKey");
 		String startDateProperty = "jcr:content/trainingStartDate";
@@ -103,10 +137,20 @@ public class LMSDataModel {
 		String sortby = "@jcr:content/trainingStartDate";
 
 		try {
-				log.info("searchKeyword:::::::::::::::"+searchKeyword);
 			if (searchKeyword != null) {
-				searchKeyword = URLDecoder.decode(request.getParameter("searchKey"), "UTF-8");
-				log.info("searchKeyword::"+searchKeyword);
+				searchKeyword = URLDecoder.decode(searchKeyword, "UTF-8");
+				log.info("searchKeyword::" + searchKeyword);
+
+			}
+			if (lowerBound != null) {
+				lowerBound = URLDecoder.decode(lowerBound, "UTF-8");
+				log.info("lowerbound::" + lowerBound);
+
+			}
+			if (upperBound != null) {
+				lowerBound = URLDecoder.decode(upperBound, "UTF-8");
+				log.info("upperbound::" + upperBound);
+
 			}
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
@@ -234,38 +278,6 @@ public class LMSDataModel {
 		}
 
 		return maplmsBeanList;
-	}
-
-	public String getNoOfItemsShown() {
-		return noOfItemsShown;
-	}
-
-	public String getNoResultsMsg() {
-		return noResultsMsg;
-	}
-
-	public String getLoadMoreLabel() {
-		return loadMoreLabel;
-	}
-
-	public String getSearchLookUpPath() {
-		return searchLookUpPath;
-	}
-
-	public String getDateLabel() {
-		return dateLabel;
-	}
-
-	public String getLocationLabel() {
-		return locationLabel;
-	}
-
-	public String getDurationLabel() {
-		return durationLabel;
-	}
-
-	public String getLanguageLabel() {
-		return languageLabel;
 	}
 
 }
