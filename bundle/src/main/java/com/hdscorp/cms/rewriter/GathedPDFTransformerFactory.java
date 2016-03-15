@@ -1,16 +1,8 @@
 package com.hdscorp.cms.rewriter;
 
 import java.io.IOException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.jcr.LoginException;
-import javax.jcr.Node;
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
@@ -18,15 +10,9 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.jcr.api.SlingRepository;
-import org.apache.sling.jcr.resource.JcrResourceConstants;
 import org.apache.sling.rewriter.ProcessingComponentConfiguration;
 import org.apache.sling.rewriter.ProcessingContext;
 import org.apache.sling.rewriter.Transformer;
@@ -42,9 +28,7 @@ import org.xml.sax.helpers.AttributesImpl;
 import com.adobe.acs.commons.rewriter.AbstractTransformer;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.widget.LibraryType;
-import com.hdscorp.cms.dao.JCRDataAccessor;
 import com.hdscorp.cms.util.HdsCorpCommonUtils;
-import com.hdscorp.cms.util.PathResolver;
 
 /**
  * HDS CORP -Gated PDF Indicator (href=*.pdf) Rewriter
@@ -59,20 +43,8 @@ import com.hdscorp.cms.util.PathResolver;
 })
 @Service(value = {TransformerFactory.class})
 public final class GathedPDFTransformerFactory implements TransformerFactory, EventHandler {
-	
-	@Reference
-	ResourceResolverFactory resourceResolverFactory;
-	
-    @Reference
-    private SlingRepository repository;
-
+		
 	SlingHttpServletRequest slingRequest;
-    
-    private ResourceResolver resourceResolver;
-    
-    Session session = null;
-	
-    JCRDataAccessor jCRDataAccessor = null;
     
     private static final Logger log = LoggerFactory.getLogger(GathedPDFTransformerFactory.class);
     
