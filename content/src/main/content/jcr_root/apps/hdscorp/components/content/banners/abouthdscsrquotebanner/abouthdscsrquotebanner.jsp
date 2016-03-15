@@ -67,7 +67,7 @@
             <c:if test="${not empty properties.ctalabel}">
             <div class="learn-more">
                  <div class="learn-more-csr-quote btn-square-white">
-                     <a href="${linkUrl}" target="${properties.openinnewwindow?'_blank':'_self'}">${properties.ctalabel}</a>
+                     <a href="${linkUrl}" target="${properties.openinnewwindow?'_blank':'_self'}">${properties.ctalabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
                  </div>
             </div>
             </c:if>

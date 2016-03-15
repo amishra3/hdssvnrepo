@@ -8,7 +8,7 @@
 <c:if test="${fn:startsWith(articleurl,'/content/')}">
 	<c:set var="ctalabelurl" value="${hdscorp:shortURL(ctalabelurl)}" />
 </c:if>
-<c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"columntitle-columndescription-columnmagepath-ctalabel-ctalabelurl-openininewwindow")%>" />    
+<c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"columntitle-columndescription-columnmagepath-ctalabel-ctalabelurl-openininewwindow-thirdparty")%>" />    
 <div class="about-hds-articles">
     <div class="content-container container-fluid">
         <div class="row">
@@ -24,7 +24,9 @@
                         <div class="spotlight-title">${column.columntitle}</div>
                         <div class="spotlight-description">${column.columndescription}</div>
                         <div class="spotlight-more">
-                            <a href="${linkUrl}" target="${column.openininewwindow==1?'_blank':'_self'}" class="animateLink">${column.ctalabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                            <a href="${linkUrl}" 
+                            	target="${column.openininewwindow==1?'_blank':'_self'}" 
+                            class="animateLink">${column.ctalabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}</a>
                         </div>
                     </div>
                 </div>

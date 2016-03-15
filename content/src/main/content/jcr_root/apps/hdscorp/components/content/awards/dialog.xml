@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
     height="600"
     title="Awards Component"
@@ -79,6 +79,20 @@
                         name="./featuredawardlink"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredaward')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
+                    <newtab
+                        jcr:primaryType="cq:Widget"
+                        sling:resourceType="/libs/granite/ui/components/foundation/form/checkbox"
+                        fieldLabel="Open in new tab?"
+                        name="./newtab"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <featuredawarddesc
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"

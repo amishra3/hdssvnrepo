@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="name">${properties.featuredawardtitle}</div>
                                 <div class="title">
-                                    <a href="${properties.featuredawardlink}" class="animateLink">${model.featuredAward.newsTitle} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></a></div>
+                                   <a href="${properties.featuredawardlink}" class="animateLink" target="${properties.newtab?'_blank':'_self'}">${model.featuredAward.newsTitle}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}</a></div>
                                 <div class="description">${model.featuredawarddesc}</div>
                             </div>
                         </div>
