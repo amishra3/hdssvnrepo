@@ -11,6 +11,8 @@
 	adaptTo="com.hdscorp.cms.slingmodels.TrainingDetailFilterModel"
 	var="trainingDetailFilterModel" />
 
+<div class="clearfix"> <!--main start-->
+<div class="content-container">
 <div class="hds-training-cale training-date-pick">
                         <div class="container-fluid">
                            <div class="row">
