@@ -1,5 +1,6 @@
 package com.hdscorp.cms.rewriter;
 
+import java.io.IOException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Collections;
@@ -20,11 +21,14 @@ import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.SlingConstants;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.jcr.api.SlingRepository;
 import org.apache.sling.jcr.resource.JcrResourceConstants;
+import org.apache.sling.rewriter.ProcessingComponentConfiguration;
+import org.apache.sling.rewriter.ProcessingContext;
 import org.apache.sling.rewriter.Transformer;
 import org.apache.sling.rewriter.TransformerFactory;
 import org.osgi.service.event.Event;
@@ -39,6 +43,7 @@ import com.adobe.acs.commons.rewriter.AbstractTransformer;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.widget.LibraryType;
 import com.hdscorp.cms.dao.JCRDataAccessor;
+import com.hdscorp.cms.util.HdsCorpCommonUtils;
 import com.hdscorp.cms.util.PathResolver;
 
 /**
@@ -60,6 +65,8 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
 	
     @Reference
     private SlingRepository repository;
+
+	SlingHttpServletRequest slingRequest;
     
     private ResourceResolver resourceResolver;
     
@@ -91,15 +98,20 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
     protected void deactivate() {
     }
 
+    public void init(ProcessingContext context, ProcessingComponentConfiguration config) throws IOException {
+    	slingRequest = context.getRequest() ;
+    	log.info("Transforming request {}.", slingRequest.getRequestURI());
+    }
+    
     public Transformer createTransformer() {
         return new VersionableClientlibsTransformer();
     }
 
-    private Attributes gatedPDF(final String elementName, final Attributes attrs) {
+    private Attributes gatedPDF(final String elementName, final Attributes attrs,SlingHttpServletRequest slingRequest) {
         if (this.isPDF(elementName, attrs)) {
 
         	return this.rebuildClassAttributes(new AttributesImpl(attrs), attrs.getIndex("", ATTR_ANCHOR_CSS),
-                    attrs.getValue("", ATTR_ANCHOR_CSS), LibraryType.CSS,attrs.getValue("", ATTR_ANCHOR_LINK_PATH));
+                    attrs.getValue("", ATTR_ANCHOR_CSS), LibraryType.CSS,attrs.getValue("", ATTR_ANCHOR_LINK_PATH),slingRequest);
             
         } else {
             return attrs;
@@ -108,22 +120,18 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
     
 
     private Attributes rebuildClassAttributes(final AttributesImpl newAttributes, final int index, final String cssclasses,
-            final LibraryType libraryType, String pdfPath) {
+            final LibraryType libraryType, String pdfPath,SlingHttpServletRequest slingRequest) {
     	
 		final String gatedCSSClass = GATED_CSS_NAME;
 		boolean isGated = false;
 		Asset asset = null ;
     	try {
-    		String completeResourcePath = PathResolver.getFullURLPath(URLDecoder.decode(pdfPath));
-			resourceResolver = resourceResolverFactory.getAdministrativeResourceResolver(null);
-			Resource res=  resourceResolver.resolve(URLDecoder.decode(pdfPath));
-			asset = res.adaptTo(Asset.class);
+    		isGated = HdsCorpCommonUtils.isGated(pdfPath, slingRequest);
 		} catch (Exception ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
 		} 
 
-		
 		if (StringUtils.isNotBlank(gatedCSSClass) && isGated) {
 			log.debug("Added gated class to -"+pdfPath);
 			newAttributes.setValue(index, cssclasses+" "+gatedCSSClass);
@@ -150,11 +158,19 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
 
 
     private class VersionableClientlibsTransformer extends AbstractTransformer {
+    	
+    	private SlingHttpServletRequest slingRequest;
+    	
+    	public void init(ProcessingContext context, ProcessingComponentConfiguration config) throws IOException {
+            this.slingRequest = context.getRequest();
+            log.info("Transforming request {}.", slingRequest.getRequestURI());
+        }
+
+    	
         @SuppressWarnings("deprecation")
-		public void startElement(final String namespaceURI, final String localName, final String qName,
-                                 final Attributes attrs)
-                throws SAXException {
-            getContentHandler().startElement(namespaceURI, localName, qName, gatedPDF(localName, attrs));
+		public void startElement(final String namespaceURI, final String localName, final String qName,final Attributes attrs)throws SAXException {
+        	
+            getContentHandler().startElement(namespaceURI, localName, qName, gatedPDF(localName, attrs,slingRequest));
         }
     }
 

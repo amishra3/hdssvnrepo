@@ -53,8 +53,7 @@ public class AssetGatingFilter implements Filter {
 			final SlingHttpServletResponse slingResponse = (SlingHttpServletResponse) response;
 			final SlingHttpServletRequest slingRequest = (SlingHttpServletRequest) request;
 			String pdfPath= slingRequest.getRequestURI();
-			if(pdfPath.toLowerCase().endsWith(".pdf") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
-				log.debug("=========== pdfPath cleared the IF criteria for PDF - "+pdfPath+"===============");
+			if(!pdfPath.contains("/editor") && !pdfPath.contains("/cf")&& pdfPath.toLowerCase().endsWith(".pdf") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
 				String forwardPath = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_FORM_PATH);
 				String refererString = slingRequest.getHeader("Referer") ;
 				String gatingParam = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_SUCCESS_QUERY_PARAMETER);
