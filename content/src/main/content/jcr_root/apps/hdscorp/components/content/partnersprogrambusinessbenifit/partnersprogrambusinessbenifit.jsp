@@ -43,18 +43,19 @@
                             <div class="col-xs-12 col-md-8">
                                 <h2>${partnerProgramBusinessBenifitModel.headLine}</h2>
                                 <p>${partnerProgramBusinessBenifitModel.description}</p>
-                                <a class="animateLink learn-more-white" href="${learnMoreLink}" target="${partnerProgramBusinessBenifitModel.signUpOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.learnMoreLabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                                <a class="animateLink learn-more-white" href="${learnMoreLink}" target="${partnerProgramBusinessBenifitModel.signUpOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.learnMoreLabel}${not empty properties.lthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                 <div class="btn-square-white signup">
-                                    <a href="${signUpLink}" target="${partnerProgramBusinessBenifitModel.signUpOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.signUpLabel}</a>
+                                    <a href="${signUpLink}" target="${partnerProgramBusinessBenifitModel.signUpOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.signUpLabel}${not empty properties.sigthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-4 hexContain">
                                 <ul class="calculating-list">
                                     <li class="hexagon-transformative hexagon">
-                                        <span class="sprite icon-advance-lt" style="background:url('${partnerProgramBusinessBenifitModel.optionalProgramIconPath}');"></span>
+                                        <span class="sprite"><img src="${partnerProgramBusinessBenifitModel.optionalProgramIconPath}" alt="" title="" style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;"></span>
                                         <h4>${partnerProgramBusinessBenifitModel.optionalProgramHeadLine}</h4>
                                         <p>${partnerProgramBusinessBenifitModel.optionalProgarmDescription}</p>
-                                        <a href="${optionalProgramCallToActionLink}" class="animateAnchor bottomPos text-center" target="${partnerProgramBusinessBenifitModel.callToActionOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.optionalProgarmCallToActionLabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+                                        <a href="${optionalProgramCallToActionLink}" class="animateAnchor bottomPos text-center" target="${partnerProgramBusinessBenifitModel.callToActionOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.optionalProgarmCallToActionLabel}${not empty properties.pthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
+</a>
                                     </li>
                                 </ul>
                             </div>

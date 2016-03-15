@@ -28,7 +28,7 @@
 	                  <h4 class="sub-headline">${properties.simplebannercontent}</h4>
 	                  <c:if test="${not empty properties.simpllebannerbuttonlabel}">
 		                  <div class="btn-square-white learn-more-white-link">
-		                      <a href="${linkUrl}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">${properties.simpllebannerbuttonlabel}</a>
+		                      <a href="${linkUrl}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">${properties.simpllebannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 		                  </div>
 	                  </c:if>
 					</div>

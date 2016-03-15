@@ -15,7 +15,7 @@
         <!--Banner Carsoul Starts here-->
         <div id="partnerHeroBanner">
 
-<c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"partnerpagebartitle-bannertitle-bannerdescription-bannerimagepath-ctalabel-ctatargeturl-openinnewwindow-imagepath")%>" />    
+<c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"partnerpagebartitle-bannertitle-bannerdescription-bannerimagepath-ctalabel-ctatargeturl-openinnewwindow-imagepath-thirdparty")%>" />    
 		<c:forEach var="column" items="${contentColumn}" varStatus="loop">
 
          <c:set var="linkUrl" value="${column.ctatargeturl}"/>
@@ -34,7 +34,7 @@
                         <h2>${column.bannertitle}</h2>
                         <p>${column.bannerdescription}</p>
                         <div class="btn-square-white request call-to-action">
-                            <a href="${linkUrl}" target="${column.openinnewwindow==true?'_blank':'_self'}">${column.ctalabel}</a>
+                            <a href="${linkUrl}" target="${column.openinnewwindow==true?'_blank':'_self'}">${column.ctalabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
                         </div>
                     </div>
 					</c:if> 

@@ -44,6 +44,12 @@
                         name="./jcr:ppbblearnmoreopeninnewwindow"
                         type="checkbox"
                         xtype="selection"/>
+                    <learnthirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./lthirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <ppbbsignuplabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -62,6 +68,12 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open In New Window "
                         name="./jcr:ppbbsignupopeninnewwindow"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <signupthirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./sigthirdparty"
                         type="checkbox"
                         xtype="selection"/>
                     <ppbboptionalprogramiconpath
@@ -103,6 +115,12 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open In New Window "
                         name="./jcr:ppbbcalltoactionopeninnewwindow"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./pthirdparty"
                         type="checkbox"
                         xtype="selection"/>
                 </items>
