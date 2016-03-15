@@ -39,7 +39,7 @@ public final class PathResolver {
 		if(pageFullPath!=null && !pageFullPath.startsWith("http") && !pageFullPath.toLowerCase().contains(".com")){
 			try{
 				final ResourceResolver resourceResolver = JcrUtilService.getResourceResolver();
-				LOG.info("resourceResolver retunred---- "+resourceResolver);
+				LOG.trace("resourceResolver retunred---- "+resourceResolver);
 				
 		   		pageUrlPath= getShortUrl(pageFullPath, resourceResolver);
 		   		if(!pageUrlPath.startsWith("/")){
