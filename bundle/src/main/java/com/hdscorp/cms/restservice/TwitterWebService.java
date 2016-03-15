@@ -19,6 +19,7 @@ import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
+import twitter4j.URLEntity;
 import twitter4j.auth.AccessToken;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -105,12 +106,18 @@ public class TwitterWebService extends GenericRestfulServiceInvokers {
 					twitterFeed.put(ServiceConstants.TIME_DIFF_POSTDATE_CURRENTDATE,
 							ServiceUtil.getFeedTimeDifference(status.getCreatedAt().toString()));
 					twitterFeed.put(ServiceConstants.TWITTER_MESSAGE_TEXT, status.getText());
-					MediaEntity[] media = status.getMediaEntities();
-					for (MediaEntity mediaEntity : media) {
-						twitterFeed.put(ServiceConstants.TWITTER_MEDIA_URL, mediaEntity.getMediaURL());
-
+					URLEntity[] url=status.getURLEntities();
+					if(url.length>0 && url!=null)
+				     for(URLEntity u:url)
+						
+					{
+					
+				    	 twitterFeed.put(ServiceConstants.TWITTER_URL, u.getURL());
 					}
+				 
 					feedList.put(twitterFeed);
+
+				
 
 				}
 			}
