@@ -25,3 +25,4 @@ hds-partner-hero-banner.js
 hds-resources.js
 legal.js
 gsa-search.js
+asset-gating.js
