@@ -493,7 +493,7 @@ public class SearchServiceHelper {
 
 
 
-	public SearchResult getTrainingResults(String path, String searchKeyword,String startDate,
+	public SearchResult getTrainingResults(String path, String searchKeyword,String startDateProperty,
 			String lowerBound, String upperBound,
 			ResourceResolver resourceResolver, String orderByProperty,
 			String orderBySort) {
@@ -509,7 +509,7 @@ public class SearchServiceHelper {
 			
 		
 		searchParams.put("group." + groupCnt + "_group.1_daterange.property",
-				startDate);
+				startDateProperty);
 		
 		if(lowerBound!=null && !lowerBound.isEmpty()){
 		searchParams.put("group." + groupCnt + "_group.1_daterange.lowerBound",

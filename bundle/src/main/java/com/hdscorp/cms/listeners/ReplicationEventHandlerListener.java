@@ -22,6 +22,7 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.replication.ReplicationAction;
 import com.day.cq.replication.ReplicationActionType;
+import com.hdscorp.cms.config.HdsCorpGlobalConfiguration;
 import com.hdscorp.cms.constants.GlobalConstants;
 import com.hdscorp.cms.util.CacheInvalidator;
 import com.hdscorp.cms.util.JcrUtilService;
@@ -49,17 +50,76 @@ public class ReplicationEventHandlerListener implements EventHandler {
 			if(EventUtil.isLocal(event)){
 				final ReplicationAction replicationAction = ReplicationAction.fromEvent(event);
 				if(null != replicationAction){
+					
 					ResourceResolver resourceResolver = null;
 					final String pagePath = replicationAction.getPath();
 					LOG.info("Replication action {} occured on {} ",replicationAction.getType().getName(),replicationAction.getPath());
 					
 					if (replicationAction.getType() == ReplicationActionType.ACTIVATE) {
 						
-						// Custom Location information 
-						if(pagePath.contains(GlobalConstants.CUSTOM_LOCATIONS_PATH)){
-							CacheInvalidator.invalidateCache("/location", false);
-						}
+						
 
+						if(pagePath.startsWith("/en-us/pdf") || pagePath.startsWith("/content/dam/public/en_us")){
+					    
+					    String[] RLPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.RESOURCE_lIBRARY_PATHS));
+						
+						
+						for(String path:RLPaths){
+							final String shortUrl = PathResolver.getShortURLPath(path);
+							CacheInvalidator.invalidateCache(shortUrl, true);
+							CacheInvalidator.invalidateCache(path, false);
+						}
+						
+						}
+						
+						
+						if(pagePath.startsWith("/content/dam/public/en_us")){
+						    
+						    String[] RLPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.RESOURCE_lIBRARY_PATHS));
+							
+							
+							for(String path:RLPaths){
+								final String shortUrl = PathResolver.getShortURLPath(path);
+								CacheInvalidator.invalidateCache(shortUrl, true);
+								CacheInvalidator.invalidateCache(path, false);
+							}
+							
+							}else if(pagePath.contains("news-insights/press-releases")){
+							    
+							    String[] PRPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.PRESS_RELEASES_PATHS));
+								
+								
+								for(String path:PRPaths){
+									final String shortUrl = PathResolver.getShortURLPath(path);
+									CacheInvalidator.invalidateCache(shortUrl, true);
+									CacheInvalidator.invalidateCache(path, false);
+								}
+								
+								}else if(pagePath.contains("about-hds/awards")){
+								    
+								    String[] awardPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.AWARDS_PATHS));
+									
+									
+									for(String path:awardPaths){
+										final String shortUrl = PathResolver.getShortURLPath(path);
+										CacheInvalidator.invalidateCache(shortUrl, true);
+										CacheInvalidator.invalidateCache(path, false);
+									}
+									
+									}else if(pagePath.contains("news-insights/news")){
+									    
+									    String[] NewsPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.NEWS_PATHS));
+										
+										
+										for(String path:NewsPaths){
+											final String shortUrl = PathResolver.getShortURLPath(path);
+											CacheInvalidator.invalidateCache(shortUrl, true);
+											CacheInvalidator.invalidateCache(path, false);
+										}
+										
+										}
+						
+						
 						
 						if (StringUtils.isNotEmpty(pagePath)) {
 							if(pagePath.startsWith("/etc/segmentation/hdscorp/")){
@@ -124,4 +184,21 @@ public class ReplicationEventHandlerListener implements EventHandler {
 		}
 		return processStatus;
 	}
+	
+	private String[] getPropertyAsArray(Object obj){
+		String []paths={""};
+		if(obj!=null) {
+			
+		if(obj instanceof String[]){
+			paths=(String[])obj;
+    	}else{
+    		paths=new String[1];
+    		paths[0]=(String)obj;
+    	}
+		
+		}
+		return paths;
+		
+	}
+			
 }

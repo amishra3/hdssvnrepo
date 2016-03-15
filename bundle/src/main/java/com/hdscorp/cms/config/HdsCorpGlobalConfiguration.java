@@ -46,7 +46,18 @@ public class HdsCorpGlobalConfiguration {
 
 	@Property(label = "Asset Gating Image Rendition Path", value = "/_jcr_content/renditions/cq5dam.thumbnail.319.319.png", description = "Asset Gating Image Rendition Path")
 	public static final String ASSET_GATING_IMAGE_RENDITION = "hdscorp.assetgating.image.rendition.path";		
-
+	@Property(label = "Resource Library Paths", value = "[/content/hdscorp/en_us/news-insights/resources,/content/hdscorp/en_us/lookup/resourcelibraryrenderer,/content/hdscorp/en_us/lookup/featuredcontent]", description = "Resource Library Cache Clearence Paths")
+	public static final String RESOURCE_lIBRARY_PATHS = "resourcelibrarypaths";	
+	@Property(label = "Product and Solutions  Paths", value = "", description = "Product and solutions Cache Clearence Paths")
+	public static final String PRODUCT_SOLUTIONS_PATHS = "prodnsolpaths";	
+	@Property(label = "Press Releases  Paths", value = "", description = "Press Releases Cache Clearence Paths")
+	public static final String PRESS_RELEASES_PATHS = "pressreleasespaths";	
+	@Property(label = "News Paths", value = "", description = "News Cache Clearence Paths")
+	public static final String NEWS_PATHS = "newspaths";	
+	@Property(label = "Awards Paths", value = "", description = "Awards Cache Clearence Paths")
+	public static final String AWARDS_PATHS = "awardspaths";	
+	
+		
 	
 	@SuppressWarnings("rawtypes")
 	private static Dictionary properties = null;
@@ -106,6 +117,8 @@ public class HdsCorpGlobalConfiguration {
 				+ propertyName);
 		try {
 			Object object = properties.get(propertyName);
+			
+			
 			if (null != object) {
 				return object;
 			}
