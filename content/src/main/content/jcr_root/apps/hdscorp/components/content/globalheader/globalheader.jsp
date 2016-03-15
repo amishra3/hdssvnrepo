@@ -51,7 +51,7 @@
 
 <!-- HEADER STARTS -->
 
-<div class="hds-global-header">
+<div class="hds-global-header clearfix">
 	<c:if test="${selectorString!= 'excludetop'}">
 		<div class="header-container content-container">
 			<a href="${logoTargetURL}"><span
