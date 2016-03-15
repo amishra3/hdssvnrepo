@@ -14,6 +14,10 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
+
+.view-all-executive a:hover{
+	color: #ac1f25;
+}
 .mt_mb{
   margin:20px 0;
 }
