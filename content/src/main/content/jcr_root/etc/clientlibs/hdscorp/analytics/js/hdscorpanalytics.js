@@ -231,10 +231,9 @@ $(".hds-main-navigation h5").each(function() {
     					console.log("tabTitle=="+tabTitle);
                         tabClick(primaryCategory,tabTitle,pageTitle,"Tabscroll");
                     }
-                }
-                else
                     isTabClicked=false;
-
+                }
+               
 			}, delay);
 
         }
