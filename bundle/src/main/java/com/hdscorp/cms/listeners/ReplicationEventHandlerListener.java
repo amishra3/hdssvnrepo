@@ -79,6 +79,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 							
 							
 							for(String path:RLPaths){
+								
 								final String shortUrl = PathResolver.getShortURLPath(path);
 								CacheInvalidator.invalidateCache(shortUrl, true);
 								CacheInvalidator.invalidateCache(path, false);
@@ -90,6 +91,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 								
 								
 								for(String path:PRPaths){
+									
 									final String shortUrl = PathResolver.getShortURLPath(path);
 									CacheInvalidator.invalidateCache(shortUrl, true);
 									CacheInvalidator.invalidateCache(path, false);
@@ -101,6 +103,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 									
 									
 									for(String path:awardPaths){
+										
 										final String shortUrl = PathResolver.getShortURLPath(path);
 										CacheInvalidator.invalidateCache(shortUrl, true);
 										CacheInvalidator.invalidateCache(path, false);
@@ -112,6 +115,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 										
 										
 										for(String path:NewsPaths){
+											
 											final String shortUrl = PathResolver.getShortURLPath(path);
 											CacheInvalidator.invalidateCache(shortUrl, true);
 											CacheInvalidator.invalidateCache(path, false);
