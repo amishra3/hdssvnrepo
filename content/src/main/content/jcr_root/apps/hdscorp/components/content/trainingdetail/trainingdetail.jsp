@@ -40,5 +40,6 @@ value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocation
                                 
                             </ul>
                         </div>
-
+                        
+		<sling:include path="/content/hdscorp/en_us/lookup/search-training-details.html"/>
 
