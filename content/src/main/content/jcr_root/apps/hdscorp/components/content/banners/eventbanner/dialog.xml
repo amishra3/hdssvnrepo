@@ -54,6 +54,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./eventmobileimage"
+                        xtype="ddpathfield"/>
                     <eventbannerbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
@@ -68,6 +73,13 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
                         name="./eventbannerurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
                         type="checkbox"
                         xtype="selection"/>
                 </items>

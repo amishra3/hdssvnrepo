@@ -17,7 +17,8 @@
 
 <c:choose>
 	<c:when test="${not empty properties.eventbannertitle}">
-        <div class="common-hero-banner services-training-banner clearfix" style="background-image:url(${properties.eventbannerimage});">
+       <%-- <div class="common-hero-banner services-training-banner clearfix" style="background-image:url(${properties.eventbannerimage});">--%>
+            <div class="common-hero-banner services-training-banner clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.eventbannerimage,properties.eventmobileimage)} > 
                 <div class="common-hero-banner-container">
                     <div class="col-lg-6 col-md-6 col-xs-12" >
         				    <h2 class="top-banner-heading">${properties.eventbannertitle}</h2>
@@ -25,8 +26,8 @@
                             <h1 class="headline">${properties.eventbannersubtitle}</h1>
                             <h4 class="sub-headline">${properties.eventbannercontent}</h4>        					
                             <div class="btn-square-white request">
-                             <a href="${linkUrl}" target="${properties.eventbannerurltargettype?'_blank':'_self'}">
-                                ${properties.eventbannerbuttonlabel}</a>
+                            <a href="${linkUrl}" target="${properties.eventbannerurltargettype?'_blank':'_self'}">
+                              ${properties.eventbannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
                             </div>
                     </div>
                 </div>
