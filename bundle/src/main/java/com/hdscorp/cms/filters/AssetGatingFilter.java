@@ -62,8 +62,8 @@ public class AssetGatingFilter implements Filter {
 				String gatingParam = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_SUCCESS_QUERY_PARAMETER);
 				String gatingParamVal = slingRequest.getParameter(gatingParam);				
 				if(HdsCorpCommonUtils.isGated(pdfPath, slingRequest) && !HdsCorpCommonUtils.checkValidReferer(refererString, gatingParamVal)){
-					log.debug("==========PDF is GATED ============");
 					String targetURL = forwardPath ;
+					log.debug("==========PDF is GATED ============Redirecting to "+targetURL);
 					slingRequest.setAttribute("pdfPath", pdfPath);
 					slingRequest.getRequestDispatcher(targetURL).forward(request,response);
 //					HttpServletResponse httpResponse = (HttpServletResponse) response;
@@ -82,7 +82,7 @@ public class AssetGatingFilter implements Filter {
 			}			
     		
 		} catch (Exception ex) {
-			log.error("Asset Gating Filter Error Block" + ex.getMessage());
+			log.error("Asset Gating Filter Error Block - " + ex.getMessage());
 		}
 
         
