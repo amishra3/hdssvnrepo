@@ -8,6 +8,7 @@ var hds = window.hds || {};
             hds.pressrelease.bindEventsOnResize();
             hds.pressrelease.bindClick();
             hds.pressrelease.loadMorePressRelease();
+            hds.pressrelease.search();
         },
         loadCatagoryHTML: function() {        	
             hds.pressrelease.processHTML($('.linkLeft a').eq(0).attr('data-loadhtml'), 0);
@@ -62,9 +63,21 @@ var hds = window.hds || {};
                 hds.pressrelease.bindHTMLLoad();
             });
         },
-        bindClick: function() {
+        search:function(){
         	var searchTermPreValue="";
-            $('.linkLeft a').on('click', function(event) {
+            
+        	var searchTerm = $.trim($('#fulltext').val());
+        	if(searchTerm!=searchTermPreValue){
+            	var activeFilterURL = $('#asideLinks li.active a').attr('data-loadhtml');
+            	var loadIndec = $('#asideLinks li.active a').parent().index();
+            	var fulltextSearchURL = activeFilterURL+"?fulltext="+searchTerm ;
+            	hds.pressrelease.processHTML(fulltextSearchURL, loadIndec);            		
+        	}
+        	searchTermPreValue = searchTerm;
+        },
+        
+        bindClick: function() {
+        	 $('.linkLeft a').on('click', function(event) {
                 event.preventDefault();
                 $('#fulltext').val('');
                 var self = $(this);
@@ -95,20 +108,13 @@ var hds = window.hds || {};
             });
 
             $('.pr-search .glyphicon-search').on('click', function(event) {
-            	var searchTerm = $.trim($('#fulltext').val());
-            	if(searchTerm!=searchTermPreValue){
-                	var activeFilterURL = $('#asideLinks li.active a').attr('data-loadhtml');
-                	var loadIndec = $('#asideLinks li.active a').parent().index();
-                	var fulltextSearchURL = activeFilterURL+"?fulltext="+searchTerm ;
-                	hds.pressrelease.processHTML(fulltextSearchURL, loadIndec);            		
-            	}
-            	searchTermPreValue = searchTerm;
+            	hds.pressrelease.search();
             });
             
             $('#fulltext').keyup(function(e){
             	  if(e.keyCode == 13)
             	    {
-            		  $('.pr-search .glyphicon-search').click();//Trigger search button click event
+            		  hds.pressrelease.search();//Trigger search button click event
             	    }
             });
         }
