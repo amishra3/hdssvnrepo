@@ -12,6 +12,7 @@
 <c:set var="locations"
 value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocationlabel")%>" />
 
+<div class="Container-Results container-fluid overRideRight">
 <div class="col-md-3 product-listing">
                             <ul id="asideLinks-product">
                                 <li class="">
@@ -37,9 +38,11 @@ value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocation
                                     </ul>
                                     <div class="MobileHolderWrapper"></div>
                                 </li>
-                                
+
                             </ul>
                         </div>
-                        
-		<sling:include path="/content/hdscorp/en_us/lookup/search-training-details.html"/>
 
+ <sling:include path="/content/hdscorp/en_us/lookup/search-training-details.html"/>
+</div>
+</div>
+</div> <!--main end-->
