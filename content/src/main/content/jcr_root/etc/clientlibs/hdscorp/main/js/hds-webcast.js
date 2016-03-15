@@ -7,7 +7,7 @@ var hds = window.hds || {};
             var defaults = {
                 element: '#webcasts-demand .newsEvents',
                 elementListAnchor: '.webcast-listing li a',
-                detailsBtn: '#webcasts-demand .newsWrapper .expandMes',
+                detailsBtn: '#webcasts-demand .newsWrapper .expandMe',
                 countParagraph: 270,
                 ellipsestext :'...',
                 moreText: "more",
@@ -46,20 +46,18 @@ var hds = window.hds || {};
 					$this.find('.glyphicon').removeClass('glyphicon-plus-sign').addClass('glyphicon-minus-sign');
 					//$this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
 					$(this).prev().css( "display", "block" );
-					alert('one');
 					
                 } else {
-					alert('two');
                     $this.addClass('less');
 					$(this).prev().css( "display", "none" );
 					$this.find('.glyphicon').removeClass('glyphicon-minus-sign').addClass('glyphicon-plus-sign');
                     setTimeout( function() { $this.parents('.newsEvents').find('h3').focus() }, 500 );
 					//$this.parents('.newsEvents').find('.WebcastDetails').hide();
                 }
-                //$this.find('.glyphicon').toggleClass('glyphicon-minus-sign');
-                //$this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
-                //$this.parents('.newsEvents').find('p span.moreellipses').toggle();
-                //$this.parents('.newsEvents').find('p span.morecontent span').toggle();
+                $this.find('.glyphicon').toggleClass('glyphicon-minus-sign');
+                $this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
+                $this.parents('.newsEvents').find('p span.moreellipses').toggle();
+                $this.parents('.newsEvents').find('p span.morecontent span').toggle();
                 return false;
             })
         },
