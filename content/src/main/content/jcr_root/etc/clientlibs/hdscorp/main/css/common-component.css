@@ -996,6 +996,8 @@ input[type="radio"]:checked+label:before {
     padding: 4px;
     vertical-align: top;
     border: 0 none;
+    font-size: 0.8125rem;
+    border: 1px solid #dedede;
 }
 
 .search-mobile-container .search-section .btn-search {

@@ -72,7 +72,8 @@
 						</a></li>
 	
 					</c:forEach>
-	
+
+
 					<li class="search"><input type="text"
 						placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}" id="gsaSearchBox"><span
 						class="icon nav-search"></span></li>
@@ -89,7 +90,19 @@
 			<div class="search-mobile hidden-md hidden-lg">
 				<span class="sprite icon-search-mobile"></span>
 			</div>
-	
+			<div class="search-mobile-container hidden-md hidden-lg">
+                <div class="search-section">
+                    <div class="col-sm-12 col-no-pad">
+                        <label>Search within Hitachi</label>
+                    </div>              
+                    <div class="col-sm-12 col-no-pad">
+                        <input type="text" size="20" maxlength="40" title="Search within Hitachi" class="search-txt">
+                        <input type="submit" value="Search" class="btn-search">
+                    </div>
+                </div>
+            </div>
+
+
 		</div>
 	
 	</c:if>
