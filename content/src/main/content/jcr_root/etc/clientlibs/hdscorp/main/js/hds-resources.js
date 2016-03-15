@@ -34,6 +34,7 @@ var hds = window.hds || {};
             var paginations = this.options.paginationWrapper;
             $(paginations).pagination('destroy');
             $('#loadResourceContent').empty();
+            $('.category-resources-listing').find('.no-matched-result').remove();  
             $("#prodnsolcategorycontent").html('').load(url + " .resourceLibraryContent", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {
                     $('.resource').addClass('visible');
@@ -51,6 +52,7 @@ var hds = window.hds || {};
             });
         },
         _processCatagoryCards: function(url) {
+            $('.category-resources-listing').find('.no-matched-result').remove();  
             var paginations = this.options.paginationWrapper;
             $(paginations).pagination('destroy');
             $('#loadResourceContent').empty();
@@ -110,9 +112,11 @@ var hds = window.hds || {};
 
                 Object.keys(conditions).forEach(function(filter) {
                     if ($.isArray(conditions[filter])) {
+                        console.log(filter);
                         if (filter == "filter3") {
                             var indCat = self.data('subfilter').split(',');
                             var checkMatches = $.grep(conditions[filter], function(val) {
+                                console.log(val+"=======>"+indCat)
                                 return or_cond = or_cond && $.inArray(val, indCat) !== -1;
                             });
                         }
@@ -219,7 +223,8 @@ var hds = window.hds || {};
             if ($allCheckedFilters.length > 0) {
                 var checkedSubVals = $.map($allCheckedFilters, function(el) {
                     return el.value
-                });
+                })
+                console.log("Left Side Filters   == == =  >"+checkedSubVals)
             }
 
             console.log(checkedIndVals + " = " + checkedContVals + " = " + checkedSubVals);
@@ -395,7 +400,6 @@ var hds = window.hds || {};
                 var self = $(this),
                     checkInputIfEmpty = $.trim($('#resSearch').val());
 
-
                 if (!self.parent('li').hasClass('active')) {
                     $('#loadResourceContent').empty();
                     window.history.pushState("", document.title, window.location.pathname);
@@ -434,8 +438,6 @@ var hds = window.hds || {};
                     } else {
                         $("#featuredCards").hide();
                     }
-
-
                 } else {
                     $('#resSearch').attr('placeholder', "Search resources");
                     return false;
@@ -498,7 +500,9 @@ var hds = window.hds || {};
 
             $(document).on('click', '.clear-results', function() {
                 $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
+                $('.category-resources-listing').find('.no-matched-result').remove();
                 $("input[name='ctyFunction']").removeAttr('checked');
+                $("input[name='cbxFunction']").removeAttr('checked');                
                 $('#asideLinks-product li').eq(0).find("a").trigger('click');
                 $('#filterTag .label').css({
                     'display': 'none'
@@ -547,6 +551,8 @@ var hds = window.hds || {};
                 $('.filters-section').hide();
                 $('.resource-filters > a').removeClass('active');
                 $('#filterTag .keyword-filter').show();
+                checkedSubVals=checkedSubVals.split(',');
+                console.log(checkedSubVals);
                 hds.resourceLib._processIndustryFilter(checkedIndVals, checkedContVals, checkedSubVals);
 
                 if ($('.overlayBox').is(':visible')) {
