@@ -267,13 +267,13 @@ $(document).on('keypress', '#searchFilter', function(event) {
             });
 	$('.product-listing input.filters').each(function() {
 		 $(this).click(function(){
-			if ($(this).is(':checked')) {
-                var text = $(this).parent().find("span").text();
+			 setTimeout(function() {
+			   var text = $(this).parent().find("span").text();
        			var result=$('#actualCount').text();
          		if(result==0)
            		  result="zero";
                 searchClick($('#searchFilter').val(), "sub-category filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
-            }
+			 }, 1500); 
          });
 
 		});	
