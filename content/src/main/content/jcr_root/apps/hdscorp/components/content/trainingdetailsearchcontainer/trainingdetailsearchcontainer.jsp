@@ -1,14 +1,23 @@
 <%@include file="/apps/foundation/global.jsp"%><%
 %><%@page session="false" %>
-<sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.LMSDataModel" var="lmsDataModel" />
-
-
 
 <!--pls use below as per requirement
 {lmsDataModel.noOfItemsShown}
 {lmsDataModel.noResultsMsg}
 {lmsDataModel.loadMoreLabel}
 -->
+<c:set var="searchlookuppath" value="${properties.tdsearchlookuppath}" scope="request"/>
+<c:set var="noOfItemsShown" value="${properties.tdnoofitemsshowinpage}" scope="request"/>
+<c:set var="noResultsMsg" value="${properties.tdnoresultsfoundmsg}" scope="request"/>
+<c:set var="loadMoreLabel" value="${properties.tdloadmorelabel}" scope="request"/>
+<c:set var="dateLabel" value="${properties.tddatelabel}" scope="request"/>
+<c:set var="locationLabel" value="${properties.tdlocationlabel}" scope="request"/>
+<c:set var="durationLabel" value="${properties.tddurationlabel}" scope="request"/>
+<c:set var="languageLabel" value="${properties.tdlanguagelabel}" scope="request"/>
+
+<sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.LMSDataModel" var="lmsDataModel" />
+
+
 
 <div class="col-md-9" id="contentCatagory">
    <c:forEach items="${lmsDataModel.maplmsBeanList}" var="lmsmapList" varStatus="lmsStatus">
