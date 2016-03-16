@@ -20,6 +20,7 @@
 
                     <c:forEach var="innerList" items="${twitterFeedModel.twitterFeedData}">
 
+
 	<c:choose>
 
 		<c:when test="${fn:contains(innerList.timeDifference, 'day')}">
@@ -50,21 +51,19 @@
 
 	<c:set var="twitterPostMsg" value="${innerList.twitterMessageText}" />
 
-	<c:if test="${fn:contains(innerList.twitterMessageText, 'http')}">
 
 
 
+    <c:if test="${not empty innerList.twitterURL}">
 
-		<c:set var="twitterPostUrl"
-			value="${fn:substring(innerList.twitterMessageText,fn:indexOf(innerList.twitterMessageText, 'http'),fn:length(innerList.twitterMessageText))}" />
 
-		<c:set var="twitterHrefLink"
-			value='<a href="${twitterPostUrl}" target="_blank" >${twitterPostUrl}</a>' />
+        <c:set var="twitterhttpURL" value='<a href="${innerList.twitterURL}" target="_blank" >${innerList.twitterURL}</a>' />
+
 
 
 
 		<c:set var="twitterPostMsg"
-			value="${fn:replace(innerList.twitterMessageText, twitterPostUrl, twitterHrefLink)}" />
+			value="${fn:replace(innerList.twitterMessageText, innerList.twitterURL, twitterhttpURL)}" />
 
 		<c:set var="postedDate"
 			value="${fn:substring(innerList.timeDifference,0,2)}" />
