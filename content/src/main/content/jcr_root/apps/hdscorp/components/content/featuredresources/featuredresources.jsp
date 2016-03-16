@@ -15,16 +15,8 @@
 <c:forEach var="resource" items="${model.featuredResouceList}" varStatus="loopcnt">
 
 
-			<c:choose>
-			    <c:when test="${resource.gated}">
-			      <div class="col-sm-6 gated">
-			    </c:when>
-			   
-			<c:otherwise>
-			       <div class="col-sm-6">
-			    </c:otherwise>
-			</c:choose>
-            
+			
+             <div class="col-sm-6">
                 <div class="resources-spotlight" style="background-image:url(${resource.featuredBGImage});">
                     <div class="spotlight-mobile hidden-md hidden-lg" style="background-image:url(${resource.featuredBGImage});"></div>
                     <div class="spotlight-content">
