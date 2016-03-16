@@ -17,6 +17,15 @@ public class ResourceNode {
 	private String contentTypeTag;
 	
 	private String[] industryTags;
+	private boolean gated;
+	public boolean isGated() {
+		return gated;
+	}
+
+	public void setGated(boolean gated) {
+		this.gated = gated;
+	}
+
 	public String[] getIndustryTags() {
 		return industryTags;
 	}

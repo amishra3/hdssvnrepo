@@ -134,7 +134,7 @@ public class ResourceLibrarySearchModel  {
 		this.totalNoOfResuts = 	hits.size();		
 		for (Hit hit : hits) {
 		
-			ResourceNode resourceNode = ResourceLibraryHelperModel.getResourceNode(hit.getResource(),this.contenttype,this.industrytag,tagManager);
+			ResourceNode resourceNode = ResourceLibraryHelperModel.getResourceNode(hit.getResource(),this.contenttype,this.industrytag,tagManager,request);
 			if(resourceNode!=null){
 			resouceList.add(resourceNode);
 			}

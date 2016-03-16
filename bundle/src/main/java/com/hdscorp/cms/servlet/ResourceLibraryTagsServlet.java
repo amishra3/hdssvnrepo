@@ -37,8 +37,6 @@ import com.hdscorp.cms.util.ViewHelperUtil;
 public class ResourceLibraryTagsServlet extends SlingAllMethodsServlet {
 
 	
-
-	
 	final Logger LOG =  LoggerFactory.getLogger(ResourceLibraryTagsServlet.class);
 
 	@Override

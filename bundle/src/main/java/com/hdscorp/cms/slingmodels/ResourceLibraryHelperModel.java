@@ -3,6 +3,7 @@ package com.hdscorp.cms.slingmodels;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
@@ -10,10 +11,11 @@ import org.apache.sling.api.resource.ValueMap;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.hdscorp.cms.dao.ResourceNode;
+import com.hdscorp.cms.util.HdsCorpCommonUtils;
 
 public class ResourceLibraryHelperModel {
 	public static ResourceNode getResourceNode(Resource resource,
-			String[] contenttype, String[] industryTag, TagManager tagManager) {
+			String[] contenttype, String[] industryTag, TagManager tagManager,SlingHttpServletRequest request) {
 
 		Resource metadataResource = resource.getChild("jcr:content/metadata");
 		if (metadataResource != null) {
@@ -76,6 +78,13 @@ public class ResourceLibraryHelperModel {
 			} else {
 				resourceNode.setResourceType("pdf");
 
+			}
+			
+			try {
+				resourceNode.setGated(HdsCorpCommonUtils.isGated(resource.getPath(), request));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			return resourceNode;
 		}

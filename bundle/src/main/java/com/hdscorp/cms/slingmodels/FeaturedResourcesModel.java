@@ -19,8 +19,12 @@ import com.hdscorp.cms.dao.ResourceNode;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.PageUtils;
 
-@Model(adaptables = {Resource.class })
-public class FeaturedResourcesModel {
+
+@Model(adaptables = {SlingHttpServletRequest.class, Resource.class})
+public class FeaturedResourcesModel  {
+
+	@Inject
+	private SlingHttpServletRequest request;
 
 	
 
@@ -58,7 +62,7 @@ public class FeaturedResourcesModel {
 						.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 					ResourceNode resourceNode = ResourceLibraryHelperModel
 							.getResourceNode(resource, contenttype,
-									industrytag, tagManager);
+									industrytag, tagManager,request);
 					if (resourceNode != null) {
 						resourceNode.setFeaturedBGImage(map
 								.get("featureditembgimage"));
