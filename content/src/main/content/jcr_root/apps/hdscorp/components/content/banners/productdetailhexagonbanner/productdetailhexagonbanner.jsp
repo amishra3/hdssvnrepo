@@ -78,7 +78,7 @@
    							<h4>${properties.hexagontitle}</h4>
    							<p>${properties.hexagoncontent}</p>
                             <c:if test="${not empty properties.secondarylinklabel}">
-   							<a class="animateAnchor bottomPos text-center" href="${linkUrl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">${properties.ispremiumasset?'<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>':''} ${properties.secondarylinklabel} ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+   							<a class="animateAnchor bottomPos text-center" href="${linkUrl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">${properties.secondarylinklabel} ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                             </c:if> 
                          </li>
    					</ul>

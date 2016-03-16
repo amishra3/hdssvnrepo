@@ -96,6 +96,11 @@ $(document).ready(function () {
         modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='700px' frameborder='0'></iframe>");
         modal.show(); 
     });
+    
+    
+    $('a.isGatedLock').each(function(index, el) {
+    	$(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+    });
 });
 
 

@@ -54,7 +54,7 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
 
     private static final String PDF_TYPE_EXTENSION = ".pdf";
     
-    private static final String GATED_CSS_NAME= "isgatedpdf";
+    private static final String GATED_CSS_NAME= " isGatedLock";
 
 
     public GathedPDFTransformerFactory()  {
