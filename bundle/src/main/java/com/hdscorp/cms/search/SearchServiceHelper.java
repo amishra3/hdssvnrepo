@@ -310,6 +310,11 @@ public class SearchServiceHelper {
 				searchParams.put("group." + groupCnt
 						+ "_group.7_fulltext.relPath",
 						"jcr:content/metadata/@dc:description");
+				searchParams.put("group." + groupCnt + "_group.8_fulltext",
+						searchKeyword);
+				searchParams.put("group." + groupCnt
+						+ "_group.8_fulltext.relPath",
+						"jcr:content/metadata/@keywords");
 			}
 		}
 	}

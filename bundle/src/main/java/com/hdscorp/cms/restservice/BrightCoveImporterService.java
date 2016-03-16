@@ -1,6 +1,8 @@
 package com.hdscorp.cms.restservice;
 
 import java.io.StringReader;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
@@ -10,14 +12,22 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceUtil;
+import org.apache.sling.api.resource.ValueMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 
 import com.day.cq.commons.jcr.JcrConstants;
+import com.day.cq.search.result.Hit;
+import com.day.cq.search.result.SearchResult;
+import com.day.cq.tagging.TagManager;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.dao.BrightCoveVideoNode;
+import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.JcrUtilService;
+import com.hdscorp.cms.util.ViewHelperUtil;
 
 /** Useful for get all the data from BrightCove feed and stored each video as a node with properties into the JCR.
  * @author gokula.nand
@@ -60,6 +70,35 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 					brightCoveSaxHandler);
 			log.info("video list size"+brightCoveSaxHandler.videoList.size());
 			Session session = JcrUtilService.getSession();
+			
+			
+			
+
+			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
+					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
+			String[] paths = { storagePath };
+			String[] types = { "dam:Asset" };
+			SearchResult result = searchServiceHelper.getFullTextBasedResuts(
+					paths, null, null, types, null, false, null, null,
+					JcrUtilService.getResourceResolver(), null, null);
+			List<Hit> hits = result.getHits();
+			HashMap<String, String[]> tagsMap = new HashMap<>();
+
+			for (Hit hit : hits) {
+				Resource metadataResource = hit.getResource().getChild(
+						"jcr:content/metadata");
+				if (metadataResource != null) {
+					ValueMap properties = ResourceUtil
+							.getValueMap(metadataResource);
+
+					if (properties.containsKey("cq:tags")) {
+						String[] assetTags = (String[]) properties
+								.get("cq:tags");
+						tagsMap.put(properties.get("titleId").toString(), assetTags);
+					}
+				}
+			}
+			
 			Node parentNode = session.getNode(storagePath);
 			if(parentNode!=null) {
 				parentNode.remove();
@@ -74,12 +113,10 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 				
 			}
 			}
-			
-			
 			for (BrightCoveVideoNode brightCoveVideoNode : brightCoveSaxHandler.videoList) {
 				
 				
-				createVideoNode(session,storagePath,brightCoveVideoNode);
+				createVideoNode(session,storagePath,brightCoveVideoNode,tagsMap);
 		
 		
 }
@@ -92,7 +129,7 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 
 	}
 
-private void createVideoNode (Session session,String storagePath, BrightCoveVideoNode brightCoveVideoNode ) {
+private void createVideoNode (Session session,String storagePath, BrightCoveVideoNode brightCoveVideoNode,HashMap<String, String[]> tagsMap) {
 	 try {
 	 Node parentNode = session.getNode(storagePath);
 	
@@ -115,8 +152,12 @@ private void createVideoNode (Session session,String storagePath, BrightCoveVide
 		metaDataNode.setProperty("dc:description",brightCoveVideoNode.getDescription());
 		metaDataNode.setProperty("guid",brightCoveVideoNode.getGuid());
 		metaDataNode.setProperty("pubDate",brightCoveVideoNode.getPubDate());
-		String[] tags = {brightCoveVideoNode.getKeywords()};
-		metaDataNode.setProperty("cq:tags",tags);
+		
+		metaDataNode.setProperty("keywords",brightCoveVideoNode.getKeywords());
+		if(tagsMap.containsKey(brightCoveVideoNode.getTitleId())){
+			metaDataNode.setProperty("cq:tags",tagsMap.get(brightCoveVideoNode.getTitleId()));
+		}
+		
 		metaDataNode.setProperty("titleId",brightCoveVideoNode.getTitleId());
 		metaDataNode.setProperty("duration",brightCoveVideoNode.getDuration());
 		metaDataNode.setProperty("resourceType","video");
