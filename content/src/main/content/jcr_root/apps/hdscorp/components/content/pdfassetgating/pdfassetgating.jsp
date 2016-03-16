@@ -27,6 +27,10 @@
 <c:set var="pdfTitle" value="${pdfNode.title}" scope="request"/>
 <c:set var="pdfDesc" value="${pdfNode.description}" scope="request"/>
 
+<c:set var="formIframeURL" value="${properties.formIframeURL}"/>
+<c:if test="${empty formIframeURL}">
+	<c:set var="formIframeURL" value="https://pages.hds.com/hds-gated-form.html"/>
+</c:if>
 
 <c:if test="${null!=pdfNode}">
   <div class="about-hds-awards gatted-asset-pg">                    
@@ -75,7 +79,7 @@
                             <h2>${assetGettingModel.message}</h2>
                             <!--<img src="images/gatted-asset-frm.png"  alt="" class="img-responsive">-->
                             <div class="asset-form">
-                            	<iframe src="https://pages.hds.com/hds-gated-form.html" style="border:none;"></iframe>
+                            	<iframe src="${formIframeURL}" style="border:none;"></iframe>
                             </div>
                         </div>
                         <div class="share hidden-lg hidden-md"><cq:include path="sharethisdesktop"resourceType="hdscorp/components/content/pdfsharethispage" /></div>
