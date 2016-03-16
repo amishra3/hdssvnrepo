@@ -25,16 +25,8 @@
 		<c:if test="${not empty  industryTags}">
 			<c:set var="industryTags" value="${fn:join(industryTags, ',')}" />
 		</c:if>
-		<c:choose>
-	    <c:when test="${resource.gated}">
-	      <c:set var="gated" value="gated" />
-	    </c:when>
-	   
-	    <c:otherwise>
-	       <c:set var="gated" value="" />
-	    </c:otherwise>
-		</c:choose>
-       <div class="resource ${gated}" data-indstry="${industryTags}" data-contenttype="${resource.contentTypeTag}" data-subfilter="${resourceTags}">
+		
+       <div class="resource" data-indstry="${industryTags}" data-contenttype="${resource.contentTypeTag}" data-subfilter="${resourceTags}">
                 <div class="type">${resource.contentType}</div>
                 <h3><a href="${resource.resourcePath}" class="animateLink">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
                 <div class="deafultdesc">
