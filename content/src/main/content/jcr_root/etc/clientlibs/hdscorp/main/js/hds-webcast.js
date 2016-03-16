@@ -12,7 +12,7 @@ var hds = window.hds || {};
                 ellipsestext :'...',
                 moreText: "more",
                 lessText: "less",
-                playBtn: '#webcasts-demand .playvideo'
+                playBtn: '.playvideo'
 
             }
             this.options = $.extend(defaults, options);
