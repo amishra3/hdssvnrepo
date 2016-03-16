@@ -80,12 +80,7 @@ public class ResourceLibraryHelperModel {
 
 			}
 			
-			try {
-				resourceNode.setGated(HdsCorpCommonUtils.isGated(resource.getPath(), request));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			return resourceNode;
 		}
 		return null;
