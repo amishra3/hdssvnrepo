@@ -279,3 +279,7 @@
         padding: 0 ;
     }
 }
+
+.service-support-main .section-service-col .support-connect-login a:hover{
+	color: #ac1f25;
+}

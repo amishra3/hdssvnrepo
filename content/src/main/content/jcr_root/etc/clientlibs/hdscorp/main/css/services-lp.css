@@ -268,6 +268,15 @@
     .accordion-level .accordion-menu-container .accordion-menu{font-size:1.1em}
 	.news-insight-resources .news-resources-col .imageHolder {display: inline-block!important; width:auto!important;}
 	.news-insight-resources .news-resources-col .headline {display: inline-block!important; width:100%!important; text-align:center!important;}
+	#insight-center-excellence .accordion-menu-container .accordion-menu{padding-left:15px!important; padding-right:15px!important;}
+    #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label{padding-left:0!important}
+    .news-insight-resources .news-resources-col .headline{display:none;}
+    .specific-tech .content-container h2 {margin: 20px 0 25px!important;}
+
+	#analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
+
+	.resources-category-more{padding-top:10px; padding-bottom:10px; }
+
 
 }
 
@@ -279,3 +288,10 @@
 }
 
 .millennials .millennials-container .millennials-content .learn{font-size:1em!important;}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+
+body.servicedetail{overflow-x:hidden}
+
+}

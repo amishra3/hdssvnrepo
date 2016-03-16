@@ -40,6 +40,10 @@
     margin: 0 auto 30px;
 }	
 
+.solution-offer .content-container .fb-category-box p a{
+	color: #333333;
+}
+
 .features-solutions{
     background: url("../images/grey-hexagoen-bg.png") repeat scroll 0 0 / cover; z-index:2
 }
@@ -69,7 +73,7 @@
 }
 
 .features-solutions .solution-category-box p{
-    font-size:13px;
+
     margin:0;
 }
 
@@ -130,7 +134,9 @@
 }
 
 .solution-category-box  .blog-icon{
-    font-size:11px;
+     font-size: .75rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .solution-category-box h2{ 
@@ -141,6 +147,9 @@
     margin:0;
     font-weight: bold;
 }
+
+.solution-category-box .more-solutions a{margin-top:15px;}
+
 .grey-bg .more-solutions{text-align:center;}
 
 .partner-quote{background: url("../images/industry-partner-foot-bg.png") no-repeat scroll 50% 50% / cover;}
