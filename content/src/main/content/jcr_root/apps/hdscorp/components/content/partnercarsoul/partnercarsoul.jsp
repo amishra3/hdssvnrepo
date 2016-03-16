@@ -26,18 +26,25 @@
 
            <div class="bannerSectionImage" style="background-image:url('${column.bannerimagepath}'); background-repeat: no-repeat;">
                     <div class="content-container hero-content-partner">
+
                     <div class="col-md-4 partnerLogo col-md-push-8">
-                        <a class="partnerLogo"><img src="${column.imagepath}"></a>
+							<c:if test="${not empty column.imagepath}">
+                        		<a class="partnerLogo"><img src="${column.imagepath}"></a>
+							</c:if>
                     </div>
-					<c:if test="${not empty column.ctalabel}">
+
+
+
                     <div class="col-md-8 col-md-pull-4">
                         <h2>${column.bannertitle}</h2>
                         <p>${column.bannerdescription}</p>
+					<c:if test="${not empty column.ctalabel}">
                         <div class="btn-square-white request call-to-action">
                             <a href="${linkUrl}" target="${column.openinnewwindow==true?'_blank':'_self'}">${column.ctalabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
                         </div>
+					</c:if>
                     </div>
-					</c:if> 
+
                 </div>
             </div>                   
           </c:forEach>

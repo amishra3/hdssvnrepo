@@ -52,7 +52,6 @@
                                 xtype="pathfield"/>
                             <ctalabel
                                 jcr:primaryType="cq:Widget"
-                                allowBlank="false"
                                 fieldLabel="CTA Label"
                                 name="./ctalabel"
                                 xtype="textfield"/>
