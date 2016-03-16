@@ -56,7 +56,7 @@
                             </div>
                       	<p>${pdfNode.description}
                         </p>
-                        <div class="share hidden-xs hidden-sm"><cq:include path="sharethismobile"resourceType="hdscorp/components/content/pdfsharethispage" /></div>
+                        <div class="share hidden-xs hidden-sm"><cq:include path="sharethismobile" resourceType="hdscorp/components/content/pdfsharethispage" /></div>
                         <div class="mb-cta-btn hidden-lg hidden-md"><button type="submit" class="">${assetGettingModel.downloadText}</button> </div>
                         <div class="resources">
 
@@ -82,7 +82,7 @@
                             	<iframe src="${formIframeURL}" style="border:none;"></iframe>
                             </div>
                         </div>
-                        <div class="share hidden-lg hidden-md"><cq:include path="sharethisdesktop"resourceType="hdscorp/components/content/pdfsharethispage" /></div>
+                        <div class="share hidden-lg hidden-md"><cq:include path="sharethisdesktop" resourceType="hdscorp/components/content/pdfsharethispage" /></div>
                     </div>
 
                     </div>
