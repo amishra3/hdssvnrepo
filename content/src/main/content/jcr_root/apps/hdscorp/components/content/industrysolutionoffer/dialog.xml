@@ -36,13 +36,11 @@
                         xtype="richtext"/>
                     <isoctalabel
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
                         fieldLabel="Contact US Label"
                         name="./isoctalabel"
                         xtype="textfield"/>
                     <isoctatargeturl
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
                         fieldLabel="Contact US Target URL"
                         name="./isoctatargeturl"
                         xtype="pathfield"/>

@@ -23,9 +23,11 @@ Industry Solution Offer Component
                                  <cq:include path="industrysolutionblog1" resourceType="hdscorp/components/content/industrysolutionblog"/>
                                  </div>
                            <div class="col-md-12">
+                               <c:if test="${not empty industrySolutionOfferModel.contactUSLabel}">
                                 <div class="more-solutions">
                                      <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'} </a>
                                 </div>
+                               </c:if>
                              </div>
                               </div>
                             </div>
@@ -56,9 +58,11 @@ Industry Solution Offer Component
                             </div>
 
 							<div class="col-sm-12 col-no-pad">
-								<div class="more-solutions">
-									<a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
-								</div>
+                                <c:if test="${not empty industrySolutionOfferModel.contactUSLabel}">
+                                    <div class="more-solutions">
+                                        <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                    </div>
+								</c:if>
 							</div>
                         </div>
                     </div>
@@ -73,9 +77,11 @@ Industry Solution Offer Component
                                 <div class="fb-category-box">
                                     <h3>${industrySolutionOfferModel.subTitle}</h3>
 										${industrySolutionOfferModel.description}
-                                     <div class="more-solutions">
-                                     <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
-                                    </div>
+ 									<c:if test="${not empty industrySolutionOfferModel.contactUSLabel}">
+                                         <div class="more-solutions">
+                                         <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                        </div>
+                                    </c:if>
                                 </div>
                             </div>
                         </div>
