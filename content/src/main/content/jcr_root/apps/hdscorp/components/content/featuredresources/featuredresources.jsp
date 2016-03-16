@@ -6,12 +6,25 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 
-<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.FeaturedResourcesModel" var="model" />
+<c:set var="featuredresources" value="${properties.featuredresources}" scope="request"/>
+<c:set var="contenttype" value="${properties.contenttype}" scope="request"/>
+<sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.FeaturedResourcesModel" var="model" />
+
 
 <div class="section resourceLibraryfeatered">
 <c:forEach var="resource" items="${model.featuredResouceList}" varStatus="loopcnt">
 
-            <div class="col-sm-6">
+
+			<c:choose>
+			    <c:when test="${resource.gated}">
+			      <div class="col-sm-6 gated">
+			    </c:when>
+			   
+			<c:otherwise>
+			       <div class="col-sm-6">
+			    </c:otherwise>
+			</c:choose>
+            
                 <div class="resources-spotlight" style="background-image:url(${resource.featuredBGImage});">
                     <div class="spotlight-mobile hidden-md hidden-lg" style="background-image:url(${resource.featuredBGImage});"></div>
                     <div class="spotlight-content">
