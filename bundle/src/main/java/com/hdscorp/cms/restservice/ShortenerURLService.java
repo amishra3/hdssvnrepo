@@ -56,7 +56,7 @@ public class ShortenerURLService extends GenericRestfulServiceInvokers {
 			config = configurationAdmin.getConfiguration(SHORTEN_PID);
 			Dictionary props = config.getProperties();
 			locationPath = (String) config.getProperties().get(SHORTEN_URL);
-			if (locationPath != null && !locationPath.isEmpty()) {
+			if (locationPath== null || locationPath.isEmpty()) {
 				locationPath = ServiceConstants.SHORTEN_URL;
 			}
 		} catch (Exception e) {
