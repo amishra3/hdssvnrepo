@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
     height="600"
     title="Partner Description"
@@ -13,16 +13,16 @@
                 jcr:primaryType="cq:Panel"
                 title="Column 1">
                 <items jcr:primaryType="cq:WidgetCollection">
-					<productDefaultDescription
-                          jcr:primaryType="cq:Widget"
-                          allowBlank="{Boolean}false"
-                          anchor="100%"
-                          dname="header"
-                          fieldLabel="Partner Default Description"
-                          key="description"
-                          layout="anchor"
-                          name="./productDefaultDescription"
-                          xtype="richtext"/>
+                    <productDefaultDescription
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        anchor="100%"
+                        dname="header"
+                        fieldLabel="Partner Default Description"
+                        key="description"
+                        layout="anchor"
+                        name="./productDefaultDescription"
+                        xtype="richtext"/>
                     <contents
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Descriptions"
@@ -43,8 +43,7 @@
                                     key="categoryTag"
                                     layout="anchor"
                                     name="cq:tags"
-                                    xtype="tags"
-								/>
+                                    xtype="tags"/>
                                 <productDescription
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"
@@ -54,21 +53,15 @@
                                     key="description"
                                     layout="anchor"
                                     name="./productDescription"
-                                    xtype="richtext"/>                                    
+                                    xtype="richtext"/>
                             </items>
                         </fieldConfig>
-                    </contents>                    
+                    </contents>
                 </items>
             </tab1>
         </items>
     </items>
-    <listeners jcr:primaryType="nt:unstructured" beforesubmit="function(dialog) {                           
-			var tagsArray = dialog.findByType('tags');
-			var mergedString= '';
-			$.each(tagsArray ,function(index,value) {
-     			mergedString = mergedString+','+value.getValue();   
-			});
-			
-			return HDSCORP.findDuplicatesInArray(mergedString);  
-    }"/>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        beforesubmit="function(dialog) {                               var tagsArray = dialog.findByType('tags');    var mergedString= '';    $.each(tagsArray ,function(index,value) {         mergedString = mergedString+','+value.getValue();       });        return HDSCORP.findDuplicatesInArray(mergedString);       }"/>
 </jcr:root>

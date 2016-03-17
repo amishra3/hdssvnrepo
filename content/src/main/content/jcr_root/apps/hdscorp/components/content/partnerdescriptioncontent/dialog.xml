@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
     height="500"
     width="800"
@@ -15,23 +15,41 @@
                     jcr:primaryType="cq:WidgetCollection"
                     xtype="multifieldpanel">
                     <backgroundimagepath
-                                jcr:primaryType="cq:Widget"
-                                allowBlank="{Boolean}false"
-                                fieldLabel="Background Image Path"
-                                name="./backgroundimagepath"
-                    xtype="ddpathfield"/>
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Background Image Path"
+                        name="./backgroundimagepath"
+                        xtype="ddpathfield"/>
                     <partnericonimagepath
-                                jcr:primaryType="cq:Widget"
-                                allowBlank="{Boolean}false"
-                                fieldLabel="Partner Icon Image Path"
-                                name="./partnericonimagepath"
-                    xtype="ddpathfield"/>
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Partner Icon Image Path"
+                        name="./partnericonimagepath"
+                        xtype="ddpathfield"/>
                     <partnericonimagealttext
-                                jcr:primaryType="cq:Widget"
-                                allowBlank="{Boolean}false"
-                                fieldLabel="Partner Icon Image Alt Text"
-                                name="./partnericonimagealttext"
-                    xtype="textfield"/>                                        
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Partner Icon Image Alt Text"
+                        name="./partnericonimagealttext"
+                        xtype="textfield"/>
+                    <partnername
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is System Integrators partner Name"
+                        fieldLabel="Partner Name"
+                        name="./partnername"
+                        xtype="textfield"/>
+                    <partnerheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the System Integrators Partner &#xa;Headline "
+                        fieldLabel="Partner Head Line"
+                        name="./partnerheadline"
+                        xtype="textfield"/>
+                    <partnerintroduction
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the System Integrators partner Introduction"
+                        fieldLabel="Partner Introduction"
+                        name="./partnerintroduction"
+                        xtype="textfield"/>
                 </items>
             </tab1>
         </items>
