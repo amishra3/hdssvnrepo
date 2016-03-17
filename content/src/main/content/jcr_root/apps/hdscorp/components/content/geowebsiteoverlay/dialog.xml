@@ -1,79 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
     height="550"
     title="Geo website overlay"
-    width="700"
+    width="850"
     xtype="dialog">
     <items
         jcr:primaryType="cq:Widget"
-        xtype="panel">
+        xtype="tabpanel">
         <items jcr:primaryType="cq:WidgetCollection">
-            <selectmessagetext
-                jcr:primaryType="cq:Widget"
-                allowBlank="false"
-                fieldLabel="Select Message Text"
-                name="./selectmessagetext"
-                xtype="textfield"/>
-            <tab jcr:primaryType="cq:Panel">
+            <georegions
+                jcr:primaryType="cq:Panel"
+                title="GEO Selector">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <overlaymap
+                    <geoallregionlabel
                         jcr:primaryType="cq:Widget"
-                        hideLabel="false"
-                        name="./overlaymap"
-                        title="Countries and URL"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Regions Label"
+                        name="./geoallregionlabel"
+                        xtype="textfield"/>
+                    <regions
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Regions"
+                        name="./regions"
                         xtype="multifield">
                         <fieldConfig
                             jcr:primaryType="cq:Widget"
-                            border="true"
-                            hideLabel="true"
-                            layout="form"
-                            padding="10px"
-                            width="1000"
                             xtype="multifieldpanel">
                             <items jcr:primaryType="cq:WidgetCollection">
-                                <gwocountryname
+                                <regionlabel
                                     jcr:primaryType="cq:Widget"
-                                    allowBlank="false"
-                                    fieldLabel="Country Name"
-                                    key="gwocountryname"
-                                    name="gwocountryname"
-                                    width="300"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region Label"
+                                    key="regionlabel"
                                     xtype="textfield"/>
-                                <gwoflagimage
+                                <regionid
                                     jcr:primaryType="cq:Widget"
-                                    allowBlank="false"
-                                    fieldLabel="Flag Image"
-                                    key="gwoflagimage"
-                                    width="300"
-                                    xtype="pathfield"/>
-                                <gwoiconimagealttext
-                                    jcr:primaryType="cq:Widget"
-                                    allowBlank="false"
-                                    fieldLabel="Icon Image ALT Text"
-                                    key="gwoiconimagealttext"
-                                    width="300"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region ID"
+                                    key="regionid"
                                     xtype="textfield"/>
-                                <gwotargeturl
+                                <regioncountries
                                     jcr:primaryType="cq:Widget"
-                                    allowBlank="false"
-                                    fieldLabel="Target URL"
-                                    key="gwotargeturl"
-                                    width="300"
-                                    xtype="pathfield"/>
-                                <gwoopeninnewwindow
-                                    jcr:primaryType="cq:Widget"
-                                    fieldLabel="Open in New Window"
-                                    key="gwoopeninnewwindow"
-                                    name="./gwoopeninnewwindow"
-                                    type="checkbox"
-                                    width="300"
-                                    xtype="selection"/>
+                                    fieldLabel="Region Countries"
+                                    key="regioncountries"
+                                    xtype="multifield">
+                                    <fieldConfig
+                                        jcr:primaryType="cq:Widget"
+                                        border="true"
+                                        hideLabel="true"
+                                        layout="form"
+                                        xtype="multifieldpanel">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <countrylabel
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                dname="header"
+                                                fieldLabel="Country Label"
+                                                key="countrylabel"
+                                                layout="anchor"
+                                                xtype="textfield"/>
+                                            <countrytargeturl
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                fieldLabel="Country URL"
+                                                key="countrytargeturl"
+                                                layout="anchor"
+                                                xtype="textfield"/>
+                                            <openinnewwindow
+                                                jcr:primaryType="cq:Widget"
+                                                fieldLabel="Open in New Window ?"
+                                                key="openinnewwindow"
+                                                type="select"
+                                                xtype="selection">
+                                                <options jcr:primaryType="cq:WidgetCollection">
+                                                    <Yes
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Yes"
+                                                        value="1"/>
+                                                    <No
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="No"
+                                                        value="2"/>
+                                                </options>
+                                            </openinnewwindow>
+                                        </items>
+                                    </fieldConfig>
+                                </regioncountries>
                             </items>
                         </fieldConfig>
-                    </overlaymap>
+                    </regions>
                 </items>
-            </tab>
+            </georegions>
         </items>
     </items>
 </jcr:root>
