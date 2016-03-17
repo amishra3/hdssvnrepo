@@ -6,10 +6,15 @@
 	var="brightTalkLeftNavModel" />
 
 
+<c:set var="featuredfilterlabel" value="${properties.featuredfilterlabel}"/>
+<c:if test="${empty featuredfilterlabel}">
+	<c:set var="featuredfilterlabel" value="All Webcasts"/>
+</c:if>
+
 
 <ul>
     		<li class="active"><a data-catagory="All Webcast"
-				title="Featured" href="javascript:void(0);" class="active">Featured<span
+				title="Featured" href="javascript:void(0);" class="active">${featuredfilterlabel}<span
 					class="icon-accordion-closed hidden-md hidden-lg"></span><span
 					class="icon-accordion-opened hidden-md hidden-lg"></span></a>
 			<div class="MobileHolderWrapper"></div></li>

@@ -5,7 +5,8 @@
     </filter> 
     <filter root="/apps/sling/servlet/errorhandler"/>
 	<filter root="/apps/foundation"/>
-	<filter root="/apps/cq"/>
+	<filter root="/apps/cq/core"/>
+	<filter root="/apps/cq/xssprotection"/>
     <filter root="/etc/clientlibs/hdscorp"/>
     <filter root="/etc/map/"/>
 

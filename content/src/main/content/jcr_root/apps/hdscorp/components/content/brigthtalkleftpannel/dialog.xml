@@ -15,6 +15,11 @@
                 <items
                     jcr:primaryType="cq:WidgetCollection"
                     xtype="multifieldpanel">
+					<featuredfilterlabel
+			            jcr:primaryType="cq:Widget"
+			            fieldLabel="Label For Featured Filter"
+			            name="./featuredfilterlabel"
+			            xtype="textfield"/>                    
                     <btlpfeaturedtypes
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Feature Types"
