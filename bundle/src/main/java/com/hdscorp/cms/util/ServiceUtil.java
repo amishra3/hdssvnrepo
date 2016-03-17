@@ -310,6 +310,7 @@ public class ServiceUtil {
 
 		try {
 			String jsonArrayObject = PageUtils.getPropertyValue(resourceResolver, storagePath, savedProperty);
+			log.debug("jsonArrayObject :::::::::::::::::" + jsonArrayObject);
 			if (jsonArrayObject.contains(ServiceConstants.JSON_STATUS_CODE)) {
 				Map<String, String> map = new HashMap<String, String>();
 				JSONObject jsonObject = new JSONObject(jsonArrayObject);
@@ -347,7 +348,7 @@ public class ServiceUtil {
 
 			}
 		} catch (Exception e) {
-			log.info("Exception while creating map::" + e);
+			log.error("Exception while creating map::" + e);
 		}
 		return listMap;
 	}
