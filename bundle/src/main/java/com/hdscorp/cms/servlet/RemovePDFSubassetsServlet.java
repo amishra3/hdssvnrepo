@@ -86,7 +86,8 @@ public class RemovePDFSubassetsServlet extends SlingAllMethodsServlet {
 	    SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		
 		
-		String sqlStatement= "SELECT * FROM nt:unstructured WHERE jcr:path LIKE '" + searchPath+"%subassets/page%'";
+		//String sqlStatement= "SELECT * FROM nt:unstructured WHERE jcr:path LIKE '" + searchPath+"%subassets/page%'";
+		String sqlStatement= "SELECT * FROM sling:OrderedFolder WHERE jcr:path LIKE '" + searchPath+"%subassets'";
 		QueryManager queryManager = adminSession.getWorkspace().getQueryManager();
 		Query query = queryManager.createQuery(sqlStatement, Query.SQL);
 		

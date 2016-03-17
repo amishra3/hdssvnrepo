@@ -56,6 +56,8 @@ public class HdsCorpGlobalConfiguration {
 	public static final String NEWS_PATHS = "hdscorp.newspaths";	
 	@Property(label = "Awards Paths", value = "", unbounded = PropertyUnbounded.ARRAY,description = "Awards Cache Clearence Paths")
 	public static final String AWARDS_PATHS = "hdscorp.awardspaths";	
+	@Property(label = "Facebook Fields To Retreive", value = "",unbounded = PropertyUnbounded.ARRAY, description = "Facebook Fields To Retreive")
+	public static final String FACEBOOK_FIELDS = "hdscorp.facebook.fields";
 	
 	//DONT FOLLOW THIS PATTERN AS THIS IS A FIX FOR A BUG
 	public static String BRIGHTTALK_DATA_STORAGE_PATH = "hdscorp.brighttalk.data.storage.path";	
