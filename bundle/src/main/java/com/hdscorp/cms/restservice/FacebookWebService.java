@@ -54,8 +54,10 @@ ConfigurationAdmin configurationAdmin;
 		log.info("Execution start for getFacebookFeed() ");
 		JSONArray jsonArray = new JSONArray();
 		if (getFacebookInstance(appId, appSecret, accessToken) != null) {
-			ResponseList<Post> results = getFacebookInstance(appId, appSecret, accessToken).getPosts(facebookPostName,
-					new Reading().limit(Integer.parseInt(postLimt)));		
+			Reading reading=new Reading();
+			reading.limit(Integer.parseInt(postLimt));
+			reading.fields("id","message","picture","link","description","icon","created_time");
+			ResponseList<Post> results = getFacebookInstance(appId, appSecret, accessToken).getPosts(facebookPostName,reading);		
 		
 			try {
 				for (Post post : results) {							
