@@ -18,7 +18,6 @@
 
 <%@page import="java.util.Date"%>
 
-
 <sling:adaptTo adaptable="${resource}"
 	adaptTo="com.hdscorp.cms.slingmodels.NewsInsightVerticalExplorerModel"
 	var="newsInsightVerticalExplorer" />
@@ -36,7 +35,7 @@
 		<div class="type">${newsInsightVerticalExplorer.iconImageLabel}
 			${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
 		<div class="spotlight-title">
-			<a href="${newsInsightVerticalExplorer.targetURL}.html"
+			<a href="${newsInsightVerticalExplorer.targetURL}"
 				class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
 				aria-hidden="true"
 				class="glyphicon glyphicon-menu-right animateIcon"></span></a>
@@ -59,13 +58,13 @@
 		<div class="read-more">
 			<c:choose>
 				<c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
-					<a href="${newsInsightVerticalExplorer.targetBottomURL}.html"
+					<a href="${newsInsightVerticalExplorer.targetBottomURL}"
 						target="_blank" class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
 				</c:when>
 				<c:otherwise>
-					<a href="${newsInsightVerticalExplorer.targetBottomURL}.html"
+					<a href="${newsInsightVerticalExplorer.targetBottomURL}"
 						class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>

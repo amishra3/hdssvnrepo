@@ -59,6 +59,14 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Event"
                                 value="Event"/>
+                            <opt3
+                                jcr:primaryType="nt:unstructured"
+                                text="News"
+                                value="News"/>
+                            <opt4
+                                jcr:primaryType="nt:unstructured"
+                                text="Resource"
+                                value="Resource"/>
                         </options>
                     </nibteventtype>
                 </items>
@@ -116,6 +124,14 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Event"
                                 value="Event"/>
+                            <opt3
+                                jcr:primaryType="nt:unstructured"
+                                text="News"
+                                value="News"/>
+                            <opt4
+                                jcr:primaryType="nt:unstructured"
+                                text="Resource"
+                                value="Resource"/>
                         </options>
                     </nibtbeventtype>
                 </items>
