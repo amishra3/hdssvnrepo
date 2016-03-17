@@ -1,4 +1,8 @@
 <%--Brighttalk component.--%>
+<%@page import="com.hdscorp.cms.config.HdsCorpGlobalConfiguration"%>
+<%@page import="com.hdscorp.cms.scheduler.BrightCoveScheduler"%>
+<%@page import="org.apache.sling.api.resource.ValueMap"%>
+<%@page import="org.apache.sling.api.resource.Resource"%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
@@ -8,9 +12,14 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 
-<% List<Map<String, String>> listMaps=ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,PageUtils.getPropertyValue(resourceResolver,"/apps/hdscorp/config/com.hdscorp.cms.scheduler.BrightTalkScheduler","storage.path"),ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME,ServiceConstants.FEED_RECORDED);
+<% 
+
+String serviceResponseStoragePath = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.BRIGHTTALK_DATA_STORAGE_PATH);
+
+List<Map<String, String>> listMaps=ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,serviceResponseStoragePath,ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME,ServiceConstants.FEED_RECORDED);
 pageContext.setAttribute("listMaps", listMaps); 
- %>
+
+%>
 
 <c:set var='playerpath' value='${properties.playerpagepath}'/>
 <c:if test="${empty properties.playerpagepath}">
