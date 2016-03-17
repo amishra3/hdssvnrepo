@@ -275,9 +275,6 @@
 
 	#analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
 
-	.resources-category-more{padding-top:10px; padding-bottom:10px; }
-
-
 }
 
 
@@ -295,3 +292,5 @@
 body.servicedetail{overflow-x:hidden}
 
 }
+
+.resources-category-more{padding-top:10px; padding-bottom:10px; }

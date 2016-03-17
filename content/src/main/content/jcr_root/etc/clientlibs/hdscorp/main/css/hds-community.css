@@ -328,7 +328,10 @@
 }
 
 .vsp-soft-products-details{color: #333333; border-bottom: 3px solid #c5c5c5; padding:30px 0 25px; margin: 0 25px; }
-.vsp-soft-products-details:last-child{border-bottom: none;}
+.vsp-soft-products .accordion-level-last .vsp-soft-products-details:last-child {
+	border-bottom: none;	
+}
+/*.vsp-soft-products-details:last-child{border-bottom: none;}*/
 
 .vsp-soft-products-details .col-sm-4{padding-left: 0;}
 .vsp-soft-products-details .col-sm-8{padding-right: 0;}
@@ -346,6 +349,10 @@
 .vsp-soft-products-details .product-download a{
     color: #cc0000;
 }
+.vsp-soft-products-details .product-download a:hover{
+	color: #ac1f25;
+    text-decoration: none;
+}                
 .vsp-soft-products-details .product-email{
     color: #cc0000;
     font-size: 0.8em;
