@@ -244,7 +244,7 @@ public final class ServiceConstants {
 	 */
 	public static final String FILE_CSV_PATH = "file.csv.path";
 	
-	public static final String DATE_FORMAT_FROM_LML = "MM/dd/yyyy HH:mm:ss";
+	public static final String DATE_FORMAT_FROM_LML = "MM/dd/yyyy HH:mm";	
 	public static final String DATE_FORMAT_TO_LML = "MMddyyyy";
 	public static final String LML_NODE_SEPERATOR = "-";
 	
