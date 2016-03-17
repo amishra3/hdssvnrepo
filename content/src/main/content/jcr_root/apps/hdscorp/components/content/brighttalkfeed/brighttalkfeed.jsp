@@ -14,9 +14,8 @@
 
 <% 
 
-String serviceResponseStoragePath = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.BRIGHTTALK_DATA_STORAGE_PATH);
 
-List<Map<String, String>> listMaps=ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,serviceResponseStoragePath,ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME,ServiceConstants.FEED_RECORDED);
+List<Map<String, String>> listMaps=ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,HdsCorpGlobalConfiguration.BRIGHTTALK_DATA_STORAGE_PATH,ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME,ServiceConstants.FEED_RECORDED);
 pageContext.setAttribute("listMaps", listMaps); 
 
 %>

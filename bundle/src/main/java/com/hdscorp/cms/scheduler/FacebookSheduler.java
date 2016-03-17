@@ -17,9 +17,11 @@ import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hdscorp.cms.config.HdsCorpGlobalConfiguration;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.restservice.FacebookWebService;
 import com.hdscorp.cms.util.ServiceUtil;
+
 import facebook4j.FacebookException;
 
 /**
@@ -81,6 +83,7 @@ public class FacebookSheduler {
 		this.storagePath = ctx.getProperties().get(ServiceConstants.FB_POST_STORAGE_PATH).toString();
 		this.postLimit = ctx.getProperties().get(ServiceConstants.FB_POST_LIMIT_KEY).toString();
 		this.searchPost = ctx.getProperties().get(ServiceConstants.FB_POST_SEARCH_KEY).toString();
+		HdsCorpGlobalConfiguration.FACEBOOK_DATA_STORAGE_PATH = this.storagePath ; 
 		Map<String, Serializable> configOne = new HashMap<>();
 
 		final Runnable job = new Runnable() {

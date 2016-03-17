@@ -56,9 +56,11 @@ public class HdsCorpGlobalConfiguration {
 	public static final String NEWS_PATHS = "hdscorp.newspaths";	
 	@Property(label = "Awards Paths", value = "", unbounded = PropertyUnbounded.ARRAY,description = "Awards Cache Clearence Paths")
 	public static final String AWARDS_PATHS = "hdscorp.awardspaths";	
-	@Property(label = "Brightalk Service Response Storage Path", value = "/content/hdscorp/en_us/lookup/brighttalkfeeddata/jcr:content/",description = "Brightalk Service Response Storage Path")
-	public static final String BRIGHTTALK_DATA_STORAGE_PATH = "hdscorp.brighttalk.data.storage.path";	
 	
+	//DONT FOLLOW THIS PATTERN AS THIS IS A FIX FOR A BUG
+	public static String BRIGHTTALK_DATA_STORAGE_PATH = "hdscorp.brighttalk.data.storage.path";	
+	
+	public static String FACEBOOK_DATA_STORAGE_PATH = "hdscorp.facebook.data.storage.path";
 		
 	
 	@SuppressWarnings("rawtypes")

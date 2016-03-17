@@ -10,5 +10,4 @@
     hdscorp.prodnsolpaths="[/content/hdscorp/en_us/news-insights/resources,/content/hdscorp/en_us/lookup/resourcelibraryrenderer,/content/hdscorp/en_us/lookup/featuredcontent]"
     hdscorp.pressreleasespaths="[/content/hdscorp/en_us/lookup/search-press-releases,/content/hdscorp/en_us/news-insights/news]"
     hdscorp.newspaths="[/content/hdscorp/en_us/lookup/search-news,/content/hdscorp/en_us/news-insights/news]"
-    hdscorp.awardspaths="[/content/hdscorp/en_us/lookup/search-awards,/content/hdscorp/en_us/news-insights/news]"
-    hdscorp.brighttalk.data.storage.path="/content/hdscorp/en_us/lookup/brighttalkfeeddata/jcr:content/"/>
+    hdscorp.awardspaths="[/content/hdscorp/en_us/lookup/search-awards,/content/hdscorp/en_us/news-insights/news]"/>

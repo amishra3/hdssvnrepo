@@ -17,6 +17,7 @@ import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hdscorp.cms.config.HdsCorpGlobalConfiguration;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.restservice.BrightTalkWebService;
 import com.hdscorp.cms.util.ServiceUtil;
@@ -63,6 +64,7 @@ public class BrightTalkScheduler {
 		this.schedulerExpression = ctx.getProperties().get(ServiceConstants.FEED_SCHEDULER_EXPRESSION).toString();
 		this.feedURL = ctx.getProperties().get(ServiceConstants.FEED_URL_KEY).toString();
 		this.storagePath = ctx.getProperties().get(ServiceConstants.FEED_STORAGE_PATH).toString();
+		HdsCorpGlobalConfiguration.BRIGHTTALK_DATA_STORAGE_PATH = this.storagePath ;
 		Map<String, Serializable> configOne = new HashMap<>();
 
 		final Runnable job = new Runnable() {
