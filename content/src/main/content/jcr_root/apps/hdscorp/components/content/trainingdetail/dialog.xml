@@ -39,10 +39,10 @@
                                 xtype="textfield"/>
                         </fieldConfig>
                     </tdlocations>
-                    <tdsearchpagepath
+                    <tdpathlocationsearch
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Training Detail Search Page Path"
-                        name="./searchpagepath"
+                        fieldLabel="Training Search Lookup Path"
+                        name="./tdpathlocationsearch"
                         xtype="pathfield"/>
                 </items>
             </tab1>
