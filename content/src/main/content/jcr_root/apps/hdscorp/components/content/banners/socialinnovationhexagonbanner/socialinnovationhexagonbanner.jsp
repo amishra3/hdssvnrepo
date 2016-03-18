@@ -9,7 +9,7 @@
 <c:choose>
 	<c:when test="${not empty properties.hexagonbannertitle}">
 
-		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl-openinnewwindow")%>" />
+		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-placardurllabel-placardtargeturl-openinnewwindow-thirdparty")%>" />
 
 		<div class="advance-tech-hexagon clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.hexagonbannertitleimagePath,properties.hexagonbannertitlemobileimagePath)}  >
 			<div class="content-container clearfix">
@@ -45,9 +45,7 @@
     
                                     <c:if test="${not empty placardurllabel}">
                                     <div class="read-more">
-                                        <a href="${placardtargeturl}" target="${openinnewwindow==1?'_blank':'_self'}" class="animateLink">${placardurllabel}
-                                            <span class="glyphicon glyphicon-menu-right animateIcon"
-                                            aria-hidden="true"></span>
+ <a href="${placardtargeturl}" target="${openinnewwindow==1?'_blank':'_self'}" class="animateLink">${placardurllabel}${placardList.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 
                                         </a>
                                     </div>
