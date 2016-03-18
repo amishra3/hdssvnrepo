@@ -97,6 +97,33 @@
                         fieldLabel="Please select tag for the product description"
                         name="./desctags"
                         xtype="tags"/>
+                    <lookuTemplates
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Comma Delimited Value of LookupTemplates "
+                        fieldDescription="Default - /apps/hdscorp/templates/productdetail,/apps/hdscorp/templates/servicedetail"
+                        name="./lookuTemplates"
+                        xtype="textfield"/>
+                    <lookupPathFields
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="These are the Search Lookup Paths"
+                        fieldDescription="Defaults are - /content/hdscorp/en_us/products-solutions,/content/hdscorp/en_us/services"
+                        name="./lookupPathFields"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <elabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Search Lookup Path"
+                                    key="lookupPaths"
+                                    width="300"
+                                    name="./lookupPaths"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </lookupPathFields>                        
                 </items>
             </tab3>
         </items>

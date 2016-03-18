@@ -101,6 +101,13 @@ $(document).ready(function () {
     $('a.isGatedLock').each(function(index, el) {
     	$(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
     });
+    
+    
+    if ($(".stickyNav")[0]){
+    	var anchorVal = window.location.hash;
+    	$('a[href^='+anchorVal+']').click();
+    } 
+    
 });
 
 

@@ -52,7 +52,6 @@ public class SubCatContentModel {
 	@Default(values = {"/content/hdscorp/en_us/products-solutions","/content/hdscorp/en_us/services"})
 	private String[] lookupPaths;
 
-	
 	private List<ProductNode> products;
 
 	public String[] getSubcattags() {
