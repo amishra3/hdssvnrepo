@@ -71,7 +71,7 @@ public class RemovePDFSubassetsServlet extends SlingAllMethodsServlet {
 	
     try {
     	
-    	String searchPath = request.getParameter("path");
+    	String searchPath = request.getParameter("servicepath");
     	String performDelete = request.getParameter("delete");
     	String defaultPath = "/content/dam/public/en_us/pdfs";
     	
