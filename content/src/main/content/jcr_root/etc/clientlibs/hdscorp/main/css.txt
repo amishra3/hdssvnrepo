@@ -39,3 +39,4 @@ app.css
 legal.css
 gated-detail.css
 training-detail.css
+geo-selector.css
