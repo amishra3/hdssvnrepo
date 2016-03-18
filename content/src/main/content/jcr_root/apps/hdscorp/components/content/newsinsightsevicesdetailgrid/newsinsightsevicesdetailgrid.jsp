@@ -32,7 +32,9 @@
 												<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
 											</a>
 										</h3>
-										${description}
+								 <c:if test="${not empty description}">
+                                        <p>${description}</p>
+       							 </c:if>
 										<c:choose>
 											<c:when test="${not empty ctalink && not empty ctat}">
 												<div class="resources-category-more">
