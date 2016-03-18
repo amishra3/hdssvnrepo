@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class PartnerNode {
 	
 
+
 	private String partnerTitle;
 	
 	private String partnerPath;
@@ -18,11 +19,7 @@ public class PartnerNode {
 	
 	private String partnerIconImageAltText;
 
-	private String partnerName;
 	
-	private String partnerHeadLine;
-	
-	private String partnerIntroduction;
 	
 	private String[] partnerTags;
 	
@@ -96,29 +93,6 @@ public class PartnerNode {
 		this.partnerDescription = partnerDescription;
 	}
 
-	public String getPartnerName() {
-		return partnerName;
-	}
-
-	public void setPartnerName(String partnerName) {
-		this.partnerName = partnerName;
-	}
-
-	public String getPartnerHeadLine() {
-		return partnerHeadLine;
-	}
-
-	public void setPartnerHeadLine(String partnerHeadLine) {
-		this.partnerHeadLine = partnerHeadLine;
-	}
-
-	public String getPartnerIntroduction() {
-		return partnerIntroduction;
-	}
-
-	public void setPartnerIntroduction(String partnerIntroduction) {
-		this.partnerIntroduction = partnerIntroduction;
-	}
-
+	
 
 }
