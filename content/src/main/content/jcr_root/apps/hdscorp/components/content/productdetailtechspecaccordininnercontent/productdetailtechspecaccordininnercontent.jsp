@@ -17,7 +17,6 @@
                <div class="col-sm-4">
                    <div class="product-name">
                        ${xss:encodeForHTML(xssAPI, definition['contenttitle'])}
-                       <span aria-hidden="true" class="glyphicon glyphicon-menu-right"></span>
                    </div>
                    <c:if test="${not empty definition['downloadlinklabel']}">
 	                   <div class="product-download">
