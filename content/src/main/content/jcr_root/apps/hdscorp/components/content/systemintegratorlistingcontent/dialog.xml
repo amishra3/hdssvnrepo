@@ -35,6 +35,12 @@
                         fieldLabel="Please select tag for the product description"
                         name="./sidesctags"
                         xtype="tags"/>
+                    <sisearchlookuppath
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the  lookup search path "
+                        fieldLabel="Search Lookup Path"
+                        name="./sisearchlookuppath"
+                        xtype="pathfield"/>
                     <learnmorelinkpath
                         jcr:primaryType="cq:Widget"
                         fieldDescription="This is the lear more link target URL."

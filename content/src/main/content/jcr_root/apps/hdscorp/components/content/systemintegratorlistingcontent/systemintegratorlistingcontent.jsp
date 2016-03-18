@@ -16,7 +16,7 @@
                         </div>						
 						<div class="partner-filters-search clearfix">
 							<div class="content-container clearfix">
-							
+
 								<div class="col-sm-5 partner-filters hidden-xs hidden-sm">
 									<a class="filterby" href="javascript:void(0);" data-refilter="FilterByIndustry">
 										<span class="title">${properties.industryfilterlabel}</span>
@@ -129,19 +129,19 @@
 							
 							
 						</div>
-                     <c:forEach var="partner" items="${systemIntegratorsContentModel.partners}" varStatus="loopcnt">
+                     <c:forEach var="systemIntegrators" items="${systemIntegratorsContentModel.systemIntegrators}" varStatus="loopcnt">
 						<div class="partner-list clearfix" id="partner-list">
 						<div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="Information Technology" data-contenttype="Datasheets" data-pname="Adobe B-Series">
                                 <div class="logo">
-                                    <img src="${partner.partnerIconImagePath}" alt="" class="img-responsive">
+                                    <img src="${systemIntegrators.partnerIconImagePath}" alt="" class="img-responsive">
                                 </div>
-                                <div class="partner-detail" style="background-image:url(${partner.partnerBackgroundImagePath});)">
+                                <div class="partner-detail" style="background-image:url(${systemIntegrators.partnerBackgroundImagePath});)">
                                     <div class="close">
                                         <img src="images/partner-detail-close.png">
                                     </div>
-                                    <h2 class="ptitle"> ${partner.partnerName}</h2>
-                                    <h4>${partner.partnerHeadLine}</h4>
-                                    <p> ${partner.partnerIntroduction}</p>
+                                    <h2 class="ptitle"> ${systemIntegrators.partnerName}</h2>
+                                    <h4>${systemIntegrators.partnerHeadLine}</h4>
+                                    <p> ${systemIntegrators.partnerIntroduction}</p>
 
 
                             </div>
