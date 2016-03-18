@@ -29,9 +29,6 @@ var hds = window.hds || {};
                 getURL = url;
                 $("#loadCatagoryContent").removeAttr('data-content');
             }
-
-
-
             $("#loadCatagoryContent").html(" ").load(getURL + " .prodnsolcategorycontent ", function() {                
                 hds.loadDataFilters.loadSubContent();
                 hds.loadDataFilters.bindHTMLLoad();
@@ -182,8 +179,6 @@ var hds = window.hds || {};
                     }
                     $('#loadMoreBtn').hide();
                 }
-
-
                 e.preventDefault();
             })
         },
@@ -223,7 +218,7 @@ var hds = window.hds || {};
 	                } else {
 	                   hds.loadDataFilters.checkSearchEmpty();
 
-	                }                
+	                }               
 
             });
         },
@@ -287,13 +282,16 @@ var hds = window.hds || {};
                     result = true; // not guilty until proven guilty
 
                 Object.keys(filters).forEach(function(filter) {
+                    var or_cond=false;
                     if ($.isArray(filters[filter])) {
                         var cats = self.data('category').split(',');
-                        
-                        var checkMatches = $.grep(filters[filter], function(val) {
-                            return $.inArray(val, cats) > -1;
+                        var checkMatches = $.grep(filters[filter], function(val, index) {
+							console.log((val+"-----"+cats));
+                            return or_cond = or_cond || $.inArray(val, cats) !== -1;
+                          //return $.inArray(val, cats) !== -1;
                         });
-                        result = result && checkMatches.length === filters[filter].length;
+                        result = (result && or_cond ) || checkMatches.length === filters[filter].length;
+                        return
                     } else {
                         if (filters[filter]) {
                             if ((filters[filter] != 'inputsearc')) {

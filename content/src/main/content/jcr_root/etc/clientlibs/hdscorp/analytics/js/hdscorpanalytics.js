@@ -396,6 +396,7 @@ $(document).on('keypress', '#fulltext', function(event) {
         	if($('.pr-archives-list-items').size()>0){
         	var searchTerm=$('#fulltext').val();
             var result=$('.pr:visible').size();
+                result=result.toString();
             if(result==0)
                 result="zero";
          	searchClick(searchTerm, "search box",result,getPnaFilters(),searchType,searchTrackEvent);
@@ -410,6 +411,7 @@ var searchIcon=$(".glyphicon.glyphicon-search");
         	if($('.pr-archives-list-items').size()>0){
             var searchTerm=$('#fulltext').val();
             var result=$('.pr:visible').size();
+            result=result.toString();
             if(result==0)
                 result="zero";
            searchClick(searchTerm, "search box",result,getPnaFilters(),searchType,searchTrackEvent);
@@ -427,6 +429,7 @@ var searchIcon=$(".glyphicon.glyphicon-search");
                 	if($('.pr-archives-list-items').size()>0)
                 	{
                 		var result=$('.pr:visible').size();
+                        result=result.toString();
                 		if(result==0)
 	                     result="zero";
 	                	searchClick($('#fulltext').val(), "year filter",result,getPnaFilters(),searchType,searchTrackEvent);
@@ -444,6 +447,7 @@ $(document).on('click', '#updateResults', function(event) {
     setTimeout(function() {
         var searchTerm="";
         var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
+        result=result.toString();
          if(result==0)
              result="zero";
         	searchClick("", "search button",result,eventsFilters(),'event','specificSearchClick');
@@ -454,6 +458,7 @@ $('#filterRegion').on('change', function(event) {
     setTimeout(function() {
             var searchTerm=$(".filter-option").text();
             var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
+        	result=result.toString();
             if(result==0)
             	result="zero";
      		searchClick("", "Region filter",result,eventsFilters(),'event','specificSearchClick');
@@ -470,6 +475,7 @@ $('.newsEvents-category-list .news-listing').each(function() {
 				eventType=$.trim(eventType);
                 setTimeout(function() {
                 var result=$('#newsEventCatagory').find('div.newsWrapper-listing:visible').size();
+                result=result.toString();
                  if(result==0)
                      result="zero";
                 	searchClick("", "Event Filter",result,eventsFilters(),"event","specificSearchClick");
