@@ -54,9 +54,7 @@
   margin: 45px auto 10px;
 }
 
-.res-filters-search .resource-search {
-  border: 5px solid #e6e6e6;
-  min-height: 65px;
+.res-filters-search .resource-search {  
   position: relative;
   padding: 0;
 }
@@ -65,11 +63,29 @@
   border: medium none;
   min-height: 65px;
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-size: 1.125rem;
   padding-left: 15px;
   padding-right: 62px;
   outline: none;
+  border: 5px solid #e6e6e6;
+}
+
+.res-filters-search .resource-search input::-webkit-input-placeholder {
+color: #414141 !important;
+}
+.res-filters-search .resource-search input:focus::-webkit-input-placeholder {
+color: #cccccc !important;
+} 
+.res-filters-search .resource-search input::-moz-placeholder {  /* Firefox 19+ */
+color: #414141 !important;  
+}.res-filters-search .resource-search input:focus::-moz-placeholder {  /* Firefox 19+ */
+color: #cccccc !important;  
+} 
+.res-filters-search .resource-search input:-ms-input-placeholder {  
+color: #414141 !important;  
+}.res-filters-search .resource-search input:focus:-ms-input-placeholder {  
+color: #cccccc !important;  
 }
 
 .res-filters-search span.glyphicon.glyphicon-search {
@@ -212,8 +228,8 @@
   margin-right: 15px;
 }
 
-.groupedby .keyword-filter .filterKeyword .closetag,
-.groupedby .keyword-subcat .filterKeyword .closetag {
+.groupedby .keyword-filter .filterKeyword .closeFilter,
+.groupedby .keyword-subcat .filterKeyword .closeCat {
   display: inline-block;
   cursor: pointer;
   line-height: 10px;
@@ -404,6 +420,9 @@
 }
 
 /*************/
+.spolightresults{
+  min-height:560px;
+}
 .result-resources {
   background: #ffffff;
   font-family: "museo-sans", Helvetica, Arial, sans-serif;
@@ -1005,9 +1024,9 @@ span.ellipse.clickable {
 }
 
 .overlayBox .searchArea span.glyphicon.glyphicon-search {
-  top: 22px;
-  font-size: 1.9rem;
-  right: 25px;
+    top: 8px;
+    font-size: 1.9rem;
+    right: 10px;
 }
 
 .overlayBox .topFilter {
@@ -1037,15 +1056,21 @@ span.ellipse.clickable {
 .overlayBox .FilterAreaBtnPop .show-results {
   width: 200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .overlayBox .FilterAreaBtnPop .clear-results {
   margin-top: 15px;
+  text-align: center;
 }
 
 .overlayBox .FilterAreaBtnPop .clear-results .btn-square-red {
   border: none;
   font-weight: 800;
+}
+.overlayBox .FilterAreaBtnPop .clear-results .btn-square-red a:hover {
+  background: #fff;
+  color: #cc0000;
 }
 
 .FilterAreaIndustry {
@@ -1100,8 +1125,10 @@ span.ellipse.clickable {
 
 
 .result-resources #loading{
-    background: url("../images/load-indicator.gif") no-repeat 50% 0;
+    background: url("../images/load-indicator.gif") no-repeat 50% 0 #fff;
     top:60px;
+    height: 470px;
+    left: 3px;
 }
 
 .clearSearchIcon{
