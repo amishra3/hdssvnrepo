@@ -1398,6 +1398,12 @@ ul.stickyNav li:hover a{
   .accordion-content .fb-section:last-child .fb-container .fb-category-container::after{
    background: transparent;
    }
+
+	.productdetail .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{
+
+       text-align:left;
+   }
+
 }
 @media (min-width: 992px){
 #overview{position:relative; margin-top:-49px; padding-top:49px; z-index:1;}
