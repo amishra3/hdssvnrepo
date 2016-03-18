@@ -16,7 +16,7 @@
                 </div>
                 <div class="res-subscribe-btn">
                     <div class="btn-square-white">
-                        <a href="javascript:void(0)" title="LEARN MORE">${properties.learnmorelabel}</a>
+                        <a href="${properties.learnmorelink}" title="LEARN MORE">${properties.learnmorelabel}</a>
                     </div>
                 </div>
             </div>
