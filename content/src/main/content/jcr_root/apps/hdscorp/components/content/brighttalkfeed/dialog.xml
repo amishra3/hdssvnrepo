@@ -36,5 +36,18 @@
             fieldLabel="Details Label"
             name="./detailslabel"
             xtype="textfield"/>
+        <html5embedcode
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Brighttalk HTML5 Embed Code"
+            name="./html5embedcode"
+            height="200"
+            width="400"
+            xtype="textarea"/>
+        <usemebedcode
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Use Brighttalk embed code ?"
+            name="./usemebedcode"
+            type="checkbox"
+            xtype="selection"/>            
     </items>
 </jcr:root>

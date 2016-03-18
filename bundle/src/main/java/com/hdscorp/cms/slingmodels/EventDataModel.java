@@ -23,6 +23,7 @@ import com.day.cq.search.result.SearchResult;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
+import com.hdscorp.cms.config.HdsCorpGlobalConfiguration;
 import com.hdscorp.cms.constants.PageConstants;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.dao.EventNode;
@@ -202,8 +203,7 @@ public class EventDataModel {
 		EventNode EventObject = new EventNode();
 		List<EventNode> listOfNodes = getEventNodes();
 		List<Map<String, String>> listMapsUpcoming = ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,
-				PageUtils.getPropertyValue(resourceResolver,
-						"/apps/hdscorp/config/com.hdscorp.cms.scheduler.BrightTalkScheduler", "storage.path"),
+				HdsCorpGlobalConfiguration.BRIGHTTALK_DATA_STORAGE_PATH,
 				ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME, ServiceConstants.FEED_UPCOMING);
 		if (listMapsUpcoming != null && listMapsUpcoming.size() > 0) {
 			for (int index = 0; index < listMapsUpcoming.size(); index++) {

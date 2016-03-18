@@ -12,6 +12,8 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 
+<c:if test="${ empty properties.usemebedcode}">
+
 <% 
 
 
@@ -80,3 +82,9 @@ pageContext.setAttribute("listMaps", listMaps);
 
  <script>
     </script>
+    
+</c:if>    
+
+<c:if test="${ not empty properties.usemebedcode}">
+	${properties.html5embedcode}
+</c:if>
