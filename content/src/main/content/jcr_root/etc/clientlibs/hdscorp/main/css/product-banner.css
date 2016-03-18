@@ -221,15 +221,16 @@
 @media only screen and (max-width: 992px) {
   .hero-product-solutions {
     min-height: 0;
-    padding-top: 130px;
+    padding-top: 120px;
     padding-bottom: 80px;
     background-position: top right;
+    height:375px;
   }
   .hero-product-solutions .hero-product-solutions-container {
     text-align: center;
   }
   .hero-product-solutions .hero-product-solutions-container .headline {
-    margin-top: 40px;
+    margin-top: 0;
   }
   .hero-product-solutions .hero-product-solutions-container .request,
   .hero-product-solutions .hero-product-solutions-container .buy-through {
@@ -237,7 +238,7 @@
   }
   .hero-product-solutions .hero-product-solutions-container .request {
     max-width: 244px;
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
   }
   .hero-product-solutions .hero-product-solutions-container .buy-through {
     margin-bottom: 50px;
@@ -260,7 +261,7 @@
 
 @media only screen and (max-width: 768px) {
   .hero-product-solutions {
-    padding-top: 170px;
+    padding-top: 120px;
     padding-bottom: 0;
   }
   .hero-product-solutions .hero-product-solutions-container .headline {
@@ -273,7 +274,7 @@
     line-height: 1;
   }
   .hero-product-solutions .hero-product-solutions-container .sub-headline {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-size: 0.8125em;
     line-height: 1;
     line-height: 120%;
