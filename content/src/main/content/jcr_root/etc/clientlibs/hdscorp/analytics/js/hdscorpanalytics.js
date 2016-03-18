@@ -14,30 +14,37 @@ console.log("data--"+data);
 
 var activeLinkText="top";
 var isTabClicked=false;
-var desktopType="desktop";
+var desktopType="";
 var orientation="landscape";
 var screenSize;
 var delay=4000;
 pageTitle=pageTitle.toLowerCase();
+pageTitle=$.trim(pageTitle);
 $(document).ready(function() {
-if (/Mobi/.test(navigator.userAgent)) {
-    desktopType="mobile";
+if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
+	{
+		desktopType="mobile";
+	}
+	else if(window.outerWidth < 992 && /Mobi/.test(navigator.userAgent))
+	{
+		desktopType="tablet";
+	}
+	else if(/Mobi/.test(navigator.userAgent))
+	{
+		desktopType="tablet";
+	}
+	else
+	{
+		desktopType="desktop";
+	}
 
-    if (Math.abs(window.orientation) === 90) {
-        orientation="landscape";
-    }
-    else{
-        orientation="portrait";
-    }
-}
-else{
 if (screen.height < screen.width) {
         orientation="landscape";
     }
     else{
         orientation="portrait";
     }
-}
+
 
 var screenSize = screen.width+"x" +screen.height;
 
@@ -50,10 +57,10 @@ for(index=0;index<count;index++)
   	switch(index)
   	{
   		case 1:
-  		  primaryCategory=items[index];
+  		  primaryCategory=$.trim(items[index]);
   		  break;
   		  case 2:
-  		  subSection=items[index];
+  		  subSection=$.trim(items[index]);
   		  break;
 		}
   }
@@ -63,7 +70,7 @@ if(primaryCategory=="")
 	primaryCategory=pageTitle;
 
 if(subSection=="" && items.length>=3)
-	subSection=pageTitle;
+	subSection=$.trim(pageTitle);
 
 if(isProductCategory())
 {
@@ -86,12 +93,12 @@ if(isProductCategory())
 
 digitalData.page={
 	pageInfo:{
-	pageName: pageTitle,
-	pageType: primaryCategory,
-	hier1:data,
+	pageName: $.trim(pageTitle),
+	pageType: $.trim(primaryCategory),
+	hier1: $.trim(data),
     },
 	category:{
-	primaryCategory: primaryCategory,
+	primaryCategory: $.trim(primaryCategory),
 	}
 	}
 digitalData.site={
@@ -116,6 +123,7 @@ if(isErrorPage())
 {
     digitalData["page"]["pageInfo"]["pageLoadEvent"]="404 error";
     digitalData["page"]["pageInfo"]["errorMessage"]="page not found";
+	digitalData["page"]["pageInfo"]["pageType"]="errorPage";
 
 }
    if(isProductDetail())
@@ -155,15 +163,43 @@ console.log("digitalData-------"+JSON.stringify(digitalData));
                 console.log(megamenuHeader);
                 if(megamenuHeader && megamenuHeader!='undefined' && megamenuHeader!='null')
         			category = megamenuHeader.find('h2').find('a').text();
+					category = $.trim(category);
                 var triggerName="us>mm>"+linktext.toLowerCase();
                 if(category!="" && category.length>0)
 					triggerName="us>mm>"+category.toLowerCase()+">"+linktext.toLowerCase();
                 globalMenuClick("linkclick",triggerName,pageTitle,"link","mega menu"); 
 
             });
+			//Added on 20160218
+			$(this).mousedown(function(e){
+				if(e.which == 3){
+					var megamenuHeader=$(this).closest(".hds-megaMenu");
+					var category="";
+					console.log(megamenuHeader);
+					if(megamenuHeader && megamenuHeader!='undefined' && megamenuHeader!='null')
+						category = megamenuHeader.find('h2').find('a').text();
+						category = $.trim(category);
+					var triggerName="us>mm>"+linktext.toLowerCase();
+					if(category!="" && category.length>0)
+						triggerName="us>mm>"+category.toLowerCase()+">"+linktext.toLowerCase();
+					globalMenuClick("linkclick",triggerName,pageTitle,"link","mega menu"); 
+				} 			
+			});
 		});                 
      }
     });	
+	//Added on 20160218
+	$(".common-hero-short-banner, .hero-homepage, .partnerHeroBanner").each(function() {
+     var listitem = $(this).find("a");
+     if( listitem.length>0)
+	 {
+		 listitem.each(function() {
+		 var linktext = jQuery(this).text();
+          linktext = $.trim(linktext);
+            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hero banner"); });
+		});                 
+     }
+    });
 $(".hds-quick-navigation").each(function() {
      var listitem = $(this).find("a");
      if( listitem.length>0)
@@ -172,6 +208,12 @@ $(".hds-quick-navigation").each(function() {
 		 var linktext = jQuery(this).text();
           linktext = $.trim(linktext);
             $(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu"); });
+			//Added on 20160218
+			$(this).mousedown(function(e){
+				if(e.which == 3){
+					globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu");
+				} 			
+			});
 		});                 
      }
     });	
@@ -186,9 +228,16 @@ $(".hds-main-navigation h5").each(function() {
          linktext = $.trim(linktext);
 
 			$(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu"); });
+			//Added on 20160218
+			$(this).mousedown(function(e){
+				if(e.which == 3){
+					globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu");
+				} 
+			});
 		});                 
      }
     });	
+
 	//Footer links tracking
 	jQuery("div.footer").each(function() {
 		var links = jQuery(this).find("a");
@@ -198,7 +247,13 @@ $(".hds-main-navigation h5").each(function() {
 		 {
 		 	linktext= jQuery(this).children().attr("title");
 		 }
-		 $(this).click(function(){globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer"); });
+		$(this).click(function(){globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer"); });
+		//Added on 20160218
+		$(this).mousedown(function(e){
+			if(e.which == 3){
+				globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer");
+			} 			
+		});
 	  })
 
 	});	
@@ -243,7 +298,10 @@ $(".hds-main-navigation h5").each(function() {
         }
 
        });
-
+	//Added on 20160218
+	$('.talk .call').click(function(){
+		clicktocall();
+	})
 //products search events start here
 $(document).on('keypress', '#searchFilter', function(event) {
     if(event.which == 13) {
@@ -331,6 +389,7 @@ else if(isAwardsPage())
 	searchType="awards";
 	searchTrackEvent="specificSearchClick";
 }
+
 $(document).on('keypress', '#fulltext', function(event) {
     if(event.which == 13) {
     	var interval = setInterval(function() {
@@ -418,7 +477,16 @@ $('.newsEvents-category-list .news-listing').each(function() {
              });
         });
 	});	
-
+	//Added on 20160218 with dummy class for form
+	$('.emailsignup').submit(function(){
+		var emailEventType = "lead form completed";
+		emailsignup(emailEventType)
+	});
+	//Added on 20160218 with dummy class for input field
+	$('.email').on('focus blur',function(){
+		var emailEventType = "lead form initiated";
+		emailsignup(emailEventType)	
+	});
 //globalMenuClick(eventname,triggername,page)
 function globalMenuClick(eventName,triggerName,page,triggerType,Position){
 
@@ -451,7 +519,8 @@ function globalMenuClick(eventName,triggerName,page,triggerType,Position){
 	_satellite.track('Tab Click');
 	}
 
-function searchClick(searchTerm, searchAction,result,searchFilters,searchType,tracktEvent){
+function searchClick(searchTerm, searchAction,result,searchFilters,searchType,trackEvent){
+
     	digitalData.eventData= {
            // searchTerm:searchTerm,
             searchAction:searchAction,
@@ -465,8 +534,9 @@ function searchClick(searchTerm, searchAction,result,searchFilters,searchType,tr
 			digitalData["eventData"]["searchTerm"]="no term searched";
 		if(searchFilters!="")
 			digitalData["eventData"]["searchFilters"]=searchFilters;
+		console.log(trackEvent+"********************")
     console.log("search tracking--"+JSON.stringify(digitalData.eventData));
-        _satellite.track(tracktEvent);
+        _satellite.track(trackEvent);
 
 }
 function getCurrentBreadcrumb() {
@@ -495,6 +565,7 @@ function getCurrentBreadcrumb() {
 	console.log( "hierarchy---->>"+hierarchy );
     return hierarchy;
 }
+//Added on 20160218
 function clicktocall(){
     digitalData.eventData= {
     	eventName:'click to call'
@@ -515,6 +586,19 @@ function isProductCategory()
     else
         return false;
 }
+//Added on 20160218
+function emailsignup(emailEventType){ 
+    digitalData.eventData={ 
+	  pageInfo:{
+        pageLoadEvent:emailEventType,
+        leadFormName:"emailsignup",
+		leadId:127667
+		}
+	}
+       _satellite.track('emailsignup');
+}
+
+
 function isNewsPage()
 {
     if($(".isnewspage").size()>0)
@@ -554,6 +638,7 @@ function isErrorPage()
 	else
 		false;
 }
+
 function getProductsSearchFilters()
 {
 	var filters="";
