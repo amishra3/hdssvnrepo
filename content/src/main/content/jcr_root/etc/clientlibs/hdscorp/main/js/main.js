@@ -105,7 +105,7 @@ $(document).ready(function () {
     
     if ($(".stickyNav")[0]){
     	var anchorVal = window.location.hash;
-    	$('a[href^='+anchorVal+']').click();
+//    	$('a[href^='+anchorVal+']').click();
     } 
     
 });
