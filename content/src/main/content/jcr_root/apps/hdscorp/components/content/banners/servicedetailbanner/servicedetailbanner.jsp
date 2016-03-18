@@ -17,7 +17,7 @@ request.setAttribute("bannerimage",bannerimage);
 	    <%-- <div class="common-hero-banner service-detail-banner clearfix" style="background-image:url('${requestScope.bannerimage}');"> --%>
 		<div class="common-hero-banner service-detail-banner clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.servicedetailbannermobileimage)} > 
             <div class="common-hero-banner-container">
-               <div class="col-lg-7 col-md-8 col-xs-12">
+               <div class="col-lg-6 col-md-6 col-xs-12">
                   <div class="top-banner-heading">
                      <span class="text">${properties.servicedetailbanner}</span>
                   </div>
