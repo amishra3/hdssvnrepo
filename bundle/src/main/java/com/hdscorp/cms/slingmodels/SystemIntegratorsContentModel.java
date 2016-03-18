@@ -36,6 +36,16 @@ public class SystemIntegratorsContentModel {
 
 	@Inject
 	private ResourceResolver resourceResolver;
+	
+	@Inject
+	@Default(values = { "/content/hdscorp/en_us/lookup/partners" })
+	private String sisearchlookuppath;
+	
+	
+	
+	public String getSisearchlookuppath() {
+		return sisearchlookuppath;
+	}
 
 	@Inject
 	private String[] sitags;
@@ -63,7 +73,7 @@ public class SystemIntegratorsContentModel {
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 
-			String paths[] = { "/content/hdscorp/en_us/lookup/partners" };
+			String paths[] = { sisearchlookuppath };
 			String tags[] = sitags;
 			String template = "/apps/hdscorp/templates/partnerdetail";
 			String type[] = { "cq:Page" };
