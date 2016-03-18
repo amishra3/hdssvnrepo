@@ -43,14 +43,16 @@ public class PartnerGridModel {
         
 		String paths[] = {targetparentdirectory};
 		String tags[] = null ;
-		String template= "/apps/hdscorp/templates/partnerdetail";
+		//String template= "/apps/hdscorp/templates/partnerdetail";
 		String type[] = {"cq:Page"};
 		boolean doPagination = false;
 		
-		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,null,null);
+		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,null,type,null,doPagination,null,null,resourceResolver,null,null);
+		
+		if(result!=null && result.getHits().size()>0){			
 		List<Hit> hits = result.getHits();
 		categories = new ArrayList<CategoryNode>();
-		
+
 		for (Hit hit : hits) {
 		    
 		    CategoryNode categoryNode = new CategoryNode(); 
@@ -68,6 +70,9 @@ public class PartnerGridModel {
 		    
 		    categories.add(categoryNode);
 		}
+		
+	}
 		return categories;
 	}
+	
 }
