@@ -12,6 +12,7 @@ import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.hdscorp.cms.dao.ResourceNode;
 import com.hdscorp.cms.util.HdsCorpCommonUtils;
+import com.hdscorp.cms.util.PathResolver;
 
 public class ResourceLibraryHelperModel {
 	public static ResourceNode getResourceNode(Resource resource,
@@ -34,7 +35,7 @@ public class ResourceLibraryHelperModel {
 				resourceNode.setResourceDescription(properties.get(
 						"dc:description").toString());
 			}
-			resourceNode.setResourcePath(resource.getPath());
+			resourceNode.setResourcePath(PathResolver.getShortURLPath(resource.getPath()));
 			if (properties.containsKey("cq:tags")) {
 				String[] assetTags = (String[]) properties.get("cq:tags");
                 boolean hasContentType = false;
