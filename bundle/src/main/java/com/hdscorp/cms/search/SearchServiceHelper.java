@@ -443,11 +443,27 @@ public class SearchServiceHelper {
 		
 		
 		if (template != null && !template.isEmpty()) {
-			searchParams.put("group." + groupCnt + "_group.1_property",
-					"@jcr:content/cq:template");
-			searchParams.put("group." + groupCnt + "_group.1_property.1_value",
-					template);
-			groupCnt++;
+			if(template.contains(",")){
+				String [] templates = template.split(",");
+				searchParams.put("group." + groupCnt + "_group.p.or", "true");
+				int i = 0;
+				searchParams.put("group." + groupCnt + "_group." + 1
+						+ "_property", "@jcr:content/cq:template");
+				for (String pageTemplate : templates) {
+					++i;
+					searchParams.put("group." + groupCnt + "_group." + 1
+							+ "_property."+ i+"_value", pageTemplate);
+
+				}
+				groupCnt++;
+
+			}else{
+				searchParams.put("group." + groupCnt + "_group.1_property",
+						"@jcr:content/cq:template");
+				searchParams.put("group." + groupCnt + "_group.1_property.1_value",
+						template);
+				groupCnt++;
+			}
 		}
 
 		
@@ -489,13 +505,15 @@ public class SearchServiceHelper {
 //		System.out.println("before cretae query************"
 //				+ searchParams.toString());
 		LOG.debug("before cretae query************" + searchParams.toString());
+		
 		Query query = queryBuilder.createQuery(
 				PredicateGroup.create(searchParams),
 				resourceResolver.adaptTo(Session.class));
+		
 		SearchResult results = query.getResult();
+		LOG.debug("results.getQueryStatement************" + results.getQueryStatement());
 		return results;
 	}
-
 
 
 	public SearchResult getTrainingResults(String path, String searchKeyword,String startDateProperty,

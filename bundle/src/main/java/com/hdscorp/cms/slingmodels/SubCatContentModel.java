@@ -63,9 +63,9 @@ public class SubCatContentModel {
 
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			
-			String paths[] = {"/content/hdscorp/en_us/products-solutions"};
+			String paths[] = {"/content/hdscorp/en_us/products-solutions","/content/hdscorp/en_us/services"};
 			String tags[] = subcattags ;
-			String template= "/apps/hdscorp/templates/productdetail";
+			String template= "/apps/hdscorp/templates/productdetail,/apps/hdscorp/templates/servicedetail";
 			String type[] = {"cq:Page"};
 			boolean doPagination = false;
 			
