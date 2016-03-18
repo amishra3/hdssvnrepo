@@ -61,6 +61,14 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Press Release"
                                 value="Press Release"/>
+                            <opt3
+                                jcr:primaryType="nt:unstructured"
+                                text="News"
+                                value="News"/>
+                            <opt4
+                                jcr:primaryType="nt:unstructured"
+                                text="Resource"
+                                value="Resource"/>
                         </options>
                     </nveeventtype>
                 </items>
