@@ -52,12 +52,16 @@ var hds = window.hds || {};
                     } else {
                         $('.category-resources-listing').find('.no-matched-result').remove();
                         hds.resourceLib._setPagination();
+                        $('#prodnsolcategorycontent a.isGatedLock').each(function(index, el) {
+                        	$(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+                        });
                     }
                 }
                 if (textStatus === 'error') {
 
                 }
             });
+          
         },
         _processCatagoryCards: function(url) {
             $('.category-resources-listing').find('.no-matched-result').remove();
@@ -71,6 +75,9 @@ var hds = window.hds || {};
                     $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
                 } else {
                     $("#featuredCards").show();
+                    $('#featuredCards a.isGatedLock').each(function(index, el) {
+                    	$(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+                    });
                 }
             });
         },
