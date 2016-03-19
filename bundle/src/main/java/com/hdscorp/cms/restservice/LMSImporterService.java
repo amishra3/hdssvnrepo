@@ -111,10 +111,10 @@ public class LMSImporterService {
 				null, // costCurrency
 				null, // trainingPrice
 				null, // courceDeeplink
-				/*null*/ };
+				null};
 
 		try {
-			beanReader = new CsvBeanReader(new InputStreamReader(getInputStream(csvFileName)),
+			beanReader = new CsvBeanReader(new InputStreamReader(getInputStream(csvFileName),"UTF-8"),
 					CsvPreference.STANDARD_PREFERENCE);
 			final String[] header = new String[] { ServiceConstants.LML_KEYWORD, ServiceConstants.LML_DELIVERY_STYLE,
 					ServiceConstants.LML_GLOBAL_ID, ServiceConstants.LML_TRANING_TITLE,
