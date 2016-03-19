@@ -72,17 +72,15 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 			throws Exception {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		ServletOutputStream out = response.getOutputStream();
 		String selector = request.getParameter("selector");
 		log.info("selector::::::::::::::::::::::::" + selector);
 		try {
 			if (selector != null) {
 				selector = URLDecoder.decode(selector, "UTF-8");
 			}
-			out.println("{\"locationJson\":" + getLocationJSON(getLocationPath(), selector).toString() + "}");
+			 response.getWriter().write("{\"locationJson\":" + getLocationJSON(getLocationPath(), selector).toString() + "}");			
 		} catch (Exception e) {
-			log.error("Error while reading filtertags" + e.getMessage());
-			out.println(e.getMessage());
+			log.error("Error while reading locations json" + e.getMessage());			
 		}
 
 	}
