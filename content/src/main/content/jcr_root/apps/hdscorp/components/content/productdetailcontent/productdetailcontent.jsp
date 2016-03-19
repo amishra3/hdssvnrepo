@@ -5,7 +5,7 @@
 <div class="fb-section">
 <div class="fb-container container-fluid">
 	<c:if test="${not empty properties.sectiontitle}">
-		<div class="fb-title hidden-xs">${properties.sectiontitle}</div>
+		<div class="fb-title hidden-xs hidden-sm">${properties.sectiontitle}</div>
 	</c:if>	
 	
 	<c:set var="containerclass" value=""/>
