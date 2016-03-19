@@ -50,7 +50,7 @@ public class AssetGatingFilter implements Filter {
 				return;
 			}
 			
-			final SlingHttpServletResponse slingResponse = (SlingHttpServletResponse) response;
+//			final SlingHttpServletResponse slingResponse = (SlingHttpServletResponse) response;
 			final SlingHttpServletRequest slingRequest = (SlingHttpServletRequest) request;
 			String pdfPath= slingRequest.getRequestURI();
 			if(!pdfPath.contains("/editor") && !pdfPath.contains("/cf")&& pdfPath.toLowerCase().endsWith(".pdf") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
