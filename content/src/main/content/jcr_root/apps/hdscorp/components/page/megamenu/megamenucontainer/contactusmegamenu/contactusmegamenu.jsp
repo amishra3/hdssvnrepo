@@ -32,8 +32,9 @@
 
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmcontactusbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmcontactusnavtitle}"
+	data-bg-url="${domain}${hdscorp:shortURL(properties.mgmcontactusbackgroundimagepath)}"
 	data-parent-path="${mgmcontactusnavpath}">
 	<div class="hds-megaMenu">
 		<div class="content-container">

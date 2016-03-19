@@ -38,8 +38,9 @@
 
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmahbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmpsnavtitle}"
+	data-bg-url="${domain}${hdscorp:shortURL(properties.mgmahbackgroundimagepath)}"
 	data-parent-path="${mgmahnavpath}">
 	<div class="hds-megaMenu">
 		<div class="content-container">

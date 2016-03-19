@@ -35,8 +35,9 @@
 </c:if>
 
 <div class="hds-megaMenuWrapper"
-	style="background-image:url(${domain}${hdscorp:shortURL(properties.mgmservbackgroundimagepath)}); background-repeat:no-repeat; background-position:bottom right;"
+	style="background-image:url(); background-repeat:no-repeat; background-position:bottom right;"
 	data-parent-title="${properties.mgmservnavtitle}"
+	data-bg-url="${domain}${hdscorp:shortURL(properties.mgmservbackgroundimagepath)}"
 	data-parent-path="${mgmservnavpath}">
 	<div class="hds-megaMenu">
 		<div class="content-container">

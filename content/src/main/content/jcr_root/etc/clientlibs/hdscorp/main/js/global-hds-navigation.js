@@ -49,6 +49,9 @@ var hds = window.hds || {};
             $('.no-touch .globalNavWrapper > li').hover(function() {
                 $('.globalNavWrapper li').removeClass('open');                
                 $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(200);
+                var megaMenuWrapper = $(this).find( ".hds-megaMenuWrapper" ) ;
+                var bgImgUrl = $(megaMenuWrapper).attr('data-bg-url'); 
+                $(megaMenuWrapper).css("background-image", "url("+bgImgUrl+")");
                 $(this).addClass('open');
             }, function() {
                 $(this).removeClass('open');
