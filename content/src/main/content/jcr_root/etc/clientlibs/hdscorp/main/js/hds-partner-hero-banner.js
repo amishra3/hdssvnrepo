@@ -22,9 +22,9 @@ var hds = window.hds || {};
             });
             $(thumbs).find('a.itm0').addClass('active');
             $(carousalContainer).carouFredSel({
-                auto: {
-                    fx: 'crossfade',
-                },
+            	circular    : false,
+                infinite    : false,
+                auto : false,
                 width: $(window).width(),
                 height: 470,
                 align: false,
