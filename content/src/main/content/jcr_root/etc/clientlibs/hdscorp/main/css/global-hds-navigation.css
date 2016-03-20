@@ -78,6 +78,7 @@ HDS Global Header and Navigation
     float: right;
     padding: 10px 11px 7px 8px;
     background-color: #dadada;
+    position:relative;
 }
 
 .hds-global-header .hds-quick-navigation a {
