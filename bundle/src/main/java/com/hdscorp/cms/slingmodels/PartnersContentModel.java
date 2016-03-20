@@ -26,6 +26,7 @@ import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.PartnerDescription;
 import com.hdscorp.cms.dao.PartnerNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.PageUtils;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
@@ -89,8 +90,12 @@ public class PartnersContentModel {
 			    ValueMap partnerMetaDetaMap= partnerMetaDeta.adaptTo(ValueMap.class);
 			    partnerNode.setPartnerBackgroundImagePath((String)partnerMetaDetaMap.get("backgroundimagepath", ""));
 			    partnerNode.setPartnerIconImagePath((String)partnerMetaDetaMap.get("partnericonimagepath", ""));
-			    partnerNode.setPartnerIconImageAltText((String)partnerMetaDetaMap.get("partnericonimagealttext", ""));
+			    partnerNode.setPartnerIconImageAltText((String)partnerMetaDetaMap.get("partnericonimagealttext", ""));			  	
 			    partnerNode.setPartnerTags(partnerTags);
+			    partnerNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,"seemorelabel-seemoretargeturl-seemorenewwin-thirdparty"));	
+			    partnerNode.setPartnerviewMoreLabel((String)partnerMetaDetaMap.get("partnerviewmorelabel", ""));
+			    partnerNode.setPartnerviewMorelink((String)partnerMetaDetaMap.get("partnerviewmorelink", ""));
+			    partnerNode.setPartneroinwindow((String)partnerMetaDetaMap.get("partneroinwindow", ""));
 			    
 			    Resource descriptionListResource = null;
 			    if(partnerMetaDeta!=null){
