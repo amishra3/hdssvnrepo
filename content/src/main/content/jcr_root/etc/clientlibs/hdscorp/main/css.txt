@@ -38,5 +38,6 @@ partner-detail.css
 app.css
 legal.css
 gated-detail.css
+marketo-forms.css
 training-detail.css
 geo-selector.css
