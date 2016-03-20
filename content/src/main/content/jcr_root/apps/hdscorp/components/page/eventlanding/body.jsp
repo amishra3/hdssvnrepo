@@ -7,7 +7,7 @@ if(pageTemplatePath!=null){
 }
 %>
 
-<body class="<%=pageTemplatePath %>">
+<body class="<%=pageTemplatePath %> hds-megaMenu-push">
 	<div class="one-column">
 	<div class="hds-MobileMenu hds-megaMenu-right">
         <div class="closeHDSMenu">

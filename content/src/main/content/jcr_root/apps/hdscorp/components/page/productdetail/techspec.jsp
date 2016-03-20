@@ -10,7 +10,7 @@ if(pageTemplatePath!=null){
 <cq:include script="head.jsp"/>
 <c:set var="techspeconlypage" value="${true}" scope="request"/>
 
-<body class="<%=pageTemplatePath %> contentwidepage techspeconly" id="tech-specifications">
+<body class="<%=pageTemplatePath %> contentwidepage techspeconly hds-megaMenu-push" id="tech-specifications">
 	<div class="one-column">
 		<cq:include script="header.jsp" />
         <div class="spec-section">

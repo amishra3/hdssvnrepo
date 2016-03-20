@@ -1,6 +1,6 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
-<body class="contentwidepage">
+<body class="contentwidepage hds-megaMenu-push">
 	<div class="one-column">
 	<div class="hds-MobileMenu hds-megaMenu-right">
         <div class="closeHDSMenu">
