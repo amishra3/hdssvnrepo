@@ -23,6 +23,7 @@ hds-webcast.js
 news-insight-lp.js
 hds-partner-hero-banner.js
 hds-resources.js
+hds-partner-detail.js
 legal.js
 gsa-search.js
 asset-gating.js
