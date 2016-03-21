@@ -12,13 +12,17 @@
 
 .advance-tech-hexagon h2 {
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 3.75em;
+    font-size: 3em;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 35px 0;
     text-align: center;
 }
 .advance-tech-hexagon p{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.28571em;
+  font-weight: 300;
+  line-height: 1.4em;  
   text-align: center;
 }
 
@@ -70,8 +74,7 @@
 }
 
 .we-mean-business h2 {
-  font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 3.75em;
+  font-size: 3em;
   font-weight: 100;
   line-height: 1;
   margin: 0 0 55px 0;

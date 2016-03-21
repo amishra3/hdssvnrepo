@@ -287,16 +287,13 @@ color: #cccccc !important;
   font-size: 1.125rem;
 }
 .pr-detail .pr-detail-container .pr-detail-desc h1{
-  font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 3.438rem;
-  font-weight: 500;
   line-height: 1;
   margin-bottom: 30px;
   margin-top: 0;
   margin-right: 245px;
 }
 .pr-detail .pr-detail-container .pr-detail-desc .TextStyle1 i{
-  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+
   color: #008eaa;
   font-size: 1.375rem;
   font-weight: 300;
@@ -313,15 +310,19 @@ color: #cccccc !important;
   margin-bottom: 5px;
 }
 .pr-detail .pr-detail-container .pr-detail-desc ul{
-  margin:0 0 25px 0; padding: 0;
+  font-family: "museo-sans",Arial,Helvetica;
+  margin:0 0 25px 0; 
+  padding: 0;
 }
 .pr-detail .pr-detail-container .pr-detail-desc ul li{
-  margin:0 0 5px 15px; padding: 0;
+ font-weight: 300;                
+  margin:0 0 5px 15px;
+  padding: 0;
   list-style-type: square;
 }
 
 .pr-detail .pr-detail-container a{
-  color: #cc0000;
+  color: #ce0000;
 }
 
 
@@ -350,8 +351,12 @@ color: #cccccc !important;
   color: #333333;
   font-size: 1.125rem;
 }
-.pr-view-all{ font-family: "museo-sans",Helvetica,Arial,sans-serif; text-transform: uppercase; text-align: left;}
-.pr-view-all a{font-weight: 800;}
+.pr-view-all{ font-family: "museo-sans",Helvetica,Arial,sans-serif; font-size: 0.8125rem; text-transform: uppercase; text-align: left;}
+.pr-view-all a{
+  font-size: 0.8125rem;                    
+  font-weight: 800;
+  letter-spacing: 0.15em;  
+    }
 
 @media (min-width: 320px) and (max-width: 991px) {
   .pr-detail{padding-top: 80px;}

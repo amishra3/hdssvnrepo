@@ -24,14 +24,14 @@
     margin: 25% 0 20px;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 100;
-    font-size: 3.25em;
+    font-size: 3em;
     line-height: 1;
     color: #000000;
 }
 
 .cloud-storage .cloud-storage-container .cloud-content h4 {
     font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5em;
     line-height: 1;
     color: #848484;
@@ -40,12 +40,11 @@
 
 .cloud-storage .cloud-storage-container .cloud-content p {
     margin-bottom: 40px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 0.875em;
-    line-height: 1;
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.125em;
+    line-height: 1.4em;
     color: #000000;
-    line-height: 175%;
 }
 
 .cloud-storage .cloud-storage-container .cloud-content .learn-cloud-storage {
@@ -148,7 +147,7 @@
 
 .calculating-success {
     min-height: 695px;
-    padding: 0 15px;
+    padding: 40px 15px;
     background: #c51717 url("../images/hero-calculating-success.jpg") center center no-repeat;
     background-size: cover;
 }
@@ -173,25 +172,24 @@
 
 .calculating-success .calculating-success-container > h2 {
     margin: 50px 0 20px;
-    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 3.75em;
     line-height: 1;
+	font-weight: 100;
 }
 
 .calculating-success .calculating-success-container > h4 {
     margin-bottom: 20px;
     font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5em;
     line-height: 1;
     text-transform: uppercase;
-    letter-spacing: .15em;
 }
 
 .calculating-success .calculating-success-container > p {
-    font-size: 0.875em;
     line-height: 1;
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+    font-weight: 300;
     line-height: 160%;
 }
 
@@ -233,14 +231,15 @@
     color: #000000;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 1.28571em;
     line-height: 1;
 }
 
 .calculating-success .calculating-success-container .calculating-list > li p {
     margin: 0 10px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 0.75rem;
+   font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1.125em;
     line-height: 1;
     line-height: 130%;
     color: #414141;
@@ -361,15 +360,14 @@
 .millennials .millennials-container .millennials-content > h2,
 .millennials .millennials-container .millennials-content > h4,
 .millennials .millennials-container .millennials-content > .blurb-container,
-.millennials .millennials-container .millennials-content > p {
+.millennials .millennials-container .millennials-content > p,
+.millennials .millennials-container .millennials-content > h3{
     color: #ffffff;
 }
 
 .millennials .millennials-container .millennials-content h1 {
     margin: 3.5em 0 20px;
-    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 100;
-    font-size: 3.25em;
     line-height: 1;
 }
 
@@ -392,6 +390,10 @@
 }
 
 .millennials .millennials-container .millennials-content .blurb-container p {
+    font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+    line-height: 1.4em;                    
+    font-weight: 300;                    
     padding: 0;
     float: right;
 }
@@ -484,3 +486,4 @@
         margin-bottom: 2em;
     }
 }
+

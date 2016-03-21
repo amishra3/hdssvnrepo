@@ -71,6 +71,7 @@
 
 /* Hexagon 320 CSS Code */
 .hexagon320 {
+  font-size: 0.875em;  
   top: 56px;
   width: 320px;
   height: 180px;
@@ -100,7 +101,6 @@
   top:0px;
 }
 
-
 .hexagon320 .icon img{
   vertical-align: bottom;
 }
@@ -108,9 +108,10 @@
 .hexagon320 h4 {
     color: #000000;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 1.125em;
+    font-size: 1.28571em;
     font-weight: 700;
     line-height: 1;
+    letter-spacing: 0.1px;
     margin: 10px 0 10px;
     text-align: center;
 	position:relative;
@@ -119,20 +120,23 @@
 .hexagon320 p {
     color: #333333;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-size: 1.125em;
+    font-size: 1.28571em;
     line-height: 1.4em;
     margin:0;
-	font-weight:100;
+	font-weight:300;
 }
 
 .hexagon320 .read-more {
-    font-size: 0.8125rem;
+    font-size: 0.9em;
     font-weight: 800;
     margin-top: 15px;
     text-align: center;
 }
 
 .hexagon320 .read-more a {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.15em;        
     color: #cc0000;
     outline: 0 none;
     text-decoration: none;
@@ -208,3 +212,4 @@
 }
 
 .mac-os .hexagon320 { margin-right:26px;}
+

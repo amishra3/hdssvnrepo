@@ -1,4 +1,4 @@
-.specs_h2{
+h2.section-heading.specs_h2{
     font-family: 'museo-slab', Helvetica, Arial, sans-serif;
     font-size: 1.50rem;
     font-weight: 600;
@@ -11,9 +11,6 @@ div.cs-highlight-box-message .icon-quote.open-quote,
 div.cs-highlight-box-message .icon-quote.close-quote {
   position: relative;
 }
-
-
-
 div.cs-highlight-box-message .icon-quote.open-quote {
   top: -10px;
   left: 0;
@@ -42,21 +39,27 @@ div.cs-highlight-box-message span.close-quote{background-image:url(../images/spr
 
 .business-specific .specific-benefit h2 {
   margin: 80px 0 20px -5px;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-size: 3.75em;
   line-height: 1;
-  font-weight: 100;
-  line-height: 1;
+  font-weight:100;
+}
+
+h2.section-heading{
+    font-size:3.125em;
+    font-weight:100;
+    margin-bottom:0;
+}
+
+.business-specific .specific-benefit h3 {
+    line-height: 1;
+    margin: 11px 0 20px;
 }
 
 .business-specific .specific-benefit h4 {
   margin-bottom: 20px;
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
   /*letter-spacing: .15em;*/
-  font-size: 1.5em;
   line-height: 1;
 }
 
@@ -70,8 +73,9 @@ div.cs-highlight-box-message span.close-quote{background-image:url(../images/spr
 }
 
 .business-specific .specific-benefit ul li {
-  font-family: arial, sans-serif;
-  font-size: 0.875em;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-size: 1.125em;
+  font-weight:300;
   line-height: 1;
   margin: 15px 0px;
 }
@@ -223,25 +227,28 @@ ul.stickyNav li:hover a{
 .specific-benefit .calculating-list > li h4,
 .specific-tech .calculating-list > li h4 {
   color: #000000;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-size: 1.28571em;
   font-weight: 700;
   text-align: center;
   text-transform: none;
   padding: 0 5px;
-  font-size: 1.3125em;
   line-height: 1.3em;
   letter-spacing: 0;
   margin-bottom: 15px;
   margin-top: 0;
 }
 
+.business-specific .specific-benefit ul li.hexagon-transformative{
+	font-size: 0.875em;	
+}
+
 .business-specific .calculating-list > li p,
 .specific-benefit .calculating-list > li p,
 .specific-tech .calculating-list > li p {
-  margin: 0 10px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.875em;
-  line-height: 1.5em;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-size: 1.28571em;
+  font-weight:300;
+  line-height: 1.5rem;
   text-align: center;
   color: #414141;
 }
@@ -478,7 +485,6 @@ ul.stickyNav li:hover a{
 .specific-tech h2 {
   margin: 80px 0 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-size: 3.75em;
   line-height: 1;
   font-weight: 100;
   line-height: 1;
@@ -555,9 +561,7 @@ ul.stickyNav li:hover a{
   padding-bottom: 87px;
 }
 
-.mes-section .mes-container header {
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
+.mes-section .mes-container header, .mes-section .mes-container h3 {
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -574,11 +578,13 @@ ul.stickyNav li:hover a{
 }
 
 .mes-section .mes-container .product-box .product-copy-main {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .mes-section .mes-container .product-box .product-copy-sub {
-  font-size: 0.875rem;
+  font-size: 1.125em;
+  font-weight:300;
   margin-bottom: 1.5em;
 }
 
@@ -602,6 +608,7 @@ ul.stickyNav li:hover a{
   text-decoration: none;
   color: #ce0000;
   font-weight: 800;
+  font-size:0.8125rem;
 }
 
 .mes-section .mes-container .product-box .product-link a:hover {
@@ -787,7 +794,7 @@ ul.stickyNav li:hover a{
   outline: 0;
   text-decoration: none;
   color: #ffffff;
-  padding: 13px 12px;
+  padding: 13px 16px;
   display: block;
   text-align: left;
 }
@@ -898,8 +905,12 @@ ul.stickyNav li:hover a{
   padding-bottom: 60px;
 }
 
+h2.section-heading.fb-title{
+	margin-bottom: 40px;		
+}
+
 .resources-section .resources-container .resources-title {
-  font-size: 3.75rem;
+  font-size: 3em;
   font-weight: 100;
   margin-bottom: 40px;
 }
@@ -909,11 +920,8 @@ ul.stickyNav li:hover a{
 }
 
 .resources-section .resources-container .resources-category .resources-category-heading {
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
   font-weight: 600;
   color: #008eaa;
-  text-transform: uppercase;
   margin-bottom: 23px;
   letter-spacing: 1px;
 }
@@ -926,8 +934,10 @@ ul.stickyNav li:hover a{
   outline: 0;
   text-decoration: none;
   color: #ce0000;
-  font-weight: 800;
+  font-weight:900;
+  font-size:0.8125rem;
   text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 .resources-section .resources-container .resources-category .resources-category-box a:hover {
@@ -947,11 +957,14 @@ ul.stickyNav li:hover a{
 }
 
 .resources-section .resources-container .resources-category .resources-category-box .resources-category-title {
-  font-size: 1.25rem;
+  font-size: 1.125em;
+  letter-spacing: 0.1px;
+  line-height: 1.35em;
 }
 
 .resources-section .resources-container .resources-category .resources-category-box .resources-category-description {
-  font-size: 0.875rem;
+  font-size: 1.125em;
+  font-weight: 300;
 }
 
 .resources-section .resources-container .resources-category .resources-category-box .resources-category-more {
@@ -990,7 +1003,7 @@ ul.stickyNav li:hover a{
 
 .resources-section .resources-container .resources-all a,
 .resources-section .resources-container .resources-support a {
-  letter-spacing: 1px;
+  letter-spacing: 1px;font-size:1em;font-weight:500;
   outline: 0;
   text-decoration: none;
   color: #ffffff;
@@ -1134,8 +1147,6 @@ ul.stickyNav li:hover a{
 }
 
 .fb-section .fb-container .fb-title {
-  font-size: 3.75rem;
-  font-weight: 100;
   margin-top:70px;
 }
 
@@ -1158,22 +1169,19 @@ ul.stickyNav li:hover a{
 .fb-section .fb-container .fb-category-container .fb-category-box {
   text-align: center;
   max-width: 1107px;
-  padding-top: 80px;
+  padding-top: 40px;
   margin: 0 auto 80px;
 }
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading {
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
   font-weight: 600;
   color: #008eaa;
   text-transform: uppercase;
-  margin-bottom: 35px;
+  margin:0 0 35px;
   letter-spacing: 1px;
 }
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-highlight {
-  font-size: 1.75rem;
   max-width: 820px;
   margin: 0 auto 70px;
 }
@@ -1215,12 +1223,13 @@ ul.stickyNav li:hover a{
 }
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-points-box .fb-category-points-box-heading {
-  font-size: 1.0rem;
+  font-size: 1.125em;
   font-weight: 600;
 }
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-points-box .fb-category-points-box-description {
-  font-size: 0.875rem;
+  font-size: 1.125em;
+  font-weight:300;
 }
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-more {
@@ -1398,14 +1407,10 @@ ul.stickyNav li:hover a{
   .accordion-content .fb-section:last-child .fb-container .fb-category-container::after{
    background: transparent;
    }
-
-	.productdetail .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{
-
-       text-align:left;
-   }
-
 }
 @media (min-width: 992px){
 #overview{position:relative; margin-top:-49px; padding-top:49px; z-index:1;}
 #hdspsaccordion{position:relative; margin-top:-49px; z-index:11;}
 }
+
+/*product-solutions.css ends here*/

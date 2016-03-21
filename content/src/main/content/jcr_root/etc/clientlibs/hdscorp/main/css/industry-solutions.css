@@ -12,13 +12,13 @@
     margin:0 auto;
 }	
 .solution-offer h2{ font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 3.5em;
-    font-weight: 200;
+    font-size: 3.125em;
+    font-weight: 100;
     margin: 0;
     padding-bottom: 10px;
 }
 .solution-offer h3{ font-family: "museo-slab",Helvetica,Arial,sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 1px;
     margin: 5px 0 25px;
@@ -26,7 +26,9 @@
     color: #008eaa;
 }
 .solution-offer p{ font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+    font-weight: 300;
 }
 
 .solution-offer .fb-container .fb-category-container .fb-category-box .fb-category-more{
@@ -53,8 +55,8 @@
 
 .features-solutions h2{
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 3.5em;
-    font-weight: 200;
+    font-size: 3.125em;
+    font-weight: 100;
     margin: 0;
     padding-bottom: 10px;
 }
@@ -69,11 +71,12 @@
 }
 
 .features-solutions p{
-    font-size:18px;
+	font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size:1.125em;
+    font-weight: 300;
 }
 
 .features-solutions .solution-category-box p{
-
     margin:0;
 }
 
@@ -91,12 +94,12 @@
 .more-solutions a {
     color: #ce0000;
     font-weight: 800;
-    outline: 0 none;
+    outline:none;
     text-decoration: none;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 13px;
+    font-size: 0.8125rem;
     cursor:pointer;
-    letter-spacing:0;
+    letter-spacing:0.15em;
     display:inline;
 }
 
@@ -129,8 +132,8 @@
     color: #000;
     display: block;
     padding: 20px 25px;
-    margin: 6px 15px 20px 0;
-
+    margin: 20px 15px 20px 0;
+    
 }
 
 .solution-category-box  .blog-icon{
@@ -214,58 +217,58 @@
     }
     
     @media only screen and (max-width: 767px){
-        		.solution-offer .content-container{
+        .solution-offer .content-container{
                     padding:20px 15px 30px 15px;
                 }
                 .solution-offer h2{ font-size: 1.8em;}
-            	.solution-category-box{margin:0 0 15px;}
-        		.features-solutions .solution-category-box{margin-top:52px;}
-                .features-solutions .solution-category-box p{text-align:left;}
-                .features-solutions .more-solutions a{text-align:center;}
-                .features-solutions h3{text-align:center;}
-                .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{text-align:center;}
-                .features-solutions h2{ font-size: 1.8em; padding-bottom:20px;}
-                .feature-category .more-solutions{text-align:center;}
-                .grey-bg .fb-container {
-                    padding-bottom: 40px;
-                }
-                .solution-section {
-                    padding: 0 0 6px;
-                }
-                .features-solutions .content-container {
-                    padding: 36px 0 38px;
-                }
-                .fb-section .fb-container .fb-category-container .fb-category-box{margin:0;}
-                .features-solutions p, .industrysol-page .fb-section P{
-                    font-size:13px; font-family:Arial, Helvetica, sans-serif; text-align:center;
-                }
-                .partner-section .more-solutions a{color:#000;} 
-                .partner-section .more-solutions a span{color:#ce0000;}
-                .partner-section .partners .col-sm-6{
-                    text-align:center;
-                }
-                .partner-section .partners img.img-responsive{margin:10px 0;}
-                
-                
-                .filter .service-btn {
-                    border: 1px solid #ce0000;
-                    padding:10px; 
-                    border-radius:0;
-                    -webkit-border-radius:0;
-                    -moz-border-radius:0;
-                }	
-                .solution-offer .fb-container .fb-category-container::after {
-                    margin: 0 auto 20px;
-                }
-                .solution-offer .fb-container {
-                    min-height: auto;;
-                    padding: 22px 15px 0;
-                }
-                .more-solutions a{font-size: 11px;}
-                .grey-bg{    padding-bottom: 20px;}
-                .partner-quote .partner-btn .btn-square-transparent{border:1px solid #ce0000; background:none;}
-                .partner-quote .partner-btn .btn-square-transparent a{color:#ce0000;}
-                .partner-quote .partner-btn .btn-square-transparent a:hover;{color:#ce0000;}
+            .solution-category-box{margin:0 0 15px;}
+        .features-solutions .solution-category-box{margin-top:52px;}
+.features-solutions .solution-category-box p{text-align:left;}
+.features-solutions .more-solutions a{text-align:center;}
+.features-solutions h3{text-align:center;}
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{text-align:center;}
+.features-solutions h2{ font-size: 1.8em; padding-bottom:20px;}
+.feature-category .more-solutions{text-align:center;}
+.grey-bg .fb-container {
+    padding-bottom: 40px;
+}
+.solution-section {
+    padding: 0 0 6px;
+}
+.features-solutions .content-container {
+    padding: 36px 0 38px;
+}
+.fb-section .fb-container .fb-category-container .fb-category-box{margin:0;}
+.features-solutions p, .industrysol-page .fb-section P{
+    font-size:13px; font-family:Arial, Helvetica, sans-serif; text-align:center;
+}
+.partner-section .more-solutions a{color:#000;} 
+.partner-section .more-solutions a span{color:#ce0000;}
+.partner-section .partners .col-sm-6{
+    text-align:center;
+}
+.partner-section .partners img.img-responsive{margin:10px 0;}
+
+
+.filter .service-btn {
+    border: 1px solid #ce0000;
+    padding:10px; 
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+}	
+.solution-offer .fb-container .fb-category-container::after {
+    margin: 0 auto 20px;
+}
+.solution-offer .fb-container {
+    min-height: auto;;
+    padding: 22px 15px 0;
+}
+.more-solutions a{font-size: 11px;}
+.grey-bg{    padding-bottom: 20px;}
+.partner-quote .partner-btn .btn-square-transparent{border:1px solid #ce0000; background:none;}
+.partner-quote .partner-btn .btn-square-transparent a{color:#ce0000;}
+.partner-quote .partner-btn .btn-square-transparent a:hover;{color:#ce0000;}
 
 
 

@@ -75,21 +75,3 @@
     padding: 0 15px;
   }
 }
-
-@media screen and (max-width: 991px){
-
-    .pr-list .isawardspage .pr-search{border:2px solid #e6e6e6;}
-
-	.pr-list .isawardspage .pr-search > input{background-color:transparent; text-align:center; text-transform:capitalize;}
-
-	.pr-list .isawardspage .pr-search > input[placeholder]{color:#ce0000;}
-
-    .pr-list .isawardspage .pr-search span.glyphicon.glyphicon-search{display:none;}
-
-	.pr-list .isawardspage .pr-archives-list .pr-load-more{margin:30px auto;}
-
- }
-
-.pr-list .row.pr-list-container.isawardspage {
-    padding: 0;
-}

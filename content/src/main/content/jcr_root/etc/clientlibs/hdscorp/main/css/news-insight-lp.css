@@ -65,6 +65,8 @@
   position:relative;
 }
 
+.result-resources .category-resources-listing .resource h3{text-transform:capitalize;}
+
 @media only screen and (max-width: 1024px) {
   .stay-touch-hexagon-list .hex-contain{
     width:100%;
@@ -105,7 +107,7 @@
 .news-insight-resources h2{ 
   color:#008eaa; 
   font-family: "museo-slab", Helvetica, Arial, sans-serif; 
-  font-size: 24px; 
+  font-size: 1.5em; 
   font-weight: 700; 
   padding-bottom: 40px; 
   text-transform: uppercase; 
@@ -146,7 +148,7 @@
     margin-bottom: 10px;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 1.313em;
+    font-size: 1.28571em;
     line-height: 1;
     line-height: 120%;
 }
@@ -300,8 +302,10 @@
 .explore-insight .explore-insight-container .insight-common-box h5{
   color: #000000;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.313rem;
-  font-weight: 600;
+  font-size: 1.125em;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 1.35em;
   margin: 15px 0;
 }
 .explore-insight .explore-insight-container .insight-common-box .icon{
@@ -319,10 +323,11 @@
   font-weight: 600;
 }
 .explore-insight .explore-insight-container .insight-common-box .description{
-  font-size: 0.875rem;
+  font-size: 1.125em;
+  font-weight: 300;  
   color: #000000;
   margin: 12px 0 12px 0;
-  font-family: Arial;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
 }
 
 .explore-insight .explore-insight-container .insight-common-box .read-more{
@@ -406,17 +411,9 @@
 }
 
 
-
-
-
-
-
-
-
 .news-insight-explore h2{
   color: #000000;
-  font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.55rem;
+  font-size: 1.5em;
   font-weight: 500;
   margin: 0 0 25px -2px;
 }
@@ -447,19 +444,6 @@
     min-height: 175px;
     background: #ffffff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .news-insight-explore .news-insight-explore-spotlight .spotlight-mobile{
   min-height: 230px;
@@ -494,10 +478,11 @@
     margin: 12px 0;
 }
 .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .spotlight-title{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;  
   color: #000000;
-  font-size: 1rem;
+  font-size: 1.125em;
   margin-top: 10px;
-  font-weight: 500;
+  font-weight: 300;
 }
 .news-insight-explore .news-insight-explore-spotlight .spotlight-content .spotlight-title{
   margin-bottom: 10px; color: #ffffff; margin-top: 5px; font-size: 1.4rem;
@@ -543,7 +528,8 @@
 .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .read-more a{
   color: #cc0000;
   font-weight: 800;
-  outline: 0 none;
+  letter-spacing: 0.15em;
+  outline: none;
   text-decoration: none;
   text-transform: uppercase;
 }

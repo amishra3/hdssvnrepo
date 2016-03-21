@@ -31,12 +31,12 @@
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
 }
 .leaders_description > p {
-  font-size: 1rem;
-  font-weight: 700;  
+  font-size: 1em;
+  font-weight: 300;  
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
 }
 .leader-info {
-  font-size: 1.3rem;
+  font-size: 1.3em;
   font-weight: 300;
   width: 100%;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
@@ -46,7 +46,7 @@
 }
 .profile-name h1 {
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 3.438rem;
+  font-size: 3em;
   font-weight: 500;
   line-height: 1;
   margin-top: 0;

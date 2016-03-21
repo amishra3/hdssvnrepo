@@ -36,9 +36,6 @@
 .section-product-col .headline {
     margin-top: 0px;
     margin-bottom: 10px;
-    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 1.313em;
     line-height: 1;
     line-height: 120%;
 }
@@ -90,9 +87,9 @@
 }
 
 .product-search-area h2.sectionheading {
-    font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 3.75em;
-    font-weight: 100;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 3em;
+    font-weight: 700;
     line-height: 1;
     margin-bottom: 55px;
     margin-top: 12px;
@@ -322,11 +319,8 @@ color: #cccccc !important;
     border-bottom: 12px solid #f78e1e;
 }
 
-.result-product .category-heading h2 {
-    font-family: "museo-slab", Helvetica, Arial, sans-serif;
-    font-size: 1.5rem;
+.result-product .category-heading h3 {
     color: #008eaa;
-    font-weight: bold;
     text-transform: uppercase;
     margin: 0 0 15px 0;
 }
@@ -433,25 +427,15 @@ color: #cccccc !important;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
 }
-.result-product .category-products-listing .product > a {
-    font-size: 0.8485rem;
-    color: #ce0000;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.10em;
-}
-
-.result-product .category-products-listing .product > a:hover {
-    color: #ac1f25;
-}
 
 .result-product .category-products-listing .product ul {
     margin: 0 0 12px 0;
     padding: 0 0 0 15px;
     list-style-type: square;
     list-style-position: outside;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.875rem;
+    font-size: 1.125em;
+    font-weight: 300;
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
 }
 
 .result-product .category-products-listing .product ul li {
@@ -761,3 +745,4 @@ color: #cccccc !important;
 }
 
 }
+

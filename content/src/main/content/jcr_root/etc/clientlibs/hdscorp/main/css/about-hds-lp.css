@@ -11,8 +11,8 @@
 }
 
 .behind-scene-hexagon h2 {
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 3rem;
+
+    font-size: 3em;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 35px 0;
@@ -97,28 +97,27 @@
 
 .about-hds-career-leader h2 {
     margin: 0 0 20px;
-    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 100;
-    font-size: 3.25em;
+    font-size: 3em;
     line-height: 1;
     color: #ffffff;
 }
 
 .about-hds-career-leader h4 {
     font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5em;
     line-height: 1;
-  margin-bottom:20px;
+    margin-bottom:20px;
     text-transform: uppercase;
     color: #ffffff;
 }
 
 .about-hds-career-leader p {
     margin-bottom: 40px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 1.125rem;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1.125em;
     line-height: 1;
     color: #ffffff;
 }
@@ -131,7 +130,7 @@
 }
 
 .about-hds-career-leader .learn-about-hds-career-leader {
-     background-color: transparent;
+    background-color: transparent;
     color: #000000;
     cursor: pointer;
     display: inline-block;
@@ -140,7 +139,7 @@
     font-family: 'museo-sans' , Arial, sans-serif;
     letter-spacing: 0.15rem;
     font-weight: 600;
-    font-size: 0.8125rem;
+    font-size: 0.8em;
 }
 
 .about-hds-career-leader  .learn-about-hds-career:hover {
@@ -343,7 +342,6 @@
 
 .about-hds-latest h2 {
     color: #000000;
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
     margin: 0;

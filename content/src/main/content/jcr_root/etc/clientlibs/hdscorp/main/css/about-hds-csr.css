@@ -66,6 +66,7 @@
 
 
 .resources-all, .resources-support {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;    
     background-color: #008eaa;
     margin: 7.5px;
     min-height: 50px;
@@ -81,7 +82,7 @@
     cursor: pointer;
     display: inline-block;
     font-family: "museo-sans",Arial,sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.8em;
     font-weight: 600;
     letter-spacing: 0.15rem;
     text-transform: uppercase;
@@ -96,7 +97,7 @@
 }
 .about-hds-csr-quote .about-hds-csr-quote-container h2 {
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 3.75em;
+    font-size: 3em;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 35px 0;
@@ -112,8 +113,9 @@
 } 
 .about-hds-csr-quote .about-hds-csr-quote-container p{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 22px;
-    margin: 0;
+  font-size: 1.125em;
+  font-weight: 300;
+  margin: 0;
 }
 
 .hitachi-honor{
@@ -122,8 +124,8 @@
 }
 .hitachi-honor h2{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.25em;
+  font-weight: 500;
   line-height: 110%;
   margin: 0 0 35px 0;
   text-align: center;
@@ -143,8 +145,8 @@
 
 .hitachi-honor .hitachi-honor-box p{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.125rem;
+  font-weight: 100;
   color: #000000;
 }
 
@@ -170,7 +172,7 @@
 .behind-scene-hexagon.about-hds-csr-hexagon h2 {
     color: #ffffff;
     font-family: "museo-slab",Helvetica,Arial,sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 700;
     margin-bottom: 25px;
     text-align: center;
@@ -182,8 +184,8 @@
 .resources-section.csr-governance-resource .resources-title{
   color: #1790a8;
   font-family: "museo-slab",Helvetica,Arial,sans-serif;
-  font-size: 24px !important;
-  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
   margin-bottom: 50px;
   text-align: center;
   width: 100%;
@@ -404,7 +406,7 @@
   margin-bottom: 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 3.4375em;
+  font-size: 3em;
   line-height: 1;
   line-height: 100%;
 }
@@ -428,9 +430,9 @@
 
 .about-hds-csr-eco .sub-headline {
   margin-bottom: 65px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 1.125rem;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.125em;
   line-height: 1;
   line-height: 120%;
 }

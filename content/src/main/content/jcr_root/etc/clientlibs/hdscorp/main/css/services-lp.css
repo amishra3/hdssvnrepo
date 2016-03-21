@@ -33,7 +33,7 @@
 .services-list-section h2{ 
   color:#008eaa; 
   font-family: "museo-slab", Helvetica, Arial, sans-serif; 
-  font-size: 24px; 
+  font-size: 1.5em; 
   font-weight: 700; 
   padding-bottom: 25px; 
   text-transform: uppercase; 
@@ -86,9 +86,6 @@
 .services-list-section .section-service-col .headline{
     margin-top: 0px;
     margin-bottom: 10px;
-    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 1.313em;
     line-height: 1;
     line-height: 120%;
 }
@@ -99,9 +96,7 @@
 .service-support-main .section-service-col .headline .animateLink{
 	margin-top: 0px;
     margin-bottom: 10px;
-    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-	font-size:inherit;
-    font-weight: 700;   
+	font-size:inherit;  
     line-height: 120%;
 	text-transform: none;	
 }
@@ -275,13 +270,16 @@
 
 	#analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
 
+	.resources-category-more{padding-top:10px; padding-bottom:10px; }
+
+
 }
 
 
 #analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
 
 .service-support-main .section-service-col.service-blue-box .support-phone-no{
-    padding: 0px 8px 0!important;
+    padding: 5px 8px 0!important;
 }
 
 .millennials .millennials-container .millennials-content .learn{font-size:1em!important;}
@@ -292,5 +290,3 @@
 body.servicedetail{overflow-x:hidden}
 
 }
-
-.resources-category-more{padding-top:10px; padding-bottom:10px; }

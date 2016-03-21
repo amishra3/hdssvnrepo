@@ -19,7 +19,7 @@
 	display:inline-block; 
 	font-family: 'museo-slab', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-transform: uppercase;
 	margin:5px 50px 0 0;
 	padding:0;
@@ -81,7 +81,7 @@
 
 .career-benefits-hexagon h2 {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 3.75em;
+    font-size: 3em;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 35px;
@@ -237,7 +237,7 @@
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
 }
 .career-commitment h2 {
-    font-size: 3.75em;
+    font-size: 3em;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 60px;
@@ -317,6 +317,7 @@
 
 .career-commitment .company-list .company .read-more a {
     color: #ce0000;
+    letter-spacing: 0.15em;
     font-weight: 800;
     outline: 0 none;
     text-decoration: none;
@@ -412,7 +413,7 @@
 
 .hitachi-spirit-hexagon h2 {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 3.75em;
+    font-size: 3em;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 35px;
@@ -421,7 +422,8 @@
 
 .hitachi-spirit-hexagon p {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 1.313rem;
+    font-size: 1.125em;
+    font-weight: 300;
 }
 
 .hitachi-spirit-hexagon .hitachi-spirit-hexagon-list {
@@ -434,7 +436,7 @@
 
 .hitachi-spirit-hexagon .hitachi-spirit-hexagon-list h4 {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 2.813rem;
+    font-size: 2em;
     border-bottom: 8px solid #F88E1E;
     font-weight: 500;
     padding-bottom: 20px;
@@ -618,14 +620,14 @@
     font-weight: 100;
     color: #fff;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-size: 3.75rem;
+    font-size: 3em;
 }
 
 .bannerSectionImage p {
     font-weight: 300;
     color: #fff;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-    font-size: 1.375rem;
+    font-size: 1.125rem;
     width: 74%;
 }
 
@@ -811,3 +813,4 @@
     }
 	.hitachi-spirit-hexagon .hitachi-spirit-hexagon-list h4 br{display:none;}
 }
+

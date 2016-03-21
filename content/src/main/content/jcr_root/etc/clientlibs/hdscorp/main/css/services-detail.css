@@ -21,8 +21,6 @@
   position: relative;
 }
 .managed-cloud-services .managed-cloud-services-container h2 {
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 3.75em;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 20px 0;
@@ -69,12 +67,11 @@
 }
 
 .resources-section.service-detail-resource .resources-title { 
-	margin-bottom:50px; color: #1790a8; 
-	font-family: "museo-slab",Helvetica,Arial,sans-serif; 
-	font-size: 24px; 
+	margin-bottom:50px; color: #1790a8;
 	text-align: center; 
 	width: 100%; 
 	font-weight:700; 
+    font-size:1.5em;
 }
 
 .resources-section.service-detail-resource .resources-container{
@@ -113,8 +110,7 @@
 }
 .services-promo-banner .services-promo-container .headline {
     color: #ffffff;
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 60px;
+    font-size: 3.5em;
     font-weight: 100;
     line-height: 120%;
     margin-bottom: 35px;
