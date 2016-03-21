@@ -28,7 +28,8 @@ node.save();
 <wcmmode:edit>
 	<c:set var="techspeconlypage" value="${true}" />
 </wcmmode:edit>
-
+<c:if test="${not empty properties.techspecdata}">
+<div class="row">
 <div class="col-sm-12">
 	<div id="no-more-tables">
 		<table
@@ -94,3 +95,5 @@ node.save();
         </div>
 	</c:if>
 </div>
+</div>
+</c:if>

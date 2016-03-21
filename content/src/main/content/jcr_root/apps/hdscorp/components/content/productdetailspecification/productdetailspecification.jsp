@@ -17,12 +17,11 @@
                       </div>
                   </c:if>
               </h2>
+			<c:if test="${not empty properties.sectionsubtext}">
 				<div class="specs_h2" >${properties.sectionsubtext}</div>
+            </c:if>
 			<!--TECH SPEC TABLE START--> 
-
-              <div class="row">
 			  		<cq:include path="techspecpar" resourceType="hdscorp/components/content/productdetailtechspecs" />
-			  </div>
 			<!--TECH SPEC TABLE END-->
 
 			 <div class="vsp-soft-products">

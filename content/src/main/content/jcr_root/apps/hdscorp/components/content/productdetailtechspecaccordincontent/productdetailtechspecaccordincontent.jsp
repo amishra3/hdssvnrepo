@@ -5,9 +5,9 @@
 
 <c:set var="defaultEditState" value="" />
 <wcmmode:edit><c:set var="defaultEditState" value="open" /></wcmmode:edit>
-
-<div class="vsp-soft-products-title">${properties.accordinsectiontitle}</div>
-
+    <c:if test="${not empty properties.accordinsectiontitle}">
+   			 <div class="vsp-soft-products-title">${properties.accordinsectiontitle}</div>
+    </c:if>
 <c:set var="multilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linkName")%>" />
 
 <c:forEach var="accordinBox" items="${multilinks}" varStatus="loopcnt">
