@@ -1,12 +1,13 @@
 package com.hdscorp.cms.slingmodels;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
-
 import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
@@ -24,7 +25,6 @@ import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.PartnerDescription;
-
 import com.hdscorp.cms.dao.SystemIntegratorsNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
 import com.hdscorp.cms.util.PageUtils;
@@ -37,19 +37,19 @@ public class SystemIntegratorsContentModel {
 
 	@Inject
 	private ResourceResolver resourceResolver;
-	
+
 	@Inject
 	@Default(values = { "/content/hdscorp/en_us/lookup/partners" })
 	private String sisearchlookuppath;
-	
-	
-	
+
 	public String getSisearchlookuppath() {
 		return sisearchlookuppath;
 	}
 
 	@Inject
+	@Default(values = { "" })
 	private String[] sitags;
+
 	@Inject
 	@Default(values = { "" })
 	private String[] sidesctags;
@@ -103,9 +103,12 @@ public class SystemIntegratorsContentModel {
 				partnerNode.setPartnerName((String) partnerMetaDetaMap.get("partnername", ""));
 				partnerNode.setPartnerHeadLine((String) partnerMetaDetaMap.get("partnerheadline", ""));
 				partnerNode.setPartnerIntroduction((String) partnerMetaDetaMap.get("partnerintroduction", ""));
+				partnerNode.setPartnerDetailsTags(partnerMetaDetaMap.get("partnertags", String[].class));
+				
 				partnerNode.setPartnerTags(partnerTags);
 				partnerNode.setSiteTags(sitags);
-				partnerNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,"seemorelabel-seemoretargeturl-seemorenewwin-thirdparty"));
+				partnerNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,
+						"seemorelabel-seemoretargeturl-seemorenewwin-thirdparty"));
 
 				Resource descriptionListResource = null;
 				if (partnerMetaDeta != null) {
@@ -119,6 +122,7 @@ public class SystemIntegratorsContentModel {
 					if (descriptioNodeProps.containsKey("productDefaultDescription")) {
 						partnerNode
 								.setPartnerDescription(descriptioNodeProps.get("productDefaultDescription").toString());
+
 					}
 					if (sidesctags.length > 0 && !sidesctags[0].isEmpty()) {
 						partnerMultiDescriptionList = descriptioNodeProps.get("descriptionlist", new String[0]);
@@ -144,8 +148,9 @@ public class SystemIntegratorsContentModel {
 
 			}
 		} catch (Exception e) {
-			LOG.error("----IN EXCEPTION BLOCK----" + e.getCause());
-			LOG.error(e.getMessage());
+			StringWriter stack = new StringWriter();
+			e.printStackTrace(new PrintWriter(stack));
+			LOG.error("Error while reading pages:: " + stack.toString());
 		}
 		return systemIntegrators;
 	}
