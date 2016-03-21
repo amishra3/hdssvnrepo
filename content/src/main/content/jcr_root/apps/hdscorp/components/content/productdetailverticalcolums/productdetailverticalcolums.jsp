@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-sm-4">
 		<div class="resources-category">
-			<div class="resources-category-heading">${properties.columntitle}</div>
+			<h3 class="resources-category-heading">${properties.columntitle}</h3>
 
 			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1-thirdparty")%>" />
 					<c:forEach var="column" items="${contentColumns}" varStatus="loop">

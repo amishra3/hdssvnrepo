@@ -57,7 +57,7 @@
    			<div class="content-container clearfix">
    				<div class="col-xs-12 col-md-8 ${properties.secondarycontentalign?'floatright':''}">
    					<h2>${properties.secondaryherotitlecontent}</h2>
-   					<h4>${properties.secondaryherosubtitlecontent}</h4>
+   					<h3>${properties.secondaryherosubtitlecontent}</h3>
    						${properties.secondaryherocontent}
 
                     	<c:if test="${not empty properties.bannerlinklabel}">
@@ -95,7 +95,7 @@
    			<div class="content-container clearfix">
    				<div class="col-xs-12 col-md-12 ${properties.secondarycontentalign?'floatright':''}">
    					<h2>${properties.secondaryherotitlecontent}</h2>
-   					<h4>${properties.secondaryherosubtitlecontent}</h4>
+   					<h3>${properties.secondaryherosubtitlecontent}</h3>
    						${properties.secondaryherocontent}
    				</div>
 			</div>

@@ -22,9 +22,11 @@
 			<h1>${properties.secondaryherotitlecontent}</h1>
 			<h4>${properties.secondaryherosubtitlecontent}</h4>
 				${properties.secondaryherocontent}
-			<a href="${linkUrl}" class="btn-square-red learn-more" target="${properties.secondaryurltargettype?'_blank':'_self'}">
+			<div class="btn-square-red learn-more-promo">
+                <a href="${linkUrl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">
 				${properties.secondarybuttonlabel}
-			</a>
+			  </a>
+            </div>    
 		</div>
 		<div class="cloud-image col-md-5">
 			<img src="${properties.secondaryheroimage}" alt="${properties.secondaryimagealttext}">

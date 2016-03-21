@@ -14,7 +14,7 @@
 
 <c:if test="${not empty properties.subcategorytitle}">
 	<div class="category-heading hidden-xs hidden-sm">
-		<h2>${properties.subcategorytitle}</h2>
+		<h3>${properties.subcategorytitle}</h3>
 	</div>
 </c:if>
 

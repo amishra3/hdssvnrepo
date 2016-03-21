@@ -31,7 +31,7 @@
                         <div class="col-md-9" id="contentCatagory">
                             <div class="result-product">
                                 <div class="category-heading hidden-xs hidden-sm">
-                                    <h2></h2>
+                                    <h3></h3>
                                 </div>
                                 <div class="navLinks">
                                     <div class="countProducts">

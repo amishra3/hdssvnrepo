@@ -9,14 +9,14 @@
 
 
 	<div class="spec-container container-fluid">
-              <div class="spec-title hidden-xs">
+              <h2 class="section-heading fb-title hidden-xs">
                   ${properties.sectiontitle}
                   <c:if test="${not empty properties.downloadspeclinklabel}">
                       <div class="spec-download-pdf">
                         <p><a class="animateLink" href="${downloadspectargeturl}" target="${properties.downloadspeclinkopeninnew?'_blank':'_self'}">${properties.downloadspeclinklabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
                       </div>
                   </c:if>
-              </div>
+              </h2>
 				<div class="specs_h2" >${properties.sectionsubtext}</div>
 			<!--TECH SPEC TABLE START--> 
 

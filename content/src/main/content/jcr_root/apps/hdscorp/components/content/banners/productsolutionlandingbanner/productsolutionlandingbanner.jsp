@@ -20,8 +20,8 @@
 		<div class="common-hero-short-banner server-rack  clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.simplebannermobilemagePath)} > 
           <div class="content-container">
               <div class="col-lg-6 col-md-6 col-xs-12">
-                  <h2 class="headline">${properties.simplebannertitle}</h2>
-                  <p class="sub-text">${properties.simplebannersubtitle}</p>
+                  <h1 class="headline">${properties.simplebannertitle}</h1>
+                 	<h4 class="sub-headline">${properties.simplebannersubtitle}</h4>
                   <div class="btn-square-white request">
                       <a href="${linkUrl}" title="${properties.simpllebannerbuttonlabel}">${properties.simpllebannerbuttonlabel}</a>
                   </div>

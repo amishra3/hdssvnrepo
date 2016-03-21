@@ -33,13 +33,13 @@
 					<h1>
 						${properties.simplebannertitle}
 					</h1>
-					<h4>${properties.simplebannersubtitle}</h4>
+					<h3>${properties.simplebannersubtitle}</h3>
 					<div class="blurb-container clearfix">
 						<p class="${!isHomeBanner?'col-md-5':'col-sm-8 col-md-6'}">${properties.simplebannercontent}</p>
 					</div>
 					<c:if test="${not empty properties.simpllebannerbuttonlabel}">
 						<div class="btn-square-white learn-millennials">
-							<a href="${linkUrl}" class="learn btn-square -white" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
+							<a href="${linkUrl}" class="learn -white" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
 								${properties.simpllebannerbuttonlabel}
 							</a>
 						</div>

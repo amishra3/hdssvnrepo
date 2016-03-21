@@ -20,7 +20,7 @@
                 <%-- <div class="common-hero-banner server-rack clearfix" style="background-image:url('${properties.socialinnovationbannerimagePath}');"> --%>
 				<div class="common-hero-banner server-rack clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.socialinnovationbannerimagePath,properties.socialinnovationmobilebannerimagePath)} >  <div class="common-hero-banner-container">
                     <div class="col-lg-6 col-md-6 col-xs-12">
-                        <h2 class="headline">${properties.socialinnovationbannertitle}</h2>
+                        <h1 class="headline">${properties.socialinnovationbannertitle}</h1>
                         <h3>${properties.socialinnovationbannersubtitle}</h3>
                         <h4 class="sub-headline">${properties.socialinnovationbannercontent}</h4>
 

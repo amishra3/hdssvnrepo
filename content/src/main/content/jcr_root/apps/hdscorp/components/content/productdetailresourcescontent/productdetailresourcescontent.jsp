@@ -6,7 +6,8 @@
 	<div class="resources-container container-fluid">
 	
 		<c:if test="${not empty properties.sectiontitle}">
-			<div class="resources-title hidden-xs hidden-sm">${properties.sectiontitle}</div>
+            <h2 class="section-heading fb-title hidden-xs">${properties.sectiontitle}</h2>
+			<h2 class="resources-title hidden-xs hidden-sm">${properties.sectiontitle}</h2>
 		</c:if>
 	
 		<div class="row row-no-margin">

@@ -26,7 +26,7 @@
 <div class="pr-list">       
 				<div id="loading"></div>             
                 <div class="row pr-list-container ${pageClass}">
-                    <h2>${model.headerText}</h2>
+                    <h1>${model.headerText}</h1>
                     <div class="pr-search">
                         <input type="text" name ="fulltext" id="fulltext" placeholder="${model.searchText}">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>

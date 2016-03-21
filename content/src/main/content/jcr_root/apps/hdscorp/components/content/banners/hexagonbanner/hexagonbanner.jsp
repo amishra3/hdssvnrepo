@@ -67,8 +67,8 @@
 
     			</ul>
     			<c:if test="${not empty properties.hexbuttonlabel}">
-	    			<div class="explore hidden-xs">
-	    				<a href="${linkUrl}" class="btn-square -white" target="${properties.hexurltargettype?'_blank':'_self'}">${properties.hexbuttonlabel}</a>
+	    			<div class="btn-square-white explore hidden-xs">
+	    				<a href="${linkUrl}" target="${properties.hexurltargettype?'_blank':'_self'}">${properties.hexbuttonlabel}</a>
 	    			</div>
 				</c:if>    			
     		</div>

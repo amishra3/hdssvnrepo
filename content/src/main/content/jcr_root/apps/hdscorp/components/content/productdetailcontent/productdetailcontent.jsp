@@ -5,7 +5,8 @@
 <div class="fb-section">
 <div class="fb-container container-fluid">
 	<c:if test="${not empty properties.sectiontitle}">
-		<div class="fb-title hidden-xs hidden-sm">${properties.sectiontitle}</div>
+		<h2 class="section-heading fb-title hidden-xs">${properties.sectiontitle}</h2>
+		<h2 class="fb-title hidden-xs hidden-sm">${properties.sectiontitle}</h2>
 	</c:if>	
 	
 	<c:set var="containerclass" value=""/>
@@ -19,8 +20,8 @@
 
 	<div class="fb-category-container ${properties.sectiondiv?'no-border-container':''}">
 		<div class="fb-category-box ${containerclass}">
-			<div class="fb-category-heading">${properties.contenttitle}</div>
-			<div class="fb-category-highlight">${properties.contensubttitle}</div>
+			<h3 class="fb-category-heading">${properties.contenttitle}</h3>
+			<h4 class="fb-category-highlight">${properties.contensubttitle}</h4>
 			<div class="row row-no-margin">
 				<cq:include path="columncontentpar" resourceType="hdscorp/components/content/column-control" />
 			</div>

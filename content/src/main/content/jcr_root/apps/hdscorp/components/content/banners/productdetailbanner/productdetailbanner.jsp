@@ -38,10 +38,10 @@
 
 					<h1 class="headline">${properties.simplebannertitle}</h1>
 					<h3>${properties.simplebannersubtitle}</h3>
-					<h4 class="sub-headline">
+					<div class="sub-headline">
 						<cq:text property="simplebannercontent"
 							placeholder="click here to set text" />
-					</h4>
+					</div>
 
 					<c:if test="${not empty properties.simplebannerusevideomodal}">
 
