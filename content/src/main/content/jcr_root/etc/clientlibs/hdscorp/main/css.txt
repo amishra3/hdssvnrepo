@@ -1,5 +1,6 @@
 #base=css
 main.css
+hds-typography.css
 common.css
 global-hds-navigation.css
 home.css
