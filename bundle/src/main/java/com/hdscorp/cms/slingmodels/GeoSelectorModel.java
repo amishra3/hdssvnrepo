@@ -27,10 +27,11 @@ public class GeoSelectorModel {
 	private String[] regions;
 	
 	public List<GeoSelector> getRegions() {
-		log.info("start execution of getRegions ()");
+		log.info("Start execution of Regions");
 		List<GeoSelector> listRegionsObject = new ArrayList<GeoSelector>();
 
 		try {
+			if(regions!=null && regions.length>0){
 			for (int index = 0; index < regions.length; index++) {
 				JSONObject jsonObject = new JSONObject(regions[index]);
 				GeoSelector geoRegion = null;
@@ -41,7 +42,7 @@ public class GeoSelectorModel {
 					geoRegion.setRegionId(jsonObject.getString("regionid"));
 					
 					JSONArray jsonArrayObject = new JSONArray(jsonObject.getString("regioncountries"));
-					if (jsonArrayObject.length() > 0) {
+					if (jsonArrayObject!=null && jsonArrayObject.length() > 0) {
 						List<GeoSelector> countries = new ArrayList<GeoSelector>();
 						for (int regCount = 0; regCount < jsonArrayObject.length(); regCount++) {
 							JSONObject jsonRegObject = new JSONObject(jsonArrayObject.get(regCount).toString());
@@ -49,6 +50,7 @@ public class GeoSelectorModel {
 							geoRegionCountries.setCountryLabel(jsonRegObject.getString("countrylabel"));
 							geoRegionCountries.setCountrytargetUrl(jsonRegObject.getString("countrytargeturl"));
 							geoRegionCountries.setOpeninnewwindow(jsonRegObject.getString("openinnewwindow"));
+							geoRegionCountries.setCountrylanguageCode(jsonRegObject.getString("countrylanguagecode"));
 							
 							countries.add(geoRegionCountries);
 						}
@@ -57,6 +59,7 @@ public class GeoSelectorModel {
 
 				}
 				listRegionsObject.add(geoRegion);
+			}
 			}
 		} catch (Exception e) {
 			log.error("Error while fetching data from Regions: " + e);
