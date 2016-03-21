@@ -27,6 +27,7 @@ import com.hdscorp.cms.dao.PartnerDescription;
 
 import com.hdscorp.cms.dao.SystemIntegratorsNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.PageUtils;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
@@ -103,7 +104,8 @@ public class SystemIntegratorsContentModel {
 				partnerNode.setPartnerHeadLine((String) partnerMetaDetaMap.get("partnerheadline", ""));
 				partnerNode.setPartnerIntroduction((String) partnerMetaDetaMap.get("partnerintroduction", ""));
 				partnerNode.setPartnerTags(partnerTags);
-				partnerNode.setPartnerTags(sitags);
+				partnerNode.setSiteTags(sitags);
+				partnerNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,"seemorelabel-seemoretargeturl-seemorenewwin-thirdparty"));
 
 				Resource descriptionListResource = null;
 				if (partnerMetaDeta != null) {
