@@ -239,12 +239,12 @@ r/* HDS Community Section */
 }
 
 
-.vsp-soft-products {margin:45px 0;}
+.vsp-soft-products {margin:0 0 45px;}
 .vsp-soft-products .vsp-soft-products-title {
     font-family: "museo-slab",Helvetica,Arial,sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
-    margin: 100px 0 40px;
+    margin: 0 0 40px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -371,6 +371,9 @@ r/* HDS Community Section */
 .spec-section{background:#ffffff;}
 .spec-section .spec-container{padding-top: 50px; background: url("../images/prod-sol-bg-tech-spec.png") no-repeat 50% 50%;  background-size: cover;}
   /* Tech Specification - Table Grid & Product Details */
+  #no-more-tables {
+    margin-bottom: 45px;
+  }
   #no-more-tables table, 
   #no-more-tables thead, 
   #no-more-tables tbody, 
@@ -404,10 +407,10 @@ r/* HDS Community Section */
  .pro-category{width: 60%; float: left; text-align: left;font-size: 0.9rem;}
 
 
-  .vsp-soft-products {margin:45px 0;}
+  .vsp-soft-products {margin:0 0 45px 0;}
   .vsp-soft-products .vsp-soft-products-title {
       font-size: 1.0rem;
-      margin:50px 0 20px;
+      margin:0 0 20px;
   }
   .vsp-soft-products .accordion-level .accordion-menu-container .accordion-menu{
     padding: 10px 15px;
