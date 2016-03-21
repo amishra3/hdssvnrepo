@@ -104,7 +104,7 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
 			ex.printStackTrace();
 		} 
 
-		if (StringUtils.isNotBlank(gatedCSSClass) && isGated) {
+		if (StringUtils.isNotBlank(gatedCSSClass) && isGated && index > -1) {
 			log.debug("Added gated class to -"+pdfPath);
 			newAttributes.setValue(index, cssclasses+" "+gatedCSSClass);
 		} else {
