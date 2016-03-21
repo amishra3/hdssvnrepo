@@ -89,8 +89,8 @@ var hds = window.hds || {};
                     if ($(this).parent().index() == 0) {
                         $("#loadCatagoryContent").attr('data-content', 'all');
                     }
-                    $('.icon-accordion-opened').css('display', 'none');
-                    $('.icon-accordion-closed').css('display', 'inline-block');
+                    $(this).parent().find('.icon-accordion-opened').css('display', 'none');
+                    $(this).parent().find('.icon-accordion-closed').css('display', 'inline-block');
                     $(this).parent().addClass('active');
                     $('.filters').removeAttr('checked', 'false');
                     if ($(this).parent().has('ul').length) {
