@@ -31,7 +31,7 @@ value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocation
                                         <c:forEach var="location" items="${locations}" varStatus="count">
 										<li>
                                             <div class="checkbox">
-                                                <input type="checkbox" value="common:product&amp;solutions/storage/cloudstorage" id="cloudStorage" name="cbxFunction" class="filters">
+                                                <input type="checkbox" value="${location.tdlocationid}" id="${location.tdlocationlabel}${location.tdlocationid}" name="cbxFunction" class="filters">
                                                 <label class="hds-icon" for="cloudStorage"><span>${location.tdlocationlabel}</span></label>
                                             </div>
                                         </li>
