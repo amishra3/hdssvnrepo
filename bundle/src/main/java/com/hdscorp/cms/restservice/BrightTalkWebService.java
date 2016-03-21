@@ -125,7 +125,7 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers {
 						} else if (hCount == 1) {
 							feed.put(ServiceConstants.JSON_THUMBNAIL_PATH,
 									eElementHref.getAttribute(ServiceConstants.HREF));
-						} else {
+						} else if (hCount ==2) {
 							feed.put(ServiceConstants.JSON_PREVIEW_IMAGE_PATH,
 									eElementHref.getAttribute(ServiceConstants.HREF));
 						}
