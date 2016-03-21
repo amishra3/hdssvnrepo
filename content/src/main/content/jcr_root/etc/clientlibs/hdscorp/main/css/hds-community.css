@@ -14,7 +14,7 @@ r/* HDS Community Section */
 }
 
 .hds-community-section .hds-community-container .hds-title {
-  font-size: 3.125rem;
+  font-size: 3.125em;
   font-weight: 100;
   margin-bottom: 40px; 
   text-transform: none; 
@@ -83,19 +83,19 @@ r/* HDS Community Section */
 }
 
 .hds-community-section .hds-community-container .community-common-box .comm-read-more{
-  font-size: 0.8125rem;
+  font-size: 0.8125em;
 }
 .hds-community-section .hds-community-container .community-common-box .comm-read-more a{
   color: #ce0000;
   font-weight: 800;
-  font-size:0.8125rem;
   outline: none;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.15em;  
 }
 .hds-community-section .hds-community-container .hds-community-join{
   text-align: center; 
-  font-size: 0.8125rem;
+  font-size: 0.8125em;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -103,7 +103,7 @@ r/* HDS Community Section */
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
 }
 
-.hds-community-section .hds-community-container .hds-community-join a{color:#ce0000; outline: 0 none; text-decoration: none; font-size: 0.8125rem;font-weight:800;}
+.hds-community-section .hds-community-container .hds-community-join a{color:#ce0000; outline: 0 none; text-decoration: none; font-weight:800;}
 .hds-community-section .hds-community-container .hds-community-join a:hover {color: #ac1f25;}
 .hds-community-section .hds-community-container .community-common-box .comm-read-more a:hover{color:#ac1f25}
 @media screen and (max-width: 991px) {

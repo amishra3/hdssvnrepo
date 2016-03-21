@@ -89,7 +89,7 @@
 .product-search-area h2.sectionheading {
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-size: 3em;
-    font-weight: 700;
+    font-weight: 100;
     line-height: 1;
     margin-bottom: 55px;
     margin-top: 12px;
@@ -320,6 +320,8 @@ color: #cccccc !important;
 }
 
 .result-product .category-heading h3 {
+    font-size: 1.5em;
+    font-weight: 600;        
     color: #008eaa;
     text-transform: uppercase;
     margin: 0 0 15px 0;
@@ -745,4 +747,3 @@ color: #cccccc !important;
 }
 
 }
-
