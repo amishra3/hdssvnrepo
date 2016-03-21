@@ -59,8 +59,8 @@
 	  <meta name="google" value="notranslate" />
 	  <meta name="referrer" content="origin"/>
 	  <cq:include script="metatags.jsp"/>
-      <script src="https://use.typekit.net/bza1awk.js"></script>
-	  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+      <script src="https://use.typekit.net/ypb6hdo.js"></script>
+      <script>try{Typekit.load({ async: true });}catch(e){}</script>
 	
 	  <cq:include script="headlibs.jsp"/>
 	  <cq:include script="headeranalytics.jsp"/>

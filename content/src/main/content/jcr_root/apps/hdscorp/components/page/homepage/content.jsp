@@ -1,9 +1,5 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
-	<script src="https://use.typekit.net/bza1awk.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-
 	<c:set var="editbarstyle" value="" />
 	<wcmmode:edit>
 		<c:set var="editbarstyle" value="style='overflow:auto;'" />
