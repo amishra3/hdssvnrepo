@@ -13,9 +13,9 @@
 </c:if> 
 								
 <div class="col-sm-4 overRidePadding col-centered">
-    <div class="section-product-col panel-box" style="height: 252px;">
+    <div class="section-product-col panel-box" style="height: 280px;">
         <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${categoryObj.categoryTitle}"></div>
-        <h4 class="headline">${categoryObj.categoryTitle}</h4>
+        <h3 class="headline">${categoryObj.categoryTitle}</h3>
         <p>${properties.categorysubtitle}</p>
         <a href="${linkUrl}" class="animateLink">${seealllinklabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
     </div>
