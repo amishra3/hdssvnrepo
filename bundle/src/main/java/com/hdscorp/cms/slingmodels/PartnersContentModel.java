@@ -21,12 +21,10 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.PartnerDescription;
 import com.hdscorp.cms.dao.PartnerNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
-import com.hdscorp.cms.util.PageUtils;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
@@ -37,104 +35,102 @@ public class PartnersContentModel {
 	private Page resourcePage;
 
 	@Inject
-	private ResourceResolver resourceResolver;	
-	
+	private ResourceResolver resourceResolver;
+
 	@Inject
 	private String[] partnertags;
 	@Inject
-	@Default(values = {""})
+	@Default(values = { "" })
 	private String[] partnerdesctags;
-					 
-	
+
 	private List<PartnerNode> partners;
 
 	public String[] getPartnertags() {
-		
+
 		return partnertags;
 	}
 
 	public String[] getPartnerdesctags() {
-		return 	partnerdesctags;
+		return partnerdesctags;
 	}
 
 	private static final Logger LOG = LoggerFactory.getLogger(SubCatContentModel.class);
-	
-	public List<PartnerNode> getPartners() throws RepositoryException, JsonParseException, JsonMappingException, IOException {
-		
+
+	public List<PartnerNode> getPartners()
+			throws RepositoryException, JsonParseException, JsonMappingException, IOException {
+
 		try {
 			LOG.debug("-------------INSIDE getProducts in SubCatContentModel.Making the Search Service call");
 
-			SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-			
-			String paths[] = {"/content/hdscorp/en_us/lookup/partners"};
-			String tags[] = partnertags ;
-			String template= "/apps/hdscorp/templates/partnerdetail";
-			String type[] = {"cq:Page"};
+			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
+					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
+
+			String paths[] = { "/content/hdscorp/en_us/lookup/partners" };
+			String tags[] = partnertags;
+			String template = "/apps/hdscorp/templates/partnerdetail";
+			String type[] = { "cq:Page" };
 			boolean doPagination = false;
-			
-			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,"@jcr:content/jcr:title","asc");
-			
-			LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
+
+			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, tags, template, type, null,
+					doPagination, null, null, resourceResolver, "@jcr:content/jcr:title", "asc");
+
+			LOG.debug("-------------SEARCH CALL COMPLETED-----" + result.getTotalMatches());
 			List<Hit> hits = result.getHits();
 			partners = new ArrayList<PartnerNode>();
-			
+
 			for (Hit hit : hits) {
 				PartnerNode partnerNode = new PartnerNode();
 				Page reourcePage = hit.getResource().adaptTo(Page.class);
-			    String pageTitle = reourcePage.getTitle();
-			    String pagePath = reourcePage.getPath();
-			    String[] partnerTags= (String[])reourcePage.getProperties().get("cq:tags");
-			    
-			    Resource parResource = reourcePage.getContentResource("par") ;
-			    Resource partnerMetaDeta = parResource.getChild("partnerdescriptionco") ;
-			    ValueMap partnerMetaDetaMap= partnerMetaDeta.adaptTo(ValueMap.class);
-			    partnerNode.setPartnerBackgroundImagePath((String)partnerMetaDetaMap.get("backgroundimagepath", ""));
-			    partnerNode.setPartnerIconImagePath((String)partnerMetaDetaMap.get("partnericonimagepath", ""));
-			    partnerNode.setPartnerIconImageAltText((String)partnerMetaDetaMap.get("partnericonimagealttext", ""));			  	
-			    partnerNode.setPartnerTags(partnerTags);
-			    partnerNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,"seemorelabel-seemoretargeturl-seemorenewwin-thirdparty"));	
-			    partnerNode.setPartnerviewMoreLabel((String)partnerMetaDetaMap.get("partnerviewmorelabel", ""));
-			    partnerNode.setPartnerviewMorelink((String)partnerMetaDetaMap.get("partnerviewmorelink", ""));
-			    partnerNode.setPartneroinwindow((String)partnerMetaDetaMap.get("partneroinwindow", ""));
-			    
-			    Resource descriptionListResource = null;
-			    if(partnerMetaDeta!=null){
-			    	descriptionListResource = partnerMetaDeta.getChild("productdescriptions") ;	
-			    }
-			    
-			    String[] partnerMultiDescriptionList = new String[0];
-			    ObjectMapper mapper = new ObjectMapper();
-			    if(descriptionListResource!=null){
-			    	ValueMap descriptioNodeProps= descriptionListResource.adaptTo(ValueMap.class);
-			    	if(descriptioNodeProps.containsKey("productDefaultDescription")) {
-			    		partnerNode.setPartnerDescription(descriptioNodeProps.get("productDefaultDescription").toString());
-			    	} 
-			    	if(partnerdesctags.length>0 && !partnerdesctags[0].isEmpty()) {
-				    	partnerMultiDescriptionList = descriptioNodeProps.get("descriptionlist",new String[0]);
-				    	
-					    for(String desc:partnerMultiDescriptionList){
-					    	PartnerDescription prodDescObj = mapper.readValue(desc, PartnerDescription.class);
-					    	
-					    	if(Arrays.asList(prodDescObj.getCategoryTag()).contains(partnerdesctags[0])) {
-					    		partnerNode.setPartnerDescription(prodDescObj.getDescription());
-					    		break;
-					    	}
-					    }
-			    	} 
-			    }
+				String pageTitle = reourcePage.getTitle();
+				String pagePath = reourcePage.getPath();
+				String[] partnerTags = (String[]) reourcePage.getProperties().get("cq:tags");
 
-			    
-			    if(pagePath.startsWith("/content")){
-			    	pagePath=PathResolver.getShortURLPath(pagePath);
-			    }
-			    partnerNode.setPartnerTitle(pageTitle);
-			    partnerNode.setPartnerPath(pagePath);
-			    
-			    partners.add(partnerNode);
-			    
+				Resource parResource = reourcePage.getContentResource("par");
+				Resource partnerMetaDeta = parResource.getChild("partnerdescriptionco");
+				ValueMap partnerMetaDetaMap = partnerMetaDeta.adaptTo(ValueMap.class);
+				partnerNode.setPartnerBackgroundImagePath((String) partnerMetaDetaMap.get("backgroundimagepath", ""));
+				partnerNode.setPartnerIconImagePath((String) partnerMetaDetaMap.get("partnericonimagepath", ""));
+				partnerNode.setPartnerIconImageAltText((String) partnerMetaDetaMap.get("partnericonimagealttext", ""));
+				partnerNode.setPartnerTags(partnerTags);
+
+				Resource descriptionListResource = null;
+				if (partnerMetaDeta != null) {
+					descriptionListResource = partnerMetaDeta.getChild("productdescriptions");
+				}
+
+				String[] partnerMultiDescriptionList = new String[0];
+				ObjectMapper mapper = new ObjectMapper();
+				if (descriptionListResource != null) {
+					ValueMap descriptioNodeProps = descriptionListResource.adaptTo(ValueMap.class);
+					if (descriptioNodeProps.containsKey("productDefaultDescription")) {
+						partnerNode
+								.setPartnerDescription(descriptioNodeProps.get("productDefaultDescription").toString());
+					}
+					if (partnerdesctags.length > 0 && !partnerdesctags[0].isEmpty()) {
+						partnerMultiDescriptionList = descriptioNodeProps.get("descriptionlist", new String[0]);
+
+						for (String desc : partnerMultiDescriptionList) {
+							PartnerDescription prodDescObj = mapper.readValue(desc, PartnerDescription.class);
+
+							if (Arrays.asList(prodDescObj.getCategoryTag()).contains(partnerdesctags[0])) {
+								partnerNode.setPartnerDescription(prodDescObj.getDescription());
+								break;
+							}
+						}
+					}
+				}
+
+				if (pagePath.startsWith("/content")) {
+					pagePath = PathResolver.getShortURLPath(pagePath);
+				}
+				partnerNode.setPartnerTitle(pageTitle);
+				partnerNode.setPartnerPath(pagePath);
+
+				partners.add(partnerNode);
+
 			}
 		} catch (Exception e) {
-			LOG.error("----IN EXCEPTION BLOCK----"+e.getCause());
+			LOG.error("----IN EXCEPTION BLOCK----" + e.getCause());
 			LOG.error(e.getMessage());
 		}
 		return partners;
