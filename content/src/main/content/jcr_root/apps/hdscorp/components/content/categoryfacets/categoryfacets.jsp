@@ -46,7 +46,8 @@
 		<c:forEach items="${model.categories}" var="data" varStatus="status">
 
 				<c:set var="categorytags" value="${data['category-tag']}"/>
-				<c:set var="categoryTargetURL" value="${contentrenderingpagepath}.${fn:replace(categorytags, '/', '|')}.html"/>
+				<c:set var="categoryTargetURL" value="${contentrenderingpagepath}.${fn:replace(categorytags, '/', '^')}.html"/>
+				<c:set var="categoryTargetURL" value="${fn:replace(categoryTargetURL, ':', '~')}"/>
 				<c:set var="categoryTargetURL" value="${fn:replace(categoryTargetURL, '\"', '')}"/>
 				
 				<c:set var="activeclass" value=" "/>

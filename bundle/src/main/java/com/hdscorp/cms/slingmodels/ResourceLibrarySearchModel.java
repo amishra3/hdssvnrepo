@@ -73,7 +73,7 @@ public class ResourceLibrarySearchModel  {
 			return true;
 		}else{
 			String viewtype = selectorArray[0];
-			viewtype = viewtype.replaceAll("\\|", "/").replaceAll("[\\[\\](){}]","");
+			viewtype = viewtype.replaceAll("\\|", "/").replaceAll("[\\[\\](){}]","").replaceAll("~",":");
 			this.selectorTags = viewtype.split(",");
 			
 			return false;
@@ -110,7 +110,7 @@ public class ResourceLibrarySearchModel  {
 		
 		if (selectorArray != null && selectorArray.length > 0) {
 			viewtype = selectorArray[0];
-			viewtype = viewtype.replaceAll("\\|", "/").replaceAll("[\\[\\](){}]","");
+			viewtype = viewtype.replaceAll("\\^", "/").replaceAll("[\\[\\](){}]","").replaceAll("~",":");
 			tags = viewtype.split(",");
 			
 		}else{

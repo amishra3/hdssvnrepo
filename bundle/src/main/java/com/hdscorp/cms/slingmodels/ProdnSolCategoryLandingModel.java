@@ -69,7 +69,7 @@ public class ProdnSolCategoryLandingModel {
 			
 			if (selectorArray != null && selectorArray.length > 0) {
 				viewtype = selectorArray[0];
-				viewtype = viewtype.replaceAll("\\|", "/").replaceAll("[\\[\\](){}]","");
+				viewtype = viewtype.replaceAll("\\^", "/").replaceAll("[\\[\\](){}]","").replaceAll("~",":");
 				tags = viewtype.split(",");
 			}else{
 				tags = null;
