@@ -9,7 +9,16 @@ public class GeoSelector {
 	private String countryLabel;
 	private String countrytargetUrl;
 	private String openinnewwindow;
+	private String countrylanguageCode;
 	
+	public String getCountrylanguageCode() {
+		return countrylanguageCode;
+	}
+
+	public void setCountrylanguageCode(String countrylanguageCode) {
+		this.countrylanguageCode = countrylanguageCode;
+	}
+
 	private List<GeoSelector> countries;
 	
 	public String getRegionLabel() {
@@ -43,7 +52,7 @@ public class GeoSelector {
 	public void setCountrytargetUrl(String countrytargetUrl) {
 		this.countrytargetUrl = countrytargetUrl;
 	}
-
+    
 	public String getOpeninnewwindow() {
 		return openinnewwindow;
 	}
@@ -59,6 +68,8 @@ public class GeoSelector {
 	public void setCountries(List<GeoSelector> countries) {
 		this.countries = countries;
 	}
+	
+
 
     
 }
