@@ -6,6 +6,7 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.jcr.RepositoryException;
@@ -13,6 +14,7 @@ import javax.jcr.RepositoryException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.codehaus.jackson.JsonParseException;
@@ -103,8 +105,7 @@ public class SystemIntegratorsContentModel {
 				partnerNode.setPartnerName((String) partnerMetaDetaMap.get("partnername", ""));
 				partnerNode.setPartnerHeadLine((String) partnerMetaDetaMap.get("partnerheadline", ""));
 				partnerNode.setPartnerIntroduction((String) partnerMetaDetaMap.get("partnerintroduction", ""));
-				partnerNode.setPartnerDetailsTags(partnerMetaDetaMap.get("partnertags", String[].class));
-				
+
 				partnerNode.setPartnerTags(partnerTags);
 				partnerNode.setSiteTags(sitags);
 				partnerNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,
@@ -116,12 +117,25 @@ public class SystemIntegratorsContentModel {
 				}
 
 				String[] partnerMultiDescriptionList = new String[0];
+				List<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
+
 				ObjectMapper mapper = new ObjectMapper();
 				if (descriptionListResource != null) {
 					ValueMap descriptioNodeProps = descriptionListResource.adaptTo(ValueMap.class);
 					if (descriptioNodeProps.containsKey("productDefaultDescription")) {
 						partnerNode
 								.setPartnerDescription(descriptioNodeProps.get("productDefaultDescription").toString());
+
+						String descriptionlist[] = descriptioNodeProps.get("descriptionlist", String[].class);
+						if (descriptionlist != null && descriptionlist.length > 0) {
+							for (int index = 0; index < descriptionlist.length; index++) {
+								JSONObject jsonObect = new JSONObject(descriptionlist[index]);
+
+								Map<String, Object> mapObject = PageUtils.jsontoMap(jsonObect);
+								listMap.add(mapObject);
+							}
+							partnerNode.setListmap(listMap);
+						}
 
 					}
 					if (sidesctags.length > 0 && !sidesctags[0].isEmpty()) {
