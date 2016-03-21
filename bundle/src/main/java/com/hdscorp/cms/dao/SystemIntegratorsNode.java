@@ -1,6 +1,8 @@
 package com.hdscorp.cms.dao;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class SystemIntegratorsNode {
    
@@ -24,6 +26,12 @@ public class SystemIntegratorsNode {
 	private String partnerIntroduction;
 	
 	private String[] partnerTags;
+	
+	private String[] siteTags;
+	
+	
+	private List<Map<String, String>> contentCell;
+	
 	
 	private ArrayList<PartnerDescription> descriptionList;
 
@@ -118,5 +126,23 @@ public class SystemIntegratorsNode {
 	public void setPartnerIntroduction(String partnerIntroduction) {
 		this.partnerIntroduction = partnerIntroduction;
 	}
+
+	public List<Map<String, String>> getContentCell() {
+		return contentCell;
+	}
+
+	public void setContentCell(List<Map<String, String>> contentCell) {
+		this.contentCell = contentCell;
+	}
+
+	public String[] getSiteTags() {
+		return siteTags;
+	}
+
+	public void setSiteTags(String[] siteTags) {
+		this.siteTags = siteTags;
+	}
+	
+	
 	
 }
