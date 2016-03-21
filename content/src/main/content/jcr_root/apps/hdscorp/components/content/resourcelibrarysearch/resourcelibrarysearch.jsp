@@ -11,6 +11,7 @@
 <c:set var="industrytag" value="${properties.industrytag}" scope="request"/>
 
 
+
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.ResourceLibrarySearchModel" var="model" />
 
                  
@@ -28,10 +29,51 @@
 		
        <div class="resource" data-indstry="${industryTags}" data-contenttype="${resource.contentTypeTag}" data-subfilter="${resourceTags}">
                 <div class="type">${resource.contentType}</div>
-                <h3><a href="${resource.resourcePath}" class="animateLink">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
-                <div class="deafultdesc">
-                    <p>${resource.resourceDescription}</p>
-                </div>
+               
+            <c:choose>
+    <c:when test="${resource.resourceType == 'video'}">
+        <h3><a href="javascript:void(0)" 
+                           
+
+                               class="l-overlay animateLink" 
+                               data-is-video="true"                                
+                               data-target-content="Test${resource.videoTitleId}" 
+
+                               target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+                           <div class="overlay-content" id="Test${resource.videoTitleId}">                          
+                          <div class="">
+                         
+                          <object class="BrightcoveExperience" id="${resource.videoGuid}">  
+                                               
+                            <param name="playerID" value="${resource.videoTitleId}">
+                            <param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot">
+                            <!-- for a single video in a Single Video template: Nee to Be Authored-->
+                            <param name="@videoPlayer" value="${resource.videoTitleId}">
+                            <param name="isVid" value="true">
+                            <param name="isUI" value="true">
+                            <param name="dynamicStreaming" value="true">
+                            <param name="htmlFallback" value="true">
+                            <param name="includeAPI" value="true">
+                            <param name="templateLoadHandler" value="onTemplateLoad">
+                            <param name="width" value="720">
+                            <param name="height" value="455">
+                            <param name="showNoContentMessage" value="false" />
+                          </object></div>
+                          </div></h3>
+                               
+                           
+    </c:when>
+    
+    <c:otherwise>
+         <h3><a href="${resource.resourcePath}" class="animateLink">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
+         
+    </c:otherwise>
+</c:choose>    
+          <div class="deafultdesc">
+                               <p>${resource.resourceDescription}</p>
+                              </div>
+              
+                
             </div>
            
  </c:forEach>                       

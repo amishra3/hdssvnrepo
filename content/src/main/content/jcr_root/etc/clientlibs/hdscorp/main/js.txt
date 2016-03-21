@@ -1,6 +1,9 @@
 #base=js
 vendor.js
 plugins.js
+hds-mobile-overlay.js
+hds-overlay-video.js
+hds-brithcove-impl.js
 main.js
 jquery.cookie.js
 reponsive-images.js

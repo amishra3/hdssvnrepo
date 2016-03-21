@@ -40,6 +40,7 @@
             fieldLabel="Join Community Message"
             name="./joincommunitymsg"
             xtype="textfield"/>
+        
         <insertnocacheheaders
             jcr:primaryType="cq:Widget"
             fieldLabel="Make this page non-cacheable ?"

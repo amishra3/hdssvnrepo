@@ -42,3 +42,4 @@ gated-detail.css
 marketo-forms.css
 training-detail.css
 geo-selector.css
+hds-video-overlay.css
