@@ -15,19 +15,16 @@
                 <items jcr:primaryType="cq:WidgetCollection">
                     <bimagepath
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
                         fieldLabel="Blog Image Path"
                         name="./jcr:bimagepath"
                         xtype="pathfield"/>
                     <bautherdetails
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
                         fieldLabel="Blog Author  Details"
                         name="./jcr:bautherdetails"
                         xtype="textfield"/>
                     <btitle
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
                         fieldLabel="Blog Title"
                         name="./jcr:btitle"
                         xtype="textfield"/>
