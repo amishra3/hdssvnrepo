@@ -98,6 +98,16 @@
                                     layout="anchor"
                                     name="./industryfiltertitle"
                                     xtype="textfield"/>
+                                <industryfilterid
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Filter ID"
+                                    key="industryfilterid"
+                                    layout="anchor"
+                                    name="./industryfilterid"
+                                    xtype="textfield"/>
                                 <cftags
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"
