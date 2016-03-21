@@ -10,12 +10,29 @@ public class ResourceNode {
 
 	private String[] resourceTags;
 	
-	
+	private String videoGuid;
+	private String videoTitleId;
 	private String resourceType;
 	
 	private String contentType;
 	private String contentTypeTag;
 	
+	public String getVideoGuid() {
+		return videoGuid;
+	}
+
+	public void setVideoGuid(String videoGuid) {
+		this.videoGuid = videoGuid;
+	}
+
+	public String getVideoTitleId() {
+		return videoTitleId;
+	}
+
+	public void setVideoTitleId(String videoTitleId) {
+		this.videoTitleId = videoTitleId;
+	}
+
 	private String[] industryTags;
 	private boolean gated;
 	public boolean isGated() {

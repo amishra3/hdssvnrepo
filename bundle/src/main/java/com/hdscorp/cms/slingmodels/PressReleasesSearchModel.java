@@ -1,5 +1,6 @@
 package com.hdscorp.cms.slingmodels;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,6 +15,8 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
@@ -48,6 +51,9 @@ public class PressReleasesSearchModel {
 	@Default(values = { "12" })
 	private String noofItemsShown;
 	
+	private static final Logger LOG = LoggerFactory
+			.getLogger(PressReleasesSearchModel.class);
+	
 	public String getNoofItemsShown() {
 		return noofItemsShown;
 	}
@@ -75,7 +81,16 @@ public class PressReleasesSearchModel {
 
 		try {
 
-			String fullText = request.getParameter("fulltext");
+			String fullText=request.getParameter("fulltext");
+			try {
+				
+				if(fullText!=null) {
+					fullText = URLDecoder.decode(request.getParameter("fulltext"),"UTF-8");
+				}
+				
+			} catch (Exception e) {	
+				LOG.info("Exception while decoding the url::" +e.getMessage());
+			}
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			Integer year = Calendar.getInstance().get(Calendar.YEAR);
@@ -102,7 +117,8 @@ public class PressReleasesSearchModel {
 			SearchResult result = searchServiceHelper.getPressReleases(
 					viewtype, newsPath, noOfYears, fullText,null,"0","pressRelease");
 			List<Hit> hits = result.getHits();
-              
+			LOG.info("No of Matches for Press Releases/ News/ Awards"+hits.size());
+			LOG.info("Press Releases/ News/ Awards Query Execution Time"+result.getExecutionTime());
 			newsList = new ArrayList<NewsNode>();
 
 			for (Hit hit : hits) {

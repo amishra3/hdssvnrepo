@@ -71,18 +71,18 @@ public class MultifieldUtil {
 						results.add(columnMap);
 					}
 				} catch (JSONException e) {
-					LOGGER.error("[MultifieldUtil]:getMultiFieldPanelValues ", e.getMessage());
+					LOGGER.error("[MultifieldUtil]:error message ", e.getMessage());
 					e.printStackTrace();
 				}
 			}
 		}
-		LOGGER.debug("[MultifieldUtil]:getMultiFieldPanelValues Category values :", results);
-		LOGGER.info("[MultifieldUtil]:getMultiFieldPanelValues method  Ending.");
+		//LOGGER.debug("[MultifieldUtil]:getMultiFieldPanelValues Category values :", results);
+		//LOGGER.info("[MultifieldUtil]:getMultiFieldPanelValues method  Ending.");
 		return results;
 	}
 	 
 	private Map<String, Object> getSubCategory(JSONObject parsed) {
-		LOGGER.info("[MultifieldUtil]:getSubCategory  Method  Starting.");
+		//LOGGER.info("[MultifieldUtil]:getSubCategory  Method  Starting.");
 		Map<String, Object> columnMap = new HashMap<String, Object>();
 		try {
 			if (parsed != null) {
@@ -101,8 +101,8 @@ public class MultifieldUtil {
 		} catch (JSONException e) {
 			LOGGER.error("[MultifieldUtil]:getSubCategory ", e.getMessage());
 		}
-		LOGGER.debug("[MultifieldUtil]:getSubCategory SubCategory Values:",columnMap);
-		LOGGER.info("[MultifieldUtil]:getSubCategory  Method  Ending.");
+		//LOGGER.debug("[MultifieldUtil]:getSubCategory SubCategory Values:",columnMap);
+		//LOGGER.info("[MultifieldUtil]:getSubCategory  Method  Ending.");
 		return columnMap;
 		
 	}

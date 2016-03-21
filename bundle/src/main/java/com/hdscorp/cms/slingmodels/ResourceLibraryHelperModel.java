@@ -76,6 +76,13 @@ public class ResourceLibraryHelperModel {
 			if (properties.containsKey("resourceType")) {
 				resourceNode.setResourceType(properties.get("resourceType")
 						.toString());
+				if(resourceNode.getResourceType().equalsIgnoreCase("video")) {
+					resourceNode.setContentType("Video");
+					resourceNode.setVideoGuid(properties.get("guid")
+							.toString());
+					resourceNode.setVideoTitleId(properties.get("titleId")
+							.toString());
+				}
 			} else {
 				resourceNode.setResourceType("pdf");
 
