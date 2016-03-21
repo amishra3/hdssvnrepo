@@ -29,6 +29,8 @@ public class SystemIntegratorsNode {
 	
 	private String[] siteTags;
 	
+
+	private String[] partnerDetailsTags;
 	
 	private List<Map<String, String>> contentCell;
 	
@@ -142,6 +144,15 @@ public class SystemIntegratorsNode {
 	public void setSiteTags(String[] siteTags) {
 		this.siteTags = siteTags;
 	}
+
+	public String[] getPartnerDetailsTags() {
+		return partnerDetailsTags;
+	}
+
+	public void setPartnerDetailsTags(String[] partnerDetailsTags) {
+		this.partnerDetailsTags = partnerDetailsTags;
+	}
+	
 	
 	
 	
