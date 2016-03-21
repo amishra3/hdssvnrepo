@@ -21,14 +21,6 @@ public class PartnerNode {
 	
 	private String partnerIconImageAltText;
 
-	private List<Map<String, String>> contentCell;
-	
-	private String partnerviewMoreLabel;
-	
-	private String partnerviewMorelink;
-	
-	private String partneroinwindow;
-
 	private String[] partnerTags;
 	
 	private ArrayList<PartnerDescription> descriptionList;
@@ -100,39 +92,4 @@ public class PartnerNode {
 	public void setPartnerDescription(String partnerDescription) {
 		this.partnerDescription = partnerDescription;
 	}
-
-	public List<Map<String, String>> getContentCell() {
-		return contentCell;
-	}
-
-	public void setContentCell(List<Map<String, String>> contentCell) {
-		this.contentCell = contentCell;
-	}
-
-	public String getPartnerviewMoreLabel() {
-		return partnerviewMoreLabel;
-	}
-
-	public void setPartnerviewMoreLabel(String partnerviewMoreLabel) {
-		this.partnerviewMoreLabel = partnerviewMoreLabel;
-	}
-
-	public String getPartnerviewMorelink() {
-		return partnerviewMorelink;
-	}
-
-	public void setPartnerviewMorelink(String partnerviewMorelink) {
-		this.partnerviewMorelink = partnerviewMorelink;
-	}
-
-	public String getPartneroinwindow() {
-		return partneroinwindow;
-	}
-
-	public void setPartneroinwindow(String partneroinwindow) {
-		this.partneroinwindow = partneroinwindow;
-	}
-
-	
-
 }
