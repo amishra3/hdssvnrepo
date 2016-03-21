@@ -16,7 +16,7 @@ var hds = window.hds || {};
         },
         
        updateTitleOnLoad: function(url) {
-        	$('.category-heading > h2').html(" ").html($('.product-listing > ul > li.active').find('a').text());
+        	$('.category-heading > h3').html(" ").html($('.product-listing > ul > li.active').find('a').text());
         },
 
         loadCatagoryContent: function(url) {
