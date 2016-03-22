@@ -41,7 +41,7 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 	
 	
 	
-	public String getBrightCoveResponse(String feedURL,String storagePath,boolean deleteParent,int page_number) {
+	public String getBrightCoveResponse(String feedURL,String storagePath,boolean deleteParent,int page_number,int page_size) {
 		
 
 		log.info("Start execution of getInvokeResponse()  with feed URL "
@@ -53,12 +53,12 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 			return wsResponse;
 		} else {
 			
-			return saveBrightCoveResponse(wsResponse,storagePath,feedURL,deleteParent,page_number);
+			return saveBrightCoveResponse(wsResponse,storagePath,feedURL,deleteParent,page_number,page_size);
 		}
 
 	}
 
-	public String saveBrightCoveResponse(String wsResponse,String storagePath,String feedURL,boolean deleteParent,int page_number) {
+	public String saveBrightCoveResponse(String wsResponse,String storagePath,String feedURL,boolean deleteParent,int page_number,int page_size) {
 
 		log.info("Bright cove response"
 				+ wsResponse.length());
@@ -131,7 +131,7 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 		
 		
 }
-			if(!(noOfVideos<100)) {
+			if(!(noOfVideos<page_size)) {
 				page_number++;
 				if(deleteParent){
 				feedURL= feedURL+"&page_number="+page_number;
@@ -140,7 +140,7 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 				}
 				
 				log.info(page_number+"_Page Bright cove feed url** "+feedURL);
-				getBrightCoveResponse(feedURL, storagePath, false,page_number);
+				getBrightCoveResponse(feedURL, storagePath, false,page_number,page_size);
 			}
 			
 		} catch (Exception e) {

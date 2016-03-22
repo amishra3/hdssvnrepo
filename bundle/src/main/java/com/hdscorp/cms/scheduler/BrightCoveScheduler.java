@@ -28,9 +28,10 @@ import com.hdscorp.cms.util.ServiceUtil;
 @Component(label = "BrightCove Scheduler", description = "This service basically is used for consuming data from the feed", metatype = true, immediate = true)
 @Service(BrightCoveScheduler.class)
 @Properties({
-		@Property(name = ServiceConstants.FEED_URL_KEY, description = "Default feed URL is provided you can change it accordingly", value = ""),
-		@Property(name = ServiceConstants.FEED_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = ""),
-		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "") })
+		@Property(name = ServiceConstants.FEED_URL_KEY, description = "Default feed URL is provided you can change it accordingly", value = "http://api.brightcove.com/services/library?command=search_videos&any=tag:hdscorp&output=mrss&token=J-KzSklqGjvSZ83MDVgB1Z3dYwbchmoH_8O2TX0j_JZflnvN9eqcNQ.."),
+		@Property(name = ServiceConstants.FEED_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 15 10 * * ? 2005"),
+		@Property(name = ServiceConstants.BRIGHTCOVE_PAGE_SIZE, description = "Bright cove page size", value = "100"),
+		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "/content/dam/public/en_us/videos") })
 
 public class BrightCoveScheduler {
 	private static final Logger log = LoggerFactory.getLogger(BrightCoveScheduler.class);
@@ -49,6 +50,8 @@ public class BrightCoveScheduler {
 	private String feedURL;
 
 	private String storagePath;
+	
+	private String page_size;
 
 	/**
 	 * Useful to running scheduler based on OSGI config properties.
@@ -60,12 +63,13 @@ public class BrightCoveScheduler {
 		this.schedulerExpression = ctx.getProperties().get(ServiceConstants.FEED_SCHEDULER_EXPRESSION).toString();
 		this.feedURL = ctx.getProperties().get(ServiceConstants.FEED_URL_KEY).toString();
 		this.storagePath = ctx.getProperties().get(ServiceConstants.FEED_STORAGE_PATH).toString();
+		this.page_size = ctx.getProperties().get(ServiceConstants.BRIGHTCOVE_PAGE_SIZE).toString();
 		Map<String, Serializable> configOne = new HashMap<>();
 
 		final Runnable job = new Runnable() {
 			public void run() {
 				log.info("started brightcove scheduler");
-				brightCoveImporterService.getBrightCoveResponse(feedURL,storagePath,true,0);
+				brightCoveImporterService.getBrightCoveResponse(feedURL,storagePath,true,0,Integer.parseInt(page_size));
 			}
 		};
 		try {

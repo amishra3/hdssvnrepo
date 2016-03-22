@@ -99,6 +99,8 @@ public final class ServiceConstants {
 	public static final String FEED_SCHEDULER_EXPRESSION = "scheduler.expression";
 	public static final String FEED_STORAGE_PATH = "storage.path";
 	public static final String FEED_POST_LIMIT = "feed.limit";
+	
+	public static final String BRIGHTCOVE_PAGE_SIZE = "brightcove.pagesize";
 
 	/*
 	 * Twitter constraints
