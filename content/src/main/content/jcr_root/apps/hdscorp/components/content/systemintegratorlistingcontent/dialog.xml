@@ -64,6 +64,21 @@
                         fieldLabel="Show Reults Label"
                         name="./sishowresultslabel"
                         xtype="textfield"/>
+                    <sifilterbylabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Filter By"
+                        name="./sifilterbylabel"
+                        xtype="textfield"/>
+                    <siclearallfilterslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Clear All Filters Label"
+                        name="./siclearallfilterslabel"
+                        xtype="textfield"/>
+                    <sisearchpartnerlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Seatch Partner Label"
+                        name="./sisearchpartnerlabel"
+                        xtype="textfield"/>
                 </items>
             </tab1>
             <tab2

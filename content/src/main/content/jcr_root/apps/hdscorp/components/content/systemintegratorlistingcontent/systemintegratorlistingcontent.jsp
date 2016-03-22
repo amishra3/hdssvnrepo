@@ -24,7 +24,7 @@
 				<div class="content-container clearfix">
 					<div class="hidden-md hidden-lg col-xs-12 search-overlay">
 						<div class="launchLink">
-							Search Partners <span aria-hidden="true" class="glyphicon glyphicon-search"></span> 
+                            ${properties.sisearchpartnerlabel} <span aria-hidden="true" class="glyphicon glyphicon-search"></span> 
 						</div>
 					</div>					
 				</div>
@@ -59,7 +59,7 @@
 				<div class="content-container clearfix">
 					<div class="col-md-12 col-xs-12 tagList">
 						<div id="filterTag" class="groupedby">
-							<div style="display:none;" class="label">Filterd by: </div>
+                            <div style="display:none;" class="label">${properties.sifilterbylabel}</div>
 							<div class="keyword-subcat"></div>
 							<div style="display:none;" class="keyword-filter"></div>
 						</div>
@@ -96,7 +96,7 @@
 						<div class="clearfix"></div>
 					<div class="clear-results">
 						<div class="btn-square-red"> 
-							<a target="_self" href="#">Clear All FIlters</a>
+                            <a target="_self" href="#">${properties.siclearallfilterslabel}</a>
 						</div>
 					</div>
 					</div>
