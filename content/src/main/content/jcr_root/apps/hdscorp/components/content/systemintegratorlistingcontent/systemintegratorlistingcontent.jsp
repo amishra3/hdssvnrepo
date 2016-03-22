@@ -106,12 +106,24 @@
 					<div class="partner-list clearfix" id="partner-list">
 
 						<c:forEach var="systemIntegrators" items="${systemIntegratorsContentModel.systemIntegrators}" varStatus="loopcnt">
+
 									<c:forEach var="industryTadIds" items="${systemIntegrators.industryTadIds}" varStatus="loop">
+
+
+                                        <c:choose>
+						<c:when test="${loop.index== 0}">
+ 						<c:set var="industryTadIds1" value="${industryTadIds}" /> 
+
+						</c:when>
+				<c:otherwise>
+			<c:set var='industryTadIds1' value='${industryTadIds1},${industryTadIds}' />
+				</c:otherwise>
+							</c:choose>
 
 
                                     </c:forEach>
 
-                            <div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="${industryTadIds}">
+                            <div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="${industryTadIds1}">
                                 <div class="logo">
                                     <img src="${systemIntegrators.systemIntegratorIconImagePath}" alt="" class="img-responsive">
                                 </div>
