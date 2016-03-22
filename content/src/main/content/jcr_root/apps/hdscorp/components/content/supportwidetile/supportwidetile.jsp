@@ -28,8 +28,20 @@
 	    <c:if test="${not empty properties.phonenumbertext}">      
 			<div class="col-sm-6 support-phone-no col-no-pad">${properties.phonenumbertext}</div>
 		</c:if>
-		<c:if test="${not empty properties.tileurllabel}">
+
+             <c:forEach var="title" items="${properties.tileurllabel}">
+             <c:choose>
+                 <c:when test="${empty properties.phonenumbertext}">
+
+			<div class="col-sm-12 support-connect-login col-no-pad"><a href="${linkUrl}" target="${not empty properties.urlopennewtab?'_blank':'_self'}" class="animateLink">${properties.tileurllabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></div>
+		          </c:when>
+                 <c:otherwise>
+
 			<div class="col-sm-6 support-connect-login col-no-pad"><a href="${linkUrl}" target="${not empty properties.urlopennewtab?'_blank':'_self'}" class="animateLink">${properties.tileurllabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></div>
-		</c:if>
+
+              </c:otherwise>
+
+            </c:choose>
+             </c:forEach>
       </div>
   </div>
