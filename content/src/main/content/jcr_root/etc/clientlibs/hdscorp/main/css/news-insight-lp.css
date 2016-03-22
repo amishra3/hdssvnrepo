@@ -38,9 +38,9 @@
 }
 .stay-touch-hexagon p{
   text-align: center;
-  font-size: 0.875rem;
-  font-family: Arial;
-  margin-top: 20px;
+    font-size: 1.125em;
+    font-family: 'museo-sans',Helvetica,Arial,sans-serif;
+    margin-top: 10px;
 }
 
 .stay-touch-hexagon .stay-touch-hexagon-list{
