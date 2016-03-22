@@ -49,8 +49,7 @@ var hds = window.hds || {};
                 $('.partner .partner-detail').hide();
                 $(this).parent().siblings('.partner-detail').show();
                 $(this).parent().parent('.partner').addClass('active');
-                $(pLogo).removeClass('rgbmode').addClass('opacity');
-                $(this).removeClass('opacity').addClass('rgbmode');
+                $(this).addClass('rgbmode');
                 $(this).off("hover");
                 event.preventDefault();
             });
@@ -58,14 +57,11 @@ var hds = window.hds || {};
                 $(this).parent().hide();
                 $(this).parent().parent().removeClass('active');
                 $('.partner .logo  img').removeClass('rgbmode');
-                $('.partner .logo  img').removeClass('opacity');
             })
             $(pLogo).hover(function() {
-                $(pLogo).addClass('opacity');
-                $(this).addClass('imghover').removeClass('opacity');
+                $(this).addClass('imghover');
             }, function() {
                 $(this).removeClass('imghover');
-                $(pLogo).removeClass('opacity');
             })
         },
         _buildMobileNavigation: function(arg) {
