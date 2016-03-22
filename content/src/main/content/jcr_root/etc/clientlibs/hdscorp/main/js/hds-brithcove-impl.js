@@ -1,4 +1,5 @@
-$(function(){
+
+
 
 var player, modVP, currentVideo;
  function onTemplateLoad(experienceID) {
@@ -38,11 +39,12 @@ onTemplateLoadPlayList = function (experienceID) {
 
 
 
- 
+
 
 function initiateVideo(){
     window.setTimeout(function(){
         var protocol, bcApi;
+        $('#loading').hide();
         try {
             var pUrl = jQuery.url();
             protocol = pUrl.attr('protocol');
@@ -58,6 +60,7 @@ function initiateVideo(){
             bcApi = 'https://sadmin.brightcove.com/js/APIModules_all.js';                 
         }   
         if(!window.brightcove) {
+            $('#loading').hide();
             $.getScript(bcUrl, function(data, textStatus, jqxhr) {
                
                 console.log('Brightcove loaded');
@@ -65,6 +68,7 @@ function initiateVideo(){
         }
         
         $.getScript(bcApi, function(data, textStatus, jqxhr) {
+
                 if (protocol == 'https') {
                     var bcParam = document.createElement('param');
                     bcParam.name = 'secureConnections';
@@ -83,7 +87,9 @@ function initiateVideo(){
 }
 var gblPlayingVideo;
 $(document).on('click','a[data-is-video=true]', function(e){
-        e.preventDefault();
+
+$('#loading').hide();
+
         var $this = $(this);
         var object = $this.siblings('.overlay-content').find('object').parent().addClass('video-div');
         gblPlayingVideo = object.html();
@@ -94,6 +100,7 @@ $(document).on('click','a[data-is-video=true]', function(e){
             gblPlayingVideo = null;
         });     
         initiateVideo();
+     e.preventDefault();
 });
 $(document).keyup(function(e) { //play videos properly when closed by esc key
           var overlay = $('.overlay');
@@ -105,4 +112,4 @@ $(document).keyup(function(e) { //play videos properly when closed by esc key
           }
         });
 
-})
+

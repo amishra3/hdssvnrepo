@@ -1,3 +1,4 @@
+
 window.HDS = {
     init: function() {
         var self = this;
@@ -19,13 +20,15 @@ window.HDS = {
             videobox = new HDS.Lightbox();
             videobox.setContent($('#' + $(this).data('target-content')).html());
             videobox.minHeight(minHeight); //Provide min height for window as video take some time to load
-            $(this).click(function(event) {
+            $(document).on('click','.l-overlay' ,function(event) {
                 event.preventDefault();
                 videobox.show();
             });
         });
     }
 };
+
+
 $(function() {
     HDS.init();
 })

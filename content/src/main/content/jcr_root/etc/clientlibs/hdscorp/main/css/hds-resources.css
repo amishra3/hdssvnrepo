@@ -1129,6 +1129,7 @@ span.ellipse.clickable {
     top:60px;
     height: 470px;
     left: 3px;
+    z-index:9;
 }
 
 .clearSearchIcon{
