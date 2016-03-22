@@ -50,7 +50,7 @@ public class AssetGatingFilter implements Filter {
 				return;
 			}
 			
-//			final SlingHttpServletResponse slingResponse = (SlingHttpServletResponse) response;
+			final SlingHttpServletResponse slingResponse = (SlingHttpServletResponse) response;
 			final SlingHttpServletRequest slingRequest = (SlingHttpServletRequest) request;
 			String pdfPath= slingRequest.getRequestURI();
 			if(!pdfPath.contains("/editor") && !pdfPath.contains("/cf")&& pdfPath.toLowerCase().endsWith(".pdf") && (pdfPath.startsWith("/en-us/pdf") || pdfPath.startsWith("/content/dam/public/en_us/pdfs"))){
@@ -61,6 +61,13 @@ public class AssetGatingFilter implements Filter {
 				if(HdsCorpCommonUtils.isGated(pdfPath, slingRequest) && !HdsCorpCommonUtils.checkValidReferer(refererString, gatingParamVal)){
 					String targetURL = forwardPath ;
 					log.debug("==========PDF is GATED ============Redirecting to "+targetURL);
+					// Set the Cache-Control and Expires header
+					slingResponse.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+					slingResponse.setHeader("Dispatcher", "no-cache");
+					slingResponse.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+					slingResponse.setHeader("Expires", "0"); // Proxies.
+					slingResponse.setContentType("text/html");
+					
 					slingRequest.setAttribute("pdfPath", pdfPath);
 					slingRequest.getRequestDispatcher(targetURL).forward(request,response);
 //					HttpServletResponse httpResponse = (HttpServletResponse) response;
