@@ -20,7 +20,7 @@
         <%
 			ShortenerURLService sus = sling.getService(ShortenerURLService.class);
 			String shortURL = sus
-					.getShortURL(request.getRequestURL().toString()+"&keyword=test&title=hdsproducts&format=simple");
+					.getShortURL(request.getRequestURL().toString()+"?&keyword=test&title=hdsproducts&format=simple");
              pageContext.setAttribute("shortURL", shortURL);
              ValueMap valueMap = currentPage.getProperties();
 
