@@ -48,6 +48,13 @@
                         fieldLabel="Get Information Button Target URL"
                         name="./contactusbannerbuttonurl"
                         xtype="pathfield"/>
+                    <thirdpartybutton
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdpartybutton"
+                        name="./thirdpartybutton"
+                        type="checkbox"
+                        xtype="selection"/>
                     <contactusbannerurltargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
@@ -68,6 +75,13 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
                         name="./contactuslinkurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
                         type="checkbox"
                         xtype="selection"/>
                 </items>

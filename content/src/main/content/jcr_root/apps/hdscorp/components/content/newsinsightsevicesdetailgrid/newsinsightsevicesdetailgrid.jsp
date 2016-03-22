@@ -6,7 +6,7 @@
 <div id ="nsight" class="news-insight-resources news-insights-section clearfix ${properties.type}" style="background-image:url(${properties.sectionbackground})">
 	<div class="cs-container content-container">
         <div class="container-fluid">
-	        <h2>${properties.sectiontitle}</h2>
+	        <h3>${properties.sectiontitle}</h3>
 	        <div class="row-centered">
 					<c:forEach var="slinks" items="${serviceLinks}">
 	                       <c:set var="icopath" value="${slinks.contenticonpath}" />
@@ -26,7 +26,7 @@
 										<div class="imageHolder">
 											<img src="${icopath}" alt="${icoalt}" title="${icoalt}">
 										</div>
-										<h3 class="headline hidden-xs">${title}</h3>
+										<h2 class="headline hidden-xs">${title}</h2>
 										<h3 class="headline hidden-sm hidden-md hidden-lg">
 											<a href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${title}
 												<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>

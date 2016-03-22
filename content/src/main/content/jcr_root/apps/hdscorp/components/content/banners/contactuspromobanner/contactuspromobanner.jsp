@@ -43,8 +43,8 @@
 
   				<div class="buttons">
   					<a href="${fn:contains(buttonUrl, 'http')?'':domain}${buttonUrl}" rel="iframemodal" class="information btn-square -white hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
-  					<a href="${fn:contains(linkUrl, 'http')?'':domain}${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
-  					<a href="${fn:contains(buttonUrl, 'http')?'':domain}${buttonUrl}" rel="iframemodal" class="information btn-square-white hidden-xs hidden-sm" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
+                    <a href="${fn:contains(linkUrl, 'http')?'':domain}${linkUrl}" class="reseller animateLink" target="${properties.contactuslinkurltargettype?'_blank':'_self'}">${properties.contactusbannerlinktext}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+  					<a href="${fn:contains(buttonUrl, 'http')?'':domain}${buttonUrl}" rel="iframemodal" class="information btn-square-white hidden-xs hidden-sm" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}${properties.thirdpartybutton?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
   				</div>
   			</div>
   		</div>
