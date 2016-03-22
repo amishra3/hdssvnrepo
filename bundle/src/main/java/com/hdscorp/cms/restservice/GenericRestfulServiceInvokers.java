@@ -230,4 +230,72 @@ public abstract class GenericRestfulServiceInvokers {
 		return sdfDestination.format(dateTo);
 	}
 
+	
+	public String getWSResponseSUS(String feedUrl, String methodType,
+			String parameter) {
+		log.info("Execution start for getURLContents() " + feedUrl);
+		StringBuilder sb = new StringBuilder();
+		JSONObject jsonObject = new JSONObject();
+
+		try {
+
+			HttpClient httpClient = new DefaultHttpClient();
+
+			HttpResponse reponse = invokeWSSUS(methodType, parameter, feedUrl,
+					httpClient);
+			
+			log.info("response received from service call" + reponse);
+			if (reponse.getStatusLine().getStatusCode() != 200) {
+				jsonObject.put(ServiceConstants.JSON_STATUS_CODE, reponse
+						.getStatusLine().getStatusCode());
+				jsonObject.put(ServiceConstants.JSON_STATUS_REASON, reponse
+						.getStatusLine().getReasonPhrase());
+				return jsonObject.toString();
+			}
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					(reponse.getEntity().getContent()), ServiceConstants.UTF_8));
+			String output;
+			while ((output = br.readLine()) != null) {
+				sb.append(output);
+			}
+			httpClient.getConnectionManager().shutdown();
+		} catch (java.net.UnknownHostException e) {
+			log.error("Feed is not found:" + e.getMessage());
+			try {
+				jsonObject.put(ServiceConstants.JSON_STATUS_CODE,
+						ServiceConstants.NOT_FOUND_STATUS_CODE);
+				jsonObject.put(ServiceConstants.JSON_STATUS_REASON,
+						ServiceConstants.NOT_FOUND_STATUS_REASON);
+			} catch (JSONException e1) {
+				log.error("Error while parsing in json" + e.getMessage());
+			}
+			return jsonObject.toString();
+
+		} catch (Exception e) {
+			log.error("Error while reading data from feed:" + e);
+		}
+
+		return sb.toString();
+
+	}
+	
+	private HttpResponse invokeWSSUS(String type, String parameter,
+			String feedURL, HttpClient httpClient)
+			throws ClientProtocolException, IOException {
+
+		log.info("Execution start for getInvokeMethodType() and method type is "
+				+ type);
+		if (type.equalsIgnoreCase(ServiceConstants.POST_METHOD_TYPE)) {
+			HttpPost postReq = new HttpPost(feedURL);
+			StringEntity input = new StringEntity(parameter,
+					ServiceConstants.UTF_8);
+			input.setContentType(ServiceConstants.CONTENT_TYPE);
+			postReq.setEntity(input);
+			return httpClient.execute(postReq);
+		} else {
+			HttpGet request = new HttpGet(feedURL);					
+			return httpClient.execute(request);
+		}
+
+	}
 }
