@@ -75,7 +75,7 @@
 			<div class="icon">
 				<img src="${twitterFeedModel.iconPath}" alt="" title="">
 			</div>
-			<h4>${properties.twtwitterhandlelabel}</h4>
+			
 			<p>${twitterPostMsg}</p>
 
 			<p>${postedDate} ${propertyValue}<p>
