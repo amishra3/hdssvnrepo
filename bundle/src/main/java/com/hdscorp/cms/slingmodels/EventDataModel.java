@@ -156,7 +156,8 @@ public class EventDataModel {
 								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
 						eventNode.setEventLocation(properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
 						eventNode.setEventDescription(
-								properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
+								properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));						
+						eventNode.setStatus(properties.get(ServiceConstants.JSON_STATUS,(String) null));						
 						eventNode.setEventImageBackground(
 								properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
 						eventNode.setEventRegisterNowLabel(
