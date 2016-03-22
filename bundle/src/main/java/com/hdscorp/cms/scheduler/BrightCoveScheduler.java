@@ -28,9 +28,9 @@ import com.hdscorp.cms.util.ServiceUtil;
 @Component(label = "BrightCove Scheduler", description = "This service basically is used for consuming data from the feed", metatype = true, immediate = true)
 @Service(BrightCoveScheduler.class)
 @Properties({
-		@Property(name = ServiceConstants.FEED_URL_KEY, description = "Default feed URL is provided you can change it accordingly", value = "http://api.brightcove.com/services/library?command=search_videos&any=tag:hdscorp&output=mrss&token=J-KzSklqGjvSZ83MDVgB1Z3dYwbchmoH_8O2TX0j_JZflnvN9eqcNQ.."),
-		@Property(name = ServiceConstants.FEED_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 25 13 * * ?"),
-		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "/content/dam/public/en_us/videos") })
+		@Property(name = ServiceConstants.FEED_URL_KEY, description = "Default feed URL is provided you can change it accordingly", value = ""),
+		@Property(name = ServiceConstants.FEED_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = ""),
+		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "") })
 
 public class BrightCoveScheduler {
 	private static final Logger log = LoggerFactory.getLogger(BrightCoveScheduler.class);
@@ -65,7 +65,7 @@ public class BrightCoveScheduler {
 		final Runnable job = new Runnable() {
 			public void run() {
 				log.info("started brightcove scheduler");
-				brightCoveImporterService.getBrightCoveResponse(feedURL,storagePath);
+				brightCoveImporterService.getBrightCoveResponse(feedURL,storagePath,true,0);
 			}
 		};
 		try {

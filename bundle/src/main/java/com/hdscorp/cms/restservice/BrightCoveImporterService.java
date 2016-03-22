@@ -39,7 +39,10 @@ import com.hdscorp.cms.util.ViewHelperUtil;
 public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 	static final Logger log = LoggerFactory.getLogger(BrightTalkWebService.class);
 	
-	public String getBrightCoveResponse(String feedURL,String storagePath) {
+	
+	
+	public String getBrightCoveResponse(String feedURL,String storagePath,boolean deleteParent,int page_number) {
+		
 
 		log.info("Start execution of getInvokeResponse()  with feed URL "
 				+ feedURL);
@@ -49,12 +52,13 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 		if (getWSInvokeStatus(wsResponse)) {
 			return wsResponse;
 		} else {
-			return saveBrightCoveResponse(wsResponse,storagePath);
+			
+			return saveBrightCoveResponse(wsResponse,storagePath,feedURL,deleteParent,page_number);
 		}
 
 	}
 
-	public String saveBrightCoveResponse(String wsResponse,String storagePath) {
+	public String saveBrightCoveResponse(String wsResponse,String storagePath,String feedURL,boolean deleteParent,int page_number) {
 
 		log.info("Bright cove response"
 				+ wsResponse.length());
@@ -69,6 +73,9 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 			saxParser.parse(new InputSource(new StringReader(wsResponse)),
 					brightCoveSaxHandler);
 			log.info("video list size"+brightCoveSaxHandler.videoList.size());
+			
+			int noOfVideos = brightCoveSaxHandler.videoList.size();
+			
 			Session session = JcrUtilService.getSession();
 			
 			
@@ -83,7 +90,7 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 					JcrUtilService.getResourceResolver(), null, null);
 			List<Hit> hits = result.getHits();
 			HashMap<String, String[]> tagsMap = new HashMap<>();
-
+			log.info("video list size in Repository before bright cove Page_"+page_number+" Response Saved"+hits.size());
 			for (Hit hit : hits) {
 				Resource metadataResource = hit.getResource().getChild(
 						"jcr:content/metadata");
@@ -99,20 +106,24 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 				}
 			}
 			
-			Node parentNode = session.getNode(storagePath);
-			if(parentNode!=null) {
-				parentNode.remove();
-				session.save();
-				parentNode = session.getNode(storagePath.substring(0,storagePath.lastIndexOf("/")));
+			if(deleteParent) {
+				Node parentNode = session.getNode(storagePath);
 				
-				if(parentNode!=null){
+				if(parentNode!=null) {
+					parentNode.remove();
+					session.save();
+					parentNode = session.getNode(storagePath.substring(0,storagePath.lastIndexOf("/")));
 					
-				parentNode = parentNode.addNode(storagePath.substring(storagePath.lastIndexOf("/")+1), "sling:Folder");
-				
-				session.save();
-				
+					if(parentNode!=null){
+						
+					parentNode = parentNode.addNode(storagePath.substring(storagePath.lastIndexOf("/")+1), "sling:Folder");
+					
+					session.save();
+					
+				}
+				}
 			}
-			}
+			
 			for (BrightCoveVideoNode brightCoveVideoNode : brightCoveSaxHandler.videoList) {
 				
 				
@@ -120,6 +131,18 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 		
 		
 }
+			if(!(noOfVideos<100)) {
+				page_number++;
+				if(deleteParent){
+				feedURL= feedURL+"&page_number="+page_number;
+				} else {
+					feedURL = feedURL.substring(0,feedURL.lastIndexOf("=")+1)+page_number;
+				}
+				
+				log.info(page_number+"_Page Bright cove feed url** "+feedURL);
+				getBrightCoveResponse(feedURL, storagePath, false,page_number);
+			}
+			
 		} catch (Exception e) {
 
 			e.printStackTrace();
