@@ -34,7 +34,7 @@ public class ShortenerURLService extends GenericRestfulServiceInvokers {
 	public String getShortURL(String pageURL) {
 		String shortURL = "";
 		if (pageURL != null && !pageURL.isEmpty()) {
-			shortURL = getURLfromXML(getWSResponse(getShortURLPreviousPath().concat(pageURL),
+			shortURL = getURLfromXML(getWSResponseSUS(getShortURLPreviousPath().concat(pageURL),
 					ServiceConstants.GET_METHOD_TYPE, ServiceConstants.FEED_PARAMETER));
 			log.info("short url::" + shortURL);
 		}
