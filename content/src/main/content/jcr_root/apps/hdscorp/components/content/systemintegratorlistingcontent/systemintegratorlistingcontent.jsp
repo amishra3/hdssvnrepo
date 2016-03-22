@@ -13,12 +13,14 @@
                     <img alt="" src="${properties.siiconpath}">
                 </div>
                 <h2>${properties.sittitle}</h2>
-                <div class="partner-filters hidden-xs hidden-sm">
-					<a data-refilter="FilterByIndustry" href="javascript:void(0);" class="filterby">
-						<span class="title">${properties.industryfilterlabel}</span>
-						<span class="caret-arrow"></span>
-					</a>
-				</div>
+               	<c:if test="${empty properties.hideindustryfilter}">
+	                <div class="partner-filters hidden-xs hidden-sm">
+						<a data-refilter="FilterByIndustry" href="javascript:void(0);" class="filterby">
+							<span class="title">${properties.industryfilterlabel}</span>
+							<span class="caret-arrow"></span>
+						</a>
+					</div>
+				</c:if>
             </div>						
 			<div class="partner-filters-search clearfix">
 				<div class="content-container clearfix">
@@ -28,34 +30,33 @@
 						</div>
 					</div>					
 				</div>
-				<div id="FilterByIndustry" class="content-container clearfix filters-section less">
-					<div class="col-sm-9 filters-list col-sm-offset-3">
-						<ul class="FilterByIndustryList">
-
-
-
-						<c:forEach items="${industryfilterlist}" var="definition">
-                                <c:set var="industryfiltertitle" value="${xss:encodeForHTML(xssAPI, definition['industryfiltertitle'])}"/>
-                                <c:set var="industryTag" value="${xss:encodeForHTML(xssAPI, definition['industryTag'])}"/>
-                            <c:set var="industryfilterid" value="${xss:encodeForHTML(xssAPI, definition['industryfilterid'])}"/>
-
-
-					<c:set var="industryTag" value="${hdscorp:removeDoubleQuotes(industryTag)}"/>
-							<li class="col-xs-4"><div class="checkbox">
-								<input class="filters" type="checkbox" name="cbxFunction"  id="${industryfilterid}" value="${fn:replace(fn:replace(industryTag,'[', ''),']', '')}">
-								<label for="${industryfilterid}" class="hds-icon"><span>${industryfiltertitle}</span></label>
-							</div></li>									
-						</c:forEach>
-						</ul>
-						<div class="clearfix"></div>
-						<div class="show-results hidden-sm hidden-xs">
-							<div class="btn-square-red">
-								<a id="showIndustry" target="_self" href="javascript:void(0);">${properties.sishowresultslabel}</a>
+				<c:if test="${empty properties.hideindustryfilter}">
+					<div id="FilterByIndustry" class="content-container clearfix filters-section less">
+						<div class="col-sm-9 filters-list col-sm-offset-3">
+							
+								<ul class="FilterByIndustryList">
+									<c:forEach items="${industryfilterlist}" var="definition">
+			    						<c:set var="industryfiltertitle" value="${xss:encodeForHTML(xssAPI, definition['industryfiltertitle'])}"/>
+			                            <c:set var="industryTag" value="${xss:encodeForHTML(xssAPI, definition['industryTag'])}"/>
+			                            <c:set var="industryfilterid" value="${xss:encodeForHTML(xssAPI, definition['industryfilterid'])}"/>
+										<c:set var="industryTag" value="${hdscorp:removeDoubleQuotes(industryTag)}"/>
+		
+										<li class="col-xs-4"><div class="checkbox">
+											<input class="filters" type="checkbox" name="cbxFunction"  id="${industryfilterid}" value="${fn:replace(fn:replace(industryTag,'[', ''),']', '')}">
+											<label for="${industryfilterid}" class="hds-icon"><span>${industryfiltertitle}</span></label>
+										</div></li>									
+									</c:forEach>
+								</ul>
+	
+							<div class="clearfix"></div>
+							<div class="show-results hidden-sm hidden-xs">
+								<div class="btn-square-red">
+									<a id="showIndustry" target="_self" href="javascript:void(0);">${properties.sishowresultslabel}</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
+				</c:if>
 				<div class="content-container clearfix">
 					<div class="col-md-12 col-xs-12 tagList">
 						<div id="filterTag" class="groupedby">

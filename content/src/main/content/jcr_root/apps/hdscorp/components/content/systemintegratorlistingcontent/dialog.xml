@@ -91,6 +91,12 @@
                         fieldLabel="Filter Title"
                         name="./industryfilterlabel"
                         xtype="textfield"/>
+                    <hideindustryfilter
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide this fiilter ?"
+                        name="./hideindustryfilter"
+                        type="checkbox"
+                        xtype="selection"/>                        
                     <contents
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Filters"
@@ -137,52 +143,6 @@
                     </contents>
                 </items>
             </tab2>
-            <tab3
-                jcr:primaryType="cq:Panel"
-                title="System Integrators Content Type Filter Config">
-                <items jcr:primaryType="cq:WidgetCollection">
-                    <contentfilterlabel
-                        jcr:primaryType="cq:Widget"
-                        fieldDescription="This is the Filter label."
-                        fieldLabel="Filter Title"
-                        name="./contentfilterlabel"
-                        xtype="textfield"/>
-                    <contents
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Filters"
-                        name="./contenttypefilterlist"
-                        xtype="multifield">
-                        <fieldConfig
-                            jcr:primaryType="cq:Widget"
-                            border="true"
-                            hideLabel="true"
-                            layout="form"
-                            xtype="multifieldpanel">
-                            <items jcr:primaryType="cq:WidgetCollection">
-                                <contentfiltertitle
-                                    jcr:primaryType="cq:Widget"
-                                    allowBlank="{Boolean}false"
-                                    anchor="100%"
-                                    dname="header"
-                                    fieldLabel="Filter Title"
-                                    key="contentfiltertitle"
-                                    layout="anchor"
-                                    name="./contentfiltertitle"
-                                    xtype="textfield"/>
-                                <cftags
-                                    jcr:primaryType="cq:Widget"
-                                    allowBlank="{Boolean}false"
-                                    anchor="100%"
-                                    fieldLabel="Tag Id"
-                                    key="contentTag"
-                                    layout="anchor"
-                                    name="./contentTag"
-                                    xtype="tags"/>
-                            </items>
-                        </fieldConfig>
-                    </contents>
-                </items>
-            </tab3>
         </items>
     </items>
 </jcr:root>
