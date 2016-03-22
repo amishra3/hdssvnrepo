@@ -39,7 +39,7 @@
 			<div class="more-solutions">
   <c:choose>
      <c:when test="${properties.openinnewwindow=='true'}">
-          <a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}" target="_blank">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-share animateIcon" aria-hidden="true"></span></a>
+          <a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}" target="_blank">${properties.learnmorelinklabel} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
  </c:when>
      <c:otherwise>
           <a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
