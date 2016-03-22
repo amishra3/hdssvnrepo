@@ -13,6 +13,7 @@ import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.models.annotations.Default;
@@ -25,10 +26,13 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
+import com.day.cq.tagging.Tag;
+import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.PartnerDescription;
 import com.hdscorp.cms.dao.SystemIntegratorsNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.PageUtils;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
@@ -94,6 +98,28 @@ public class SystemIntegratorsContentModel {
 				Page reourcePage = hit.getResource().adaptTo(Page.class);
 				String pageTitle = reourcePage.getTitle();
 				String pagePath = reourcePage.getPath();
+				Resource metadataResource = hit.getResource().getChild("jcr:content");
+				if (metadataResource != null) {
+
+					ValueMap properties = ResourceUtil.getValueMap(metadataResource);
+					TagManager tagManager = JcrUtilService.getResourceResolver().adaptTo(TagManager.class);
+
+					if (properties.containsKey("cq:tags")) {
+						String[] assetTags = (String[]) properties.get("cq:tags");
+
+						List<String> industryTadIds = new ArrayList<>();
+
+						for (String item : assetTags) {
+							Tag tag = tagManager.resolve(item);
+							if (tag != null) {
+								industryTadIds.add(tag.getTagID());
+							}
+						}
+
+						partnerNode.setIndustryTadIds(industryTadIds);
+					}
+
+				}
 				String[] partnerTags = (String[]) reourcePage.getProperties().get("cq:tags");
 
 				Resource parResource = reourcePage.getContentResource("par");
