@@ -115,7 +115,7 @@
                                     fieldLabel="Tag Id"
                                     key="industryTag"
                                     layout="anchor"
-                                    name="cq:tags"
+                                    name="./industryTag"
                                     xtype="tags"/>
                             </items>
                         </fieldConfig>
@@ -161,7 +161,7 @@
                                     fieldLabel="Tag Id"
                                     key="contentTag"
                                     layout="anchor"
-                                    name="cq:tags"
+                                    name="./contentTag"
                                     xtype="tags"/>
                             </items>
                         </fieldConfig>

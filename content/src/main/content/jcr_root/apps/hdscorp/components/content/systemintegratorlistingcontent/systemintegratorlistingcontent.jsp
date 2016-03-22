@@ -106,23 +106,22 @@
 					<div class="partner-list clearfix" id="partner-list">
 
 						<c:forEach var="systemIntegrators" items="${systemIntegratorsContentModel.systemIntegrators}" varStatus="loopcnt">
-									<c:forEach var="listmap" items="${systemIntegrators.listmap}" varStatus="loop">
-                                        <c:set var="categoryList" value="${fn:replace(fn:replace(listmap.categoryTag,'[', ''),']', '')}" />
+									<c:forEach var="industryTadIds" items="${systemIntegrators.industryTadIds}" varStatus="loop">
 
 
                                     </c:forEach>
 
-                            <div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="${categoryList}">
+                            <div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="${industryTadIds}">
                                 <div class="logo">
-                                    <img src="${systemIntegrators.partnerIconImagePath}" alt="" class="img-responsive">
+                                    <img src="${systemIntegrators.systemIntegratorIconImagePath}" alt="" class="img-responsive">
                                 </div>
-                                <div class="partner-detail" style="background-image:url(${systemIntegrators.partnerBackgroundImagePath});)">
+                                <div class="partner-detail" style="background-image:url(${systemIntegrators.systemIntegratorBackgroundImagePath});)">
                                     <div class="close">
                                         <img src="images/partner-detail-close.png">
                                     </div>
-                                    <h2 class="ptitle"> ${systemIntegrators.partnerName}</h2>
-                                    <h4>${systemIntegrators.partnerHeadLine}</h4>
-                                    <p> ${systemIntegrators.partnerIntroduction}</p>
+                                    <h2 class="ptitle"> ${systemIntegrators.systemIntegratorName}</h2>
+                                    <h4>${systemIntegrators.systemIntegratorHeadLine}</h4>
+                                    <p> ${systemIntegrators.systemIntegratorIntroduction}</p>
 
 										<c:forEach var="column" items="${systemIntegrators.contentCell}" varStatus="loop">
                                         		<a class="animateLink" href="${column.seemoretargeturl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a><br>
@@ -139,3 +138,6 @@
         </div>
     </div>
 </div>
+
+
+
