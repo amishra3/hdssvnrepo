@@ -105,19 +105,19 @@
 			<meta name="partners" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
 	<%
 		}
-		else if(section.equalsIgnoreCase("newsandinsights") && currentPage.getAbsoluteParent(4)!=null)
+		else if(section.equalsIgnoreCase("news-insights") && currentPage.getAbsoluteParent(4)!=null)
            {
 	%>
 			<meta name="news-and-insights" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
 	<%
 		}
-        else if(section.equalsIgnoreCase("abouthds") && currentPage.getAbsoluteParent(4)!=null)
+        else if(section.equalsIgnoreCase("about-hds") && currentPage.getAbsoluteParent(4)!=null)
         {
 	%>
 			<meta name="abouthds" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
 	<%
 		}
-         else if(section.equalsIgnoreCase("contactus") && currentPage.getAbsoluteParent(4)!=null)
+         else if(section.equalsIgnoreCase("contact") && currentPage.getAbsoluteParent(4)!=null)
         {
 	%>
 			<meta name="contactus" content="<%=currentPage.getAbsoluteParent(4).getTitle()%>" />
