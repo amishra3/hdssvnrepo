@@ -13,7 +13,7 @@
 </c:if> 
 								
 <div class="col-sm-4 overRidePadding col-centered">
-    <div class="section-product-col panel-box" style="height: 280px;">
+    <div class="section-product-col panel-box">
         <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${categoryObj.categoryTitle}"></div>
         <h4 class="headline">${categoryObj.categoryTitle}</h4>
         <p>${properties.categorysubtitle}</p>

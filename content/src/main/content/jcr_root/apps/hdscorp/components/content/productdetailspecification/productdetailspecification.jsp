@@ -18,7 +18,7 @@
                   </c:if>
               </h2>
 			<c:if test="${not empty properties.sectionsubtext}">
-				<div class="specs_h2" >${properties.sectionsubtext}</div>
+                <div class="specs_h2"><h4>${properties.sectionsubtext}</h4></div>
             </c:if>
 			<!--TECH SPEC TABLE START--> 
 			  		<cq:include path="techspecpar" resourceType="hdscorp/components/content/productdetailtechspecs" />

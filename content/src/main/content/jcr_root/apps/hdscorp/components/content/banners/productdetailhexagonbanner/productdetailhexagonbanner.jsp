@@ -61,9 +61,11 @@
    						${properties.secondaryherocontent}
 
                     	<c:if test="${not empty properties.bannerlinklabel}">
+                            <div class="prt-button">
 							<div class="btn-square-white app-label learn-more-white-link">
 								<a href="${properties.bannerlinkurl}" target="${properties.bannertargettype?'_blank':'_self'}">${properties.bannerlinklabel}${properties.bannerthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 							</div>
+                            </div>
 						</c:if>
 
    				</div>
@@ -72,7 +74,7 @@
    						<li class="hexagon-transformative hexagon">
 								<span class="sprite">
                                  <c:if test="${not empty properties.hexagoniconpath}">   
-								<img src='${properties.hexagoniconpath}' alt='${properties.hexagoniconpathalt}' title='${properties.hexagoniconpathalt}' style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;">
+								<img src='${properties.hexagoniconpath}' alt='${properties.hexagoniconpathalt}' title='${properties.hexagoniconpathalt}' style="position: absolute;top: -40px;left: 0px;right: 0px;margin: 0px auto;">
                                  </c:if>   
                             </span>
    							<h4>${properties.hexagontitle}</h4>
