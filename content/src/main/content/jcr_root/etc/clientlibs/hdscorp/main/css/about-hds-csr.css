@@ -267,15 +267,16 @@
   font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #ffffff;
 }
 .about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight-description{  
-  font-size: 1.2rem;
+  font-size: 1.125em;
   line-height: 1.3em;
-  font-family: Arial, sans-serif;
+  font-weight: 300;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
 }
 .about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight-more{
     font-weight:800;
     margin-top:10px; 
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.15em;
 }
 .about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight a{
   color: #ffffff;
@@ -284,7 +285,7 @@
   text-transform: uppercase;
 }
 
-.about-hds-articles .about-hds-articles-spotlight .spotlight-content a{color:#ffffff; outline: 0 none; text-decoration: none; font-size: 0.8125rem;}
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content a{color:#ffffff; outline: 0 none; text-decoration: none; font-size: 0.8125em;}
 .about-hds-articles .about-hds-articles-spotlight .spotlight-content a:hover {color: #ffffff;}
 
 @media only screen and (max-width: 991px) {

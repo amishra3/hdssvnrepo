@@ -72,7 +72,6 @@
     display: inline;
 }
 
-
 .services-list-section .section-service-col:last-child{
   margin-bottom: 20px;
 }
@@ -84,10 +83,13 @@
 
 .service-support-main .section-service-col .headline,
 .services-list-section .section-service-col .headline{
+	font-size: 1.28571em;
+	font-weight: 700;
     margin-top: 0px;
     margin-bottom: 10px;
     line-height: 1;
     line-height: 120%;
+	text-transform: none;
 }
 .service-support-main .section-service-col .headline a, 
 .services-list-section .section-service-col .headline a{
@@ -108,19 +110,18 @@
 .service-support-main .section-service-col p,
 .services-list-section .section-service-col p{
     margin-bottom: 15px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 0.875em;
-    line-height: 1;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.125em;
     color: #000000;
-    line-height: 142%;
+    line-height: 125%;
 }
 
 .service-support-main .section-service-col a,
 .services-list-section .section-service-col a {
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 1em;
+    font-size: 0.875em;
     text-transform: none;
     color: #cc0d0d;
     text-decoration: none;
@@ -252,29 +253,21 @@
 
 .section-service-col.dummy a:hover{color:#000;}
 
-
-
 @media only screen and (max-width: 768px) {
-
-	#insight-center-excellence .accordion-menu-container .accordion-menu{padding-left:15px!important; padding-right:15px!important;}
-    #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label{padding-left:0!important}
-    .service-support-main .section-service-col{margin-bottom:20px;}
-	.millennials .millennials-container .millennials-content .learn{margin-bottom:0;}
-    .accordion-level .accordion-menu-container .accordion-menu{font-size:1.1em}
-	.news-insight-resources .news-resources-col .imageHolder {display: inline-block!important; width:auto!important;}
-	.news-insight-resources .news-resources-col .headline {display: inline-block!important; width:100%!important; text-align:center!important;}
-	#insight-center-excellence .accordion-menu-container .accordion-menu{padding-left:15px!important; padding-right:15px!important;}
-    #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label{padding-left:0!important}
-    .news-insight-resources .news-resources-col .headline{display:none;}
-    .specific-tech .content-container h2 {margin: 20px 0 25px!important;}
-
-	#analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
-
-	.resources-category-more{padding-top:10px; padding-bottom:10px; }
-
-
+  #insight-center-excellence .accordion-menu-container .accordion-menu{padding-left:15px!important; padding-right:15px!important;}
+  #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label{padding-left:0!important}
+  .service-support-main .section-service-col{margin-bottom:20px;}
+  .millennials .millennials-container .millennials-content .learn{margin-bottom:0;}
+  .accordion-level .accordion-menu-container .accordion-menu{font-size:1.1em}
+  .news-insight-resources .news-resources-col .imageHolder {display: inline-block!important; width:auto!important;}
+  .news-insight-resources .news-resources-col .headline {display: inline-block!important; width:100%!important; text-align:center!important;}
+  #insight-center-excellence .accordion-menu-container .accordion-menu{padding-left:15px!important; padding-right:15px!important;}
+  #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label{padding-left:0!important}
+  .news-insight-resources .news-resources-col .headline{display:none;}
+  .specific-tech .content-container h2 {margin: 20px 0 25px!important;}
+   #analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
+  .resources-category-more{padding-top:10px; padding-bottom:10px;}
 }
-
 
 #analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
 
@@ -284,9 +277,6 @@
 
 .millennials .millennials-container .millennials-content .learn{font-size:1em!important;}
 
-
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-
 body.servicedetail{overflow-x:hidden}
-
 }

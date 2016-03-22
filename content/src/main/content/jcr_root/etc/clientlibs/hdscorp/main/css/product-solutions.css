@@ -50,6 +50,7 @@ h2.section-heading{
 }
 
 .business-specific .specific-benefit h3 {
+    font-weight: 600;        
     line-height: 1;
     margin: 11px 0 20px;
 }
@@ -217,7 +218,7 @@ ul.stickyNav li:hover a{
   display: inline-block;
   position: relative;
   margin: 0 5px;
-  padding: 50px 10px 0 10px;
+  padding: 40px 10px 0 10px;
   overflow: visible;
   height: auto;
   min-height:170px;
@@ -234,7 +235,7 @@ ul.stickyNav li:hover a{
   padding: 0 5px;
   line-height: 1.3em;
   letter-spacing: 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-top: 0;
 }
 
@@ -1178,7 +1179,7 @@ h2.section-heading.fb-title{
   font-weight: 600;
   color: #008eaa;
   text-transform: uppercase;
-  margin:0 0 35px;
+  margin:0 0 20px;
   letter-spacing: 1px;
 }
 
@@ -1265,7 +1266,7 @@ h2.section-heading.fb-title{
     padding-top: 22px;
   }
   .fb-section .fb-container:last-child{
-        padding-bottom: 30px;
+      /*  padding-bottom: 30px;*/
    }
   .fb-section .fb-container .fb-title {
     font-size: 1.875rem;
@@ -1408,6 +1409,8 @@ h2.section-heading.fb-title{
   .accordion-content .fb-section:last-child .fb-container .fb-category-container::after{
    background: transparent;
    }
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{text-align:left!important;}
+
 }
 @media (min-width: 992px){
 #overview{position:relative; margin-top:-49px; padding-top:49px; z-index:1;}

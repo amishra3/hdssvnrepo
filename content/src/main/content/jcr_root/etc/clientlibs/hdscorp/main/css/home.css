@@ -179,7 +179,7 @@
 .calculating-success .calculating-success-container > h4 {
     margin-bottom: 20px;
     font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.5em;
     line-height: 1;
     text-transform: uppercase;
@@ -218,7 +218,7 @@
     display: table-cell;
     position: relative;
     margin: 0 5px;
-    padding-top: 50px;
+    padding-top: 40px;
     overflow: visible;
 }
 
@@ -231,17 +231,18 @@
     color: #000000;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 1.28571em;
+    font-size: 1.125em;
     line-height: 1;
+     margin: 0 0 10px;
 }
 
 .calculating-success .calculating-success-container .calculating-list > li p {
     margin: 0 10px;
    font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-weight: 300;
-    font-size: 1.125em;
+    font-size: 1em;
     line-height: 1;
-    line-height: 130%;
+    line-height: 110%;
     color: #414141;
 }
 

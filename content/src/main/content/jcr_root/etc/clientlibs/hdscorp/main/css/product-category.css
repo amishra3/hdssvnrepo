@@ -179,7 +179,7 @@
 .category-listing ul > li.active > a{
   color:#ffffff; 
   border-bottom: none;
-  font-size: 0.875rem;
+  /*font-size: 0.875rem;*/
 }
 
 .category-products{
@@ -198,8 +198,9 @@
 }
 .category-products .category-desc{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.25rem;
-  color: #000000;font-weight:500;
+  font-size: 1.25em;
+  color: #000000;
+  font-weight:500;
   margin: 0 0 0 0;
   line-height: 1.4em;
   border-bottom:7px solid #f78e1e;
@@ -213,14 +214,28 @@
 }
 
 .category-products .category-promotion .category-promo-desc h2{
-  font-size:3rem;
+  font-size:3em;
   margin-bottom: 15px;
 }
 .category-products .category-promotion .category-promo-desc p{
-   font-family: Arial,Helvetica,sans-serif;
-   font-size: 0.875rem;
-   line-height: 1.8em;
+   font-family: "museo-sans",Helvetica,Arial,sans-serif;
+   font-size: 1.125em;
+   font-weight: 300; 
+   line-height: 1.4em;
    margin-bottom: 20px;
+}
+
+.category-products .category-promotion .category-promo-desc ul{
+  margin: 0 0 12px 0; 
+  padding: 0 0 0 15px;
+  list-style-type: square;
+  list-style-position: outside;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125rem;
+  font-weight:300;
+}
+.category-products .category-promotion .category-promo-desc ul li{
+  margin-bottom: 8px;
 }
 
 .category-products .category-products-listing .product{
@@ -233,7 +248,7 @@
 }
 .category-products .category-products-listing .product h3{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.125em;
   font-weight:600;
   color: #000000;
   font-weight: 500;
@@ -242,7 +257,8 @@
 }
 .category-products .category-products-listing .product p{
   font-family: Arial,Helvetica,sans-serif;
-  font-size: 0.875rem;
+  font-size: 1.125em;
+  font-weight: 300;  
 }
 .category-products .category-products-listing .product ul{
   margin: 0 0 12px 0; 
@@ -250,7 +266,8 @@
   list-style-type: square;
   list-style-position: outside;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.125rem;font-weight:300;
+  font-size: 1.125rem;
+  font-weight:300;
 }
 .category-products .category-products-listing .product ul li{
   margin-bottom: 8px;

@@ -98,23 +98,22 @@
   background-image:url("../images/service-detail-bg2.jpg"); 
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 50%;
+ /* background-position: 50% 50%;*/
   padding: 70px 0 60px; 
 }
 .news-insight-resources .container-fluid{
   margin-right: -15px;
 }
-.news-insight-resources h2{ 
-  color:#008eaa; 
-  font-family: "museo-slab", Helvetica, Arial, sans-serif; 
-  font-size: 1.5em; 
+.news-insight-resources h3{ 
+	color: #ffffff;
   font-weight: 700; 
   padding-bottom: 40px; 
   text-transform: uppercase; 
   text-align:center;
   margin: 0;
 }
-.news-insight-resources h2{ color: #ffffff;}
+.news-insight-resources h2{color:#008eaa;}
+
 .news-insight-resources .news-resources-col{
     display: block;
     background: #fff;
@@ -146,12 +145,12 @@
 .news-insight-resources .news-resources-col .headline{
     margin-top: 0px;
     margin-bottom: 10px;
-    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 1.28571em;
     line-height: 1;
     line-height: 120%;
     text-transform: none;
+    color:#000;
 }
 .news-insight-resources .news-resources-col p{
     margin-bottom: 15px;

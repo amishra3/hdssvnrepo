@@ -270,7 +270,7 @@
 .career-commitment .career-commitment-spotlight .title {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 1.313rem;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 10px;
     line-height: 110%;
 }
@@ -283,7 +283,7 @@
 .career-commitment .career-commitment-spotlight .description {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 300;
     margin-bottom: 10px;
     line-height: 110%;
 }
@@ -297,15 +297,16 @@
 }
 
 .career-commitment .company-list .company .name {
-    font-family: Arial;
-    font-size: 0.75rem;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    font-size: 0.813em;
     margin-bottom: 10px;
+	font-weight: 500;
 }
 
 .career-commitment .company-list .company .description {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.125rem;
+    font-weight: 500;
     margin-bottom: 10px;
     line-height: 110%;
 }

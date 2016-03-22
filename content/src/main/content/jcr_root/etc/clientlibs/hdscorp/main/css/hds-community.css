@@ -1,4 +1,4 @@
-r/* HDS Community Section */
+/* HDS Community Section */
 .hds-community-section {
   background-color:#f1f1f1;
   padding: 0;
@@ -194,6 +194,10 @@ r/* HDS Community Section */
 .tech-specs-pro-name{width:16.6667%;}
 .tech-specs-pro-types{width:83.3333%;}
 .table-striped > tbody > tr > th{color: #ff0000; width:16.6667%; text-align: left; font-size: 1.2rem; padding: 30px 15px; line-height: 1.2em; }
+.table-striped > tbody > tr > th.tech-specs-pro-name{
+	font-size: 1.125em;
+    font-weight: 500;	
+}
 
 .table-striped > tbody > tr:nth-of-type(odd) > th{background-color: #077a8f; color: #ffffff;}
 .table-striped > tbody > tr:nth-of-type(even) > th{background-color: #018eaa; color: #ffffff;}
@@ -231,8 +235,8 @@ r/* HDS Community Section */
   border-right: 1px solid #ffffff;
 }
 
-.pro-type{width: 100%; color:#008eaa; font-weight: bold; font-size: 1.6rem;}
-.pro-category{width: 100%; font-size: 1.1rem; color: #333333; font-weight: normal; font-family: Arial;}
+.pro-type{width: 100%; color:#008eaa; font-weight: 500; font-size: 1.125em;}
+.pro-category{width: 100%; font-size: 1.125em; color: #333333; font-weight: 300; font-family: "museo-sans",Helvetica,Arial,sans-serif;}
 .pro-category > span {
     display: block;
     margin: 0 0 10px;

@@ -514,6 +514,7 @@ HDS Global Header and Navigation
     color: #666666;
     margin-top: 0;
     margin-bottom: 20px;
+    text-transform: none;
 }
 
 .spotlightNavigation ul { list-style-type: none; margin: 0; padding: 0; }
