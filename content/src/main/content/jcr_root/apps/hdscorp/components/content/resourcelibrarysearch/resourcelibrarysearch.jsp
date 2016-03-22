@@ -37,10 +37,10 @@
 
                                class="l-overlay animateLink" 
                                data-is-video="true"                                
-                               data-target-content="Test${resource.videoTitleId}" 
+                               data-target-content="rl${resource.videoTitleId}" 
 
                                target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
-                           <div class="overlay-content" id="Test${resource.videoTitleId}">                          
+                           <div class="overlay-content" id="rl${resource.videoTitleId}">                          
                           <div class="">
                          
                           <object class="BrightcoveExperience" id="${resource.videoGuid}">  
