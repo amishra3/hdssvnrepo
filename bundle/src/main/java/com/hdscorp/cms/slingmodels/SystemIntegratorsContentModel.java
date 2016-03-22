@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+
 import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.models.annotations.Default;
@@ -25,17 +27,21 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
+import com.day.cq.tagging.Tag;
+import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.dao.PartnerDescription;
+
 import com.hdscorp.cms.dao.SystemIntegratorsNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.PageUtils;
 import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
 @Model(adaptables = Resource.class)
 public class SystemIntegratorsContentModel {
-	private static final Logger LOG = LoggerFactory.getLogger(SystemIntegratorsContentModel.class);
+	private static final Logger log = LoggerFactory.getLogger(SystemIntegratorsContentModel.class);
 
 	@Inject
 	private ResourceResolver resourceResolver;
@@ -71,7 +77,7 @@ public class SystemIntegratorsContentModel {
 			throws RepositoryException, JsonParseException, JsonMappingException, IOException {
 
 		try {
-			LOG.debug("-------------INSIDE getSystemIntegrators method  Making the Search Service call");
+			log.debug("-------------INSIDE getSystemIntegrators method  Making the Search Service call");
 
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
@@ -85,30 +91,60 @@ public class SystemIntegratorsContentModel {
 			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, tags, template, type, null,
 					doPagination, null, null, resourceResolver, "@jcr:content/jcr:title", "asc");
 
-			LOG.debug("-------------SEARCH CALL COMPLETED-----" + result.getTotalMatches());
+			log.debug("-------------SEARCH CALL COMPLETED-----" + result.getTotalMatches());
 			List<Hit> hits = result.getHits();
 			systemIntegrators = new ArrayList<SystemIntegratorsNode>();
 
 			for (Hit hit : hits) {
-				SystemIntegratorsNode partnerNode = new SystemIntegratorsNode();
+
+				SystemIntegratorsNode systemIntegratorNode = new SystemIntegratorsNode();
 				Page reourcePage = hit.getResource().adaptTo(Page.class);
+
 				String pageTitle = reourcePage.getTitle();
 				String pagePath = reourcePage.getPath();
-				String[] partnerTags = (String[]) reourcePage.getProperties().get("cq:tags");
+				Resource metadataResource = hit.getResource().getChild("jcr:content");
+				if (metadataResource != null) {
+
+					ValueMap properties = ResourceUtil.getValueMap(metadataResource);
+					TagManager tagManager = JcrUtilService.getResourceResolver().adaptTo(TagManager.class);
+
+					if (properties.containsKey("cq:tags")) {
+						String[] assetTags = (String[]) properties.get("cq:tags");
+
+						List<String> industryTadIds = new ArrayList<>();
+
+						for (String item : assetTags) {
+							Tag tag = tagManager.resolve(item);
+							if (tag != null) {
+								industryTadIds.add(tag.getTagID());
+							}
+						}
+
+						systemIntegratorNode.setIndustryTadIds(industryTadIds);
+					}
+
+				}
+
+				ValueMap properties = reourcePage.getProperties();
+				String[] partnerTags = properties.get("cq:tags", String[].class);
 
 				Resource parResource = reourcePage.getContentResource("par");
-				Resource partnerMetaDeta = parResource.getChild("partnerdescriptionco");
+				Resource partnerMetaDeta = parResource.getChild("systemintegrationcon");
 				ValueMap partnerMetaDetaMap = partnerMetaDeta.adaptTo(ValueMap.class);
-				partnerNode.setPartnerBackgroundImagePath((String) partnerMetaDetaMap.get("backgroundimagepath", ""));
-				partnerNode.setPartnerIconImagePath((String) partnerMetaDetaMap.get("partnericonimagepath", ""));
-				partnerNode.setPartnerIconImageAltText((String) partnerMetaDetaMap.get("partnericonimagealttext", ""));
-				partnerNode.setPartnerName((String) partnerMetaDetaMap.get("partnername", ""));
-				partnerNode.setPartnerHeadLine((String) partnerMetaDetaMap.get("partnerheadline", ""));
-				partnerNode.setPartnerIntroduction((String) partnerMetaDetaMap.get("partnerintroduction", ""));
+				systemIntegratorNode.setSystemIntegratorBackgroundImagePath(
+						(String) partnerMetaDetaMap.get("sibackgroundimagepath", ""));
+				systemIntegratorNode
+						.setSystemIntegratorIconImagePath((String) partnerMetaDetaMap.get("siiconimagepath", ""));
+				systemIntegratorNode
+						.setSystemIntegratorIconImageAltText((String) partnerMetaDetaMap.get("siiconimagealttext", ""));
+				systemIntegratorNode.setSystemIntegratorName((String) partnerMetaDetaMap.get("siname", ""));
+				systemIntegratorNode.setSystemIntegratorHeadLine((String) partnerMetaDetaMap.get("siheadline", ""));
+				systemIntegratorNode
+						.setSystemIntegratorIntroduction((String) partnerMetaDetaMap.get("siintroduction", ""));
 
-				partnerNode.setPartnerTags(partnerTags);
-				partnerNode.setSiteTags(sitags);
-				partnerNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,
+				systemIntegratorNode.setSystemIntegratorTags(partnerTags);
+
+				systemIntegratorNode.setContentCell(PageUtils.convertMultiWidgetToList(partnerMetaDetaMap,
 						"seemorelabel-seemoretargeturl-seemorenewwin-thirdparty"));
 
 				Resource descriptionListResource = null;
@@ -123,8 +159,8 @@ public class SystemIntegratorsContentModel {
 				if (descriptionListResource != null) {
 					ValueMap descriptioNodeProps = descriptionListResource.adaptTo(ValueMap.class);
 					if (descriptioNodeProps.containsKey("productDefaultDescription")) {
-						partnerNode
-								.setPartnerDescription(descriptioNodeProps.get("productDefaultDescription").toString());
+						systemIntegratorNode.setSystemIntegratorDescription(
+								descriptioNodeProps.get("productDefaultDescription").toString());
 
 						String descriptionlist[] = descriptioNodeProps.get("descriptionlist", String[].class);
 						if (descriptionlist != null && descriptionlist.length > 0) {
@@ -134,7 +170,7 @@ public class SystemIntegratorsContentModel {
 								Map<String, Object> mapObject = PageUtils.jsontoMap(jsonObect);
 								listMap.add(mapObject);
 							}
-							partnerNode.setListmap(listMap);
+
 						}
 
 					}
@@ -145,7 +181,7 @@ public class SystemIntegratorsContentModel {
 							PartnerDescription prodDescObj = mapper.readValue(desc, PartnerDescription.class);
 
 							if (Arrays.asList(prodDescObj.getCategoryTag()).contains(sidesctags[0])) {
-								partnerNode.setPartnerDescription(prodDescObj.getDescription());
+								systemIntegratorNode.setSystemIntegratorDescription(prodDescObj.getDescription());
 								break;
 							}
 						}
@@ -155,16 +191,16 @@ public class SystemIntegratorsContentModel {
 				if (pagePath.startsWith("/content")) {
 					pagePath = PathResolver.getShortURLPath(pagePath);
 				}
-				partnerNode.setPartnerTitle(pageTitle);
-				partnerNode.setPartnerPath(pagePath);
+				systemIntegratorNode.setSystemIntegratorTitle(pageTitle);
+				systemIntegratorNode.setSystemIntegratorPath(pagePath);
 
-				systemIntegrators.add(partnerNode);
+				systemIntegrators.add(systemIntegratorNode);
 
 			}
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
 			e.printStackTrace(new PrintWriter(stack));
-			LOG.error("Error while reading pages:: " + stack.toString());
+			log.error("Error while reading pages:: " + stack.toString());
 		}
 		return systemIntegrators;
 	}
