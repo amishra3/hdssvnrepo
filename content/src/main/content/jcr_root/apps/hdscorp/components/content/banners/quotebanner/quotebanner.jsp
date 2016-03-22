@@ -40,10 +40,10 @@
         </c:if>   
 <c:if test="${not empty properties.quotebuttonlabel}">
 <c:choose>
-<c:when test="${properties.openininewwindow=='1'}">
+<c:when test="${properties.openinnewwindow=='true'}">
 <div class="partner-btn">
 	<div class="btn-square-transparent request clearfix">
-		<a href="${linkUrl}" class="animateLink" target="_blank">${properties.quotebuttonlabel}<span class="glyphicon glyphicon-share animateIcon" aria-hidden="true"></span></a>
+		<a href="${linkUrl}" class="animateLink" target="_blank">${properties.quotebuttonlabel}<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
 	</div>
 </div>
 </c:when>
