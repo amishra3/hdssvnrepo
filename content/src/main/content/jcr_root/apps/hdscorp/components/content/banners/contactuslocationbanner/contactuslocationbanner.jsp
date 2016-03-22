@@ -29,7 +29,7 @@
 					<p>${properties.contactlocationaddressline1}</p>
 					<p>${properties.contactlocationaddressline2}</p>
                     <div class="driving-direction clearfix">
-    					<a class="animateLink" href="${properties.contactdrivingdirectionsurl}">${properties.contactdrivingdirectionslabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+    					<a class="animateLink" href="${properties.contactdrivingdirectionsurl}" target="${properties.openinnew?'_blank':'_self'}">${properties.contactdrivingdirectionslabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                     </div>
 					<div class="address-contacts">
 						<c:forEach var="placardList" items="${placardList}" varStatus="loop">
@@ -47,7 +47,7 @@
 					</c:if>
 					
                     <div class="view-all-loc clearfix">
-					   <a class="animateLink" href="${linkUrl}">${properties.contactlocationviewalllabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+					   <a class="animateLink" href="${linkUrl}" target="${properties.openinnew2?'_blank':'_self'}">${properties.contactlocationviewalllabel}${properties.thirdparty2?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                     </div>
 				</div>
 			</div>
