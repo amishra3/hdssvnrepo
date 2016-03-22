@@ -26,7 +26,8 @@
 		<c:if test="${not empty  industryTags}">
 			<c:set var="industryTags" value="${fn:join(industryTags, ',')}" />
 		</c:if>
-		
+
+
        <div class="resource" data-indstry="${industryTags}" data-contenttype="${resource.contentTypeTag}" data-subfilter="${resourceTags}">
                 <div class="type">${resource.contentType}</div>
                
@@ -58,9 +59,12 @@
                             <param name="width" value="720">
                             <param name="height" value="455">
                             <param name="showNoContentMessage" value="false" />
+                            <param name="secureConnections" value="true" />
+                            <param name="secureHTMLConnections" value="true" />
                           </object></div>
                           </div></h3>
-                               
+
+
                            
     </c:when>
     

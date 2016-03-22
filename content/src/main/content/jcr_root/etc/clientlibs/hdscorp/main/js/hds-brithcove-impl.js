@@ -51,11 +51,11 @@ function initiateVideo(){
         }
         
         if(protocol == 'https') {                    
-            bcUrl = 'https://admin.brightcove.com/js/BrightcoveExperiences.js';  
-            bcApi = 'https://admin.brightcove.com/js/APIModules_all.js';               
+            bcUrl = 'https://sadmin.brightcove.com/js/BrightcoveExperiences.js';  
+            bcApi = 'https://sadmin.brightcove.com/js/APIModules_all.js';               
         } else {
-            bcUrl = 'http://admin.brightcove.com/js/BrightcoveExperiences.js';
-            bcApi = 'http://admin.brightcove.com/js/APIModules_all.js';                 
+            bcUrl = 'https://sadmin.brightcove.com/js/BrightcoveExperiences.js';
+            bcApi = 'https://sadmin.brightcove.com/js/APIModules_all.js';                 
         }   
         if(!window.brightcove) {
             $.getScript(bcUrl, function(data, textStatus, jqxhr) {
