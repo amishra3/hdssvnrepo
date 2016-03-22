@@ -9,7 +9,7 @@
 <c:choose>
 	<c:when test="${not empty properties.contactustitlecontent}">
 
-		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-phonenumbertext1-phonenumbertext2-contacturllabel1-contacttargeturl1-contacturllabel2-contacttargeturl2")%>" />
+		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-phonenumbertext1-phonenumbertext2-contacturllabel1-contacttargeturl1-contacturllabel2-contacttargeturl2-seemorenewwin-seemorenewwin2-thirdparty-thirdparty2")%>" />
 
             <%--<div class="common-hero-short-banner contact-banner clearfix" style="background: url('${properties.contactusimagePath}')">--%>
                 <div class="common-hero-short-banner contact-banner clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.contactusimagePath,properties.mobileimage)} > 
@@ -52,11 +52,11 @@
 										</div>
 									</c:if>									
 									<c:if test="${not empty contacturllabel1}">
-										<a class="animateLink" href="${contacttargeturl1}">${contacturllabel1}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+										<a class="animateLink" href="${contacttargeturl1}" target="${placardList.seemorenewwin==1?'_blank':'_self'}">${contacturllabel1}${placardList.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 									</c:if>
 
 									<c:if test="${not empty contacturllabel2}">
-										<a class="animateLink" href="${contacttargeturl2}">${contacturllabel2}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+										<a class="animateLink" href="${contacttargeturl2}" target="${placardList.seemorenewwin2==1?'_blank':'_self'}">${contacturllabel2}${placardList.thirdparty2==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 									</c:if>									
 								</div>
 							</div>			
