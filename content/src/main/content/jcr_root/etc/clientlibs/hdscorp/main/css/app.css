@@ -215,6 +215,12 @@
 	display:none;
 }
 
+.result-resources .glyphicon.glyphicon-lock{
+    font-size: 13px;
+    top: 0px;
+    margin-right: 5px;
+}
+
 @media only screen and (min-width: 768px) {
 
 	.pr-list-container{
