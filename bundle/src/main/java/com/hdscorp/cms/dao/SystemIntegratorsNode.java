@@ -28,6 +28,7 @@ public class SystemIntegratorsNode {
 	private String[] partnerTags;
 	
 	private String[] siteTags;
+	private List<String> industryTadIds;
 	
 	private List<Map<String, Object>> listmap;
 	
@@ -152,6 +153,14 @@ public class SystemIntegratorsNode {
 
 	public void setListmap(List<Map<String, Object>> listmap) {
 		this.listmap = listmap;
+	}
+
+	public List<String> getIndustryTadIds() {
+		return industryTadIds;
+	}
+
+	public void setIndustryTadIds(List<String> industryTadIds) {
+		this.industryTadIds = industryTadIds;
 	}
 	
 	
