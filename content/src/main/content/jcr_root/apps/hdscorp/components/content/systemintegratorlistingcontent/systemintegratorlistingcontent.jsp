@@ -24,7 +24,7 @@
 				<div class="content-container clearfix">
 					<div class="hidden-md hidden-lg col-xs-12 search-overlay">
 						<div class="launchLink">
-							Search Partners <span aria-hidden="true" class="glyphicon glyphicon-search"></span> 
+							${properties.sisearchpartnerlabel} <span aria-hidden="true" class="glyphicon glyphicon-search"></span> 
 						</div>
 					</div>					
 				</div>
@@ -59,7 +59,7 @@
 				<div class="content-container clearfix">
 					<div class="col-md-12 col-xs-12 tagList">
 						<div id="filterTag" class="groupedby">
-							<div style="display:none;" class="label">Filterd by: </div>
+							<div style="display:none;" class="label">${properties.sifilterbylabel} </div>
 							<div class="keyword-subcat"></div>
 							<div style="display:none;" class="keyword-filter"></div>
 						</div>
@@ -96,7 +96,7 @@
 						<div class="clearfix"></div>
 					<div class="clear-results">
 						<div class="btn-square-red"> 
-							<a target="_self" href="#">Clear All FIlters</a>
+							<a target="_self" href="#">${properties.siclearallfilterslabel}</a>
 						</div>
 					</div>
 					</div>
@@ -106,13 +106,20 @@
 					<div class="partner-list clearfix" id="partner-list">
 
 						<c:forEach var="systemIntegrators" items="${systemIntegratorsContentModel.systemIntegrators}" varStatus="loopcnt">
-									<c:forEach var="listmap" items="${systemIntegrators.listmap}" varStatus="loop">
-                                        <c:set var="categoryList" value="${fn:replace(fn:replace(listmap.categoryTag,'[', ''),']', '')}" />
+									<c:forEach var="industryTadIds" items="${systemIntegrators.industryTadIds}" varStatus="loop">
+                    <c:choose>
+						<c:when test="${loop.index== 0}">
+ 						<c:set var="industryTadIds1" value="${industryTadIds}" /> 
+
+						</c:when>
+				<c:otherwise>
+			            <c:set var='industryTadIds1' value='${industryTadIds1},${industryTadIds}' />
+				</c:otherwise>
+							</c:choose>
 
 
                                     </c:forEach>
-
-                            <div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="${categoryList}">
+                            <div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="${industryTadIds1}">
                                 <div class="logo">
                                     <img src="${systemIntegrators.partnerIconImagePath}" alt="" class="img-responsive">
                                 </div>
