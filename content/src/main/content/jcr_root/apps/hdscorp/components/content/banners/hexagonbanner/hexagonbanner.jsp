@@ -53,7 +53,7 @@
 						<c:set var="placardcontent" value="${placardList.placardcontent}" />
                     	<c:set var="placardIconalt" value="${placardList.placardIconalt}" />
 	    				<li class="hexagon-good hexagon270">
-                            <img src='${placardIconPath}' alt='${placardIconalt}' title='${placardIconalt}' style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;">
+                            <img src='${placardIconPath}' alt='${placardIconalt}' title='${placardIconalt}' style="position: absolute;top: -40px;left: 0px;right: 0px;margin: 0px auto;">
 	    					<h4>${placardTitle}</h4>
 	    					${placardcontent}
 	    				</li>
