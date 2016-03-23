@@ -11,7 +11,7 @@
 <div class="stay-touch-hexagon clearfix"
 	style="background-image: url('${twitterFeedModel.bGImagePath}');">
 	<div class="content-container">
-		<h2>${properties.twtitle}</h2>
+		<h3>${properties.twtitle}</h3>
 	</div>
 	<div class="stay-touch-hexagon-list twitter-feed">
 		<div class="content-container">

@@ -125,9 +125,7 @@
                                     <img src="${systemIntegrators.partnerIconImagePath}" alt="" class="img-responsive">
                                 </div>
                                 <div class="partner-detail" style="background-image:url(${systemIntegrators.partnerBackgroundImagePath});)">
-                                    <div class="close">
-                                        <img src="images/partner-detail-close.png">
-                                    </div>
+                                    <div class="close"></div>
                                     <h2 class="ptitle"> ${systemIntegrators.partnerName}</h2>
                                     <h4>${systemIntegrators.partnerHeadLine}</h4>
                                     <p> ${systemIntegrators.partnerIntroduction}</p>
