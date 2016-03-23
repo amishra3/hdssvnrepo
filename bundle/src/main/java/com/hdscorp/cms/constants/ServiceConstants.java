@@ -223,6 +223,7 @@ public final class ServiceConstants {
 	public static final String LOCATION_JCR_LOCATIONLATITUDE = "jcr:locationlatitude";
 	public static final String LOCATION_JCR_LOCATIONLONGITUDE = "jcr:locationlongitude";
 	public static final String LOCATION_JCR_LOCATIONPHONENUMBER = "jcr:locphonenumber";
+	public static final String LOCATION_JCR_TITLE = "loctitle";
 	
 
 
