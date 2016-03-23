@@ -8,6 +8,7 @@
 	<filter root="/apps/cq/core"/>
 	<filter root="/apps/cq/xssprotection"/>
     <filter root="/etc/clientlibs/hdscorp"/>
+    <filter root="/etc/workflow/models/dam/update_asset"/>
     <filter root="/etc/map/"/>
 
 
