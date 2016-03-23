@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URLDecoder;
+import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -78,9 +78,10 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 			if (selector != null) {
 				selector = URLDecoder.decode(selector, "UTF-8");
 			}
-			 response.getWriter().write("{\"locationJson\":" + getLocationJSON(getLocationPath(), selector).toString() + "}");			
+			response.getWriter()
+					.write("{\"locationJson\":" + getLocationJSON(getLocationPath(), selector).toString() + "}");
 		} catch (Exception e) {
-			log.error("Error while reading locations json" + e.getMessage());			
+			log.error("Error while reading locations json" + e.getMessage());
 		}
 
 	}
@@ -102,21 +103,21 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 		try {
 			Gson gson = new Gson();
 			if (selector != null && !selector.isEmpty() && selector.indexOf("/") != -1) {
-				Resource res = resourceResolver.resolve(path + PageConstants.PROPERTY_JCRLOCATION_PATH);			
+				Resource res = resourceResolver.resolve(path + PageConstants.PROPERTY_JCRLOCATION_PATH);
 				if (res != null) {
 					JSONObject jsonObject = new JSONObject();
 					ValueMap properties = res.adaptTo(ValueMap.class);
 					jsonArray.put(getJsonObject(properties, jsonObject, gson));
 				}
 
-			} else {			
+			} else {
 				if (selector != null && selector.indexOf("/") == -1) {
 					locationPath[0] = locationPath[0] + "/" + selector;
 				}
 				SearchResult result = searchServiceHelper.getFullTextBasedResuts(locationPath, null, null, type, null,
 						true, null, null, resourceResolver, null, null);
 				List<Hit> hits = result.getHits();
-			
+
 				for (Hit hit : hits) {
 					JSONObject jsonObject = new JSONObject();
 					Page reourcePage;
@@ -159,42 +160,70 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 
 	public JSONObject getJsonObject(ValueMap properties, JSONObject jsonObject, Gson gson) {
 		try {
-			jsonObject.put("region",
-					gson.toJson((String[]) properties.get(ServiceConstants.LOCATION_JCR_REGION, String[].class),
-							String[].class).toString());
+
+			String rarray[] = (String[]) properties.get(ServiceConstants.LOCATION_JCR_COUNTRY, String[].class);
+
+			String abc = Arrays.toString(rarray);
+
+			log.info("arraytostring::" + abc.replace("[", "").replace("]", ""));
+
+			jsonObject
+					.put("region",
+							Arrays.toString(
+									(String[]) properties.get(ServiceConstants.LOCATION_JCR_REGION, String[].class))
+							.replace("[", "").replace("]", ""));
+
 			jsonObject
 					.put("country",
-							gson.toJson(
-									(String[]) properties.get(ServiceConstants.LOCATION_JCR_COUNTRY, String[].class),
-									String[].class).toString());
+							Arrays.toString(
+									(String[]) properties.get(ServiceConstants.LOCATION_JCR_COUNTRY, String[].class))
+							.replace("[", "").replace("]", ""));
+
 			jsonObject
 					.put("location",
-							gson.toJson(
-									(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONS, String[].class),
-									String[].class).toString());
+							Arrays.toString(
+									(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONS, String[].class))
+							.replace("[", "").replace("]", ""));
+
 			jsonObject.put("image",
-					gson.toJson((String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONIMAGE, String[].class),
-							String[].class).toString());
-			jsonObject.put("imagealt", gson.toJson(
-					(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONIMAGEALTTEXT, String[].class),
-					String[].class).toString());
+					Arrays.toString(
+							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONIMAGE, String[].class))
+					.replace("[", "").replace("]", ""));
+
+			jsonObject
+					.put("imagealt",
+							Arrays.toString((String[]) properties
+									.get(ServiceConstants.LOCATION_JCR_LOCATIONIMAGEALTTEXT, String[].class))
+					.replace("[", "").replace("]", ""));
+
 			jsonObject.put("locationdetail",
-					gson.toJson((String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONDETAIL, String[].class),
-							String[].class).toString());
+					Arrays.toString(
+							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONDETAIL, String[].class))
+					.replace("[", "").replace("]", ""));
+
+			// String lonitude = new String( Arrays.toString((String[])
+			// properties.get(ServiceConstants.LOCATION_JCR_LOCATIONLONGITUDE,
+			// String[].class)).replace("[", "").replace("]",
+			// "").getBytes("UTF-8"));
+
 			jsonObject.put("locationlongitude",
-					gson.toJson(
-							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONLONGITUDE, String[].class),
-							String[].class).toString());
+					Arrays.toString(
+							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONLONGITUDE, String[].class))
+					.replace("[", "").replace("]", ""));
+
 			jsonObject.put("locationlatitude",
-					gson.toJson(
-							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONLATITUDE, String[].class),
-							String[].class).toString());
-			jsonObject.put("locationphonenumber", gson.toJson(
-					(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONPHONENUMBER, String[].class),
-					String[].class).toString());
+					Arrays.toString(
+							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONLATITUDE, String[].class))
+					.replace("[", "").replace("]", ""));
+
+			jsonObject.put("locationphonenumber", Arrays.toString(
+					(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONPHONENUMBER, String[].class))
+					.replace("[", "").replace("]", ""));
 
 		} catch (Exception e) {
-			log.error("Error occured puting value in json object::" + e);
+			StringWriter stack = new StringWriter();
+			e.printStackTrace(new PrintWriter(stack));
+			log.error("Error occured puting value in json object::" + stack.toString());
 		}
 		return jsonObject;
 	}
