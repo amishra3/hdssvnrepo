@@ -3,4 +3,4 @@
     jcr:primaryType="sling:OsgiConfig"
     file.csv.path="/content/dam/hdscorp/en_us/lmsdata/ProdDataCSV.csv"
     scheduler.expression="0 35 14 * * ?"
-    storage.path="/content/hdscorp/en_us/lookup/lmsdata/jcr:content/"/>
+    storage.path="/content/hdscorp/en_us/lookup/lmsdata"/>
