@@ -142,7 +142,7 @@ public class LMSDataModel {
 				log.info("searchKeyword::" + searchKeyword);
 
 			}
-			if (lowerBound != null) {
+			/*if (lowerBound != null) {
 				lowerBound = URLDecoder.decode(lowerBound, "UTF-8");
 				log.info("lowerbound::" + lowerBound);
 
@@ -151,7 +151,7 @@ public class LMSDataModel {
 				lowerBound = URLDecoder.decode(upperBound, "UTF-8");
 				log.info("upperbound::" + upperBound);
 
-			}
+			}*/
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			log.info("searchServiceHelper::" + searchServiceHelper);
