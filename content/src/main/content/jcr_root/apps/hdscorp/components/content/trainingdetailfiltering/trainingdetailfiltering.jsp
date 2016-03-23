@@ -12,7 +12,7 @@
 	var="trainingDetailFilterModel" />
 
 <div class="clearfix"> <!--main start-->
-<div class="content-container">
+<div class="content-container" id="trainingDetail">
 <div class="hds-training-cale training-date-pick">
                         <div class="container-fluid">
                            <div class="row">
@@ -27,17 +27,17 @@
                                                 </div>
  
                                                 <div class="col-md-6 calendar_bxes">
-                                                <div class="daterangepicker">
+                                                <div class="daterangepicker" id="two-inputs">
                                                     <div class="calendar left">
                                                         <div class="daterangepicker_input">
-                                                            <input type="text" class="from_date" placeholder="">
+                                                            <input type="text" class="from_date" placeholder="" id="date-range200">
                                                             <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
                                                         </div>
                                                     </div>
                                                     <span class="visible-lg visible-md"><strong>${trainingDetailFilterModel.tdfShowingToLabel}</strong></span>	
                                                     <div class="calendar right">
                                                        <div class="daterangepicker_input">
-                                                            <input type="text" class="to_date" placeholder="">
+                                                            <input type="text" class="to_date" placeholder="" id="date-range201">
                                                             <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
                                                         </div>
                                                         
