@@ -215,7 +215,7 @@ color: #cccccc !important;
 
 .groupedby {
   font-weight: bold;
-  display: table;
+  display: inline;
 }
 
 .groupedby .label {
@@ -228,13 +228,15 @@ color: #cccccc !important;
 }
 .groupedby #filterTag .label{display:none;}
 .groupedby .keyword-filter,
-.groupedby .keyword-subcat {
+.groupedby .keyword-subcat,
+.groupedby .keyword {
   color: #000000;
   display: inline;
 }
 
 .groupedby .keyword-filter .filterKeyword,
-.groupedby .keyword-subcat .filterKeyword {
+.groupedby .keyword-subcat .filterKeyword,
+.groupedby .keyword .filterKeyword {
   font-size: 0.8125rem;
   font-weight: normal;
   color: #333333;
@@ -243,7 +245,8 @@ color: #cccccc !important;
 }
 
 .groupedby .keyword-filter .filterKeyword .closeFilter,
-.groupedby .keyword-subcat .filterKeyword .closeCat {
+.groupedby .keyword-subcat .filterKeyword .closeCat,
+.groupedby .keyword .filterKeyword .closeKeyword {
   display: inline-block;
   cursor: pointer;
   line-height: 10px;
