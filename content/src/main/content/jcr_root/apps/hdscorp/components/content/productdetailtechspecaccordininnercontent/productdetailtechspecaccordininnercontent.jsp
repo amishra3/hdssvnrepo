@@ -12,8 +12,9 @@
 		<c:set var="downloadlink" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("downloadlink").toString())%>"/>
 	</c:if>
 
-          <div id="box${loopcnt.index}">
-           <div class="vsp-soft-products-details clearfix">
+
+
+               <div class="vsp-soft-products-details clearfix">
                <div class="col-sm-4">
                    <div class="product-name">
                        ${xss:encodeForHTML(xssAPI, definition['contenttitle'])}
@@ -38,6 +39,9 @@
                            ${definition['sectioncontent']}
                    </div>
                </div>
-           </div>
-      </div>
+               </div>
+
+
+
+
 </c:forEach>
