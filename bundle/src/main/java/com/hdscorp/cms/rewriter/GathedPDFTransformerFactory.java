@@ -108,7 +108,7 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
 			log.debug("Added gated class to -"+pdfPath);
 			newAttributes.setValue(index, cssclasses+" "+gatedCSSClass);
 		} else {
-			log.debug("Gated PDF class cannot be added");
+			log.debug("Is not Gated Content.No need to add class.");
 		}
 
 		return newAttributes;
