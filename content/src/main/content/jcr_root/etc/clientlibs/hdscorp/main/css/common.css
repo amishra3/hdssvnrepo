@@ -1000,3 +1000,23 @@ div#Selector ul li a {
 div#Selector ul li a {
     color: #fff;
 }
+
+/*404*/
+.page-not-found{
+    text-align:center;
+ }
+
+.page-not-found h4{
+   font-size:1.28571em;
+   font-weight: 100;
+   margin-bottom: 35px;
+ }
+.page-not-found p{
+    font-size:0.875em; 
+    font-family:"museo-slab",Helvetica,Arial,sans-serif; 
+    text-transform: uppercase; color:#ffffff; 
+    font-weight: 300;
+ }
+.page-not-found a{
+    color:#ffffff;
+ }
