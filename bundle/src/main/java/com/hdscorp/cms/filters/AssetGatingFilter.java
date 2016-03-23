@@ -57,8 +57,9 @@ public class AssetGatingFilter implements Filter {
 				String forwardPath = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_FORM_PATH);
 				String refererString = slingRequest.getHeader("Referer") ;
 				String gatingParam = (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.ASSET_GATING_SUCCESS_QUERY_PARAMETER);
-				String gatingParamVal = slingRequest.getParameter(gatingParam);				
-				if(HdsCorpCommonUtils.isGated(pdfPath, slingRequest) && !HdsCorpCommonUtils.checkValidReferer(refererString, gatingParamVal)){
+				String gatingParamVal = slingRequest.getParameter(gatingParam);
+				boolean isGated = HdsCorpCommonUtils.isGated(pdfPath, slingRequest) ;
+				if(isGated && !HdsCorpCommonUtils.checkValidReferer(refererString, gatingParamVal)){
 					String targetURL = forwardPath ;
 					log.debug("==========PDF is GATED ============Redirecting to "+targetURL);
 					// Set the Cache-Control and Expires header
@@ -74,6 +75,17 @@ public class AssetGatingFilter implements Filter {
 //					httpResponse.sendRedirect(PathResolver.getShortURLPath(targetURL));
 					return;
 				}else{
+					if(isGated){
+
+						log.debug("==========PDF is GATED BUT FORM HAS BEEN FILED============");
+						// Set the Cache-Control and Expires header
+						slingResponse.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+						slingResponse.setHeader("Dispatcher", "no-cache");
+						slingResponse.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+						slingResponse.setHeader("Expires", "0"); // Proxies.
+						slingResponse.setContentType("text/html");
+
+					}
 					log.debug("==========Skipping the Filter==========");
 					chain.doFilter(request, response);
 					return;
