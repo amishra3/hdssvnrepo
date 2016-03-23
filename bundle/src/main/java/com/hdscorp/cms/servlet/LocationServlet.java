@@ -161,12 +161,6 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 	public JSONObject getJsonObject(ValueMap properties, JSONObject jsonObject, Gson gson) {
 		try {
 
-			String rarray[] = (String[]) properties.get(ServiceConstants.LOCATION_JCR_COUNTRY, String[].class);
-
-			String abc = Arrays.toString(rarray);
-
-			log.info("arraytostring::" + abc.replace("[", "").replace("]", ""));
-
 			jsonObject
 					.put("region",
 							Arrays.toString(
@@ -219,6 +213,13 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 			jsonObject.put("locationphonenumber", Arrays.toString(
 					(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONPHONENUMBER, String[].class))
 					.replace("[", "").replace("]", ""));
+			
+			jsonObject
+			.put("locationtitle",
+					Arrays.toString(
+							(String[]) properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class))
+					.replace("[", "").replace("]", ""));
+
 
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
