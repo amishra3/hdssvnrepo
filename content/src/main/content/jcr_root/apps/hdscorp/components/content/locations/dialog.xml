@@ -13,6 +13,13 @@
                 jcr:primaryType="cq:Panel"
                 title="Locations">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <loctitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Title"
+                        name="./loctitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locimagealttext = dialog.getField('./loctitle')&#xa; var locimagealttextvalue = locimagealttext.getValue();&#xa; if($.trim(locimagealttextvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
                     <locationimage
                         jcr:primaryType="cq:Widget"
                         allowUpload="false"

@@ -13,17 +13,17 @@
                     <locdrivingdirectionslabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Driving Directions Label"
-                        name="./jcr:locdrivingdirectionslabel"
+                        name="./locdrivingdirectionslabel"
                         xtype="textfield"/>
                     <locshowphonenumberslabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Show Phone Numbers Label"
-                        name="./jcr:locshowphonenumberslabel"
+                        name="./locshowphonenumberslabel"
                         xtype="textfield"/>
                     <locdirectionsurlprefix
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Directions URL prefix"
-                        name="./jcr:locdirectionsurlprefix"
+                        name="./locdirectionsurlprefix"
                         xtype="textfield"/>
                 </items>
             </locations>
