@@ -24,7 +24,11 @@
 		
 
 		<div class="accordion-content ${defaultEditState}">
+            <div id="box${loopcnt.index}">
+
 			<cq:include path="accordincontentpar_${loopcnt.index}" resourceType="hdscorp/components/content/productdetailtechspecaccordininnercontent" />
+
+            </div>    
 		</div>
 	
 	</div>
