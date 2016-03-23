@@ -44,6 +44,9 @@
     width: 100%;
     top:60px;
 }
+.partner-filters-search .tagList{
+	margin:30px 0 5px 0;
+}
 .partner-filters-search .partner-search {
     border: 5px solid #e6e6e6;
     min-height: 65px;

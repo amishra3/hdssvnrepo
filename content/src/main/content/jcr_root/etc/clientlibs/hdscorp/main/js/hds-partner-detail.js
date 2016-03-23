@@ -229,7 +229,7 @@ var hds = window.hds || {};
             $(document).on('click', '.closeFilter', function() {
                 var eleVal = $(this).parent().text();
                 if (eleVal) {
-                    $('input[name="ctyFunction"]').each(function() {
+                    $('input[name="cbxFunction"]').each(function() {
                         if ($(this).siblings('label').text() == eleVal) {
                             $(this).removeAttr('checked');
                         }
