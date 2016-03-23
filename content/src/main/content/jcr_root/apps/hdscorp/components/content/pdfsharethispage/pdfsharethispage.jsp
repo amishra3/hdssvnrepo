@@ -5,7 +5,15 @@
 <%@page import="com.hdscorp.cms.restservice.ShortenerURLService"%>
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.ShareThisPageModel" var="shareThisPageModel" />
 
+<c:set var="pdfPath" value="<%=request.getRequestURL()%>"/>
+  <%
+			ShortenerURLService sus = sling.getService(ShortenerURLService.class);
+			String shortURL = sus
+					.getShortURL(request.getRequestURL().toString());
+             pageContext.setAttribute("shortURL", shortURL);
+             ValueMap valueMap = currentPage.getProperties();
 
+		%>
 
 <c:set var="titleTw" value="${fn:replace(pdfTitle,' ','%20')}" />
 
@@ -15,7 +23,7 @@
 
 
 ${shareThisPageModel.stpTitle}&nbsp; &nbsp;
-<a href="http://twitter.com/share?url=${pdfPath}&text=${titleTw}"
+<a href="http://twitter.com/share?url=${shortURL}&text=${titleTw}"
 	target="_blank"> <img alt='Twitter'
 	src='${shareThisPageModel.stpTwitterIconPath}' />
 
