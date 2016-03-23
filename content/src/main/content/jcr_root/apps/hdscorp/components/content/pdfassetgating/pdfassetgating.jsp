@@ -36,32 +36,24 @@
   <div class="about-hds-awards gatted-asset-pg">                    
                 <div class="row content-container">
                 	<div class="col-md-6 gated_asset">
-                   	  <h2>${pdfNode.title}</h2>
-                      		<div class="gated-heading col-sm-12">
-                            
-                            	<div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-no-pad">
-    							<c:choose>
-                                        <c:when test="${not empty pdfNode.imagePath}">
-                                        	<img src="${pdfNode.imagePath}" alt="" class="img-responsive">
-                                        </c:when>
-                                        <c:otherwise>
-                                            <img src="${pdfNode.imagePath}" alt="" class="img-responsive">
-                                        </c:otherwise>
-                           		 </c:choose>
+                      <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-no-pad"> 
+                          <h3>${pdfNode.createdDate}</h3>
+                          <span></span>
+                        </div>
+                   	  <h1>${pdfNode.title}</h1>
+                          <c:if test="${not empty pdfNode.imagePath}">
+								 <div class="gated-heading col-sm-12">                            
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-no-pad">
+                                        <img src="${pdfNode.imagePath}" alt="" class="img-responsive">
+                                    </div>
                                 </div>
-                                <div class="col-lg-8 col-sm-8 col-xs-8 col-md-8"> 
-                                    <h3>${pdfNode.createdDate}</h3>
-                                    <span></span>
-                                </div>
-                            </div>
-                      	<p>${pdfNode.description}
-                        </p>
+                          </c:if> 
+                      	<p>${pdfNode.description}</p>
                         <div class="share hidden-xs hidden-sm"><cq:include path="sharethismobile" resourceType="hdscorp/components/content/pdfsharethispage" /></div>
                         <div class="mb-cta-btn hidden-lg hidden-md"><button type="submit" class="">${assetGettingModel.downloadText}</button> </div>
                         <div class="resources">
-
-
-                            <c:choose>
+                             <c:if test="${not empty assetGettingModel.resourceLabel}">
+                               <c:choose>
                                 <c:when test="${assetGettingModel.urlTargetType}">
 								<a href="${assetGettingModel.resourceLink}" class="animateLink" target="_blank"><span class="glyphicon glyphicon-menu-left animateIcon" aria-hidden="true"> </span>${assetGettingModel.resourceLabel}</a>
                                 </c:when>
@@ -70,7 +62,7 @@
                                 </c:otherwise>
                             </c:choose>
 
-
+                            </c:if>
                         </div>
                     </div>
                     <div class="col-md-6 grey-bg">
