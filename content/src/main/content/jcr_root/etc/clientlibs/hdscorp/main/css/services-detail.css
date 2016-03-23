@@ -36,9 +36,17 @@
 } 
 .managed-cloud-services .managed-cloud-services-container p{
 	font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 22px;
+    font-size: 1.125em;
     margin: 0;
     font-weight: 300;
+}
+
+.managed-cloud-services .managed-cloud-services-container p a{
+	color: #ffffff;
+}
+
+.managed-cloud-services .managed-cloud-services-container p a:hover{
+	text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -70,7 +78,7 @@
 	margin-bottom:50px; color: #1790a8;
 	text-align: center; 
 	width: 100%; 
-	font-weight:700; 
+	font-weight:600; 
     font-size:1.5em;
 }
 
@@ -110,7 +118,7 @@
 }
 .services-promo-banner .services-promo-container .headline {
     color: #ffffff;
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: 100;
     line-height: 120%;
     margin-bottom: 35px;
@@ -120,7 +128,7 @@
 .services-promo-banner .services-promo-container .sub-text {
     color: #ffffff;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 1.375em;
+    font-size: 1.125em;
     font-weight: 300;
     line-height: 120%;
     margin-bottom: 37px;
