@@ -231,6 +231,31 @@ if($('.mes-section').length!==0){
 }
 }
 
+if( $(window).width() > 1209){
+if($('.resources-section').length!==0){
+
+				var setheightinner = 0;
+				for(var i=0;i<$(".resources-category-box .resources-category-title").size();i++){
+					if($(".resources-category-box .resources-category-title:eq("+i+")").height()>=setheightinner){
+							setheightinner=$(".resources-category-box .resources-category-title:eq("+i+")").height();
+						}
+				}
+				$(".resources-category-box .resources-category-title").height(setheightinner);
+				
+				var setheightinnerhead=0;
+				for(var i=0;i<$(".resources-category-box .resources-category-description").size();i++){
+					if($(".resources-category-box .resources-category-description:eq("+i+")").height()>=setheightinnerhead){
+							setheightinnerhead=$(".resources-category-box .resources-category-description:eq("+i+")").height();
+						}
+				}
+				$(".resources-category-box .resources-category-description").height(setheightinnerhead);
+}
+}
+
+
+
+
+
 if($('.resources-category-box').length!==0){
 	$('.resources-category .resources-category-box').each(function(index,item){
 		this.id = 'fixedRes' + index;
