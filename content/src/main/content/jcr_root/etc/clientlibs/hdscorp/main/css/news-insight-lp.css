@@ -28,11 +28,9 @@
   min-height:590px;
 }
 
-.stay-touch-hexagon h2 {
+.stay-touch-hexagon h3 {
      color: #fff;
-    font-family: "museo-slab",Helvetica,Arial,sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     padding: 24px 24px 0;
     text-align: center;
 }

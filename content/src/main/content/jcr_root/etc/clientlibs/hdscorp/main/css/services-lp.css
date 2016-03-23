@@ -145,10 +145,13 @@
   padding: 5px 4px 0!important;
 }
 
-.service-support-main .section-service-col.service-blue-box  a {
+.service-support-main .section-service-col.service-blue-box a{
   color: #fff;
   font-size: 15px;
 }
+
+.service-support-main .section-service-col.service-blue-box a:hover{ color: #fff!important;}
+
 .service-support-main .section-service-col.service-blue-box  p { color: #fff;}
 
 .service-support-main .section-service-col .headline .glyphicon, 

@@ -31,7 +31,7 @@
 
 .cloud-storage .cloud-storage-container .cloud-content h4 {
     font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.5em;
     line-height: 1;
     color: #848484;
@@ -233,7 +233,7 @@
     font-weight: 700;
     font-size: 1.125em;
     line-height: 1;
-     margin: 0 0 10px;
+     margin: 8px 0;
 }
 
 .calculating-success .calculating-success-container .calculating-list > li p {
@@ -381,17 +381,21 @@
     text-transform: uppercase;
 }
 
+.millennials .millennials-container .millennials-content > h3 {
+    font-weight: 600;
+}
+
 .millennials .millennials-container .millennials-content p {
     margin-bottom: 40px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 0.875em;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1.125em;
     line-height: 1;
-    line-height: 175%;
+    line-height: 120%;
 }
 
 .millennials .millennials-container .millennials-content .blurb-container p {
-    font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-size: 1.125em;
     line-height: 1.4em;                    
     font-weight: 300;                    

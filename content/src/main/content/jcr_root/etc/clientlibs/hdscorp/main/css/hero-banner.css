@@ -169,14 +169,14 @@
   margin: 15px 0 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 3.25em;
+  font-size: 3em;
   line-height: 1;
 }
 
 .hero-homepage.healthcare .hero-homepage-container > h4 {
   margin-bottom: 12px;
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.5em;
   line-height: 1;
   text-transform: uppercase;
@@ -184,11 +184,10 @@
 }
 
 .hero-homepage.healthcare .hero-homepage-container > p {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 0.875em;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.125em;
   line-height: 1;
-  letter-spacing: 1px;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .hexagon-connect, .hero-homepage.healthcare .hero-homepage-container .hexagon-transform, .hero-homepage.healthcare .hero-homepage-container .hexagon-advance {
@@ -225,16 +224,17 @@
   color: #000000;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 1.3125em;
+  font-size: 1.125em;
   line-height: 1;
+  margin: 0 10px 10px;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li p {
   margin: 0 10px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.875em;
-  line-height: 1;
-  line-height: 1.3em;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-size: 1.125em;
+  line-height: 120%;
+  font-weight: 300;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a {
@@ -246,12 +246,12 @@
   z-index: 10;
   display: block;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 900;
-  font-size: 0.75em;
+  font-weight: 800;
+  font-size: 0.8125em;
   line-height: 1;
   line-height: 1.4em;
   color: #c91c13;
-  letter-spacing: 2px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
