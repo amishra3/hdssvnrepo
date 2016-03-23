@@ -166,11 +166,4 @@ public class BrightTalkWebService extends GenericRestfulServiceInvokers {
 
 	}
 	
-	public static void main(String args[]){
-		
-		BrightTalkWebService bb=new BrightTalkWebService();
-		System.out.println(bb.getBrightTalkResponse("https://www.brighttalk.com/channel/12821/feed"));
-		
-	}
-
 }
