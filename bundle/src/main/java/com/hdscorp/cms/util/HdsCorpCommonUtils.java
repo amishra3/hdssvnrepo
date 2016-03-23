@@ -226,13 +226,13 @@ public class HdsCorpCommonUtils {
 				
 			} catch (ValueFormatException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("ValueFormatException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
 			} catch (PathNotFoundException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("PathNotFoundException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
 			} catch (RepositoryException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("PathNotFoundException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
 			}
 
 		}else{

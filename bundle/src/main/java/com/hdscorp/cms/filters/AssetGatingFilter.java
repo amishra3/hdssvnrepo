@@ -97,11 +97,11 @@ public class AssetGatingFilter implements Filter {
 			}			
     		
 		} catch (Exception ex) {
-			log.error("Asset Gating Filter Error Block - " + ex.getMessage());
+			log.error("Asset Gating Filter Error Block - " + ex.getMessage()+" for the following path --- "+((SlingHttpServletRequest)request).getRequestURI());
 		}
         
         // Finally, proceed with the the Filter chain
-    	//chain.doFilter(request, response);
+    	chain.doFilter(request, response);
     }
 
     @Override

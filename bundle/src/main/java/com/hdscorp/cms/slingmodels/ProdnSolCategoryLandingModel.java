@@ -75,8 +75,8 @@ public class ProdnSolCategoryLandingModel {
 				tags = null;
 			}
 			
-			String paths[] = {"/content/hdscorp/en_us/products-solutions"};
-			String template= "/apps/hdscorp/templates/productdetail";
+			String paths[] = {"/content/hdscorp/en_us"};
+			String template= "/apps/hdscorp/templates/productdetail,/apps/hdscorp/templates/servicedetail";
 			boolean doPagination = false;
 			String type[] = {"cq:Page"};
 			
