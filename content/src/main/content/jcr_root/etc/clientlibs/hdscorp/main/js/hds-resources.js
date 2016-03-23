@@ -53,7 +53,7 @@ var hds = window.hds || {};
                         $('.category-resources-listing').find('.no-matched-result').remove();
                         hds.resourceLib._setPagination();
                         $('#prodnsolcategorycontent a.isGatedLock').each(function(index, el) {
-                            $(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+                            $(this).prepend("<span class='glyphicon gated-pdf' aria-hidden='true'></span>");
                         });
                     }
                 }
@@ -76,7 +76,7 @@ var hds = window.hds || {};
                 } else {
                     $("#featuredCards").show();
                     $('#featuredCards a.isGatedLock').each(function(index, el) {
-                        $(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+                        $(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
                     });
                 }
             });
@@ -506,13 +506,14 @@ var hds = window.hds || {};
                 }
                 e.stopPropagation();
             });
-            /*$(document).click(function(e) {
+            $(document).click(function(e) {  
                 if (!$(e.target).is('.filters-section, .filters-section *')) {
-                    alert('c');
+
                     $(".filters-section").hide();
                     $('.filterby').removeClass('active');
                 }
-            });*/
+
+            });
 
             // Fade out specialty tags when x is clicked
             $(document).on('click', '.closeFilter', function() {

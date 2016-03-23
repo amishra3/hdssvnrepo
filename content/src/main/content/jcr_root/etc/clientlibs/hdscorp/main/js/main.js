@@ -99,7 +99,7 @@ $(document).ready(function () {
     
     
     $('a.isGatedLock').each(function(index, el) {
-    	$(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
     });
     
     

@@ -29,6 +29,20 @@
   display: none;
 }
 
+.gated-pdf {
+   width: 21px;
+   height: 21px;
+   background: url("../images/gated-icon-black.png") no-repeat 0 0;
+   display: inline-block;
+   margin-right: 5px;
+}
+.gated-featured {
+   width: 21px;
+   height: 21px;
+   background: url("../images/gated-icon-white.png") no-repeat 0 0;
+   display: inline-block;
+   margin-right: 5px;
+}
 @media only screen and (max-width:991px) {
   .res-subscribe {
     float: none;
@@ -486,8 +500,10 @@ color: #cccccc !important;
 }
 
 .result-resources .category-resources-listing .resource p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.875rem;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125em;
+  font-weight: 300;
+  margin-bottom: 0;
 }
 
 .result-resources .category-resources-listing .resource > a {
