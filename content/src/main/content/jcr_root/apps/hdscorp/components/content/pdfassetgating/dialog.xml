@@ -11,11 +11,11 @@
                 jcr:primaryType="cq:Panel"
                 title="Tab 1">
                 <items jcr:primaryType="cq:WidgetCollection">
-                	<formIframeURL
+                    <formIframeURL
                         jcr:primaryType="cq:Widget"
                         fieldLabel="URL for the Iframe Form"
                         name="./formIframeURL"
-                        xtype="textfield"/>                        
+                        xtype="textfield"/>
                     <pdfformmessage
                         jcr:primaryType="cq:Widget"
                         allowBlank="false"
@@ -24,14 +24,12 @@
                         xtype="textfield"/>
                     <pdfviewallresourcelabel
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
-                        fieldLabel="View All Resource Label"
+                        fieldLabel="View All Resource Label (Optional)"
                         name="./pdfviewallresourcelabel"
                         xtype="textfield"/>
                     <pdfviewallresourcelink
                         jcr:primaryType="cq:Widget"
-                        allowBlank="false"
-                        fieldLabel="View All Resource Link"
+                        fieldLabel="View All Resource Link (Optional)"
                         name="./pdfviewallresourcelink"
                         xtype="pathfield"/>
                     <pdfurltargettype
