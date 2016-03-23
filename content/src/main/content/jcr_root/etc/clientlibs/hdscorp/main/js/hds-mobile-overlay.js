@@ -10,15 +10,17 @@ window.HDS = {
         var self = this,
             $triggers = $('.l-overlay');
         $triggers.each(function(index) {
-            var lightbox,
-                videobox,
-                images;
+            var videobox;
+               
 
             var listLen = $('param[value=onTemplateReadyPlayList]').length,
                 minHeight = 450;
             if (listLen) minHeight = 550;
             videobox = new HDS.Lightbox();
-            videobox.setContent($('#' + $(this).data('target-content')).html());
+            console.log($('#' + $(this).data('target-content')).html());
+            videobox.setContent('')
+                        videobox.setContent($('#' + $(this).data('target-content')).html());
+                        videobox.setContent('')
             videobox.minHeight(minHeight); //Provide min height for window as video take some time to load
             $(document).on('click','.l-overlay' ,function(event) {
                 event.preventDefault();
@@ -30,5 +32,5 @@ window.HDS = {
 
 
 $(function() {
-    HDS.init();
+    //HDS.init();
 })

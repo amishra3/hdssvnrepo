@@ -1,3 +1,4 @@
+
 /*global $: false, console: false, HDS: true */
 HDS.Lightbox = function(options) {
     var self = this,
@@ -11,7 +12,7 @@ HDS.Lightbox = function(options) {
     self.options = defaults;
 
     // Element references
-    self.$lightbox = $('<div class="overlay"><div class="container col-no-pad"><div class="content"><a href="#" class="close-overlay"><span class="sprite icon-close-hero"></span></a><div class="innerContent"></div></div></div></div>');
+    self.$lightbox = $('<div class="hds-overlay"><div class="container col-no-pad"><div class="content"><a href="#" class="close-overlay"><span class="sprite icon-close-hero"></span></a><div class="innerContent"></div></div></div></div>');
     self.$container = self.$lightbox.find('.container');
     self.$content = self.$lightbox.find('.innerContent');
 
