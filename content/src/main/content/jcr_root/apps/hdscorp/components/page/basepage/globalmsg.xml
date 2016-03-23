@@ -40,12 +40,16 @@
             fieldLabel="Join Community Message"
             name="./joincommunitymsg"
             xtype="textfield"/>
-        
         <insertnocacheheaders
             jcr:primaryType="cq:Widget"
             fieldLabel="Make this page non-cacheable ?"
             name="./insertnocacheheaders"
             type="checkbox"
-            xtype="selection"/>            
+            xtype="selection"/>
+        <categridsortorder
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Priority Number for the item in the grid."
+            name="./gridpriorityorder"
+            xtype="textfield"/>
     </items>
 </jcr:root>

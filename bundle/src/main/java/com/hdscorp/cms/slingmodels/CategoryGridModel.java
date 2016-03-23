@@ -44,8 +44,9 @@ public class CategoryGridModel {
 		return targetparentdirectory;
 	}
 
-	private static final String ORDER_BY_PROPERTY = "@jcr:content/jcr:title";
-	private static final String ORDER_BY_SORT = "asc";
+	private static final String ORDER_BY_PROPERTY = "@jcr:content/gridpriorityorder";
+	private static final String ORDER_BY_SORT = null;
+
 	public List<CategoryNode> getCategories() throws RepositoryException {
 
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper)ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);

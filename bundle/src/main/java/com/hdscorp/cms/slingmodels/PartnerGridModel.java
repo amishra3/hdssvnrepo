@@ -36,6 +36,8 @@ public class PartnerGridModel {
 		return targetparentdirectory;
 	}
 
+	private static final String ORDER_BY_PROPERTY = "@jcr:content/gridpriorityorder";
+	private static final String ORDER_BY_SORT = null;
 	
 	public List<CategoryNode> getCategories() throws RepositoryException {
 
@@ -47,7 +49,7 @@ public class PartnerGridModel {
 		String type[] = {"cq:Page"};
 		boolean doPagination = false;
 		
-		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,null,type,null,doPagination,null,null,resourceResolver,null,null);
+		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,null,type,null,doPagination,null,null,resourceResolver,ORDER_BY_PROPERTY,ORDER_BY_SORT);
 		
 		if(result!=null && result.getHits().size()>0){			
 		List<Hit> hits = result.getHits();
