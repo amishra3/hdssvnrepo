@@ -40,7 +40,7 @@
                           <h3>${pdfNode.createdDate}</h3>
                           <span></span>
                         </div>
-                   	  <h1>${pdfNode.title}</h1>
+                   	  <h4>${pdfNode.title}</h4>
                           <c:if test="${not empty pdfNode.imagePath}">
 								 <div class="gated-heading col-sm-12">                            
                                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-no-pad">

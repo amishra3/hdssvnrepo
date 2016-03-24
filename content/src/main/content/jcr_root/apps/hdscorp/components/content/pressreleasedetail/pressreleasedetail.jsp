@@ -9,8 +9,8 @@
                 <div class="pr-detail-container">
                     <div class="row">
                         <div class="col-md-12 col-md-12 pr-detail-desc">
-                            <h1>${pressRelease.pressReleaseTitle}</h1>
-                        </div>
+                            <h4>${pressRelease.pressReleaseTitle}</h4>
+                        </div> 
                         <div class="col-md-9 pr-detail-desc">                                                      
                             ${pressRelease.pressReleaseDescription}
                             <div class="pr-view-all">
