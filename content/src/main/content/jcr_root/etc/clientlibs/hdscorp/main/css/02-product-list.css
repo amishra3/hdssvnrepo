@@ -426,18 +426,22 @@ color: #cccccc !important;
 }
 
 .result-product .category-products-listing .product p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.875rem;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+	font-weight: 300;
+	line-height: 120%;
 }
 
 .result-product .category-products-listing .product ul {
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
     margin: 0 0 12px 0;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 18px;
     list-style-type: square;
     list-style-position: outside;
     font-size: 1.125em;
-    font-weight: 300;
-	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+
+
+    font-weight: 300;	
 }
 
 .result-product .category-products-listing .product ul li {

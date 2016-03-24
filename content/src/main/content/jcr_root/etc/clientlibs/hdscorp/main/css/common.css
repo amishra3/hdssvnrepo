@@ -1030,3 +1030,17 @@ div#Selector ul li a {
 .page-not-found a{
     color:#ffffff;
  }
+ 
+ /* Training Certification */
+
+ .cert-training-box p{
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: 125%;	 
+ }
+ 
+ .cert-training-box a{
+	color: #000000;
+ }
+ 

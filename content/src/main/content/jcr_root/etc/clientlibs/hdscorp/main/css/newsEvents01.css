@@ -186,7 +186,8 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 #webcasts-demand .newsEvents h3 {
     font-weight: 700;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 1.313rem;
+    font-size: 1.25em;
+	text-transform: none;
 }
 
 #webcasts-demand .newsEvents small {
@@ -457,8 +458,8 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 .newsWrapper .newsWrapper-listing .events_months h2 {
     color: #008eaa;
     font-family: "museo-slab", Helvetica, Arial, sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.5em;
+    font-weight: 600;
     margin: 0 0 15px;
     text-transform: uppercase;
 }
@@ -471,7 +472,7 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 
 .newsEvents small {
     color: #8d8d8d;
-    font-size: 12px;
+    font-size: 0.75em;
     font-weight: 800;
     text-transform: uppercase;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
@@ -481,10 +482,10 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     color: #000;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
     display: table;
-    font-size: 16px;
+    font-size: 1.125em;
     margin-bottom: 25px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .newsEvents .eventDetails,
@@ -528,9 +529,9 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 
 .newsEvents h3 {
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.25em;
     color: #000000;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0 0 10px 0;
 }
 
@@ -1234,7 +1235,7 @@ content:"";
 .WebcastDetails{
 display:none;
 }
-.eventlanding .common-hero-banner-container h3.sub-headline{margin-bottom:0px; margin-top:100px;}
+.eventlanding .common-hero-banner-container h3.sub-headline{margin-bottom:0px; margin-top:100px; font-weight: 700;}
 .eventlanding .common-hero-banner .common-hero-banner-container .headline{margin-top:20px;}
 .eventlanding .common-hero-banner-container h4.sub-headline{margin-top:20px;}
 

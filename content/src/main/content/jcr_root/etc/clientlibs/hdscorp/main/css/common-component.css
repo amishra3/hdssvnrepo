@@ -371,22 +371,25 @@ line-height: 1;
 }
 .pr-archives-list .pr-archives-list-items .pr h3{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.25em;
   color: #000000;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0 0 25px 0;
   text-transform: none;
 }
 .pr-archives-list .pr-archives-list-items .pr p{
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 0.875rem;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125em;
+  font-weight: 300;
+  line-height: 120%;
 }
 .pr-archives-list .pr-archives-list-items .pr ul{
-  margin: 0 0 12px 0; padding: 0 0 0 15px;
+  margin: 0 0 12px 0; 
+  padding: 0 0 0 15px;
   list-style-type: square;
   list-style-position: outside;
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 0.875rem;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125em;
 }
 .pr-archives-list .pr-archives-list-items .pr ul li{
   margin-bottom: 8px;
