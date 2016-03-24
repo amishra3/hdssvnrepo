@@ -98,10 +98,15 @@ $(document).ready(function () {
     });
     
     
-    $('a.isGatedLock').each(function(index, el) {
-    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
-    });
-    
+    if($('#contentResourceLibrary').length < 1){
+	    $('a.isGatedLock').each(function(index, el) {
+	    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
+	    });
+    }else{
+	    $('#featuredCards a.isGatedLock').each(function(index, el) {
+	    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
+	    });
+    }
     
     if ($(".stickyNav")[0]){
     	var anchorVal = window.location.hash;
