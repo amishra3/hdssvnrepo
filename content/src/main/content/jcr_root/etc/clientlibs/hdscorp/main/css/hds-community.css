@@ -244,6 +244,9 @@
 #no-more-tables{
 	margin: 0 0 45px;	
 }
+.specs-table .tbl-foot-caption i{
+	font-weight: bold;	
+}
 
 .vsp-soft-products {
 	margin:0 0 45px;

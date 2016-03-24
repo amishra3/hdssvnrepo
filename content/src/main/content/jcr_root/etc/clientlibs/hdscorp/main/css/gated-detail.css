@@ -15,56 +15,65 @@
 	font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-size: 3em;
     font-weight: normal;
-	margin:0 0 20px 0; padding:0;
+	margin:0 0 20px 0; 
+	padding:0;
 }
 .gated_asset h3{
-    font-size: 1.2em;
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1em;
     font-weight: 500;
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+	text-transform: none;	
+}
+
+.gated_asset h4{
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.25em;
+    font-weight: 500;   
 }
 
 .gated-heading h3{
 	font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 24px;
-    font-weight: normal;
+    font-size: 1.125em;
+    font-weight: 500;
 	margin:0
 }
 .gated-heading span{
 	color: #cc0000;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 23px;
+    font-size: 1.125em;
     font-weight: 300;
-} 
-
+}
 
 .gated_asset p{
 font-family: "museo-sans",Helvetica,Arial,sans-serif;
   font-size: 1.125em;
   font-weight: 300;
+  line-height: 125%;
   margin-bottom: 0;
 } 
 
-.gatted-asset-form{background-color:#ebebeb; background-color: #ebebeb;
+.gatted-asset-form{
+	background-color:#ebebeb; 
+	background-color: #ebebeb;
     padding: 46px 0 36px 0;
     float: left;
-	width:100%;}
+	width:100%;
+	}
 .gatted-asset-form .form{
-     float: left;
+    float: left;
     padding: 0 7%;
     width: 100%;
 }
-
 
 .asset-form iframe{height:654px; width:470px;}
 
 .gatted-asset-form h2 { 
 	color: #008eaa;
     font-family: "museo-slab",Helvetica,Arial,sans-serif;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 27px;
+    font-size: 1.5em;
+    font-weight: 600;
     margin: 0;
-    padding: 0 0 30px;
+    padding: 0 0 20px;
     text-transform: uppercase;
 }
 .mb-cta-btn{
@@ -95,9 +104,9 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 
 @media only screen and (max-width: 480px){
 	
-	.gated_asset h2{font-size:24px}
-	.gated-heading h3{font-size:17px; }
-	.gated-heading span {font-size:12px; }
+	.gated_asset h2{font-size:1.5em}
+	.gated-heading h3{font-size:1em; }
+	.gated-heading span {font-size:0.875em; }
 	.gatted-asset-form{padding:15px; min-height: auto;}
 	
 }
@@ -108,9 +117,9 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 	.gated_asset {
     padding-bottom: 30px;
 	}
-	.gated_asset h2{font-size:24px}
+	.gated_asset h2{font-size:1.5em}
 	.gatted-asset-form{padding:15px; min-height: auto;}
-	.gatted-asset-form h2 {font-size:17px; padding: 0 0 18px;}
+	.gatted-asset-form h2 {font-size:1em; padding: 0 0 18px;}
 	.resources {
     margin-top: 93px;
 	}
@@ -121,14 +130,14 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
 	.gated_asset h2{
-	 font-size: 45px;
+	 font-size: 2em;
    }
 	.gated_asset{padding: 0 15px 30px 15px;}
 	.gated-heading h3{
-		font-size: 24px;
+		font-size: 1.5em;
 	}
 	.gated-heading span{
-		font-size: 23px;
+		font-size: 0.813em;
 	} 
 	.gatted-asset-form{
 		padding:10px 15px;
@@ -139,7 +148,7 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-.gated_asset h2 {font-size: 45px;}
+.gated_asset h2 {font-size: 2em;}
 .asset-form{width:100%;}
 .asset-form iframe{height:675px;}
 .gated_asset{padding: 0 15px 30px 15px;}
@@ -157,7 +166,7 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
  background-color:#fff;
  padding:35px 0 0 0;
  font-family: "museo-sans",Helvetica,Arial,sans-serif;
- font-size:14px;
+ font-size:0.875em;
  font-weight: 900;
  letter-spacing: 0.1em;
  float:left;
@@ -167,7 +176,6 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
  
 @media only screen and (max-width: 768px){	
 .share	{text-align:center; padding:15px 0; font-size:10px;}
-
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
@@ -184,25 +192,24 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
     outline: 0 none;
     text-decoration: none;
     text-transform: uppercase;
-	font-size:12px;
+	font-size:0.875em;
 	font-weight: 900;
     letter-spacing: 0.1em;
-	}
+ }
 	
 .resources a:hover{  color: #ac1f25;}	
 .resources .animateLink .animateIcon {
-    font-size: 12px;
+    font-size: 0.875em;
     top: 1px;
     transition: all 0.5s ease 0s;
 }
-
 
 .resources .animateLink:hover > .animateIcon {
     left: -5px;
 }
 
 @media only screen and (max-width: 768px){
-.resources	{text-align:center;  margin: 30px 0;}
+.resources{text-align:center;  margin: 30px 0;}
 	
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
@@ -214,7 +221,7 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 .gatted-asset-form h3{
 	margin:0; 
 	font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: normal;
 	padding:0 0 25px 0;
 }
@@ -236,7 +243,7 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 
 .gatted-common-box .description {
     color: #333;
-    font-family: Arial;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-size: 1.125rem;
     margin: 12px 0 25px;
 }
@@ -266,9 +273,10 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 	.gatted-asset-form h3{
 		font-size:14px;
 		padding-bottom:40px;
-		}
+	}
+		
 	.gatted-common-box:after{  
-	 content: "";
+	content: "";
     display: block;
     height: 3px;
     width: 100%;
@@ -281,8 +289,11 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
     height: 3px;
     width: 100%;
     background-color: transparent;
-	margin: 0}
-	.thanku{ padding-right: 0!important;}
+	margin: 0
+	}
+	.thanku{ 
+	padding-right: 0!important;
+	}
 	.gatted-common-box .type {
     padding-top: 0px;
     vertical-align: top;
@@ -297,13 +308,15 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
     background-color: #c5c5c5;
 	margin: 0 0 25px 0;
 	}	
-	.gatted-common-last-box:after{
+	
+  .gatted-common-last-box:after{
 	content: "";
     display: block;
     height: 3px;
     width: 100%;
     background-color: transparent;
-	margin: 0}
+	margin: 0
+	}
 	.thanks-pg{padding-top:40px; padding-bottom:40px; margin-right:0;}
 	.thanku{ padding-right: 0!important;}
 }

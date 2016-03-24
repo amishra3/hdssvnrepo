@@ -1006,6 +1006,16 @@ div#Selector ul li a {
     text-align:center;
  }
 
+ .page-not-found .support-404 .title {
+    color: #ffffff;
+    font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+ 
 .page-not-found h4{
    font-size:1.28571em;
    font-weight: 100;

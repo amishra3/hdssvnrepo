@@ -24,7 +24,7 @@
 .partners-section .partner-program .heading .icon{
   display: table-cell;
   vertical-align: middle;
-  width:8%;
+  width: 75px;
 }
 .partners-section .partner-program .heading h2{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
@@ -281,40 +281,41 @@ list-style-type: none;
 }
 .partner .partner-detail h2{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.875rem;
+  font-size: 1.5em;
   color: #000000;
   margin: 0 0 20px 0;
 }
 .partner .partner-detail h4{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.313rem;
+  font-size: 1.250em;
   color: #000000;
   font-weight:400;
   margin: 0 0 8px 0;
 }
 .partner .partner-detail p{
-  font-family: Arial;
-  font-size: 0.875rem;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125em;
   color: #000000;
-  font-weight:400;
+  font-weight:300;
   margin-bottom: 30px;
 }
+
 .partner .partner-detail a{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  color: #ce0000;
-    font-weight: 800;
-    font-size: 0.8125rem;
-    outline: 0 none;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 8px;
+  outline: none;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
-.partner .partner-detail p a{color:#000!imprtant; margin-bottom:0!important;}
-.partner .partner-detail p a:hover{color:#000!important;}
-.partner .partner-detail a:hover  {color: #ac1f25;}
+.partner .partner-detail a.animateLink{
+	font-size: 0.8125em;
+	color: #ce0000;
+	font-weight: 800;	
+}
 
+.partner .partner-detail p a{color:#000000; margin-bottom:0!important;}
+.partner .partner-detail p a:hover{color:#000000; text-decoration: underline;}
+.partner .partner-detail a.animateLink:hover{color: #ac1f25;}
 
 @media only screen and (max-width: 991px) {
   .partners-section{
