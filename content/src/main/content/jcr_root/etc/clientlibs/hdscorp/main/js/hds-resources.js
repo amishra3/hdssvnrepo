@@ -634,6 +634,7 @@ var hds = window.hds || {};
                 $("#resSearch").val('');
                 $('.errorSearchField,.clearSearchIcon').hide();
                 $('#asideLinks-product li').eq(0).find("a").trigger('click');
+				$('.closeKeyword').trigger('click');
                 $('#filterTag .label').css({
                     'display': 'none'
                 });
