@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
-import com.google.gson.Gson;
 import com.hdscorp.cms.constants.PageConstants;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.search.SearchServiceHelper;
@@ -73,52 +72,54 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		String selector = request.getParameter("selector");
+		String singlelocation = request.getParameter("singlelocation");
+
 		log.info("selector::::::::::::::::::::::::" + selector);
 		try {
 			if (selector != null) {
 				selector = URLDecoder.decode(selector, "UTF-8");
 			}
-			response.getWriter()
-					.write("{\"locationJson\":" + getLocationJSON(getLocationPath(), selector).toString() + "}");
+			if (singlelocation != null) {
+				singlelocation = URLDecoder.decode(singlelocation, "UTF-8");
+			}
+			response.getWriter().write("{\"locationJson\":"
+					+ getLocationJSON(getLocationPath(), selector, singlelocation).toString() + "}");
 		} catch (Exception e) {
 			log.error("Error while reading locations json" + e.getMessage());
 		}
 
 	}
 
-	public String getLocationJSON(String[] locationPath, String selector) {
+	public String getLocationJSON(String[] locationPath, String selector, String singlelocation) {
 
 		ResourceResolver resourceResolver = JcrUtilService.getResourceResolver();
 		log.info("Execution of getLocationNodes method");
 		SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 				.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 		String type[] = { "cq:Page" };
-		log.info("location length::" + locationPath.length);
 
 		log.info("path is::::" + locationPath[0] + "/" + selector);
-		String path = locationPath[0] + "/" + selector;
+		locationPath[0] = locationPath[0] + "/" + selector;
 
-		String patharray[]={path};
-		
 		JSONArray jsonArray = new JSONArray();
 
 		try {
-			Gson gson = new Gson();
-			/*if (selector != null && !selector.isEmpty() && selector.indexOf("/") != -1) {
-				Resource res = resourceResolver.resolve(path + PageConstants.PROPERTY_JCRLOCATION_PATH);
+
+			if (singlelocation != null && singlelocation.equalsIgnoreCase("true")) {
+				Resource res = resourceResolver.resolve(locationPath[0] + PageConstants.PROPERTY_JCRLOCATION_PATH);
 				if (res != null) {
 					JSONObject jsonObject = new JSONObject();
 					ValueMap properties = res.adaptTo(ValueMap.class);
-					jsonArray.put(getJsonObject(properties, jsonObject, gson));
+					if (properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class) != null) {
+						jsonArray.put(getJsonObject(properties, jsonObject));
+					}
 				}
-
 			} else {
-				if (selector != null && selector.indexOf("/") == -1) {
-					locationPath[0] = locationPath[0] + "/" + selector;
-				}*/
-				SearchResult result = searchServiceHelper.getFullTextBasedResuts(patharray, null, null, type, null,
+				SearchResult result = searchServiceHelper.getFullTextBasedResuts(locationPath, null, null, type, null,
 						true, null, null, resourceResolver, null, null);
 				List<Hit> hits = result.getHits();
+
+				log.info("No.of hits ::" + hits.size());
 
 				for (Hit hit : hits) {
 					JSONObject jsonObject = new JSONObject();
@@ -131,12 +132,15 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 
 					if (res != null) {
 						ValueMap properties = res.adaptTo(ValueMap.class);
-						jsonArray.put(getJsonObject(properties, jsonObject, gson));
+						if (properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class) != null) {
+							jsonArray.put(getJsonObject(properties, jsonObject));
+						}
 
 					}
-			//	}
 
+				}
 			}
+
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
 			e.printStackTrace(new PrintWriter(stack));
@@ -160,10 +164,8 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 		return locationPath;
 	}
 
-	public JSONObject getJsonObject(ValueMap properties, JSONObject jsonObject, Gson gson) {
+	public JSONObject getJsonObject(ValueMap properties, JSONObject jsonObject) {
 		try {
-			
-			if(properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class)!=null){
 
 			jsonObject
 					.put("region",
@@ -217,14 +219,12 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 			jsonObject.put("locationphonenumber", Arrays.toString(
 					(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONPHONENUMBER, String[].class))
 					.replace("[", "").replace("]", ""));
-			
-			jsonObject
-			.put("locationtitle",
-					Arrays.toString(
-							(String[]) properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class))
-					.replace("[", "").replace("]", ""));
-			}
 
+			jsonObject
+					.put("locationtitle",
+							Arrays.toString(
+									(String[]) properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class))
+							.replace("[", "").replace("]", ""));
 
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
