@@ -14,7 +14,7 @@ var="locationsDropDownFilterModel" />
 			<div class="col-md-4">
 				<div class="select-style">
 					<select id="allRegion" name="allRegion" autocomplete="off">
- <option value=" ">All Regions</option>
+ 						<option value=" ">All Regions</option>
                         <c:forEach items="${locationsDropDownFilterModel.locRegions}" var="locRegions" varStatus="status">
 						<c:set var="stateJson" value=" ${locRegions['countries']}" scope="request" />
 						<c:set var="filterRegionTags" value="${locRegions['locregiontag']}" scope="request" />
@@ -57,16 +57,12 @@ var="locationsDropDownFilterModel" />
 <div class="content" >
                 <div class="scrollbar-inner">
                     <h2>North America</h2>
-
-
                         <div id="locationDetailsContent">
                         </div>
-
-
 					</div>
 				</div>
 			</div>
-			<!-- Press Release List Content to Loaded here -->
+			<!-- Map Content to Loaded here -->
 			<div class="col-md-9 col-sm-9">
 				<div id="gmap" style="width:100%;height:792px;"></div>
 			</div>

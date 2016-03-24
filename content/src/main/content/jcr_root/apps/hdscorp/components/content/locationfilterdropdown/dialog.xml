@@ -59,16 +59,16 @@
                                                 anchor="100%"
                                                 dname="header"
                                                 fieldLabel="Country Label"
-                                                key="country-label"
+                                                key="countrylabel"
                                                 layout="anchor"
-                                                name="./country-label"
+                                                name="./countrylabel"
                                                 xtype="textfield"/>
                                             <loccountrytag
                                                 jcr:primaryType="cq:Widget"
                                                 allowBlank="{Boolean}false"
                                                 anchor="100%"
                                                 fieldLabel="Country Tag"
-                                                key="country-tag"
+                                                key="countrytag"
                                                 layout="anchor"
                                                 name="cq:tags"
                                                 xtype="tags"/>
@@ -90,16 +90,16 @@
                                                             anchor="100%"
                                                             dname="header"
                                                             fieldLabel="Location Label"
-                                                            key="location-label"
+                                                            key="locationlabel"
                                                             layout="anchor"
-                                                            name="./location-label"
+                                                            name="./locationlabel"
                                                             xtype="textfield"/>
                                                         <locationtags
                                                             jcr:primaryType="cq:Widget"
                                                             allowBlank="{Boolean}false"
                                                             anchor="100%"
                                                             fieldLabel="Location Tag"
-                                                            key="location-tag"
+                                                            key="locationtag"
                                                             layout="anchor"
                                                             name="cq:tags"
                                                             xtype="tags"/>
