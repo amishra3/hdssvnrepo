@@ -98,11 +98,13 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 		log.info("path is::::" + locationPath[0] + "/" + selector);
 		String path = locationPath[0] + "/" + selector;
 
+		String patharray[]={path};
+		
 		JSONArray jsonArray = new JSONArray();
 
 		try {
 			Gson gson = new Gson();
-			if (selector != null && !selector.isEmpty() && selector.indexOf("/") != -1) {
+			/*if (selector != null && !selector.isEmpty() && selector.indexOf("/") != -1) {
 				Resource res = resourceResolver.resolve(path + PageConstants.PROPERTY_JCRLOCATION_PATH);
 				if (res != null) {
 					JSONObject jsonObject = new JSONObject();
@@ -113,8 +115,8 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 			} else {
 				if (selector != null && selector.indexOf("/") == -1) {
 					locationPath[0] = locationPath[0] + "/" + selector;
-				}
-				SearchResult result = searchServiceHelper.getFullTextBasedResuts(locationPath, null, null, type, null,
+				}*/
+				SearchResult result = searchServiceHelper.getFullTextBasedResuts(patharray, null, null, type, null,
 						true, null, null, resourceResolver, null, null);
 				List<Hit> hits = result.getHits();
 
@@ -132,7 +134,7 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 						jsonArray.put(getJsonObject(properties, jsonObject, gson));
 
 					}
-				}
+			//	}
 
 			}
 		} catch (Exception e) {
@@ -160,6 +162,8 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 
 	public JSONObject getJsonObject(ValueMap properties, JSONObject jsonObject, Gson gson) {
 		try {
+			
+			if(properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class)!=null){
 
 			jsonObject
 					.put("region",
@@ -219,6 +223,7 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 					Arrays.toString(
 							(String[]) properties.get(ServiceConstants.LOCATION_JCR_TITLE, String[].class))
 					.replace("[", "").replace("]", ""));
+			}
 
 
 		} catch (Exception e) {
