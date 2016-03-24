@@ -80,7 +80,7 @@
   text-align: left;
   font-size: 1.125rem;
   padding-left: 15px;
-  padding-right: 62px;
+  padding-right: 90px;
   outline: none;
   border: 5px solid #e6e6e6;
 }
@@ -116,7 +116,7 @@ color: #cccccc !important;
 
 .res-filters-search .resource-filters {
   padding: 0;
-  margin: 25px 0 0 0;
+  margin: 15px 0 0 0;
   display: block;
 }
 
@@ -669,6 +669,9 @@ color: #cccccc !important;
 
   .resources-spotlight .col-md-4:last-child {
     padding-right: 15px;
+  }
+  .res-filters-search .resource-filters .filterby{
+    margin: 0 0 0 24px;
   }
 
 }

@@ -65,7 +65,8 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
     width: 100%;
 }
 
-.asset-form iframe{height:654px; width:470px;}
+.grey-bg{background-color:#ebebeb;}
+.asset-form iframe{height:590px; width:100%;}
 
 .gatted-asset-form h2 { 
 	color: #008eaa;
