@@ -30,4 +30,5 @@ hds-partner-detail.js
 legal.js
 gsa-search.js
 asset-gating.js
+hds-training-detail.js
 hds-office-loaction.js
