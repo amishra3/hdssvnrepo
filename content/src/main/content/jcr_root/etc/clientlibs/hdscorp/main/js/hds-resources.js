@@ -337,13 +337,13 @@ var hds = window.hds || {};
                     return $("<span class='filterKeyword' data-match=" + checkBoxVal + ">" + checkBoxText + "<span class='closeFilter glyphicon glyphicon-remove'></span></span>");
                 });
                 $('#filterTag .label').css({
-                    'display': 'table-cell'
+                    'display': 'inline'
                 });
                 $('#filterTag .keyword-filter').html(newHTML);
             } else {
                 if ($('#filterTag .keyword-subcat').html() != "") {
                     $('#filterTag .label').css({
-                        'display': 'table-cell'
+                        'display': 'inline'
                     });
                 } else {
                     $('#filterTag .label').css({
@@ -354,6 +354,13 @@ var hds = window.hds || {};
         },
         _addTagstpFilters: function(checkBoxValue, tag) {
             $newTag = $("<span class='filterKeyword'>" + checkBoxValue + "<span class='closeCat glyphicon glyphicon-remove'></span></span>");
+            /* store the value in elment data so we can reference back to checkbox */
+            $newTag.data('value', checkBoxValue);
+            $(tag).append($newTag);
+        },
+        _addKeywordSearchTag: function(checkBoxValue, tag) {
+            $('#searchTag .keyword').html('');
+            $newTag = $("<span class='filterKeyword'>" + checkBoxValue + "<span class='closeKeyword glyphicon glyphicon-remove'></span></span>");
             /* store the value in elment data so we can reference back to checkbox */
             $newTag.data('value', checkBoxValue);
             $(tag).append($newTag);
@@ -392,10 +399,21 @@ var hds = window.hds || {};
             $(document).on('click', '.clearSearchIcon', function(event) {
                 $('#resSearch').val('');
                 $(this).hide();
+				$('#searchTag .keyword').html('');
+                $('#searchTag .label').css({
+                    'display': 'none'
+                });
                 hds.resourceLib._processlinkwithoutSearch();
                 event.preventDefault();
             });
             $(document).on('click', '.searchResource', function(event) {
+				var txtVal = $.trim($('#resSearch').val());
+                if(txtVal.length > 0){
+                    $('#searchTag .label').css({
+                        'display': 'inline'
+                    });
+                    hds.resourceLib._addKeywordSearchTag(txtVal, '#searchTag .keyword');                    
+                }
                 $('.resource-heading > h2').html('').html("Search Results");
                 hds.resourceLib._loadDataOnsearch();
                 event.preventDefault();
@@ -404,6 +422,13 @@ var hds = window.hds || {};
                 var keycode = (event.keyCode ? event.keyCode : event.which);
                 if (keycode == 13) {
                     event.preventDefault();
+					var txtVal = $.trim($('#resSearch').val());
+                    if(txtVal.length > 0){
+                        $('#searchTag .label').css({
+                            'display': 'inline'
+                        });
+                        hds.resourceLib._addKeywordSearchTag(txtVal, '#searchTag .keyword');                    
+                    }
                     $('.resource-heading > h2').html('').html("Search Results");
                     hds.resourceLib._loadDataOnsearch();
                 }
@@ -430,7 +455,7 @@ var hds = window.hds || {};
                     $('#filterTag .keyword-subcat').html('').show();
                     hds.resourceLib._addTagstpFilters(catText, '#filterTag .keyword-subcat');
                     $('#filterTag .label').css({
-                        'display': 'table-cell'
+                        'display': 'inline'
                     });
                 } 
                 var self = $(this),
@@ -531,23 +556,45 @@ var hds = window.hds || {};
                 $('.category-resources-listing').find('.no-matched-result').remove();
             })
             $(document).on('click', '.closeCat', function() {
-                $("#resSearch").val('');
-                $('#asideLinks-product li').removeClass('active');
-                var $featuredurl = $('#asideLinks-product li').eq(0).find("a").attr('featured-href');
-                $('#resSearch').attr('placeholder', "Search All Resources");
-                $('.resource-heading > h2').html('').html($('#asideLinks-product  li').eq(0).find('a').text());
-                $('#asideLinks-product  li').eq(0).find('a').trigger('click');
-                $('.errorSearchField,.clearSearchIcon').hide();
-                $('.category-resources-listing').find('.no-matched-result').remove();
-                $("#loadResourceContent").html('');
-                $('#filterTag .label').css({
-                    'display': 'none'
-                });
+                if($("#resSearch").val() != ''){
+                    $('#asideLinks-product li').removeClass('active');
+                    $('#asideLinks-product li ul').slideUp();   
+                    $('.category-resources-listing').find('.no-matched-result').remove();
+                    $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
+                    hds.resourceLib._loadDataOnsearch();
+                    $('#filterTag .label').css({
+                        'display': 'none'
+                    });                                     
+                }else{
+                    var $featuredurl = $('#asideLinks-product li').eq(0).find("a").attr('featured-href');
+                    $('#resSearch').attr('placeholder', "Search All Resources");
+                    $('.resource-heading > h2').html('').html($('#asideLinks-product  li').eq(0).find('a').text());
+                    $('#asideLinks-product  li').eq(0).find('a').trigger('click');
+                    $('.errorSearchField,.clearSearchIcon').hide();
+                    $('.category-resources-listing').find('.no-matched-result').remove();
+                    $("#loadResourceContent").html('');
+                    $('#filterTag .label, #searchTag .label').css({
+                        'display': 'none'
+
+                    });
+                }
                 $("html, body").animate({
                     scrollTop: 0
                 }, "slow");
             })
-
+			$(document).on('click', '.closeKeyword', function() {
+                $("#resSearch").val('');
+                $(this).parent().fadeOut('slow');
+                $(this).parent().remove();
+                $('#searchTag .label').css({
+                    'display': 'none'
+                });
+                $('.clearSearchIcon').trigger('click');
+                if($('#filterTag .keyword-subcat').html() == ''){
+                    $('#asideLinks-product  li').eq(0).find('a').trigger('click');
+                    $('.resource-heading > h2').html('').html($('#asideLinks-product  li').eq(0).find('a').text());
+                }
+            })
             $(document).on('click', '.clear-results', function() {
                 $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
                 $('.category-resources-listing').find('.no-matched-result').remove();
