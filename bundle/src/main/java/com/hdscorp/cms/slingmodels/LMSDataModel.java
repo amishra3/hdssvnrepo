@@ -147,21 +147,17 @@ public class LMSDataModel {
 			}
 			if (lowerBound != null) {
 				lowerBound = URLDecoder.decode(lowerBound, "UTF-8");
+				lowerBound=ServiceUtil.getDisplayDateFormat(lowerBound, "MM/dd/yyyy", "yyyy-MM-dd");
 				log.info("lowerbound::" + lowerBound);
 
 			}
 			if (upperBound != null) {
 				upperBound = URLDecoder.decode(upperBound, "UTF-8");
+				upperBound=ServiceUtil.getDisplayDateFormat(upperBound, "MM/dd/yyyy", "yyyy-MM-dd");
 				log.info("upperbound::" + upperBound);
 
 			}
 			
-			lowerBound=ServiceUtil.getDisplayDateFormat(lowerBound, "MM/dd/yyyy", "yyyy-MM-dd");
-			
-			upperBound=ServiceUtil.getDisplayDateFormat(upperBound, "MM/dd/yyyy", "yyyy-MM-dd");
-			
-		
-					
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			log.info("searchServiceHelper::" + searchServiceHelper);
