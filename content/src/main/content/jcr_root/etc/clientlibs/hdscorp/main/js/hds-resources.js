@@ -57,9 +57,10 @@ var hds = window.hds || {};
                 $('.category-resources-listing').find('.no-matched-result').remove();
                 hds.resourceLib._setPagination();
                 $('#prodnsolcategorycontent a.isGatedLock').each(function(index, el) {
-                    $(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+                    $(this).prepend("<span class='glyphicon gated-pdf' aria-hidden='true'></span>");
                 });
             }
+
         },
         _handleActiveCategory: function(activeCat) {
             var hasTextInput = $.trim($('#resSearch').val());
