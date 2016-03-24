@@ -100,10 +100,10 @@ $(document).ready(function () {
     
     if($('#contentResourceLibrary').length < 1){
 	    $('a.isGatedLock').each(function(index, el) {
-	    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
+	    	$(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
 	    });
     }else{
-	    $('#featuredCards a.isGatedLock').each(function(index, el) {
+	    $('#featuredCards a.isGatedLock, .resources-spotlight .spotlight-title a.isGatedLock').each(function(index, el) {
 	    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
 	    });
     }
