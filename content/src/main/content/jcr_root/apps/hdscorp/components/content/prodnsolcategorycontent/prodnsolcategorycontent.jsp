@@ -16,7 +16,7 @@
 		
 		<div class="product" data-sort="${productInitialChar}" data-alpha="${productInitialChar}"
 		data-category="${productTags}">
-			<h3>${product.productTitle}</h3>
+			<h3><a href="${product.productPath}" class="filterText">${product.productTitle}</a></h3>
 		    
 		    <%// IF there is no selector, dont include this as the defaul one would be showed %>
 		    <%// Mark the description which belongs to parent category, if available %>
