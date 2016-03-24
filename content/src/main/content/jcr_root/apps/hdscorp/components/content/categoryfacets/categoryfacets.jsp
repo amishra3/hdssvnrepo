@@ -73,7 +73,7 @@
 				pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
 				%>
 					
-					<a href="${currentCategoryUrl}#${currentCategoryID}" featured-href="${categoryFeaturedOverlayPath}" data-href="${categoryTargetURL}" id="${currentCategoryID}" name="${currentCategoryID}">
+					<a href="${currentCategoryUrl}#${currentCategoryID}" featured-href="${categoryFeaturedOverlayPath}" data-href="${categoryTargetURL}" x-cq-linkchecker="valid" id="${currentCategoryID}" name="${currentCategoryID}">
 							${xss:filterHTML(xssAPI,data['display-title'])} 
 							<span class="icon-accordion-closed"></span> 
 							<span class="icon-accordion-opened"></span>
