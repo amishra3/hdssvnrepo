@@ -64,7 +64,7 @@
 									    </c:when>
 									    
 									    <c:otherwise>
-									         <a href="${resource.resourcePath}" class="animateLink">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>    
+									         <a href="${resource.resourcePath}" class="animateLink" target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>    
 									    </c:otherwise>
 									</c:choose> 
                         </div>

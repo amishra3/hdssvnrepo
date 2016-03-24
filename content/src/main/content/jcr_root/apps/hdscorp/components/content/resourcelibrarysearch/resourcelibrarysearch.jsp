@@ -58,7 +58,7 @@
 		    </c:when>
 	    
 		    <c:otherwise>
-		         <h3><a href="${resource.resourcePath}" class="animateLink">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
+		         <h3><a href="${resource.resourcePath}" class="animateLink"  target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
 		    </c:otherwise>
 		</c:choose>    
 		<div class="deafultdesc">
