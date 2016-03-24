@@ -158,16 +158,23 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                     </div>
                     <div class="spolightresults" style="position:relative">
                         <div class="res-spotlight-group clearfix" id="featuredCards">
-                            <c:set var="includetargetURL" value="${requestScope['includetargetURL']}" />
-                            
-                                    <c:if test="${not empty includetargetURL}">
-                                   		<sling:include path="${includetargetURL}" />
-                                    </c:if>                            
+                        	<c:set var="includeFeaturedtargetURL" value="${requestScope['includeFeaturedtargetURL']}" />
+                            <c:if test="${not empty includeFeaturedtargetURL}">
+                            	<sling:include path="${includeFeaturedtargetURL}" />
+							</c:if>                                                                                   
                         </div>
                         <div class="category-resources-listing">
-                            <div class="section prodnsolcategorycontent" id="prodnsolcategorycontent">                                
+                            <div class="section prodnsolcategorycontent" id="prodnsolcategorycontent">
+                            	<c:set var="includetargetURL" value="${requestScope['includetargetURL']}" />
+                            	<c:if test="${not empty includetargetURL}">
+                            		<div class="slingcontent">
+                                		<sling:include path="${includetargetURL}" />
+                                	</div>
+                                 </c:if>                            
+                                                            
                             </div>
-                            <div id="loadResourceContent"></div>
+                            <div id="loadResourceContent">
+                            </div>
                         </div>
                     </div>
                     <!--/.Product Tiles and resource detail-->

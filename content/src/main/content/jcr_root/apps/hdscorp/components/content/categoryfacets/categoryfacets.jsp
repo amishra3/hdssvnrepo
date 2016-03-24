@@ -49,10 +49,15 @@
 				<c:set var="categoryTargetURL" value="${contentrenderingpagepath}.${fn:replace(categorytags, '/', '^')}.html"/>
 				<c:set var="categoryTargetURL" value="${fn:replace(categoryTargetURL, ':', '~')}"/>
 				<c:set var="categoryTargetURL" value="${fn:replace(categoryTargetURL, '\"', '')}"/>
+				<c:set var="categoryFeaturedOverlayPath" value="" />
+		        <c:if test="${not empty data['featuredoverlaypath']}">
+					<c:set var="categoryFeaturedOverlayPath" value="${xss:filterHTML(xssAPI,data['featuredoverlaypath'])}.html" />
+				</c:if>
 				
 				<c:set var="activeclass" value=" "/>
 				<c:if test="${selectorString==data['category-id']}">
 					<c:set var="includetargetURL" value="${categoryTargetURL}" scope="request"/>
+					<c:set var="includeFeaturedtargetURL" value="${categoryFeaturedOverlayPath}" scope="request"/>
 					<c:set var="activeclass" value=" class='active'"/>
 				</c:if>
 		
@@ -61,10 +66,6 @@
 				
 				<c:set var="currentCategoryID" value="${xss:filterHTML(xssAPI,data['category-id'])}"/>
 				
-				<c:set var="categoryFeaturedOverlayPath" value="" />
-		        <c:if test="${not empty data['featuredoverlaypath']}">
-					<c:set var="categoryFeaturedOverlayPath" value="${xss:filterHTML(xssAPI,data['featuredoverlaypath'])}.html" />
-				</c:if>
 				
 				<% 
 				String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
