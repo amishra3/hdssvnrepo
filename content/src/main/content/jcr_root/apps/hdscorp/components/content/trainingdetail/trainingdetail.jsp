@@ -31,8 +31,8 @@ value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocation
                                         <c:forEach var="location" items="${locations}" varStatus="count">
 										<li>
                                             <div class="checkbox">
-                                                <input type="radio" value="${location.tdlocationid}" id="${location.tdlocationlabel}${location.tdlocationid}" name="cbxFunction" class="filters" data-location="${location.tdlocationid}">
-                                                <label class="hds-icon" for="cloudStorage"><span>${location.tdlocationlabel}</span></label>
+											   <input type="radio" value="${location.tdlocationid}" id="${location.tdlocationlabel}" name="cbxFunction" class="filters" data-location="${location.tdlocationid}">
+                                                <label class="hds-icon" for="${location.tdlocationlabel}"><span>${location.tdlocationlabel}</span></label>
                                             </div>
                                         </li>
                                         </c:forEach>
