@@ -60,6 +60,65 @@ var hds = window.hds || {};
                     });
                 }
             },
+            _handleActiveCategory: function(activeCat) {
+                var hasTextInput = $.trim($('#resSearch').val());
+                var catText = $(activeCat).text();
+                if (!$(activeCat).parent().index() == 0) {
+                    $('#filterTag .keyword-subcat').html('').show();
+                    hds.resourceLib._addTagstpFilters(catText, '#filterTag .keyword-subcat');
+                    $('#filterTag .label').css({
+                        'display': 'inline'
+                    });
+                } 
+                var self = $(activeCat),
+                    checkInputIfEmpty = $.trim($('#resSearch').val());
+
+                if (!self.parent('li').hasClass('active')) {
+                    $('#loadResourceContent').empty();
+                    window.history.pushState("", document.title, window.location.pathname);
+                    $('#asideLinks-product li').removeClass('active');
+                    $('#asideLinks-product li ul').slideUp();
+                    var $url = $(activeCat).attr('data-href'),
+                        $featuredurl = $(activeCat).attr('featured-href');
+                    self.parent('li').addClass('active');
+                    self.addClass('active');
+                    if (self.parent('li').index() > 0) {
+                        $('#resSearch').attr('placeholder', "Search " + $.trim($('#asideLinks-product > li.active').find('a').text()));
+                    } else {
+                        $('#resSearch').attr('placeholder', "Search All Resources");
+                    }
+
+                    $('.resource-heading > h2').html('').html($('#asideLinks-product > li.active').find('a').text());
+                    if ($(activeCat).parent().has('ul').length) {
+                        $(activeCat).parent().find('ul').slideDown();
+                    }
+
+                    if (checkInputIfEmpty.length > 0) {
+                        //Check If Input is empty
+                        $url = $url + "?fulltext=" + encodeURIComponent(checkInputIfEmpty);
+                    } else {
+                        $url = $url;
+                    }
+
+                    if ($url !== "") {
+                        hds.resourceLib._processClickAside($url);
+                    } else {
+                        $("#prodnsolcategorycontent").html('');
+                        $("#loadResourceContent").html('');
+                        $('.resource-heading > h2').html('').html($('#asideLinks-product > li.active').find('a').text());
+                    }
+                    if ($featuredurl !== "" && hasTextInput.length <= 0) {
+                        hds.resourceLib._processCatagoryCards($featuredurl);
+                    } else {
+                        $("#featuredCards").hide();
+                    }
+                } else {
+                    //$('#resSearch').attr('placeholder', "Search resources");
+                    return false;
+                }
+
+
+            },
             _processClickAside: function(url) {
                 var paginations = this.options.paginationWrapper;
                 $(paginations).pagination('destroy');
@@ -460,62 +519,8 @@ var hds = window.hds || {};
                     $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
                     $("input[name='ctyFunction']").removeAttr('checked');
                     $("input[name='cbxFunction']").removeAttr('checked');
-                    var hasTextInput = $.trim($('#resSearch').val());
+                    hds.resourceLib._handleActiveCategory($(this));
 
-                    var catText = $(this).text();
-                    if (!$(this).parent().index() == 0) {
-                        $('#filterTag .keyword-subcat').html('').show();
-                        hds.resourceLib._addTagstpFilters(catText, '#filterTag .keyword-subcat');
-                        $('#filterTag .label').css({
-                            'display': 'inline'
-                        });
-                    } 
-                    var self = $(this),
-                        checkInputIfEmpty = $.trim($('#resSearch').val());
-
-                    if (!self.parent('li').hasClass('active')) {
-                        $('#loadResourceContent').empty();
-                        window.history.pushState("", document.title, window.location.pathname);
-                        $('#asideLinks-product li').removeClass('active');
-                        $('#asideLinks-product li ul').slideUp();
-                        var $url = $(this).attr('data-href'),
-                            $featuredurl = $(this).attr('featured-href');
-                        self.parent('li').addClass('active');
-                        self.addClass('active');
-                        if (self.parent('li').index() > 0) {
-                            $('#resSearch').attr('placeholder', "Search " + $.trim($('#asideLinks-product > li.active').find('a').text()));
-                        } else {
-                            $('#resSearch').attr('placeholder', "Search All Resources");
-                        }
-
-                        $('.resource-heading > h2').html('').html($('#asideLinks-product > li.active').find('a').text());
-                        if ($(this).parent().has('ul').length) {
-                            $(this).parent().find('ul').slideDown();
-                        }
-
-                        if (checkInputIfEmpty.length > 0) {
-                            //Check If Input is empty
-                            $url = $url + "?fulltext=" + encodeURIComponent(checkInputIfEmpty);
-                        } else {
-                            $url = $url;
-                        }
-
-                        if ($url !== "") {
-                            hds.resourceLib._processClickAside($url);
-                        } else {
-                            $("#prodnsolcategorycontent").html('');
-                            $("#loadResourceContent").html('');
-                            $('.resource-heading > h2').html('').html($('#asideLinks-product > li.active').find('a').text());
-                        }
-                        if ($featuredurl !== "" && hasTextInput.length <= 0) {
-                            hds.resourceLib._processCatagoryCards($featuredurl);
-                        } else {
-                            $("#featuredCards").hide();
-                        }
-                    } else {
-                        //$('#resSearch').attr('placeholder', "Search resources");
-                        return false;
-                    }
                     event.preventDefault();
                 });
 
