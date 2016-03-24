@@ -23,7 +23,6 @@ var hds = window.hds || {};
             hds.resourceLib._checkSelectedNav();
             hds.resourceLib._bindEventsSelectors();
             hds.resourceLib._filterSearchResults();
-            
             if(slingIncludedContent){
             	hds.resourceLib._processSlingIncludedContent();
             	slingIncludedContent = false;
@@ -64,6 +63,7 @@ var hds = window.hds || {};
         },
         _handleActiveCategory: function(activeCat) {
             var hasTextInput = $.trim($('#resSearch').val());
+
             var catText = $(activeCat).text();
             if (!$(activeCat).parent().index() == 0) {
                 $('#filterTag .keyword-subcat').html('').show();
@@ -71,7 +71,11 @@ var hds = window.hds || {};
                 $('#filterTag .label').css({
                     'display': 'inline'
                 });
-            } 
+            }else{
+                $('#filterTag .label').css({
+                    'display': 'none'
+                });
+            }
             var self = $(activeCat),
                 checkInputIfEmpty = $.trim($('#resSearch').val());
 
@@ -118,8 +122,6 @@ var hds = window.hds || {};
                 //$('#resSearch').attr('placeholder', "Search resources");
                 return false;
             }
-
-
         },
         _processClickAside: function(url) {
             var paginations = this.options.paginationWrapper;
@@ -634,7 +636,7 @@ var hds = window.hds || {};
                 $("#resSearch").val('');
                 $('.errorSearchField,.clearSearchIcon').hide();
                 $('#asideLinks-product li').eq(0).find("a").trigger('click');
-				$('.closeKeyword').trigger('click');
+                $('.closeKeyword').trigger('click');
                 $('#filterTag .label').css({
                     'display': 'none'
                 });
