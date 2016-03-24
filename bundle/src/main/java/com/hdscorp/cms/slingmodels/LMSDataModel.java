@@ -135,6 +135,9 @@ public class LMSDataModel {
 		String upperBound = request.getParameter("upperBound");
 
 		String sortby = "@jcr:content/trainingStartDate";
+		
+		log.info("lower Bound::"+lowerBound);
+		log.info("lower upperBound::"+upperBound);
 
 		try {
 			if (searchKeyword != null) {
@@ -142,16 +145,23 @@ public class LMSDataModel {
 				log.info("searchKeyword::" + searchKeyword);
 
 			}
-			/*if (lowerBound != null) {
+			if (lowerBound != null) {
 				lowerBound = URLDecoder.decode(lowerBound, "UTF-8");
 				log.info("lowerbound::" + lowerBound);
 
 			}
 			if (upperBound != null) {
-				lowerBound = URLDecoder.decode(upperBound, "UTF-8");
+				upperBound = URLDecoder.decode(upperBound, "UTF-8");
 				log.info("upperbound::" + upperBound);
 
-			}*/
+			}
+			
+			lowerBound=ServiceUtil.getDisplayDateFormat(lowerBound, "MM/dd/yyyy", "yyyy-MM-dd");
+			
+			upperBound=ServiceUtil.getDisplayDateFormat(upperBound, "MM/dd/yyyy", "yyyy-MM-dd");
+			
+		
+					
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
 			log.info("searchServiceHelper::" + searchServiceHelper);
