@@ -49,6 +49,8 @@
 			                            <param name="showNoContentMessage" value="false" />
 			                            <param name="secureConnections" value="true" />
 			                            <param name="secureHTMLConnections" value="true" />
+										<param name="includeAPI" value="true" />
+										<param name="templateLoadHandler" value="myTemplateLoaded" />
 		                          </object>
 	                          </div>
 						</div>
