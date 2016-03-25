@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <trainingoverviewheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Training Overview HeaLline"
+                        name="./trainingoverviewheadline"
+                        xtype="textfield"/>
+                    <trainingcertificationintroduction
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Training Certification Introduction"
+                        name="./trainingcertificationintroduction"
+                        xtype="richtext"/>
+                    <traininglearnmorelabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Training Learn More Label"
+                        name="./traininglearnmorelabel"
+                        xtype="textfield"/>
+                    <traininglearnmorelink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Training Learn More Link"
+                        name="./traininglearnmorelink"
+                        xtype="pathfield"/>
+                    <searchforcourseslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Search For Courses Label"
+                        name="./searchforcourseslabel"
+                        xtype="textfield"/>
+                    <searchkeyword
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Search Keyword Label"
+                        name="./searchkeyword"
+                        xtype="textfield">
+                        <tolabel
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="To Label"
+                            name="./tolabel"
+                            xtype="textfield"/>
+                    </searchkeyword>
+                    <fromlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="From Label"
+                        name="./fromlabel"
+                        xtype="textfield"/>
+                    <tolabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="To Label"
+                        name="./tolabel"
+                        xtype="textfield"/>
+                    <selectlocationlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Location Label"
+                        name="./selectlocationlabel"
+                        xtype="textfield"/>
+                    <traininglocations
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./traininglocations"
+                        fieldLabel="Tabs"
+                        name="./traininglocations"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <locationlabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Location Label"
+                                name="./locationlabel"
+                                xtype="textfield"/>
+                            <locationid
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Location Id"
+                                name="./locationid"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </traininglocations>
+                    <searchlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Search Label"
+                        name="./searchlabel"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
