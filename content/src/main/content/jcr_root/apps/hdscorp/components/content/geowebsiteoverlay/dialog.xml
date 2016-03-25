@@ -19,6 +19,12 @@
                         fieldLabel="Regions Label"
                         name="./geoallregionlabel"
                         xtype="textfield"/>
+                    <geoglobalid
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Geo Global ID"
+                        name="./geoglobalid"
+                        xtype="textfield"/>
                     <regions
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Regions"
@@ -67,6 +73,15 @@
                                                 anchor="100%"
                                                 fieldLabel="Country URL"
                                                 key="countrytargeturl"
+                                                layout="anchor"
+                                                xtype="textfield"/>
+                                            <countrylanguagecode
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                dname="header"
+                                                fieldLabel="Country Language Code"
+                                                key="countrylanguagecode"
                                                 layout="anchor"
                                                 xtype="textfield"/>
                                             <openinnewwindow
