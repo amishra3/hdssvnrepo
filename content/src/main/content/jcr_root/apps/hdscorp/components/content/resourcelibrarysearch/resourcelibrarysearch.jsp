@@ -9,11 +9,7 @@
 
 <c:set var="contenttype" value="${properties.contenttype}" scope="request"/>
 <c:set var="industrytag" value="${properties.industrytag}" scope="request"/>
-<% 
-String videooverlaymarkup ="<object class='BrightcoveExperience' id='#videoGuid'><param name='playerID' value='#videoTitleId'><param name='playerKey' value='AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot'><param name='@videoPlayer' value='#videoTitleId'><param name='isVid' value='true'><param name='isUI' value='true'><param name='dynamicStreaming' value='true'><param name='htmlFallback' value='true'><param name='includeAPI' value='true'><param name='templateLoadHandler' value='onTemplateLoad'><param name='width' value='720'><param name='height' value='455'><param name='showNoContentMessage' value='false' /><param name='secureConnections' value='true' /><param name='secureHTMLConnections' value='true' /><param name='includeAPI' value='true' /><param name='templateLoadHandler' value='myTemplateLoaded' /><param name='linkBaseURL' value='https://wwwstage-revamp.hds.com/en-us/news-insights/resources.html#vid=#videoTitleId'/></object>";
 
-%>
-<c:set var="videooverlaymarkup" value="<%=pageProperties.getInherited("videooverlaymarkup", videooverlaymarkup) %>"/>
 <sling:adaptTo adaptable="${slingRequest}" adaptTo="com.hdscorp.cms.slingmodels.ResourceLibrarySearchModel" var="model" />
 
 <div class="section resourceLibraryContent">
@@ -35,15 +31,27 @@ String videooverlaymarkup ="<object class='BrightcoveExperience' id='#videoGuid'
 	        		<h3>
 	        			<a href="javascript:void(0)" class="l-overlay animateLink" data-is-video="true" data-target-content="rl${resource.videoTitleId}" 
 	                               target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
-						<div class="overlay-content" id="rl${resource.videoTitleId}">
-						
-						<c:set var="videooverlaymarkup" value="${fn:trim(videooverlaymarkup)}"/>
-						
-						 <c:set var="videooverlaymarkup" value="${fn:replace(videooverlaymarkup,'#videoGuid',resource.videoGuid)}"/>
-						 <c:set var="videooverlaymarkup" value="${fn:replace(videooverlaymarkup,'#videoTitleId',resource.videoTitleId)}"/>                          
+						<div class="overlay-content" id="rl${resource.videoTitleId}">                          
 	                          <div class="">
-	                          
-		                          ${videooverlaymarkup}
+		                          <object class="BrightcoveExperience" id="${resource.videoGuid}">  
+			                            <param name="playerID" value="${resource.videoTitleId}">
+			                            <param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot">
+			                            <!-- for a single video in a Single Video template: Nee to Be Authored-->
+			                            <param name="@videoPlayer" value="${resource.videoTitleId}">
+			                            <param name="isVid" value="true">
+			                            <param name="isUI" value="true">
+			                            <param name="dynamicStreaming" value="true">
+			                            <param name="htmlFallback" value="true">
+			                            <param name="includeAPI" value="true">
+			                            <param name="templateLoadHandler" value="onTemplateLoad">
+			                            <param name="width" value="720">
+			                            <param name="height" value="455">
+			                            <param name="showNoContentMessage" value="false" />
+			                            <param name="secureConnections" value="true" />
+			                            <param name="secureHTMLConnections" value="true" />
+										<param name="includeAPI" value="true" />
+										<param name="templateLoadHandler" value="myTemplateLoaded" />
+		                          </object>
 	                          </div>
 						</div>
 					</h3>
