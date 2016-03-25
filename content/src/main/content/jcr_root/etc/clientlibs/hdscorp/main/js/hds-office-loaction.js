@@ -66,8 +66,7 @@ var hds = window.hds || {};
                 singleCall="&singlelocation=true";
              }
              var accounting = [];
-
-
+             $('#gmap').html('')
             var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 + '/' + arg3+ singleCall;
             $.getJSON(url, function(data) {
                 var content = '';
@@ -85,12 +84,8 @@ var hds = window.hds || {};
                  loc["lon"]= parseFloat(cat.locationlongitude);
                  loc["icon"]='/etc/clientlibs/hdscorp/main/images/new-marker2.png';
                  accounting.push(loc);
-
-
                      }
-                })
-              console.log(JSON.stringify(accounting));
-
+                })   
                 hds.hdsContactLocations._loadMap(JSON.stringify(accounting));
                 $('#locationDetailsContent').html("").html(content);
 
