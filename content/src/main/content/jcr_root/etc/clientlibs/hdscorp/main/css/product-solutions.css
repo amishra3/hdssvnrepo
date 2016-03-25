@@ -577,6 +577,8 @@ ul.stickyNav li:hover a{
   min-height: 187px;*/
 }
 
+.mes-section .mes-container .product-box br{display:none;}
+
 .mes-section .mes-container .product-box .product-copy-main {
   font-size: 1.125em;
   font-weight: 500;
@@ -927,6 +929,8 @@ h2.section-heading.fb-title{
   letter-spacing: 1px;
 }
 
+.resources-section .resources-container .resources-category .resources-category-box br{display:none;}
+
 .resources-section .resources-container .resources-category .resources-category-box {
   margin-bottom: 20px;
     min-height:192px;
@@ -1048,6 +1052,8 @@ h2.section-heading.fb-title{
 .resources-section .resources-container .resources-category {
     padding: 0;
 }
+
+.resources-section .resources-container .resources-category .resources-category-box br{display:none;}
 
   .resources-section .resources-container .resources-category .resources-category-heading {
     font-size: 1.125rem;
@@ -1173,6 +1179,7 @@ h2.section-heading.fb-title{
   max-width: 1107px;
   padding-top: 40px;
   margin: 0 auto 25px;
+  padding-bottom:30px;
 }
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading {
@@ -1219,6 +1226,7 @@ h2.section-heading.fb-title{
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-points-box {
   text-align: left;
 }
+.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-points-box br{display:none;}
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-points-box [class|="fb-category-points-box"] {
   margin-bottom: 18px;
