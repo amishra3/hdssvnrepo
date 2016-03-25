@@ -169,32 +169,105 @@ var hds = window.hds || {};
                     });
                 });
             });
+			$(document).on('change input paste','.from_date, .to_date, .search ', function(e){
+				$('.errorSearchField').html("").hide(200);
+			});
+			var max_items_page = 10;
+			var shown = null;
+			var items = $(".result-section").length;
+			$('.result-section:lt('+max_items_page+')').show();
+			function loadMoreResults(){
+				max_items_page = 10;
+				shown = null;
+				items = $(".result-section").length;
+				
+				//$('.result-section:lt('+max_items_page+')').show();
+				
+				$('.result-product').each(function(){
+						if($(this).find('.result-section:visible').length == 0){
+							$(this).hide();
+						}
+						else{
+							$(this).show()
+						}
+				});
 
+				$('.result-btn a').on('click',function(e){
+					$('.result-product').show();
+					shown = $('.result-section:visible').length+max_items_page;
+					if(shown<items) {
+						$('.result-section:lt('+shown+')').show();
+					}else {
+						$('.result-section:lt('+items+')').show();
+						$('.result-btn a').hide();
+					}
+					$('.result-product').each(function(){
+						if($(this).find('.result-section:visible').length == 0){
+							$(this).hide();
+						}
+						else{
+							$(this).show()
+						}
+					});
+				});
+			}
+			
+			
+			loadMoreResults();
+			
+			var searchKey = $('.daterangepicker .search').val();
+			var dateFrom = $('.from_date').val();
+			var dateTo = $('.to_date').val();
+			var url ='';
+			function getResults(){
+				searchKey = $('.daterangepicker .search').val();
+				dateFrom = $('.from_date').val();
+				dateTo = $('.to_date').val();
+				url ='';
+					if(searchKey!='' && dateFrom!='' && dateTo!=''){
+						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey+"&lowerBound="+dateFrom+"&upperBound="+dateTo;
+					}else if(searchKey=='' && dateFrom!='' && dateTo!=''){
+						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?lowerBound="+dateFrom+"&upperBound="+dateTo;
+					}else{
+						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey;
+					}
+					if(searchKey != '' || (dateFrom != '' && dateTo != '')){
+						$.ajax({
+							method: "GET",
+							url: url
+						  }).done(function(response) {
+							//console.log(response);
+							var html = $(response).find("#contentCatagory").html();
+							console.log($(html).find(".result-product").length)
+							$('#contentCatagory').html(html)
+							if($(".result-product").length == 0){
+								console.log('no results')
+								$('.result-btn a').hide();
+								$('.result-btn').append("<div style='background-color: transparent;color: #ce0000;display: block;padding: 8px 35px;display: inline-block;'>No records found</div>");
+								return false;
+							}
+							 $('#contentCatagory').html(html)
+							 $('.result-section:lt('+max_items_page+')').show();
+							 loadMoreResults();
+					   });
+					}else{
+						$('.errorSearchField').html("Please enter a search term or date").show();
+					}
+				}
+			
+			
+			$(document).on('keypress','.search', function(e){
+				//e.preventDefault();
+				if(e.which == 13){
+					getResults();
+				}
+				
+			});
 			$(document).on('click','.search-course-btn a', function(e){
 				e.preventDefault();
-                var searchKey = $('.daterangepicker .search').val();
-                var dateFrom = $('.from_date').val();
-                var dateTo = $('.to_date').val();
-	           var url ='';
-                if(searchKey!='' && dateFrom!='' && dateTo!=''){
-				url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey+"&lowerBound="+dateFrom+"&upperBound="+dateTo;
-                }else{
-				 url = "/content/hdscorp/en_us/lookup/search-training-detail.html?lowerBound="+dateFrom+"&upperBound="+dateTo;
-                }
-				alert(url);
-                $.ajax({
-					method: "GET",
-					url: url
-				  }).done(function(response) {
-					//console.log(response);
-					var html = $(response).find("#contentCatagory").html();
-					console.log(html)
-				     $('#contentCatagory').html(html)
-			   });
-
-                
-            })
-
+				getResults();
+            });
+			
 
         }
     }
