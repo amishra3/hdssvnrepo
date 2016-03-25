@@ -191,26 +191,26 @@ if($('.fb-category-container').length!==0){
 				this.id = 'fixedRate' + index;
 
 				var callheightinner = 0;
-				for(var i=0;i<$("#fixedRate"+index+" .fb-category-points-box-description").size();i++){
-					if($("#fixedRate"+index+" .fb-category-points-box-description:eq("+i+")").height()>=callheightinner){
-							callheightinner=$("#fixedRate"+index+" .fb-category-points-box-description:eq("+i+")").height();
+				for(var i=0;i<$("#fixedRate"+index+" .fb-category-points-box").size();i++){
+					if($("#fixedRate"+index+" .fb-category-points-box:eq("+i+")").height()>=callheightinner){
+							callheightinner=$("#fixedRate"+index+" .fb-category-points-box:eq("+i+")").height();
 						}
 				}
-				$("#fixedRate"+index+" .fb-category-points-box-description").height(callheightinner);
+				$("#fixedRate"+index+" .fb-category-points-box").height(callheightinner);
 				
-				var callheightinnerhead=0;
+				/*var callheightinnerhead=0;
 				for(var i=0;i<$("#fixedRate"+index+" .fb-category-points-box-heading").size();i++){
 					if($("#fixedRate"+index+" .fb-category-points-box-heading:eq("+i+")").height()>=callheightinnerhead){
 							callheightinnerhead=$("#fixedRate"+index+" .fb-category-points-box-heading:eq("+i+")").height();
 						}
 				}
-				$("#fixedRate"+index+" .fb-category-points-box-heading").height(callheightinnerhead);
+				$("#fixedRate"+index+" .fb-category-points-box-heading").height(callheightinnerhead);*/
 			});
 
 }
 }
 
-if( $(window).width() > 1209){
+/*if( $(window).width() > 1209){
 if($('.mes-section').length!==0){
 
 				var resheightinner = 0;
@@ -221,13 +221,13 @@ if($('.mes-section').length!==0){
 				}
 				$(".product-box .product-copy-main").height(resheightinner);
 				
-				/*var resheightinnerhead=0;
+				var resheightinnerhead=0;
 				for(var i=0;i<$(".product-box .product-copy-sub").size();i++){
 					if($(".product-box .product-copy-sub:eq("+i+")").height()>=resheightinnerhead){
 							resheightinnerhead=$(".product-box .product-copy-sub:eq("+i+")").height();
 						}
 				}
-				$(".product-box .product-copy-sub").height(resheightinnerhead);*/
+				$(".product-box .product-copy-sub").height(resheightinnerhead);
 }
 }
 
@@ -242,15 +242,15 @@ if($('.resources-section').length!==0){
 				}
 				$(".resources-category-box .resources-category-title").height(setheightinner);
 				
-				/*var setheightinnerhead=0;
+				var setheightinnerhead=0;
 				for(var i=0;i<$(".resources-category-box .resources-category-description").size();i++){
 					if($(".resources-category-box .resources-category-description:eq("+i+")").height()>=setheightinnerhead){
 							setheightinnerhead=$(".resources-category-box .resources-category-description:eq("+i+")").height();
 						}
 				}
-				$(".resources-category-box .resources-category-description").height(setheightinnerhead);*/
+				$(".resources-category-box .resources-category-description").height(setheightinnerhead);
 }
-}
+}*/
 
 
 
