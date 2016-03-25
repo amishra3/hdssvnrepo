@@ -83,13 +83,14 @@
 
 .service-support-main .section-service-col .headline,
 .services-list-section .section-service-col .headline{
-	font-size: 1.28571em;
+	font-size: 1.125em;
 	font-weight: 700;
     margin-top: 0px;
     margin-bottom: 10px;
     line-height: 1;
     line-height: 120%;
 	text-transform: none;
+	font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 .service-support-main .section-service-col .headline a, 
 .services-list-section .section-service-col .headline a{	
