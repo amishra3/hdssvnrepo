@@ -12,11 +12,29 @@
                 jcr:primaryType="cq:Panel"
                 title="Region Filter">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <locworldwidelocationslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="World Wide Locations Label"
+                        name="./locworldwidelocationslabel"
+                        xtype="textfield"/>
                     <locallregionslabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="ALL Regions Label"
-                        name="./jcr:locallregionslabel"
+                        name="./locallregionslabel"
+                        xtype="textfield"/>
+                    <locallcountrieslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="ALL Countries Label"
+                        name="./locallcountrieslabel"
+                        xtype="textfield"/>
+                    <localllocationslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="ALL LocationsLabel"
+                        name="./localllocationslabel"
                         xtype="textfield"/>
                     <regions
                         jcr:primaryType="cq:Widget"

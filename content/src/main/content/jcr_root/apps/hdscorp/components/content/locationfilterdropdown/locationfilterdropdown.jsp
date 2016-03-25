@@ -9,12 +9,12 @@ var="locationsDropDownFilterModel" />
 <div class="pr-list grey-bg clearfix" id="LoactionFilters">
 	<div class="content-container">
 		<div id="LoactionFilters" class="Container-legal-terms container-fluid overRideRight">
-			<h2 class="grey-heading">Worldwide Locations</h2>
+            <h2 class="grey-heading">${properties.locworldwidelocationslabel}</h2>
 			<div class="select-boxes">
 			<div class="col-md-4">
 				<div class="select-style">
 					<select id="allRegion" name="allRegion" autocomplete="off">
- 						<option value=" ">All Regions</option>
+ 						<option value=" ">${properties.locallregionslabel}</option>
                         <c:forEach items="${locationsDropDownFilterModel.locRegions}" var="locRegions" varStatus="status">
 						<c:set var="stateJson" value=" ${locRegions['countries']}" scope="request" />
 						<c:set var="filterRegionTags" value="${locRegions['locregiontag']}" scope="request" />
@@ -35,14 +35,14 @@ var="locationsDropDownFilterModel" />
 			<div class="col-md-4">
 				<div class="select-style">
 					<select id="allCountries" name="allCountries" autocomplete="off">
-						<option selected="selected">--All Countries--</option>
+						<option selected="selected">${properties.locallcountrieslabel}</option>
 					</select>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="select-style">
 					<select id="allLocations" name="allLocations" autocomplete="off">
-						<option selected="selected">--All Locations--</option>
+						<option selected="selected">${properties.localllocationslabel}</option>
 					</select>
 				</div>
 			</div>
