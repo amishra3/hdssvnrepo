@@ -41,7 +41,7 @@
                                 xtype="textarea"/>
                             <smallimagepath
                                 jcr:primaryType="cq:Widget"
-                                fieldLabel="Image Path"
+                                fieldLabel="PartnerLogo"
                                 name="./imagepath"
                                 xtype="pathfield"/>
                             <bannerimagepath
@@ -50,6 +50,11 @@
                                 fieldLabel="Banner Image Path"
                                 name="./bannerimagepath"
                                 xtype="pathfield"/>
+                            <mobileimagePath
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Banner Mobile Image (Optional)"
+                                name="./mobileimage"
+                                xtype="ddpathfield"/>
                             <ctalabel
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="CTA Label"
