@@ -39,6 +39,8 @@
 %>
 
 <c:set var="domain" value="" />
+<c:set var="linkoverlayURLPath" value="" />
+
 <c:set var="port" value="<%= request.getServerPort() %>" />
 <c:if test="${empty port || port == 80}">
 <c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
@@ -46,11 +48,10 @@
 
 
 <c:set var="externalLinksList"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"linkTitle-linktargeturl-linkIconPath-linkurltargettype")%>" />
+	value="<%=PageUtils.convertMultiWidgetToList(properties,"linkTitle-linktargeturl-linkIconPath-linkurltargettype-linkoverlayurl")%>" />
 
 
 <!-- HEADER STARTS -->
-
 <div class="hds-global-header clearfix">
 	<c:if test="${selectorString!= 'excludetop'}">
 		<div class="header-container content-container">
@@ -58,21 +59,31 @@
 				class="hitachi-logo hidden-xs hidden-sm"></span></a> <a
 				href="${logoTargetURL}"><span
 				class="hitachi-logo-mobile hidden-md hidden-lg"></span></a>
-	
+
 			<div class="hds-quick-navigation hidden-xs hidden-sm">
-				<ul>
+				<ul>                  
 					<c:forEach var="externalLink" items="${externalLinksList}">
 						<c:set var="linkTitle" value="${externalLink.linkTitle}" />
 						<c:set var="linktargeturl" value="${externalLink.linktargeturl}" />
 						<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
 						<c:set var="linkurltargettype" value="${externalLink.linkurltargettype}" />
-						<li><a href="${linktargeturl}" x-cq-linkchecker="skip"
-							target="${linkurltargettype?'_blank':'_self'}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
-								${linkTitle}
-						</a></li>
-	
-					</c:forEach>
-
+                        <c:set var="linkoverlayURL" value="${externalLink.linkoverlayurl}" />
+						
+ 				        <c:choose>
+                            <c:when test="${not empty linkoverlayURL}">
+                                <c:set var="linkoverlayURLPath" value="${linkoverlayURL}" />
+                                 <li><a id="${applicationScope.geoGlobalId}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
+								      ${linkTitle}
+				 	             </a></li>
+                            </c:when>
+                           <c:otherwise>
+ 					             <li><a  href="${linktargeturl}" x-cq-linkchecker="skip"
+							     target="${linkurltargettype?'_blank':'_self'}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
+							          ${linkTitle}
+				 		         </a></li>
+                          </c:otherwise>
+                       </c:choose>
+				    </c:forEach>
 
 					<li class="search"><input type="text"
 						placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}" id="gsaSearchBox"><span
@@ -100,12 +111,17 @@
                         <input type="submit" value="Search" class="btn-search">
                     </div>
                 </div>
-            </div>
+            </div>           
 
+	        <!--Geo OverLay-->
+            <c:if test="${not empty linkoverlayURLPath}" >
+                <sling:include path="${linkoverlayURLPath}" />
+            </c:if>
 
 		</div>
-	
+
 	</c:if>
+
 	<div class="hds-main-navigation-container">
 		<div class="hds-main-navigation">
 			<h5 class="col-md-3">
