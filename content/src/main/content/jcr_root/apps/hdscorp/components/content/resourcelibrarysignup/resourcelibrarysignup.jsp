@@ -6,19 +6,13 @@
 	
 	<div class="common-hero-short-banner clearfix" style="background-image:url('${properties.backgroundimgpath}');">
         <div class="content-container">
-            <div class="col-lg-7 col-sm-7 col-xs-12">
+            <div class="col-lg-6 col-sm-6 col-xs-12">
                 <div class="top-banner-heading">${properties.resourcelabel}</div>
                 <h4 class="sub-headline">${properties.signupmessagetext}</h4>
             </div>
-            <div class="col-lg-5 col-sm-5 col-xs-12">
-                <div class="res-subscribe">
-                    <input type="text" placeholder="${properties.entermailidtext}">
-                </div>
-                <div class="res-subscribe-btn">
-                    <div class="btn-square-white">
-                        <a href="${properties.learnmorelink}" title="LEARN MORE" rel="iframemodal">${properties.learnmorelabel}</a>
-                    </div>
-                </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12 resSubscription">
+                <iframe src="${properties.formIframeURL}" style="" id="resIframe" scrolling="no"></iframe> 	
             </div>
         </div>
     </div>
