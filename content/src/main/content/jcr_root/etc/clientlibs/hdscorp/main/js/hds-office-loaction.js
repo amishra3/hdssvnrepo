@@ -12,7 +12,6 @@ var hds = window.hds || {};
             this.options = $.extend(defaults, options);
             hds.hdsContactLocations._fetchDetail();
             hds.hdsContactLocations._bindEventsSelectors();
-
         },
         _locationFeed:function(){
 
@@ -23,8 +22,6 @@ var hds = window.hds || {};
 			str=str.replace(/"(\w+)"\s*:/g, '$1:');
             console.log(str)
             var locations=(new Function("return " +str+ "")());
-
-
              maplace = new Maplace({
                 map_div: '#gmap',
                 controls_type: 'list',
@@ -47,8 +44,6 @@ var hds = window.hds || {};
                 locations: locations,
                 force_generate_controls: true
             });
-
-
         },
         _fetchDetail: function() {
             $('.scrollbar-inner > h2').html('').html('North America');
@@ -75,15 +70,16 @@ var hds = window.hds || {};
                     content += '<img src="' + cat.image + '" alt="' + cat.imagealt + '">';
                     content += '<h3>' + cat.locationtitle + '</h2>';
                     content += cat.locationdetail;
-                    content += '<a href="javascript:void(0);" class="animateLink">Driving directions <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
+                    content += '<a href="'+cat.drivingdirection+'" class="animateLink" target="_blank">Driving directions <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
                     content += '<a href="javascript:void(0);" class="phone_num animateLink">Show Phone Numbers <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>';
+                    content +='<div class="hideme">'+cat.locationphonenumber+'</div>';
                     content += '</div>';
                   if(cat.locationlongitude){
 					var loc={};
-                 loc["lat"]= parseFloat(cat.locationlatitude);
-                 loc["lon"]= parseFloat(cat.locationlongitude);
-                 loc["icon"]='/etc/clientlibs/hdscorp/main/images/new-marker2.png';
-                 accounting.push(loc);
+                     loc["lat"]= parseFloat(cat.locationlatitude);
+                     loc["lon"]= parseFloat(cat.locationlongitude);
+                     loc["icon"]='/etc/clientlibs/hdscorp/main/images/new-marker2.png';
+                     accounting.push(loc);
                      }
                 })   
                 hds.hdsContactLocations._loadMap(JSON.stringify(accounting));
@@ -161,6 +157,19 @@ var hds = window.hds || {};
                 }
                 event.preventDefault();
             });
+
+            $(document).on('click','.phone_num',function(){
+
+                if($(this).find('span').hasClass('glyphicon-plus-sign')){
+					$(this).next('div.hideme').show();
+                    $(this).find('span.glyphicon-plus-sign').removeClass('glyphicon-plus-sign').addClass('glyphicon-minus-sign');
+                }else{
+
+$(this).next('div.hideme').hide();
+                    $(this).find('span').removeClass('glyphicon-minus-sign').addClass('glyphicon-plus-sign');
+                }
+
+            })
         }
     }
 }(window, document, jQuery, hds));

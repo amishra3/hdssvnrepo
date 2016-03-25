@@ -28,6 +28,9 @@
         text-indent: 0.01px;
         text-overflow: '';
     }
+.hideme{
+	display:none;
+}
     @media screen and (max-width:991px){
       .select-boxes .select-style{
         margin-bottom: 20px;
