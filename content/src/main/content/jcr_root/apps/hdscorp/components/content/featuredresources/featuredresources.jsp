@@ -21,7 +21,7 @@
                     <div class="spotlight-mobile hidden-md hidden-lg" style="background-image:url(${resource.featuredBGImage});"></div>
                     <div class="spotlight-content">
                         <div class="icon hidden-xs hidden-sm">
-                            <img title="" alt="" src="${resource.featuredIconImage}">
+                            <img class="spotlight-image-icon" title="" alt="" src="${resource.featuredIconImage}">
                         </div>
                         <div class="icon hidden-md hidden-lg">
                             <img title="" alt="" src="${resource.featuredIconImage}">

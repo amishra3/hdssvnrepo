@@ -1173,3 +1173,8 @@ span.ellipse.clickable {
     cursor: pointer;
     display:none;
 }
+
+.spotlight-content .spotlight-image-icon{
+	height: 30px;
+    width: 30px;
+}

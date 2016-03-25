@@ -104,7 +104,8 @@ $(document).ready(function () {
 	    });
     }else{
 	    $('#featuredCards a.isGatedLock, .resources-spotlight .spotlight-title a.isGatedLock').each(function(index, el) {
-	    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
+//	    	$(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
+	    	$(this).closest('.spotlight-content').find('.spotlight-image-icon').attr('src','/etc/clientlibs/hdscorp/main/images/gated-icon-white.png');
 	    });
     }
     
