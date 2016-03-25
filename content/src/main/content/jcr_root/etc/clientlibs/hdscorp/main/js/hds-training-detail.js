@@ -175,8 +175,13 @@ var hds = window.hds || {};
                 var searchKey = $('.daterangepicker .search').val();
                 var dateFrom = $('.from_date').val();
                 var dateTo = $('.to_date').val();
-                var url = "http://vadbwwwauthqa01t:8080/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey;
-				alert(url)
+	           var url ='';
+                if(searchKey!='' && dateFrom!='' && dateTo!=''){
+				url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey+"&lowerBound="+dateFrom+"&upperBound="+dateTo;
+                }else{
+				 url = "/content/hdscorp/en_us/lookup/search-training-detail.html?lowerBound="+dateFrom+"&upperBound="+dateTo;
+                }
+				alert(url);
                 $.ajax({
 					method: "GET",
 					url: url
@@ -189,7 +194,8 @@ var hds = window.hds || {};
 
                 
             })
-            
+
+
         }
     }
 }(window, document, jQuery, hds));
