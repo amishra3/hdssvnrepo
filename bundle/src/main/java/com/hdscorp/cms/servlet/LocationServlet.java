@@ -42,15 +42,13 @@ import com.hdscorp.cms.util.ViewHelperUtil;
 @SlingServlet(methods = { "GET" }, paths = { "/bin/acme/hdscorp/locationservlet" })
 public class LocationServlet extends SlingSafeMethodsServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 3082661311494888456L;
 
 	@Reference
 	ConfigurationAdmin configurationAdmin;
 
 	public static final String LOCATION_PATH = "location.path";
+	public static final String TRAINING_PATH = "training.path";
 	public static final String LOCATION_PID = "com.hdscorp.cms.servlet.LocationServlet";
 
 	private static final Logger log = LoggerFactory.getLogger(LocationServlet.class);
@@ -71,6 +69,7 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 			throws Exception {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
+		String type = request.getParameter("type");
 		String selector = request.getParameter("selector");
 		String singlelocation = request.getParameter("singlelocation");
 
@@ -83,7 +82,7 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 				singlelocation = URLDecoder.decode(singlelocation, "UTF-8");
 			}
 			response.getWriter().write("{\"locationJson\":"
-					+ getLocationJSON(getLocationPath(), selector, singlelocation).toString() + "}");
+					+ getLocationJSON(getLocationPath(type), selector, singlelocation).toString() + "}");
 		} catch (Exception e) {
 			log.error("Error while reading locations json" + e.getMessage());
 		}
@@ -149,13 +148,18 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 		return jsonArray.toString();
 	}
 
-	private String[] getLocationPath() {
+	private String[] getLocationPath(String type) {
 		Configuration config;
 		String locationPath[] = new String[10];
 		try {
 			config = configurationAdmin.getConfiguration(LOCATION_PID);
 			Dictionary props = config.getProperties();
-			locationPath = (String[]) config.getProperties().get(LOCATION_PATH);
+			if(type.equalsIgnoreCase("traininglocation")){
+				locationPath = (String[]) config.getProperties().get(TRAINING_PATH);
+			}else if(type.equalsIgnoreCase("officelocation")){
+				locationPath = (String[]) config.getProperties().get(LOCATION_PATH);
+			}
+			
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
 			e.printStackTrace(new PrintWriter(stack));
@@ -171,19 +175,19 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 					.put("region",
 							Arrays.toString(
 									(String[]) properties.get(ServiceConstants.LOCATION_JCR_REGION, String[].class))
-							.replace("[", "").replace("]", ""));
+							.replace("[", "").replace("]", "").trim());
 
 			jsonObject
 					.put("country",
 							Arrays.toString(
 									(String[]) properties.get(ServiceConstants.LOCATION_JCR_COUNTRY, String[].class))
-							.replace("[", "").replace("]", ""));
+							.replace("[", "").replace("]", "").trim());
 
 			jsonObject
 					.put("location",
 							Arrays.toString(
 									(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATIONS, String[].class))
-							.replace("[", "").replace("]", ""));
+							.replace("[", "").replace("]", "").trim());
 
 			jsonObject.put("image",
 					Arrays.toString(
