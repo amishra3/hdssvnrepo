@@ -1,5 +1,7 @@
-<%@include file="/apps/foundation/global.jsp"%><%
-%><%@page session="false" %>
+<%@include file="/apps/foundation/global.jsp"%>
+<%
+	
+%><%@page session="false"%>
 
 
 
@@ -18,71 +20,87 @@
 			<div
 				class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
 
-                    <c:forEach var="innerList" items="${twitterFeedModel.twitterFeedData}">
+				<c:forEach var="innerList"
+					items="${twitterFeedModel.twitterFeedData}">
 
 
-	<c:choose>
+					<c:choose>
 
-		<c:when test="${fn:contains(innerList.timeDifference, 'day')}">
-			<c:set var="propertyValue" value="${twitterFeedModel.twDaysMessage}" />
-		</c:when>
-		<c:when test="${fn:contains(innerList.timeDifference, 'month')}">
-			<c:set var="propertyValue" value="${twitterFeedModel.twMonthsMessage}" />
-		</c:when>
-		<c:when test="${fn:contains(innerList.timeDifference, 'year')}">
-			<c:set var="propertyValue" value="${twitterFeedModel.twYearsMessage}" />
-		</c:when>
-		<c:when test="${fn:contains(innerList.timeDifference, 'week')}">
-			<c:set var="propertyValue" value="${twitterFeedModel.twWeeksMessage}" />
-		</c:when>
-		<c:when test="${fn:contains(innerList.timeDifference, 'hour')}">
-			<c:set var="propertyValue" value="${twitterFeedModel.twHoursMessage}" />
-		</c:when>
-		<c:when test="${fn:contains(innerList.timeDifference, 'min')}">
-			<c:set var="propertyValue" value="${twitterFeedModel.twMinsMessage}" />
-		</c:when>
+						<c:when test="${fn:contains(innerList.timeDifference, 'day')}">
+							<c:set var="propertyValue"
+								value="${twitterFeedModel.twDaysMessage}" />
+						</c:when>
+						<c:when test="${fn:contains(innerList.timeDifference, 'month')}">
+							<c:set var="propertyValue"
+								value="${twitterFeedModel.twMonthsMessage}" />
+						</c:when>
+						<c:when test="${fn:contains(innerList.timeDifference, 'year')}">
+							<c:set var="propertyValue"
+								value="${twitterFeedModel.twYearsMessage}" />
+						</c:when>
+						<c:when test="${fn:contains(innerList.timeDifference, 'week')}">
+							<c:set var="propertyValue"
+								value="${twitterFeedModel.twWeeksMessage}" />
+						</c:when>
+						<c:when test="${fn:contains(innerList.timeDifference, 'hour')}">
+							<c:set var="propertyValue"
+								value="${twitterFeedModel.twHoursMessage}" />
+						</c:when>
+						<c:when test="${fn:contains(innerList.timeDifference, 'min')}">
+							<c:set var="propertyValue"
+								value="${twitterFeedModel.twMinsMessage}" />
+						</c:when>
 
-		<c:otherwise>
+						<c:otherwise>
 
-		</c:otherwise>
-	</c:choose>
+						</c:otherwise>
+					</c:choose>
 
-	<c:set var="propertyValue" value="${propertyValue} ${twitterFeedModel.twAgoMessage}" />                        
+					<c:if test="${fn:substring(innerList.timeDifference,0,2)=='1'}">
+						<c:set var="propertyValue"
+							value="${fn:substring(propertyValue,0,fn:length(propertyValue)-1)}" />
 
-	<c:set var="twitterPostMsg" value="${innerList.twitterMessageText}" />
+					</c:if>
 
+					<c:set var="propertyValue"
+						value="${propertyValue} ${twitterFeedModel.twAgoMessage}" />
 
-
-
-    <c:if test="${not empty innerList.twitterURL}">
-
-
-        <c:set var="twitterhttpURL" value='<a href="${innerList.twitterURL}" target="_blank" >${innerList.twitterURL}</a>' />
-
+					<c:set var="twitterPostMsg" value="${innerList.twitterMessageText}" />
 
 
 
-		<c:set var="twitterPostMsg"
-			value="${fn:replace(innerList.twitterMessageText, innerList.twitterURL, twitterhttpURL)}" />
 
-		<c:set var="postedDate"
-			value="${fn:substring(innerList.timeDifference,0,2)}" />
+					<c:if test="${not empty innerList.twitterURL}">
 
-	</c:if>
 
-	<div class="hexagon320">
-		<div class="tweet-content">
-			<div class="icon">
-				<img src="${twitterFeedModel.iconPath}" alt="" title="">
-			</div>
-			
-			<p>${twitterPostMsg}</p>
+						<c:set var="twitterhttpURL"
+							value='<a href="${innerList.twitterURL}" target="_blank" >${innerList.twitterURL}</a>' />
 
-			<p>${postedDate} ${propertyValue}<p>
-		</div>
-	</div>
 
-</c:forEach>
+
+
+						<c:set var="twitterPostMsg"
+							value="${fn:replace(innerList.twitterMessageText, innerList.twitterURL, twitterhttpURL)}" />
+
+						<c:set var="postedDate"
+							value="${fn:substring(innerList.timeDifference,0,2)}" />
+
+					</c:if>
+
+					<div class="hexagon320">
+						<div class="tweet-content">
+							<div class="icon">
+								<img src="${twitterFeedModel.iconPath}" alt="" title="">
+							</div>
+
+							<p>${twitterPostMsg}</p>
+
+							<p>${postedDate}${propertyValue}
+							<p>
+						</div>
+					</div>
+
+				</c:forEach>
 
 			</div>
 		</div>
