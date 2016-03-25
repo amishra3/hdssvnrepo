@@ -46,6 +46,8 @@
     font-size: 1rem;
 }
 
+.hds-community-section .hds-community-container .community-common-box br{display:none}
+
 .hds-community-section .hds-community-container .community-common-box{
   background: #ffffff;
   margin:0 0 20px 0; 
