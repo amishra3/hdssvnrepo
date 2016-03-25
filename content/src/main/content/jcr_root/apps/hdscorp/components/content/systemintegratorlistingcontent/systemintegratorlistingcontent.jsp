@@ -120,11 +120,11 @@
 
 
                                     </c:forEach>
-                            <div class="partner col-xs-6 col-sm-2 col-md-2 col-lg-2" data-indstry="${industryTadIds1}">
+                            <div class="partner col-xs-6 col-sm-6 col-md-2 col-lg-2" data-indstry="${industryTadIds1}">
                                 <div class="logo">
-                                    <img src="${systemIntegrators.partnerIconImagePath}" alt="" class="img-responsive">
+                                    <img src="${systemIntegrators.partnerIconImagePath}" alt="${systemIntegrators.partnerIconImageAltText}" title="${systemIntegrators.partnerIconImageAltText}" class="img-responsive">
                                 </div>
-                                <div class="partner-detail" style="background-image:url(${systemIntegrators.partnerBackgroundImagePath});)">
+                                <div class="partner-detail">
                                     <div class="close"></div>
                                     <h2 class="ptitle"> ${systemIntegrators.partnerName}</h2>
                                     <h4>${systemIntegrators.partnerHeadLine}</h4>

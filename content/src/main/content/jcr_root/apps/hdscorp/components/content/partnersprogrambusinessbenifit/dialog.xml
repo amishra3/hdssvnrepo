@@ -41,7 +41,7 @@
                     <ppbblearnmoreopeninnewwindow
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open In New Window "
-                        name="./jcr:ppbblearnmoreopeninnewwindow"
+                        name="./ppbblearnmoreopeninnewwindow"
                         type="checkbox"
                         xtype="selection"/>
                     <learnthirdparty

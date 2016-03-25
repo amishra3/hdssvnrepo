@@ -46,7 +46,8 @@
                                 <div class="btn-square-white signup">
                                     <a href="${signUpLink}" target="${partnerProgramBusinessBenifitModel.signUpOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.signUpLabel}${not empty properties.sigthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
                                 </div>
-                                <a class="animateLink learn-more-white" href="${learnMoreLink}" target="${partnerProgramBusinessBenifitModel.signUpOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.learnMoreLabel}${not empty properties.lthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+
+                                <a class="animateLink learn-more-white" href="${learnMoreLink}" target="${properties.ppbblearnmoreopeninnewwindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.learnMoreLabel}${properties.lthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                 
                             </div>
                             <div class="col-xs-12 col-md-4 hexContain">
@@ -55,7 +56,7 @@
                                         <span class="sprite"><img src="${partnerProgramBusinessBenifitModel.optionalProgramIconPath}" alt="" title="" style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;"></span>
                                         <h4>${partnerProgramBusinessBenifitModel.optionalProgramHeadLine}</h4>
                                         <p>${partnerProgramBusinessBenifitModel.optionalProgarmDescription}</p>
-                                        <a href="${optionalProgramCallToActionLink}" class="animateAnchor bottomPos text-center" target="${partnerProgramBusinessBenifitModel.callToActionOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.optionalProgarmCallToActionLabel}${not empty properties.pthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
+                                        <a href="${optionalProgramCallToActionLink}" class="animateAnchor bottomPos text-center" target="${partnerProgramBusinessBenifitModel.callToActionOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.optionalProgarmCallToActionLabel}${properties.pthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 </a>
                                     </li>
                                 </ul>
