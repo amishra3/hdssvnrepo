@@ -1,4 +1,10 @@
+<%--
 
+  Locations Component component.
+
+  This is Locations Component
+
+--%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 
@@ -35,8 +41,10 @@
 
 <h1>Locations component</h1>
 
-<br>${currentStyle.locdrivingdirectionslabel}
-<br>${currentStyle.locshowphonenumberslabel}
-<br>${currentStyle.locdirectionsurlprefix}
+<%out.println("<br>Location Driving Directions Label   ::"+currentStyle.get("jcr:locdrivingdirectionslabel",String.class));
+
+out.println("<br>Locations Show Phone Numbers Label   ::"+currentStyle.get("jcr:locshowphonenumberslabel",String.class));
+out.println("<br>Locations Directions Url Prefix   ::"+currentStyle.get("jcr:locdirectionsurlprefix",String.class));
+%>
 
 
