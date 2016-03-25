@@ -1043,8 +1043,9 @@ div#Selector ul li a {
  .cert-training-box h4{
 	margin-bottom: 20px;
  }
- 
- .cert-training-box a{
-	color: #000000;
+
+
+ .cert-training-box p a{
+	color: #333333;
  }
  
