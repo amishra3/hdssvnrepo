@@ -56,7 +56,13 @@
 						</c:otherwise>
 					</c:choose>
 
-					<c:if test="${fn:substring(innerList.timeDifference,0,2)=='1'}">
+					<c:set var="timeDifference"
+							value="${fn:substring(innerList.timeDifference,0,2)}" />
+
+                        <c:set var="timeDifference" value="${fn:replace(timeDifference,' ', '')}" />
+
+
+                      <c:if test="${timeDifference=='1'}">
 						<c:set var="propertyValue"
 							value="${fn:substring(propertyValue,0,fn:length(propertyValue)-1)}" />
 
