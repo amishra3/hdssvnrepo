@@ -11,7 +11,7 @@
 .hexagon:before {
   content: "";
   position: absolute;
-  top: -76px;
+  top: -75px;
   left: 0;
   width: 0;
   height: 0;
@@ -23,7 +23,7 @@
 .hexagon:after {
   content: "";
   position: absolute;
-  bottom: -76px;
+  bottom: -75px;
   left: 0;
   width: 0;
   height: 0;
@@ -92,7 +92,7 @@
 .hexagon320:last-child{margin-right: 0;}
 
 .hexagon320 .icon{
-  line-height: 85px;
+  line-height: 56px;
   position: absolute;
   text-align: center;
   top: -65px;

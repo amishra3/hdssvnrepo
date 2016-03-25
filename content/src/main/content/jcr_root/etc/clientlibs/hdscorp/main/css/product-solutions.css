@@ -493,7 +493,6 @@ ul.stickyNav li:hover a{
 
 .specific-tech h4 {
   margin-bottom: 20px;
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
@@ -586,7 +585,7 @@ ul.stickyNav li:hover a{
 .mes-section .mes-container .product-box .product-copy-sub {
   font-size: 1.125em;
   font-weight:300;
-  margin-bottom: 1.5em;
+  /*margin-bottom: 1.5em;*/
 }
 
 .mes-section .mes-container .product-box .product-link {
@@ -796,7 +795,7 @@ ul.stickyNav li:hover a{
   outline: 0;
   text-decoration: none;
   color: #ffffff;
-  padding: 13px 16px;
+  padding: 13px 11px;
   display: block;
   text-align: left;
 }
@@ -929,7 +928,8 @@ h2.section-heading.fb-title{
 }
 
 .resources-section .resources-container .resources-category .resources-category-box {
-  margin-bottom: 42px;
+  margin-bottom: 20px;
+    min-height:192px;
 }
 
 .resources-section .resources-container .resources-category .resources-category-box a {
@@ -1428,4 +1428,4 @@ h2.section-heading.fb-title{
 
 
 
-
+.specific-benefit p{ font-family: "museo-sans",Helvetica,Arial,sans-serif; font-size: 1.125em;    font-weight: 300; }

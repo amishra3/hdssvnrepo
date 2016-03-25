@@ -365,8 +365,8 @@ line-height: 1;
 .pr-archives-list .pr-archives-list-items .pr .pr-date{
   color:#8d8d8d;
   padding-bottom: 5px;
-  font-family: Arial, Helvetica, 'museo-sans';
-  font-size: 0.75rem;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 0.8em;
   text-transform: uppercase;
 }
 .pr-archives-list .pr-archives-list-items .pr h3{
