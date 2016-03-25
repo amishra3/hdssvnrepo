@@ -32,6 +32,10 @@
   border-top: 76px solid #ffffff;
   z-index: -1;
 }
+@media only screen and (min-width: 1024px) {
+.hexagon:before{top:-76px}
+.hexagon:after{bottom:-76px}
+}
 
 .hexagon270 {
   top: 56px;
