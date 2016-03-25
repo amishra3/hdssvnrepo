@@ -15,7 +15,8 @@
 <div class="content-container" id="trainingDetail">
 <div class="hds-training-cale training-date-pick">
                         <div class="container-fluid">
-                           <div class="row">
+
+                           <div class="row">           
                                                 <div class="col-md-2 col-xs-6 showsec visible-md visible-lg">
                                                     <label>${trainingDetailFilterModel.tdfShowingFromLabel}</label>
                                                 </div>
@@ -58,7 +59,7 @@
                                                      </div>
                                                   </div>
                                             </div>
-                                            
+                        <div class="errorSearchField alert alert-danger fade in"></div>                       
                     </div>
                         </div>
                     </div>
