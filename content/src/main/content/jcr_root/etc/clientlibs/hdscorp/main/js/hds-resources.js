@@ -16,7 +16,7 @@ var hds = window.hds || {};
             
             var slingIncludedContent = false ;            
             if($('.slingcontent').length > 0){
-            	slingIncludedContent =  true;
+                slingIncludedContent =  true;
             }
 
             this.options = $.extend(defaults, options);
@@ -24,14 +24,15 @@ var hds = window.hds || {};
             hds.resourceLib._bindEventsSelectors();
             hds.resourceLib._filterSearchResults();
             if(slingIncludedContent){
-            	hds.resourceLib._processSlingIncludedContent();
-            	slingIncludedContent = false;
+                hds.resourceLib._processSlingIncludedContent();
+                slingIncludedContent = false;
             }
 
         },
         _checkSelectedNav: function() {
             $('#asideLinks-product  li').each(function(index, el) {
                 if ($(this).hasClass('active')) {
+                    hds.resourceLib._handleActiveCategory($(this).find('a'));
                     $('.resource-heading > h2').html('').html($(this).find('a').text());
                 }
             });
@@ -117,7 +118,7 @@ var hds = window.hds || {};
                 if ($featuredurl !== "" && hasTextInput.length <= 0) {
                     hds.resourceLib._processCatagoryCards($featuredurl);
                 } else {
-                    $("#featuredCards").hide();
+                    $("#featuredCards").html('').hide();
                 }
             } else {
                 //$('#resSearch').attr('placeholder', "Search resources");
@@ -131,7 +132,7 @@ var hds = window.hds || {};
             $('.category-resources-listing').find('.no-matched-result').remove();
             $("#prodnsolcategorycontent").html('').load(url + " .resourceLibraryContent", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {
-                	hds.resourceLib._processSlingIncludedContent();
+                    hds.resourceLib._processSlingIncludedContent();
                 }
                 if (textStatus === 'error') {
 
@@ -267,6 +268,13 @@ var hds = window.hds || {};
                     itemsOnPage: perPage,
                     cssStyle: "light-theme",
                     onPageClick: function(pageNumber) {
+                        if(pageNumber !== 1){
+                            $("#featuredCards").hide();
+                        }else{
+                            if($('#featuredCards').html() !== ""){
+                                $("#featuredCards").show();
+                            }                            
+                        }
                         var showFrom = perPage * (pageNumber - 1);
                         var showTo = showFrom + perPage;
                         items.hide().slice(showFrom, showTo).show();
