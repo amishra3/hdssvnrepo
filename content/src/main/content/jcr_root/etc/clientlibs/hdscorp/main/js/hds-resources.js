@@ -122,7 +122,7 @@ var hds = window.hds || {};
                     $("#featuredCards").html('').hide();
                 }
             } else {
-                //$('#resSearch').attr('placeholder', "Search resources");
+                $('body').find('div.cover').remove();
                 return false;
             }
         },
@@ -134,8 +134,11 @@ var hds = window.hds || {};
             $("#prodnsolcategorycontent").html('').load(url + " .resourceLibraryContent", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {
                     hds.resourceLib._processSlingIncludedContent();
+					$('#showIndustry, #showContentType').trigger('click');
+                    $('body').find('div.cover').remove();
                 }
                 if (textStatus === 'error') {
+					$('body').find('div.cover').remove();
 
                 }
             });
@@ -147,8 +150,14 @@ var hds = window.hds || {};
             var featuredGatedIconPath = this.options.featuredGatedIcon ;
             $(paginations).pagination('destroy');
             $('#loadResourceContent').empty();
+			$("#prodnsolcategorycontent").empty();
             $("#featuredCards").html('').load(url + " .resourceLibraryfeatered", function(responseText, textStatus) {
                 if (textStatus === 'success' || textStatus === 'notmodified') {}
+					$('body').find('div.cover').remove();
+                }
+                if (textStatus === 'error') {
+                    $('body').find('div.cover').remove();
+                }
                 if ($.trim($(".resourceLibraryfeatered").html()) === '') {
                     $("#featuredCards").hide();
                     $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
@@ -192,12 +201,7 @@ var hds = window.hds || {};
                         $(this).removeClass('active');
                     }
                 });
-                $('#featuredCards').css('display', 'none');
-                 $('input[name="ctyFunction"]:checked').each(function() {
-                        if ($(this).length>0) {
-                             $('#showIndustry, #showContentType').trigger('click');
-                        }
-                    })    
+                $('#featuredCards').css('display', 'none');                   
 
             } else {
                 $('.errorSearchField').css('display', 'block');
@@ -249,6 +253,8 @@ var hds = window.hds || {};
                     $('.category-resources-listing').find('.no-matched-result').remove();
                     $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
                 }
+			}else{
+                $('.category-resources-listing').find('.no-matched-result').remove();
             }
             $(paginations).pagination('destroy');
             $('#loadResourceContent').empty();
@@ -508,6 +514,7 @@ var hds = window.hds || {};
             $(document).on('click', '.searchResource', function(event) {
                 var txtVal = $.trim($('#resSearch').val());
                 if(txtVal.length > 0){
+					$('body').append('<div class="cover"/>');
                     $('#searchTag .label').css({
                         'display': 'inline'
                     });
@@ -523,6 +530,7 @@ var hds = window.hds || {};
                     event.preventDefault();
                     var txtVal = $.trim($('#resSearch').val());
                     if(txtVal.length > 0){
+						$('body').append('<div class="cover"/>');
                         $('#searchTag .label').css({
                             'display': 'inline'
                         });
@@ -544,6 +552,7 @@ var hds = window.hds || {};
             });
 
             $(document).on('click', '#asideLinks-product li > a', function(event) {
+				$('body').append('<div class="cover"/>');
                 $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
                 $("input[name='ctyFunction']").removeAttr('checked');
                 $("input[name='cbxFunction']").removeAttr('checked');
@@ -596,7 +605,7 @@ var hds = window.hds || {};
                     $(this).parent().remove();
                     $('#showIndustry, #showContentType').trigger('click');
                 }
-                if($('#filterTag .keyword-subcat').html() == ''){
+                if(($('#filterTag .keyword-subcat').html() == '') || ($('#filterTag .keyword-filter').html() == '')){
                     $('.category-resources-listing').find('.no-matched-result').remove();
                 }                
             })

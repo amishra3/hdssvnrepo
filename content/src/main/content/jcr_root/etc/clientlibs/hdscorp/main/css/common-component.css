@@ -507,7 +507,7 @@ line-height: 1;
   font-size: 1.55rem;
   font-weight: 500;
   color: #ffffff;
-  margin:0;
+  margin:0 0 10px 0;
   min-height:55px;
 }
 .pr-explore .pr-explore-container h2 a{
@@ -566,6 +566,11 @@ line-height: 1;
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 1024px) {
+  .pr-explore .pr-explore-container h2{
+      font-size: 1.45rem;
+  }
+}
 @media screen and (max-width: 991px) {
   .pr-explore .pr-explore-container h2{
     font-size: 1.45rem;
