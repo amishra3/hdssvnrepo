@@ -8,6 +8,7 @@
 <div class="services-list-section services-section service-insights-section clearfix">
     <div class="cs-container content-container">
       <div class="container-fluid">
+          <c:set var="seealllinklabel" value="${properties.seealllinklabel}" scope="request" />
         <!--Row Starts-->
         <h2>${properties.sectiontitle}</h2>
         <div class="row-centered">

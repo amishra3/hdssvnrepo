@@ -6,7 +6,7 @@
 
 <div class="services-list-section partner-section clearfix" style="background-image: url('${properties.partnergridimagepath}');">
     <div class="cs-container content-container">
-
+		<c:set var="seealllinklabel" value="${properties.seealllinklabel}" scope="request" />
         <!--Row Starts-->
         <h2>${properties.pdgsectiontitle}</h2>
         <div class="row-centered">

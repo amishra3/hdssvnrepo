@@ -42,6 +42,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <seealllinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Label for See All Link on Category Tile"
+                        name="./seealllinklabel"
+                        xtype="textfield"/>
                 </items>
             </tab>
         </items>

@@ -90,31 +90,14 @@
 									</p>
 								</c:when>
 								<c:otherwise>
-									<c:choose>
-										<c:when
-											test="${empty rightsection.mgmservviewfeaturedproductslabel}">
-										</c:when>
-										<c:when
-											test="${rightsection.mgmservviewfeaturedproductslink=='#'}">
-											<p>
-												<a href="javascript:void(0)" class="animateLink"
-													title="${rightsection.mgmservviewfeaturedproductslabel}">${rightsection.mgmservviewfeaturedproductslabel}<span
-													aria-hidden="true"
-													class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-											</p>
-										</c:when>
-										<c:when test="${rightsection.mgmservopeninnewwindows==1}">
-											<p>
-												<a
-													target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}"
-													href="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(rightsection.mgmservviewfeaturedproductslink)}"
-													title="${rightsection.mgmservviewfeaturedproductslabel}"
-													class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
+										<c:if test="${not empty  rightsection.mgmservviewfeaturedproductslabel}">
+									<c:set var="pageUrlVal2" value="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(rightsection.mgmservviewfeaturedproductslink)}"/>
+                               			<p>		
+                                    		<a href="${rightsection.mgmservviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}" class="animateLink" title="${rightsection.mgmservviewfeaturedproductslabel}">${rightsection.mgmservviewfeaturedproductslabel}<span
 													aria-hidden="true"
 													class="glyphicon ${rightsection.mgmservopeninnewwindows==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
-											</p>
-										</c:when>										
-									</c:choose>
+										</p>
+                            </c:if>
 
 								</c:otherwise>
 							</c:choose>

@@ -47,8 +47,7 @@
 						<div class="title">
 							<h2><a href="javascript:void(0)" title="${properties.mgmpstitle}"  class="animateLink">${properties.mgmpstitle}
 							<span aria-hidden="true"
-								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
-							
+								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>							
 						</div>
 					</div>
 				</div>
@@ -63,7 +62,7 @@
                                     	<a
 										target="${subnavlinks.mgmpsopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										title="${subnavlinks.mgmpssubnavlabel}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
+										title="${subnavlinks.mgmpsalttext}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmpsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
                                     </li>
@@ -77,31 +76,13 @@
 					<div class="col-xs-12 col-md-12">
 						<h3 class="hidden-xs hidden-sm">${properties.mgmpsheadline}</h3>
 						<div class="hidden-xs hidden-sm">${properties.mgmpsdescription}</div>
-						<c:choose>
+							<c:if test="${not empty  properties.mgmpsviewfeaturedproductslabel}">
+									<c:set var="pageUrlVal2" value="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(properties.mgmpsviewfeaturedproductslink)}"/>
+                               			<p>		
+                                    		<a href="${properties.mgmpsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}" class="animateLink" title="${properties.mgmpsviewfeaturedproductslabel}">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon ${properties.mgmpsopeninnewwindowouter?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+										</p>
+                            </c:if>
 
-							<c:when test="${empty properties.mgmpsviewfeaturedproductslabel}">
-
-							</c:when>
-
-							<c:when test="${properties.mgmpsviewfeaturedproductslink=='#'}">
-								<p>
-									<a href="javascript:void(0)" class="animateLink"
-										title="${properties.mgmpsviewfeaturedproductslabel}">${properties.mgmpsviewfeaturedproductslabel}<span
-										aria-hidden="true"
-										class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-								</p>
-							</c:when>
-							<c:when test="${properties.mgmpsopeninnewwindowouter}">
-								<p>
-									<a
-										target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}"
-										href="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(properties.mgmpsviewfeaturedproductslink)}"
-										title="${properties.mgmpsviewfeaturedproductslabel}" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span
-										aria-hidden="true"
-										class="glyphicon ${properties.mgmpsopeninnewwindowouter?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
-								</p>
-							</c:when>
-						</c:choose>
 					</div>
 				</div>
 			</div>

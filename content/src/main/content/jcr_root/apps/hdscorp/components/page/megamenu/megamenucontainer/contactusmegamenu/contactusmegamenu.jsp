@@ -84,33 +84,14 @@
 							<h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusheadline}</h3>
 							<div class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusdescription}</div>
 							<div class="phone-no">${subnavlinks2.mgmcontactusnumber}</div>
-							<c:choose>
-								<c:when
-									test="${empty subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
-
-								</c:when>
-								<c:when
-									test="${subnavlinks2.mgmcontactusviewfeaturedproductslink=='#'}">
-									<p>
-										<a href="javascript:void(0)"
-											title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}"
-											class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-									</p>
-								</c:when>
-								<c:when test="${subnavlinks2.mgmcontactusopeninnewwindow2==1}">
-									<p>
-										<a
-											target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}"
-											href="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"
-											title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}"
-											class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
+								<c:if test="${not empty  subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
+									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"/>
+                               			<p>		
+                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" class="animateLink" title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks2.mgmcontactusopeninnewwindow2==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
-									</p>
-								</c:when>
-							</c:choose>
+										</p>
+                            </c:if>
 						</div>
 					</c:forEach>
 				</div>

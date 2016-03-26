@@ -26,22 +26,27 @@
                         layout="anchor"
                         name="./sectiontitle"
                         xtype="textfield"/>
-	                <imagePath
-	                    jcr:primaryType="cq:Widget"
-	                    allowBlank="{Boolean}false"
-	                    allowUpload="false"
-	                    cropParameter="./serviceimageCrop2"
-	                    ddGroups="[media]"
-	                    fieldLabel="Banner Image"
-	                    fileNameParameter="./serviceimagefileName2"
-	                    fileReferenceParameter="./jcr:imagePath"
-	                    height="{Long}200"
-	                    name="./serviceimagename"
-	                    rotateParameter="./serviceimageRotate"
-	                    sizeLimit="100"
-	                    title="Image"
-	                    width="{Long}200"
-	                    xtype="html5smartimage"/>                        
+                    <imagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./serviceimageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./serviceimagefileName2"
+                        fileReferenceParameter="./jcr:imagePath"
+                        height="{Long}200"
+                        name="./serviceimagename"
+                        rotateParameter="./serviceimageRotate"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <seealllinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Label for See All Link on Category Tile"
+                        name="./seealllinklabel"
+                        xtype="textfield"/>
                 </items>
             </tab>
         </items>

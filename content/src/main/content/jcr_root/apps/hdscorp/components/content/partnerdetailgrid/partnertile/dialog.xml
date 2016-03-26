@@ -23,6 +23,6 @@
             key="hidetile"
             name="./hidetile"
             type="checkbox"
-            xtype="selection"/>            
+            xtype="selection"/>
     </items>
 </jcr:root>

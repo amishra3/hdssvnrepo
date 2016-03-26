@@ -24,10 +24,11 @@
 	</c:if>
 	
 	<div class="col-sm-4 col-centered">
-	  <div class="section-service-col">
+	  <div class="section-service-col tile">
 	      <div class="imageHolder"><img src="${properties.categoryiconpath}" alt="${partnerObj.categoryTitle}"></div>
-	      <h3 class="headline"><a class="animateLink" href="${linkUrl}">${partnerObj.categoryTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></h3>
-	      <p>${properties.categorysubtitle}</p>
+			<h4 class="headline">${partnerObj.categoryTitle}</h4>
+       					 <p>${properties.categorysubtitle}</p>
+       					 <a href="${linkUrl}" class="animateLink">${seealllinklabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 	    </div>
 	</div>
 

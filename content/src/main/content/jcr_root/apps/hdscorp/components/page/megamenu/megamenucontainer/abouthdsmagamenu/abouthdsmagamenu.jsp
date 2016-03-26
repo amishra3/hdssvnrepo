@@ -88,30 +88,15 @@
 							<h3 class="hidden-xs hidden-sm">
 								${aboutrightsection.mgmahheadline}</h3>
 							<div class="hidden-xs hidden-sm">${aboutrightsection.mgmahdescription}</div>
-
-							<c:choose>
-								<c:when
-									test="${aboutrightsection.mgmahviewfeaturedproductslink=='#'}">
-									<p>
-										<a href="javascript:void(0)" class="animateLink"
-											title="${aboutrightsection.mgmahviewfeaturedproductslabel}">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
-											aria-hidden="true"
-											class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-									</p>
-								</c:when>
-								<c:when test="${aboutrightsection.mgmahopeninnewwindows==1}">
-																
-								<p>
-										<a
-											target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}"
-											href="${fn:contains(aboutrightsection.mgmahviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(aboutrightsection.mgmahviewfeaturedproductslink)}"
-											title="${aboutrightsection.mgmahviewfeaturedproductslabel}"
-											class="animateLink">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
+								<c:if test="${not empty  aboutrightsection.mgmahviewfeaturedproductslabel}">
+									<c:set var="pageUrlVal2" value="${fn:contains(aboutrightsection.mgmahviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(aboutrightsection.mgmahviewfeaturedproductslink)}"/>
+                               			<p>		
+                                    		<a href="${aboutrightsection.mgmahviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}" class="animateLink" title="${aboutrightsection.mgmahviewfeaturedproductslabel}">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
 											aria-hidden="true"
 											class="glyphicon ${aboutrightsection.mgmahopeninnewwindows==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
-									</p>
-</c:when>
-							</c:choose>
+										</p>
+                            </c:if>
+
 						</div>
 					</c:forEach>
 				</div>

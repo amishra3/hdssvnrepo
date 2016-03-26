@@ -22,7 +22,7 @@
 	<c:when test="${not empty footerCategory}">
 
 		<li>
-			<a href="#">${footerCategory}</a>
+			${footerCategory}
 		</li>
 		<c:forEach var="navlinks" items="${footerNavLinks}">
 			<c:set var="navUrl" value="${navlinks.linkUrl}" />
@@ -35,7 +35,7 @@
 						title="${navlinks.linkName}">${navlinks.linkName}</a></li>
 				</c:when>
 				<c:otherwise>
-					<li><a href="${fn:contains(navUrl, 'http')?'':domain}${navUrl}"  target="${navlinks.thirdparty==1?'_blank':'_self'}" title="${navlinks.linkName}">${navlinks.linkName}${navlinks.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+					<li><a href="${fn:contains(navUrl, 'http')?'':domain}${navUrl}"  target="${navlinks.thirdparty==1?'_blank':'_self'}">${navlinks.linkName}${navlinks.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 					</li>
 				</c:otherwise>
 
