@@ -52,6 +52,11 @@
                                 fieldLabel="Link Icon Path"
                                 name="./linkIconPath"
                                 xtype="pathfield"/>
+                            <linkoverlayurl
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Overlay URL"
+                                name="./linkoverlayurl"
+                                xtype="pathfield"/>
                             <linkurltargettype
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Open in New Window ?"
