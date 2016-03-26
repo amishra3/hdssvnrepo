@@ -55,10 +55,25 @@
 		<div class="block-share spread-share p-t-md">
 
 
-			<a
-				href='http://www.facebook.com/share.php?u=${path}&title=${pageTitle}+${desc}'
-				target="_blank"> <img alt='Facebook'
-				src='${currentStyle.prstpfacebookiconpath}' /></a> <a
+		
+   <c:choose>
+    <c:when test="${not empty desc} ">
+     <a
+      href='http://www.facebook.com/share.php?u=${path}&title=${pageTitle}+${desc}'
+      target="_blank"> <img alt='Facebook'
+      src='${currentStyle.prstpfacebookiconpath}' /></a>
+    </c:when>
+
+    <c:otherwise>
+
+     <a
+      href='http://www.facebook.com/share.php?u=${path}&title=${pageTitle}'
+      target="_blank"> <img alt='Facebook'
+      src='${currentStyle.prstpfacebookiconpath}' /></a>
+    </c:otherwise>
+   </c:choose>
+				
+				<a
 				href="http://twitter.com/share?url=${shortURL}&text=${twitterPageTitle}"
 				target="_blank"> <img alt='Twitter'
 				src='${currentStyle.prstptwittericonpath}' />
