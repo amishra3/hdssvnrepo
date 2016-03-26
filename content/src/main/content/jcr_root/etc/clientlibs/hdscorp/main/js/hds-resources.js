@@ -11,6 +11,7 @@ var hds = window.hds || {};
                 itemsPerPage: pageSize,
                 filterTopLeft: '.filters-section',
                 filterTarget: '.resource',
+                featuredGatedIcon: '/etc/clientlibs/hdscorp/main/images/gated-icon-white.png',
                 searchUrl: '/content/hdscorp/en_us/lookup/resourcelibraryrenderer.html'
             }
             
@@ -143,6 +144,7 @@ var hds = window.hds || {};
         _processCatagoryCards: function(url) {
             $('.category-resources-listing').find('.no-matched-result').remove();
             var paginations = this.options.paginationWrapper;
+            var featuredGatedIconPath = this.options.featuredGatedIcon ;
             $(paginations).pagination('destroy');
             $('#loadResourceContent').empty();
             $("#featuredCards").html('').load(url + " .resourceLibraryfeatered", function(responseText, textStatus) {
@@ -154,7 +156,7 @@ var hds = window.hds || {};
                     $("#featuredCards").show();
                     $('#featuredCards a.isGatedLock').each(function(index, el) {
 //                        $(this).prepend("<span class='glyphicon gated-featured' aria-hidden='true'></span>");
-                        $(this).closest('.spotlight-content').find('.spotlight-image-icon').attr('src','/etc/clientlibs/hdscorp/main/images/gated-icon-white.png');
+                        $(this).closest('.spotlight-content').find('.spotlight-image-icon').attr('src',featuredGatedIconPath);
                     });
                 }
             });
