@@ -18,7 +18,7 @@
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./multilinks"
                         fieldLabel="Column Content"
-                        name="./multilinks"
+                        name="./columns"
                         xtype="custommultifield">
                         <fieldConfig jcr:primaryType="cq:WidgetCollection">
                             <columntitle
