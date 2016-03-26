@@ -32,10 +32,6 @@
   border-top: 76px solid #ffffff;
   z-index: -1;
 }
-@media only screen and (min-width: 1024px) {
-.hexagon:before{top:-76px}
-.hexagon:after{bottom:-76px}
-}
 
 .hexagon270 {
   top: 56px;
@@ -104,6 +100,12 @@
   position:relative;
   top:0px;
 }
+
+.hexagon320 .tweet-content p a{
+    color:#cc0000;
+    text-decoration:none;
+ }
+.hexagon320 .tweet-content p a:hover{color: #ac1f25;}
 
 .hexagon320 .icon img{
   vertical-align: bottom;

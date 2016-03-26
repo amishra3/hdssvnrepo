@@ -83,14 +83,13 @@
 
 .service-support-main .section-service-col .headline,
 .services-list-section .section-service-col .headline{
-	font-size: 1.125em;
+	font-size: 1.28571em;
 	font-weight: 700;
     margin-top: 0px;
     margin-bottom: 10px;
     line-height: 1;
     line-height: 120%;
 	text-transform: none;
-	font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 .service-support-main .section-service-col .headline a, 
 .services-list-section .section-service-col .headline a{	
@@ -290,4 +289,17 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1024px){
 body.servicedetail{overflow-x:hidden}
+}
+
+
+.services-list-section .section-service-col.tile a{
+	font-weight: 900;
+    font-size: 0.8125em;
+    text-transform: uppercase;
+    color: #cc0d0d;
+    text-decoration: none;
+}
+
+.services-list-section .section-service-col.tile a:hover{
+	color: #ac1f25;
 }
