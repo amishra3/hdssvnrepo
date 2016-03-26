@@ -20,7 +20,17 @@
      <div class="type">${facebookFeedModel.facebookPostLabel} ${facebookFeed.createdDate}</div>
 
           <c:set var='facebookHREFLink' value='<a href="${facebookFeed.link}" target="_blank">${facebookFeed.link}</a>'/>         
-         <c:set var='title' value='${fn:replace(facebookFeed.tilte,facebookFeed.link,facebookHREFLink)}'/>    
+         <c:set var='title' value='${fn:replace(facebookFeed.tilte,facebookFeed.link,facebookHREFLink)}'/>   
+         
+           <c:choose>
+          <c:when test="${fn:length(title)>235}">
+              <c:set var='title' value='${fn:substring(title, 0, 130)}...'/>                
+            </c:when>
+            <c:otherwise>
+ 				<c:set var='title' value='${title}'/>   
+            </c:otherwise>
+        </c:choose>      
+         
        <div class="description">${title}</div>
             <c:if test="${not empty facebookFeed.thumbnail}">
   					<div class="post-img"><img src="${facebookFeed.thumbnail}"></div>
