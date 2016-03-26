@@ -58,13 +58,13 @@
 		<div class="read-more">
 			<c:choose>
 				<c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
-					<a href="${newsInsightVerticalExplorer.targetBottomURL}.html"
+					<a href="${hdscorp:shortURL(newsInsightVerticalExplorer.targetBottomURL)}"
 						target="_blank" class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
 				</c:when>
 				<c:otherwise>
-					<a href="${newsInsightVerticalExplorer.targetBottomURL.html}"
+					<a href="${hdscorp:shortURL(newsInsightVerticalExplorer.targetBottomURL)}"
 						class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
