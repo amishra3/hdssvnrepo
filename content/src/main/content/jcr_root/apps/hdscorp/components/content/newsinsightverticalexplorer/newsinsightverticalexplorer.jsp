@@ -35,7 +35,7 @@
 		<div class="type">${newsInsightVerticalExplorer.iconImageLabel}
 			${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
 		<div class="spotlight-title">
-			<a href="${newsInsightVerticalExplorer.targetURL}"
+			<a href="${newsInsightVerticalExplorer.targetURL}.html"
 				class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
 				aria-hidden="true"
 				class="glyphicon glyphicon-menu-right animateIcon"></span></a>
@@ -58,13 +58,13 @@
 		<div class="read-more">
 			<c:choose>
 				<c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
-					<a href="${newsInsightVerticalExplorer.targetBottomURL}"
+					<a href="${newsInsightVerticalExplorer.targetBottomURL}.html"
 						target="_blank" class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
 				</c:when>
 				<c:otherwise>
-					<a href="${newsInsightVerticalExplorer.targetBottomURL}"
+					<a href="${newsInsightVerticalExplorer.targetBottomURL.html}"
 						class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
