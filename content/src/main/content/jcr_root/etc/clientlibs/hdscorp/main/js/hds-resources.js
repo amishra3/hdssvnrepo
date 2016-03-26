@@ -152,8 +152,8 @@ var hds = window.hds || {};
             $('#loadResourceContent').empty();
 			$("#prodnsolcategorycontent").empty();
             $("#featuredCards").html('').load(url + " .resourceLibraryfeatered", function(responseText, textStatus) {
-                if (textStatus === 'success' || textStatus === 'notmodified') {}
-					$('body').find('div.cover').remove();
+                if (textStatus === 'success' || textStatus === 'notmodified') {
+			 		$('body').find('div.cover').remove();
                 }
                 if (textStatus === 'error') {
                     $('body').find('div.cover').remove();
