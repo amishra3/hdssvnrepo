@@ -14,9 +14,12 @@ var hds = window.hds || {};
             $('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
-            $("#contentCatagoryHTML").html(" ").load(url + " .subcategorycontent", function(data) {
-                hds.productCatagory.bindHTMLLoad();
-            });
+        	$('#contentCatagoryHTML').fadeOut('medium', function(){
+	            $("#contentCatagoryHTML").html(" ").load(url + " .subcategorycontent", function(data) {
+	            	$('#contentCatagoryHTML').fadeIn('medium');
+	                hds.productCatagory.bindHTMLLoad();
+	            });
+        	});
         },
         bindHTMLLoad: function() {
             if ($(window).width() < 991) {

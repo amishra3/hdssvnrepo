@@ -35,7 +35,7 @@
 		<div class="type">${newsInsightVerticalExplorer.iconImageLabel}
 			${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
 		<div class="spotlight-title">
-			<a href="${newsInsightVerticalExplorer.targetURL}.html"
+			<a href="${hdscorp:shortURL(newsInsightVerticalExplorer.targetURL)}"
 				class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
 				aria-hidden="true"
 				class="glyphicon glyphicon-menu-right animateIcon"></span></a>
