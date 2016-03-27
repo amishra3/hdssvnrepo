@@ -89,6 +89,9 @@ var="locationsDropDownFilterModel" />
         </c:choose>
 </c:forEach>
 
+<c:set var="additonJson" value="&quot;type&quot;: &quot;${properties.loclocationtype}&quot;,&quot;showphonenumberlabel&quot;:&quot;${properties.locshowphonenumberslabel}&quot;,&quot;drivingdirection&quot;:&quot;${properties.locdrivingdirectionslabel}&quot;" />
+<c:set var="finallocationJson" value="{&quot;data&quot;:[${locationJson}],${additonJson}}" />
+
 <c:set var="finallocationJson" value="{&quot;data&quot;:[${locationJson}]}" />
 <script type="text/javascript">
 	var getJSONLocation=${finallocationJson};
