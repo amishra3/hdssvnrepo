@@ -31,7 +31,39 @@
 .hideme{
 	display:none;
 }
-    @media screen and (max-width:991px){
+
+@media only screen and (max-width: 768px) {
+  .location-nav-tabs{
+	  width: 100%;	  
+  }
+  
+.location-nav-tabs .nav-tabs > li > a{
+    font-size: 0.813em;
+	color: #666666;
+	border: none;
+	border-radius: 0;
+	padding: 20px 15px;
+	text-align: center;
+	width: 135px;
+	border-radius: 0;
+	font-weight: 900;
+    margin-right: 17px;
+	text-transform: uppercase;
+  }
+ 
+  .location-nav-tabs .nav-tabs > li.active > a, 
+  .location-nav-tabs .nav-tabs > li.active > a:hover, 
+  .location-nav-tabs .nav-tabs > li.active > a:focus{
+	background: #fff;
+    border: none;
+    color: #000;
+    cursor: default; 
+	  
+  }
+	
+}	
+
+@media screen and (max-width:991px){
       .select-boxes .select-style{
         margin-bottom: 20px;
         margin-right: 0;
