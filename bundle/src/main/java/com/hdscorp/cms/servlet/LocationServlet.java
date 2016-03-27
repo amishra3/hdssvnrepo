@@ -80,6 +80,7 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 			}
 			if (singlelocation != null) {
 				singlelocation = URLDecoder.decode(singlelocation, "UTF-8");
+				singlelocation=singlelocation.trim().replaceAll(" ", "-");
 			}
 			response.getWriter().write("{\"locationJson\":"
 					+ getLocationJSON(getLocationPath(type), selector, singlelocation).toString() + "}");
