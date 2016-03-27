@@ -45,10 +45,11 @@ var hds = window.hds || {};
             var pLogo = this.options.pLogo;
             var searchTermPreValue = "";
             $(document).on('click', pLogo, function(event) {
-                $('.partner').removeClass('active');
+                $('.partner').removeClass('active');                
                 $('.partner .partner-detail').hide();
                 $(this).parent().siblings('.partner-detail').show();
                 $(this).parent().parent('.partner').addClass('active');
+                $(pLogo).removeClass('rgbmode');
                 $(this).addClass('rgbmode');
                 $(this).off("hover");
                 event.preventDefault();
@@ -66,38 +67,15 @@ var hds = window.hds || {};
         },
         _buildMobileNavigation: function(arg) {
             if ($(window).width() < 991) {
-                var getMobileSearc = $('#resource-search').html();
-                $('.searchArea').html(getMobileSearc);
-                $('#resource-search').html(" ");
-                var getRightMenu = $('#mobilerightMenu').html();
-                $('.filtrSideBar').html(getRightMenu);
-                $('#mobilerightMenu').html(" ");
                 var getFilterIndustry = $('#FilterByIndustry .filters-list').html();
                 $('.FilterAreaIndustry').html(getFilterIndustry);
                 $('#FilterByIndustry .filters-list').html(" ");
-                var getFilterCpntent = $('#FilteyContentType .filters-list').html();
-                $('.FilterAreaContent').html(getFilterCpntent);
-                $('#FilteyContentType .filters-list').html(" ");
             } else {
-                if (!hds.partnerDetail._isEmpty($('.searchArea'))) {
-                    $('#resource-search').html($('.searchArea').html());
-                    $('.searchArea').html(" ");
-                }
-
-                if (!hds.partnerDetail._isEmpty($('.filtrSideBar'))) {
-                    $('#mobilerightMenu').html($('.filtrSideBar').html());
-                    $('.filtrSideBar').html(" ");
-                }
                 if (!hds.partnerDetail._isEmpty($('.FilterAreaIndustry'))) {
                     $('#FilterByIndustry .filters-list').html($('.FilterAreaIndustry').html());
                     $('.FilterAreaIndustry').html(" ")
                 }
-                if (!hds.partnerDetail._isEmpty($('.FilterAreaContent'))) {
-                    $('#FilteyContentType .filters-list').html($('.FilterAreaContent').html());
-                    $('.FilterAreaContent').html(" ")
-                }
             }
-
         },
         _isEmpty: function(el) {
             return !$.trim(el.html())
@@ -123,22 +101,9 @@ var hds = window.hds || {};
             });
         },
         _closeOverLayPopup: function() {
-            if (!hds.partnerDetail._isEmpty($('.searchArea'))) {
-                $('#resource-search').html($('.searchArea').html());
-                $('.searchArea').html(" ");
-            }
-
-            if (!hds.partnerDetail._isEmpty($('.filtrSideBar'))) {
-                $('#mobilerightMenu').html($('.filtrSideBar').html());
-                $('.filtrSideBar').html(" ");
-            }
             if (!hds.partnerDetail._isEmpty($('.FilterAreaIndustry'))) {
                 $('#FilterByIndustry .filters-list').html($('.FilterAreaIndustry').html());
                 $('.FilterAreaIndustry').html(" ")
-            }
-            if (!hds.partnerDetail._isEmpty($('.FilterAreaContent'))) {
-                $('#FilteyContentType .filters-list').html($('.FilterAreaContent').html());
-                $('.FilterAreaContent').html(" ")
             }
             $('.overlayBox').css('display', 'none');
             $('.bgCover').animate({
@@ -146,7 +111,6 @@ var hds = window.hds || {};
             }, null, null, function() {
                 $(this).hide();
             });
-
         },
         _getCheckboxValue: function(arg1) {
             if (arg1 != 0) {
@@ -156,13 +120,13 @@ var hds = window.hds || {};
                     return $("<span class='filterKeyword' data-match=" + checkBoxVal + ">" + checkBoxText + "<span class='closeFilter glyphicon glyphicon-remove'></span></span>");
                 });
                 $('#filterTag .label').css({
-                    'display': 'table-cell'
+                    'display': 'inline'
                 });
                 $('#filterTag .keyword-filter').html(newHTML);
             } else {
-                if ($('#filterTag .keyword-subcat').html() != "") {
+                if ($('#filterTag .keyword-filter').html() != "") {
                     $('#filterTag .label').css({
-                        'display': 'table-cell'
+                        'display': 'inline'
                     });
                 } else {
                     $('#filterTag .label').css({
@@ -183,16 +147,6 @@ var hds = window.hds || {};
             return $checkboxes;
         },
         _bindEventsSelectors: function() {
-            $(document).on('keyup', '#partnerSearch', function(event) {
-                var value = $.trim($(this).val());
-                if (value.length > 0) {
-                    $('.clearSearchIcon').show();
-                } else {
-                    $('.errorSearchField,.clearSearchIcon').hide();
-                }
-                event.preventDefault();
-            });
-
             $(document).on('click', '.launchLink', function(event) {
                 hds.partnerDetail._showMobileOverlay();
                 event.preventDefault();
@@ -268,7 +222,6 @@ var hds = window.hds || {};
                     $(this).parent().remove();
                     $('#showIndustry').trigger('click');
                 } else {
-                    $('#asideLinks-product li').eq(0).find("a").trigger('click');
                     $('#filterTag .label').css({
                         'display': 'none'
                     });
@@ -278,16 +231,12 @@ var hds = window.hds || {};
                 }
             });
             $(document).on('click', '.clear-results', function() {
-                $('#filterTag .keyword-subcat, #filterTag .keyword-filter').html('');
+                $('#filterTag .keyword-filter').html('');
                 $("input[name='cbxFunction']").removeAttr('checked');
-                $('#asideLinks-product li').eq(0).find("a").trigger('click');
                 $('#filterTag .label').css({
                     'display': 'none'
                 });
-                $('#partnerSearch').val(" ");
-                $("html, body").animate({
-                    scrollTop: 0
-                }, "slow");
+                return false;                
             });
             $(window).resize(function() {
                 hds.partnerDetail._closeOverLayPopup();
