@@ -44,8 +44,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${hdscorp:shortURL(properties.mgmpttitleiconpath)}"
-								title="${properties.mgmpttitle}">
+							<img src="${domain}${hdscorp:shortURL(properties.mgmpttitleiconpath)}">
 						</div>
 						<div class="title">
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmpttitle}
@@ -66,7 +65,7 @@
                                     	<a
 										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmptsubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										title="${subnavlinks.mgmptalttext}" class="animateLink">${subnavlinks.mgmptsubnavlabel}<span
+										class="animateLink">${subnavlinks.mgmptsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmptopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>
@@ -87,7 +86,7 @@
 							<c:if test="${not empty  partnerrighsection.mgmptmultisubnavlabel1}">
 									<c:set var="pageUrlVal2" value="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${hdscorp:shortURL(partnerrighsection.mgmptmultisubnavlink1)}"/>
                                			<p>		
-                                    		<a href="${partnerrighsection.mgmptmultisubnavlink1=='#'?'javascript:void(0)':pageUrlVal2}" target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}" class="animateLink" title="${partnerrighsection.mgmptmultisubnavlabel1}">${partnerrighsection.mgmptmultisubnavlabel1}<span
+                                    		<a href="${partnerrighsection.mgmptmultisubnavlink1=='#'?'javascript:void(0)':pageUrlVal2}" target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}" class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
 												aria-hidden="true"
 												class="glyphicon ${partnerrighsection.mgmptmultiopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>

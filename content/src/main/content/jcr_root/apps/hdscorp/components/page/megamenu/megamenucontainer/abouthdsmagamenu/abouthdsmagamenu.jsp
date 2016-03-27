@@ -48,8 +48,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${hdscorp:shortURL(properties.mgmahtitleiconpath)}"
-								title="${properties.mgmahtitle}">
+							<img src="${domain}${hdscorp:shortURL(properties.mgmahtitleiconpath)}">
 						</div>
 						<div class="title">
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmahtitle}
@@ -70,7 +69,7 @@
                                     	<a
 										target="${subnavlinks.mgmahopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmahsubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										title="${subnavlinks.mgmahalttext}" class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
+										class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmahopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>
@@ -91,7 +90,7 @@
 								<c:if test="${not empty  aboutrightsection.mgmahviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(aboutrightsection.mgmahviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(aboutrightsection.mgmahviewfeaturedproductslink)}"/>
                                			<p>		
-                                    		<a href="${aboutrightsection.mgmahviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}" class="animateLink" title="${aboutrightsection.mgmahviewfeaturedproductslabel}">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
+                                    		<a href="${aboutrightsection.mgmahviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${aboutrightsection.mgmahopeninnewwindows==1?'_blank':'_self'}" class="animateLink">${aboutrightsection.mgmahviewfeaturedproductslabel}<span
 											aria-hidden="true"
 											class="glyphicon ${aboutrightsection.mgmahopeninnewwindows==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>

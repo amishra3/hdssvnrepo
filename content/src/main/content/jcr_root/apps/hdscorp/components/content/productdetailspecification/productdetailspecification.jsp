@@ -9,7 +9,7 @@
 
 
 	<div class="spec-container container-fluid">
-              <h2 class="section-heading fb-title hidden-xs">
+              <h2 class="section-heading fb-title hidden-xs hidden-sm">
                   ${properties.sectiontitle}
                   <c:if test="${not empty properties.downloadspeclinklabel}">
                       <div class="spec-download-pdf">

@@ -41,8 +41,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${hdscorp:shortURL(properties.mgmpstitleiconpath)}"
-								title="${properties.mgmpstitle}">
+							<img src="${domain}${hdscorp:shortURL(properties.mgmpstitleiconpath)}">
 						</div>
 						<div class="title">
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmpstitle}
@@ -62,7 +61,7 @@
                                     	<a
 										target="${subnavlinks.mgmpsopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										title="${subnavlinks.mgmpsalttext}" class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
+											class="animateLink">${subnavlinks.mgmpssubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmpsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
                                     </li>
@@ -79,7 +78,7 @@
 							<c:if test="${not empty  properties.mgmpsviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(properties.mgmpsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(properties.mgmpsviewfeaturedproductslink)}"/>
                                			<p>		
-                                    		<a href="${properties.mgmpsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}" class="animateLink" title="${properties.mgmpsviewfeaturedproductslabel}">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon ${properties.mgmpsopeninnewwindowouter?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+                                    		<a href="${properties.mgmpsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${properties.mgmpsopeninnewwindowouter?'_blank':'_self'}" class="animateLink">${properties.mgmpsviewfeaturedproductslabel}<span aria-hidden="true" class="glyphicon ${properties.mgmpsopeninnewwindowouter?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>
                             </c:if>
 

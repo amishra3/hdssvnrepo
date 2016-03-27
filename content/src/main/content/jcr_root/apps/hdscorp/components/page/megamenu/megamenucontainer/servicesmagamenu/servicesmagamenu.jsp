@@ -45,8 +45,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${hdscorp:shortURL(properties.mgmservtitleiconpath)}"
-								title="${properties.mgmservtitle}">
+							<img src="${domain}${hdscorp:shortURL(properties.mgmservtitleiconpath)}">
 						</div>
 						<div class="title">
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmservtitle}
@@ -65,8 +64,7 @@
 									<li>
                                     	<a
 										target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-                                         href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										title="${subnavlinks.mgmservalttext}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
+                                         href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmservopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
                                     </li>
@@ -85,7 +83,7 @@
 							<c:choose>
 								<c:when test="${not empty rightsection.mgmservphonenumber}">
 									<p>
-										<a href="javascript:void(0)" title="Phone Number"
+										<a href="javascript:void(0)"
 											class="animateLink">${rightsection.mgmservphonenumber}</a>
 									</p>
 								</c:when>
@@ -93,7 +91,7 @@
 										<c:if test="${not empty  rightsection.mgmservviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(rightsection.mgmservviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(rightsection.mgmservviewfeaturedproductslink)}"/>
                                			<p>		
-                                    		<a href="${rightsection.mgmservviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}" class="animateLink" title="${rightsection.mgmservviewfeaturedproductslabel}">${rightsection.mgmservviewfeaturedproductslabel}<span
+                                    		<a href="${rightsection.mgmservviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${rightsection.mgmservopeninnewwindows==1?'_blank':'_self'}" class="animateLink">${rightsection.mgmservviewfeaturedproductslabel}<span
 													aria-hidden="true"
 													class="glyphicon ${rightsection.mgmservopeninnewwindows==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>

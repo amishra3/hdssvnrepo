@@ -24,7 +24,8 @@
 .partners-section .partner-program .heading .icon{
   display: table-cell;
   vertical-align: middle;
-  width: 8%;
+  width:5%;
+  text-align:center;
 }
 .partners-section .partner-program .heading h2{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;

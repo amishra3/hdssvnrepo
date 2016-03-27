@@ -44,8 +44,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${hdscorp:shortURL(properties.mgmnewsinsightstitleiconpath)}"
-								title="${properties.mgmnewsinsightstitle}">
+							<img src="${domain}${hdscorp:shortURL(properties.mgmnewsinsightstitleiconpath)}">
 						</div>
 						<div class="title">
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmnewsinsightstitle}
@@ -66,7 +65,7 @@
                                     	<a
 										target="${subnavlinks.mgmnewsinsightsopeninnewwindow?'_blank':'_self'}"
                                          href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										title="${subnavlinks.mgmnewsinsightsalttext}" class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
+										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>
@@ -85,7 +84,7 @@
 								<c:if test="${not empty  subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink)}"/>
                                			<p>		
-                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" class="animateLink" title="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
+                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'glyphicon-menu-right':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>

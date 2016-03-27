@@ -42,8 +42,7 @@
 				<div class="col-md-12">
 					<div class="megamenu-heading">
 						<div class="icon hidden-xs hidden-sm">
-							<img src="${domain}${hdscorp:shortURL(properties.mgmcontactusiconpath)}"
-								title="${properties.mgmcontactustitle}">
+							<img src="${domain}${hdscorp:shortURL(properties.mgmcontactusiconpath)}">
 						</div>
 						<div class="title">
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmcontactustitle}
@@ -66,7 +65,7 @@
                                     	<a
 										target="${subnavlinks.mgmcontactusopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmcontactussubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										title="${subnavlinks.mgmcontactusalttext}" class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
+										class="animateLink">${subnavlinks.mgmcontactussubnavlabel}<span
 												aria-hidden="true"
 												class="glyphicon ${subnavlinks.mgmcontactusopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>
@@ -87,7 +86,7 @@
 								<c:if test="${not empty  subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"/>
                                			<p>		
-                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" class="animateLink" title="${subnavlinks2.mgmcontactusviewfeaturedproductslabel}">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
+                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks2.mgmcontactusopeninnewwindow2==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>
