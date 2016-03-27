@@ -123,8 +123,24 @@ var hds = window.hds || {};
 						return endFilter.indexOf(searchFilter)!==-1
                     }).show();
 
+                    /* hide months if no event */
+                    $('.newsWrapper').each(function(index, el) {
+                            if ($(this).find('.newsEvents:visible').length <= 0) {
+                                $('.noWebcastFilter').show();
+                            }else{
+                                $('.noWebcastFilter').hide();
+                            }
+                    });
+                    /* //hide months if no event */
+                    
+
                 } else {
                     $('#webcasts-demand .newsEvents').show();
+                    if ($('.newsWrapper .newsEvents:visible').length <= 0) {
+                        $('.noWebcastFilter').show();
+                    }else{
+                        $('.noWebcastFilter').hide();
+                    }
                 }
                 hds.webcastEvents.bindWebCatsLoad();
                 event.preventDefault();

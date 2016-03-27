@@ -290,6 +290,7 @@ if($('.resources-category-box').length!==0){
             equalColumns('.service-support-main .section-service-col');
             equalColumns('.explore-insight .insight-common-box');
 			equalColumns('.detail-container .details-box');
+			equalColumns('.train-resrcprdct-bx .prdct-inner');
         }, 500);
 	}, false);
 
@@ -306,6 +307,7 @@ if($('.resources-category-box').length!==0){
         equalColumns('.service-support-main .section-service-col');
         equalColumns('.explore-insight .insight-common-box');
         equalColumns('.detail-container .details-box');
+        equalColumns('.train-resrcprdct-bx .prdct-inner');
     }, 500);
 
 })(jQuery);
