@@ -239,6 +239,7 @@ public class EventDataModel {
 				eventNode.setFormat(hsmap.get(ServiceConstants.JSON_FORMAT));
 				eventNode.setDuration(hsmap.get(ServiceConstants.JSON_DURATION));
 				eventNode.setStart(hsmap.get(ServiceConstants.JSON_START));
+				eventNode.setStart(hsmap.get(ServiceConstants.JSON_STATUS));		
 				eventNode.setRating(hsmap.get(ServiceConstants.JSON_RATING));
 				eventNode.setCategory(hsmap.get(ServiceConstants.JSON_CATEGORY));
 				eventNode.setCommunicationId(hsmap.get(ServiceConstants.JSON_COMMUNICATION_ID));
