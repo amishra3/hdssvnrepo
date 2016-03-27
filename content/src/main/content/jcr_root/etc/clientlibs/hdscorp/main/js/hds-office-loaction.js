@@ -62,7 +62,7 @@ var hds = window.hds || {};
              }
              var accounting = [];
              $('#gmap').html('')
-            var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 + '/' + arg3+ singleCall;
+            var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 + '/' + arg3+"&type=officelocation";
             $.getJSON(url, function(data) {
                 var content = '';
                 $.each(data.locationJson, function(index, cat) {
