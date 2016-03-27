@@ -21,7 +21,8 @@
 						</a>
 					</div>
 				</c:if>
-            </div>						
+            </div>		
+			<c:if test="${empty properties.hideindustryfilter}">
 			<div class="partner-filters-search clearfix">
 				<div class="content-container clearfix">
 					<div class="hidden-md hidden-lg col-xs-12 search-overlay">
@@ -30,7 +31,7 @@
 						</div>
 					</div>					
 				</div>
-				<c:if test="${empty properties.hideindustryfilter}">
+				
 					<div id="FilterByIndustry" class="content-container clearfix filters-section less">
 						<div class="col-sm-9 filters-list col-sm-offset-3">
 							
@@ -55,8 +56,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</c:if>
+					</div>				
 				<div class="content-container clearfix">
 					<div class="col-md-12 col-xs-12 tagList">
 						<div id="filterTag" class="groupedby">
@@ -101,6 +101,7 @@
 				</div>
 			 <!-- Mobile Placeholders -->
 			</div>
+			</c:if>
 					<div class="partner-list clearfix" id="partner-list">
 
 						<c:forEach var="systemIntegrators" items="${systemIntegratorsContentModel.systemIntegrators}" varStatus="loopcnt">
