@@ -213,15 +213,13 @@
 }
 
 .footer .footer-gray .footer-container .nav-list-container .nav-list > li:first-child {
-    margin-bottom: 15px;
-}
-
-.footer .footer-gray .footer-container .nav-list-container .nav-list > li:first-child a {
     font-family: 'museo-slab', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 0.875em;
     line-height: 1;
     text-transform: uppercase;
+	margin-bottom: 15px;
+    color:#ffffff;
 }
 
 .footer .footer-gray .footer-container .nav-list-container .nav-list > li a, .footer .footer-gray .footer-container .social p {
