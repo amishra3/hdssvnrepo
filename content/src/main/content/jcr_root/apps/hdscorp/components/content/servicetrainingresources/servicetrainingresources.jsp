@@ -10,7 +10,7 @@
 
 
 
-<c:set var="resourceList" value="<%=PageUtils.convertMultiWidgetToList(properties,"strmbackgroundimage-strmsectiontitle-strconent-strlinklabel-strlink-stropeninnewwindow")%>" />
+<c:set var="resourceList" value="<%=PageUtils.convertMultiWidgetToList(properties,"strmbackgroundimage-strmsectiontitle-strconent-strlinklabel-strlink-stropeninnewwindow-thirdparty")%>" />
 
 
 
@@ -32,10 +32,10 @@
 <c:choose>
 	<c:when test="${multifieldData.stropeninnewwindow=='1'}">
 
-<p><a href="${multifieldData.strlink}" class="animateLink" target="_blank">${multifieldData.strlinklabel} <span class="glyphicon glyphicon-share animateIcon" aria-hidden="true"></span></a></p>
+<p><a href="${multifieldData.strlink}" class="animateLink" target="_blank">${multifieldData.strlinklabel}${multifieldData.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></p>
 </c:when>
 <c:otherwise>
-<p><a href="${multifieldData.strlink}" class="animateLink">${multifieldData.strlinklabel} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></p>
+<p><a href="${multifieldData.strlink}" class="animateLink">${multifieldData.strlinklabel} ${multifieldData.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></p>
 	</c:otherwise>
 </c:choose>
 

@@ -92,6 +92,26 @@
                                         value="2"/>
                                 </options>
                             </stropeninnewwindow>
+                            <thirdparty
+                                jcr:primaryType="cq:Widget"
+                                dname="thirdparty"
+                                fieldLabel="Show Third Party Icon"
+                                key="thirdparty"
+                                name="./thirdparty"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </thirdparty>
                         </fieldConfig>
                     </strmultifield>
                 </items>
