@@ -48,7 +48,7 @@
 								title="${properties.mgmpttitle}">
 						</div>
 						<div class="title">
-							<h2><a href="javascript:void(0)" title="${properties.mgmpttitle}"  class="animateLink">${properties.mgmpttitle}
+							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmpttitle}
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
 							
@@ -84,34 +84,14 @@
 							varStatus="count">
 							<div class="col-xs-12 col-md-4 override-left">
 								<div class="hidden-xs hidden-sm">${partnerrighsection.mgmptmultidescription}</div>
-								<c:choose>
-
-									<c:when
-										test="${empty partnerrighsection.mgmptmultisubnavlabel1}">
-
-									</c:when>
-									<c:when test="${partnerrighsection.mgmptmultisubnavlink1=='#'}">
-										<p>
-											<a href="javascript:void(0)"
-												title="${partnerrighsection.mgmptmultisubnavlabel1}"
-												class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
-												aria-hidden="true"
-												class="glyphicon glyphicon-menu-right animateIcon"></span></a>
-										</p>
-									</c:when>
-									<c:when
-										test="${partnerrighsection.mgmptmultiopeninnewwindow==1}">
-										<p>
-											<a
-												target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}"
-												href="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${hdscorp:shortURL(partnerrighsection.mgmptmultisubnavlink1)}"
-												title="${partnerrighsection.mgmptmultisubnavlabel1}"
-												class="animateLink">${partnerrighsection.mgmptmultisubnavlabel1}<span
+							<c:if test="${not empty  partnerrighsection.mgmptmultisubnavlabel1}">
+									<c:set var="pageUrlVal2" value="${fn:contains(partnerrighsection.mgmptmultisubnavlink1, 'http')?'':domain}${hdscorp:shortURL(partnerrighsection.mgmptmultisubnavlink1)}"/>
+                               			<p>		
+                                    		<a href="${partnerrighsection.mgmptmultisubnavlink1=='#'?'javascript:void(0)':pageUrlVal2}" target="${partnerrighsection.mgmptmultiopeninnewwindow==1?'_blank':'_self'}" class="animateLink" title="${partnerrighsection.mgmptmultisubnavlabel1}">${partnerrighsection.mgmptmultisubnavlabel1}<span
 												aria-hidden="true"
 												class="glyphicon ${partnerrighsection.mgmptmultiopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>
-									</c:when>									
-								</c:choose>
+                            </c:if>
 							</div>
 						</c:forEach>
 					</div>

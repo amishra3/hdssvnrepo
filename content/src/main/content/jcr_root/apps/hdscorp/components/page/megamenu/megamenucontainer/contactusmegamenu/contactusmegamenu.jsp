@@ -46,7 +46,7 @@
 								title="${properties.mgmcontactustitle}">
 						</div>
 						<div class="title">
-							<h2><a href="javascript:void(0)" title="${properties.mgmcontactustitle}" class="animateLink">${properties.mgmcontactustitle}
+							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmcontactustitle}
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
 							

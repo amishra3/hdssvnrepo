@@ -48,7 +48,7 @@
 								title="${properties.mgmnewsinsightstitle}">
 						</div>
 						<div class="title">
-							<h2><a href="javascript:void(0)" title="${properties.mgmnewsinsightstitle}" class="animateLink">${properties.mgmnewsinsightstitle}
+							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmnewsinsightstitle}
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span>
 							</a></h2>							
