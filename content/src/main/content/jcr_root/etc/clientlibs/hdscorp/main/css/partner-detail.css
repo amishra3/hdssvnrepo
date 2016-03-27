@@ -18,22 +18,21 @@
 .partners-section .partner-program .heading {
   border-bottom: 4px solid #f78e1e;
   padding: 15px 0 15px 0;
-  display: table;
+  display: block;
   width: 100%;
 }
 .partners-section .partner-program .heading .icon{
-  display: table-cell;
+  display: inline-block;
   vertical-align: middle;
-  width:5%;
   text-align:center;
+  margin-right: 15px;
 }
 .partners-section .partner-program .heading h2{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
   font-size: 1.875rem;
   color: #000000;
-  display: table-cell;
+  display: inline-block;
   vertical-align: middle;
-    width:70%;
 }
 
 .partners-section .more-solutions {
@@ -42,12 +41,12 @@
         }
 
 .partner-filters-search{
-  position: absolute;
+  position: relative;
     width: 100%;
-    top:60px;
+    top:0;
 }
 .partner-filters-search .tagList{
-	margin:30px 0 5px 0;
+  margin:15px 0 5px 0;
 }
 .partner-filters-search .partner-search {
     border: 5px solid #e6e6e6;
@@ -89,9 +88,9 @@
 .partner-filters {
   padding: 0;
   margin: 30px 0 11px 0;
-  display: table-cell;
+  display: inline-block;
   vertical-align: middle;
-    width:20%;
+  float: right;
 }
 
 .partner-filters .filterby{
@@ -188,16 +187,17 @@ list-style-type: none;
 .partner-filters-search .filters-list .show-results{
   max-width: 200px;
   margin: 10px auto 5px;
+  text-align: center;
 }
 
 .partner-list{
   padding: 0;
-  margin: 45px 0 25px 0;
+  margin: 0px 0 25px 0;
   position: relative;
 }
 .partner-list .partner {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     position: static;
     display: inline-block;
 
@@ -310,9 +310,9 @@ list-style-type: none;
 }
 
 .partner .partner-detail a.animateLink{
-	font-size: 0.8125em;
-	color: #ce0000;
-	font-weight: 800;	
+  font-size: 0.8125em;
+  color: #ce0000;
+  font-weight: 800; 
 }
 
 .partner .partner-detail p a{color:#000000; margin-bottom:0!important;}
@@ -334,6 +334,9 @@ list-style-type: none;
     padding: 80px 20px 30px;  
   }
   
+  .partners-section .partner-program .heading{
+    margin-bottom: 15px;
+  }
   
   .partners-section .partner-program .heading h2{
     font-size:1.125rem;
@@ -342,7 +345,7 @@ list-style-type: none;
   }
   
   .partner-filters-search{
-    top:140px;
+    top:0;
   }
   
   .partner-filters-search .search-overlay{
@@ -372,8 +375,13 @@ list-style-type: none;
   }
 
   .partner-list {
-      margin-top:100px;
+      margin-top:0;
   }
+
+  .overlayBox.partner-mobile .heading {
+    margin-bottom: 0;
+  }
+
 }
 
 @media only screen and (max-width: 768px) {
