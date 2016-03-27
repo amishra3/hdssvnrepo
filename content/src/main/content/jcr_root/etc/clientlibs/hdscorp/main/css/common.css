@@ -1047,3 +1047,105 @@ div#Selector ul li a {
 	color: #333333;
  }
  
+  /*Compliance */
+
+.hds-compliance{
+	  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+	}
+	.hds-compliance h1{
+	   margin: 0 0 30px;
+	}	
+	.compliance-section{
+	  margin: 20px 0;
+	}						
+	.hds-compliance p{
+	   font-family: "museo-sans",Helvetica,Arial,sans-serif;
+	   font-size: 1.125em;
+	   font-weight: 300;
+	   line-height: 125%;					   
+	}					
+	.compliance-section .table-bordered > thead > tr > th{
+		background-color: #077a8f;
+		line-height: 1.2em;
+		width: 16.6667%;
+		text-align: left;
+		color: #ffffff;
+		font-size: 1.125em;
+		font-weight: 600;
+		padding: 20px 15px;
+		border-width: 0 1px 0 0;
+		border-color: #ffffff;
+		border-style: solid;
+	}
+	.compliance-section .table-bordered > tbody > tr > td{
+		color: #333333;
+		font-weight: 300;
+		text-align: left;
+		padding: 15px;
+		vertical-align: middle;
+	}
+	
+	.compliance-section .table-bordered > tbody > tr > td p{
+		margin-bottom: 0;
+	}
+	
+	@media only screen and (max-width:768px){
+	  .hds-compliance h1{
+		 font-size: 1.5em;
+		 line-height: 1;
+	  }
+	  .hds-compliance p{
+		font-size: 1em;
+	  }
+	  .compliance-section table, .compliance-section th, 
+	  .compliance-section tr, .compliance-section td{
+		display: block;
+	  }
+	  
+	  .compliance-section .table-bordered > tbody > tr{
+	    background: none;
+		margin-bottom: 10px;
+		border: 1px solid #dddddd;
+		border-bottom: none;
+	  }
+	  .compliance-section .table-bordered > tbody > tr > td{
+		/*padding-left: 50%;*/
+		font-size: 0.9em;
+		border-bottom:1px solid #dddddd;
+		padding: 15px 0 15px 15px;
+	  }
+		 
+	.compliance-section .table-bordered > thead > tr{
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.compliance-section .table-bordered > tbody > tr > td:before { 
+	/* Now like a table header */
+	position: relative;
+	color: #008eaa;
+	font-size: 1em;
+	font-weight: 600;
+	display: inline-block;
+	/*top: 0;
+	left: 0;*/
+	width: 45%;
+	text-align:left;	
+	}
+	
+	.compliance-section table tbody td p{
+	   display: inline-block;
+	   vertical-align: top;
+	   width: 50%;
+	   padding-left: 5%;
+	   margin: 0;
+	}
+		  
+	.compliance-section .table-bordered > tbody > tr > td:before{
+	   content: attr(data-title);
+	}	  
+		
+		}
+
+ 
