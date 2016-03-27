@@ -23,7 +23,7 @@
 								<div class="col-sm-6">
 									<div class="serv-training-overview">
 										<h2>${trainingSearchCoursesModel.trainingoverviewheadline}</h2>
-										<p>${trainingSearchCoursesModel.trainingcertificationintroduction}</p>
+										${trainingSearchCoursesModel.trainingcertificationintroduction}
 										<div class="training-learn">
 										<div class="btn-square-red learn-more-red-link">
                                             <a href="${trainingSearchCoursesModel.traininglearnmorelink}">${trainingSearchCoursesModel.traininglearnmorelabel}</a>
@@ -48,7 +48,7 @@
                                                         <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
                                                     </div>
                                                 </div>
-												<span class="visible-lg"><strong>>${trainingSearchCoursesModel.tolabel}</strong></span>	
+												<span class="visible-lg"><strong>${trainingSearchCoursesModel.tolabel}</strong></span>	
 												<span class="hidden-lg"><strong>${trainingSearchCoursesModel.tolabel}</strong></span>	
                                                 <div class="calendar right">
                                                    <div class="daterangepicker_input">
