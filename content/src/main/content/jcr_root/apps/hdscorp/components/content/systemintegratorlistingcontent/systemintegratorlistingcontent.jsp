@@ -8,7 +8,7 @@
 <div id="partnerDetailSection" class="partners-section">
     <div class="content-container container-fluid">
         <div class="partner-program clearfix">
-            <div class="heading">
+            <div class="heading clearfix">
                 <div class="icon">
                     <img alt="" src="${properties.siiconpath}">
                 </div>
@@ -61,7 +61,6 @@
 					<div class="col-md-12 col-xs-12 tagList">
 						<div id="filterTag" class="groupedby">
 							<div style="display:none;" class="label">${properties.sifilterbylabel} </div>
-							<div class="keyword-subcat"></div>
 							<div style="display:none;" class="keyword-filter"></div>
 						</div>
 					</div>
@@ -70,9 +69,9 @@
 				<!-- Mobile Placeholders -->
 				<!-- The dark background -->
 				<div class="bgCover" style="opacity: 0; display: none;">&nbsp;</div>
-				<div class="overlayBox hidden-md hidden-lg" style="display: none;">
+				<div class="overlayBox partner-mobile hidden-md hidden-lg" style="display: none;">
 					<div class="heading">
-						<h3>SEARCH</h3>
+						<h3>${properties.sisearchpartnerlabel}</h3>
 						<div class="close-search">
 							<a class="closeOverlay" title="Close" href="javascript:void(0);">
 								<img alt="Close" src="images/sprites/close.png"></a>
@@ -80,8 +79,6 @@
 
 					</div>
 					<div class="cat-filter-scroll">
-						<div class="searchArea"></div>
-						<div class="filtrSideBar"></div>
 						<div class="topFilter">
 							<h4>${properties.industryfilterlabel}</h4>
 							<div class="FilterAreaIndustry"></div>
