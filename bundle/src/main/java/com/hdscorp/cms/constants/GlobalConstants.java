@@ -31,8 +31,11 @@ public final class GlobalConstants {
 	public static final String COLON = ":";
 	public static final String CQ_ACTION = "CQ-Action";
 	public static final String ACTIVATE = "Activate";
+	public static final String DELETE = "DELETE";
 	public static final String CQ_HANDLE = "CQ-Handle";
 	public static final String CONTENT_LENTGTH = "Content-length";
+	public static final String CONTENT_TYPE = "Content-Type";
+	public static final String CONTENT_TYPE_VALUE = "application/octet-stream";
 	public static final String RENDITIONS = "renditions";
 	public static final String DAM = "dam";
 

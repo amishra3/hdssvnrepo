@@ -34,7 +34,7 @@ public final class CacheInvalidator {
 	 * @return {@link Boolean} true | false
 	 */
 	public static boolean invalidateCache(final String invalidateUrl, final boolean hasShortUrl){
-        LOG.info("CacheInvalidation :: Requestd Path" + invalidateUrl);
+        LOG.info("CacheInvalidation :: Requestd Path " + invalidateUrl);
 		 	String page = null;
 		 	String handle = null;
 		 	String shorteningPath=null;
@@ -72,7 +72,7 @@ public final class CacheInvalidator {
                         LOG.debug("Request URI::" + servers[i] + webServerUri);
 	                }
 	                post[i] = new PostMethod(servers[i] + webServerUri);
-	                post[i].setRequestHeader(GlobalConstants.CQ_ACTION,GlobalConstants.ACTIVATE);
+	                post[i].setRequestHeader(GlobalConstants.CQ_ACTION,GlobalConstants.DELETE);
 	            }
 	            // Check if request URL has Short URL, get the shorten URL otherwise process directly
 	            if(hasShortUrl) {
@@ -94,7 +94,8 @@ public final class CacheInvalidator {
 	                   post[j].setRequestHeader(GlobalConstants.CQ_HANDLE, handle);
 	                   final RequestEntity body = new StringRequestEntity(page, null, null);
 	                   post[j].setRequestEntity(body);
-	                   post[j].setRequestHeader(GlobalConstants.CONTENT_LENTGTH,String.valueOf(body.getContentLength()));
+	                   //post[j].setRequestHeader(GlobalConstants.CONTENT_LENTGTH,String.valueOf(body.getContentLength()));
+	                   post[j].setRequestHeader(GlobalConstants.CONTENT_LENTGTH,"0");
 	                   if (LOG.isDebugEnabled()) {
                            LOG.debug("Calling Execute method for server  " + servers[j]);
 	                   }
