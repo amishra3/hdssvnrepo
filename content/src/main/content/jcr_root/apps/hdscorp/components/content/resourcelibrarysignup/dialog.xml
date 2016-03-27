@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
     height="600"
     title="Resource Sign Up"
@@ -13,6 +13,12 @@
                 jcr:primaryType="cq:Panel"
                 title="Sign Up">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <formIframeURL
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="URL for the Iframe Form"
+                        name="./formIframeURL"
+                        xtype="textfield"/>
                     <resourcelabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -34,7 +40,7 @@
                         fieldLabel="Enter Mail Id Text"
                         name="./entermailidtext"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./entermailidtext')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="textfield"/>    
+                        xtype="textfield"/>
                     <learnmorelabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -42,24 +48,22 @@
                         name="./learnmorelabel"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./learnmorelabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
-					<learnmorelink
+                    <learnmorelink
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Learn More Link"
                         name="./learnmorelink"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./learnmorelink')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
-					<backgroundimgpath
+                    <backgroundimgpath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Back Ground Image Path"
                         name="./backgroundimgpath"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./backgroundimgpath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
-                     
-                 </items>
+                </items>
             </signup>
-            
         </items>
     </items>
 </jcr:root>
