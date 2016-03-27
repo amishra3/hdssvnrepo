@@ -35,7 +35,7 @@ var hds = window.hds || {};
                 },
                 scroll: {
                     fx: 'crossfade',
-                    duration: 1500,
+                    duration: 400,
                     onBefore: function() {
                         var pos = $(this).triggerHandler('currentPosition');
                         $(thumbs).find('a').removeClass('active');
