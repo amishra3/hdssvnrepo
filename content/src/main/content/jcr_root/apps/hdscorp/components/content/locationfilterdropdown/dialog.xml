@@ -79,7 +79,6 @@
                                                 fieldLabel="Country Label"
                                                 key="countrylabel"
                                                 layout="anchor"
-                                                name="./countrylabel"
                                                 xtype="textfield"/>
                                             <loccountrytag
                                                 jcr:primaryType="cq:Widget"
@@ -88,7 +87,6 @@
                                                 fieldLabel="Country Tag"
                                                 key="countrytag"
                                                 layout="anchor"
-                                                name="cq:tags"
                                                 xtype="tags"/>
                                             <loclocations
                                                 jcr:primaryType="cq:Widget"
@@ -110,7 +108,6 @@
                                                             fieldLabel="Location Label"
                                                             key="locationlabel"
                                                             layout="anchor"
-                                                            name="./locationlabel"
                                                             xtype="textfield"/>
                                                         <locationtags
                                                             jcr:primaryType="cq:Widget"
@@ -119,7 +116,6 @@
                                                             fieldLabel="Location Tag"
                                                             key="locationtag"
                                                             layout="anchor"
-                                                            name="cq:tags"
                                                             xtype="tags"/>
                                                     </items>
                                                 </fieldConfig>
@@ -149,6 +145,18 @@
                                 value="officelocation"/>
                         </options>
                     </loclocationtype>
+                    <locshowphonenumberslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Show Phone Numbers Label"
+                        name="./locshowphonenumberslabel"
+                        xtype="textfield"/>
+                    <locdrivingdirectionslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Driving Directions Label"
+                        name="./locdrivingdirectionslabel"
+                        xtype="textfield"/>
                 </items>
             </locregionfilter>
         </items>
