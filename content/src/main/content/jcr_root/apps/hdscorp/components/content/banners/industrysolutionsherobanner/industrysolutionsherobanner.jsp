@@ -21,7 +21,7 @@ request.setAttribute("bannerimage",bannerimage);
         <%--<div class="common-hero-banner industry-sol clearfix" style="background: url('${requestScope.bannerimage}')">--%>
             <div class="common-hero-banner industry-sol clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.industrysolutionsherobannermobileimage)} >
            <div class="common-hero-banner-container">
-              <div class="col-lg-6 col-md-6 col-xs-12 overRideleft">
+              <div class="col-lg-6 col-md-6 col-xs-12">
 			     <div class="top-banner-heading hidden-xs hidden-sm">${properties.industrysolutionsherobannertopheading}</div>
                     <h1 class="headline">${properties.industrysolutionsherobannerheadline}</h1>
                     <h4 class="sub-headline">${properties.industrysolutionsherobannersubheadline}</h4>
