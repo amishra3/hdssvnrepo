@@ -24,7 +24,7 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
     min-height: 65px;
     padding-left: 15px;
     padding-right: 62px;
-    text-align: left;
+    text-align: center;
     width: 100%;
 	color:#000000;
 }
@@ -67,7 +67,7 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 .serv-training-overview.last{border:none}
 
 .training-resources{background-color:#ac1f25; padding:70px 0;}
-.train-resrcprdct-bx{color: #333333; margin:0 15px 0 0;  box-shadow: 0 1px 2px #5a5959; margin-bottom:;}
+.train-resrcprdct-bx{color: #333333; margin:0 15px 15px 0;  box-shadow: 0 1px 2px #5a5959; margin-bottom:;}
 .training-resources h2{ font-family: "museo-slab",Helvetica,Arial,sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -180,7 +180,7 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 
 }
 @media only screen and (min-width: 768px){
-	.train-resrcprdct-bx{margin:0 15px 0 0;}
+	/* .train-resrcprdct-bx{margin:0 15px 0 0;} */
 	.serv-training-overview {
     border-bottom:none; border-right: 1px solid #999999;
     

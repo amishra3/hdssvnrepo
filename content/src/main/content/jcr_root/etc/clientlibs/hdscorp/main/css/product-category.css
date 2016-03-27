@@ -124,6 +124,9 @@
     top: 3px;
 }
 
+
+
+
 .category-listing{
   background: #f1f1f1;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
@@ -262,7 +265,7 @@
 }
 .category-products .category-products-listing .product ul{
   margin: 0 0 12px 0; 
-  padding: 0 0 0 15px;
+  padding: 0 0 0 20px;
   list-style-type: square;
   list-style-position: outside;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;

@@ -43,7 +43,7 @@ pageContext.setAttribute("listMaps", listMaps);
                 <!--  webcast Content to be Loaded here -->
                 <div id="contentWebCast">
                     <div class="col-md-9 newsWrapper">
-                        <div class="noEventFilter">${properties.nowebcastfoundmessage} </div>
+                        <div class="noWebcastFilter">${properties.nowebcastfoundmessage} </div>
                         <c:forEach items="${listMaps}" var="listm" varStatus="status">
                             <div class="newsEvents ${status.first ? 'firstChild' : ''}" data-webcast="${listm.category}">
                                 <h3>${listm.title}</h3>
