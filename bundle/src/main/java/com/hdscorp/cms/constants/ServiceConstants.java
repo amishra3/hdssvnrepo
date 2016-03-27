@@ -157,9 +157,11 @@ public final class ServiceConstants {
 	public static final String JSON_FB_LINK = "link";
 	public static final String JSON_FB_THUMBNAIL = "thumbnail";
 	public static final String JSON_FB_TYPE = "type";	
-	public static final String FB_PERSMISSION_STRING = "email, publish_stream, id, name, first_name, last_name, read_stream , generic";
+	public static final String FB_PERSMISSION_STRING = "id,message,picture,link,description,icon,created_time";
 	public static final String FB_POST_FEED_DISPLAY_DATE_FORMAT = "MMMM d, yyyy";
-	public static final String SAVE_FB_FEED_DATA_PROPERTY_NAME = "facebookResonse";
+	public static final String SAVE_FB_FEED_DATA_PROPERTY_NAME = "facebookResponse";
+	
+
 
 	/**
 	 * BrightCove Constraints
