@@ -5,7 +5,7 @@ CQ.form.CustomMultiField = CQ.Ext.extend(CQ.form.CompositeField, {
 		storeIndexPos : false,
 		storeOverlayPos: false,
 		customOverlaysName: null,
-		maxItems : 35,
+		maxItems : 50,
 		constructor : function (b) {
 			var e = this;
 			if (!b.customMultiFieldName) {
@@ -63,7 +63,7 @@ CQ.form.CustomMultiField = CQ.Ext.extend(CQ.form.CompositeField, {
 						fieldConfig : b.fieldConfig,
 						storeIndexPos : false,
 						storeOverlayPos: false,
-						maxItems : 35
+						maxItems : 50
 					},
 					items : [{
 							xtype : "panel",
