@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8" > <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9" > <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10" > <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-js" > <!--<![endif]-->
+
 <%@include file="/apps/foundation/global.jsp"%>
 
 
@@ -19,5 +26,4 @@ if(pageTemplatePath!=null){
 		<cq:include script="footer.jsp" />
 	</div>
 </body>
-
-
+</html>
