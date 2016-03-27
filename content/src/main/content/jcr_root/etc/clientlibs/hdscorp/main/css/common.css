@@ -1102,26 +1102,28 @@ div#Selector ul li a {
 		display: block;
 	  }
 	  
-	  .compliance-section .table-bordered > tbody > tr{
+	  .compliance-section .table-striped > tbody > tr:nth-of-type(2n),
+	  .compliance-section .table-striped > tbody > tr:nth-of-type(2n+1)
+	  {
 	    background: none;
 		margin-bottom: 10px;
 		border: 1px solid #dddddd;
 		border-bottom: none;
 	  }
-	  .compliance-section .table-bordered > tbody > tr > td{
+	  .compliance-section .table-striped > tbody > tr > td{
 		/*padding-left: 50%;*/
 		font-size: 0.9em;
 		border-bottom:1px solid #dddddd;
 		padding: 15px 0 15px 15px;
 	  }
 		 
-	.compliance-section .table-bordered > thead > tr{
+	.compliance-section .table-striped > thead > tr{
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
 	
-	.compliance-section .table-bordered > tbody > tr > td:before { 
+	.compliance-section .table-striped > tbody > tr > td:before { 
 	/* Now like a table header */
 	position: relative;
 	color: #008eaa;
@@ -1148,4 +1150,3 @@ div#Selector ul li a {
 		
 		}
 
- 
