@@ -176,7 +176,7 @@ HDS Global Header and Navigation
     max-width: 1280px;
 }
 
-.hds-global-header .hds-main-navigation-container .hds-main-navigation > h5 {
+.hds-global-header .hds-main-navigation-container .hds-main-navigation > div {
     float: left;
     margin-top: 18px;
     color: #ffffff;
@@ -186,18 +186,18 @@ HDS Global Header and Navigation
     line-height: 1;
 }
 
-.hds-global-header .hds-main-navigation-container .hds-main-navigation > h5 > a {
+.hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a {
     color: #ffffff;
 }
 
-.hds-global-header .hds-main-navigation-container .hds-main-navigation > h5 > a:hover,
-.hds-global-header .hds-main-navigation-container .hds-main-navigation > h5 > a:active,
-.hds-global-header .hds-main-navigation-container .hds-main-navigation > h5 > a:focus {
+.hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a:hover,
+.hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a:active,
+.hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a:focus {
     text-decoration: none;
     outline: none;
 }
 
-.hds-global-header .hds-main-navigation-container .hds-main-navigation > h5 > a > span {
+.hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a > span {
     text-indent: -9999px;
 }
 
