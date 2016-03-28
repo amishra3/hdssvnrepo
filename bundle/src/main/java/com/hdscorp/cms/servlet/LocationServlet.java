@@ -118,7 +118,7 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 				}
 			} else {
 				SearchResult result = searchServiceHelper.getFullTextBasedResuts(locationPath, null, null, type, null,
-						true, null, null, resourceResolver, null, null);
+						false, null, null, resourceResolver, null, null);
 				List<Hit> hits = result.getHits();
 
 				log.info("No.of hits ::" + hits.size());
@@ -153,7 +153,7 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 
 	private String[] getLocationPath(String type) {
 		Configuration config;
-		String locationPath[] = new String[10];
+		String[] locationPath = {""};
 		try {
 			config = configurationAdmin.getConfiguration(LOCATION_PID);
 			Dictionary props = config.getProperties();
