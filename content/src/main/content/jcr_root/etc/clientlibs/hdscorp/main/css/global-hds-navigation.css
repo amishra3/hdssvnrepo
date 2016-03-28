@@ -813,4 +813,4 @@ HDS Global Header and Navigation
 .override-right {
     padding-right: 0 !important;
 }
-
+.hds-global-header .hds-main-navigation-container.navwithouthero{background:#333333;}
