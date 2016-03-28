@@ -45,6 +45,7 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 	 */
     if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions, .bannerCarsoul").length > 0){
         $('.breadcrumb-container .breadcrumb').addClass('black');
+		$('.hds-main-navigation-container').addClass('navwithouthero');
     }
 
 	/**
