@@ -69,6 +69,10 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Resource"
                                 value="Resource"/>
+<!--                             <opt5 -->
+<!--                                 jcr:primaryType="nt:unstructured" -->
+<!--                                 text="Blog" -->
+<!--                                 value="Blog"/>                                 -->
                         </options>
                     </nveeventtype>
                 </items>

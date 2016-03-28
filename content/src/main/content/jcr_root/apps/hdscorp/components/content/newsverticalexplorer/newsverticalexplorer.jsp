@@ -17,32 +17,39 @@
 
  <%@page import="java.util.Date"%>
 
+<c:if test="${properties.nveeventtype ne 'Blog'}">
 
-<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsVerticalExplorerModel" var="newsVerticalExplorer" />
-
-<c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
-
-<div class="pr-common-box hidden-xs">
-	<div class="icon">
-		<img src="${newsVerticalExplorer.iconImagePath}" alt="" title="">
+	<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsVerticalExplorerModel" var="newsVerticalExplorer" />
+	<c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
+	
+	<div class="pr-common-box hidden-xs">
+		<div class="icon">
+			<img src="${newsVerticalExplorer.iconImagePath}" alt="" title="">
+		</div>
+		<div class="type">${newsVerticalExplorer.iconImageLabel}
+			${newsVerticalExplorer.newsInsightExplorer.pubDate}</div>
+		<div class="description">${newsVerticalExplorer.newsInsightExplorer.title}</div>
+		<div class="read-more">
+			<c:choose>
+				<c:when test="${newsVerticalExplorer.openinnewwindow}">
+					<a href="${linkUrl}" target="_blank" class="animateLink">${newsVerticalExplorer.readMoreLabel}
+						<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+					</a>
+				</c:when>
+				<c:otherwise>
+					<a href="${linkUrl}" class="animateLink">${newsVerticalExplorer.readMoreLabel}<span
+						class="glyphicon glyphicon-menu-right animateIcon"
+						aria-hidden="true"></span></a>
+				</c:otherwise>
+			</c:choose>
+		</div>
 	</div>
-	<div class="type">${newsVerticalExplorer.iconImageLabel}
-		${newsVerticalExplorer.newsInsightExplorer.pubDate}</div>
-	<div class="description">${newsVerticalExplorer.newsInsightExplorer.title}</div>
-	<div class="read-more">
-		<c:choose>
-			<c:when test="${newsVerticalExplorer.openinnewwindow}">
-				<a href="${linkUrl}" target="_blank" class="animateLink">${newsVerticalExplorer.readMoreLabel}
-					<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
-				</a>
-			</c:when>
-			<c:otherwise>
-				<a href="${linkUrl}" class="animateLink">${newsVerticalExplorer.readMoreLabel}<span
-					class="glyphicon glyphicon-menu-right animateIcon"
-					aria-hidden="true"></span></a>
-			</c:otherwise>
-		</c:choose>
-	</div>
-</div>
 
 
+</c:if>
+
+<c:if test="${properties.nveeventtype eq 'Blog'}">
+
+<!-- 	<cq:include path="resourctatpar" resourceType="hdscorp/components/content/newsinsightsbigtile" /> -->
+
+</c:if>
