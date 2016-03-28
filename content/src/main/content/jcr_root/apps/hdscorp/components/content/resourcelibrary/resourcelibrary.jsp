@@ -25,8 +25,8 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         <div class="errorSearchField alert alert-danger fade in">Please enter search query</div>
                     </div>
                     <div class="hidden-md hidden-lg col-xs-12 search-overlay">
-                        <div class="launchLink">
-                            ${properties.searchboxmessagetext} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        <div class="launchLink"> 
+                            <a href="javascript:void(0);">${properties.searchboxmessagetext} <span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
                         </div>
                     </div>
                     <div class="col-sm-5 resource-filters hidden-xs hidden-sm">
@@ -58,45 +58,47 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         <div class="clearfix"></div>
                         <div class="show-results hidden-sm hidden-xs">
                             <div class="btn-square-red">
-                                <a href="javascript:void(0);" target="_self" id="mobShowFilters">${properties.showresultslabel}</a>
+                                <a href="javascript:void(0);" target="_self" id="showIndustry">${properties.showresultslabel}</a>
                             </div>
                         </div>
                     </div>
                 </div>
 				<!-- Mobile Placeholders -->
                 <!-- The dark background -->
-            <div class="bgCover">&nbsp;</div>
-            <div class="overlayBox hidden-md hidden-lg">
-                <div class="heading">
-                    <h3>${properties.searchlabel}</h3>
-                    <div class="close-search">
-                        <a href="javascript:void(0);" title="Close" class="closeOverlay">close</a>
-                    </div>
+            <div class="bgCover">
+				<div class="overlayBox hidden-md hidden-lg">
+					<div class="heading">
+						<h3>${properties.searchlabel}</h3>
+						<div class="close-search">
+							<a href="javascript:void(0);" title="Close" class="closeOverlay">close</a>
+						</div>
 
-                </div>
-                <div class="searchArea"></div>
-                <div class="filtrSideBar"></div>
-                <div class="topFilter">
-                    <h4>${properties.filterbyindustrylabel}</h4>
-                    <div class="FilterAreaIndustry"></div>
-                    <h4 class="last">${properties.filterbycontentlabel}</h4>
-                    <div class="FilterAreaContent"></div>
-                </div>
-                <div class="FilterAreaBtnPop">
-                <div class="clearfix"></div>
-                        <div class="show-results">
-                            <div class="btn-square-red">
-                                <a href="javascript:void(0);" target="_self" id="showIndustry">${properties.showresultslabel}</a>
-                            </div>
-                        </div>
-                    <div class="clearfix"></div>
-                <div class="clear-results">
-                    <div class="btn-square-red">
-                        <a href="#" target="_self">${properties.clearallfilterslabel}</a>
-                    </div>
-                </div>
-                </div>
-            </div>
+					</div>
+					<div class="searchArea"></div>
+					<div class="filtrSideBar"></div>
+					<div class="topFilter">
+						<h4>${properties.filterbyindustrylabel}</h4>
+						<div class="FilterAreaIndustry"></div>
+						<h4 class="last">${properties.filterbycontentlabel}</h4>
+						<div class="FilterAreaContent"></div>
+					</div>
+					<div class="FilterAreaBtnPop">
+					<div class="clearfix"></div>
+							<div class="show-results">
+								<div class="btn-square-red">
+									<a href="javascript:void(0);" target="_self" id="showIndustry">${properties.showresultslabel}</a>
+								</div>
+							</div>
+						<div class="clearfix"></div>
+					<div class="clear-results">
+						<div class="btn-square-red">
+							<a href="#" target="_self">${properties.clearallfilterslabel}</a>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+            
              <!-- Mobile Placeholders -->
                  <div class="content-container clearfix filters-section less" id="FilteyContentType">
                     <div class="col-sm-9 filters-list col-sm-offset-3">
