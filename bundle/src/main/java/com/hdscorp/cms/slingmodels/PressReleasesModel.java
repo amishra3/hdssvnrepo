@@ -14,6 +14,8 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
@@ -75,6 +77,9 @@ public class PressReleasesModel {
 	
 	private List<NewsNode> pressReleaseList;
 	private NewsNode featuredPR;
+	
+	private static final Logger LOG = LoggerFactory
+			.getLogger(PressReleasesModel.class);
 	public NewsNode getFeaturedPR() {
 		
 		
@@ -116,6 +121,8 @@ public class PressReleasesModel {
 		SearchResult result = searchServiceHelper.getPressReleases(
 				null, newsPath, 0, null,this.noofPressReleasesShown,"0","pressRelease");
 		List<Hit> hits = result.getHits();
+		
+		LOG.info("No of press releases shown"+hits.size());
 		pressReleaseList = new ArrayList<NewsNode>();
 
 		for (Hit hit : hits) {
@@ -147,7 +154,7 @@ public class PressReleasesModel {
 		} }catch (Exception e){
 			e.printStackTrace();
 		}
-		
+		LOG.info("No of final press releases list shown"+pressReleaseList.size());
 		return pressReleaseList;
 	}
 	

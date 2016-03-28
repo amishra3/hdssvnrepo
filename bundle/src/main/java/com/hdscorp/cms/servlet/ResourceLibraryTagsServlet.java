@@ -1,6 +1,7 @@
 package com.hdscorp.cms.servlet;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -49,6 +50,15 @@ public class ResourceLibraryTagsServlet extends SlingAllMethodsServlet {
 			String searchPath = request.getParameter("path");
 
 			String defaultPath = "/content/dam/public/en_us/pdfs";
+			try {
+				
+				if(searchPath!=null) {
+					searchPath = URLDecoder.decode(request.getParameter("path"),"UTF-8");
+				}
+				
+			} catch (Exception e) {	
+				LOG.info("Exception while decoding the url::" +e.getMessage());
+			}
 
 			if (searchPath == null || searchPath.trim().length() == 0) {
 				searchPath = defaultPath;
@@ -59,12 +69,13 @@ public class ResourceLibraryTagsServlet extends SlingAllMethodsServlet {
 
 			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
 					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-			String[] paths = { defaultPath };
+			String[] paths = { searchPath };
 			String[] types = { "dam:Asset" };
 			SearchResult result = searchServiceHelper.getFullTextBasedResuts(
 					paths, null, null, types, null, false, null, null,
 					JcrUtilService.getResourceResolver(), null, null);
 			List<Hit> hits = result.getHits();
+			LOG.info("ResourceLibraryTagsServlet No of Assets"+hits.size()); 
 			for (Hit hit : hits) {
 				Resource metadataResource = hit.getResource().getChild(
 						"jcr:content/metadata");
