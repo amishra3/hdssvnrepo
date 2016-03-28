@@ -90,6 +90,7 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
     		size = defaultSize ;
     	}
 
+    	String uriPrefix = "/damadmin#" ;
     	
     	adminSession = repository.loginAdministrative(null);
     	int resultCnt=0;
@@ -99,6 +100,8 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 		QueryManager queryManager = adminSession.getWorkspace().getQueryManager();
 		Query query = queryManager.createQuery(sqlStatement, Query.SQL);
 		
+		String oddRow= "style='color:red;font-weight:600;'";
+		String evenRow= "style='color:green;font-weight:600;'";
 		
 		try {
 			QueryResult result = query.execute();
@@ -117,7 +120,7 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 			out.println("FILE SIZE");
 			out.println(" KB </th>");
 			
-			out.println("<td>");
+			out.println("<th>");
 			out.println("FILE TYPE");
 			out.println("</th>");
 
@@ -132,13 +135,15 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 					long filseSize = asset.getOriginal().getSize() / 1024;
 					if(filseSize > size){
 						resultCnt++;
-						out.println("<tr>");
+						out.println("<tr "+(resultCnt%2==0?oddRow:evenRow)+">");
 							out.println("<td>");
 							out.println(resultCnt);
 							out.println("</td>");
 	
 							out.println("<td>");
+							out.println("<a href='"+uriPrefix+row.getPath()+"' target='_blank'>");
 							out.println(row.getPath());
+							out.println("</a>");
 							out.println("</td>");
 							
 							out.println("<td>");
