@@ -2,6 +2,7 @@ package com.hdscorp.cms.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -34,11 +35,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.DamConstants;
+import com.day.cq.dam.commons.util.AssetReferenceSearch;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.tagging.JcrTagManagerFactory;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.commons.ReferenceSearch;
 import com.day.cq.wcm.commons.ResourceIterator;
 import com.day.cq.wcm.foundation.List;
 import com.day.cq.wcm.offline.HtmlUtil;
@@ -91,6 +95,14 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
     	}
 
     	String uriPrefix = "/damadmin#" ;
+    	String onlyused = "";
+    	if(request.getParameter("onlyused")!=null){
+    		onlyused = request.getParameter("onlyused");
+    	}else{
+    		onlyused = "false";	
+    	}
+    	
+    	
     	
     	adminSession = repository.loginAdministrative(null);
     	int resultCnt=0;
@@ -134,26 +146,47 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 				if(fileType!=null && fileType.contains("image")){
 					long filseSize = asset.getOriginal().getSize() / 1024;
 					if(filseSize > size){
-						resultCnt++;
-						out.println("<tr "+(resultCnt%2==0?oddRow:evenRow)+">");
-							out.println("<td>");
-							out.println(resultCnt);
-							out.println("</td>");
+						boolean showRow = true ;
+						if(onlyused.equalsIgnoreCase("true")){
+							showRow = false ;
+						}
+						StringBuffer references = new StringBuffer();
+						references.append("</br>");
+						references.append("<span style='color:black;'>Image is used on following pages - </span></br>");
+						for (ReferenceSearch.Info info: new ReferenceSearch().search(resourceResolver, row.getPath()).values()) {
+							if(onlyused.equalsIgnoreCase("true")){
+								showRow =true ;
+							}
+							for (String resPath: info.getProperties()) {
+//								   references.append(info.getPage().getPath()+"</br>");
+								   references.append(resPath+"</br>");
+						       }
+						}
+						if(showRow){
+							resultCnt++;
+							out.println("<tr "+(resultCnt%2==0?oddRow:evenRow)+">");
 	
-							out.println("<td>");
-							out.println("<a href='"+uriPrefix+row.getPath()+"' target='_blank'>");
-							out.println(row.getPath());
-							out.println("</a>");
-							out.println("</td>");
-							
-							out.println("<td>");
-							out.println(filseSize);
-							out.println(" KB </td>");
-							
-							out.println("<td>");
-							out.println(fileType);
-							out.println("</td>");
-						out.println("</tr>");
+								out.println("<td>");
+								out.println(resultCnt);
+								out.println("</td>");
+								
+								
+								out.println("<td>");
+								out.println("<a href='"+uriPrefix+row.getPath()+"' target='_blank'>");
+								out.println(row.getPath());
+								out.println("</a>"+references.toString());
+								out.println("</td>");
+								
+								out.println("<td>");
+								out.println(filseSize);
+								out.println(" KB </td>");
+								
+								out.println("<td>");
+								out.println(fileType);
+								out.println("</td>");
+								out.flush();
+							out.println("</tr>");
+						}
 					}
 				}
 			}
