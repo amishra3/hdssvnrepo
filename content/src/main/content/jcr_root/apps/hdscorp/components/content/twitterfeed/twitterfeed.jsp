@@ -14,6 +14,7 @@
 	style="background-image: url('${twitterFeedModel.bGImagePath}');">
 	<div class="content-container">
 		<h3>${properties.twtitle}</h3>
+		
 	</div>
 	<div class="stay-touch-hexagon-list twitter-feed">
 		<div class="content-container">
@@ -77,18 +78,48 @@
 
 
 					<c:if test="${not empty innerList.twitterURL}">
+                      <c:set var="twitterURL" value="${fn:split(innerList.twitterURL, ',')}" />
+
+<c:if test="${not empty twitterURL[0]}">
+
+<c:set var="firsttwitterhttpURL" value='<a href="${twitterURL[0]}" target="_blank" >${twitterURL[0]}</a>' />
 
 
-						<c:set var="twitterhttpURL"
-							value='<a href="${innerList.twitterURL}" target="_blank" >${innerList.twitterURL}</a>' />
+<c:set var="twitterPostMsg" value="${fn:replace(innerList.twitterMessageText, twitterURL[0], firsttwitterhttpURL)}" />
+
+  </c:if>
+
+
+<c:if test="${not empty twitterURL[1]}">
+
+<c:set var="secondtwitterhttpURL" value='<a href="${twitterURL[1]}" target="_blank" >${twitterURL[1]}</a>' />
+
+
+<c:set var="twitterPostMsg" value="${fn:replace(twitterPostMsg, twitterURL[1], secondtwitterhttpURL)}" />
+
+  </c:if>
+
+<c:if test="${not empty twitterURL[2]}">
+
+<c:set var="thirdtwitterhttpURL" value='<a href="${twitterURL[2]}" target="_blank" >${twitterURL[2]}</a>' />
+
+
+<c:set var="twitterPostMsg" value="${fn:replace(twitterPostMsg, twitterURL[2], thirdtwitterhttpURL)}" />
+
+  </c:if>
+
+ <c:if test="${not empty twitterURL[3]}">
+
+<c:set var="thirdtwitterhttpURL" value='<a href="${twitterURL[3]}" target="_blank" >${twitterURL[3]}</a>' />
+
+
+<c:set var="twitterPostMsg" value="${fn:replace(twitterPostMsg, twitterURL[3], thirdtwitterhttpURL)}" />
+
+  </c:if>
 
 
 
-
-						<c:set var="twitterPostMsg"
-							value="${fn:replace(innerList.twitterMessageText, innerList.twitterURL, twitterhttpURL)}" />
-
-						<c:set var="postedDate"
+    <c:set var="postedDate"
 							value="${fn:substring(innerList.timeDifference,0,2)}" />
 
 					</c:if>
@@ -100,6 +131,8 @@
 							</div>
 
 							<p>${twitterPostMsg}</p>
+
+
 
 							<p>${postedDate}${propertyValue}
 							<p>
