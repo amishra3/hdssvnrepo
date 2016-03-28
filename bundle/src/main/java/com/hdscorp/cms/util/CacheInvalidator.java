@@ -78,6 +78,7 @@ public final class CacheInvalidator {
                     LOG.debug("Invalidating {0} page cache from Dispatcher" + shorteningPath);
 	             }
                  page=shorteningPath;
+//	             handle = page.replace(".html", "");
 	             handle = page;
 	             if(LOG.isDebugEnabled()) {
                      LOG.debug("::page::" + page + " :: handle::" + handle);
@@ -85,6 +86,7 @@ public final class CacheInvalidator {
 	              // Make a call to all web servers to invalidate cache
 	              for(int j = 0; j < post.length; j++){
 	                   post[j].setRequestHeader(GlobalConstants.CQ_HANDLE, handle);
+	                   post[j].setRequestHeader("CQ-Path", handle);
 	                   final RequestEntity body = new StringRequestEntity(page, null, null);
 	                   post[j].setRequestEntity(body);
 	                   //post[j].setRequestHeader(GlobalConstants.CONTENT_LENTGTH,String.valueOf(body.getContentLength()));
