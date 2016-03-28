@@ -387,3 +387,23 @@ list-style-type: none;
 @media only screen and (max-width: 768px) {
 .partners-section .more-solutions {width:100%;}
 }
+
+/* Partner Mobile Overlay */
+#partnerDetailSection .bgCover {
+  background-color: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+#partnerDetailSection .overlayBox {
+  background-color: #fff;
+  width: 100%;
+  z-index: 9999;
+  height: inherit;
+  overflow: scroll;
+  display: none;
+}
