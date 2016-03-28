@@ -1,68 +1,163 @@
 @charset "utf-8";
+
 /* CSS Document */
-body.geo{background-image:url(../images/test-bg.png); background-repeat:no-repeat; background-position:top center; background-size: cover; }
-.geo-selc{
-	background-image:url(../images/black-bg-transparent.png); 
-	background-repeat:repeat;
-	padding:34px 0 55px; 
-	float:left;
-	width:100%;
-} 
-.geo-selc h2{
-	font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size:28px;
-    font-weight: 100;
-    padding-bottom: 19px;
-    color: #fff;
-	margin:0;
-	display:inline-block;
+.hds_globalNav_geo {
+	position: absolute;
+	left: 0;
+	top: 45px;
+	z-index: 9999;
+	width: 100%;
+	display: none;
 }
-.geo-selc ul.nav li{
-	/*border:1px solid #444444;*/	border-color: #444444;	border-style:solid;	border-width:1px 0 1px 1px;
-}.geo-selc ul.nav li:last-child{	border-right:1px solid #444444;}
-.global-sel{position:relative;}
-.close_btn{position:absolute; right:25px; cursor:pointer; display:inline-block;}
-.geo-selc ul.nav li.active{
-	border:1px solid #b1000d;
+.hds_globalNav_geo-selc {
+	background-image: url(../images/black-bg-transparent.png);
+	background-repeat: repeat;
+	padding: 34px 0 55px;
+	float: left;
+	width: 100%;
 }
-.geo-selc ul.nav li a{	 border-radius:0;
-	-webkit-border-radius:0;
-	-moz-border-radius:0;
-	padding:13px 0;
-	font-family: "museo-slab",Helvetica,Arial,sans-serif;
-	font-size:19px;
-	color:#fff;
-	text-transform:uppercase;
-	font-weight:700;
+.hds_globalNav_geo-selc h2 {
+	font-family: "museo-sans", Helvetica, Arial, sans-serif;
+	font-size: 28px;
+	font-weight: 100;
+	padding-bottom: 19px;
+	color: #fff;
+	margin: 0;
+	display: inline-block;
 }
-.geo-selc ul.nav li a:hover{background-color:transparent;}
-.geo-selc ul.nav li.active a:after{
+.hds_globalNav_geo-selc ul.nav li {
+	border-color: #444444;
+	border-style: solid;
+	border-width: 1px 0 1px 1px;
+}
+.hds_globalNav_geo-selc ul.nav li:last-child {
+	border-right: 1px solid #444444;
+}
+.global-sel {
+	position: relative;
+}
+.hds_globalNav_geo-selc .geo_close_btn {
+	position: absolute;
+	right: 25px;
+	cursor: pointer;
+	display: inline-block;
+	background-image: url(../images/close-btn.png);
+	background-repeat: repeat;
+	width: 22px;
+	height: 22px;
+}
+.hds_globalNav_geo-selc ul.nav li.active {
+	border: 1px solid #b1000d;
+}
+.hds_globalNav_geo-selc ul.nav li a {
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	padding: 13px 0;
+	font-family: "museo-slab", Helvetica, Arial, sans-serif;
+	font-size: 19px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.hds_globalNav_geo-selc ul.nav li a:hover {
+	background-color: transparent;
+}
+.hds_globalNav_geo-selc ul.nav li.active a:after {
 	content: '';
-    display: block;    position: absolute;
-    left: 50%;
-    bottom: -18%;
-    width: 0;
-    height: 0;
-    margin-left: -23px;
-    border-style: solid;
-    border-width: 15px 14px 0 14px;
-    border-color: #b1000d transparent transparent transparent;
-    z-index: 9;
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: -18%;
+	width: 0;
+	height: 0;
+	margin-left: -23px;
+	border-style: solid;
+	border-width: 15px 14px 0 14px;
+	border-color: #b1000d transparent transparent transparent;
+	z-index: 9;
 }
-.geo-selc ul.nav li.active a{
-	background-color:#b1000d;
-} 
-.geo-selc .tab-content{color:#fff;}
-.geo-selc .tab-content .states-names {margin-top:25px}
-.geo-selc .tab-content .states-names ul{list-style:none; padding:0; margin:0}
-.geo-selc .tab-content .states-names ul li a{
-	font-size:20px;
-	color:#fff;
-	font-weight:300;
-	padding:5px 0;
-	display:inline-block;
-	text-decoration:none;
+.hds_globalNav_geo-selc ul.nav li.active a {
+	background-color: #b1000d;
 }
-@media only screen and (max-width: 768px) {
-	.close-btn{right:25px;}
-}
+.hds_globalNav_geo-selc .tab-content {
+	color: #fff;
+	display:block;
+}
+.hds_globalNav_geo-selc .tab-content .states-names {
+	margin-top: 25px
+}
+.hds_globalNav_geo-selc .tab-content .states-names ul {
+	list-style: none;
+	padding: 0;
+	margin: 0
+}
+.hds_globalNav_geo-selc .tab-content .states-names ul li a {
+	font-size: 20px;
+	color: #fff;
+	font-weight: 300;
+	padding: 5px 0;
+	display: inline-block;
+	text-decoration: none;
+}
+@media only screen and (max-width:768px) {
+	.hds-mobile-navigation .hds_globalNav_geo{
+		display:block;
+		position:static;	
+	}
+	
+	.hds-mobile-navigation .hds_globalNav_geo-selc{
+	padding-left:0;
+	padding-top:0;
+	background:#fff;	
+	}
+	
+	.hds-mobile-navigation .hds_globalNav_geo-selc .megamenu-heading{
+		border-bottom: 4px solid #f78e1e;
+	    width: 100%;
+	    padding-bottom: 10px;
+	    margin-bottom: 0;
+	    padding-top: 20px;
+        padding-left: 10px;
+	}
+	
+	.hds-mobile-navigation .tab-content > .tab-pane {
+		display:block
+	}
+	
+	.hds-mobile-navigation .states-names ul{
+		width:100%;
+		background:none;
+	}
+	
+	.hds-mobile-navigation .hds_globalNav_geo-selc .tab-content .states-names ul li a{
+	    border: none;
+	    padding: 10px 0 10px 0;
+	    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+	    display: block;
+	    text-decoration: none;
+	    font-size: 1rem;
+	    font-weight: 300;
+	    text-transform: none;
+	    color: #d42727;}
+	.hds-mobile-navigation .hds_globalNav_geo-selc .tab-content{
+	    margin-left: -15px;
+    margin-right: -15px
+	}
+	.hds-mobile-navigation .hds_globalNav_geo-selc .tab-content .states-names{
+		margin-top:0px;
+	}
+	
+	
+	.hds-mobile-navigation .hds_globalNav_geo-selc h2 {
+	    text-align: left;
+	    font-weight: 300;
+	    font-size: 1.065rem;
+	    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+	    color: #000000;
+	    margin-top: 0;
+	    margin-bottom: 0;
+	    display: inline;
+	}
+
+}
