@@ -53,9 +53,11 @@
 
 
               <div class="cs-all">
-                <div class="cs-all-box btn-square btn-square-white">
-                  <a href="${buttonUrl}" target="_self">${properties.viewallctatext}</a>
+                <c:if test="${not empty properties.viewallctatext}">
+                    <div class="cs-all-box btn-square btn-square-white">
+                      <a href="${buttonUrl}" target="_self">${properties.viewallctatext}</a>
                 </div>
+    		  </c:if>
               </div>
 		 </div>
 </div>

@@ -27,11 +27,11 @@
 											<img src="${icopath}" alt="${icoalt}" title="${icoalt}">
 										</div>
 										<h2 class="headline hidden-xs">${title}</h2>
-										<h3 class="headline hidden-sm hidden-md hidden-lg">
+										<h2 class="headline hidden-sm hidden-md hidden-lg">
 											<a href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${title}
 												<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
 											</a>
-										</h3>
+										</h2>
 								 <c:if test="${not empty description}">
                                         <p>${description}</p>
        							 </c:if>
