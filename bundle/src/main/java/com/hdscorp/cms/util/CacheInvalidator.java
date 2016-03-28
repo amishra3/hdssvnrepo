@@ -38,7 +38,6 @@ public final class CacheInvalidator {
 		 	String page = null;
 		 	String handle = null;
 		 	String shorteningPath=null;
-	        String webServerUri=null;
 	        PostMethod[] post = null;
 	        HttpClient httpClient=null;
 	        String []flushAgentURL=null;
@@ -51,8 +50,6 @@ public final class CacheInvalidator {
             }
 	        try{
 	        	httpClient = new HttpClient();
-//	        	webServerUri=(String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.DISPACHER_URI);
-	        	final Object serversObject=HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.WEBSERVERS);
 	        	
 	        	flushAgentURL = HdsCorpGlobalConfiguration.FLUSHAGENTS.split(",");
 	        	if((null == flushAgentURL) || (0 == flushAgentURL.length)){
