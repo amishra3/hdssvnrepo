@@ -1,5 +1,5 @@
 <%--
-  News and insights landing banner.
+  Training Landing Banner
 --%>
 <%@page session="false"%>
 
@@ -24,15 +24,15 @@ request.setAttribute("bannerimage",bannerimage);
                             <h4 class="sub-headline">${properties.trainingdetailsbannercontent}</h4>
                             <c:if test="${not empty properties.trainingdetailsbannerbuttonlabel}">        					
 	                            <div class="btn-square-white request">
-	                             <a href="${properties.trainingdetailsbannerurltargettype}" target="${properties.newsandinsightsbannerurltargettype?'_blank':'_self'}">
-	                                ${properties.trainingdetailsbannerbuttonlabel}</a>
+	                             <a href="${properties.trainingdetailsbannerbuttonurl}" target="${properties.trainingdetailsbannerurltargettype?'_blank':'_self'}">
+	                                ${properties.trainingdetailsbannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 	                            </div>
                             </c:if>
-							
+
 							<c:if test="${not empty properties.trainingdetailsbannergetcertifiedlabel}">        					
 	                            <div class="buy-through">
 	                             <a href="${properties.trainingdetailsbannergetcertifiedurl}" target="${properties.trainingdetailsbannercertificateurltargettype?'_blank':'_self'}">
-	                                ${properties.trainingdetailsbannergetcertifiedlabel}</a>
+	                                ${properties.trainingdetailsbannergetcertifiedlabel}${not empty properties.thirdparty1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 	                            </div>
                             </c:if>
                     </div>

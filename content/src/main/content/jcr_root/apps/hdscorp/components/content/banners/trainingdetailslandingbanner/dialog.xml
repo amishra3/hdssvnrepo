@@ -70,6 +70,13 @@
                         name="./trainingdetailsbannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <trainingdetailsbannergetcertifiedlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Get Certified Label"
@@ -84,6 +91,13 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
                         name="./trainingdetailsbannercertificateurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty1
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty1"
+                        name="./thirdparty1"
                         type="checkbox"
                         xtype="selection"/>
                 </items>
