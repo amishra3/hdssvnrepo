@@ -1,3 +1,4 @@
+
 var hds = window.hds || {};
 
 (function(window, document, $, hds) {
@@ -129,7 +130,7 @@ var hds = window.hds || {};
                 console.log(startDate+'<=====>'+startFilter+'<=====>'+ endDate+'<=====>'+endFilter);
                 return ((startFilter >= startDate) && (endFilter <= endDate)) || (startFilter <= endDate)
             }).show();
-            
+
             /* hide months if no event */
                     $('.newsWrapper-listing').each(function(index, el) {
                             if ($(this).find('.newsEvents:visible').length <= 0) {
@@ -140,7 +141,7 @@ var hds = window.hds || {};
                         $('.noEventFilter').show();
                     }
                     /* //hide months if no event */
-      
+
             //hds.newsEvents.CheckLoadMoreMonths();
         },
         bindFilters: function() {
@@ -154,6 +155,33 @@ var hds = window.hds || {};
                 var self = $(this),
                     checkInputIfEmpty = $.trim($('#trainingSearch').val());
             })
+
+
+
+
+
+               $('input[name="cbxFunction"]').on('click', function () {
+				 $('.result-section').hide();
+                 $('input:checked').each(function(){
+				     var data_location = $(this).attr("data-location")
+                     $('.result-section[data-country='+data_location+']').fadeIn(300)
+					 loadMoreResults();
+                  });
+				  $('.result-product.training-result').each(function(){
+					 if($(this).find('.result-section:visible').size() == 0){
+						 $(this).children('.category-heading').hide();
+					  }else{
+					    $(this).children('.category-heading').show();
+					  }
+				  });
+				if ($('input[name="cbxFunction"]').length == 0)
+				  {
+					  $('.result-section').hide();
+					 loadMoreResults();
+				  }
+             });
+
+
 
             $('input[name="cbxFunction"]').each(function(){
                 $(this).click(function(){
@@ -169,6 +197,7 @@ var hds = window.hds || {};
                     });
                 });
             });
+
 			$(document).on('change input paste','.from_date, .to_date, .search ', function(e){
 				$('.errorSearchField').html("").hide(200);
 			});
@@ -180,9 +209,9 @@ var hds = window.hds || {};
 				max_items_page = 10;
 				shown = null;
 				items = $(".result-section").length;
-				
-				//$('.result-section:lt('+max_items_page+')').show();
-				
+
+				$('.result-section:lt('+max_items_page+')').show();
+
 				$('.result-product').each(function(){
 						if($(this).find('.result-section:visible').length == 0){
 							$(this).hide();
@@ -211,10 +240,10 @@ var hds = window.hds || {};
 					});
 				});
 			}
-			
-			
+
+
 			loadMoreResults();
-			
+
 			var searchKey = $('.daterangepicker .search').val();
 			var dateFrom = $('.from_date').val();
 			var dateTo = $('.to_date').val();
@@ -254,20 +283,45 @@ var hds = window.hds || {};
 						$('.errorSearchField').html("Please enter a search term or date").show();
 					}
 				}
-			
-			
+
+
 			$(document).on('keypress','.search', function(e){
 				//e.preventDefault();
 				if(e.which == 13){
 					getResults();
 				}
-				
+
 			});
+
 			$(document).on('click','.search-course-btn a', function(e){
 				e.preventDefault();
 				getResults();
             });
-			
+
+			$('#asideLinks-product li').each(function(index){
+				var liIndex = index
+					if(liIndex == 0){
+						$('#asideLinks-product li').removeClass('active')
+						$(this).addClass('active')
+						$("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
+						$("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
+						$("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
+					}
+					$(this).click(function(){
+						$('#asideLinks-product li').removeClass('active')
+						$(this).addClass('active')
+						$(this).children('ul').show();
+						$("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
+						$("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
+						$(this).children('a').children('.icon-accordion-opened').show();
+						$(this).children('a').children('.icon-accordion-closed').hide();
+						if(liIndex == 0){
+							$('.result-section').show();
+							$("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
+						}
+					});
+			});
+
 
         }
     }
