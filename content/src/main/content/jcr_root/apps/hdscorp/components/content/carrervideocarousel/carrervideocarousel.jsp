@@ -1,17 +1,14 @@
 <%--
-
   Carrer video carousel Component component.
+--%>
+<%@page session="false"%>
 
-  Carrer video carousel Component
-
---%><%
-%><%@include file="/libs/foundation/global.jsp"%><%
-%>
+<%@include file="/apps/foundation/global.jsp"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
-<%@page session="false" %>
+<%@page import="com.hdscorp.cms.util.PathResolver"%>
 
 
-<c:set var="carrerVideocarousel" value="<%=PageUtils.convertMultiWidgetToList(properties,"carrertitle-carrerbannerdescription-carrerbannerimagepath-carrervideoiconpath-carrervideoembededcode-ctalabel-ctatargeturl-openinnewwindow")%>" />    
+<c:set var="carrerVideocarousel" value="<%=PageUtils.convertMultiWidgetToList(properties,"carrertitle-carrerbannerdescription-carrerbannerimagepath-carrervideoiconpath-carrervideoembededcode-ctalabel-ctatargeturl-openinnewwindow-mobileimage")%>" />    
 <c:set var="carrerCarosuelTitles" value="<%=PageUtils.convertMultiWidgetToList(properties,"carrerpagebartitle")%>" />    
 
 <div class="bannerCarsoul clearfix" id="bannerCarsoul">
@@ -20,7 +17,9 @@
                     
                     <c:forEach var="carrerVideocarousel" items="${carrerVideocarousel}">
 
- <div class="bannerSectionImage sara" id="sara" style="background-image:url('${carrerVideocarousel.carrerbannerimagepath}'); background-repeat: no-repeat;">
+ <%--<div class="bannerSectionImage sara" id="sara" style="background-image:url('${carrerVideocarousel.carrerbannerimagepath}'); background-repeat: no-repeat;">--%>
+     <div class="bannerSectionImage sara rsImg" id="sara" style="background-image: url();"${hdscorp:bgImgAtrr(carrerVideocarousel.carrerbannerimagepath,carrerVideocarousel.mobileimage)}; background-repeat:no-repeat;>
+
                         <div class="content-container hero-content-career">
                             <div class="col-md-4 playVideo col-md-push-8">
                                 <a href="javascript:void(0);" class="playVideo"><img src="${carrerVideocarousel.carrervideoiconpath}" alt="" data-pin-nopin="true"></a>
