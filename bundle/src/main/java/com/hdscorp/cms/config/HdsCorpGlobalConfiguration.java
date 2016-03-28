@@ -1,5 +1,6 @@
 package com.hdscorp.cms.config;
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Timer;
 
@@ -10,12 +11,15 @@ import org.apache.felix.scr.annotations.Modified;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.PropertyUnbounded;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.osgi.framework.Constants;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.day.cq.replication.Agent;
+import com.day.cq.replication.AgentManager;
 import com.hdscorp.cms.constants.GlobalConstants;
 import com.hdscorp.cms.util.CacheInvalidator;
 
@@ -28,12 +32,14 @@ import com.hdscorp.cms.util.CacheInvalidator;
 
 public class HdsCorpGlobalConfiguration {
 
-	private static final Logger LOG = LoggerFactory
-			.getLogger(HdsCorpGlobalConfiguration.class);
+	@Reference
+	AgentManager agentMgr;
+	
+	private static final Logger LOG = LoggerFactory.getLogger(HdsCorpGlobalConfiguration.class);
 
 	
 	@Property(label = "Webservers", value = "", unbounded = PropertyUnbounded.ARRAY, description = "Add Webserver( Fully Qualified Address starts with http or https")
-	public static final String WEBSERVERS = "hdscorp.web.servers.address";
+	public static String WEBSERVERS = "hdscorp.web.servers.address";
 
 	@Property(label = "Dispatcher Invalidate URI", value = "/dispatcher/invalidate.cache", description = "Dispatcher Invalidate URI")
 	public static final String DISPACHER_URI = "hdscorp.dispatcher.uri";	
@@ -63,7 +69,9 @@ public class HdsCorpGlobalConfiguration {
 	public static String BRIGHTTALK_DATA_STORAGE_PATH = "hdscorp.brighttalk.data.storage.path";	
 	
 	public static String FACEBOOK_DATA_STORAGE_PATH = "hdscorp.facebook.data.storage.path";
-		
+	
+	public static String FLUSHAGENTS = "";
+	
 	
 	@SuppressWarnings("rawtypes")
 	private static Dictionary properties = null;
@@ -74,6 +82,14 @@ public class HdsCorpGlobalConfiguration {
 		LOG.info("HDS Corp Global Configuration Service Activated method called");
 		try {
 			properties = componentContext.getProperties();
+	    	ArrayList<Agent> allFlushAgent = new ArrayList();
+	    	for (Agent agent: agentMgr.getAgents().values()) {
+	    		String agentTransportURI = agent.getConfiguration().getProperties().get("transportUri","");
+	    		if (agent.isEnabled() && agent.isCacheInvalidator() && agentTransportURI.contains("dispatcher")) {
+	    			FLUSHAGENTS = FLUSHAGENTS+(FLUSHAGENTS.length()>0?",":"")+agentTransportURI;
+	    		}
+	    	}
+
 		} catch (Exception e) {
 			LOG.error("HDS Corp Global Configuration ::Error occured in activate method");
 		}

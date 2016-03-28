@@ -38,10 +38,10 @@ public final class CacheInvalidator {
 		 	String page = null;
 		 	String handle = null;
 		 	String shorteningPath=null;
-	        String []servers=null;
 	        String webServerUri=null;
 	        PostMethod[] post = null;
 	        HttpClient httpClient=null;
+	        String []flushAgentURL=null;
 	        		
             if(StringUtils.isEmpty(invalidateUrl)){
             	if(LOG.isDebugEnabled()){
@@ -51,27 +51,23 @@ public final class CacheInvalidator {
             }
 	        try{
 	        	httpClient = new HttpClient();
-	        	webServerUri=(String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.DISPACHER_URI);
+//	        	webServerUri=(String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.DISPACHER_URI);
 	        	final Object serversObject=HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.WEBSERVERS);
-	        	if(serversObject instanceof String[]){
-	        		servers=(String[])serversObject;
-	        	}else{
-	        		servers=new String[1];
-	        		servers[0]=(String)serversObject;
-	        	}
-	        	if((null == servers) || (0 == servers.length) || StringUtils.isEmpty(webServerUri)){
+	        	
+	        	flushAgentURL = HdsCorpGlobalConfiguration.FLUSHAGENTS.split(",");
+	        	if((null == flushAgentURL) || (0 == flushAgentURL.length)){
 	        		if(LOG.isDebugEnabled()){
                         LOG.debug("Web Servers Address or Dispatcher URI information should not null or empty");
 	        		}
 	        		return false;
 	        	}
-	            post = new PostMethod[servers.length];
-	            for(int i = 0; ((null != servers) && (i < servers.length)); i++) {
+	            post = new PostMethod[flushAgentURL.length];
+	            for(int i = 0; ((null != flushAgentURL) && (i < flushAgentURL.length)); i++) {
 	                if (LOG.isDebugEnabled()) {
-                        LOG.debug("Servers[" + i + "]::" + servers[i]);
-                        LOG.debug("Request URI::" + servers[i] + webServerUri);
+                        LOG.debug("Servers[" + i + "]::" + flushAgentURL[i]);
+                        LOG.debug("Request URI::" + flushAgentURL[i]);
 	                }
-	                post[i] = new PostMethod(servers[i] + webServerUri);
+	                post[i] = new PostMethod(flushAgentURL[i]);
 	                post[i].setRequestHeader(GlobalConstants.CQ_ACTION,GlobalConstants.DELETE);
 	            }
 	            // Check if request URL has Short URL, get the shorten URL otherwise process directly
@@ -97,12 +93,12 @@ public final class CacheInvalidator {
 	                   //post[j].setRequestHeader(GlobalConstants.CONTENT_LENTGTH,String.valueOf(body.getContentLength()));
 	                   post[j].setRequestHeader(GlobalConstants.CONTENT_LENTGTH,"0");
 	                   if (LOG.isDebugEnabled()) {
-                           LOG.debug("Calling Execute method for server  " + servers[j]);
+                           LOG.debug("Calling Execute method for server  " + flushAgentURL[j]);
 	                   }
 	                   final int responseCode = httpClient.executeMethod(post[j]);
 	                   if(LOG.isDebugEnabled()){
-                           LOG.debug("Response Code for " + servers[j] + " is::" + responseCode);
-                           LOG.debug("Response of page::" + page + "handle::" + handle + " Server:: " + servers[j]
+                           LOG.debug("Response Code for " + flushAgentURL[j] + " is::" + responseCode);
+                           LOG.debug("Response of page::" + page + "handle::" + handle + " Server:: " + flushAgentURL[j]
                                    + " is::" + post[j].getResponseBodyAsString());
 	                    }
 	                }
