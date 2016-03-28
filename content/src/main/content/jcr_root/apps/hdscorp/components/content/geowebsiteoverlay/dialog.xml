@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
     height="550"
     title="Geo website overlay"
@@ -18,12 +18,6 @@
                         allowBlank="{Boolean}false"
                         fieldLabel="Regions Label"
                         name="./geoallregionlabel"
-                        xtype="textfield"/>
-                    <geoglobalid
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
-                        fieldLabel="Geo Global ID"
-                        name="./geoglobalid"
                         xtype="textfield"/>
                     <regions
                         jcr:primaryType="cq:Widget"
@@ -84,23 +78,6 @@
                                                 key="countrylanguagecode"
                                                 layout="anchor"
                                                 xtype="textfield"/>
-                                            <openinnewwindow
-                                                jcr:primaryType="cq:Widget"
-                                                fieldLabel="Open in New Window ?"
-                                                key="openinnewwindow"
-                                                type="select"
-                                                xtype="selection">
-                                                <options jcr:primaryType="cq:WidgetCollection">
-                                                    <Yes
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Yes"
-                                                        value="1"/>
-                                                    <No
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="No"
-                                                        value="2"/>
-                                                </options>
-                                            </openinnewwindow>
                                         </items>
                                     </fieldConfig>
                                 </regioncountries>
