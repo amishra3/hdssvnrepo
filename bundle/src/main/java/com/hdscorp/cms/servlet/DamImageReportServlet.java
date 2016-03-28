@@ -1,13 +1,7 @@
 package com.hdscorp.cms.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
-import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.Session;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryManager;
@@ -27,27 +21,13 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.jcr.api.SlingRepository;
-import org.apache.sling.jcr.resource.JcrResourceResolverFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.dam.api.Asset;
-import com.day.cq.dam.api.DamConstants;
-import com.day.cq.dam.commons.util.AssetReferenceSearch;
-import com.day.cq.search.result.SearchResult;
-import com.day.cq.tagging.JcrTagManagerFactory;
-import com.day.cq.tagging.Tag;
-import com.day.cq.tagging.TagManager;
-import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.commons.ReferenceSearch;
-import com.day.cq.wcm.commons.ResourceIterator;
-import com.day.cq.wcm.foundation.List;
-import com.day.cq.wcm.offline.HtmlUtil;
-import com.hdscorp.cms.search.SearchServiceHelper;
-import com.hdscorp.cms.util.ViewHelperUtil;
 
 @Component(immediate = true)
 @Service(Servlet.class)
@@ -63,6 +43,10 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 	@Reference
 	private SlingRepository repository;
 	
+//    @Reference
+//    private DispatcherFlusher dispatcherFlusher;
+
+	
 	Session adminSession = null;
 	
 	@Override
@@ -76,6 +60,7 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 	
     try {
     	
+
     	String searchPath = request.getParameter("servicepath");
     	String sizeparam = request.getParameter("size");
     	int size = 0;
@@ -108,6 +93,11 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
     	int resultCnt=0;
         ResourceResolver resourceResolver = request.getResourceResolver();
 		
+        
+//        final DispatcherFlushFilter HIERARCHICAL_FILTER =new DispatcherFlushFilter(FlushType.Hierarchical);
+//        dispatcherFlusher.flush(resourceResolver, ReplicationActionType.DELETE, false,HIERARCHICAL_FILTER,"/en-us/home.html");
+
+        
 		String sqlStatement= "select * from [nt:base] as p where (isdescendantnode (p, '"+searchPath+"')) and p.[jcr:primaryType] = 'dam:Asset'";
 		QueryManager queryManager = adminSession.getWorkspace().getQueryManager();
 		Query query = queryManager.createQuery(sqlStatement, Query.SQL);
