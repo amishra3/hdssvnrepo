@@ -72,8 +72,10 @@
  				        <c:choose>
                             <c:when test="${not empty linkoverlayURL}">
                                 <c:set var="linkoverlayURLPath" value="${linkoverlayURL}" />
-                                 <li><a id="${applicationScope.geoGlobalId}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
+                                 <li><a id="${applicationScope.geoGlobalId}" href="javascript:void(0);"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
 								      ${linkTitle}
+				 	             <span class="icon-accordion-closed"></span>
+						    	<span class="icon-accordion-opened"></span>
 				 	             </a></li>
                             </c:when>
                            <c:otherwise>
@@ -111,26 +113,22 @@
                         <input type="submit" value="Search" class="btn-search">
                     </div>
                 </div>
-            </div>           
-
+            </div>
 	        <!--Geo OverLay-->
             <c:if test="${not empty linkoverlayURLPath}" >
                 <sling:include path="${linkoverlayURLPath}" />
             </c:if>
-
 		</div>
-
 	</c:if>
-
 	<div class="hds-main-navigation-container">
 		<div class="hds-main-navigation">
-			<h5 class="col-md-3">
+			<div class="col-md-3">
 				<a href="${logoTargetURL}"> <span
 					class="sprite hitachi-sublogo-mobile hidden-sm hidden-md hidden-lg">Hitachi
 						Data Systems</span><span class="sprite hitachi-sublogo hidden-xs">Hitachi
 						Data Systems</span>
 				</a>
-			</h5>
+			</div>
 			<ul class="col-md-9 col-xs-12 removePosRelative globalNavWrapper  hidden-xs hidden-sm">
 				<c:forEach var="childPage" items="${childPages}" varStatus="count">
 					<c:if test="${childPage.hideInNav != true}">
