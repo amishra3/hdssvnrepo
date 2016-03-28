@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.jcr.Node;
 import javax.jcr.Session;
@@ -214,7 +216,6 @@ public class ServiceUtil {
 		String formattedCreatedDate;
 		String formateedCurrentDate;
 		StringBuffer feedPostedTime = new StringBuffer();
-		
 
 		SimpleDateFormat sdf = new SimpleDateFormat(ServiceConstants.DATE_FORMAT_TO_DISPLAY_LML);
 		Date parsedCreatedDate = sdf.parse(startDate);
@@ -351,6 +352,25 @@ public class ServiceUtil {
 			log.error("Exception while creating map::" + e);
 		}
 		return listMap;
+	}
+
+	public static List<String> extractUrls(String value) throws Exception {
+		List<String> result = new ArrayList<String>();
+		if (value != null) {
+
+			String urlPattern = "((https?|ftp|gopher|telnet|file):((//)|(\\\\))+[\\w\\d:#@%/;$()~_?\\+-=\\\\\\.&]*)";
+
+			Pattern p = Pattern.compile(urlPattern, Pattern.CASE_INSENSITIVE);
+
+			Matcher m = p.matcher(value);
+
+			while (m.find()) {
+				result.add(value.substring(m.start(0), m.end(0)));
+
+			}
+
+		}
+		return result;
 	}
 
 	public static Date getDatefromString(String dateStr, String dateformate) {
