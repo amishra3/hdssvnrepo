@@ -1,6 +1,6 @@
 /* HEADER AND FOOTER CSS*/
 *:focus {outline: none;}
-.injectioncontainerwrapper{padding:120px 15px 60px; max-width:1280px; margin:0 auto; position:relative;}
+.injectioncontainerwrapper{padding:0 15px; max-width:1280px; margin:0 auto; position:relative;}
 .hds-global-header .breadcrumb-container {
     position: absolute;
     top: 110px;

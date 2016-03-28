@@ -22,7 +22,7 @@
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.AssetGettingModel" var="assetGettingModel" />
 
-<c:set var="pdfNode" value="${pdfMetaModel.pdfNode}" />
+<c:set var="pdfNode" value="${pdfMetaModel.pdfNode}" /> 
 
 <c:set var="pdfTitle" value="${pdfNode.title}" scope="request"/>
 <c:set var="pdfDesc" value="${pdfNode.description}" scope="request"/>
@@ -33,7 +33,7 @@
 </c:if>
 
 <c:if test="${null!=pdfNode}">
-  <div class="about-hds-awards gatted-asset-pg">                    
+  <div class="gatted-asset-pg">                    
                 <div class="row content-container">
                 	<div class="col-md-6 gated_asset">
                       <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-no-pad"> 
@@ -49,9 +49,8 @@
                                 </div>
                           </c:if> 
                       	<p>${pdfNode.description}</p>
-                        <div class="share hidden-xs hidden-sm"><cq:include path="sharethismobile" resourceType="hdscorp/components/content/pdfsharethispage" /></div>
-                        <div class="mb-cta-btn hidden-lg hidden-md"><button type="submit" class="">${assetGettingModel.downloadText}</button> </div>
-                        <div class="resources">
+                        <div class="share"><cq:include path="sharethismobile" resourceType="hdscorp/components/content/pdfsharethispage" /></div>
+                        <!--<div class="resources">
                              <c:if test="${not empty assetGettingModel.resourceLabel}">
                                <c:choose>
                                 <c:when test="${assetGettingModel.urlTargetType}">
@@ -63,18 +62,17 @@
                             </c:choose>
 
                             </c:if>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="col-md-6 grey-bg">
-               	  <div class="gatted-asset-form">
-                  		<div class="form hidden-xs hidden-sm">
+					<div class="gatted-asset-form">
+                  		<div class="form">
                             <h2>${assetGettingModel.message}</h2>
                             <!--<img src="images/gatted-asset-frm.png"  alt="" class="img-responsive">-->
                             <div class="asset-form">
                             	<iframe src="${formIframeURL}" id="marketo_Iframe" style="border:none;"></iframe>
                             </div>
                         </div>
-                        <div class="share hidden-lg hidden-md"><cq:include path="sharethisdesktop" resourceType="hdscorp/components/content/pdfsharethispage" /></div>
                     </div>
 
                     </div>
