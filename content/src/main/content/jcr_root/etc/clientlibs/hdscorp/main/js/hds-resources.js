@@ -385,7 +385,7 @@ var hds = window.hds || {};
             hds.resourceLib._buildMobileNavigation();
             $('.overlayBox').css({
                 display: 'block',
-                left: ($(window).width() - $('.overlayBox').width()) / 2,
+                left: 0,
                 top: 0,
                 position: 'absolute'
             });
@@ -397,7 +397,7 @@ var hds = window.hds || {};
             $('.bgCover').css({
                 opacity: 0
             }).animate({
-                opacity: 0.5,
+                opacity: 1,
                 backgroundColor: '#000'
             });
         },
