@@ -339,7 +339,7 @@ ul.stickyNav li:hover a{
 
 @media only screen and (max-width: 768px) {
   .business-specific .specific-benefit {
-    padding: 22px 15px 35px;
+    padding: 22px 15px 50px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -423,7 +423,7 @@ ul.stickyNav li:hover a{
     padding: 22px 15px 35px;
     margin-left: 0;
     margin-right: 0;
-    background-position: 25% center;
+   /* background-position: 25% center;*/
   }
   .specific-quote p {
     width: 100%;
@@ -850,7 +850,7 @@ ul.stickyNav li:hover a{
     margin-right: 15px;
   }
   .cs-section .cs-container .cs-highlight-box .cs-highlight-box-message {
-    font-size: 1.3125rem;
+    font-size: 1.25em;
   }
   .cs-section .cs-container .cs-highlight-box .cs-highlight-box-author {
     text-align: center;
@@ -931,7 +931,7 @@ h2.section-heading.fb-title{
 
 .resources-section .resources-container .resources-category .resources-category-box br{display:none;}.resources-section .resources-container .resources-category .resources-category-box {
   margin-bottom: 20px;
-    min-height:192px;
+    min-height:220px;
 }
 
 .resources-section .resources-container .resources-category .resources-category-box a {
@@ -1031,6 +1031,9 @@ h2.section-heading.fb-title{
 }
 
 @media only screen and (max-width: 768px) {
+
+	.resources-category-more{padding-bottom:0!important;}
+
   .resources-section .resources-container {
     padding-top: 22px;
     padding-bottom: 35px;
@@ -1054,9 +1057,10 @@ h2.section-heading.fb-title{
 .resources-section .resources-container .resources-category .resources-category-box br{display:none;}  .resources-section .resources-container .resources-category .resources-category-heading {
     font-size: 1.125rem;
     margin-bottom: 12px;
+    margin-top:0
   }
   .resources-section .resources-container .resources-category .resources-category-box {
-    margin-bottom: 25px;
+  margin-bottom: 25px; min-height:auto; margin-top:0; 
   }
   .resources-section .resources-container .resources-category .resources-category-box div[class|="resources-category"] {
     margin-bottom: 13px; width:100%; 
@@ -1175,7 +1179,7 @@ h2.section-heading.fb-title{
   max-width: 1107px;
   padding-top: 40px;
   margin: 0 auto 25px;
-  padding-bottom:30px;}
+}
 
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading {
   font-weight: 600;
@@ -1388,13 +1392,22 @@ h2.section-heading.fb-title{
 
 
 @media only screen and (max-width: 768px) {
-  .accordion-menu-container:after {
+  .accordion-level .accordion-menu-container:after {
     content: "";
     display: block;
     height: 3px;
     width: 100%;
     background-color: #c5c5c5;
   }
+
+  .accordion-level:last-child .accordion-menu-container:after {
+	 content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color:transparent;
+   }
+
   .accordion-menu-container .accordion-menu {
     display: block !important;
   }

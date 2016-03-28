@@ -209,6 +209,8 @@
   .hero-product-solutions.server-rack .hero-product-solutions-container .video-play {
     display: none;
   }
+
+  .hero-product-solutions .hero-product-solutions-container .close-hero{right:45px;}      
 }
 
 
@@ -237,7 +239,7 @@
     margin-bottom: 50px;
   }
   .hero-product-solutions .hero-product-solutions-container .close-hero {
-    right: 0px;
+    right:11px;
   }
   .hero-product-solutions.server-rack .hero-product-solutions-container .servers {
     display: none;
@@ -250,6 +252,7 @@
     margin-bottom: 40px;
     width: 90%;
   }
+.hero-product-solutions .hero-product-solutions-container .headline sup{top:-25px}
 }
 
 @media only screen and (max-width: 768px) {
@@ -275,6 +278,7 @@
   .hero-product-solutions.video .hero-product-solutions-container > iframe {
     width: 100%;
   }
+.hero-product-solutions .hero-product-solutions-container .headline sup{top:0px}
 }
 
 @media only screen and (max-width: 480px) {
