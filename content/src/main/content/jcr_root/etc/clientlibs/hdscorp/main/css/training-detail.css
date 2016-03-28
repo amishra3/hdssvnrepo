@@ -25,7 +25,7 @@
  font-family: "museo-sans",Helvetica,Arial,sans-serif;
 
  }
- 
+
 .hds-training-cale .daterangepicker .daterangepicker_input{width:100%;}
 .hds-training-cale .daterangepicker .calendar.left, .hds-training-cale .daterangepicker .calendar.right {
 	margin-right:0;
@@ -182,3 +182,7 @@
 	 .hds-training-rsc-sec .training-boxes {margin: 0 0 20px;}
 	}
         #trainingDetail .result-product .category-products-listing{min-height:10px;}
+        .result-section {display:none}
+    .errorSearchField{margin-top:60px} 
+
+.result-section{display:none}
