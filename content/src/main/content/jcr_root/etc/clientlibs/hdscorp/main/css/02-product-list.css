@@ -290,12 +290,28 @@ color: #cccccc !important;
     transform: translateY(-50%);
 }
 
-.Container-Results .product-listing ul > li .icon-accordion-closed {
+/*.Container-Results .product-listing ul > li .icon-accordion-closed {
     display: inline-block;
 }
 
 .Container-Results .product-listing ul > li .icon-accordion-opened {
     display: none;
+}*/
+
+.product-listing ul > li .icon-accordion-closed {
+  display: inline-block;
+}
+
+.product-listing ul > li .icon-accordion-opened {
+  display: none;
+}
+
+.product-listing ul > li.active .icon-accordion-closed {
+  display: none;
+}
+
+.product-listing ul > li.active .icon-accordion-opened {
+  display: inline-block;
 }
 
 .Container-Results .product-listing ul > li > ul {
