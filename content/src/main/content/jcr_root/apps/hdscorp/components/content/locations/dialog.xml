@@ -22,19 +22,9 @@
                         xtype="textfield"/>
                     <locationimage
                         jcr:primaryType="cq:Widget"
-                        allowUpload="false"
-                        cropParameter="./imagePath3/imageCrop2"
-                        ddGroups="[media]"
-                        fieldLabel="Location Image"
-                        fileNameParameter="./imagePath3/fileName2"
-                        fileReferenceParameter="./jcr:locationimage"
-                        height="{Long}200"
+                        fieldLabel="Location Image (Optional)"
                         name="./jcr:locationimage"
-                        rotateParameter="./imagePath3/imageRotate2"
-                        sizeLimit="100"
-                        title="Image"
-                        width="{Long}200"
-                        xtype="html5smartimage"/>
+                        xtype="pathfield"/>
                     <locimagealttext
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Image ALT text"
@@ -52,19 +42,19 @@
                         fieldLabel="Direction Detail(optional)"
                         name="./jcr:directiondetail"
                         xtype="textfield"/>
-                    <locationlongitude
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
-                        fieldLabel="Location Longitude"
-                        name="./jcr:locationlongitude"
-                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locationlongitude = dialog.getField('./jcr:locationlongitude')&#xa; var locationlongitudevalue = locationlongitude.getValue();&#xa; if($.trim(locationlongitudevalue )==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="textfield"/>
                     <locationlatitude
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Location Latitude"
                         name="./jcr:locationlatitude"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locationlatitude = dialog.getField('./jcr:locationlatitude')&#xa; var locationlatitudevalue = locationlatitude.getValue();&#xa; if($.trim(locationlatitudevalue )==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <locationlongitude
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Longitude"
+                        name="./jcr:locationlongitude"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locationlongitude = dialog.getField('./jcr:locationlongitude')&#xa; var locationlongitudevalue = locationlongitude.getValue();&#xa; if($.trim(locationlongitudevalue )==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <locphonenumber
                         jcr:primaryType="cq:Widget"
