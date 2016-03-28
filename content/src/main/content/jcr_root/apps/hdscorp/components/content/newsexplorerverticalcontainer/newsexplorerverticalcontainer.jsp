@@ -22,9 +22,15 @@
 
 
 
-						 <cq:include path="newsfirstpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsverticalexplorer" />
-						 <cq:include path="newssecondpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsverticalexplorer" />
-
+<c:choose>
+<c:when test="${properties.numberofnewsrows=='1'}">
+<cq:include path="newsfirstpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsverticalexplorer" />
+</c:when>
+<c:otherwise>
+<cq:include path="newsfirstpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsverticalexplorer" />
+<cq:include path="newssecondpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsverticalexplorer" />
+</c:otherwise>
+</c:choose>
 						 </div>
 						</c:forEach>
 

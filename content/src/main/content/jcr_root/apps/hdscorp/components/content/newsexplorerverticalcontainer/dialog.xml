@@ -20,6 +20,11 @@
                         fieldLabel="Background Image  Path"
                         name="./newsbackgroundimage"
                         xtype="pathfield"/>
+                    <numberofnewsrows
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="No. Of Rows"
+                        name="./numberofnewsrows"
+                        xtype="textfield"/>
                     <nevcmultifield
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Add Section"
