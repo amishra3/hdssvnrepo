@@ -90,6 +90,11 @@
   }
 }
 
+@media only screen and (max-width: 767px) { 
+  .stay-touch-hexagon-list.twitter-feed .hexagon320 .tweet-content p{
+	 line-height: 1.3em;		
+   }
+}
 
 /* News & Insight Browse Resources Section */
 .news-insight-resources{
@@ -234,7 +239,7 @@
     vertical-align: middle;
   }
   .news-insight-resources .news-resources-col .imageHolder img{
-    width: 45px; height:45px;
+    width: 45px; /* height:45px; */
   }
   .news-insight-resources .news-resources-col .headline{
     display: table-cell;

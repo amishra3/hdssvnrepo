@@ -64,13 +64,13 @@
 
 @media only screen and (max-width: 767px) {
     .partner-hexContain a.learn-more-white{
-       display: block;
-      margin-bottom: 25px;
+      display: block;
+      margin: 30px auto 0;
       text-align: center;
     }
     .partner-hexContain .signup{
       display: block;
-      margin: 0 auto;
+      margin: 30px auto 0;
       max-width: 180px;
     }
 }

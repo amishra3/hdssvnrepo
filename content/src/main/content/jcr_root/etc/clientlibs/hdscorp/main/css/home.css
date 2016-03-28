@@ -240,7 +240,7 @@
     margin: 0 10px;
    font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-weight: 300;
-    font-size: 1.125em;
+    font-size: 1em;
     line-height: 1;
     line-height: 110%;
     color: #414141;
@@ -479,8 +479,11 @@
     .millennials {
         background: url("../images/hero-millennials_mobile.jpg") top center no-repeat;
         background-size: cover;
-        padding: 0 15px 10px;
+        padding: 0 15px 60px;
     }
+	.millennials .millennials-container .millennials-content h1{
+		margin-top: 60px;		
+	}
 }
 
 @media only screen and (max-width: 480px) {

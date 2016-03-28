@@ -25,8 +25,10 @@
 
 /* Services Support Customer CSS */
 .service-support-main {
-  background: #f6f6f6 none repeat scroll 0 0;
-  width: 100%; text-align:center; padding:35px 0 84px;
+  background: #f6f6f6;
+  width: 100%; 
+  text-align:center; 
+  padding:35px 0 84px;
 }
 
 .service-support-main  h2,
@@ -147,18 +149,15 @@
 
 .service-support-main .section-service-col.service-blue-box .support-connect-login{
   text-align: center;
-  padding: 5px 4px 0!important;
+  padding: 5px 4px 0;
 }
 
 .service-support-main .section-service-col.service-blue-box a{
   color: #fff;
   font-size: 0.875em;
 }
-
 .service-support-main .section-service-col.service-blue-box a:hover{ color: #fff!important;}
-
 .service-support-main .section-service-col.service-blue-box  p { color: #fff;}
-
 .service-support-main .section-service-col .headline .glyphicon, 
 .services-list-section .section-service-col .headline .glyphicon{
   display: inline;
@@ -189,7 +188,7 @@
   }
   .service-support-main  h2,
   .services-list-section h2{ 
-    margin-top: 0;
+    margin: 0;
     font-size: 1.125rem;
   }
 
@@ -230,17 +229,14 @@
   .service-support-main .section-service-col, .services-list-section .section-service-col{
     min-height: auto;
   }
-  .services-list-section .col-sm-4 {
-    padding-right: 0;
+  .services-list-section.partner-section .col-sm-4 {
+    padding: 0 15px;
   }
 
-  .service-support-main .section-service-col.service-blue-box .support-phone-no{
-    text-align: center;
-  }
-
+  .service-support-main .section-service-col.service-blue-box .support-phone-no, 
   .service-support-main .section-service-col.service-blue-box .support-connect-login{
     text-align: center;
-  }
+  }  
   .services-list-section.services-section.service-insights-section .container-fluid{
 		margin-right: 0;
 	}
@@ -262,16 +258,26 @@
 
 .section-service-col.dummy a:hover{color:#000;}
 
-@media only screen and (max-width: 768px) {
-  #insight-center-excellence .accordion-menu-container .accordion-menu{padding-left:15px!important; padding-right:15px!important;}
-  #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label{padding-left:0!important}
+@media only screen and (max-width: 768px) {  
   .service-support-main .section-service-col{margin-bottom:20px;}
   .millennials .millennials-container .millennials-content .learn{margin-bottom:0;}
-  .accordion-level .accordion-menu-container .accordion-menu{font-size:1.1em}
-  .news-insight-resources .news-resources-col .imageHolder {display: inline-block!important; width:auto!important;}
-  .news-insight-resources .news-resources-col .headline {display: inline-block!important; width:100%!important; text-align:center!important;}
-  #insight-center-excellence .accordion-menu-container .accordion-menu{padding-left:15px!important; padding-right:15px!important;}
-  #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label{padding-left:0!important}
+  .accordion-level .accordion-menu-container .accordion-menu{font-size:1.1em}  
+  .news-insight-resources.news-insights-section .news-resources-col .imageHolder {display: inline-block; width:auto;}  
+  .news-insight-resources.news-insights-section .news-resources-col .headline {display: inline-block; width:100%; text-align:center;}
+  .news-insight-resources.news-insights-section .news-resources-col .headline a{font-size: 1.125em; font-weight: 700;text-transform: none; }
+  
+  #insight-center-excellence .accordion-menu-container .accordion-menu, 
+  #insight-it-operations .accordion-menu-container .accordion-menu, 
+  #analytics-accelerator-service .accordion-menu-container .accordion-menu{
+	 padding:20px 15px;		
+  }
+  
+  #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label, 
+  #insight-it-operations .accordion-menu-container .accordion-menu span.acc-label, 
+  #analytics-accelerator-service .accordion-menu-container .accordion-menu span.acc-label{
+	  padding-left:0	  
+  }
+  
   .news-insight-resources .news-resources-col .headline{display:none;}
   .specific-tech .content-container h2 {margin: 20px 0 25px!important;}
    #analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
@@ -281,7 +287,7 @@
 #analytics-accelerator-service .accordion-content .specific-tech{padding-left:0; padding-right:0;}
 
 .service-support-main .section-service-col.service-blue-box .support-phone-no{
-    padding: 5px 8px 0!important;
+    padding: 5px 8px 0;
 	font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 
@@ -290,7 +296,6 @@
 @media only screen and (min-width: 768px) and (max-width: 1024px){
 body.servicedetail{overflow-x:hidden}
 }
-
 
 .services-list-section .section-service-col.tile a{
 	font-weight: 900;
