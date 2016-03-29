@@ -5,7 +5,7 @@ var hds = window.hds || {};
         init: function(options) {
             var defaults = {
                 seletCountry: '#seletCountry',
-                defaultRegion: 'NorthAmerica',
+                defaultRegion: 'North America',
                 defaultCountry: 'USA',
                 defaultcity: 'California'
             }
