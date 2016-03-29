@@ -39,7 +39,7 @@ var hds = window.hds || {};
             var filters = url.indexOf("#");
             if (filters !== -1) {
                 url = url.slice(filters + 1);
-                pieces = url.split("&");
+                pieces = url.split("#");
                 for (i = 0; i < pieces.length; i++) {
                     parts = pieces[i].split("=");
                     if (parts.length < 2) {
@@ -60,9 +60,9 @@ var hds = window.hds || {};
 
             var qURL = window.location.href;
             var parms = hds.resourceLib._getParmsFromURLHash(qURL);
-            var filter1 = parms["filter1"]; 
-            var filter2 = parms["filter2"]; 
-            var filter3 = parms["filter3"];                  
+            var filter1 = parms["ind"]; 
+            var filter2 = parms["content"]; 
+            var filter3 = parms["subcat"];                  
 
             $('#asideLinks-product li.active input').each(function(){
                 var inputId = $(this).attr('id');
