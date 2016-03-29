@@ -76,6 +76,10 @@ public class ResourceLibraryTagsServlet extends SlingAllMethodsServlet {
 					JcrUtilService.getResourceResolver(), null, null);
 			List<Hit> hits = result.getHits();
 			LOG.info("ResourceLibraryTagsServlet No of Assets"+hits.size()); 
+			
+			List<String> excludeTags = new ArrayList<String>();
+			excludeTags.add("common:product-and-solutions");
+			excludeTags.add("common:services");
 			for (Hit hit : hits) {
 				Resource metadataResource = hit.getResource().getChild(
 						"jcr:content/metadata");
@@ -93,11 +97,11 @@ public class ResourceLibraryTagsServlet extends SlingAllMethodsServlet {
 						for(String assetTag:assetTags){
 						Tag tag = tagManager.resolve(assetTag);
 						if(tag!=null){
-							if(!tag.listChildren().hasNext() && !list.contains(tag.getParent().getTagID()) && (tag.getParent().getTagID().contains("product-and-solutions") || tag.getParent().getTagID().contains("services"))) {
+							if(!list.contains(tag.getParent().getTagID()) && (tag.getParent().getTagID().contains("product-and-solutions") || tag.getParent().getTagID().contains("services")) && !excludeTags.contains(tag.getParent().getTagID()) ) {
 								
 								
 								list.add(tag.getParent().getTagID());
-								LOG.info("Added tag***"+tag.getParent().getTagID());  
+								LOG.info("Added tag "+tag.getParent().getTagID()+"to Asset**"+hit.getPath());  
 							}
 						}
 
@@ -106,7 +110,7 @@ public class ResourceLibraryTagsServlet extends SlingAllMethodsServlet {
 						
 						node.setProperty("cq:tags",list.toArray(new String[0]));
 						node.save();
-						LOG.info("ending");  
+						  
 				}
 			}
 		}
