@@ -3,13 +3,13 @@
 /* CSS Document */
 
  #showGeo span.caret-arrow{
- background: url("../images/select-down-arrow.png") no-repeat 0 0;
+ background: url("../images/select-down-arrow_grey.png") no-repeat 0 0;
  width: 14px;
  height: 10px;
  display: inline-block;
 }
 #showGeo.active span.caret-arrow{
- background: url("../images/select-up-arrow.png") no-repeat 0 0;
+ background: url("../images/select-up-arrow_grey.png") no-repeat 0 0;
 }
 
 #showGeo span.labelText{
