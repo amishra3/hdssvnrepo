@@ -5,5 +5,5 @@ servletresolver.defaultExtensions=["html"]
 servletresolver.servletRoot="-1"
 servletresolver.scriptUser=""
 servletresolver.cacheSize=I"1000"
-servletresolver.paths=["/bin/","/libs/","/apps/","/system/","/index.servlet","/login.servlet","/services/","/hdscorp/","/servicehdscorp/"]/>
+servletresolver.paths="[/bin/,/libs/,/apps/,/system/,/index.servlet,/login.servlet,/services/,/hds/,/partnerlocator/,/pxp/,/hdscorp/,/servicehdscorp/]"/>
 
