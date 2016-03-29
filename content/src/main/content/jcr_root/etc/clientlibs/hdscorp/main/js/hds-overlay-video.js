@@ -123,8 +123,14 @@ HDS.Lightbox.prototype = {
 
                     self.$content.addClass('scrollable');
                 } else {
+                     if($(window).width() > 992){
+      					var topPosition = "14%"
+                    }else{
+      					var topPosition = (windowHeight - lightboxHeight) / 2
+                    }
                     self.$container.css({
-                        marginTop: (windowHeight - lightboxHeight) / 2
+
+                        marginTop: topPosition
                     });
                 }
 
