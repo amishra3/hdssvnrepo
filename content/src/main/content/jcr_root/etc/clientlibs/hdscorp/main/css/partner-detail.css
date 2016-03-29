@@ -174,13 +174,18 @@ list-style-type: none;
     font-size: 1rem;   
     color: #414141;
 }
-
+.partner-filters-search .filters-list  input[type="checkbox"]{
+	opacity: 0;
+}
 .partner-filters-search .filters-list  input[type="checkbox"]+label:before {
     background: url('../images/radion-btn-white-sprite.png') no-repeat top left;
     background-position: 0 0;
     content: " ";
-    
+	width: 20px;
+	height: 20px;
+	top: 2px;    
 }
+
 .partner-filters-search .filters-list  input[type="checkbox"]:checked+label:before {
     background-position: 0 -21px;
 }
@@ -192,7 +197,7 @@ list-style-type: none;
 
 .partner-list{
   padding: 0;
-  margin: 0px 0 25px 0;
+  margin: 25px 0 0 0;
   position: relative;
 }
 .partner-list .partner {
@@ -347,7 +352,7 @@ list-style-type: none;
   .partner-filters-search{
     top:0;
   }
-  
+
   .partner-filters-search .search-overlay{
     background: #fff;
     padding: 0;

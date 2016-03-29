@@ -86,6 +86,7 @@
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
   border-right: 1px solid #d7d7d7;
   padding: 0 30px;
+  min-height:85px;
 }
 .we-mean-business .si-comm-box:first-child{
   padding-left: 0 !important;
@@ -199,7 +200,7 @@
 .social-innovation-article .si-article-more {
     margin-left: auto;
     margin-right: auto;
-    max-width: 300px;
+   /* max-width: 300px;*/
     text-align: center;
 }
 
@@ -335,4 +336,7 @@
     text-decoration: none;
     text-transform: uppercase;
   }
+.advance-tech-hexagon p{font-size:1em;}
+.advance-tech-hexagon .hexagon320 .hexagon-content{margin-top:-60px;}
+
 }

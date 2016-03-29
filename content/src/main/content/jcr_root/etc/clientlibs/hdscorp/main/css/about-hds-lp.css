@@ -30,6 +30,10 @@
     width: 100%;
 }
 
+.behind-scene-hexagon-list.hexagon320 .hexagon-content {
+    margin-top: -63px;
+   }
+
 @media only screen and (max-width: 1024px) {
   .behind-scene-hexagon{
      padding-bottom:200px;
@@ -44,6 +48,9 @@
   .behind-scene-hexagon-list .hex-contain .hexagon320:last-child{
     margin-right:0;
   }
+.behind-scene-hexagon-list .hexagon320 .read-more {
+    margin-top: 50px;
+   }
 }
 
 @media only screen and (max-width: 991px) {

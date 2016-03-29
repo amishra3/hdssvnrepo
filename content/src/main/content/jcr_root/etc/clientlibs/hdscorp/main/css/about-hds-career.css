@@ -11,9 +11,9 @@
 
 .red-bg{float:left; width:100%; padding:50px 0 50px 0;  margin: 0 0 30px; background:rgba(204, 0, 0, 0.5);}
 .common-hero-banner.new-abouthds-banner {padding-left:0; padding-right:0;}
-.new-abouthds-banner .common-hero-banner-container {
+/*.new-abouthds-banner .common-hero-banner-container {
     margin-left: 0!important; padding:0px 30px 50px;
-}
+}*/
 .new-abouthds-banner .cta-text{float:left; width:100%; }
 .new-abouthds-banner .cta-text h4{
 	display:inline-block; 
@@ -25,6 +25,14 @@
 	padding:0;
 	color:#fff; float:left;
 }
+.career-benefits-hexagon .hexagon320 .hexagon-content {
+    margin-top: -41px;
+    padding: 0;
+}
+
+.behind-scene-hexagon-list{padding:60px 0 0 0;}
+
+.csr-governance-resource .resources-container .resources-category .resources-category-box{min-height:120px;}
 
 @media only screen and (max-width: 767px) {
 	
@@ -37,7 +45,7 @@
 	}
 	.new-abouthds-banner .cta-btn{   display: block;
     margin: 0 auto !important;
-    max-width: 66% !important;} 
+    } 
 	.red-bg { margin: 0 0 50px;
     padding: 20px 0;
 
@@ -84,7 +92,6 @@
     font-size: 3em;
     font-weight: 100;
     line-height: 1;
-    margin: 0 0 35px;
     text-align: center;
 }
 
@@ -464,8 +471,11 @@
     .hitachi-spirit-hexagon-list .hex-contain .hexagon320:last-child {
         margin-right: 0;
     }
-}
+	 .new-abouthds-banner .common-hero-banner-container{
+	margin-left:0!important; margin-right:0!important;
+	}
 
+}
 @media only screen and (max-width: 991px) {
     .hitachi-spirit-hexagon {
         padding: 35px 0;
@@ -815,3 +825,10 @@
 	.hitachi-spirit-hexagon .hitachi-spirit-hexagon-list h4 br{display:none;}
 }
 
+@media only screen and (max-width: 768px) {
+
+    .career-benefits-hexagon .hexagon320 .hexagon-content {
+    margin-top: -36px;
+    padding: 0;
+}
+}
