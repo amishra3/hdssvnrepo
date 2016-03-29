@@ -66,7 +66,8 @@ public class FeaturedResourcesModel  {
 					if (resourceNode != null) {
 						resourceNode.setFeaturedBGImage(map
 								.get("featureditembgimage"));
-
+						resourceNode.setDeviceFeautedIconImage(map
+								.get("devicefeaturediconimage"));
 						resourceNode.setFeaturedIconImage(map
 								.get("featurediconimage"));
 
