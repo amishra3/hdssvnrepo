@@ -86,7 +86,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
 					<div class="clearfix"></div>
 							<div class="show-results">
 								<div class="btn-square-red">
-									<a href="javascript:void(0);" target="_self" id="showIndustry">${properties.showresultslabel}</a>
+									<a href="javascript:void(0);" target="_self" id="mobShowFilters">${properties.showresultslabel}</a>
 								</div>
 							</div>
 						<div class="clearfix"></div>
