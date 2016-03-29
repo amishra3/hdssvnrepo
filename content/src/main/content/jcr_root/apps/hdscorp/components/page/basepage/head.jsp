@@ -85,5 +85,11 @@
 		  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, no-store, must-revalidate">
 		 		  
 	  </c:if>
+	  <c:set var="servername" value="${pageContext.request.serverName}" />
+	  <c:if test="${fn:contains(servername,'hds.com')}">
+		  <script language="JavaScript">
+			document.domain = "hds.com";
+		  </script>
+	  </c:if>
       
 </head>
