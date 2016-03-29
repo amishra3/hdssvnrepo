@@ -32,3 +32,4 @@ gsa-search.js
 asset-gating.js
 hds-training-detail.js
 hds-office-loaction.js
+hds-service-training.js

@@ -151,67 +151,113 @@ var hds = window.hds || {};
             })
         },
         bindEventsSelectors: function() {
+			
+			
+			function getParameterByName(name, url) {
+				if (!url) url = window.location.href;
+				url = url.toLowerCase(); // This is just to avoid case sensitiveness  
+				name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+			var searchKey = getParameterByName('searchKey'); 
+			var dateFrom = getParameterByName('lowerBound'); 
+			var dateTo = getParameterByName('upperBound'); 
+			var locations = getParameterByName('locations'); 
             $(document).on('click', '.search-course-btn', function(event) {
                 var self = $(this),
                     checkInputIfEmpty = $.trim($('#trainingSearch').val());
             })
+			if(dateFrom && dateFrom != ""){
+				$('.from_date').val(dateFrom)	
+			}
+			if(dateTo && dateTo != ""){
+				$('.to_date').val(dateTo)
+			}
+			if(searchKey && searchKey != ""){
+				$('.search').val(searchKey)
+			}
+			if(locations && locations != ""){
+				console.log($('input[id='+locations.toUpperCase()+']'))
+				setTimeout(function(){
+					$('input[id='+locations.toUpperCase()+']').click()
+					$('input[id='+locations+']').attr('checked','checked')
+				},2000);
+			}
+			// filter the results based on the checkbox values selected // 
+		   //	**********************START****************************//
+			 $('input[name="cbxFunction"]').on('click', function () {
 
+				var locations_list = [];
+				$('input[name="cbxFunction"]:checked').each(function(){
+				  var locations = $(this).attr("data-location");
+				  locations_list.push(locations);//Push each check item's value into an array
+				});
+				console.log(locations_list);
+				$('.result-section').each(function(index){
+				  var item = $(this).attr('data-country');
+                    if(jQuery.inArray(item,locations_list) > -1){//Check if data-tag's value exist in array
+						$(this).show();
+						$(this).parent().parent().parent().show();
+						$(this).parent().parent().prev().show();
+						$(this).attr('filter','show')
+                        console.log(item);
+                    }
+                    else{
+                        $(this).hide();
+						$(this).attr('filter','hide')
+                    }
+				});
+				if ($('input[name="cbxFunction"]:checkbox:checked').length > 0){
+						console.log("filters selected")
+					}else{
+						console.log(" no filters selected")
+						$('.result-section:lt('+max_items_page+')').show();
+						$('.result-product').show();
+						$('.result-product').each(function(){
+							if($(this).find('.result-section:visible').length == 0){
+								$(this).hide();
+							}
+							else{
+								$(this).show()
+							}
+						});
+						//$('.result-section').show();
+						$('.result-section').attr('filter','show');
+						//loadMoreResults();
+				}
+				$('.result-section[filter="show"]').hide();
+				$('.result-section[filter="show"]:lt('+max_items_page+')').show();
+				loadMoreResults();
+			});
+			// filter the results based on the checkbox values selected // 
+		   //	**********************END****************************//
 
-
-
-
-               $('input[name="cbxFunction"]').on('click', function () {
-				 $('.result-section').hide();
-                 $('input:checked').each(function(){
-				     var data_location = $(this).attr("data-location")
-                     $('.result-section[data-country='+data_location+']').fadeIn(300)
-					 loadMoreResults();
-                  });
-				  $('.result-product.training-result').each(function(){
-					 if($(this).find('.result-section:visible').size() == 0){
-						 $(this).children('.category-heading').hide();
-					  }else{
-					    $(this).children('.category-heading').show();
-					  }
-				  });
-				if ($('input[name="cbxFunction"]').length == 0)
-				  {
-					  $('.result-section').hide();
-					 loadMoreResults();
-				  }
-             });
-
-
-
-            $('input[name="cbxFunction"]').each(function(){
-                $(this).click(function(){
-                    var data_location = $(this).attr("data-location")
-                    $('.result-section').hide();
-                    $('.result-section[data-country='+data_location+']').fadeIn(300)
-                    $('.result-product.training-result').each(function(){
-                        if($(this).find('.result-section:visible').size() == 0){
-                            $(this).children('.category-heading').hide();
-                        }else{
-							$(this).children('.category-heading').show();
-						}
-                    });
-                });
-            });
-
-			$(document).on('change input paste','.from_date, .to_date, .search ', function(e){
+            
+			$(document).on('change input paste focus','.from_date, .to_date, .search ', function(e){
 				$('.errorSearchField').html("").hide(200);
 			});
+			
 			var max_items_page = 10;
 			var shown = null;
 			var items = $(".result-section").length;
 			$('.result-section:lt('+max_items_page+')').show();
+			
+			
+			
+			// load results 10 at a time // 
+		   // ***********END***********//
+			
 			function loadMoreResults(){
 				max_items_page = 10;
 				shown = null;
 				items = $(".result-section").length;
 
-				$('.result-section:lt('+max_items_page+')').show();
-
+				//$('.result-section:lt('+max_items_page+')').show();
+				$('#contentCatagory').css('visibility','visible');
 				$('.result-product').each(function(){
 						if($(this).find('.result-section:visible').length == 0){
 							$(this).hide();
@@ -221,13 +267,15 @@ var hds = window.hds || {};
 						}
 				});
 
-				$('.result-btn a').on('click',function(e){
+				$('.result-btn a').unbind('click').click(function(e){
+					console.log("clicked")
 					$('.result-product').show();
 					shown = $('.result-section:visible').length+max_items_page;
-					if(shown<items) {
-						$('.result-section:lt('+shown+')').show();
-					}else {
-						$('.result-section:lt('+items+')').show();
+					
+					if(shown<items) {console.log(shown)
+						$('.result-section[filter="show"]:lt('+shown+')').show();
+					}else {console.log("else"+shown)
+						$('.result-section[filter="show"]:lt('+items+')').show();
 						$('.result-btn a').hide();
 					}
 					$('.result-product').each(function(){
@@ -238,23 +286,23 @@ var hds = window.hds || {};
 							$(this).show()
 						}
 					});
+					return;
 				});
 			}
 
-
 			loadMoreResults();
-
 			var searchKey = $('.daterangepicker .search').val();
 			var dateFrom = $('.from_date').val();
 			var dateTo = $('.to_date').val();
 			var url ='';
 			function getResults(){
-				searchKey = $('.daterangepicker .search').val();
+               	searchKey = $('.daterangepicker .search').val();
 				dateFrom = $('.from_date').val();
 				dateTo = $('.to_date').val();
 				url ='';
 					if(searchKey!='' && dateFrom!='' && dateTo!=''){
 						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey+"&lowerBound="+dateFrom+"&upperBound="+dateTo;
+
 					}else if(searchKey=='' && dateFrom!='' && dateTo!=''){
 						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?lowerBound="+dateFrom+"&upperBound="+dateTo;
 					}else{
