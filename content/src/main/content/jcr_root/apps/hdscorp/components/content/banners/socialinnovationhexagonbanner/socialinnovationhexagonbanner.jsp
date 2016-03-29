@@ -19,7 +19,7 @@
             
             <div class="advance-tech-hexagon-list clearfix">
             	<div class="content-container">
-                	<div class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
+                	<div class="col-sm-12 col-sm-offset-1 col-no-pad hex-contain clearfix">
 
 						<c:forEach var="placardList" items="${placardList}" varStatus="loop">
 							<c:set var="placardTitle" value="${placardList.placardTitle}" />

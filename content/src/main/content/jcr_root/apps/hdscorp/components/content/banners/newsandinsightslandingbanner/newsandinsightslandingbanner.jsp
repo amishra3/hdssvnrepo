@@ -22,7 +22,7 @@ request.setAttribute("bannerimage",bannerimage);
 		<%--<div class="common-hero-short-banner news-insight clearfix" style="background-image:url('${requestScope.bannerimage}')">--%>
             <div class="common-hero-short-banner news-insight clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.newsandinsightsbannermobileimage)} > 
                 <div class="content-container">
-                    <div class="col-lg-7 col-md-7 col-xs-12" >
+                    <div class="col-lg-6 col-md-6 col-xs-12" >
         				    <div class="top-banner-heading">${properties.newsandinsightsbannertitle}</div>
                          <c:if test="${not empty properties.newsandinsightsbannersubtitle}">
                             <h1 class="headline">${properties.newsandinsightsbannersubtitle}</h1>
