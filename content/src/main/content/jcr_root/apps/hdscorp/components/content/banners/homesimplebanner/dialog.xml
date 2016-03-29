@@ -88,6 +88,12 @@
                         name="./simplebannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show Third party icon ?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>

@@ -80,16 +80,55 @@
                                 fieldLabel="Placard Icon Path"
                                 name="./placardIconPath"
                                 xtype="pathfield"/>
-		                    <placardlinklabel
-		                        jcr:primaryType="cq:Widget"
-		                        fieldLabel="Link Label"
-		                        name="./placardlinklabel"
-		                        xtype="textfield"/>
-		                    <placardlinkurl
-		                        jcr:primaryType="cq:Widget"
-		                        fieldLabel="Link Target URL"
-		                        name="./placardlinkurl"
-		                        xtype="pathfield"/>
+                            <placardlinklabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link Label"
+                                name="./placardlinklabel"
+                                xtype="textfield"/>
+                            <placardlinkurl
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link Target URL"
+                                name="./placardlinkurl"
+                                xtype="pathfield"/>
+                            <seemorenewwin
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window ?"
+                                name="./seemorenewwin"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </seemorenewwin>
+                            <thirdparty
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Show third party icon?"
+                                name="./thirdparty"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                                <seemoretargeturl
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Link target URL"
+                                    name="./seemoretargeturl"
+                                    xtype="pathfield"/>
+                            </thirdparty>
                         </fieldConfig>
                     </multilinks>
                 </items>

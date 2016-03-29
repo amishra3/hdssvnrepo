@@ -85,6 +85,50 @@
                                 fieldLabel="Placard Icon Alt"
                                 name="./placardIconalt"
                                 xtype="textfield"/>
+                            <seemorelabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="See More Link Label"
+                                name="./seemorelabel"
+                                xtype="textfield"/>
+                            <seemoretargeturl
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link target URL"
+                                name="./seemoretargeturl"
+                                xtype="pathfield"/>
+                            <seemorenewwin
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window ?"
+                                name="./seemorenewwin"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </seemorenewwin>
+                            <thirdparty
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Show third party icon?"
+                                name="./thirdparty"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </thirdparty>
                         </fieldConfig>
                     </multilinks>
                     <hexbuttonlabel

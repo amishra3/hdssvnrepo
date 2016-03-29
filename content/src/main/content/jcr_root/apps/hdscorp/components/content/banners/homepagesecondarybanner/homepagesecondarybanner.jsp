@@ -24,7 +24,7 @@
 				${properties.secondaryherocontent}
 			<div class="btn-square-red learn-more-promo">
                 <a href="${linkUrl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">
-				${properties.secondarybuttonlabel}
+				${properties.secondarybuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}
 			  </a>
             </div>    
 		</div>

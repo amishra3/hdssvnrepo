@@ -110,7 +110,7 @@
 .news-insight-resources h3{ 
 	color: #ffffff;
   font-weight: 700; 
-  padding-bottom: 40px; 
+  padding: 40px 0 30px; 
   text-transform: uppercase; 
   text-align:center;
   margin: 0;
@@ -191,6 +191,9 @@
   }
 }
 @media only screen and (max-width: 768px) {
+ .common-hero-short-banner.news-insight .top-banner-heading{
+	 text-align: center; 
+ }
   .news-insight-resources .container-fluid{
     margin-right: -15px;
   }
@@ -343,6 +346,10 @@
   text-transform: uppercase;
 }
 
+.explore-insight .explore-insight-container .insight-common-box .read-more a:hover{
+	color: #ac1f25;	
+}
+
 @media screen and (max-width: 991px) {
   .explore-insight .explore-insight-container h2{
     font-size: 1.45rem;
@@ -401,7 +408,7 @@
   float: none;
   margin: 45px auto 0;
   max-width: 1280px;
-  border-bottom: 4px solid #f78e1e;
+  border-bottom: 5px solid #f78e1e;
 }
 
 .news-insight-explore .col-md-4{

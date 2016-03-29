@@ -25,7 +25,7 @@
 <c:choose>
 	<c:when test="${not empty properties.hextitlecontent}">
 
-		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt")%>" />
+		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardIconalt-seemorelabel-seemoretargeturl-seemorenewwin-thirdparty")%>" />
 
     	<%-- <div class="calculating-success col-xs-12 col-sm-12 col-md-12 col-lg-12 hero-homepage-container ${editbarstyle} ${not empty properties.hexbuttonlabel?' ':'heaxongonbannernobutton'}" style="background-image: url('${properties.heximagePath}')"> --%>
              <div class="calculating-success col-xs-12 col-sm-12 col-md-12 col-lg-12 hero-homepage-container ${editbarstyle} ${not empty properties.hexbuttonlabel?' ':'heaxongonbannernobutton'} rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.heximagePath,properties.hexmobileimage)}>
@@ -56,6 +56,9 @@
                             <img src='${placardIconPath}' alt='${placardIconalt}' title='${placardIconalt}' style="position: absolute;top: -40px;left: 0px;right: 0px;margin: 0px auto;">
 	    					<h4>${placardTitle}</h4>
 	    					${placardcontent}
+							<c:if test="${not empty placardList.seemorelabel}">
+   								<a class="animateAnchor" href="${placardList.seemoretargeturl}" target="${placardList.seemorenewwin==1?'_blank':'_self'}">${placardList.seemorelabel} ${placardList.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                            </c:if> 
 	    				</li>
 
 						<c:if test="${!loop.last && properties.hexshowadditionsymbol}">							    				

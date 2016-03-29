@@ -71,6 +71,12 @@
                         name="./secondaryurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show Third Party Icon ?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <secondarycontentalign
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Align Content on Right and Image on Left ?"

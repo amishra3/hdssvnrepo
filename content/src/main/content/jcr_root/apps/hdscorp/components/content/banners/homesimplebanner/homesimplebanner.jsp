@@ -40,7 +40,7 @@
 					<c:if test="${not empty properties.simpllebannerbuttonlabel}">
 						<div class="btn-square-white learn-millennials">
 							<a href="${linkUrl}" class="learn -white" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
-								${properties.simpllebannerbuttonlabel}
+                        	${properties.simpllebannerbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}
 							</a>
 						</div>
 					</c:if>	

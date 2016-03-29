@@ -19,7 +19,7 @@
 
 <c:choose>
 	<c:when test="${not empty properties.hextitlecontent}">
-        <c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardlinklabel-placardlinkurl")%>" />
+        <c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardlinklabel-placardlinkurl-seemorenewwin-thirdparty")%>" />
             <div class="hero-homepage-container">
                 <a href="javascript:void(0);" class="close-hero"><span class="sprite icon-close-hero"></span></a>
                 <c:if test="${not empty properties.bannericonpath}">
@@ -48,7 +48,7 @@
 	                        <span class="sprite icon-connect" style="background-image: url(${placardIconPath});background-position: 0 0;background-repeat:no-repeat;"></span>
 	                        <h4>${placardTitle}</h4>
 	                        <p>${placardcontent}</p>
-	                        <a href="${placardlinkurl}">${placardlinklabel}<span class="sprite icon-caret-red"></span></a>
+	                        <a class="animateAnchor" href="${placardlinkurl}" target="${placardList.seemorenewwin==1?'_blank':'_self'}">${placardlinklabel}${placardList.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 	                    </li>
 
                 </c:forEach>
