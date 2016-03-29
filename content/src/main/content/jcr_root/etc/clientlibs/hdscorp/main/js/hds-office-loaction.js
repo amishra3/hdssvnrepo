@@ -5,7 +5,7 @@ var hds = window.hds || {};
         init: function(options) {
             var defaults = {
                 seletCountry: '#seletCountry',
-                defaultRegion: 'North America',
+                defaultRegion: 'NorthAmerica',
                 defaultCountry: 'USA',
                 defaultcity: 'California'
             }
@@ -21,7 +21,7 @@ var hds = window.hds || {};
         	$("#allRegion option").filter(function() {
         	    return $(this).text() == defaultRegion; 
         	}).prop('selected', true);
-			$("#allRegion").trigger('change');
+			//$("#allRegion").trigger('change');
         },
 
         _loadMap: function(str) {
@@ -127,14 +127,10 @@ var hds = window.hds || {};
             var defultOptions = '<option>--Select Country--</option>';
             var countryData = getJSONLocation.data;
             var blank = hds.hdsContactLocations._returnJSON(countryData, selectedText);
-            $.each(blank, function(key, val) {
-                defultOptions = defultOptions + "<option value=" + val.countrylabel + ">" + val.countrylabel + "</option>";
+            $.each(blank, function(key, val) { 
+                defultOptions = defultOptions + "<option value=" + val.countrylabel + ">" + val.countrylabel + "</option>";            	
             });
-            $('#allCountries').html("").append(defultOptions);
-            $("#allCountries option").filter(function() {        	    
-        	    return $(this).text() == defaultCountry; 
-        	}).prop('selected', true);
-            $("#allCountries").trigger('change');
+            $('#allCountries').html("").append(defultOptions);      
         	
         },
         _getStateBasedOnLocation: function(arg1, arg2) {
@@ -144,27 +140,21 @@ var hds = window.hds || {};
             var state = hds.hdsContactLocations._returnJSON(countryData, arg2);
             var location = hds.hdsContactLocations._returnLocationJSON(state, arg1);
             console.log($.isEmptyObject(location));
-           if(!$.isEmptyObject(location)){
-        	   if($('#allLocations').is(':not(visible)')){
-        		   $('#allLocations').show();
-              	 $('#allLocations').parents('.select-style').show();
-        	   }
-            $.each(location, function(key, val) {
-                defultOptions = defultOptions + "<option value=" + val.locationlabel + ">" + val.locationlabel + "</option>";
+           if(!$.isEmptyObject(location)){        	   
+        	  $('#allLocations').removeAttr('disabled');              	 
+        	   
+            $.each(location, function(key, val) {            	
+            	defultOptions = defultOptions + "<option value=" + val.locationlabel + ">" + val.locationlabel + "</option>";            	
             });
             $('#allLocations').html("").append(defultOptions);
         }else{
-        	 $('#allLocations').hide();
-        	 $('#allLocations').parents('.select-style').hide();
+        	$('#allLocations').prop('disabled', 'disabled');
         	 var selectedText = $.trim($("#allCountries option:selected").text()).toLowerCase();
              var selectedTextParent = $.trim($("#allRegion option:selected").text()).toLowerCase();
              $('.scrollbar-inner > h2').html('').html($.trim($("#allRegion option:selected").text()));
              hds.hdsContactLocations._setDetails(selectedTextParent, selectedText, null,true);
         }
-           $("#allLocations option").filter(function() {
-       	    //may want to use $.trim in here
-       	    return $(this).text() == defaultcity; 
-       	}).prop('selected', true);
+ 
         },
         _bindEventsSelectors: function() {
             $('#allRegion').on('change', function(event) {

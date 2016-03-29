@@ -96,8 +96,14 @@ var hds = window.hds || {};
         linksExchange:function(){
         	$('.hds-main-navigation > ul > li> a').each(function(){
         		var href=$(this).attr('href');
-        		$(this).attr('href','javascript:void(0);');
+        		var dataHref= $(this).attr('data-href',href);
         		$(this).parent('li').find('.megamenu-heading').find('h2 > a').attr('href',href);
+        		  if ($(window).width() <= 768) {        		
+        		$(this).attr('href','javascript:void(0);');        		
+        		  }else{
+        			  var getPageUrl= $(this).data('href');
+        			  $(this).attr('href',getPageUrl);
+        		  }
         	});
         },
         mobileMenu:function(){           
