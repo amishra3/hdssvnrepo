@@ -91,7 +91,7 @@ $(document).on('click', '.close-overlay', function(event) {
 });
 $(document).keyup(function(e) { //play videos properly when closed by esc key
     var overlay = $('.hds-overlay');
-    if (e.keyCode == 27) {
+    if (e.keyCode == 27 && typeof searchPlayingVideo  !== "undefined") {
         $('.video-div').html(searchPlayingVideo);
         $('.video-div').removeClass('video-div');
         $('.innerContent').html('');
