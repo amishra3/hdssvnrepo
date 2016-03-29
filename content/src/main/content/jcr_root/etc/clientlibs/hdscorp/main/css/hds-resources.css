@@ -149,6 +149,15 @@ color: #cccccc !important;
   padding: 0;
   margin: 15px 0 0 0;
   display: block;
+  position: relative;
+}
+.res-filters-search .resource-filters .disable-filter{
+  position: absolute;
+  height: 25px;
+  width: 100%;
+  top: 0;
+  opacity: 0.5;
+  background: #ffffff;
 }
 
 .res-filters-search .resource-filters .filterby {
@@ -1198,6 +1207,10 @@ span.ellipse.clickable {
   padding-top: 2px;
 }
 
+.FilterAreaIndustry  input[type="checkbox"],
+.FilterAreaContent  input[type="checkbox"]{
+   opacity: 0;
+}
 .FilterAreaIndustry  input[type="checkbox"]+label:before,
 .FilterAreaContent  input[type="checkbox"]+label:before {
   background: url('../images/radion-btn-white-sprite.png') no-repeat top left;
