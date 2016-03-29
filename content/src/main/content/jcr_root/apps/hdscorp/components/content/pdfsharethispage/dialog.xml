@@ -34,12 +34,6 @@
                         fieldLabel="LinkedIn Icon Path"
                         name="./stplinkediniconpath"
                         xtype="pathfield"/>
-                    <stpemailiconpath
-                        jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
-                        fieldLabel="Mail Icon Path"
-                        name="./stpemailiconpath"
-                        xtype="pathfield"/>
                 </items>
             </tab1>
         </items>

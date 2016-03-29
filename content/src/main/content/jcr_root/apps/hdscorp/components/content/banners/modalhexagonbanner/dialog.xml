@@ -123,11 +123,6 @@
                                         text="No"
                                         value="2"/>
                                 </options>
-                                <seemoretargeturl
-                                    jcr:primaryType="cq:Widget"
-                                    fieldLabel="Link target URL"
-                                    name="./seemoretargeturl"
-                                    xtype="pathfield"/>
                             </thirdparty>
                         </fieldConfig>
                     </multilinks>

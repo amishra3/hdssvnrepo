@@ -53,6 +53,23 @@
                         fieldLabel="Banner Mobile Image (Optional)"
                         name="./hexmobileimage"
                         xtype="ddpathfield"/>
+                    <class
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show icon?"
+                        name="./showicon"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <Yes
+                                jcr:primaryType="nt:unstructured"
+                                text="Yes"
+                                value="1"/>
+                            <No
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="2"/>
+                        </options>
+                    </class>
                     <multilinks
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./hexmultilinks"

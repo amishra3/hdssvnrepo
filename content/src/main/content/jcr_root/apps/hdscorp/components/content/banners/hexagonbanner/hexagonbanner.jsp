@@ -46,7 +46,7 @@
 	    				<a href="${linkUrl}" class="btn-square -white" target="${properties.hexurltargettype?'_blank':'_self'}">${properties.hexbuttonlabel}</a>
 	    			</div>
 				</c:if>    	
-    			<ul class="calculating-list">
+    			<ul class="calculating-list ${properties.showicon==2?'hidehexicons':''}">
     			<c:forEach var="placardList" items="${placardList}" varStatus="loop">
 						<c:set var="placardTitle" value="${placardList.placardTitle}" />
 						<c:set var="placardIconPath" value="${placardList.placardIconPath}" />

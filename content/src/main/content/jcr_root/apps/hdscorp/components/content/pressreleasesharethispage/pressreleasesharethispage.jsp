@@ -98,8 +98,6 @@
     popUp.focus();
     return false">
 				<img alt='LinkedIn' src='${currentStyle.prstplinkediniconpath}' />
-			</a> <a lang="${encodedEmailId}" href="javascript:void(0);"
-				rel="emailHome"> <img alt='Email' src="${currentStyle.prstpemailiconpath}">
 			</a>
 		</div>
 	</div>
