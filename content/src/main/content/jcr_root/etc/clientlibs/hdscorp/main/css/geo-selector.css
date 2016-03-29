@@ -1,6 +1,23 @@
 @charset "utf-8";
 
 /* CSS Document */
+
+ #showGeo span.caret-arrow{
+ background: url("../images/select-down-arrow.png") no-repeat 0 0;
+ width: 14px;
+ height: 10px;
+ display: inline-block;
+}
+#showGeo.active span.caret-arrow{
+ background: url("../images/select-up-arrow.png") no-repeat 0 0;
+}
+
+#showGeo span.labelText{
+	left:0;
+	position:relative;
+	padding-right:3px;
+}
+
 .hds_globalNav_geo {
 	position: absolute;
 	left: 0;
@@ -102,13 +119,14 @@
 }
 @media only screen and (max-width:768px) {
 	.hds-mobile-navigation .hds_globalNav_geo{
-		display:block;
-		position:static;	
+	top:0;		
+		position:relative;	
 	}
 	
 	.hds-mobile-navigation .hds_globalNav_geo-selc{
 	padding-left:0;
 	padding-top:0;
+	padding-bottom:10px;
 	background:#fff;	
 	}
 	

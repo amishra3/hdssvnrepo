@@ -114,6 +114,7 @@ HDS Global Header and Navigation
     font-size: 1em;
     line-height: 1;
     text-align: center;
+    text-decoration:none;
 }
 
 .hds-global-header .hds-quick-navigation > ul > li.search {
