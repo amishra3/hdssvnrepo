@@ -21,7 +21,8 @@ var hds = window.hds || {};
         	$("#allRegion option").filter(function() {
         	    return $(this).text() == defaultRegion; 
         	}).prop('selected', true);
-			//$("#allRegion").trigger('change');
+        	 $('#allCountries').html("").append('<option value="">USA</option>');
+             $('#allLocations').html("").append('<option value="">California</option>');
         },
 
         _loadMap: function(str) {
@@ -84,7 +85,9 @@ var hds = window.hds || {};
                     }
                     content += '<h3>' + cat.locationtitle + '</h2>';
                     content += cat.locationdetail;
+                    if(cat.drivingdirection!=='null'){
                     content += '<a href="'+cat.drivingdirection+'" class="animateLink" target="_blank">Driving directions <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
+                    }
                     content += '<a href="javascript:void(0);" class="phone_num animateLink">Show Phone Numbers <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>';
                     content +='<div class="hideme">'+cat.locationphonenumber+'</div>';
                     content += '</div>';
@@ -92,7 +95,7 @@ var hds = window.hds || {};
 					var loc={};
                      loc["lat"]= parseFloat(cat.locationlatitude);
                      loc["lon"]= parseFloat(cat.locationlongitude);
-                     loc["icon"]='/etc/clientlibs/hdscorp/main/images/new-marker2.png';
+                     loc["icon"]='/etc/clientlibs/hdscorp/main/images/new-marker1.png';
                      accounting.push(loc);
                      }
                 })   
@@ -160,7 +163,10 @@ var hds = window.hds || {};
             $('#allRegion').on('change', function(event) {
                 if ($("#allRegion option:selected").val() !== '') {
                     var selectedText = $.trim($("#allRegion option:selected").text());
+                    $('#allCountries').html("").append('<option>--Select Country--</option>');
+                    $('#allLocations').html("").append('<option>--Select Location--</option>');
                     hds.hdsContactLocations._getCountryLocation(selectedText);
+                    
                 }
                 event.preventDefault();
             });
@@ -168,8 +174,9 @@ var hds = window.hds || {};
             $(document).on('change', '#allCountries', function(event) {
                 if ($("#allCountries option:selected").val() !== '') {
                     var selectedText = $.trim($("#allCountries option:selected").text());
-                    var selectedTextParent = $.trim($("#allRegion option:selected").text());
-                    hds.hdsContactLocations._getStateBasedOnLocation(selectedText, selectedTextParent);
+                    var selectedTextParent = $.trim($("#allRegion option:selected").text());                    
+                    $('#allLocations').html("").append('<option>--Select Location--</option>');
+                    hds.hdsContactLocations._getStateBasedOnLocation(selectedText, selectedTextParent);                    
                 }
                 event.preventDefault();
             });
@@ -182,6 +189,7 @@ var hds = window.hds || {};
                     var selectedTextloc = $.trim($("#allLocations option:selected").text()).toLowerCase();
                     $('.scrollbar-inner > h2').html('').html($.trim($("#allRegion option:selected").text()));
                     hds.hdsContactLocations._setDetails(selectedTextParent, selectedText, selectedTextloc,true);
+                    
                 }
                 event.preventDefault();
             });
