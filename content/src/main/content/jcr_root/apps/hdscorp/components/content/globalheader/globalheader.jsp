@@ -73,9 +73,10 @@
                             <c:when test="${not empty linkoverlayURL}">
                                 <c:set var="linkoverlayURLPath" value="${linkoverlayURL}" />
                                  <li><a id="${applicationScope.geoGlobalId}" href="javascript:void(0);"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
-								      ${linkTitle}
+								      <span class="labelText hidden-lg hidden-md">${linkTitle}: </span>
 				 	             <span class="icon-accordion-closed"></span>
-						    	<span class="icon-accordion-opened"></span>
+						    	 <span class="icon-accordion-opened"></span>
+						    	 <span class="caret-arrow hidden-sm hidden-xs"></span>
 				 	             </a></li>
                             </c:when>
                            <c:otherwise>
