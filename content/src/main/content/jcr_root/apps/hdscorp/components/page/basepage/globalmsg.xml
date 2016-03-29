@@ -51,5 +51,12 @@
             fieldLabel="Priority Number for the item in the grid."
             name="./gridpriorityorder"
             xtype="textfield"/>
+         <videooverlaymarkup
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Video Overlay Mark Up"
+            fieldDescription="Ex - &lt;object class=BrightcoveExperience id=#videoGuid&gt;..&lt;/object&gt;"
+            name="./videooverlaymarkup"
+            xtype="textarea"/> 
+            
     </items>
 </jcr:root>
