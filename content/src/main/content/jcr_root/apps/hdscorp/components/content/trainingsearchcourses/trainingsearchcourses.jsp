@@ -71,12 +71,12 @@
 										<div class="btn-group">
 											<button aria-expanded="false" aria-haspopup="true"
 												data-toggle="dropdown"
-												class="btn dropdown-toggle service-btn" type="button">${trainingSearchCoursesModel.selectlocationlabel}<span
+                                            class="btn dropdown-toggle service-btn" type="button"><span class="buttonLabel">${trainingSearchCoursesModel.selectlocationlabel}</span><span
 													aria-hidden="true" class="glyphicon glyphicon-chevron-down"></span>
 											</button>
 											<ul class="dropdown-menu">
 												<c:forEach var="tabList" items="${tabList}">
-													<li><a href="#">${tabList.locationlabel}</a></li>
+                                                    <li><a href="javascript:void(0)">${tabList.locationlabel}</a></li>
 
 												</c:forEach>
 											</ul>
