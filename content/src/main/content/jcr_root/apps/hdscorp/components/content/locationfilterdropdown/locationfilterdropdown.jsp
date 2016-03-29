@@ -55,13 +55,13 @@ var="locationsDropDownFilterModel" />
 		<div class="Container-legal-terms container-fluid overRideRight">
             <div class="location-nav-tabs">
               <ul class="nav nav-tabs hidden-md hidden-lg">
-                    <li class="active col-xs-6"><a data-toggle="tab" href="#ListViewMap">List View</a></li>
-                    <li class="col-xs-6"><a data-toggle="tab" href="#MapViewLocation">Map View</a></li>
+                  <li class="col-xs-6 current" data-tab="tab-1"><a href="javascript:void(0)">List View</a></li>
+                  <li class="col-xs-6" data-tab="tab-2"><a href="javascript:void(0);">Map View</a></li>
               </ul>
             </div>  
             <div class="posRelativeLocation">
             <div id="loading"></div>
-			<div class="col-md-3 col-sm-12" id="ListViewMap">
+			<div class="col-md-3 col-sm-12 tabbed-content current" id="tab-1">
 				<div class="content" >
                   <div class="scrollbar-inner">
                     <h2>North America</h2>
@@ -71,7 +71,7 @@ var="locationsDropDownFilterModel" />
 				</div>
 			</div>
 			<!-- Map Content to Loaded here -->
-			<div class="col-md-9 col-sm-12" id="MapViewLocation">
+			<div class="col-md-9 col-sm-12 tabbed-content" id="tab-2">
 				<div id="gmap" style="width:100%;height:792px;"></div>
 			</div>
             </div>
