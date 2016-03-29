@@ -159,26 +159,38 @@
 	max-height: inherit;
     overflow-y: hidden;	
   }
-  
+  .posRelativeLocation{
+	  width: 100%;
+	  background: #ffffff;
+	  float: left;	
+  }
   #MapViewLocation, .scrollbar-inner{
 	 margin-bottom: 30px;	  
   }
   .side-block{
 	width: 100%; 
-    text-align:center;
   }
   .scrollbar-inner h2 {
-	 margin: 20px 0;
+	margin: 20px 0;
   } 
-	
+  #LoactionFilters .Container-legal-terms{
+	background: #f1f1f1;
+  }
+  .location-nav-tabs .nav-tabs > li:first-child{
+    padding-right: 0;	  
+  }
   .location-nav-tabs{
 	  width: 100%;	  
+  }
+  .location-nav-tabs .nav-tabs{
+	 border-bottom: none; 	  
   }
   .location-nav-tabs .nav-tabs > li{
 	margin-bottom: 0;	  
   }
   
 .location-nav-tabs .nav-tabs > li > a{
+	background: #dedede;
     font-size: 0.813em;
 	color: #666666;
 	border: none;
@@ -192,6 +204,21 @@
     margin-right: 0;
 	text-transform: uppercase;
   }
+  
+  ul.nav li.current a{
+	font-size: 0.813em;  
+	background: #ffffff;
+	color: #000000;
+}
+
+.tabbed-content{
+	display: none;
+	/*background: #ededed;*/
+	}
+ 
+.tabbed-content.current{
+	display: inherit;
+}
 
   .location-nav-tabs .nav-tabs > li.active > a, 
   .location-nav-tabs .nav-tabs > li.active > a:hover, 
@@ -201,7 +228,10 @@
     color: #000;	  
   }
 #locationDetailsContent .side-block .img-responsive{display:inline-block;}
-	
+.posRelativeLocation #gmap{
+	height: 310px !important;
+	margin-bottom: 20px;
+}
 }
 
 
@@ -209,5 +239,4 @@
 
 .contact-inner-area .col-md-3,.contact-inner-area .col-md-9{padding-right: 0;}
 }
-
 
