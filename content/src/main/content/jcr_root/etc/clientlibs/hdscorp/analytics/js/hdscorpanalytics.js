@@ -1,6 +1,5 @@
 var digitalData = digitalData || {};
 var data=getCurrentBreadcrumb();
-
 data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 data = data.replace(/\s{2,}/g,' ');
 data = data.toLowerCase();
@@ -18,6 +17,7 @@ var desktopType="";
 var orientation="landscape";
 var screenSize;
 var delay=4000;
+var gInternalSearchFilter="";
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
 $(document).ready(function() {
@@ -90,8 +90,21 @@ if(isProductCategory())
         });
 	});
 }
-
+if(isLeadFormPage()){
 digitalData.page={
+	
+	pageInfo:{
+	pageName: $.trim(pageTitle),
+	pageType: $.trim(primaryCategory),
+    },
+	category:{
+	primaryCategory: $.trim(primaryCategory),
+	}
+	}
+} else
+{
+	digitalData.page={
+	
 	pageInfo:{
 	pageName: $.trim(pageTitle),
 	pageType: $.trim(primaryCategory),
@@ -101,6 +114,8 @@ digitalData.page={
 	primaryCategory: $.trim(primaryCategory),
 	}
 	}
+}
+
 digitalData.site={
         siteInfo:{
         language:"en",
@@ -118,40 +133,146 @@ digitalData.site={
             authStatus:"guest"
         }
     }
-
+	
 if(isErrorPage())
 {
-    digitalData["page"]["pageInfo"]["pageName"]="404 error page";
+	var fileName = window.location.pathname;
+	var n=fileName.lastIndexOf("/");
+    fileName=fileName.substring(n+1, 1000);
+    n=fileName.lastIndexOf(".");
+    if(n>0){fileName=fileName.substring(0, n);}
+	
+    digitalData["page"]["pageInfo"]["pageName"]= fileName;
 	digitalData["page"]["pageInfo"]["pageLoadEvent"]="404 error";
     digitalData["page"]["pageInfo"]["errorMessage"]="page not found";
 	digitalData["page"]["pageInfo"]["pageType"]="errorPage";
 	digitalData["page"]["pageInfo"]["hier1"]="404 error page";
 	digitalData["page"]["category"]["primaryCategory"] = "404 error page";
+	//digitalData["site"]["siteInfo"]["country"]="US:404error";
 
 }
 // *****this section would perform the internal search tracking if the search page is hit *******  //
 // ***********************************************************************************************//
 
+if(isLeadFormPage())
+{
+		var url=$(location).attr('pathname');
+		var pageName="";
+		var pageType="";
+		var pageLoadEvent="";
+		var leadFormName="";
+		var assetName="/assets/abcd.pdf";
+		var leadFormParentPage="parent page URL";document.referrer;
+		var leadFormParentPageCategory="parent page category";//document.referrer;
+		if(url.indexOf("contact-sales-aem.html")>-1)
+		{
+			if(url.indexOf("ty-")>-1)
+			{
+				pageName="contact sales thank you";
+				pageType="contactSalesForm";
+				pageLoadEvent="lead form completed";
+				leadFormName="contact sales";
+				leadID=__aem_id;
+				leadCountry=__aem_country;
+				leadCompany=__aem_company_name;
+			}else
+			{
+				pageName="contact sales form";
+				pageType="contactSalesForm";
+				pageLoadEvent="lead form initiated";
+				leadFormName="contact sales";	
+			}
+		}
+		else if (url.indexOf("request-info-aem.html")>-1)
+		{
+			
+			if(url.indexOf("ty-")>-1)
+			{
+				pageName="request info thank you";
+				pageType="leadForm";
+				pageLoadEvent="lead form completed";
+				leadFormName="request info";
+				leadID=__aem_id;
+				leadCountry=__aem_country;
+				leadCompany=__aem_company_name;
+			}else
+			{
+				pageName="request info form";
+				pageType="leadForm";
+				pageLoadEvent="lead form initiated";
+				leadFormName="request info";
+			}
+		
+		}
+		else if (url.indexOf("ty-newsletter-subscription.html")>-1){NewsletterSub();}
+		else if (url.indexOf("training-and-placement.html")>-1){}
+		else if (url.indexOf("gated-form-progressive.html")>-1)
+		{
+			if(url.indexOf("ty-")>-1)
+			{
+				pageName="asset gating thank you";
+				pageType="gatedForm";
+				pageLoadEvent="lead form completed";
+				leadFormName="asset gating form";
+				leadID=__aem_id;
+				leadCountry=__aem_country;
+				leadCompany=__aem_company_name;
+			}else
+			{
+				pageName="asset gating page";
+				pageType="gatedForm";
+				pageLoadEvent="lead form initiated";
+				leadFormName="asset gating form";
+			}
+		digitalData["page"]["pageInfo"]["assetName"]=assetName;
+		}
+		if (!url.indexOf("newsletter-subscription.html")){
+		digitalData["page"]["pageInfo"]["pageName"]=pageName;
+		digitalData["page"]["pageInfo"]["pageType"]=pageType;
+		digitalData["page"]["pageInfo"]["pageLoadEvent"]=pageLoadEvent;
+		digitalData["page"]["pageInfo"]["leadFormName"]=leadFormName;
+		digitalData["site"]["siteInfo"]["server"]="mkthds";
+		digitalData["page"]["pageInfo"]["leadFormParentPage"]=leadFormParentPage;
+		digitalData["page"]["category"]["primaryCategory"]=leadFormParentPageCategory;
+		
+		if(url.indexOf("ty-")>-1)
+		{
+			digitalData["page"]["pageInfo"]["leadID"]=leadID;
+			digitalData["page"]["pageInfo"]["leadCountry"]=leadCountry;
+			digitalData["page"]["pageInfo"]["leadCompany"]=leadCompany;
+		}
+	}	
+}
+
 if(isInternalSearchPage()){    
-		var result = $('.searchresultitem').size();
+		setTimeout(function(){
+		var parentPageURL=window.referrer;
+		var result = $('#num_results').next('b').text();//$('.searchresultitem').size();
 		var searchTerm = $('#SearchTextBox').val();
-		var pageName = digitalData.page.pageInfo.pageName;
+		var searchAction = "";
+		var pageName = "internal search results page";//digitalData.page.pageInfo.pageName;
 		result=result.toString();
+		if($('#SearchTextBox').val() != ""){
+		   searchAction = "search box"
+		}
+		if($('.dn-attr input:checkbox:checked').length > 0){
+		   searchAction = "sub category filter"
+		}
+
 		if(result == 0){
 			result='zero';
 			internalSearch(pageName, "internalSearch", "unsuccessful search", searchTerm, result)
 		}else{
 			internalSearch(pageName, "internalSearch", "success search", searchTerm, result)
 		}
-
-		function internalSearch(pageName, pageType,pageLoadEvent, searchTerm, result){
+	function internalSearch(pageName, pageType,pageLoadEvent, searchTerm, result){
+			digitalData["page"]["pageInfo"]["searchAction"] = searchAction;
+			digitalData["page"]["pageInfo"]["searchResult"] = result;
+			digitalData["page"]["pageInfo"]["searchType"] = "internal search";
+			digitalData["page"]["pageInfo"]["searchPage"] = "parent page url";
 			digitalData["page"]["pageInfo"]["pageName"] = pageName;
 			digitalData["page"]["pageInfo"]["pageType"] = pageType;
 			digitalData["page"]["pageInfo"]["pageLoadEvent"] = pageLoadEvent;
-			digitalData["page"]["pageInfo"]["searchResult"] = result;
-			digitalData["page"]["category"]["primaryCategory"] = "search";
-			digitalData["page"]["category"]["subSection"] = "search";
-			digitalData["page"]["category"]["subSubSection"] = "search";
 			if(searchTerm!="")
 				digitalData["page"]["pageInfo"]["searchTerm"]=searchTerm;
 			else
@@ -183,6 +304,12 @@ if(isInternalSearchPage()){
 		$('.dn-attr-a').each(function(){
 			$(this).click(function(){
 				var searchfilter = $(this).attr('title');
+				var text = $(this).parent().parent().find('span').attr('title');
+				var isChecked=$(this).parent().find('a').size();
+				searchfilter=text + ":" + searchfilter;
+				if(isChecked == 1 ){
+				if (gInternalSearchFilter!=""){gInternalSearchFilter = gInternalSearchFilter + "," + searchfilter;}
+				else{gInternalSearchFilter = searchfilter;}}
 				Internalfilter(searchTerm,searchfilter)
 			});
 		});
@@ -199,68 +326,60 @@ if(isInternalSearchPage()){
         else
 			digitalData["eventData"]["searchTerm"]="no term searched";
 		if(searchFilters!="")
-			digitalData["eventData"]["searchFilters"]=searchFilters;
+			digitalData["eventData"]["searchFilters"]=searchfilter;
 			_satellite.track('internalfilter');
 		}
+		},2000);
 }
 // ****************************************************************************************************************//
 // *****  --END-- the above section would perform the internal search tracking if the search page is hit *******  //
 
-
-
-
-// ****************************************************************************************************************//
 // *****  --START-- the below section would perform the resource search tracking if the search page is hit *******  //
 if(isResourceSearchPage()){  
 
 	var searchTerm = $('#resSearch').val();
 	var result = $('.category-resources-listing').find('.resource.visible').size();
 	var searchAction = "";
-	var searchFilters = "all";//removed 'all' and set 'featured' as default serach
-	result=result.toString();
-	searchTerm=searchTerm.toString();
-	if(searchTerm == "" || searchTerm.length==0){
+	var searchFilters = "all";
+	if(searchTerm == ""){
 		searchTerm='no term searched';
 	}
 	$('#resSearch').on('keypress',function(e){
 		searchTerm = $('#resSearch').val();
-		searchTerm=searchTerm.toString();
 		//console.log("**********"+searchTerm+"*********")
 		if(e.which == 13){
 			setTimeout(function(){
 			result = $('.category-resources-listing').find('.resource.visible').size();
+			searchAction = "search box";
 			result=result.toString();
-			searchAction = "search box"
+			if(searchFilters == ""){searchFilters="all";}
 			specificSearchClick(searchTerm, searchAction, result)
-			},10000);
+			},5000);
 		}
+		
 	});
 
 	$('.searchResource').click(function(){
 		searchTerm = $('#resSearch').val();
-		searchTerm=searchTerm.toString();
 		result = $('.category-resources-listing').find('.resource.visible').size();
-		console.log("**********"+searchTerm+"*********")
+		//console.log("**********"+searchTerm+"*********")
+		searchAction = "search box";
 		result=result.toString();
-		searchAction = "search box"
+		if(searchFilters == ""){searchFilters="all";}
 		specificSearchClick(searchTerm, searchAction, result)
 	});
 
-
-	//$('#mobShowFilters').click(function(){
-	$(document).on('click', '#showContentType', function(event) {
+	 $('#showIndustry').click(function(){
+	//$(document).on('click','#showIndustry', function(e){
 		searchTerm = $('#resSearch').val();
 		result = $('.category-resources-listing').find('.resource.visible').size();
 		console.log("**********"+searchTerm+"*********")
 		var selection = [];
 		var selectionCollection;
 		var selectionParent = "";
-		console.log($(this).parent().parent().prev().prev().attr('class'))
-		if($(this).parent().parent().prev().prev().attr('class') == 'FilterByIndustryList'){
-			searchAction = "Industry filter"
-		}else{
-			searchAction = "Content filter"
-		}
+		
+		searchAction = "Industry filter"
+
 		$.each($("input[name='cbxFunction']:checked"), function(){ 
 			selection.push($(this).attr('id'));
 			if(selection.length > 0){
@@ -276,22 +395,19 @@ if(isResourceSearchPage()){
 		selectionCollection = selection.join();
 		searchFilters = selectionCollection;
 		specificSearchClick(searchTerm, searchAction, result)
+		//return false;
 	});
 	
-	//$('#mobShowFilters').click(function(){
-	$(document).on('click', '#showIndustry', function(event) {
+	$(document).on('click','#showContentType', function(e){
 		searchTerm = $('#resSearch').val();
 		result = $('.category-resources-listing').find('.resource.visible').size();
 		console.log("**********"+searchTerm+"*********")
 		var selection = [];
 		var selectionCollection;
 		var selectionParent = "";
-		console.log($(this).parent().parent().prev().prev().attr('class'))
-		if($(this).parent().parent().prev().prev().attr('class') == 'FilterByIndustryList'){
-			searchAction = "Industry filter"
-		}else{
-			searchAction = "Content filter"
-		}
+		
+		searchAction = "Content filter"
+
 		$.each($("input[name='cbxFunction']:checked"), function(){ 
 			selection.push($(this).attr('id'));
 			if(selection.length > 0){
@@ -307,23 +423,58 @@ if(isResourceSearchPage()){
 		selectionCollection = selection.join();
 		searchFilters = selectionCollection;
 		specificSearchClick(searchTerm, searchAction, result)
+		//return false;
 	});
 	
-	$(document).on('click', '#asideLinks-product li > a, input[name="cbxFunction"]', function(event) {	
-		searchAction = "category filter"
+	$('.checkbox .filters').click(function(){
+		
+		var pClass="";
+		pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
+		if (pClass.indexOf("resources-listing")>-1){
+		searchAction = "sub category filter";
 		searchTerm = $('#resSearch').val();
-		searchTerm=searchTerm.toString();
 		result = $('.category-resources-listing').find('.resource.visible').size();
-		result=result.toString();
 		var selection = [];
 		var selectionCollection;
 		var selectionParent = "";
+		result=result.toString();
 		$.each($("input[name='cbxFunction']:checked"), function(){            
 			selection.push($(this).attr('id'));
 			if(selection.length > 0){
 				selectionParent = $(this).parent().parent().parent().prev('a').attr('name');
 			}
 		});
+		
+		//**********************************from product search****************************************
+		/*result = $('.category-resources-listing').find('.resource.visible').size()
+		
+		$('.resources-listing input.filters').each(function() {
+		 $(this).click(function(){
+			 setTimeout(function() {
+			   var text = $(this).parent().find("span").text();
+       			var result=$('#actualCount').text();
+         		if(result==0)
+           		  result="zero";
+                searchClick($('#searchFilter').val(), "sub-category filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
+			 }, 1500); 
+         });
+		});	
+		
+    $('div.resources-listing ul[id=asideLinks-product]').each(function() {
+	 	var links = $(this).find("a");
+	 	links.each(function() {
+            $(this).click(function(){
+                var text = $(this).text();
+                setTimeout(function() {
+                var result=result = $('.resourceLibraryContent').find('.resource.visible').size();;
+                 if(result==0)
+                     result="zero";
+                	searchClick($('#searchFilter').val(), "category filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
+    			 }, 1500);
+             });
+        });
+	});	*/
+		//*******************************************************************************************
 		$.each($("input[name='ctyFunction']:checked"), function(){            
 			selection.push($(this).attr('id'));
 		});
@@ -332,72 +483,78 @@ if(isResourceSearchPage()){
 		}
 		selectionCollection = selection.join();
 		searchFilters = selectionCollection;
+		if(searchTerm == "" || !searchTerm){searchTerm = 'no term searched';}
 		specificSearchClick(searchTerm, searchAction, result)
+		}
 	});
-
-	$('.page-link').click(function(){
+	var currentpagenumber = $('span.current').html();
+	$(document).on('click', '.page-link', function() {
 		searchTerm = $('#resSearch').val();
-		searchTerm=searchTerm.toString();
 		result = $('.category-resources-listing').find('.resource.visible').size();
-		result=result.toString();
+		currentpagenumber = $('span.current').html();
 		var pagination = currentpagenumber;
 		resourcePagination(searchTerm,pagination, 'resource')
 	});
-	$('.page-link.next').click(function(){
+	$(document).on('click', '.page-link.next', function() {
 		searchTerm = $('#resSearch').val();
-		searchTerm=searchTerm.toString();
 		result = $('.category-resources-listing').find('.resource.visible').size();
-		result=result.toString();
-		var pagination = currentpagenumber+1;
+		currentpagenumber = $('span.current').html();
+		var pagination = parseInt(currentpagenumber) + 1;
+		//alert(pagination);
 		resourcePagination(searchTerm, pagination, 'resource')
 	});
-	$('.page-link.prev').click(function(){
+	$(document).on('click', '.page-link.prev', function() {
 		searchTerm = $('#resSearch').val();
-		searchTerm=searchTerm.toString();
 		result = $('.category-resources-listing').find('.resource.visible').size();
-		result=result.toString();
-		var pagination = currentpagenumber-1;
+		currentpagenumber = $('span.current').html();
+		var pagination = parseInt(currentpagenumber) - 1;
 		resourcePagination(searchTerm, pagination, 'resource')
 	});
 	
 	$('.clear-results a').click(function(){
 		searchTerm = $('#resSearch').val();
-		searchTerm=searchTerm.toString();
 		searchAction = "Clear all filters"
-		result = $('.category-resources-listing').find('.resource.visible').size();
-		result=result.toString();
+		result = $('.resourceLibraryfeatered').find('.resources-spotlight').size();
 		specificSearchClick(searchTerm, searchAction, result)
 	})
 	
-	function specificSearchClick(tsearchTerm, searchAction, result){ 
-
-		if(tsearchTerm == "" || tsearchTerm.length==0){
-			tsearchTerm = 'no term searched'
+	function specificSearchClick(searchTerm, searchAction, result){ 
+		if(searchTerm == "" || !searchTerm){
+			searchTerm = 'no term searched'
 		}
 		if(result == 0){
 			result = 'zero'
 		}
+		if(searchFilters == ""){
+			searchFilters = 'all'
+		}
 		digitalData.eventData=    { 
+			searchTerm:searchTerm,
 			searchAction:searchAction,
 			searchResult:result,
 			searchType:'resource',
 			searchPage:digitalData.page.pageInfo.pageName,
-			searchTerm:tsearchTerm,
 			searchFilters:searchFilters
 		}    
 		_satellite.track('specificSearchClick');
+		return;
 	}
 
 	function resourcePagination(searchTerm,pagination, searchResultType){ 
+		if(searchTerm == "" || !searchTerm){
+				searchTerm = 'no term searched'
+			}
+			pagination=pagination.toString();
 		digitalData.eventData={ 
-			pagination: pagination, // pagination no."3",
+			pagination:pagination, // pagination no."3",
 			searchTerm:searchTerm,
-			searchResultType:'internalSearch'
+			searchResultType:searchResultType
 
 		}    
 		_satellite.track('pagination');
 	}
 }
+
 // ****************************************************************************************************************//
 // *****  --END-- the above section would perform the resource search tracking if the search page is hit *******  //
    
@@ -469,46 +626,63 @@ $(".hero-homepage").each(function() {
      var listitem = $(this).find("a");
 	// var linktext = $(this).find('h1').text();
 	 var linkposition="";
+	 var eType="link";
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
-		 var linktext = "hero-" + $.trim(jQuery(this).text());
-         // linktext = "hero-" + $.trim(linktext);
-		  var url=$(location).attr('href');
-			if(url.indexOf("us/home")>-1)
-				linkposition="home-hero-banner";
-			else 
-				linkposition="PS-Hero";
-		  
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",linkposition); });
+			var linktext = $.trim(jQuery(this).text());			
+			linkposition="home-hero-banner";
+            $(this).click(function(){
+				if ($(this).parent().attr("class") != "view-all")
+				{eType = "button";}
+				globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
 			$(this).mousedown(function(e){
-				if(e.which == 3){
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",linkposition);
+				if ($(this).parent().attr("class") != "view-all")
+				{eType = "button";}
+				if(e.which == 3){globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 				} 			
 			});
 		});                 
      }
     });	
-//hero banners for all pages
+//hero banners for all pages  .btn-square-white
 	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).find('h1').text();
 	 var linkposition="";
+	 var eType="link";
+	 var eClass="";
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
 		 //var linktext = jQuery(this).text();
-          linktext = "hero-" + $.trim(linktext);
+          linktext = $.trim(linktext);
 		  var url=$(location).attr('href');
 			if(url.indexOf("us/home")>-1)
 				linkposition="home-hero-banner";
 			else 
 				linkposition="PS-Hero";
-		  
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",linkposition); });
+            $(this).click(function(){
+				var eClass=$(this).parent().attr("class");
+				if(eClass.indexOf("buy-through")!=-1)
+					{
+						linktext = "FIND AN HDS PARTNER";
+						eType = "link";
+					}
+					else if ( eClass.indexOf("btn-square-white")!= -1)
+				{eType = "button";}
+				globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
 			$(this).mousedown(function(e){
 				if(e.which == 3){
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",linkposition);
+					var eClass=$(this).parent().attr("class");
+					if(eClass.indexOf("buy-through")!=-1)
+					{
+						linktext = "FIND AN HDS PARTNER";
+						eType = "link";
+					}
+					else if ( eClass.indexOf("btn-square-white")!= -1)
+				{eType = "button";}
+					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 				} 			
 			});
 		});                 
@@ -582,27 +756,6 @@ $(".hero-homepage").each(function() {
 			});                 
 		}
     });
-	/*$('a').mousedown(function(e){
-		if($(this).parents().attr('class') != 'hds-quick-navigation' || $(this).parents().attr('class') != 'hds-main-navigation' || $(this).parents().attr('class') != 'footer'){
-			if(e.which == 3){
-				console.log("global click")
-				// var megamenuHeader=$(this).closest(".hds-megaMenu");
-				// var category="";
-				// console.log(megamenuHeader);
-				// if(megamenuHeader && megamenuHeader!='undefined' && megamenuHeader!='null')
-					// category = megamenuHeader.find('h2').find('a').text();
-					// category = $.trim(category);
-				var triggerName = $(this).text().toLowerCase();
-				// if(category!="" && category.length>0)
-					// triggerName="us>mm>"+category.toLowerCase()+">"+linktext.toLowerCase();
-				if($(this).attr('href').indexOf(window.location.hostname) > -1){
-					globalMenuClick("linkclick",triggerName,pageTitle,"link","link click"); 
-				}else{
-					globalMenuClick("linkclick",triggerName,pageTitle,"link","offsite link click");
-				}
-			}
-		}		
-	});*/
 $(".hds-quick-navigation").each(function() {
      var listitem = $(this).find("a");
      if( listitem.length>0)
@@ -729,20 +882,21 @@ $(".hds-main-navigation h5").each(function() {
        links.each(function() {
 		 	$(this).click(function(){
                 isTabClicked=true;
-                var tabTitle = "tab-"+$(this).text().toLowerCase().replace(/\s/g,"-")+" button";
+                var tabTitle = "tab-"+$.trim($(this).text()).toLowerCase().replace(/\s/g,"-")+" button";
                 tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick"); 
             });
 	  	});
 
 	});
 	
-//Tabs Custom Tracking
-	$(".stickNav-container").each(function() {
+//Tabs Custom Tracking tabbing-container :event, category-listing: storage  page tabs
+	$(".stickNav-container, .tabbing-container, .category-listing").each(function() {
 	 	var links = $(this).find("a")
        links.each(function() {
 		 	$(this).click(function(){
                 isTabClicked=true;
-                var tabTitle = "tab-"+$(this).text().toLowerCase().replace(/\s/g,"-")+" button";
+				
+                var tabTitle = "tab-"+$.trim($(this).text()).toLowerCase().replace(/\s/g,"-")+" button";
                 tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick"); 
             });
 	  	});
@@ -829,16 +983,20 @@ $(document).on('keypress', '#searchFilter', function(event) {
 
 		});	
     $('ul[id=asideLinks-product]').each(function() {
+		var sType="";
+		var dly="1500";
 	 	var links = $(this).find("a");
 	 	links.each(function() {
             $(this).click(function(){
                 var text = $(this).text();
+				var url=$(location).attr('href');
+				if(url.indexOf("/resources.html")>-1){sType='resources';dly="5000"}else{sType='products & solutions';}
                 setTimeout(function() {
                 var result=$('#actualCount').text();
                  if(result==0)
                      result="zero";
-                	searchClick($('#searchFilter').val(), "category filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
-    			 }, 1500);
+                	searchClick($('#searchFilter').val(), "category filter",result,getProductsSearchFilters(),sType,'specificSearchClick');
+    			 }, dly);
              });
         });
 	});	
@@ -982,36 +1140,72 @@ $('.newsEvents-category-list .news-listing').each(function() {
              });
         });
 	});	
-//Added on 20160324 with dummy class for form
-	$('.mktoForm').submit(function(){
-		var emailEventType = "lead form completed";
-		var pName="newsletter subscription thank you";
-		emailsignup(emailEventType,pName)
-	});
-	//Added on 20160218 with dummy class for input field
-	$('div.mktoFormRow, .mktoFieldWrap, .mktoEmailField').on('focus blur',function(){
-		var emailEventType = "lead form initiated";
-		var pName="newsletter subscription form";
-		emailsignup(emailEventType,pName)	
-	});
-	/*$('#Country').on('focus blur',function(){
-			localStorage.setItem('leadCountry',$(this).val())
-		*/
-	
-	//Added on 20160218
-function emailsignup(emailEventType,pName){ 
-	console.log("leadcountry=" + localStorage.getItem('leadCountry'));
-	if(emailEventType=="lead form completed" && localStorage.getItem('leadCountry')){digitalData["eventData"]["leadCountry"] = localStorage.getItem('leadCountry');}
-    digitalData.eventData={ 
-	  	pageName:pName,
-		pageType:"leadForm",
-        pageLoadEvent:emailEventType,
-        leadFormName:"email subscription form",
-		leadId:127667
-	}
-       _satellite.track('emailsignup');
-}
+/*
+function formProgress(formName,fieldName){ 
+    digitalData.eventData=    { 
+        leadFromName:formName,
+        fieldname:fieldName,
+        
+    }    _satellite.track('formProgress');
+}*/
 
+	//Added on 20160218 with dummy class for input field
+	/*$('.mktoEmailField').blur(function(){
+		console.log("*******************newsletter subscription lost focus fired*****************");
+		NewsletterSub();
+	});*/
+$(document).ready(function () {
+ setTimeout(function(){
+  $('.mktoEmailField').blur(function(){
+  console.log("*******************newsletter subscription lost focus fired*****************");
+  NewsletterSub();
+})},2000);
+});
+
+function NewsletterSub(){
+		var url=$(location).attr('pathname');
+		var pageName="";
+		var pageType="";
+		var pageLoadEvent="";
+		var leadFormName="";
+		var leadFormParentPage=document.referrer;
+		var leadFormParentPageCategory=document.referrer;
+			if(url.indexOf("ty-")>-1)
+			{
+				pageName="newsletter subscription thank you";
+				pageType="leadForm";
+				pageLoadEvent="lead form completed";
+				leadFormName="email subscription form";
+				leadID=__aem_id;
+				leadCountry=__aem_country;
+				//leadCompany=__aem_company_name;
+				console.log("*******************newsletter subscription completed*****************"); 
+				console.log("data--"+data);
+			}else
+			{
+				pageName="newsletter subscription form";
+				pageType="leadForm";
+				pageLoadEvent="lead form initiated";
+				leadFormName="email subscription form";
+				console.log("*******************newsletter subscription initiated*****************"); 
+				console.log("data--"+data);
+			}
+			
+			digitalData["page"]["pageInfo"]["pageName"]=pageName;
+			digitalData["page"]["pageInfo"]["pageType"]=pageType;
+			digitalData["page"]["pageInfo"]["pageLoadEvent"]=pageLoadEvent;
+			digitalData["page"]["pageInfo"]["leadFormName"]=leadFormName;
+			digitalData["site"]["siteInfo"]["server"]="mkthds";
+			digitalData["page"]["pageInfo"]["hier1"]="";
+			digitalData["page"]["category"]["primaryCategory"]="";
+			if(url.indexOf("ty-")>-1)
+			{
+				digitalData["page"]["pageInfo"]["leadID"]=leadID;
+				digitalData["page"]["pageInfo"]["leadCountry"]=leadCountry;
+				//digitalData["page"]["pageInfo"]["leadCompany"]=leadCompany;
+			}
+			_satellite.track('emailsignup');	
+}
 //globalMenuClick(eventname,triggername,page)
 function globalMenuClick(eventName,triggerName,page,triggerType,Position){
 
@@ -1046,7 +1240,10 @@ function globalMenuClick(eventName,triggerName,page,triggerType,Position){
 
 function searchClick(searchTerm, searchAction,result,searchFilters,searchType,trackEvent)
 {
-
+		if(searchTerm == '' || searchTerm == undefined || !searchTerm){
+			searchTerm = "no term searched"
+		}
+		if(searchType=="resources"){result=$('.resource').length;}
     	digitalData.eventData= {
            // searchTerm:searchTerm,
             searchAction:searchAction,
@@ -1167,6 +1364,13 @@ function isResourceSearchPage(){
 	else
 		false;
 }
+function isLeadFormPage(){
+	if($(".mktoForm, .mktoContent").size()>0)
+        return true;
+    else
+        return false;
+}
+
 function getProductsSearchFilters()
 {
 	var filters="";
@@ -1176,7 +1380,7 @@ function getProductsSearchFilters()
 		 		filters = filters+ $.trim($(this).find('a').text());
 	       
 		});	
-	$('.product-listing input.filters').each(function() {
+	$('.resources-listing input.filters, .product-listing input.filters').each(function() {
 		 	if ($(this).is(':checked')) {
 		 		if(filters.length>0)
 		 			filters=filters+",";
