@@ -26,7 +26,7 @@
                             <h4 class="sub-headline">${properties.eventbannercontent}</h4>        					
                             <div class="btn-square-white request">
                              <a href="${linkUrl}" target="${properties.eventbannerurltargettype?'_blank':'_self'}">
-                                ${properties.eventbannerbuttonlabel}</a>
+                              	${properties.eventbannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
                             </div>
                     </div>
                 </div>

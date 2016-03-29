@@ -70,6 +70,13 @@
                         name="./eventbannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
