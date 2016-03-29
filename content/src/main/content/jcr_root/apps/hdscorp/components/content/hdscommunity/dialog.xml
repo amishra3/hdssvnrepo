@@ -19,6 +19,11 @@
                         fieldLabel="Community Title"
                         name="./hctitle"
                         xtype="textfield"/>
+                    <hcbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Backgroung Image Path"
+                        name="./hcbackgroundimage"
+                        xtype="pathfield"/>
                     <hcmultifield
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./hcmultifield"
@@ -26,6 +31,22 @@
                         name="./hcmultifield"
                         xtype="custommultifield">
                         <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <hcmtype
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="hcmtitle"
+                                fieldLabel="Blog Author Name"
+                                key="hcmtype"
+                                name="./hcmtype"
+                                xtype="textfield"/>
+                            <hciconimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="hciconimage"
+                                fieldLabel="Icon Image"
+                                key="hciconimage"
+                                name="./hciconimage"
+                                xtype="pathfield"/>
                             <hcmtitle
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"
@@ -42,14 +63,6 @@
                                 key="hccontent"
                                 name="./hccontent"
                                 xtype="richtext"/>
-                            <hcbackgroundimage
-                                jcr:primaryType="cq:Widget"
-                                allowBlank="{Boolean}false"
-                                dname="hcbackgroundimage"
-                                fieldLabel="Image Path"
-                                key="hcbackgroundimage"
-                                name="./hcbackgroundimage"
-                                xtype="pathfield"/>
                             <hclinklabel
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"
