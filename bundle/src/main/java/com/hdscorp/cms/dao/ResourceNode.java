@@ -7,6 +7,8 @@ public class ResourceNode {
 	private String resourcePath;
 	
 	private String resourceDescription;
+	
+	private String deviceFeautedIconImage;
 
 	private String[] resourceTags;
 	
@@ -127,6 +129,14 @@ public class ResourceNode {
 
 	public void setResourceType(String resourceType) {
 		this.resourceType = resourceType;
+	}
+
+	public String getDeviceFeautedIconImage() {
+		return deviceFeautedIconImage;
+	}
+
+	public void setDeviceFeautedIconImage(String deviceFeautedIconImage) {
+		this.deviceFeautedIconImage = deviceFeautedIconImage;
 	}
 
 	
