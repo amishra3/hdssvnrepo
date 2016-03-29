@@ -24,7 +24,7 @@
                             <img class="spotlight-image-icon" title="" alt="" src="${resource.featuredIconImage}">
                         </div>
                         <div class="icon hidden-md hidden-lg">
-                            <img title="" alt="" src="${resource.featuredIconImage}">
+                            <img title="" alt="" src="${resource.deviceFeautedIconImage}">
                         </div>
                         <div class="type">${resource.contentType}</div>
                         <div class="spotlight-title">

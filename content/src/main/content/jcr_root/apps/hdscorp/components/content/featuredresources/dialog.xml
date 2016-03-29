@@ -57,8 +57,16 @@
                                 key="featurediconimage"
                                 name="./featurediconimage"
                                 xtype="pathfield"/>    
-                                </items>
-                       </fieldConfig>
+                                <devicefeaturediconimage
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    dname="devicefeaturediconimage"
+                                    fieldLabel="Featured Icon Image For Device"
+                                    key="devicefeaturediconimage"
+                                    name="./devicefeaturediconimage"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
                     </featuredresources>
                 </items>
             </tab1>
