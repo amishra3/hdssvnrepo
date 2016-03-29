@@ -31,19 +31,17 @@
 							<div class="megamenu-heading">
 							<h2 class="hidden-md hidden-lg">${listReg.regionLabel}</h2>
 							</div>							
-								<div class="col-sm-12 col-sm-12 col-md-3 col-no-pad">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-no-pad">
 									<ul>
 										<c:forEach var="listCout" items="${listReg.countries}"
 											varStatus="looCount">
-											<li><a target="${listCout.openinnewwindow==1?'_blank':'_self'}" href="${listCout.countrytargetUrl}">${listCout.countryLabel}</a></li>
-Hello ${listCout.openinnewwindow}
-                                        </c:forEach>
+											<li class="col-md-4" target="${listCout.openinnewwindow==1?'_blank':'_self'}"><a href="${listCout.countrytargetUrl}">${listCout.countryLabel}</a></li>
+										</c:forEach>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</c:forEach>
-
 				</div>
 			</div>
 		</div>
