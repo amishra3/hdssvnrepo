@@ -562,8 +562,8 @@ public class SearchServiceHelper {
 					"jcr:content/@iltFacilityCity");
 			searchParams.put("group." + groupCnt + "_group.4_fulltext",
 					searchKeyword);
-			searchParams.put("group." + groupCnt + "_group.4_fulltext.relPath",
-					"jcr:content/@iltFacilityCountry");
+			//searchParams.put("group." + groupCnt + "_group.4_fulltext.relPath",
+			//		"jcr:content/@iltFacilityCountry");
 			searchParams.put("group." + groupCnt + "_group.5_fulltext",
 					searchKeyword);
 			searchParams.put("group." + groupCnt + "_group.5_fulltext.relPath",
@@ -592,7 +592,7 @@ public class SearchServiceHelper {
 		}
 		// System.out.println("before cretae query************"
 		// + searchParams.toString());
-		LOG.debug("before cretae query************" + searchParams.toString());
+		LOG.debug("before create query************" + searchParams.toString());		
 		Query query = queryBuilder.createQuery(
 				PredicateGroup.create(searchParams),
 				resourceResolver.adaptTo(Session.class));
