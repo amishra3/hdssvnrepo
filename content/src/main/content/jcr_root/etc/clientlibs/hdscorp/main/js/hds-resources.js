@@ -102,7 +102,11 @@ var hds = window.hds || {};
             $('.resource').addClass('visible');
             $('.category-resources-listing').find('.no-matched-result').remove();
             if ($.trim($(".resourceLibraryContent").html()).length === 0) {
-                $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+				if ($('#asideLinks-product li').eq(0).hasClass('active')) {
+                    $('.category-resources-listing').find('.no-matched-result').remove();
+                }else{
+                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+                }
             } else {
                 $('.category-resources-listing').find('.no-matched-result').remove();
                 hds.resourceLib._setPagination();
@@ -576,6 +580,12 @@ var hds = window.hds || {};
             $(document).on('click', '.searchResource', function(event) {               
                 var txtVal = $.trim($('#resSearch').val());
                 if(txtVal.length > 0){
+					if ($(window).width() < 991) {
+                        if ($('.overlayBox').is(':visible')) {
+                            hds.resourceLib._closeOverLayPopup();
+                        }
+                        $('body').scrollTo('#sectionResourceLib',{duration:'slow', offsetTop : '50'});
+                    }
                     $('body').append('<div class="cover"/>');
                     $('#searchTag .label').css({
                         'display': 'inline'
@@ -593,6 +603,12 @@ var hds = window.hds || {};
                     event.preventDefault();                    
                     var txtVal = $.trim($('#resSearch').val());
                     if(txtVal.length > 0){
+						if ($(window).width() < 991) {
+                            if ($('.overlayBox').is(':visible')) {
+                                hds.resourceLib._closeOverLayPopup();
+                            }
+                            $('body').scrollTo('#sectionResourceLib',{duration:'slow', offsetTop : '50'});
+                        }
                         $('body').append('<div class="cover"/>');
                         $('#searchTag .label').css({
                             'display': 'inline'
