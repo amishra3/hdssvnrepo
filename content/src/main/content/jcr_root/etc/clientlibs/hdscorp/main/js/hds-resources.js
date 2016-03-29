@@ -451,6 +451,8 @@ var hds = window.hds || {};
                 left: 0,
                 top: 0,
                 position: 'absolute'
+			}).animate({
+                scrollTop: 0
             });
             $('.bgCover').css({
                 display: 'block',
