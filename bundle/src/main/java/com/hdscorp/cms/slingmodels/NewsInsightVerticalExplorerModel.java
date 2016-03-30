@@ -20,6 +20,7 @@ import com.hdscorp.cms.util.HdsCorpCommonUtils;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.ServiceUtil;
 
+
 /**
  * Sling model for NewsInsightVerticalExplorer Component
  * 
@@ -179,6 +180,7 @@ public class NewsInsightVerticalExplorerModel {
 
 			newsInsightExplorerTop = new NewsInsightExplorerModel();
 			resource = JcrUtilService.getResourceResolver().resolve(getTargetURL() + "/jcr:content/newsdetail");
+			
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 				newsInsightExplorerTop.setTitle(properties.get("newstitle", (String) null).toString());
@@ -271,12 +273,13 @@ public class NewsInsightVerticalExplorerModel {
 			}
 		}
 
-		else if (getEventTypetop().equalsIgnoreCase("News")) {
+		else if (getEventTypeBottom().equalsIgnoreCase("News")) {
 
 			newsInsightExplorerBottom = new NewsInsightExplorerModel();
-			resource = JcrUtilService.getResourceResolver().resolve(getTargetURL() + "/jcr:content/newsdetail");
+			resource = JcrUtilService.getResourceResolver().resolve(getTargetBottomURL() + "/jcr:content/newsdetail");
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 				ValueMap properties = resource.adaptTo(ValueMap.class);
+				
 				newsInsightExplorerBottom.setTitle(properties.get("newstitle", (String) null).toString());
 				Calendar cal = (Calendar) properties.get("newsdate");
 				try {
@@ -289,11 +292,11 @@ public class NewsInsightVerticalExplorerModel {
 			}
 		}
 
-		else if (getEventTypetop().equalsIgnoreCase("Resource")) {
+		else if (getEventTypeBottom().equalsIgnoreCase("Resource")) {
 
 			newsInsightExplorerBottom = new NewsInsightExplorerModel();
 
-			String pdfPath = HdsCorpCommonUtils.pdfJCRPath(getTargetURL());
+			String pdfPath = HdsCorpCommonUtils.pdfJCRPath(getTargetBottomURL());
 
 			resource = JcrUtilService.getResourceResolver().resolve(pdfPath);
 
