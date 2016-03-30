@@ -720,6 +720,7 @@ var hds = window.hds || {};
             })
             $(document).on('click', '.closeCat', function() {
                 if($("#resSearch").val() != ''){
+					$('body').append('<div class="cover"/>');
                     $('#asideLinks-product li').removeClass('active');
                     $('#asideLinks-product li ul').slideUp();   
                     $('.category-resources-listing').find('.no-matched-result').remove();
@@ -746,6 +747,7 @@ var hds = window.hds || {};
             })
 
             $(document).on('click', '.closeKeyword', function() {
+				$('body').append('<div class="cover"/>');
                 $("#resSearch").val('');
                 $(this).parent().fadeOut('slow');
                 $(this).parent().remove();
