@@ -40,13 +40,7 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
     phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
 	//})( jQuery, ResponsiveBootstrapToolkit );
 
-    /**
-	 * Black Color Breadcrumb
-	 */
-    if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions, .bannerCarsoul").length > 0){
-        $('.breadcrumb-container .breadcrumb').addClass('black');
-		$('.hds-main-navigation-container').addClass('navwithouthero');
-    }
+    
 
 	/**
 	 * Breadcrumb Check for Specification Detail
@@ -68,6 +62,15 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 * Modal Box
 */
 $(document).ready(function () {
+	
+	/**
+	 * Black Color Breadcrumb
+	 */
+    if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions, .bannerCarsoul").length > 0){
+        $('.breadcrumb-container .breadcrumb').addClass('black');
+		$('.hds-main-navigation-container').addClass('navwithouthero');
+    }
+	
     $('a[rel=modal]').on('click', function(evt) {
         evt.preventDefault();
         var modal = $('#modal').modal();
