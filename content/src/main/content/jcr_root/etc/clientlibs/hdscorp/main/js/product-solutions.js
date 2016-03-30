@@ -292,6 +292,7 @@ if($('.resources-category-box').length!==0){
 			equalColumns('.detail-container .details-box');
 			equalColumns('.train-resrcprdct-bx .prdct-inner');
 			equalColumns('.resources-spotlight .spotlight-content');
+			equalColumns('.service-infra .news-resources-col');
         }, 500);
 	}, false);
 
@@ -310,6 +311,7 @@ if($('.resources-category-box').length!==0){
         equalColumns('.detail-container .details-box');
         equalColumns('.train-resrcprdct-bx .prdct-inner');
 		equalColumns('.resources-spotlight .spotlight-content');
+		equalColumns('.service-infra .news-resources-col');
     }, 500);
 
 })(jQuery);

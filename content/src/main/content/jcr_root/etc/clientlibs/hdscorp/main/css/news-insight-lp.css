@@ -222,7 +222,6 @@
   .news-insight-resources .news-resources-col{
     min-height: auto;
   }
-.news-insight-resources .col-centered{display:block;}
 
 }
 
@@ -243,7 +242,7 @@
   .news-insight-resources .news-resources-col .imageHolder{
     display: table-cell;
     text-align: left;
-    width: 15%;
+    width: 8%;
     vertical-align: middle;
   }
   .news-insight-resources .news-resources-col .imageHolder img{
@@ -252,7 +251,7 @@
   .news-insight-resources .news-resources-col .headline{
     display: table-cell;
     text-align: left;
-    width: 85%;
+    width: 92%;
     padding-left: 12px;
     vertical-align: middle;
   }
@@ -262,6 +261,7 @@
   .news-insight-resources .col-sm-4 {
     padding-right: 0;
   }
+  .news-insight-resources .col-centered{display:block;}
 }
 
 /* Explore Insights 2 column Section */

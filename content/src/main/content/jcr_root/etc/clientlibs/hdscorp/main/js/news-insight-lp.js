@@ -12,12 +12,12 @@ $(function() {
     window.addEventListener("resize", function() {
         // Get screen size (inner/outerWidth, inner/outerHeight)
         setTimeout(function(){
-            equalColumns('.news-insight-resources .news-resources-col');
+            //equalColumns('.news-insight-resources .news-resources-col');
         }, 500);
     }, false);
 
 
     setTimeout(function(){
-        equalColumns('.news-insight-resources .news-resources-col');
+        //equalColumns('.news-insight-resources .news-resources-col');
     }, 500);
 })
