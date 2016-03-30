@@ -42,7 +42,6 @@
 							<div class="training-search">
 								<input type="text"
 									placeholder="${trainingSearchCoursesModel.searchkeyword}">
-								<span aria-hidden="true" class="glyphicon glyphicon-search"></span>
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
