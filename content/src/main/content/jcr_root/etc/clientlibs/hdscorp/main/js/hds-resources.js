@@ -39,6 +39,10 @@ var hds = window.hds || {};
         	}
         	var parms = hds.resourceLib._getParmsFromURLHash(qURL);
         	var videoID = parms["vid"];
+        	hds.resourceLib._openvideooverlayById(videoID);
+        },        
+        _openvideooverlayById: function(videoID) {
+        	var videoID = videoID;
         	var videoGUID = "video"+videoID;
         	var gblPlayingVideo;
         	if($.trim(videoID).length > 0){
