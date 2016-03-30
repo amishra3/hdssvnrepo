@@ -153,20 +153,19 @@ var hds = window.hds || {};
         bindEventsSelectors: function() {
 			
 			
-			function getParameterByName(name, url) {
-				if (!url) url = window.location.href;
-				url = url.toLowerCase(); // This is just to avoid case sensitiveness  
-				name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
-				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-					results = regex.exec(url);
-				if (!results) return null;
-				if (!results[2]) return '';
-				return decodeURIComponent(results[2].replace(/\+/g, " "));
-			}
-			var searchKey = getParameterByName('searchKey'); 
-			var dateFrom = getParameterByName('lowerBound'); 
-			var dateTo = getParameterByName('upperBound'); 
-			var locations = getParameterByName('locations'); 
+
+				var regex = /[#&]([^=#]+)=([^&#]*)/g,
+                    url = window.location.href,
+                    params = {},
+                    match;
+                while(match = regex.exec(url)) {
+                    params[match[1]] = match[2];
+                }
+
+			var searchKey = params.searchKey; 
+			var dateFrom = params.lowerBound; 
+			var dateTo = params.upperBound; 
+			var locations = params.locations; 
             $(document).on('click', '.search-course-btn', function(event) {
                 var self = $(this),
                     checkInputIfEmpty = $.trim($('#trainingSearch').val());
@@ -183,10 +182,17 @@ var hds = window.hds || {};
 			if(locations && locations != ""){
 				console.log($('input[id='+locations.toUpperCase()+']'))
 				setTimeout(function(){
+					$('#asideLinks-product li').removeClass('active')
+					$("#asideLinks-product li:eq(1)").children('a').children('.icon-accordion-closed').hide();
+					$("#asideLinks-product li:eq(1)").children('a').children('.icon-accordion-opened').show();
+					
+					$( "#asideLinks-product li:eq(1)" ).addClass('active');
+					$( "#asideLinks-product li:eq(1)" ).children('ul').show();
 					$('input[id='+locations.toUpperCase()+']').click()
 					$('input[id='+locations+']').attr('checked','checked')
 				},2000);
 			}
+			getResults(true)
 			// filter the results based on the checkbox values selected // 
 		   //	**********************START****************************//
 			 $('input[name="cbxFunction"]').on('click', function () {
@@ -266,7 +272,20 @@ var hds = window.hds || {};
 							$(this).show()
 						}
 				});
-
+				if($('.result-section[filter="show"]').size() < 10 && $('.result-section[filter="show"]').size() != 0 ){
+					console.log("less results after filters")
+					$('.result-btn a').hide();
+					$('.noResults').remove();
+				}else if($('.result-section[filter="show"]').size() == 0){
+					console.log("no results after filters")
+					$('.result-btn a').hide();
+					$('.noResults').remove();
+					$('.result-btn').append("<div class='noResults' style='background-color: transparent;color: #ce0000;display: block;padding: 8px 35px;display: inline-block;'>No records found</div>");
+				}else{
+					$('.noResults').remove();
+					$('.result-btn a').show();
+				}
+				
 				$('.result-btn a').unbind('click').click(function(e){
 					console.log("clicked")
 					$('.result-product').show();
@@ -295,7 +314,7 @@ var hds = window.hds || {};
 			var dateFrom = $('.from_date').val();
 			var dateTo = $('.to_date').val();
 			var url ='';
-			function getResults(){
+			function getResults(skipFilter){
                	searchKey = $('.daterangepicker .search').val();
 				dateFrom = $('.from_date').val();
 				dateTo = $('.to_date').val();
@@ -305,10 +324,12 @@ var hds = window.hds || {};
 
 					}else if(searchKey=='' && dateFrom!='' && dateTo!=''){
 						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?lowerBound="+dateFrom+"&upperBound="+dateTo;
+					}else if(searchKey=='' && dateFrom=='' && dateTo=='' ){
+						url = "/content/hdscorp/en_us/lookup/search-training-detail.html"
 					}else{
 						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey;
 					}
-					if(searchKey != '' || (dateFrom != '' && dateTo != '')){
+					if(searchKey != '' || (dateFrom != '' && dateTo != '') || skipFilter == true){
 						$.ajax({
 							method: "GET",
 							url: url
@@ -325,6 +346,11 @@ var hds = window.hds || {};
 							}
 							 $('#contentCatagory').html(html)
 							 $('.result-section:lt('+max_items_page+')').show();
+							 $('#asideLinks-product li').removeClass('active')
+							 $('#asideLinks-product li:first-child').addClass('active')
+							 $("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
+							 $("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
+							 $("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
 							 loadMoreResults();
 					   });
 					}else{
@@ -336,14 +362,14 @@ var hds = window.hds || {};
 			$(document).on('keypress','.search', function(e){
 				//e.preventDefault();
 				if(e.which == 13){
-					getResults();
+					getResults(false);
 				}
 
 			});
 
 			$(document).on('click','.search-course-btn a', function(e){
 				e.preventDefault();
-				getResults();
+				getResults(false);
             });
 
 			$('#asideLinks-product li').each(function(index){
@@ -364,6 +390,7 @@ var hds = window.hds || {};
 						$(this).children('a').children('.icon-accordion-opened').show();
 						$(this).children('a').children('.icon-accordion-closed').hide();
 						if(liIndex == 0){
+							getResults(true);
 							$('.result-section').show();
 							$("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
 						}

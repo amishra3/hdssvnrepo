@@ -30,28 +30,44 @@ var hds = window.hds || {};
         },
         bindEventsSelectors: function() {
             /* Bind events here */
+			var locations = "";
 			var locationSelected = false;
-			$('.dropdown-menu a').on('click',function(){
-				$('.buttonLabel').text($(this).text());
+			$('#allRegion').change(function(){
+				//$('#locationSelectButton').text($(this).text());
 				locationSelected = true;
-			});
-			if(locationSelected == false){
-				var locations = "";
-			}else{
-				var locations = $('.buttonLabel').text();
-			}
+				if(locationSelected == false){
+				locations = "";
+                }else{
+                    locations = $('#allRegion').val();
+                }
+            }); 
+
 			
-            $('.btn-square-red a').on('click',function(){
+            $('.btn-square-red a').unbind('click').click(function(){
 				if($('.training-search input').val() == "" && $('.from_date').val() == "" && $('.to_date').val() == "" && locations == ""){
 					var url = "/content/hdscorp/en_us/services/training-details.html";
 					console.log("aLL EMPTY")
 				}else if($('.training-search input').val() == "" && $('.from_date').val() != "" && locations == ""){
-					var url = "/content/hdscorp/en_us/services/training-details.html?lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()
+					console.log('keyword and locations empty')
+					var url = "/content/hdscorp/en_us/services/training-details.html#lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()
+				}else if($('.training-search input').val() != "" && $('.from_date').val() != "" && locations == ""){
+					console.log('locations empty')
+					var url = "/content/hdscorp/en_us/services/training-details.html#searchKey="+$('.training-search input').val()+"&lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()
+				}else if($('.training-search input').val() == "" && $('.from_date').val() != "" && locations != ""){
+					console.log('keyword empty')
+					var url = "/content/hdscorp/en_us/services/training-details.html#lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()+"&locations="+locations
+				}else if($('.training-search input').val() != "" && $('.from_date').val() == "" && locations != ""){
+					console.log('date empty')
+					var url = "/content/hdscorp/en_us/services/training-details.html#searchKey="+$('.training-search input').val()+"&locations="+locations
+				}else if($('.training-search input').val() == "" && $('.from_date').val() == "" && locations != ""){
+					console.log("date and keyword empty")
+					var url = "/content/hdscorp/en_us/services/training-details.html#locations="+locations
 				}else if($('.training-search input').val() != "" && $('.from_date').val() == "" && locations == "" ){
-					var url = "/content/hdscorp/en_us/services/training-details.html?searchKey="+$('.training-search input').val();
+					console.log("date and locations empty")
+					var url = "/content/hdscorp/en_us/services/training-details.html#searchKey="+$('.training-search input').val();
 				}else{
 					console.log("ALL not EMPTY")
-					var url = "/content/hdscorp/en_us/services/training-details.html?searchKey="+$('.training-search input').val()+"&lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()+"&locations="+locations
+					var url = "/content/hdscorp/en_us/services/training-details.html#searchKey="+$('.training-search input').val()+"&lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()+"&locations="+locations
 				}
                 window.location.href = url;
             })
