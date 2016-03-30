@@ -44,6 +44,12 @@
 	text-align: center;
 }
 
+.hds-training-cale #two-inputs .calendar.left .daterangepicker_input input[type="text"],
+.hds-training-cale #two-inputs .calendar.right .daterangepicker_input input[type="text"]{   
+  padding-left:40px;	
+	
+}
+
 .training-result .category-heading {
     border-bottom: 6px solid #f78e1e;
 }
@@ -189,6 +195,15 @@
 .hds-training-rsc-sec .training-boxes .prdct-inner a:hover {
     color: #ac1f25;
 }
+
+@media only screen and (max-width: 768px){
+	.hds-training-cale.training-date-pick .src-btn{
+		text-align: center;
+		margin-top: 10px;
+	}
+}
+
+
 @media only screen and (max-width: 991px) {
 	 .hds-training-rsc-sec .training-boxes {margin: 0 0 20px;}
 	} 
