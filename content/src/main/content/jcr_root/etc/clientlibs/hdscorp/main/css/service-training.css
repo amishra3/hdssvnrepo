@@ -69,7 +69,7 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
  }
 	
 .serv-training-overview {
-    border-right: 1px solid #999999;
+    border-right: 1px solid #ebebeb;
     padding: 0 40px 0 10px;
 }
 .serv-training-overview.last{border:none}
@@ -251,7 +251,7 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 	.service-chart h2{font-size:2.5em}
 	.service-training-partner{margin:0 0 15px 0;}
 	.serv-training-overview {
-    border-bottom: 1px solid #999999; border-right:none;
+    border-bottom: 1px solid #ebebeb; border-right:none;
     padding: 40px 0;
 	}
 	.serv-training-overview .btn-square-red a{padding: 14px 35px;}	 
@@ -281,7 +281,7 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 @media only screen and (min-width: 768px){
 	/* .train-resrcprdct-bx{margin:0 15px 0 0;} */
 	.serv-training-overview {
-    border-bottom:none; border-right: 1px solid #999999;
+    border-bottom:none; border-right: 1px solid #ebebeb;
 
 	}
 	.service-training-partner{margin-bottom:15px;}
