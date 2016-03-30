@@ -8,7 +8,7 @@
 String prodAnalyticsDefaultScript = "//assets.adobedtm.com/e171f6759c6c455550c5f666e64e8a56fe657d2f/satelliteLib-7f2faccf998d3a358edac4d790c59020820ff755.js" ;
 String stgAnalyticsDefaultScript = "//assets.adobedtm.com/e171f6759c6c455550c5f666e64e8a56fe657d2f/satelliteLib-bacf5ad16a0dee8f02e5b10fadeed5a897694c27-staging.js" ;
 
-String prodAnalyticsScriptPath = pageProperties.getInherited("prodAnalyticsDefaultScriptpath", prodAnalyticsDefaultScript);
+String prodAnalyticsScriptPath = pageProperties.getInherited("prodAnalyticsScriptPath", prodAnalyticsDefaultScript);
 String stgAnalyticsScriptPath = pageProperties.getInherited("stgAnalyticsScriptPath", stgAnalyticsDefaultScript);
 
 pageContext.setAttribute("prodAnalyticsScriptPath",prodAnalyticsScriptPath);
