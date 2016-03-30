@@ -47,7 +47,10 @@ var hds = window.hds || {};
             $hdsMenu.removeClass('hds-megaMenu-open');
             $hdsBody.removeClass('hds-MegaMenu-push-toleft');
             $('.hds-mobile-navigation').empty();
-            $('body').removeAttr('style'); 
+            $('body').removeAttr('style');
+            $('a#showGeo').parent('li').removeClass('open');
+            $('a#showGeo').removeClass("active");
+            $('.hds_globalNav_geo').hide();            
         },
         buildMobileNav: function() {
             $('.hds-mobile-navigation').html(" ");
@@ -60,7 +63,7 @@ var hds = window.hds || {};
             $('.hds-MobileMenu ul.removePosRelative').find('li.search').remove();
         },
         desktopMobileFunction: function() {
-            $('.globalNavWrapper > li').hover(function() {
+            $('.no-touch .globalNavWrapper > li').hover(function() {
                 $('.globalNavWrapper li').removeClass('open');                
                 $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(200);
                 var megaMenuWrapper = $(this).find( ".hds-megaMenuWrapper");
@@ -73,12 +76,12 @@ var hds = window.hds || {};
             });
         },
         geoSelectorShow:function(arg){        	
-        	var that=arg;
-        		 var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
-        		 if (slideOut.is(":hidden")) {
-        			 slideOut.clearQueue().slideDown("slow",function(){
-        				 $('a#showGeo').addClass("active");
-        				 $('a#showGeo').parent('li').addClass('open');
+                var that=arg;
+        		var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
+        		if (slideOut.is(":hidden")) {
+        			slideOut.clearQueue().slideDown("slow",function(){
+        			 $('a#showGeo').addClass("active");
+        			 $('a#showGeo').parent('li').addClass('open');
                      });
         		 }    
         	
@@ -147,7 +150,7 @@ var hds = window.hds || {};
                 event.preventDefault();
             });
             window.addEventListener("orientationchange", function() {            	 
-                hds.buildShowNav.checkOrientations();            	 
+                hds.buildShowNav.checkOrientations(); 
             }, false);
             
             $(document).on('click','.geo_close_btn', function() {
@@ -155,7 +158,9 @@ var hds = window.hds || {};
         	});			
 			
 			$(document).on('click','a#showGeo', function() { 
+				if ($(window).width() > 768) {
 				hds.buildShowNav.geoSelectorShow($(this));
+				}
 			});
 			
         }
