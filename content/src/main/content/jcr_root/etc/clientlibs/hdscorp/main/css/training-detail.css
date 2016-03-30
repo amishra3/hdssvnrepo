@@ -92,9 +92,8 @@
 	}
 	
 #trainingDetail .result-btn{
-    margin-bottom: 100px;
-    margin-top: 47px;
-	display:inline-block;
+    display:inline-block;
+	margin: 47px 0 100px 35px;
 }
 
 @media only screen and (min-width: 1024px) {
