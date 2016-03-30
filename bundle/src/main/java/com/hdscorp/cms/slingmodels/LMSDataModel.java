@@ -150,10 +150,11 @@ public class LMSDataModel {
 				lowerBound=ServiceUtil.getDisplayDateFormat(lowerBound, "MM/dd/yyyy", "yyyy-MM-dd");
 				log.info("lowerbound::" + lowerBound);
 
-			}
+			} 
 			if (upperBound != null) {
 				upperBound = URLDecoder.decode(upperBound, "UTF-8");
 				upperBound=ServiceUtil.getDisplayDateFormat(upperBound, "MM/dd/yyyy", "yyyy-MM-dd");
+				upperBound=ServiceUtil.getNextDate(upperBound);
 				log.info("upperbound::" + upperBound);
 
 			}
