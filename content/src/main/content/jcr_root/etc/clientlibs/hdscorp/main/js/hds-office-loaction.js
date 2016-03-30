@@ -48,10 +48,13 @@ var hds = window.hds || {};
             });
         },
         _fetchDetail: function() {
-            $('.scrollbar-inner > h2').html('').html('North America');
+            $('.scrollbar-inner > h2').html('').html($.trim($('#locationEventRegion').val()));
             var defaultRegion = this.options.defaultRegion.toLowerCase();
             var defaultCountry = this.options.defaultCountry.toLowerCase();
             var defaultcity = this.options.defaultcity.toLowerCase();
+            if(defaultcity===''){
+            	defaultcity=null;
+            }
             var contactDetail = hds.hdsContactLocations._setDetails(defaultRegion, defaultCountry, defaultcity,false);
         },
 
@@ -83,10 +86,10 @@ var hds = window.hds || {};
                     content += '<h3>' + cat.locationtitle + '</h2>';
                     content += cat.locationdetail;
                     if(cat.drivingdirection!=='null'){
-                    content += '<a href="'+cat.drivingdirection+'" class="animateLink" target="_blank">'+defaultPhoneConetnt+'<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
+                    content += '<a href="'+cat.drivingdirection+'" class="animateLink" target="_blank">'+defaultDirectionConetnt+'<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
                     }
                     if(cat.locationphonenumber!=='null'){
-                    content += '<a href="javascript:void(0);" class="phone_num animateLink">'+defaultDirectionConetnt+' <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>';                   
+                    content += '<a href="javascript:void(0);" class="phone_num animateLink">'+defaultPhoneConetnt+' <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>';                   
                     content +='<div class="hideme">'+cat.locationphonenumber+'</div>';
                     }                    
                     content += '</div>';
