@@ -3,6 +3,7 @@ package com.hdscorp.cms.util;
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -29,12 +30,18 @@ import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.day.cq.dam.api.Asset;
 import com.day.cq.mailer.MailService;
+import com.day.cq.search.result.Hit;
+import com.day.cq.search.result.SearchResult;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
 import com.hdscorp.cms.constants.GlobalConstants;
+import com.hdscorp.cms.search.SearchServiceHelper;
+import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.PathResolver;
+import com.hdscorp.cms.util.ViewHelperUtil;
 /**
  * {@link PropertyResolver} class used to resolve the JCR Properties
  * @author abhinav
@@ -188,14 +195,14 @@ public final class PropertyResolver {
         {
             Page child = children.next();
             String displayDescendants = child.getProperties().get("displaydescendants", "yes");
-            String navpath = child.getProperties().get("navpath", "");
+           // String navpath = child.getProperties().get("navpath", "");
             Boolean hideInSitemap = false;
             if(child.getProperties().containsKey("hideinsitemap")) {
             	hideInSitemap =Boolean.valueOf(child.getProperties().get("hideinsitemap").toString());
             }
             
             long level = child.getDepth();
-            if(!hideInSitemap && level>2 && navpath=="")
+            if(!hideInSitemap && level>2)
             {
             	try{
             	 pageTemplate=(String)child.getProperties().get("cq:template");
@@ -229,6 +236,64 @@ public final class PropertyResolver {
         LOG.info("sbuilder::"+sbuilder);
         return sbuilder;
     }
+    
+    
+    public static String buildAssetSitemap(String pdfpath, String domain) {
+    	String assetbuilder = "",loc="",lastmod="",changefreq="",priority="";
+    	try {
+    	
+    	
+    	SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
+				.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
+		String[] paths = { pdfpath };
+		String[] types = { "dam:Asset" };
+		SearchResult result = searchServiceHelper.getFullTextBasedResuts(
+				paths, null, null, types, null, false, null, null,
+				JcrUtilService.getResourceResolver(), null, null);
+		List<Hit> hits = result.getHits();
+		
+    	 
+    	 for (Hit hit : hits) {
+    	 loc = PathResolver.getShortURLPath(hit.getPath());
+    	
+		
+    	 
+    	 Resource metadataResource = hit.getResource().getChild("jcr:content/metadata");
+    	 ValueMap properties = metadataResource.adaptTo(ValueMap.class);
+         changefreq = "weekly";
+         priority = "1.0";
+         if(properties.containsKey("jcr:lastModified")){
+        	 
+        	 lastmod= ((Calendar)properties.get("jcr:lastModified")).getTime().toString();
+         }
+           else if(properties.containsKey("dc:creationdate")) {
+        	  lastmod= ((Calendar)properties.get("dc:creationdate")).getTime().toString();
+         }
+         
+    	
+    	
+         assetbuilder += ("<url>\n");
+         assetbuilder += ("<loc>http://"+domain+loc+"</loc>\n");
+         assetbuilder += ("<lastmod>"+lastmod+"</lastmod>\n");
+         assetbuilder += ("<changefreq>"+changefreq+"</changefreq>\n");
+         assetbuilder += ("<priority>"+priority+"</priority>\n");
+         assetbuilder += ("</url>\n");
+    	
+    	 
+    	 } }catch (RepositoryException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+    	 LOG.info("Assets sbuilder::"+assetbuilder);
+		return assetbuilder;
+    }
+    
+    
+    
+    
+    
+    
+    
     public static void sendEmail(String toEmail, String fromEmail, String subject,
 			String content) {
 
