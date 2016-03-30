@@ -5,9 +5,9 @@ var hds = window.hds || {};
         init: function(options) {
             var defaults = {
                 seletCountry: '#seletCountry',
-                defaultRegion: 'North America',
-                defaultCountry: 'USA',
-                defaultcity: 'California'
+                defaultRegion: $.trim($('#locationEventRegion').val()),
+                defaultCountry: $.trim($('#locationEventCountry').val()),
+                defaultcity: $.trim($('#locationEventLocation').val()),                            
             }
             this.options = $.extend(defaults, options);
             hds.hdsContactLocations._fetchDetail();
@@ -18,14 +18,11 @@ var hds = window.hds || {};
         _locationFeed:function(){
         	var defaultRegion = this.options.defaultRegion;
             var defaultCountry = this.options.defaultCountry;
-            var defaultcity = this.options.defaultcity;
-        	
+            var defaultcity = this.options.defaultcity;        	
         },
 
         _loadMap: function(str) {
-
 			str=str.replace(/"(\w+)"\s*:/g, '$1:');
-            console.log(str)
             var locations=(new Function("return " +str+ "")());
              maplace = new Maplace({
                 map_div: '#gmap',
@@ -60,6 +57,7 @@ var hds = window.hds || {};
 
         _setDetails: function(arg1, arg2, arg3, agr4) {
             $('#locationDetailsContent').html("");
+            var typePage=$.trim($('#locationEvent').val());
             if(!agr4){
                 singleCall="";
             }else{
@@ -68,13 +66,15 @@ var hds = window.hds || {};
              var accounting = [];
              $('#gmap').html('');
              if(arg3==null){
-            	 var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 +"&type=officelocation";
+            	 var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 +"&type="+typePage;
              }else{            	 
-            	 var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 + '/' + arg3+"&type=officelocation";
+            	 var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 + '/' + arg3+"&type="+typePage;
              }  
              
             $.getJSON(url, function(data) {
-                var content = '';
+                var content = '';                    
+                var defaultPhoneConetnt= getJSONLocation.showphonenumberlabel,
+                    defaultDirectionConetnt= getJSONLocation.drivingdirection;
                 $.each(data.locationJson, function(index, cat) {
                     content += '<div class="side-block">';
                     if(cat.image!=='null'){
@@ -83,10 +83,12 @@ var hds = window.hds || {};
                     content += '<h3>' + cat.locationtitle + '</h2>';
                     content += cat.locationdetail;
                     if(cat.drivingdirection!=='null'){
-                    content += '<a href="'+cat.drivingdirection+'" class="animateLink" target="_blank">Driving directions <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
+                    content += '<a href="'+cat.drivingdirection+'" class="animateLink" target="_blank">'+defaultPhoneConetnt+'<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
                     }
-                    content += '<a href="javascript:void(0);" class="phone_num animateLink">Show Phone Numbers <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>';
+                    if(cat.locationphonenumber!=='null'){
+                    content += '<a href="javascript:void(0);" class="phone_num animateLink">'+defaultDirectionConetnt+' <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>';                   
                     content +='<div class="hideme">'+cat.locationphonenumber+'</div>';
+                    }                    
                     content += '</div>';
                   if(cat.locationlongitude){
 					var loc={};
@@ -140,15 +142,20 @@ var hds = window.hds || {};
             var state = hds.hdsContactLocations._returnJSON(countryData, arg2);
             var location = hds.hdsContactLocations._returnLocationJSON(state, arg1);
             console.log($.isEmptyObject(location));
-           if(!$.isEmptyObject(location)){        	   
-        	  $('#allLocations').removeAttr('disabled');              	 
-        	   
+           if(!$.isEmptyObject(location)){ 
+        	  $('#allLocations').removeAttr('disabled');
+        	  $('#allLocations').show();
+         	 $('#allLocations').parents('.select-style').show();        	   
             $.each(location, function(key, val) {            	
             	defultOptions = defultOptions + "<option value=" + val.locationlabel + ">" + val.locationlabel + "</option>";            	
             });
             $('#allLocations').html("").append(defultOptions);
         }else{
+        	
         	$('#allLocations').prop('disabled', 'disabled');
+        	 $('#allLocations').hide();
+        	 $('#allLocations').parents('.select-style').hide();
+        	
         	 var selectedText = $.trim($("#allCountries option:selected").text()).toLowerCase();
              var selectedTextParent = $.trim($("#allRegion option:selected").text()).toLowerCase();
              $('.scrollbar-inner > h2').html('').html($.trim($("#allRegion option:selected").text()));
