@@ -80,6 +80,7 @@
                                                 xtype="textfield"/>
                                             <openinnewwindow
                                                 jcr:primaryType="cq:Widget"
+                                                allowBlank="false"
                                                 fieldLabel="Open in New Window ?"
                                                 key="openinnewwindow"
                                                 name="./openinnewwindow"
@@ -89,11 +90,11 @@
                                                     <Yes
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Yes"
-                                                        value="1"/>
+                                                        value="true"/>
                                                     <No
                                                         jcr:primaryType="nt:unstructured"
                                                         text="No"
-                                                        value="2"/>
+                                                        value="false"/>
                                                 </options>
                                             </openinnewwindow>
                                         </items>
