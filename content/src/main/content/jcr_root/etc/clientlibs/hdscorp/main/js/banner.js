@@ -1,4 +1,4 @@
-(function($) {
+$(document).ready(function () {
 
 	var $heroHomepage = $('.hero-homepage');
 	var $generalList = $('ul.general-list li a');
@@ -20,4 +20,4 @@
 		})
 	}
 
-})(jQuery);
+});
