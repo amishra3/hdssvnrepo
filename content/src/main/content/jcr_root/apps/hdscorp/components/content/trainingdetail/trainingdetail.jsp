@@ -31,7 +31,7 @@ value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocation
                                         <c:forEach var="location" items="${locations}" varStatus="count">
 										<li>
                                             <div class="checkbox">
-											   <input type="checkbox" value="${location.tdlocationid}" id="${location.tdlocationlabel}" name="cbxFunction" class="filters" data-location="${location.tdlocationid}">
+											   <input type="checkbox" value="${location.tdlocationid}" countryId="${location.tdlocationid}" id="${location.tdlocationlabel}" name="cbxFunction" class="filters" data-location="${location.tdlocationid}">
                                                 <label class="hds-icon" for="${location.tdlocationlabel}"><span>${location.tdlocationlabel}</span></label>
                                             </div>
                                         </li>
@@ -39,7 +39,7 @@ value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocation
                                     </ul>
                                     <div class="MobileHolderWrapper"></div>
                                 </li>
-                                
+
                             </ul>
                         </div>
 
