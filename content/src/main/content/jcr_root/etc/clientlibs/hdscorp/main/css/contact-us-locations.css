@@ -4,14 +4,14 @@
   width: 100%;
 }
 .select-boxes .select-style {
-	border: 1px solid #ccc;
+	border: 1px solid #666666;
 	width: 100%;
 	border-radius: 0px;
 	overflow: hidden;
 	margin-right: 15px;
 	float: left;
 	height: 50px;
-	color: #333333;
+	color: #666666;
 	font-size: 87.5%;
 	background: #fff url("../images/contact-select-arrow.png") no-repeat 96% 50%;
 }
@@ -74,6 +74,7 @@
   font-weight: 700; 
   color:#000303;
   text-transform: capitalize;
+  margin-top: 0;
 }
 .side-block p {
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
@@ -111,6 +112,7 @@
   float: left;
   margin-bottom: 25px;
   padding-bottom: 20px;
+  margin-right: 10px;
 }
 .side-block a {
   color: #ce0000;
