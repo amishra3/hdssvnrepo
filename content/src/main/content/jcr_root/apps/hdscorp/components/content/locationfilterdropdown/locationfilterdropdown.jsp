@@ -11,6 +11,11 @@ var="locationsDropDownFilterModel" />
 		<div id="LoactionFilters" class="Container-legal-terms container-fluid overRideRight">
 			<h2 class="grey-heading">${properties.locworldwidelocationslabel}</h2>
 			<div class="select-boxes">
+			<input type="hidden" value="${properties.loclocationtype}" id="locationEvent" name="locationEvent">
+			
+			<input type="hidden" value="NorthAmerica" id="locationEventRegion" name="locationEventRegion">
+			<input type="hidden" value="USA" id="locationEventCountry" name="locationEventCountry">
+			<input type="hidden" value="California" id="locationEventLocation" name="locationEventLocation">
 			<div class="col-md-4">
 				<div class="select-style">
 					<select id="allRegion" name="allRegion" autocomplete="off">
@@ -55,13 +60,13 @@ var="locationsDropDownFilterModel" />
 		<div class="Container-legal-terms container-fluid overRideRight">
             <div class="location-nav-tabs">
               <ul class="nav nav-tabs hidden-md hidden-lg">
-                  <li class="col-xs-6 current" data-tab="tab-1"><a href="javascript:void(0)">List View</a></li>
-                  <li class="col-xs-6" data-tab="tab-2"><a href="javascript:void(0);">Map View</a></li>
+                  <li class="col-xs-6 current" data-tab="tab-1"><a href="javascript:void(0)">Map View</a></li>
+                  <li class="col-xs-6" data-tab="tab-2"><a href="javascript:void(0);">List View</a></li>
               </ul>
             </div>  
             <div class="posRelativeLocation">
             <div id="loading"></div>
-			<div class="col-md-3 col-sm-12 tabbed-content current" id="tab-1">
+			<div class="col-md-3 col-sm-12 tabbed-content" id="tab-1">
 				<div class="content" >
                   <div class="scrollbar-inner">
                     <h2>North America</h2>
@@ -71,7 +76,7 @@ var="locationsDropDownFilterModel" />
 				</div>
 			</div>
 			<!-- Map Content to Loaded here -->
-			<div class="col-md-9 col-sm-12 tabbed-content" id="tab-2">
+			<div class="col-md-9 col-sm-12 tabbed-content current" id="tab-2">
 				<div id="gmap" style="width:100%;height:792px;"></div>
 			</div>
             </div>
