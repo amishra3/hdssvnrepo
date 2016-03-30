@@ -537,10 +537,14 @@ public class SearchServiceHelper {
 		if(lowerBound!=null && !lowerBound.isEmpty()){
 		searchParams.put("group." + groupCnt + "_group.1_daterange.lowerBound",
 				lowerBound);
+		searchParams.put("group." + groupCnt + "_group.1_daterange.lowerOperation",
+				">=");
 		}
 		if(upperBound!=null && !upperBound.isEmpty()){
 		searchParams.put("group." + groupCnt + "_group.1_daterange.upperBound",
 				upperBound);
+		searchParams.put("group." + groupCnt + "_group.1_daterange.upperOperation",
+				"<=");
 		} 
 		groupCnt++;
 		}
