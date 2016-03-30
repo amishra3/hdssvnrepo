@@ -60,7 +60,7 @@ var hds = window.hds || {};
             $('.hds-MobileMenu ul.removePosRelative').find('li.search').remove();
         },
         desktopMobileFunction: function() {
-            $('.no-touch .globalNavWrapper > li').hover(function() {
+            $('.globalNavWrapper > li').hover(function() {
                 $('.globalNavWrapper li').removeClass('open');                
                 $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(200);
                 var megaMenuWrapper = $(this).find( ".hds-megaMenuWrapper");
@@ -146,15 +146,15 @@ var hds = window.hds || {};
                 hds.buildShowNav.closeDropDown();
                 event.preventDefault();
             });
-            window.addEventListener("resize", function() {
-                 hds.buildShowNav.checkOrientations();
+            window.addEventListener("orientationchange", function() {            	 
+                hds.buildShowNav.checkOrientations();            	 
             }, false);
             
             $(document).on('click','.geo_close_btn', function() {
         		hds.buildShowNav.closeGeoSelector($(this));
         	});			
 			
-			$(document).on('click','.no-touch a#showGeo', function() { 
+			$(document).on('click','a#showGeo', function() { 
 				hds.buildShowNav.geoSelectorShow($(this));
 			});
 			
@@ -162,9 +162,42 @@ var hds = window.hds || {};
     }
 }(window, document, jQuery, hds));
 
+(function($, window, document, undefined) {
+    $.fn.doubleTapToGo = function(params) {
+        if (!('ontouchstart' in window) &&
+            !navigator.msMaxTouchPoints &&
+            !navigator.userAgent.toLowerCase().match(/windows phone os 7/i)) return false;
+
+        this.each(function() {
+            var curItem = false;
+
+            $(this).on('click', function(e) {
+                var item = $(this);
+                if (item[0] != curItem[0]) {
+                    e.preventDefault();
+                    curItem = item;
+                }
+            });
+
+            $(document).on('click touchstart MSPointerDown', function(e) {
+                var resetItem = true,
+                    parents = $(e.target).parents();
+
+                for (var i = 0; i < parents.length; i++)
+                    if (parents[i] == curItem[0])
+                        resetItem = false;
+
+                if (resetItem)
+                    curItem = false;
+            });
+        });
+        return this;
+    };
+})(jQuery, window, document);
 $(function() {
     if($('.globalNavWrapper li:has(div.hds-megaMenuWrapper)')){
         hds.buildShowNav.init();
     }
     hds.buildShowNav.checkOrientations();
+    $('.globalNavWrapper li:has(div.hds-megaMenuWrapper)').doubleTapToGo();
 })
