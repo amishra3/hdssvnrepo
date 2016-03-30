@@ -28,7 +28,7 @@
   display: block;
   font-size: 0.8125rem;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 0.15em;
   margin-top: 5px;
   text-transform: uppercase;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
@@ -51,8 +51,8 @@
 
 @media screen and (max-width:1024px){
   .common-hero-short-banner.contact-banner .content-container {
-      padding: 0;
-  }
+      /* padding: 0; */
+  }  
 }
 
 @media screen and (max-width:991px){
@@ -77,6 +77,12 @@
 }
 
 @media screen and (max-width:768px){
+	.common-hero-short-banner.contact-banner {
+		padding-top: 80px;
+	}
+	.common-hero-short-banner.contact-banner .content-container{
+		padding: 0 15px;		
+	}
    .common-hero-short-banner.contact-banner .detail-container .details-box{
       min-height: 260px;
    }
@@ -89,6 +95,7 @@
 }
 .address-contacts .contact {
   font-size: 1em;
+  padding-bottom: 5px;  
 }
 .address-contacts .contact span {
   font-weight: 600;
@@ -202,7 +209,7 @@
   }
   .right_address_panel {
     margin: 50px 0;
-  }
+  }  
 }
 
 /* Grey Container */
@@ -257,12 +264,18 @@
   .grey-box-inner{
     padding: 0 15px;
   }
-}
+ .common-hero-short-banner.contact-banner .detail-container .details-box a{
+	 letter-spacing: 0.05em;	 
+ } 
+} 
 
 @media screen and (max-width:991px){
   .grey-box-inner {
     padding: 0px 15px 0;
     min-height: auto;
+	float: none;
+	display: table-cell;
+	vertical-align: top;	
   }
   .grey-box-inner:first-child{
     padding-left: 15px;
@@ -279,6 +292,9 @@
   .grey-box-inner h2{
     font-size: 1.25rem;
     margin-bottom: 15px;
+  }
+  .grey-box-inner a {
+	letter-spacing: 0.05em;
   }
 }
 

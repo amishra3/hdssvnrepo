@@ -35,7 +35,8 @@
 	width:100%; border-radius:0; -webkit-border-radius:0; -moz-border-radius:0;
 	}
 .hds-training-cale .daterangepicker input[type="text"].search{
-	padding-left:10px;
+	/*padding-left:10px;*/
+	text-align: center;
 }
 
 .hds-training-cale .btn-square-red a {
@@ -96,12 +97,20 @@
 	.srching{padding:0 0 0 29px;}
 	.hds-training-cale label{font-size:18px;}
 	.hds-training-cale span{font-size:18px;}
+	.hds-training-cale.training-date-pick .daterangepicker .calendar.left,
+	.hds-training-cale.training-date-pick .daterangepicker .calendar.right{
+		width: 40%;
+	}
+	.hds-training-cale.training-date-pick .daterangepicker span{margin-top: 7px;}
+	.hds-training-cale.training-date-pick .calendar_bxes{width: 45%; padding: 0;}
+	.hds-training-cale.training-date-pick .key-wrd-src{width: 22%; padding: 0;}
+	
 }
 @media only screen and (min-width: 1200px){
 	 .showsec{width:16%;}
 	 .key-wrd-src{padding:0 15px 0 15px;}
 	 .hds-training-cale label{font-size:22px;}
-	 .hds-training-cale span{font-size:22px;}
+	 .hds-training-cale span{font-size:22px; margin-top: 8px;}
 	 }
 @media only screen and (max-width: 991px) {
 .training-result .result-btn{width:100%;}

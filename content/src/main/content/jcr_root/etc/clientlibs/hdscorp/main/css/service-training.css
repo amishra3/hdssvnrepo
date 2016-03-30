@@ -59,7 +59,15 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 .train-partner .col-md-5{padding:0 15px 0 0;}
 .serv-training-overview .service-btn{background:none!important; font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-size: 13px; border:none; text-transform:uppercase; font-weight: 700;}
-.serv-training-overview button span.glyphicon{ display:inline-block; color:#cc0d0d;}
+.serv-training-overview .service-btn .buttonLabel{
+	padding-right: 5px;
+}	
+.serv-training-overview button span.glyphicon{	
+	top:2px;
+	display:inline-block; 
+	color:#cc0d0d;
+ }
+	
 .serv-training-overview {
     border-right: 1px solid #999999;
     padding: 0 40px 0 10px;
@@ -160,6 +168,25 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 }
 
 
+@media only screen and (min-width: 992px){
+   .serv-training-overview .src-btn{
+ 	margin-left: 15px;
+  }
+
+   .serv-training-overview .src-btn .btn-square-red a{
+	text-align: center;
+	padding: 14px 35px;
+}  
+   .serv-training-overview .service-btn{
+	margin-top: 10px;
+}
+   .serv-training-overview .src-btn .search-course-btn{
+	min-width: 244px;
+	
+}
+	
+}
+
 @media only screen and (max-width: 768px){
 	.train-resrcprdct-bx{margin:0 0 15px 0;}
 	.service-chart  table tr td table tr{display:inline-block!important;}
@@ -171,19 +198,20 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
     border-bottom: 1px solid #999999; border-right:none;
     padding: 40px 0;
 	}
+	.serv-training-overview .btn-square-red a{padding: 14px 35px;}	 
 	.training-learn{text-align:center;}
 	.service-support-main .serv-training-overview p{font-size:1.1em;}
 	.service-support-main .serv-training-overview h2{font-size:1.2em;}
 	.accordion-level:nth-last-child .accordion-menu-container::after{background-color:transparent;}
 	.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right{width:45%;}
-	.src-btn{text-align:center; margin:20px 0 0 0;}
+	.serv-training-overview .btn-group{margin-bottom: 10px;}
+	.serv-training-overview .src-btn{text-align:center;}
 
 }
 @media only screen and (min-width: 768px){
 	/* .train-resrcprdct-bx{margin:0 15px 0 0;} */
 	.serv-training-overview {
-    border-bottom:none; border-right: 1px solid #999999;
-    
+    border-bottom:none; border-right: 1px solid #999999;    
 	}
 	.service-training-partner{margin-bottom:15px;}
 	.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right{width:45%;}

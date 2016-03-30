@@ -46,8 +46,8 @@
 }
 
 .managed-cloud-services .managed-cloud-services-container p a:hover{
-	text-decoration: none;
-}
+	text-decoration: underline;
+} 
 
 @media only screen and (max-width: 768px) {
   .managed-cloud-services{

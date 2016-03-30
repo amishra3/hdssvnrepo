@@ -32,6 +32,7 @@
 
 .hero-homepage.general {
   padding-top: 150px;
+  padding-bottom: 40px;
   background: url("../images/hero-city-night.jpg") top center no-repeat;
   background-size: cover;
   z-index: 2;
@@ -104,13 +105,17 @@
   left: 10px;
 }
 
-.hero-homepage.general .hero-homepage-container .view-all,
-.hero-homepage.general .hero-homepage-container .scroll-down {
-  display: block;
+.hero-homepage.general .hero-homepage-container .view-all
+/* .hero-homepage.general .hero-homepage-container .scroll-down */ {
+  display: none;
 }
 
 .hero-homepage.general .hero-homepage-container .view-all {
   margin-top: 95px;
+}
+
+.hero-homepage.general .hero-homepage-container .scroll-down{
+	margin-top: 90px;		
 }
 
 .hero-homepage.general .hero-homepage-container .view-all:hover .glyphicon.glyphicon-chevron-right {
@@ -138,6 +143,7 @@
   top: 2px;
 }
 
+/*
 .hero-homepage.general .hero-homepage-container .scroll-down {
     bottom: -145px;
     display: inline-block;
@@ -157,7 +163,7 @@
   position: absolute;
   left: calc(50% - 30px);
 }
-
+*/
 
 
 .hero-homepage.healthcare {
@@ -200,7 +206,7 @@
 
 .hero-homepage.healthcare .hero-homepage-container .icon-connect, .hero-homepage.healthcare .hero-homepage-container .icon-transform, .hero-homepage.healthcare .hero-homepage-container .icon-advance {
   position: absolute;
-  top: -40px;
+  top: -50px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -216,7 +222,7 @@
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li {
   position: relative;
   margin: 0 12px;
-  padding-top: 35px;
+  padding-top: 22px;
   vertical-align: top;
 }
 
@@ -233,13 +239,13 @@
   margin: 0 10px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-size: 1.125em;
-  line-height: 120%;
+  line-height: 110%;
   font-weight: 300;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a {
   position: absolute;
-  top: 160px;
+  top: 150px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -248,8 +254,7 @@
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 800;
   font-size: 0.8125em;
-  line-height: 1;
-  line-height: 1.4em;
+  line-height: 1.2em;
   color: #c91c13;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -294,7 +299,7 @@
     background-size: auto 100%;
   }
   .hero-homepage.general .hero-homepage-container .general-list li a {
-    padding-top: 17px;
+    /* padding-top: 17px; */
     font-size: 1em;
     line-height: 1;
   }
@@ -405,6 +410,32 @@
   .hero-homepage.healthcare .hero-homepage-container .close-hero {
     right: 15px;
   }
+  .homepage  .hexagon270{
+	 min-height: 150px;
+  }
+  .homepage  .hexagon270:before{
+	  top: -76px;
+  }
+  .homepage  .hexagon270 img{
+	  top: -50px !important;
+   }
+  .homepage  .calculating-success .calculating-success-container .calculating-list > li{
+	  padding-top: 30px;	  
+  }
+  .homepage  .calculating-success .calculating-success-container .calculating-list > li h4{
+	  font-size: 1em;
+	  margin: 0 5px 8px;	
+  }
+  .homepage  .calculating-success .calculating-success-container .calculating-list > li p{
+	  font-size: 0.875em;	  
+  }
+  .homepage  .hexagon270 .animateAnchor{
+	  letter-spacing: normal;
+	  font-size: 0.8125em;
+	  line-height: 1.2em;	  
+  }
+  
+  /*
   .hero-homepage.general .hero-homepage-container .scroll-down::after{
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
@@ -414,6 +445,8 @@
   .hero-homepage.general .hero-homepage-container .scroll-down{
     bottom: -50px;
   }
+  */
+  
 }
 
 @media only screen and (max-width: 480px) {
