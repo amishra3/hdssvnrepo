@@ -5,7 +5,19 @@ var hds = window.hds || {};
     hds.serviceTraining = {
         init: function(options) {
             hds.serviceTraining.loadCalender();  
-            hds.serviceTraining.bindEventsSelectors();                
+            hds.serviceTraining.bindEventsSelectors();   
+             $(document).on('keypress', '.training-search input', function(event) {                
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == 13) {
+                    event.preventDefault();                    
+                    var txtVal = $.trim($(this).val());
+                    if(txtVal.length > 0){
+  					$('.btn-square-red a').trigger('click');
+                    }
+
+                }
+            });
+
         },
         loadCalender: function() {
             $("#two-inputs").dateRangePicker({
@@ -42,7 +54,7 @@ var hds = window.hds || {};
                 }
             }); 
 
-			
+
             $('.btn-square-red a').unbind('click').click(function(){
 				if($('.training-search input').val() == "" && $('.from_date').val() == "" && $('.to_date').val() == "" && locations == ""){
 					var url = "/content/hdscorp/en_us/services/training-details.html";
@@ -71,7 +83,10 @@ var hds = window.hds || {};
 				}
                 window.location.href = url;
             })
+
+
         }
+
     }
 }(window, document, jQuery, hds));
 
@@ -79,4 +94,6 @@ $(function() {
     if($('#serviceTraining').length>0){
     hds.serviceTraining.init();
 }
+
+
 })
