@@ -21,6 +21,8 @@ import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.restservice.TwitterWebService;
 import com.hdscorp.cms.util.JcrUtilService;
 import com.hdscorp.cms.util.ServiceUtil;
+
+
 /**
  * {@link TwitterScheduler} Executes cron job, Stores TwitterFeed data in jcr
  * @author venkataramana
@@ -82,11 +84,14 @@ public class TwitterScheduler {
 
 		final Runnable job = new Runnable() {
 			public void run() {
-
+				try {
 				ServiceUtil.saveWSResponse(twitterService.getTwitterResponse(consumerkey, consumerSecret,
 						accessTokenKey, accessTokenSecret, numberOfPosts), storagePath,
 						ServiceConstants.TWITTER_SAVE_FEED_DATA_PROPERTY_NAME);
-
+				}
+				catch (Exception e) {
+					log.error("Exception occurs during cron job execution for twitter ", e);
+				}
 			}
 		};
 		try {
