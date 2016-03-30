@@ -179,20 +179,16 @@ var hds = window.hds || {};
 			if(searchKey && searchKey != ""){
 				$('.search').val(searchKey)
 			}
+			getResults(true)
 			if(locations && locations != ""){
 				console.log($('input[id='+locations.toUpperCase()+']'))
 				setTimeout(function(){
-					$('#asideLinks-product li').removeClass('active')
-					$("#asideLinks-product li:eq(1)").children('a').children('.icon-accordion-closed').hide();
-					$("#asideLinks-product li:eq(1)").children('a').children('.icon-accordion-opened').show();
 					
-					$( "#asideLinks-product li:eq(1)" ).addClass('active');
-					$( "#asideLinks-product li:eq(1)" ).children('ul').show();
-					$('input[id='+locations.toUpperCase()+']').click()
-					$('input[id='+locations+']').attr('checked','checked')
-				},2000);
+					$('input[countryid='+locations+']').click()
+					$('input[countryid='+locations+']').attr('checked','checked')
+				},4000);
 			}
-			getResults(true)
+			
 			// filter the results based on the checkbox values selected // 
 		   //	**********************START****************************//
 			 $('input[name="cbxFunction"]').on('click', function () {
