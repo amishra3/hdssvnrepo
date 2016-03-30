@@ -69,12 +69,15 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Resource"
                                 value="Resource"/>
-<!--                             <opt5 -->
-<!--                                 jcr:primaryType="nt:unstructured" -->
-<!--                                 text="Blog" -->
-<!--                                 value="Blog"/>                                 -->
                         </options>
                     </nveeventtype>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
                 </items>
             </bottom>
         </items>

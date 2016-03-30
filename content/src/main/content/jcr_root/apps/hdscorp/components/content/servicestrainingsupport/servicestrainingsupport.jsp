@@ -20,7 +20,7 @@
 <c:if test="${not empty column.ctalabel}">
 <c:choose>
 <c:when test="${column.openininewwindow=='1'}">
-<div class="support-connect-login col-no-pad"><a class="animateLink" href="${linkUrl}" target="_blank">${column.ctalabel}<span class="glyphicon glyphicon-share animateIcon" aria-hidden="true"></span></a></div>
+<div class="support-connect-login col-no-pad"><a class="animateLink" href="${linkUrl}" target="_blank">${column.ctalabel} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
 </c:when>
 <c:otherwise>
 <div class="support-connect-login col-no-pad"><a class="animateLink" href="${linkUrl}">${column.ctalabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></div>

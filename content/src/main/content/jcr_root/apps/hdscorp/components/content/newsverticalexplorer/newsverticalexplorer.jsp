@@ -33,13 +33,12 @@
 			<c:choose>
 				<c:when test="${newsVerticalExplorer.openinnewwindow}">
 					<a href="${linkUrl}" target="_blank" class="animateLink">${newsVerticalExplorer.readMoreLabel}
-						<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+						${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 					</a>
 				</c:when>
 				<c:otherwise>
-					<a href="${linkUrl}" class="animateLink">${newsVerticalExplorer.readMoreLabel}<span
-						class="glyphicon glyphicon-menu-right animateIcon"
-						aria-hidden="true"></span></a>
+					<a href="${linkUrl}" class="animateLink">${newsVerticalExplorer.readMoreLabel}
+                        ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
