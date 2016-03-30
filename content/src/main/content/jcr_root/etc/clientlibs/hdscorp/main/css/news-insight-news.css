@@ -18,7 +18,6 @@ padding-bottom: 60px;
     margin-right: auto;
 } 
 .news-press-container .view-all-pr{
-  margin-top: 50px;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -259,7 +258,7 @@ text-transform: none;
 
 /* Stay in Touch */
 .stay_touch_container{ width:100%; float:left; background:#ac1f25;}
-.stay_touch_container .comment_box{ background: #fff none repeat scroll 0 0; border-top: 10px solid #008eaa; padding: 20px; min-height: 340px;}
+.stay_touch_container .comment_box{ background: #fff none repeat scroll 0 0; border-top: 10px solid #008eaa; padding: 20px; min-height:475px;}
 .stay_touch_container .comment_box .icon > img { float: left; margin-right: 10px;}
 .stay_touch_container .comment_box .type{ float: left; font-size: 0.75rem; font-weight: bold; margin-top: 16px;}
 .stay_touch_container .comment_box .post-img{
@@ -270,16 +269,23 @@ text-transform: none;
 .stay_touch_container .comment_box .inner-comment {
   display: inline-block;
   font-size: 0.85rem;
-  min-height: 138px;
   width: 100%;
 }
 .stay-inner-coloum {
     max-width: 1035px; margin:0 auto;
 }
 .stay-inner-coloum .links{  font-family: "museo-sans",Helvetica,Arial,sans-serif; color: #ce0000; margin-top: 12px; font-size: 0.85em; font-weight: 600; text-transform: uppercase;}
-.stay-inner-coloum .links a{ color: #ce0000; font-size: 0.85em; font-weight: 600; padding: 3px; letter-spacing: 0.15em;}
+.stay-inner-coloum .links a{ color: #ce0000; font-size: 0.85em; font-weight: 600; padding: 3px; letter-spacing: 0.15em; text-decoration:none;}
+.stay-inner-coloum .links a:hover{color: #ac1f25;}
 .stay-inner-coloum .links a > span{ margin-left: 3px;}
-.top-heading{ color: #fff; font-family: "museo-slab",Helvetica,Arial,sans-serif; font-size: 2rem; font-weight: 600; padding: 24px; text-align: center;}
+.top-heading{ color: #fff;
+    font-weight: 700;
+    padding: 24px 0 24px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-family: 'museo-slab',Helvetica,Arial,sans-serif;
+}
 .social-links li {
   float: left;
   padding: 6px;
