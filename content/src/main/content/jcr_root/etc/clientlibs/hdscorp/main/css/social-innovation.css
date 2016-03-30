@@ -36,6 +36,8 @@
 
 .mac-os .advance-tech-hexagon{min-height: 720px;}
 
+.advance-tech-hexagon .hexagon320 .hexagon-content{margin-top:-60px;}
+
 @media only screen and (max-width: 1024px) {
   .advance-tech-hexagon{
     min-height: 750px;
@@ -163,6 +165,8 @@
     font-size: 0.75rem;
     padding-left: 0px;
   }
+.advance-tech-hexagon p{font-size:1em;}
+
 }
 
 /* SI - Article Section CSS */
@@ -336,7 +340,7 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-.advance-tech-hexagon p{font-size:1em;}
-.advance-tech-hexagon .hexagon320 .hexagon-content{margin-top:-60px;}
+
+
 
 }

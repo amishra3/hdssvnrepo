@@ -3,7 +3,7 @@
   z-index: 2;
 }
 
-.about-hds-csr-quote{
+.about-hds-csr-quote{.resources-section.csr-governance-resource .resources-title
   background-image: url("../images/service-detail-bg1.jpg");
   background-position: center top;
   background-repeat: no-repeat;
@@ -182,15 +182,16 @@
 
 /* About HDS CSR governance Resources */
 .resources-section.csr-governance-resource .resources-title{
-  color: #1790a8;
-  font-family: "museo-slab",Helvetica,Arial,sans-serif;
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
+ 
+ font-family: 'museo-sans',Helvetica,Arial,sans-serif;
+  font-size: 3.125em;
+  font-weight:100;
   margin-bottom: 50px;
-  text-align: center;
   width: 100%;
-  text-transform: uppercase;
   display:block;
+}
+.about-hds-csr-hexagon .behind-scene-hexagon-list .hexagon320 .hexagon-content {
+    margin-top: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -324,6 +325,11 @@
   .about-hds-articles .about-hds-articles-spotlight .spotlight-mobile{
     min-height: 350px;
   }
+
+.about-hds-csr-hexagon .behind-scene-hexagon-list .hexagon320 .hexagon-content {
+    margin-top: -26px;
+}
+
 
 }
 

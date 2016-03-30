@@ -184,6 +184,14 @@
 	.services-list-section.services-section.service-insights-section .container-fluid{
 		margin-right: -15px;
 	}	
+    .services-list-section .col-sm-4:nth-child(3n+1){
+	padding-left: 0;
+}
+.services-list-section .col-sm-4 {
+    padding-right:0;
+}
+  .col-centered{margin-right: 0px!important;}
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -227,6 +235,7 @@
     font-size: 15px;
   }
 
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -266,9 +275,7 @@
   .service-support-main .section-service-col{margin-bottom:20px;}
   .millennials .millennials-container .millennials-content .learn{margin-bottom:0;}
   .accordion-level .accordion-menu-container .accordion-menu{font-size:1.1em}  
-  .news-insight-resources.news-insights-section .news-resources-col .imageHolder {display: inline-block; width:auto;}  
-  .news-insight-resources.news-insights-section .news-resources-col .headline {display: inline-block; width:100%; text-align:center;}
-  .news-insight-resources.news-insights-section .news-resources-col .headline a{font-size: 1.125em; font-weight: 700;text-transform: none; }
+    .news-insight-resources.news-insights-section .news-resources-col .headline a{font-size: 1.125em; font-weight: 700;text-transform: none; }
   
   #insight-center-excellence .accordion-menu-container .accordion-menu, 
   #insight-it-operations .accordion-menu-container .accordion-menu, 

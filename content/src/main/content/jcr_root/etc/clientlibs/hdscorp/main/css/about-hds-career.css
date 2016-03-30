@@ -14,7 +14,7 @@
 /*.new-abouthds-banner .common-hero-banner-container {
     margin-left: 0!important; padding:0px 30px 50px;
 }*/
-.new-abouthds-banner .cta-text{float:left; width:100%; }
+.new-abouthds-banner .cta-text{float:left; width:100%; text-align:center; }
 .new-abouthds-banner .cta-text h4{
 	display:inline-block; 
 	font-family: 'museo-slab', Helvetica, Arial, sans-serif;
@@ -23,14 +23,13 @@
     text-transform: uppercase;
 	margin:5px 50px 0 0;
 	padding:0;
-	color:#fff; float:left;
+	color:#fff; 
 }
 .career-benefits-hexagon .hexagon320 .hexagon-content {
     margin-top: -41px;
     padding: 0;
 }
 
-.behind-scene-hexagon-list{padding:60px 0 0 0;}
 
 .csr-governance-resource .resources-container .resources-category .resources-category-box{min-height:120px;}
 
@@ -473,9 +472,10 @@
     }
 	 .new-abouthds-banner .common-hero-banner-container{
 	margin-left:0!important; margin-right:0!important;
-	}
+}
 
 }
+
 @media only screen and (max-width: 991px) {
     .hitachi-spirit-hexagon {
         padding: 35px 0;
@@ -809,6 +809,7 @@
         top:-35px;
         right:5%;
     }
+
 }
 
 @media only screen and (max-width: 480px) {

@@ -1137,6 +1137,8 @@ h2.section-heading.fb-title{
   .resources-section .resources-all-mobile .resources-all-mobile-read a:hover {
     color: #ac1f25;
   }
+
+
 }
 
 .fb-section {
@@ -1335,6 +1337,7 @@ h2.section-heading.fb-title{
   padding: 20px 0;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
+    text-transform:uppercase;
 }
 
 .accordion-level .accordion-menu-container .accordion-menu:hover {
@@ -1425,6 +1428,8 @@ h2.section-heading.fb-title{
    background: transparent;
    }
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{text-align:left!important;}
+
+
 
 }
 @media (min-width: 992px){

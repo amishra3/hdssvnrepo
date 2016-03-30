@@ -1,7 +1,7 @@
 /* Press Release List */
 .pr-list {
     background: #ffffff;
-    padding: 120px 15px 80px;
+    padding: 120px 15px 60px;
     position: relative;
     z-index: 2;
 }
@@ -171,6 +171,9 @@ color: #cccccc !important;
   .pr-list .pr-list-container{
     padding: 0;
   }
+  .pr-list .pr-list-container h1{
+	 padding: 0 15px;
+  }
 
   .pr-list .pr-list-container .pr-search{
     width:90%;
@@ -187,6 +190,18 @@ color: #cccccc !important;
       min-height: 35px;
       font-size: 0.875rem;
       padding-right: 40px;
+  }
+  
+  .pr-list .pr-list-container.ispressreleasepage .pr-search {
+	  border: 5px solid #e6e6e6;	  
+  }
+  
+  .pr-list .pr-list-container.ispressreleasepage .pr-search input{
+	 background: transparent; 	  
+  }
+  
+  .pr-list .pr-list-container.ispressreleasepage .pr-search span.glyphicon.glyphicon-search{
+    top: 5px;
   }
 
   .pr-list .pr-list-container h2{

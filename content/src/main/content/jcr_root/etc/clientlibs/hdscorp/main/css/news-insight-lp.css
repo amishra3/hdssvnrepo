@@ -3,6 +3,8 @@
   background-image: url("../images/news-insight-banner.jpg");
 }
 
+.common-hero-short-banner.news-insight .headline{ font-size: 1.75em; font-weight:bold;}
+
 
 @media only screen and (max-width: 1280px) {
   .common-hero-short-banner.about-hds .content-container{
@@ -61,19 +63,6 @@
 .stay-touch-hexagon-list.twitter-feed .hexagon320 h4{
   margin: 20px 0 25px;
   position:relative;
-}
-
-.news-insight .second-link {
-	display: inline-block;
-}
-
-.news-insight .second-link a{
-	font-weight: 900;
-    font-size: .8em;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #ffffff;
-    letter-spacing: 2px;
 }
 
 .result-resources .category-resources-listing .resource h3{text-transform:capitalize;}
@@ -231,7 +220,9 @@
   }
   .news-insight-resources .news-resources-col{
     min-height: auto;
-  }    
+  }
+.news-insight-resources .col-centered{display:block;}
+
 }
 
 @media only screen and (max-width: 767px) {  
@@ -376,16 +367,6 @@
   .explore-insight .explore-insight-container .col-sm-4{
     padding-left: 15px;
   }
-  
-  .news-insight.common-hero-short-banner .request.cta-news{
-	margin-bottom: 25px;
-  }
-  
-  .news-insight .second-link {
-   	margin-bottom: 50px;
-   	display: block;    	
-  }
-  
 }
 
 @media screen and (max-width: 767px) {
@@ -417,7 +398,6 @@
   .explore-insight .explore-insight-container .insight-common-box h5{
     font-size: 1.125rem;
   }
-  
 }
 
 /* News & Insight - LP section */
