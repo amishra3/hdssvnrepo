@@ -157,6 +157,33 @@
                         fieldLabel="Driving Directions Label"
                         name="./locdrivingdirectionslabel"
                         xtype="textfield"/>
+                    <locdefaultregion
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Default Region"
+                        name="./locdefaultregion"
+                        xtype="textfield"/>
+                    <locdefaultcountry
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Default Country"
+                        name="./locdefaultcountry"
+                        xtype="textfield"/>
+                    <locdefaultlocation
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Default Location"
+                        name="./locdefaultlocation"
+                        xtype="textfield"/>
+                    <locmapviewlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Map View Label"
+                        name="./locmapviewlabel"
+                        xtype="textfield"/>
+                    <loclistviewlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="List View Label"
+                        name="./loclistviewlabel"
+                        xtype="textfield"/>
                 </items>
             </locregionfilter>
         </items>

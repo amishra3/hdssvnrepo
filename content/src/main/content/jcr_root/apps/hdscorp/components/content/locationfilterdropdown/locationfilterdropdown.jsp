@@ -3,7 +3,7 @@
 <%@page import="org.json.JSONObject"%>
 <%@page import="com.hdscorp.cms.slingmodels.LocationsDropDownFilterModel"%>
 <%@page session="false"%>
-<sling:adaptTo adaptable="${resource}"
+<sling:adaptTo adaptable="${resource}" 
 adaptTo="com.hdscorp.cms.slingmodels.LocationsDropDownFilterModel"
 var="locationsDropDownFilterModel" />
 <div class="pr-list grey-bg clearfix" id="LoactionFilters">
@@ -11,12 +11,20 @@ var="locationsDropDownFilterModel" />
 		<div id="LoactionFilters" class="Container-legal-terms container-fluid overRideRight">
 			<h2 class="grey-heading">${properties.locworldwidelocationslabel}</h2>
 			<div class="select-boxes">
-			<input type="hidden" value="${properties.loclocationtype}" id="locationEvent" name="locationEvent">
-			
-			<input type="hidden" value="NorthAmerica" id="locationEventRegion" name="locationEventRegion">
-			<input type="hidden" value="USA" id="locationEventCountry" name="locationEventCountry">
-			<input type="hidden" value="California" id="locationEventLocation" name="locationEventLocation">
-			<div class="col-md-4">
+
+               <input type="hidden" value="${properties.loclocationtype}" id="locationEvent" name="locationEvent">
+			<c:if test="${properties.loclocationtype=='officelocation'}">
+			<input type="hidden" value="${properties.locdefaultregion}" id="locationEventRegion" name="locationEventRegion">
+			<input type="hidden" value="${properties.locdefaultcountry}" id="locationEventCountry" name="locationEventCountry">
+			<input type="hidden" value="${properties.locdefaultlocation}" id="locationEventLocation" name="locationEventLocation">
+               </c:if>
+                <c:if test="${properties.loclocationtype=='traininglocation'}">
+			<input type="hidden" value="${properties.locdefaultregion}" id="locationEventRegion" name="locationEventRegion">
+			<input type="hidden" value="${properties.locdefaultcountry}" id="locationEventCountry" name="locationEventCountry">
+
+               </c:if>
+                <div class="col-md-4">
+
 				<div class="select-style">
 					<select id="allRegion" name="allRegion" autocomplete="off">
  						<option value=" ">${properties.locallregionslabel}</option>
@@ -60,8 +68,8 @@ var="locationsDropDownFilterModel" />
 		<div class="Container-legal-terms container-fluid overRideRight">
             <div class="location-nav-tabs">
               <ul class="nav nav-tabs hidden-md hidden-lg">
-                  <li class="col-xs-6 current" data-tab="tab-2"><a href="javascript:void(0)">Map View</a></li>
-                  <li class="col-xs-6" data-tab="tab-1"><a href="javascript:void(0);">List View</a></li>
+                  <li class="col-xs-6 current" data-tab="tab-2"><a href="javascript:void(0)">${properties.locmapviewlabel}</a></li>
+                  <li class="col-xs-6" data-tab="tab-1"><a href="javascript:void(0);">${properties.loclistviewlabel}</a></li>
               </ul>
             </div>  
             <div class="posRelativeLocation">
