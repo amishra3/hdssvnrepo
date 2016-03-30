@@ -31,14 +31,14 @@
                                                 <div class="daterangepicker" id="two-inputs">
                                                     <div class="calendar left">
                                                         <div class="daterangepicker_input">
-                                                            <input type="text" class="from_date" placeholder="" id="date-range200">
+                                                            <input type="text" class="from_date" placeholder="" id="date-range200" readonly="readonly">
                                                             <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
                                                         </div>
                                                     </div>
                                                     <span class="visible-lg visible-md"><strong>${trainingDetailFilterModel.tdfShowingToLabel}</strong></span>	
                                                     <div class="calendar right">
                                                        <div class="daterangepicker_input">
-                                                            <input type="text" class="to_date" placeholder="" id="date-range201">
+                                                            <input type="text" class="to_date" placeholder="" id="date-range201" readonly="readonly">
                                                             <i class="fa fa-calendar glyphicon glyphicon-calendar"></i>
                                                         </div>
                                                         
