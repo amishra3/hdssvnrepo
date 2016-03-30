@@ -3,6 +3,7 @@ package com.hdscorp.cms.util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -386,4 +387,22 @@ public class ServiceUtil {
 		return null;
 
 	}
+	
+	public static String getNextDate(String  curDate) {
+		  final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		  Date date;
+		  String nextDate="";
+		try {
+			date = format.parse(curDate);
+			 final Calendar calendar = Calendar.getInstance();
+			  calendar.setTime(date);
+			  calendar.add(Calendar.DAY_OF_YEAR, 1);
+			  nextDate=format.format(calendar.getTime()); 
+		} catch (ParseException e) {
+			log.info("Exception while next Date::" + e);
+		}		 
+		  return nextDate;
+		}
+	
+	
 }
