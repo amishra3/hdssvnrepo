@@ -47,8 +47,11 @@
 
 	<c:set var="hexacss" value="business-specific clearfix rsImg" />
 </c:if>
+<c:if test="${not empty properties.vid}">
+  <c:set var="vid" value="${properties.vid}" />
+    <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
 
-
+ </c:if>
 <c:choose>
 	<c:when test="${not empty properties.hexagontitle}">
 <div class="${hexacss}" ${bannerbackgroundstyle}>
@@ -80,7 +83,7 @@
    							<h4>${properties.hexagontitle}</h4>
    							<p>${properties.hexagoncontent}</p>
                             <c:if test="${not empty properties.secondarylinklabel}">
-   							<a class="animateAnchor bottomPos text-center" href="${linkUrl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">${properties.secondarylinklabel} ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                          <a class="animateAnchor bottomPos text-center" href="${properties.voverlay?'javascript:void(0);':linkUrl}" onclick="${!properties.voverlay?'':vidurl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">${properties.secondarylinklabel} ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                             </c:if> 
                          </li>
    					</ul>
