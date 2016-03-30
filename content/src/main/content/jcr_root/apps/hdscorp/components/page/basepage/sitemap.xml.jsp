@@ -17,9 +17,12 @@ Following things can be configured:
                org.apache.sling.api.resource.ValueMap,
                com.hdscorp.cms.util.PropertyResolver"%><%
 %>
+<c:set var="hidepdfsinsitemap" value="<%=pageProperties.getInherited("hidepdfsinsitemap", false) %>"/>
+
  <%
 
     Page navRootPage = currentPage.getAbsoluteParent(1); //Get Main Navigation Root
+	String 	rlpdfspath = pageProperties.getInherited("rlpdfspath", "/content/dam/public/en_us/pdfs");
     String domain = request.getServerName();
     Integer integerPort = new Integer(request.getServerPort());
     String port = integerPort.toString();
@@ -39,6 +42,10 @@ Following things can be configured:
         out.write("<loc>http://<%=domain%></loc>\n");
         out.write("</url>\n");
         <%=PropertyResolver.buildSubList(navRootPage,domain)%>
+        <c:if test="${!hidepdfsinsitemap}">
+        <%=PropertyResolver.buildAssetSitemap(rlpdfspath,domain)%>
+        
+        </c:if>
         <%
         out.write("</urlset>\n");
     }

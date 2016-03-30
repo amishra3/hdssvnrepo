@@ -87,7 +87,18 @@
 					            text="No"
 					            value="no"/>   
 					    </options>
-            </displaydescendants>   
+            </displaydescendants>
+         <hidepdfsinsitemap
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Hide PDFS in  Sitemap"
+            name="./hidepdfsinsitemap"
+            type="checkbox"
+            xtype="selection"/>
+         <rlpdfspath
+             jcr:primaryType="cq:Widget"
+             fieldLabel="Resource Library PDF's path"
+             name="./rlpdfspath"
+             xtype="pathfield"/>          
                                 
     </items>
 </jcr:root>
