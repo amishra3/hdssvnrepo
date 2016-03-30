@@ -35,7 +35,7 @@ request.setAttribute("bannerimage",bannerimage);
 				 </div>
 				<div class="red-bg">
                 	<div class="content-container">
-                	<div class="col-lg-10 col-md-10 col-xs-12">
+                	<div class="col-lg-12 col-md-12 col-xs-12">
                          <div class="cta-text">
                                 <h4>${properties.promotext}</h4>
                              <c:if test="${not empty properties.abouthdscarrerbannerlabel}"> 

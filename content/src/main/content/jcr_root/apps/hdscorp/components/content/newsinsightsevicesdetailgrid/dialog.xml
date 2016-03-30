@@ -93,6 +93,23 @@
                                         value="2"/>
                                 </options>
                             </seemorenewwin>
+                            <thirdparty
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Show third party icon?"
+                                name="./thirdparty"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </thirdparty>
                         </fieldConfig>
                     </multilinks>
                 </items>

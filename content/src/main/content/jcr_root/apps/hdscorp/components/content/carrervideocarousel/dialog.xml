@@ -43,7 +43,7 @@
                                 fieldLabel="Image Path"
                                 name="./carrerbannerimagepath"
                                 xtype="pathfield"/>
-                            <mobileimagePath
+							<mobileimagePath
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Banner Mobile Image (Optional)"
                                 name="./mobileimage"
@@ -54,6 +54,11 @@
                                 fieldLabel="Video Icon Path"
                                 name="./carrervideoiconpath"
                                 xtype="pathfield"/>
+                            <carrerbutton
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Button Label"
+                                name="./carrerbutton"
+                                xtype="textfield"/>
                             <carrervideoembededcode
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"

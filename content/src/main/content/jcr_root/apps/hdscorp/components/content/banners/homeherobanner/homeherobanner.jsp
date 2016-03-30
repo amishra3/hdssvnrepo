@@ -46,11 +46,11 @@
 
     				</c:forEach>
     			</ul>
-    	
+    		<c:if test="${not empty properties.viewalllinktext}">
     			<div class="view-all">
     				<a href="${viewlinkUrl}">${properties.viewalllinktext}<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
     			</div>
-    	
+    		</c:if>
     			<div class="scroll-down">
     				<a href="javascript:void(0);"><span class="sprite icon-arrow-down"></span></a>
     			</div>

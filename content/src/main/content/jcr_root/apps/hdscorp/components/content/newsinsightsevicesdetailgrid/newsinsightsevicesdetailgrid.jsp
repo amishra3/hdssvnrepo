@@ -2,7 +2,7 @@
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 <%@include file="/apps/foundation/global.jsp"%>
-<c:set var="serviceLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-columniconalt-columntitle-columncontent-ctatext-ctalink-seemorenewwin-columndescription")%>" />
+<c:set var="serviceLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-columniconalt-columntitle-columncontent-ctatext-ctalink-seemorenewwin-columndescription-thirdparty")%>" />
 <div id ="nsight" class="news-insight-resources news-insights-section clearfix ${properties.type}" style="background-image:url(${properties.sectionbackground})">
 	<div class="cs-container content-container">
         <div class="container-fluid">
@@ -28,8 +28,7 @@
 										</div>
 										<h2 class="headline hidden-xs">${title}</h2>
 										<h2 class="headline hidden-sm hidden-md hidden-lg">
-											<a href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${title}
-												<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
+											<a href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${title} ${slinks.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 											</a>
 										</h2>
 								 <c:if test="${not empty description}">
@@ -39,7 +38,7 @@
 											<c:when test="${not empty ctalink && not empty ctat}">
 												<div class="resources-category-more">
 													<a class="animateLink hidden-xs" href="${ctalink}" target="${newwin==1?'_blank':'_self'}">${ctat} 
-														<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>
+														${slinks.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 													</a>
 												</div>
 											</c:when>

@@ -8,7 +8,7 @@
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 
 
-<c:set var="carrerVideocarousel" value="<%=PageUtils.convertMultiWidgetToList(properties,"carrertitle-carrerbannerdescription-carrerbannerimagepath-carrervideoiconpath-carrervideoembededcode-ctalabel-ctatargeturl-openinnewwindow-mobileimage")%>" />    
+<c:set var="carrerVideocarousel" value="<%=PageUtils.convertMultiWidgetToList(properties,"carrertitle-carrerbannerdescription-carrerbannerimagepath-carrervideoiconpath-carrervideoembededcode-ctalabel-ctatargeturl-openinnewwindow-carrerbutton-mobileimage")%>" />    
 <c:set var="carrerCarosuelTitles" value="<%=PageUtils.convertMultiWidgetToList(properties,"carrerpagebartitle")%>" />    
 
 <div class="bannerCarsoul clearfix" id="bannerCarsoul">
@@ -19,7 +19,7 @@
 
  <%--<div class="bannerSectionImage sara" id="sara" style="background-image:url('${carrerVideocarousel.carrerbannerimagepath}'); background-repeat: no-repeat;">--%>
      <div class="bannerSectionImage sara rsImg" id="sara" style="background-image: url();"${hdscorp:bgImgAtrr(carrerVideocarousel.carrerbannerimagepath,carrerVideocarousel.mobileimage)}; background-repeat:no-repeat;>
-
+     
                         <div class="content-container hero-content-career">
                             <div class="col-md-4 playVideo col-md-push-8">
                                 <a href="javascript:void(0);" class="playVideo"><img src="${carrerVideocarousel.carrervideoiconpath}" alt="" data-pin-nopin="true"></a>
@@ -27,6 +27,11 @@
                             <div class="col-md-8 col-md-pull-4">
                                 <h2>${carrerVideocarousel.carrertitle}</h2>
                                 <p>${carrerVideocarousel.carrerbannerdescription}</p>
+                                	    	<c:if test="${not empty carrerVideocarousel.carrerbutton}">
+                                            <div class="btn-square-white learn-more-white-link request">
+                                                <a href="javascript:void(0);">${carrerVideocarousel.carrerbutton}</a>
+                                            </div>
+                                        </c:if>
                             </div>
                         </div>
                         <div class="video clearfix">

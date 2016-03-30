@@ -120,6 +120,23 @@
                                 fieldLabel="View Featured Products Path"
                                 name="./mgmcontactusviewfeaturedproductslink"
                                 xtype="pathfield"/>
+                            <overlay
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in marketo Form"
+                                name="./overlay"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </overlay>
                             <mgmcontactusopeninnewwindow2
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Open in New Window?"
