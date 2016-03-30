@@ -71,7 +71,7 @@
 										<div class="btn-group">
 											<button aria-expanded="false" aria-haspopup="true"
 												data-toggle="dropdown"
-                                            class="btn dropdown-toggle service-btn" type="button"><span class="buttonLabel">${trainingSearchCoursesModel.selectlocationlabel}</span><span
+                                            class="btn dropdown-toggle service-btn" type="button"><span class="buttonLabel" id="locationSelectButton">${trainingSearchCoursesModel.selectlocationlabel}</span><span
 													aria-hidden="true" class="glyphicon glyphicon-chevron-down"></span>
 											</button>
 											<ul class="dropdown-menu">
