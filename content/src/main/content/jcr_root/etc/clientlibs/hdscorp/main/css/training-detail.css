@@ -206,8 +206,9 @@
 @media only screen and (max-width: 991px) {
 	 .hds-training-rsc-sec .training-boxes {margin: 0 0 20px;}
 	} 
-        #trainingDetail .result-product .category-products-listing{min-height:10px;}
-        .result-section {display:none}
-    .errorSearchField{margin-top:60px} 
-.result-section{display:none}
-#contentCatagory{visibility:hidden}
+	
+#trainingDetail .result-product .category-products-listing{min-height:10px;}
+#trainingDetail .result-section {display:none}
+#trainingDetail .errorSearchField{margin-top:60px} 
+#trainingDetail .result-section{display:none}
+#trainingDetail #contentCatagory{visibility:hidden}
