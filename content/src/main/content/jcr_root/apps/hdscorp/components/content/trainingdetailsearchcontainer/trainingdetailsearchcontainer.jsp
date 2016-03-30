@@ -43,6 +43,7 @@
          </div>
       </div>
    </c:forEach>
+   <div class="searchnotfound"> </div>
    <div class="btn-square-red result-btn">
       <a href="javascript:void(0);" title="Load More">${lmsDataModel.loadMoreLabel}</a>
    </div>
