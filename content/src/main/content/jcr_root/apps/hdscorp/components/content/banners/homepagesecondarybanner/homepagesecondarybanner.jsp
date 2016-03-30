@@ -17,7 +17,7 @@
 
 
 <div class="cloud-storage">
-	<div class="cloud-storage-container content-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="cloud-storage-container content-container clearfix col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="cloud-content col-sm-9 col-md-7 ${properties.secondarycontentalign?'floatright':''}">
 			<h1>${properties.secondaryherotitlecontent}</h1>
 			<h4>${properties.secondaryherosubtitlecontent}</h4>
