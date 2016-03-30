@@ -122,6 +122,8 @@
                                 <div class="logo">
                                     <img src="${systemIntegrators.partnerIconImagePath}" alt="${systemIntegrators.partnerIconImageAltText}" title="${systemIntegrators.partnerIconImageAltText}" class="img-responsive">
                                 </div>
+                                <c:if test="${not empty systemIntegrators.partnerName || systemIntegrators.partnerHeadLine || systemIntegrators.partnerIntroduction}"> 
+
                                 <div class="partner-detail">
                                     <div class="close"></div>
                                     <h2 class="ptitle"> ${systemIntegrators.partnerName}</h2>
@@ -132,8 +134,9 @@
                                         		<a class="animateLink" href="${column.seemoretargeturl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a><br>
                                         </c:forEach>
                            		 </div>
-                			</div> 
-				
+                                </c:if>
+                                </div> 
+
 				 
 				     </c:forEach>
 			</div>
