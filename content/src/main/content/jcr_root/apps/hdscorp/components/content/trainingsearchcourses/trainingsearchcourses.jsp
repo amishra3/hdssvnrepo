@@ -67,23 +67,23 @@
 									</div>
 								</div>
 								<div class="col-sm-12">
-									<div class="col-sm-6 center">
+									<div class="col-sm-6 select-left-loc">
 										<div class="btn-group">
-											<button aria-expanded="false" aria-haspopup="true"
-												data-toggle="dropdown"
-                                            class="btn dropdown-toggle service-btn" type="button"><span class="buttonLabel" id="locationSelectButton">${trainingSearchCoursesModel.selectlocationlabel}</span><span
-													aria-hidden="true" class="glyphicon glyphicon-chevron-down"></span>
-											</button>
-											<ul class="dropdown-menu">
-												<c:forEach var="tabList" items="${tabList}">
-                                                    <li><a href="javascript:void(0)">${tabList.locationlabel}</a></li>
-
-												</c:forEach>
-											</ul>
+										    <div class="select-training-style">
+												<select autocomplete="off" name="allRegion" id="allRegion">
+													<option value="">${trainingSearchCoursesModel.selectlocationlabel}</option>
+												 <c:forEach var="tabList" items="${tabList}">	
+													<option value="${tabList.locationid}">${tabList.locationlabel}</option>
+												 </c:forEach>	
+												</select>
+											</div>
+										
+										
+											
 										</div>
 									</div>
 
-									<div class="col-sm-6">
+									<div class="col-sm-6 select-right-btn">
 										<div class="src-btn">
 											<div class="btn-square-red search-course-btn">
 												<a href="javascript:void(0);">${trainingSearchCoursesModel.searchlabel}</a>
