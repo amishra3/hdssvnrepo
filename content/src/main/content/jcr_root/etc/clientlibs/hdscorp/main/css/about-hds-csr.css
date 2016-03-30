@@ -194,6 +194,8 @@
     margin-top: 0;
 }
 
+.behind-scene-hexagon-list{padding:60px 0 0 0;}
+
 @media only screen and (max-width: 768px) {
 .csr-governance-resource .resources-section .acs-commons-resp-colctrl-col:last-child .resources-category:after, .resources-section .acs-commons-resp-colctrl-col:last-child .resources-category:after {
         background:transparent;
