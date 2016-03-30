@@ -19,11 +19,7 @@ var hds = window.hds || {};
         	var defaultRegion = this.options.defaultRegion;
             var defaultCountry = this.options.defaultCountry;
             var defaultcity = this.options.defaultcity;
-        	$("#allRegion option").filter(function() {
-        	    return $(this).text() == defaultRegion; 
-        	}).prop('selected', true);
-        	 $('#allCountries').html("").append('<option value="">USA</option>');
-             $('#allLocations').html("").append('<option value="">California</option>');
+        	
         },
 
         _loadMap: function(str) {
