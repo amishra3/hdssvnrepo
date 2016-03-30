@@ -8,7 +8,7 @@ if(pageTemplatePath!=null){
 %>
 
 <body class="<%=pageTemplatePath %> hds-megaMenu-push">
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry&amp;v=3.7"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry&amp;v=3.7"></script>
 	<div class="one-column">
 	<div class="hds-MobileMenu hds-megaMenu-right">
         <div class="closeHDSMenu">
