@@ -70,6 +70,22 @@
                         name="./newsandinsightsbannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                                            <newsandinsightsbannerlinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Label"
+                        name="./newsandinsightsbannerlinklabel"
+                        xtype="textfield"/>
+                    <newsandinsightsbannerlinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Target URL"
+                        name="./newsandinsightsbannerlinkurl"
+                        xtype="pathfield"/>
+                    <newsandinsightslinkurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open link in New Window ?"
+                        name="./newsandinsightslinkurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>

@@ -63,6 +63,19 @@
   position:relative;
 }
 
+.news-insight .second-link {
+	display: inline-block;
+}
+
+.news-insight .second-link a{
+	font-weight: 900;
+    font-size: .8em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
 .result-resources .category-resources-listing .resource h3{text-transform:capitalize;}
 
 @media only screen and (max-width: 1024px) {
@@ -363,6 +376,16 @@
   .explore-insight .explore-insight-container .col-sm-4{
     padding-left: 15px;
   }
+  
+  .news-insight.common-hero-short-banner .request.cta-news{
+	margin-bottom: 25px;
+  }
+  
+  .news-insight .second-link {
+   	margin-bottom: 50px;
+   	display: block;    	
+  }
+  
 }
 
 @media screen and (max-width: 767px) {
@@ -394,6 +417,7 @@
   .explore-insight .explore-insight-container .insight-common-box h5{
     font-size: 1.125rem;
   }
+  
 }
 
 /* News & Insight - LP section */

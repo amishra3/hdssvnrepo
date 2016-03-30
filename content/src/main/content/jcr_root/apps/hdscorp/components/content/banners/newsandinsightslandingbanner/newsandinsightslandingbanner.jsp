@@ -33,7 +33,22 @@ request.setAttribute("bannerimage",bannerimage);
 	                             <a href="${linkUrl}" target="${properties.newsandinsightsbannerurltargettype?'_blank':'_self'}">
 	                                ${properties.newsandinsightsbannerbuttonlabel}</a>
 	                            </div>
-                            </c:if>
+	                            <c:if test="${not empty properties.newsandinsightsbannerlinkurl}">
+									<div class="second-link">
+										<a class="animateLink"
+											href="${hdscorp:shortURL(properties.newsandinsightsbannerlinkurl)}"
+											<c:if test="${not empty properties.newsandinsightslinkurltargettype}">
+												target="_blank"
+											</c:if>
+											>
+											${properties.newsandinsightsbannerlinklabel}
+											<c:if test="${not empty properties.newsandinsightslinkurltargettype}">
+												<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+											</c:if>
+										</a>
+									</div>
+								</c:if>
+							</c:if>
                     </div>
                 </div>
         </div>
