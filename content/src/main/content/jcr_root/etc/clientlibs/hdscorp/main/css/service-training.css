@@ -125,6 +125,13 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 	font-size: 1em;
 }
 
+.serv-training-overview .training-learn{
+	padding-bottom: 50px;
+}
+
+.serv-training-overview .training-learn .learn-more-red-link a{
+	border: none;
+}
 
 .training-resources{background-color:#ac1f25; padding:70px 0;}
 .train-resrcprdct-bx{color: #333333; margin:0 15px 15px 0;  box-shadow: 0 1px 2px #5a5959; margin-bottom:;}
@@ -265,6 +272,9 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 	.serv-training-overview .btn-group, 
 	.serv-training-overview .daterangepicker{
 		margin-bottom: 20px;
+	}
+	.serv-training-overview .training-learn{
+		padding-bottom: 0;
 	}
 
 }
