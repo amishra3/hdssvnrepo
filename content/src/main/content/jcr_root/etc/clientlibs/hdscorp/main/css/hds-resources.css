@@ -564,13 +564,14 @@ color: #cccccc !important;
 }
 
 .result-resources .category-resources-listing .resource h3 a {
-  color: #000000;
+  color: #cc0000;
   text-decoration: none;
 }
 
 .result-resources .category-resources-listing .resource h3 span.glyphicon.glyphicon-menu-right.animateIcon {
   font-size: 1rem;
   font-weight: bold;
+  top:1px;
 }
 
 .result-resources .category-resources-listing .resource p {
