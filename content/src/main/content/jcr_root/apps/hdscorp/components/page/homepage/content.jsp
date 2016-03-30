@@ -10,15 +10,17 @@
 		
 	</div>
 	
+	<div ${editbarstyle}>
+		<cq:include path="hexsecondarybannerpar" resourceType="hdscorp/components/content/banners/hexagonbanner" />
+		
+	</div>
+	
 	<div ${editbarstyle}>	
 		<cq:include path="secondarybannerpar" resourceType="hdscorp/components/content/banners/homepagesecondarybanner" />
 		
 	</div>
 	
-	<div ${editbarstyle}>
-		<cq:include path="hexsecondarybannerpar" resourceType="hdscorp/components/content/banners/hexagonbanner" />
-		
-	</div>
+
 	
 	<div ${editbarstyle}>
 		<cq:include path="simplebannerpar" resourceType="hdscorp/components/content/banners/homesimplebanner" />
