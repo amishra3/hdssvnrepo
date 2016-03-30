@@ -60,8 +60,8 @@ var="locationsDropDownFilterModel" />
 		<div class="Container-legal-terms container-fluid overRideRight">
             <div class="location-nav-tabs">
               <ul class="nav nav-tabs hidden-md hidden-lg">
-                  <li class="col-xs-6 current" data-tab="tab-1"><a href="javascript:void(0)">Map View</a></li>
-                  <li class="col-xs-6" data-tab="tab-2"><a href="javascript:void(0);">List View</a></li>
+                  <li class="col-xs-6 current" data-tab="tab-2"><a href="javascript:void(0)">Map View</a></li>
+                  <li class="col-xs-6" data-tab="tab-1"><a href="javascript:void(0);">List View</a></li>
               </ul>
             </div>  
             <div class="posRelativeLocation">
