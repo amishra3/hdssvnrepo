@@ -75,6 +75,12 @@
 						</c:forEach>
 					</ul>
 				</div>
+
+                <c:choose>
+
+						<c:when test="${fn:length(subnavlinks2)>1}">
+
+
 				<div class="col-md-8 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgnewsmobilebackgroundimagepath)}">
 					<c:forEach var="subnavlinks2" items="${subnavlinks2}"
 						varStatus="count">
@@ -92,7 +98,32 @@
 						</div>
 					</c:forEach>
 				</div>
-			</div>
+</c:when>
+
+						<c:otherwise>
+<div class="col-md-8 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgnewsmobilebackgroundimagepath)}">
+					<c:forEach var="subnavlinks2" items="${subnavlinks2}"
+						varStatus="count">
+						<div class="col-xs-12 col-md-12">
+							<h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmnewsinsightsheadline}</h3>
+							<div class="hidden-xs hidden-sm">${subnavlinks2.mgmnewsinsightsdescription}</div>
+								<c:if test="${not empty  subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">
+									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink)}"/>
+                               			<p>		
+                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
+											aria-hidden="true"
+											class="glyphicon ${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'glyphicon-menu-right':'glyphicon-menu-right'} animateIcon"></span></a>
+										</p>
+                            </c:if>
+						</div>
+					</c:forEach>
+				</div>
+						</c:otherwise>
+
+                </c:choose>
+
+
+                        </div>
 		</div>
 	</div>
 </div>
