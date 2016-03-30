@@ -28,7 +28,29 @@ var hds = window.hds || {};
                 hds.resourceLib._processSlingIncludedContent();
                 slingIncludedContent = false;
             }
+            hds.resourceLib._openvideooverlay();
             
+        },
+        _openvideooverlay: function() {
+        	var qURL = window.location.href;
+        	var indexOfQueryStart = qURL.indexOf("?") ;
+        	if(indexOfQueryStart > 0){
+        		qURL = qURL.substring(0,indexOfQueryStart); 
+        	}
+        	var parms = hds.resourceLib._getParmsFromURLHash(qURL);
+        	var videoID = parms["vid"];
+        	var videoGUID = "video"+videoID;
+        	var gblPlayingVideo;
+        	if($.trim(videoID).length > 0){
+        		var vidObjMkup = $(".bcobjmarkup").html();
+        		vidObjMkup = vidObjMkup.replace(/#videoTitleId/g,videoID).replace("#videoGuid",videoGUID);
+        		videobox = new HDS.Lightbox();
+        		gblPlayingVideo = undefined ; 
+        		videobox.setContent('');
+        		videobox.setContent(vidObjMkup);
+        	    videobox.show();
+        	    initiateVideo();
+        	}
         },
         _getParmsFromURLHash: function(url) {
             var parms = {}, pieces, parts, i;
