@@ -483,7 +483,7 @@ color: #cccccc !important;
 .resources-listing ul > li.active > ul {
     display: block;
 }
-@media only screen and (max-width:991px) {
+@media only screen and (max-width:1024px) {
   .resources-listing ul > li > ul {
     margin-right: -15px;
     margin-left: -15px;
