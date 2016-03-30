@@ -41,7 +41,7 @@ var hds = window.hds || {};
             var showDetails=this.options.detailsBtn;
             $(document).on('click', showDetails, function() {
                 var $this = $(this);
-                if ($this.hasClass('less')) {
+                /*if ($this.hasClass('less')) {
                     $this.removeClass('less');
 					$this.find('.glyphicon').removeClass('glyphicon-plus-sign').addClass('glyphicon-minus-sign');
 					//$this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
@@ -55,7 +55,7 @@ var hds = window.hds || {};
 					//$this.parents('.newsEvents').find('.WebcastDetails').hide();
                 }
                 $this.find('.glyphicon').toggleClass('glyphicon-minus-sign');
-                $this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();
+                $this.parents('.newsEvents').find('.WebcastDetails').toggle().focus();*/
                 $this.parents('.newsEvents').find('p span.moreellipses').toggle();
                 $this.parents('.newsEvents').find('p span.morecontent span').toggle();
                 return false;
