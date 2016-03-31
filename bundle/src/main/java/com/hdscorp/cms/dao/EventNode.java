@@ -43,6 +43,10 @@ public class EventNode {
 	private int year;
 
 	private int monthInt;
+	
+	private String thirdpartyicon;
+	
+	private String newwindow;
 
 	/**
 	 * Webcast fields
@@ -206,8 +210,26 @@ public class EventNode {
 		this.eventRegiontagName = eventRegiontagName;
 	}
 
+	public String getThirdpartyicon() {
+		return thirdpartyicon;
+	}
+
+	public void setThirdpartyicon(String thirdpartyicon) {
+		this.thirdpartyicon = thirdpartyicon;
+	}
+
+	public String getNewwindow() {
+		return newwindow;
+	}
+
+	public void setNewwindow(String newwindow) {
+		this.newwindow = newwindow;
+	}
+
+	
 	// Webcast setter/getter
 
+	
 	public String getIsWebcast() {
 		return isWebcast;
 	}
