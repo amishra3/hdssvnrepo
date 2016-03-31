@@ -15,6 +15,11 @@
                 <items
                     jcr:primaryType="cq:WidgetCollection"
                     xtype="multifieldpanel">
+                    <id
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="ID"
+                        name="./id"
+                        xtype="textfield"/>
                     <newsbackgroundimage
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Background Image  Path"

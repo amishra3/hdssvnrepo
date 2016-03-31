@@ -1,9 +1,12 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false" %>
 
+
+
+
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsExplorerVerticalContainerModel" var="newsExplorerVerticalModel" />
 <div class="clearfix"></div>
-<div class="pr-explore news-explore" style="background-image: url('${properties.newsbackgroundimage}')">
+<div class="pr-explore news-explore" id="${properties.id}" style="background-image: url('${properties.newsbackgroundimage}')">
                 <div class="pr-explore-container">
                     <div class="row">
 
