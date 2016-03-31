@@ -95,6 +95,12 @@
                         name="./jcr:thirdpartyicon"
                         type="checkbox"
                         xtype="selection"/>
+                    <eventid
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event ID"
+                        name="./jcr:eventid"
+                        xtype="textfield"/>
                 </items>
             </event>
         </items>
