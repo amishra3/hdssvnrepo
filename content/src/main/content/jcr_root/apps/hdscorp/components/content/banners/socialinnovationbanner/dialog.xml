@@ -66,13 +66,19 @@
                         xtype="pathfield"/>
                     <socialinnovationbannervideoembedcode
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Video Embed code / Video Url"
+                        fieldLabel="Video Embed code / Video Url/ Video ID"
                         name="./socialinnovationbannervideoembedcode"
                         xtype="textarea"/>
                     <thirdpartyvideo
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Third party Video ?"
                         name="./thirdpartyvideo"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <videooverlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay ?"
+                        name="./videooverlay"
                         type="checkbox"
                         xtype="selection"/>
                 </items>

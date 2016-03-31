@@ -15,6 +15,12 @@
 	<c:set var="bannerimagePath" value="${hdscorp:shortURL(bannerimagePath)}" />
 </c:if>
 
+<c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
+  <c:set var="vid" value="${properties.socialinnovationbannervideoembedcode}" />
+    <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
+
+ </c:if>
+
 <c:choose>
 	<c:when test="${not empty properties.socialinnovationbannertitle}">
                 <%-- <div class="common-hero-banner server-rack clearfix" style="background-image:url('${properties.socialinnovationbannerimagePath}');"> --%>
@@ -25,27 +31,38 @@
                         <h4 class="sub-headline">${properties.socialinnovationbannercontent}</h4>
                         <c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
                         	<c:set var="code" value="${properties.socialinnovationbannervideoembedcode}" />
+                        </c:if>
+                         <c:if test="${not empty properties.videooverlay}">
+                        	<c:set var="code" value="javascript:void(0);" />
                         </c:if> 
+                         <c:if test="${not empty properties.thirdpartyvideo}">
+                        	<c:set var="code" value="${properties.socialinnovationbannervideoembedcode}" />
+                        </c:if>
+                            <c:if test="${empty properties.thirdpartyvideo && empty properties.videooverlay}">
+                        	<c:set var="code" value="#" />
+                        </c:if>
+
+
                         <c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
                             <div class="video-play hidden-lg hidden-md">
 
-                                <a href="${!properties.thirdpartyvideo? '#' :code}" target="${properties.thirdpartyvideo?'_blank':'_self'}" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
+                                <a href="${code}" target="${properties.thirdpartyvideo?'_blank':'_self'}" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
                             </div>
                         </c:if> 
 
                         <c:if test="${not empty properties.socialinnovationbannerbuttonlabel}">
                         <div class="btn-square-white request btn-play-video">
 
-                                <a href="${!properties.thirdpartyvideo? '#' :code}" target="${properties.thirdpartyvideo?'_blank':'_self'}">${properties.socialinnovationbannerbuttonlabel}</a>
+                                <a href="${code}" target="${properties.thirdpartyvideo?'_blank':'_self'}">${properties.socialinnovationbannerbuttonlabel}</a>
                         </div>
 						</c:if> 
                     </div>
 
 					<c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
-                        <div class="col-lg-6 col-md-6 col-xs-12 hidden-xs hidden-sm video-section">
+                        <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm video-section">
                         <div class="video-play-desktop">
 
-                                <a href="${!properties.thirdpartyvideo? '#' :code}" target="${properties.thirdpartyvideo?'_blank':'_self'}" class="btn-play-video">
+                                <a href="${code}" onclick="${!properties.videooverlay?'':vidurl}" target="${properties.thirdpartyvideo?'_blank':'_self'}" class="btn-play-video">
                                     <img src="${properties.socialinnovationbannericonpath}">                               
                                 </a>
                             </div>
@@ -53,6 +70,7 @@
                     </c:if> 
                 </div>
             </div>
+<c:if test="${empty properties.videooverlay}">
 					 <c:if test="${empty properties.thirdpartyvideo}">
                 		<c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
     
@@ -64,6 +82,7 @@
                         </div> 
                			 </c:if> 
                     </c:if> 
+                        </c:if> 
 
     </c:when>
 
