@@ -65,6 +65,17 @@ public class EventModel {
 	@Named("jcr:registernowlink")
 	@Default(values = {"Register Now Link"})
 	private String registerNowLink;
+	
+	@Inject
+	@Named("jcr:thirdpartyicon")
+	@Default(values = {""})
+	private String thirdpartyicon;
+	
+	@Inject
+	@Named("jcr:newwindow")
+	@Default(values = {""})
+	private String newwindow;
+	
 
 	public String[] getEventType() {
 		return eventType;
@@ -106,9 +117,15 @@ public class EventModel {
 		return eventRegionTag;
 	}
 
+	public String getThirdpartyicon() {
+		return thirdpartyicon;
+	}
 
-	
-	
+
+	public String getNewwindow() {
+		return newwindow;
+	}
+		
 
 	}
 
