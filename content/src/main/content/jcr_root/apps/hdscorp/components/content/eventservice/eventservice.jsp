@@ -53,8 +53,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 ${eventNodes.eventDescription}
-								<div class="btn-square-white request">
-    								<a href="${eventNodes.eventRegisterNowLink}" title="${eventNodes.eventRegisterNowLabel}">${eventNodes.eventRegisterNowLabel}</a> 
+								<div class="btn-square-white request">                                    
+    								<a href="${eventNodes.eventRegisterNowLink}" title="${eventNodes.eventRegisterNowLabel}" target="${eventnw?'_blank':'_self'}">${eventNodes.eventRegisterNowLabel}${eventtpy?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a> 
                                 </div>
 
                             </div>                            
