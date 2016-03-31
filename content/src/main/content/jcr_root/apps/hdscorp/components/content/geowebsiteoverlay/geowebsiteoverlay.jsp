@@ -5,8 +5,6 @@
 	var="geoSelectorModel" />
 
 
-<c:set var="geoGlobalId" value="showGeo" scope="application" /> 
-
 <div class="hds_globalNav_geo">
 	<div class="hds_globalNav_geo-selc">
 		<div class="content-container global-sel">
