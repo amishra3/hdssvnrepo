@@ -32,7 +32,7 @@ import com.hdscorp.cms.util.ServiceUtil;
 @Properties({ @Property(name = ServiceConstants.FEED_POST_LIMIT, description = "Default feed post limit", value = "2"),
 		@Property(name = ServiceConstants.FEED_URL_KEY, description = "Default feed URL is provided you can change it accordingly", value = "https://community.hds.com/view-browse-feed.jspa?userID=-1&browseSite=content&filterID=all~objecttype~objecttype%5bblogpost%5d&browseViewID=content"),
 		@Property(name = ServiceConstants.FEED_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 25 13 * * ?"),
-		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "/content/hdscorp/en_us/test/jcr:content/") })
+		@Property(name = ServiceConstants.FEED_STORAGE_PATH, description = "Default storage path", value = "/content/hdscorp/en_us/lookup/blogfeeddata/jcr:content") })
 
 public class BlogScheduler {
 	private static final Logger log = LoggerFactory.getLogger(BlogScheduler.class);
