@@ -6853,6 +6853,9 @@ button.close {
 }
 
 @media (min-width: 992px) {
+	.modal-dialog {
+    width: 980px;
+	}
   .modal-lg {
     width: 900px;
   }
