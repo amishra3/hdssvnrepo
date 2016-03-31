@@ -71,7 +71,7 @@ var="locationsDropDownFilterModel" />
 			<div class="col-md-3 col-sm-12 tabbed-content" id="tab-1">
 				<div class="content" >
                   <div class="scrollbar-inner">
-                    <h2>North America</h2>
+                    <h2>${properties.locdefaultregion}</h2>
                         <div id="locationDetailsContent">
                         </div>
 					</div>
