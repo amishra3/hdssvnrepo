@@ -86,13 +86,13 @@
                     <newwin
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in new window?"
-                        name="./newwin"
+                        name="./jcr:newwindow"
                         type="checkbox"
                         xtype="selection"/>
                     <thirdparty
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Show third party icon?"
-                        name="./thirdparty"
+                        name="./jcr:thirdpartyicon"
                         type="checkbox"
                         xtype="selection"/>
                 </items>

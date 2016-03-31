@@ -1,22 +1,34 @@
-.services-training-banner{ background-image: url("../images/service-training-banner.png"); z-index:2}
-div.training{text-align:left!important;   padding: 60px 0 84px!important;}
-.service-support-main .serv-training-overview h2{font-family: "museo-slab",Helvetica,Arial,sans-serif;
+.services-training-banner {
+    background-image: url("../images/service-training-banner.png");
+    z-index: 2
+}
+div.training {
+    text-align: left!important;
+    padding: 60px 0 84px!important;
+}
+.service-support-main .serv-training-overview h2 {
+    font-family: "museo-slab", Helvetica, Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     padding-bottom: 35px;
     text-transform: uppercase;
-	color:#000;
-	text-align:left;
-	margin: 0;
+    color: #000;
+    text-align: left;
+    margin: 0;
     padding: 0 0 40px;
 }
-.service-support-main .serv-training-overview h3{font-size: 1.2em; font-family: "museo-sans",Helvetica,Arial,sans-serif;text-transform: capitalize; margin: 0; padding:0; }
-
+.service-support-main .serv-training-overview h3 {
+    font-size: 1.2em;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+}
 .training-search {
     border: 5px solid #e6e6e6;
     margin: 30px 0 35px;
     min-height: 65px;
-	position:relative;
+    position: relative;
 }
 .training-search > input {
     border: medium none;
@@ -26,9 +38,8 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
     padding-right: 62px;
     text-align: left;
     width: 100%;
-	color:#000000;
+    color: #000000;
 }
-
 .training-search span.glyphicon.glyphicon-search {
     color: #cc0000;
     cursor: pointer;
@@ -38,155 +49,212 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
     top: 15px;
     transform: rotate(90deg);
 }
-.service-support-main .serv-training-overview p{
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+.service-support-main .serv-training-overview p {
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 1.125em;
     font-weight: 300;
     padding-bottom: 35px;
     text-align: left;
-	margin:0;
-	padding:0 0 60px;
+    margin: 0;
+    padding: 0 0 60px;
 }
-.service-training-partner{min-height:auto!important; text-align:left;  padding: 30px 0 40px 30px !important;}
-
-.serv-training-overview .daterangepicker {float:none; display:table;  }
-.serv-training-overview .daterangepicker{ margin: 0 0 45px;}
-.serv-training-overview .daterangepicker .daterangepicker_input{width:100%;}
-.serv-training-overview .daterangepicker .daterangepicker_input input[type="text"]{width:100%;}
-.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right { margin:0; float:none; display:table-cell; vertical-align:middle;  
+.service-training-partner {
+    min-height: auto!important;
+    text-align: left;
+    padding: 30px 0 40px 30px !important;
 }
-.serv-training-overview .daterangepicker span{float:none; display:table-cell;  text-align:center; vertical-align:middle; margin: 12px; }
-.train-partner .col-md-5{padding:0 15px 0 0;}
-.serv-training-overview .service-btn{background:none!important; font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 13px; border:none; text-transform:uppercase; font-weight: 700;}
-.serv-training-overview .service-btn .buttonLabel{
-	padding-right: 5px;
-}	
-.serv-training-overview button span.glyphicon{	
-	top:2px;
-	display:inline-block; 
-	color:#cc0d0d;
- }
-	
+.serv-training-overview .daterangepicker {
+    float: none;
+    display: table;
+    margin: 0 0 35px;
+}
+.serv-training-overview .daterangepicker .daterangepicker_input {
+    width: 100%;
+}
+.serv-training-overview .daterangepicker .daterangepicker_input input[type="text"] {
+    width: 100%;
+}
+.serv-training-overview .daterangepicker .calendar.left,
+.serv-training-overview .daterangepicker .calendar.right {
+    margin: 0;
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+}
+.serv-training-overview .daterangepicker span {
+    float: none;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    margin: 12px;
+}
+.train-partner .col-md-5 {
+    padding: 0 15px 0 0;
+}
+.serv-training-overview .service-btn {
+    background: none!important;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.serv-training-overview .service-btn .buttonLabel {
+    padding-right: 5px;
+}
+.serv-training-overview button span.glyphicon {
+    top: 2px;
+    display: inline-block;
+    color: #cc0d0d;
+}
 .serv-training-overview {
     border-right: 1px solid #ebebeb;
     padding: 0 40px 0 10px;
 }
-.serv-training-overview.last{border:none}
-
+.serv-training-overview.last {
+    border: none
+}
 .serv-training-overview .select-left-loc,
-.serv-training-overview .select-right-btn{
-	padding: 0;
-	width: 45%;
+.serv-training-overview .select-right-btn {
+    padding: 0;
+    width: 45%;
 }
-
-.serv-training-overview .select-right-btn{
-	margin-left: 54px;
+.serv-training-overview .select-right-btn {
+    margin-left: 54px;
 }
-
-.serv-training-overview .select-left-loc .btn-group{
-	width: 100%;
+.serv-training-overview .select-left-loc .btn-group {
+    width: 100%;
 }
-
-.serv-training-overview .src-btn .btn-square-red a{
-	text-align: center;
-	padding: 14px 35px;
-} 
-
-.serv-training-overview .src-btn .search-course-btn{
-	min-width: 244px;	
+.serv-training-overview .src-btn .btn-square-red a {
+    text-align: center;
+    padding: 14px 35px;
 }
-
-.serv-training-overview .select-training-style{
-	background: url("../images/select-down-arrow.png") no-repeat 96% center;
-	width: 100%;
+.serv-training-overview .src-btn .search-course-btn {
+    min-width: 244px;
+}
+.serv-training-overview .select-training-style {
+    background: url("../images/select-down-arrow.png") no-repeat 96% center;
+    width: 100%;
 	border: 1px solid #cc0000;
-	display: inline-block;
-	padding: 10px 0;
+    display: inline-block;
+    padding: 10px 0;
 }
-
-.serv-training-overview .select-training-style select{
-	font-family: "museo-sans",Helvetica,Arial,sans-serif;
-	font-weight: 700;
-	font-size: 13px;
-	padding-left: 5px;
-	cursor: pointer;
-	width: 100%;
-	border: none;
-	background: transparent;
-	background-image: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;	
-	color:#cc0000;
+.serv-training-overview .select-training-style select {
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding-left: 5px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #cc0000;
 }
-.serv-training-overview .select-training-style select option{
-	font-family: "museo-sans",Helvetica,Arial,sans-serif;
-	background: #ffffff;
-	padding: 4px 5px;
-	font-size: 1em;
-	color:#000;
+.serv-training-overview .select-training-style select::-ms-expand {
+    display: none;
 }
-
-.serv-training-overview .training-learn{
-	padding-bottom: 50px;
+.serv-training-overview .select-training-style select option {
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    padding: 4px 5px;
+    font-size: 1em;
+    color: #000;
 }
-
-.serv-training-overview .training-learn .learn-more-red-link a{
-	border: none;
+.serv-training-overview .training-learn {
+    padding-bottom: 80px;
 }
-
-.training-resources{background-color:#ac1f25; padding:70px 0;}
-.train-resrcprdct-bx{color: #333333; margin:0 15px 15px 0;  box-shadow: 0 1px 2px #5a5959; margin-bottom:;}
-.training-resources h2{ font-family: "museo-slab",Helvetica,Arial,sans-serif;
+.serv-training-overview .training-learn .learn-more-red-link a {
+    border: none;
+}
+.training-resources {
+    background-color: #ac1f25;
+    padding: 70px 0;
+}
+.train-resrcprdct-bx {
+    color: #333333;
+    margin: 0 15px 15px 0;
+    box-shadow: 0 1px 2px #5a5959;
+    margin-bottom: ;
+}
+.training-resources h2 {
+    font-family: "museo-slab", Helvetica, Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     padding-bottom: 35px;
     text-align: center;
     text-transform: uppercase;
-	color:#fff;
+    color: #fff;
 }
-.train-resrcprdct-bx .imageHolder img{width:100%}
-.train-resrcprdct-bx .prdct-inner{padding: 30px 17px 25px; background-color:#ffffff;}
-.train-resrcprdct-bx .prdct-inner h3{font-family: "museo-sans",Helvetica,Arial,sans-serif; font-size:20px; padding:0 0 18px; margin:0; text-transform: capitalize;}
-.train-resrcprdct-bx .prdct-inner p{font-size:13px; padding:0;}
+.train-resrcprdct-bx .imageHolder img {
+    width: 100%
+}
+.train-resrcprdct-bx .prdct-inner {
+    padding: 30px 17px 25px;
+    background-color: #ffffff;
+}
+.train-resrcprdct-bx .prdct-inner h3 {
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding: 0 0 18px;
+    margin: 0;
+    text-transform: capitalize;
+}
+.train-resrcprdct-bx .prdct-inner p {
+    font-size: 13px;
+    padding: 0;
+}
 .train-resrcprdct-bx .prdct-inner a {
     color: #ce0000;
     font-weight: 800;
     outline: 0 none;
     text-decoration: none;
-	text-transform:uppercase;
-	font-family: "museo-sans",Helvetica,Arial,sans-serif; 
-	letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.1em;
 }
 .train-resrcprdct-bx .prdct-inner a:hover {
     color: #ac1f25;
 }
-.no-padding{padding:0;}
-
-
-.service-chart{background:#fff; padding:70px 0 120px;;}
-.service-chart h2{
-	color: #333;
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
-	font-size: 3.125em;
-    font-weight: 100;
-	margin:0;
-	padding-bottom: 47px;
+.no-padding {
+    padding: 0;
 }
-.service-chart p {font-size:12px;  margin: 0 0 58px;}
-.service-chart p span{font-family: "museo-sans",Helvetica,Arial,sans-serif; text-transform:uppercase;}
-.service-chart h3{
-	color: #000;
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+.service-chart {
+    background: #fff;
+    padding: 70px 0 120px;
+    ;
+}
+.service-chart h2 {
+    color: #000;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    font-size: 3.6em;
+    font-weight: 100;
+    margin: 0;
+    padding-bottom: 47px;
+}
+.service-chart p {
+    font-size: 12px;
+    margin: 0 0 58px;
+}
+.service-chart p span {
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+.service-chart h3 {
+    color: #000;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 1.3em;
     font-weight: bold;
     padding: 0 0 10px;
     text-transform: capitalize;
 }
 .service-chart .table-bordered {
-    border: 1px solid #f1f1f1; border-top:5px solid #f78e1e; margin: 0 0 60px;
+    border: 1px solid #f1f1f1;
+    border-top: 5px solid #f78e1e;
+    margin: 0 0 60px;
 }
-
 .service-chart .table-striped > tbody > tr:nth-of-type(2n+1) > th {
     background-color: transparent;
     color: #1d1d1d;
@@ -195,141 +263,200 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
     background-color: transparent;
     color: #1d1d1d;
 }
-
 .service-chart .table-striped > tbody > tr:nth-of-type(2n+1) {
     background-color: #f1f1f1;
-	color:#666;
+    color: #666;
 }
 .service-chart .table-striped > tbody > tr:nth-of-type(2n) {
     background-color: #fff;
-	color:#666;
+    color: #666;
 }
-.service-chart .table-bordered > thead > tr > td, .service-chart .table-bordered > tbody > tr > td, .service-chart .table-bordered > tfoot > tr > td{border:none;}
-.red{color:#ce0000;  display: inline-block;
+.service-chart .table-bordered > thead > tr > td,
+.service-chart .table-bordered > tbody > tr > td,
+.service-chart .table-bordered > tfoot > tr > td {
+    border: none;
+}
+.red {
+    color: #ce0000;
+    display: inline-block;
     vertical-align: middle;
 }
-.grey{color:#666; font-size:14px;}
-.circle{border-radius:100px; -webkit-border-radius:100px; -moz-border-radius:100px;
+.grey {
+    color: #666;
+    font-size: 14px;
+}
+.circle {
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
     display: inline-block;
     font-size: 13px;
     margin: 0 5px;
     padding: 2px 7px;
     text-transform: uppercase;
 }
-.blue{background-color:#008eaa; color:#fff;}
-.yellow{background-color:#f78e1e; color:#fff;}
-.service-chart .table-striped > tbody > tr > td{text-align:left;}
-.service-chart  table tr td table tr td{padding:10px 0;}
-.large-caption{text-transform:uppercase;}
-.center{text-align:center;}
-.service-training-partner h3.headline{padding:0; text-transform:capitalize;}
+.blue {
+    background-color: #008eaa;
+    color: #fff;
+}
+.yellow {
+    background-color: #f78e1e;
+    color: #fff;
+}
+.service-chart .table-striped > tbody > tr > td {
+    text-align: left;
+}
+.service-chart table tr td table tr td {
+    padding: 10px 0;
+}
+.large-caption {
+    text-transform: uppercase;
+}
+.center {
+    text-align: center;
+}
+.service-training-partner h3.headline {
+    padding: 0;
+    text-transform: capitalize;
+}
 .search-course-btn {
     display: inline-block;
     min-width: 160px;
 }
-
-@media only screen and (max-width: 1024px){
-   .serv-training-overview .select-right-btn{
-	margin-left:40px;	
+@media only screen and (max-width: 1024px) {
+    .serv-training-overview .select-right-btn {
+        margin-left: 40px;
+    }
+    .serv-training-overview .src-btn .search-course-btn {
+        min-width: 190px;
+    }
 }
-  .serv-training-overview .src-btn .search-course-btn{
-	  min-width:190px;	  
-  }
-
+@media only screen and (max-width: 991px) {
+    .serv-training-overview .service-btn {
+        margin-top: 10px;
+    }
 }
-
-@media only screen and (max-width: 991px){   
-   .serv-training-overview .service-btn{
-	margin-top: 10px;
-}   
-	
+@media only screen and (max-width: 768px) {
+    .train-resrcprdct-bx {
+        margin: 0 0 15px 0;
+    }
+    .service-chart table tr td table tr {
+        display: inline-block!important;
+    }
+    .service-chart .table-bordered > thead > tr > td,
+    .service-chart .table-bordered > tbody > tr > td,
+    .service-chart .table-bordered > tfoot > tr > td {
+        border-bottom: 1px solid #999999;
+        padding-bottom: 10px;
+    }
+    .service-chart .table-striped > tbody > tr > th {
+        text-align: left;
+        border-bottom: 1px solid #999999;
+    }
+    .service-chart h2 {
+        font-size: 2.5em
+    }
+    .service-training-partner {
+        margin: 0 0 15px 0;
+    }
+    .serv-training-overview {
+        border-bottom: 1px solid #ebebeb;
+        border-right: none;
+        padding: 40px 0;
+    }
+    .serv-training-overview .btn-square-red a {
+        padding: 14px 35px;
+    }
+    .training-learn {
+        text-align: center;
+    }
+    .service-support-main .serv-training-overview p {
+        font-size: 1.1em;
+    }
+    .service-support-main .serv-training-overview h2 {
+        font-size: 1.2em;
+    }
+    .accordion-level:nth-last-child .accordion-menu-container::after {
+        background-color: transparent;
+    }
+    .serv-training-overview .daterangepicker .calendar.left,
+    .serv-training-overview .daterangepicker .calendar.right {
+        width: 45%;
+    }
+    .serv-training-overview .btn-group {
+        margin-bottom: 10px;
+    }
+    .serv-training-overview .src-btn {
+        text-align: center;
+    }
+    .serv-training-overview .select-left-loc,
+    .serv-training-overview .select-right-btn {
+        width: 100%;
+    }
+    .serv-training-overview .select-right-btn {
+        margin-left: 0;
+    }
+    .serv-training-overview .btn-group,
+    .serv-training-overview .daterangepicker {
+        margin-bottom: 20px;
+    }
+    .serv-training-overview .training-learn {
+        padding-bottom: 0;
+    }
 }
-
-@media only screen and (max-width: 768px){
-	.train-resrcprdct-bx{margin:0 0 15px 0;}
-	.service-chart  table tr td table tr{display:inline-block!important;}
-	.service-chart .table-bordered > thead > tr > td, .service-chart .table-bordered > tbody > tr > td, .service-chart .table-bordered > tfoot > tr > td{border-bottom:1px solid #999999; padding-bottom:10px;}
-	.service-chart .table-striped > tbody > tr > th{text-align:left; border-bottom:1px solid #999999; }
-	.service-chart h2{font-size:2.5em}
-	.service-training-partner{margin:0 0 15px 0;}
-	.serv-training-overview {
-    border-bottom: 1px solid #ebebeb; border-right:none;
-    padding: 40px 0;
-	}
-	.serv-training-overview .btn-square-red a{padding: 14px 35px;}	 
-	.training-learn{text-align:center;}
-	.service-support-main .serv-training-overview p{font-size:1.1em;}
-	.service-support-main .serv-training-overview h2{font-size:1.2em;}
-	.accordion-level:nth-last-child .accordion-menu-container::after{background-color:transparent;}
-	.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right{width:45%;}
-	.serv-training-overview .btn-group{margin-bottom: 10px;}
-	.serv-training-overview .src-btn{text-align:center; }
-	
-	.serv-training-overview .select-left-loc, .serv-training-overview .select-right-btn{
-		width: 100%;		
-	}
-	.serv-training-overview .select-right-btn{
-		margin-left: 0;		
-	}
-	.serv-training-overview .btn-group, 
-	.serv-training-overview .daterangepicker{
-		margin-bottom: 20px;
-	}
-	.serv-training-overview .training-learn{
-		padding-bottom: 0;
-	}
-
+@media only screen and (min-width: 768px) {
+    /* .train-resrcprdct-bx{margin:0 15px 0 0;} */
+    
+    .serv-training-overview {
+        border-bottom: none;
+        border-right: 1px solid #ebebeb;
+    }
+    .service-training-partner {
+        margin-bottom: 15px;
+    }
+    .serv-training-overview .daterangepicker .calendar.left,
+    .serv-training-overview .daterangepicker .calendar.right {
+        width: 45%;
+    }
 }
-@media only screen and (min-width: 768px){
-	/* .train-resrcprdct-bx{margin:0 15px 0 0;} */
-	.serv-training-overview {
-    border-bottom:none; border-right: 1px solid #ebebeb;
-
-	}
-	.service-training-partner{margin-bottom:15px;}
-	.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right{width:45%;}
-}	
-
-
 .popup-bx:before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 47%;
-  margin-left: -12px;
-  width: 0; height: 0;
-  border-bottom: 12px solid #CCCCCC;
-  border-right: 12px solid transparent;
-  border-left: 12px solid transparent;
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 47%;
+    margin-left: -12px;
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid #CCCCCC;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
 }
-
 .popup-bx:after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 47%;
-  margin-left: -11px;
-  width: 0; height: 0;
-  border-bottom: 11px solid #FFFFFF;
-  border-right: 11px solid transparent;
-  border-left: 11px solid transparent;
-} 
-
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 47%;
+    margin-left: -11px;
+    width: 0;
+    height: 0;
+    border-bottom: 11px solid #FFFFFF;
+    border-right: 11px solid transparent;
+    border-left: 11px solid transparent;
+}
 .popup-bx {
-  position: absolute;
-  width:310px;
-  color: #666666;
-  background: #FFFFFF;
-  border:1px solid #ccc;
-  height:auto;
-  line-height: 18px;
-  border-radius: 0px;
-  padding:15px 15px 30px 15px;
-
+    position: absolute;
+    width: 310px;
+    color: #666666;
+    background: #FFFFFF;
+    border: 1px solid #ccc;
+    height: auto;
+    line-height: 18px;
+    border-radius: 0px;
+    padding: 15px 15px 30px 15px;
 }
 .popup-bx h2 {
     color: #000;
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: 100;
     margin: 0;
@@ -337,28 +464,29 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 }
 .popup-bx p {
     color: #333;
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 0.8em;
     font-weight: 400;
     margin: 0;
     padding-bottom: 8px;
 }
-    .popup-bx a.close{font-family: "museo-sans",Helvetica,Arial,sans-serif;
+.popup-bx a.close {
+    font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 1.2em;
     font-weight: 400;
-position:absolute;
-top:10px; 
-right:10px;}
-
-
-  @media only screen and (max-width: 640px){
-	  a.tooltips span {width:200px;}
-  }
-  
-  
-  .accordion-level-last .accordion-menu-container:after {
-  display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
-.accordion-level-last .accordion-menu-container:after{background:#ffffff;}
+@media only screen and (max-width: 640px) {
+    a.tooltips span {
+        width: 200px;
+    }
+}
+.accordion-level-last .accordion-menu-container:after {
+    display: none;
+}
+.accordion-level-last .accordion-menu-container:after {
+    background: #ffffff;
+}
 #trainingDetail .Container-Results{padding-top:40px;}
-

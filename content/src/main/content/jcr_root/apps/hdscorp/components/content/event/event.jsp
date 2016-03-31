@@ -40,8 +40,7 @@
 
 <br>Register Now Link::${eventModel.registerNowLink}
 
-<br>Third Party::${properties.thirdparty}
-<br>New win::${properties.newwin}
-<c:set var="eventtpy" value="${properties.thirdparty}" scope="application" />
-<c:set var="eventnw" value="${properties.newwin}" scope="application" />
+<br>Third Party::${eventModel.newwindow}
+<br>New win::${eventModel.thirdpartyicon}
+
 
