@@ -58,7 +58,7 @@
     
                         <div class="common-hero-banner video clearfix" style="background-image:url('${properties.socialinnovationbannerimagePath}');">
                         <div class="common-hero-banner-container">
-                            <a href="#"><span class="sprite icon-close-hero"></span></a>
+                            <a class="close-hero" href="#"><span class="sprite icon-close-hero"></span></a>
                              ${properties.socialinnovationbannervideoembedcode}
                         </div>
                         </div> 
