@@ -231,12 +231,17 @@ public class LMSDataModel {
 								lmsBean.setLocation(lmsBean.getIltFacilityCountry());
 							}
 
+							lmsBean.setCourseDeeplink(properties.get(ServiceConstants.LML_COURSE_DEEP_LINK) != null
+											? properties.get(ServiceConstants.LML_COURSE_DEEP_LINK).toString()
+											: "");
+							
 							lmsBean.setMonth(
 									ServiceUtil
 											.getMonth(Integer.parseInt(startDate.substring(0,
 													startDate.indexOf(ServiceConstants.SLASH_SEPRATOR))) - 1)
 									.toUpperCase() + ServiceConstants.EMPTY_SPACE
 									+ startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
+							
 							lmsBean.setYear(Integer.parseInt(
 									startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
 
