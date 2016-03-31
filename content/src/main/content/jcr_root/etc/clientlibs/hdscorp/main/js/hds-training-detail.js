@@ -386,6 +386,9 @@ var hds = window.hds || {};
 						$(this).children('a').children('.icon-accordion-opened').show();
 						$(this).children('a').children('.icon-accordion-closed').hide();
 						if(liIndex == 0){
+							$('.daterangepicker .search').val('');
+							$('.from_date').val('');
+							$('.to_date').val('');
 							getResults(true);
 							$('.result-section').show();
 							$("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
