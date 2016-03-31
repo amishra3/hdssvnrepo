@@ -11,7 +11,7 @@
 <c:set var="tabList"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"locationlabel-locationid")%>" />
 
-<div class="accordion-level" id="training" tabindex="-1">
+
 	<div class="accordion-menu-container">
 		<div class="accordion-menu hidden-sm hidden-md hidden-lg">
 			<span id="stickyNav-0" class="acc-label">${trainingSearchCoursesModel.trainingoverviewheadline}</span>
@@ -99,5 +99,3 @@
 		</div>
 
 	</div>
-
-</div>
