@@ -70,13 +70,6 @@
                         name="./trainingdetailsbannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
-                    <thirdparty
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Show third party icon?"
-                        key="thirdparty"
-                        name="./thirdparty"
-                        type="checkbox"
-                        xtype="selection"/>
                     <trainingdetailsbannergetcertifiedlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Get Certified Label"
@@ -93,11 +86,17 @@
                         name="./trainingdetailsbannercertificateurltargettype"
                         type="checkbox"
                         xtype="selection"/>
-                    <thirdparty1
+                    <thirdparty
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Show third party icon?"
-                        key="thirdparty1"
-                        name="./thirdparty1"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <overlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in marketo Form"
+                        key="mform"
+                        name="./mform"
                         type="checkbox"
                         xtype="selection"/>
                 </items>

@@ -31,8 +31,8 @@ request.setAttribute("bannerimage",bannerimage);
 
 							<c:if test="${not empty properties.trainingdetailsbannergetcertifiedlabel}">        					
 	                            <div class="buy-through">
-	                             <a href="${properties.trainingdetailsbannergetcertifiedurl}" target="${properties.trainingdetailsbannercertificateurltargettype?'_blank':'_self'}">
-	                                ${properties.trainingdetailsbannergetcertifiedlabel}${not empty properties.thirdparty1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+                                    <a rel="${properties.mform?'iframemodal':''}" class="animateLink" href="${properties.trainingdetailsbannergetcertifiedurl}" target="${properties.trainingdetailsbannercertificateurltargettype?'_blank':'_self'}">
+	                                ${properties.trainingdetailsbannergetcertifiedlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 	                            </div>
                             </c:if>
                     </div>

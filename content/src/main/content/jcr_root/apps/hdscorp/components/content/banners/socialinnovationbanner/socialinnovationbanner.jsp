@@ -42,7 +42,7 @@
                     </div>
 
 					<c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
-                        <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-sm video-section">
+                        <div class="col-lg-6 col-md-6 col-xs-12 hidden-xs hidden-sm video-section">
                         <div class="video-play-desktop">
 
                                 <a href="${!properties.thirdpartyvideo? '#' :code}" target="${properties.thirdpartyvideo?'_blank':'_self'}" class="btn-play-video">

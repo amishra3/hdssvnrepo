@@ -6,7 +6,7 @@
 
 	<div class="grey_container clearfix">
 		<div class="content-container container-fluid">
-			<div class="col-sm-4 grey-box-inner">
+			<div class="col-md-4 grey-box-inner">
 					<h2>${properties.contactuscolumntitle}</h2>
 					<p>${properties.contactuscolumncontent}</p>
 					<c:set var="column1multilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urllabeltab1-urlltargettab1-urltype1-newwin1")%>" />
@@ -25,7 +25,7 @@
 						
 					</c:forEach>
 			</div>
-			<div class="col-sm-4 grey-box-inner">
+			<div class="col-md-4 grey-box-inner">
 					<h2>${properties.contactuscolumntitle2}</h2>
 					<p>${properties.contactuscolumncontent2}</p>
 					<c:set var="column2multilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urllabeltab2-urlltargettab2-urltype2-newwin2")%>" />
@@ -46,7 +46,7 @@
 					</c:forEach>
 					
 			</div>
-			<div class="col-sm-4 grey-box-inner">
+			<div class="col-md-4 grey-box-inner">
 					<h2>${properties.contactuscolumntitle3}</h2>
 					<p>${properties.contactuscolumncontent3}</p>
 					
