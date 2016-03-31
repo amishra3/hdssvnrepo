@@ -15,6 +15,11 @@
                         fieldLabel="Rootpath"
                         name="./rootPath"
                         xtype="pathfield"/>
+                    <topimgurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Top Logo URL"
+                        name="./topimageurl"
+                        xtype="pathfield"/>
                     <imgurl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Logo URL"

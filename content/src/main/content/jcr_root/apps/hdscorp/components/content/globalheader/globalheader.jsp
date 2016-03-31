@@ -55,9 +55,9 @@
 <div class="hds-global-header clearfix">
 	<c:if test="${selectorString!= 'excludetop'}">
 		<div class="header-container content-container">
-			<a href="${properties.hitachiuslogourl}" target="_blank"><span
+			<a target="_blank" href="${properties.topimageurl}"><span
 				class="hitachi-logo hidden-xs hidden-sm"></span></a> <a
-				href="${properties.hitachiuslogourl}" target="_blank"><span
+				href="${properties.topimageurl}" target="_blank"><span
 				class="hitachi-logo-mobile hidden-md hidden-lg"></span></a>
 
 			<div class="hds-quick-navigation hidden-xs hidden-sm">
