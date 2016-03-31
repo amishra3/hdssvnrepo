@@ -40,15 +40,6 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
     phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
 	//})( jQuery, ResponsiveBootstrapToolkit );
 
-    
-
-	/**
-	 * Breadcrumb Check for Specification Detail
-	 */
-    if ($("body#tech-specifications").length > 0){
-        $('.breadcrumb-container .breadcrumb').removeClass('black');
-    }
-
 	/**
     * Global Mobile Search Mobile Code
     */
@@ -69,6 +60,13 @@ $(document).ready(function () {
     if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions, .bannerCarsoul").length > 0){
         $('.breadcrumb-container .breadcrumb').addClass('black');
 		$('.hds-main-navigation-container').addClass('navwithouthero');
+    }
+	
+	/**
+	 * Breadcrumb Check for Specification Detail
+	 */
+    if ($("body#tech-specifications").length > 0){
+        $('.breadcrumb-container .breadcrumb').removeClass('black');
     }
 	
     $('a[rel=modal]').on('click', function(evt) {
