@@ -11,6 +11,12 @@
     <filter root="/etc/workflow/models/dam/update_asset"/>
     <filter root="/etc/workflow/models/hdscorpmodel"/>
     <filter root="/etc/workflow/launcher/config/hdscorp_overwrite_title"/>
+	<filter root="/etc/workflow/launcher/config/hdscorp_blog_feed"/>
+	<filter root="/etc/workflow/launcher/config/hdscorp_brighttalk_feed"/>
+	<filter root="/etc/workflow/launcher/config/hdscorp_facebook_posts"/>
+	<filter root="/etc/workflow/launcher/config/hdscorp_twitter_feed"/>
+	<filter root="/etc/workflow/launcher/config/hdscorp_lmsdata"/>
+	<filter root="/etc/workflow/launcher/config/hdscorp_videos_activate"/>
     <filter root="/etc/map/"/>
 
 
