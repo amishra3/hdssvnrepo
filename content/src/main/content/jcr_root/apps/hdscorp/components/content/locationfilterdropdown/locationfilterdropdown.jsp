@@ -12,11 +12,17 @@ var="locationsDropDownFilterModel" />
 			<h2 class="grey-heading">${properties.locworldwidelocationslabel}</h2>
 			<div class="select-boxes">
 
-            <input type="hidden" value="${properties.loclocationtype}" id="locationEvent" name="locationEvent">
+               <input type="hidden" value="${properties.loclocationtype}" id="locationEvent" name="locationEvent">
+			<c:if test="${properties.loclocationtype=='officelocation'}">
 			<input type="hidden" value="${properties.locdefaultregion}" id="locationEventRegion" name="locationEventRegion">
 			<input type="hidden" value="${properties.locdefaultcountry}" id="locationEventCountry" name="locationEventCountry">
 			<input type="hidden" value="${properties.locdefaultlocation}" id="locationEventLocation" name="locationEventLocation">
+               </c:if>
+                <c:if test="${properties.loclocationtype=='traininglocation'}">
+			<input type="hidden" value="${properties.locdefaultregion}" id="locationEventRegion" name="locationEventRegion">
+			<input type="hidden" value="${properties.locdefaultcountry}" id="locationEventCountry" name="locationEventCountry">
 
+               </c:if>
                 <div class="col-md-4">
 
 				<div class="select-style">

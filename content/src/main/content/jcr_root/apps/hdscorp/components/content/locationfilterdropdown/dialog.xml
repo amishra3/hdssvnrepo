@@ -162,12 +162,14 @@
                         allowBlank="{Boolean}false"
                         fieldLabel="Default Region"
                         name="./locdefaultregion"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locdefaultregion = dialog.getField('./locdefaultregion')&#xa; var locdefaultregionvalue = locdefaultregion.getValue();&#xa; if($.trim(locdefaultregionvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <locdefaultcountry
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Default Country"
                         name="./locdefaultcountry"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locdefaultcountry = dialog.getField('./locdefaultcountry')&#xa; var locdefaultcountryvalue = locdefaultcountry.getValue();&#xa; if($.trim(locdefaultcountryvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <locdefaultlocation
                         jcr:primaryType="cq:Widget"
