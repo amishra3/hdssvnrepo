@@ -29,8 +29,15 @@
             <div class="category-products-listing">
                <c:forEach items="${lmsmapList.value}" var="listLMSObject" varStatus="lmsStatus">
                    <c:set var="country" value="${fn:replace(listLMSObject.iltFacilityCountry,' ', '')}"/>
-                   <div class="result-section" filter="show" data-country="${fn:toLowerCase(country)}">
-                     <h3> <a href="javascript:void(0)">${listLMSObject.trainingTitle} <span class="glyphicon glyphicon-new-window animateIcon" aria-hidden="true"></span></a></h3>
+                   <div class="result-section" filter="show" data-country="${fn:toLowerCase(country)}">                   
+                     <h3> 
+                         <c:if test="${not empty listLMSObject.courseDeeplink}">
+                             <a href="${listLMSObject.courseDeeplink}" target="_blank">${listLMSObject.trainingTitle} <span class="glyphicon glyphicon-new-window animateIcon" aria-hidden="true"></span></a>
+                         </c:if>    
+                         <c:if test="${empty listLMSObject.courseDeeplink}">
+							${listLMSObject.trainingTitle}
+							 </c:if>                             
+                       </h3>
                      <ul>
                         <li>${lmsDataModel.dateLabel} ${listLMSObject.trainingStartDate}</li>
                         <li>${lmsDataModel.locationLabel} ${listLMSObject.location}</li>
