@@ -82,7 +82,10 @@
 						<div class="col-xs-12 col-md-4">
 							<h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusheadline}</h3>
 							<div class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusdescription}</div>
+							
+							<c:if test="${not empty  subnavlinks2.mgmcontactusnumber}">
 							<div class="phone-no">${subnavlinks2.mgmcontactusnumber}</div>
+							</c:if>
 								<c:if test="${not empty  subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"/>
                                			<p>		
