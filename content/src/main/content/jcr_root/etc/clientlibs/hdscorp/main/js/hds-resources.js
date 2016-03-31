@@ -621,7 +621,6 @@ var hds = window.hds || {};
                     hds.resourceLib._addKeywordSearchTag(txtVal, '#searchTag .keyword');
                     //$('.overlayBox').css('display', 'none');                    
                 }
-                $('.resource-heading > h2').html('').html("Search Results");
                 hds.resourceLib._loadDataOnsearch();
                 event.preventDefault();
             });
@@ -643,7 +642,6 @@ var hds = window.hds || {};
                         });
                         hds.resourceLib._addKeywordSearchTag(txtVal, '#searchTag .keyword');                    
                     }
-                    $('.resource-heading > h2').html('').html("Search Results");
                     hds.resourceLib._loadDataOnsearch();
                 }
             });
