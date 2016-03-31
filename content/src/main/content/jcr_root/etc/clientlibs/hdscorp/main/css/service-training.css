@@ -290,3 +290,75 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 	.serv-training-overview .daterangepicker .calendar.left, .serv-training-overview .daterangepicker .calendar.right{width:45%;}
 }	
 
+
+.popup-bx:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 47%;
+  margin-left: -12px;
+  width: 0; height: 0;
+  border-bottom: 12px solid #CCCCCC;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+}
+
+.popup-bx:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 47%;
+  margin-left: -11px;
+  width: 0; height: 0;
+  border-bottom: 11px solid #FFFFFF;
+  border-right: 11px solid transparent;
+  border-left: 11px solid transparent;
+} 
+
+.popup-bx {
+  position: absolute;
+  width:310px;
+  color: #666666;
+  background: #FFFFFF;
+  border:1px solid #ccc;
+  height:auto;
+  line-height: 18px;
+  border-radius: 0px;
+  padding:15px 15px 30px 15px;
+
+}
+.popup-bx h2 {
+    color: #000;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: 100;
+    margin: 0;
+    padding-bottom: 8px;
+}
+.popup-bx p {
+    color: #333;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 8px;
+}
+    .popup-bx a.close{font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+position:absolute;
+top:10px; 
+right:10px;}
+
+
+  @media only screen and (max-width: 640px){
+	  a.tooltips span {width:200px;}
+  }
+  
+  
+  .accordion-level-last .accordion-menu-container:after {
+  display: none;
+}
+.accordion-level-last .accordion-menu-container:after{background:#ffffff;}
+
+

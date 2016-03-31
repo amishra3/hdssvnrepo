@@ -437,3 +437,14 @@ color: #cccccc !important;
     text-align: center;
   }
 }
+
+.pr-md-con-cta{float:left; width:100%; text-align:right;}
+.pr-md-con-cta a{color: #c00;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+	font-size:0.9em;
+    text-decoration:none;
+}
+
+.pr-md-con-cta a:hover{color:#ac1f25;}

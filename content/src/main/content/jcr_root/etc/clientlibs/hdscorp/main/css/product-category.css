@@ -99,7 +99,7 @@
 /* Product Category List */
 .product-category-list {
     background-image: #ffffff;
-    padding: 72px 15px 80px;
+    padding: 72px 0 80px 38px;
     position: relative;
     z-index: 2;
     min-height: 650px;
@@ -189,7 +189,7 @@
   background: #ffffff;
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
   padding: 0 45px;
-    min-height:700px;
+    min-height:500px;
 }
 .category-products .category-heading h3{
   font-family: "museo-slab",Helvetica,Arial,sans-serif;
@@ -473,6 +473,7 @@
   .hero-product-category .hero-product-solutions-container .product-category-heading{
     font-size:2.250em;
   }
+
 }
 
 /* Common classes for Hexagon List */
@@ -548,6 +549,7 @@
     .hexagon-list > li span img{
       display: inline;
     }
+
 }
 #loading{
 background: url("../images/load-indicator.gif") no-repeat 50% 50%;
