@@ -166,9 +166,9 @@ div.training{text-align:left!important;   padding: 60px 0 84px!important;}
 
 .service-chart{background:#fff; padding:70px 0 120px;;}
 .service-chart h2{
-	color: #000;
+	color: #333;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
-	font-size: 3.6em;
+	font-size: 3.125em;
     font-weight: 100;
 	margin:0;
 	padding-bottom: 47px;
