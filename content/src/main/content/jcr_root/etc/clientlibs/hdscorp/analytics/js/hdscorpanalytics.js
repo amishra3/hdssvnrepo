@@ -18,6 +18,9 @@ var orientation="landscape";
 var screenSize;
 var delay=4000;
 var gInternalSearchFilter="";
+var leadFormName="";
+
+//document.domain("hds.com");
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
 $(document).ready(function() {
@@ -133,7 +136,16 @@ digitalData.site={
             authStatus:"guest"
         }
     }
-	
+//-----This function is related to news letter subscription FORM
+	$('input.mktoEmailField').blur(function(){
+		var url=$(location).attr('pathname');	
+		if(url.indexOf("/newsletter-subscription.html")>-1)
+			{
+				console.log("*******************newsletter subscription lost focus fired*****************");
+				NewsletterSub();
+			}
+	});
+//---------------------------------------------
 if(isErrorPage())
 {
 	var fileName = window.location.pathname;
@@ -148,101 +160,11 @@ if(isErrorPage())
 	digitalData["page"]["pageInfo"]["pageType"]="errorPage";
 	digitalData["page"]["pageInfo"]["hier1"]="404 error page";
 	digitalData["page"]["category"]["primaryCategory"] = "404 error page";
-	//digitalData["site"]["siteInfo"]["country"]="US:404error";
+	digitalData["site"]["siteInfo"]["country"]="US:404error";
 
 }
 // *****this section would perform the internal search tracking if the search page is hit *******  //
 // ***********************************************************************************************//
-
-if(isLeadFormPage())
-{
-		var url=$(location).attr('pathname');
-		var pageName="";
-		var pageType="";
-		var pageLoadEvent="";
-		var leadFormName="";
-		var assetName="/assets/abcd.pdf";
-		var leadFormParentPage="parent page URL";document.referrer;
-		var leadFormParentPageCategory="parent page category";//document.referrer;
-		if(url.indexOf("contact-sales-aem.html")>-1)
-		{
-			if(url.indexOf("ty-")>-1)
-			{
-				pageName="contact sales thank you";
-				pageType="contactSalesForm";
-				pageLoadEvent="lead form completed";
-				leadFormName="contact sales";
-				leadID=__aem_id;
-				leadCountry=__aem_country;
-				leadCompany=__aem_company_name;
-			}else
-			{
-				pageName="contact sales form";
-				pageType="contactSalesForm";
-				pageLoadEvent="lead form initiated";
-				leadFormName="contact sales";	
-			}
-		}
-		else if (url.indexOf("request-info-aem.html")>-1)
-		{
-			
-			if(url.indexOf("ty-")>-1)
-			{
-				pageName="request info thank you";
-				pageType="leadForm";
-				pageLoadEvent="lead form completed";
-				leadFormName="request info";
-				leadID=__aem_id;
-				leadCountry=__aem_country;
-				leadCompany=__aem_company_name;
-			}else
-			{
-				pageName="request info form";
-				pageType="leadForm";
-				pageLoadEvent="lead form initiated";
-				leadFormName="request info";
-			}
-		
-		}
-		else if (url.indexOf("ty-newsletter-subscription.html")>-1){NewsletterSub();}
-		else if (url.indexOf("training-and-placement.html")>-1){}
-		else if (url.indexOf("gated-form-progressive.html")>-1)
-		{
-			if(url.indexOf("ty-")>-1)
-			{
-				pageName="asset gating thank you";
-				pageType="gatedForm";
-				pageLoadEvent="lead form completed";
-				leadFormName="asset gating form";
-				leadID=__aem_id;
-				leadCountry=__aem_country;
-				leadCompany=__aem_company_name;
-			}else
-			{
-				pageName="asset gating page";
-				pageType="gatedForm";
-				pageLoadEvent="lead form initiated";
-				leadFormName="asset gating form";
-			}
-		digitalData["page"]["pageInfo"]["assetName"]=assetName;
-		}
-		if (!url.indexOf("newsletter-subscription.html")){
-		digitalData["page"]["pageInfo"]["pageName"]=pageName;
-		digitalData["page"]["pageInfo"]["pageType"]=pageType;
-		digitalData["page"]["pageInfo"]["pageLoadEvent"]=pageLoadEvent;
-		digitalData["page"]["pageInfo"]["leadFormName"]=leadFormName;
-		digitalData["site"]["siteInfo"]["server"]="mkthds";
-		digitalData["page"]["pageInfo"]["leadFormParentPage"]=leadFormParentPage;
-		digitalData["page"]["category"]["primaryCategory"]=leadFormParentPageCategory;
-		
-		if(url.indexOf("ty-")>-1)
-		{
-			digitalData["page"]["pageInfo"]["leadID"]=leadID;
-			digitalData["page"]["pageInfo"]["leadCountry"]=leadCountry;
-			digitalData["page"]["pageInfo"]["leadCompany"]=leadCompany;
-		}
-	}	
-}
 
 if(isInternalSearchPage()){    
 		setTimeout(function(){
@@ -346,147 +268,88 @@ if(isResourceSearchPage()){
 	}
 	$('#resSearch').on('keypress',function(e){
 		searchTerm = $('#resSearch').val();
-		//console.log("**********"+searchTerm+"*********")
+		//console.log("key**********"+searchTerm+"*********")
 		if(e.which == 13){
 			setTimeout(function(){
 			result = $('.category-resources-listing').find('.resource.visible').size();
 			searchAction = "search box";
 			result=result.toString();
-			if(searchFilters == ""){searchFilters="all";}
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
 			specificSearchClick(searchTerm, searchAction, result)
-			},5000);
+			},8000);
 		}
 		
 	});
 
 	$('.searchResource').click(function(){
 		searchTerm = $('#resSearch').val();
-		result = $('.category-resources-listing').find('.resource.visible').size();
-		//console.log("**********"+searchTerm+"*********")
-		searchAction = "search box";
-		result=result.toString();
-		if(searchFilters == ""){searchFilters="all";}
-		specificSearchClick(searchTerm, searchAction, result)
+		console.log("img**********"+searchTerm+"*********")
+		setTimeout(function(){
+			result = $('.category-resources-listing').find('.resource.visible').size();
+			searchAction = "search box";
+			result=result.toString();
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			specificSearchClick(searchTerm, searchAction, result)
+			},5000);
 	});
 
-	 $('#showIndustry').click(function(){
-	//$(document).on('click','#showIndustry', function(e){
+	 $('#showIndustry').click(function()
+	 {
 		searchTerm = $('#resSearch').val();
-		result = $('.category-resources-listing').find('.resource.visible').size();
-		console.log("**********"+searchTerm+"*********")
-		var selection = [];
-		var selectionCollection;
-		var selectionParent = "";
-		
-		searchAction = "Industry filter"
-
-		$.each($("input[name='cbxFunction']:checked"), function(){ 
-			selection.push($(this).attr('id'));
-			if(selection.length > 0){
-				selectionParent = $(this).parent().parent().parent().prev('a').attr('name');
-			}
-		});
-		$.each($("input[name='ctyFunction']:checked"), function(){            
-			selection.push($(this).attr('id'));
-		});
-		if(selectionParent != ""){
-			selection.unshift(selectionParent);
-		}
-		selectionCollection = selection.join();
-		searchFilters = selectionCollection;
-		specificSearchClick(searchTerm, searchAction, result)
-		//return false;
+		console.log("ind**********"+searchTerm+"*********")
+		setTimeout(function(){
+			result = $('.category-resources-listing').find('.resource.visible').size();
+			result=result.toString();
+			searchAction = "Industry filter";
+			
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			if(getIndustryFilters()!="RL Search:Industry-all")specificSearchClick(searchTerm, searchAction, result);
+		},3000);
 	});
 	
-	$(document).on('click','#showContentType', function(e){
+	$('#showContentType').click(function(){
 		searchTerm = $('#resSearch').val();
-		result = $('.category-resources-listing').find('.resource.visible').size();
-		console.log("**********"+searchTerm+"*********")
-		var selection = [];
-		var selectionCollection;
-		var selectionParent = "";
-		
-		searchAction = "Content filter"
-
-		$.each($("input[name='cbxFunction']:checked"), function(){ 
-			selection.push($(this).attr('id'));
-			if(selection.length > 0){
-				selectionParent = $(this).parent().parent().parent().prev('a').attr('name');
-			}
-		});
-		$.each($("input[name='ctyFunction']:checked"), function(){            
-			selection.push($(this).attr('id'));
-		});
-		if(selectionParent != ""){
-			selection.unshift(selectionParent);
-		}
-		selectionCollection = selection.join();
-		searchFilters = selectionCollection;
-		specificSearchClick(searchTerm, searchAction, result)
-		//return false;
+		console.log("con**********"+searchTerm+"*********")
+		setTimeout(function(){
+			result = $('.category-resources-listing').find('.resource.visible').size();
+			result=result.toString();		
+			searchAction = "Content filter";
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			if(getContentFilters()!="RL Search:Content-all")specificSearchClick(searchTerm, searchAction, result);
+			},3000);
 	});
+	
+	//$('div.resources-listing ul[id=asideLinks-product]').each(function() {
+	$('div.resources-listing ul[id=asideLinks-product]').click(function(){
+		searchTerm = $('#resSearch').val();
+		result =$('#actualCount').text();
+		console.log("cat**********"+searchTerm+"*********")
+		setTimeout(function(){
+			result=result.toString();		
+			searchAction = "category filter";
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			specificSearchClick(searchTerm, searchAction, result);	
+			},7000);
+	});	
 	
 	$('.checkbox .filters').click(function(){
 		
 		var pClass="";
 		pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
 		if (pClass.indexOf("resources-listing")>-1){
-		searchAction = "sub category filter";
 		searchTerm = $('#resSearch').val();
-		result = $('.category-resources-listing').find('.resource.visible').size();
-		var selection = [];
-		var selectionCollection;
-		var selectionParent = "";
-		result=result.toString();
-		$.each($("input[name='cbxFunction']:checked"), function(){            
-			selection.push($(this).attr('id'));
-			if(selection.length > 0){
-				selectionParent = $(this).parent().parent().parent().prev('a').attr('name');
-			}
-		});
-		
-		//**********************************from product search****************************************
-		/*result = $('.category-resources-listing').find('.resource.visible').size()
-		
-		$('.resources-listing input.filters').each(function() {
-		 $(this).click(function(){
-			 setTimeout(function() {
-			   var text = $(this).parent().find("span").text();
-       			var result=$('#actualCount').text();
-         		if(result==0)
-           		  result="zero";
-                searchClick($('#searchFilter').val(), "sub-category filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
-			 }, 1500); 
-         });
-		});	
-		
-    $('div.resources-listing ul[id=asideLinks-product]').each(function() {
-	 	var links = $(this).find("a");
-	 	links.each(function() {
-            $(this).click(function(){
-                var text = $(this).text();
-                setTimeout(function() {
-                var result=result = $('.resourceLibraryContent').find('.resource.visible').size();;
-                 if(result==0)
-                     result="zero";
-                	searchClick($('#searchFilter').val(), "category filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
-    			 }, 1500);
-             });
-        });
-	});	*/
-		//*******************************************************************************************
-		$.each($("input[name='ctyFunction']:checked"), function(){            
-			selection.push($(this).attr('id'));
-		});
-		if(selectionParent != ""){
-			selection.unshift(selectionParent);
-		}
-		selectionCollection = selection.join();
-		searchFilters = selectionCollection;
-		if(searchTerm == "" || !searchTerm){searchTerm = 'no term searched';}
-		specificSearchClick(searchTerm, searchAction, result)
+		result =$('#actualCount').text();
+		console.log("sub cat**********"+searchTerm+"*********")
+		setTimeout(function(){
+			result=result.toString();		
+			searchAction = "category filter";
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			specificSearchClick(searchTerm, searchAction, result);	
+			},5000);
 		}
 	});
+	
+	
 	var currentpagenumber = $('span.current').html();
 	$(document).on('click', '.page-link', function() {
 		searchTerm = $('#resSearch').val();
@@ -525,9 +388,6 @@ if(isResourceSearchPage()){
 		if(result == 0){
 			result = 'zero'
 		}
-		if(searchFilters == ""){
-			searchFilters = 'all'
-		}
 		digitalData.eventData=    { 
 			searchTerm:searchTerm,
 			searchAction:searchAction,
@@ -552,6 +412,91 @@ if(isResourceSearchPage()){
 
 		}    
 		_satellite.track('pagination');
+	}
+	
+	function getIndustryFilters()
+	{
+		var indfilters="";
+		var selection = [];
+		
+		$.each($("input[name='ctyFunction']:checked"), function(){ 
+			if($(this).attr('value').indexOf('industry')>-1){selection.push($(this).attr('id'));}
+		});
+		if(selection.length>0)
+		{
+			for(var i=0;i<selection.length;i++)
+			{
+				if(i<(selection.length-1)){indfilters = indfilters + "RL Search:Industry-" + selection[i] + ",";}
+				else {indfilters = indfilters + "RL Search:Industry-" + selection[i];}
+			}
+		}
+		else{indfilters = "RL Search:Industry-all";}	
+		return indfilters;
+	}
+		
+	function getContentFilters()
+	{
+		var confilters="";
+		var selection = [];
+		$.each($("input[name='ctyFunction']:checked"), function(){ 
+			if($(this).attr('value').indexOf('content-type')>-1){selection.push($(this).attr('id'));}
+		});
+		if(selection.length>0)
+		{
+			for(var i=0;i<selection.length;i++)
+			{
+				if(i<(selection.length-1)){confilters = confilters + "RL Search:Content-" + selection[i]+ ",";}
+				else {confilters = confilters + "RL Search:Content-" + selection[i];}
+			}
+		}
+		else{confilters = "RL Search:Content-all";}
+		return confilters;
+	}
+	
+	function getCategoryFilters()
+	{
+		var catfilters="";
+		var selection = [];
+		
+		$('div.resources-listing ul[id=asideLinks-product] li.active').each(function() {
+				catfilters = "RL Search:Category-" + $.trim($(this).find('a').text());	   
+		});	
+		$('.resources-listing input.filters').each(function() {
+				if ($(this).is(':checked')) {
+				if($(this).attr('value').indexOf('product-and-solutions')>-1){selection.push($.trim($(this).parent().find("span").text()));}}
+		});
+				if(selection.length>0)
+				{
+					for(var i=0;i<selection.length;i++)
+					{
+						catfilters = catfilters + ",RL Search:Category-" + selection[i];
+					}
+				}
+				else if(catfilters==""){catfilters = "RL Search:Category-Featured";}
+			return catfilters;	
+	}
+	
+	function getResourcesSearchFilters()
+	{
+		var filters="";
+		$('div.resources-listing ul[id=asideLinks-product] li.active').each(function() {
+			   if(filters.length>0)
+						filters=filters+",";
+				else
+						filters="RL Search:";
+				filters = filters+ $.trim($(this).find('a').text());
+			   
+		});	
+		$('.resources-listing input.filters').each(function() {
+				if ($(this).is(':checked')) {
+					if(filters.length>0)
+						filters=filters+",";
+					filters = filters+$.trim($(this).parent().find("span").text());
+					
+				}
+		});
+		
+		return filters.toLowerCase();
 	}
 }
 
@@ -980,9 +925,9 @@ $(document).on('keypress', '#searchFilter', function(event) {
                 searchClick($('#searchFilter').val(), "sub-category filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
 			 }, 1500); 
          });
-
 		});	
-    $('ul[id=asideLinks-product]').each(function() {
+		
+    $('div.product-listing ul[id=asideLinks-product]').each(function() {
 		var sType="";
 		var dly="1500";
 	 	var links = $(this).find("a");
@@ -990,7 +935,7 @@ $(document).on('keypress', '#searchFilter', function(event) {
             $(this).click(function(){
                 var text = $(this).text();
 				var url=$(location).attr('href');
-				if(url.indexOf("/resources.html")>-1){sType='resources';dly="5000"}else{sType='products & solutions';}
+				if(url.indexOf("/resources.html")>-1){sType='resources';dly="7000"}else{sType='products & solutions';}
                 setTimeout(function() {
                 var result=$('#actualCount').text();
                  if(result==0)
@@ -1026,6 +971,7 @@ $(document).on('keypress', '#searchFilter', function(event) {
 
 var searchType="press release";
 var searchTrackEvent="specificSearchClick";
+var sFilters="";
 if(isNewsPage())
 {
 	searchType="news";
@@ -1056,7 +1002,12 @@ $(document).on('keypress', '#fulltext', function(event) {
                 result=result.toString();
             if(result==0)
                 result="zero";
-         	searchClick(searchTerm, "search box",result,getPnaFilters(),searchType,searchTrackEvent);
+				
+				if(searchType=="press release"){sFilters="PR Search:" + getPnaFilters();}
+				else if(searchType=="news"){sFilters="News Search:" + getPnaFilters();}
+				else if(searchType=="awards"){sFilters="Awards Search:" + getPnaFilters();}
+			
+         	searchClick(searchTerm, "search box",result,sFilters,searchType,searchTrackEvent);
          	clearInterval(interval);
         	 }
         }, 1500); 
@@ -1071,7 +1022,12 @@ var searchIcon=$(".glyphicon.glyphicon-search");
             result=result.toString();
             if(result==0)
                 result="zero";
-           searchClick(searchTerm, "search box",result,getPnaFilters(),searchType,searchTrackEvent);
+
+				if(searchType=="press release"){sFilters="PR Search:" + getPnaFilters();}
+				else if(searchType=="news"){sFilters="News Search:" + getPnaFilters();}
+				else if(searchType=="awards"){sFilters="Awards Search:" + getPnaFilters();}
+			
+           searchClick(searchTerm, "search box",result,sFilters,searchType,searchTrackEvent);
            clearInterval(interval);
         }
         }, 1500);           
@@ -1089,7 +1045,12 @@ var searchIcon=$(".glyphicon.glyphicon-search");
                         result=result.toString();
                 		if(result==0)
 	                     result="zero";
-	                	searchClick($('#fulltext').val(), "year filter",result,getPnaFilters(),searchType,searchTrackEvent);
+						
+						if(searchType=="press release"){sFilters="PR Search:" + getPnaFilters();}
+						else if(searchType=="news"){sFilters="News Search:" + getPnaFilters();}
+						else if(searchType=="awards"){sFilters="Awards Search:" + getPnaFilters();}
+						
+						searchClick($('#fulltext').val(), "year filter",result,sFilters,searchType,searchTrackEvent);
 	                	clearInterval(interval);
 	               }
                  }, 1500);
@@ -1097,7 +1058,6 @@ var searchIcon=$(".glyphicon.glyphicon-search");
              });
         });
 	});	
-
 
 //Events Search events start here
 $(document).on('click', '#updateResults', function(event) {
@@ -1140,72 +1100,7 @@ $('.newsEvents-category-list .news-listing').each(function() {
              });
         });
 	});	
-/*
-function formProgress(formName,fieldName){ 
-    digitalData.eventData=    { 
-        leadFromName:formName,
-        fieldname:fieldName,
-        
-    }    _satellite.track('formProgress');
-}*/
 
-	//Added on 20160218 with dummy class for input field
-	/*$('.mktoEmailField').blur(function(){
-		console.log("*******************newsletter subscription lost focus fired*****************");
-		NewsletterSub();
-	});*/
-$(document).ready(function () {
- setTimeout(function(){
-  $('.mktoEmailField').blur(function(){
-  console.log("*******************newsletter subscription lost focus fired*****************");
-  NewsletterSub();
-})},2000);
-});
-
-function NewsletterSub(){
-		var url=$(location).attr('pathname');
-		var pageName="";
-		var pageType="";
-		var pageLoadEvent="";
-		var leadFormName="";
-		var leadFormParentPage=document.referrer;
-		var leadFormParentPageCategory=document.referrer;
-			if(url.indexOf("ty-")>-1)
-			{
-				pageName="newsletter subscription thank you";
-				pageType="leadForm";
-				pageLoadEvent="lead form completed";
-				leadFormName="email subscription form";
-				leadID=__aem_id;
-				leadCountry=__aem_country;
-				//leadCompany=__aem_company_name;
-				console.log("*******************newsletter subscription completed*****************"); 
-				console.log("data--"+data);
-			}else
-			{
-				pageName="newsletter subscription form";
-				pageType="leadForm";
-				pageLoadEvent="lead form initiated";
-				leadFormName="email subscription form";
-				console.log("*******************newsletter subscription initiated*****************"); 
-				console.log("data--"+data);
-			}
-			
-			digitalData["page"]["pageInfo"]["pageName"]=pageName;
-			digitalData["page"]["pageInfo"]["pageType"]=pageType;
-			digitalData["page"]["pageInfo"]["pageLoadEvent"]=pageLoadEvent;
-			digitalData["page"]["pageInfo"]["leadFormName"]=leadFormName;
-			digitalData["site"]["siteInfo"]["server"]="mkthds";
-			digitalData["page"]["pageInfo"]["hier1"]="";
-			digitalData["page"]["category"]["primaryCategory"]="";
-			if(url.indexOf("ty-")>-1)
-			{
-				digitalData["page"]["pageInfo"]["leadID"]=leadID;
-				digitalData["page"]["pageInfo"]["leadCountry"]=leadCountry;
-				//digitalData["page"]["pageInfo"]["leadCompany"]=leadCompany;
-			}
-			_satellite.track('emailsignup');	
-}
 //globalMenuClick(eventname,triggername,page)
 function globalMenuClick(eventName,triggerName,page,triggerType,Position){
 
@@ -1374,28 +1269,31 @@ function isLeadFormPage(){
 function getProductsSearchFilters()
 {
 	var filters="";
+	
 	$('ul[id=asideLinks-product] li.active').each(function() {
 		   if(filters.length>0)
 		 			filters=filters+",";
-		 		filters = filters+ $.trim($(this).find('a').text());
+			else
+					filters="P&S Search:";
+		 	filters = filters+ $.trim($(this).find('a').text());
 	       
-		});	
-	$('.resources-listing input.filters, .product-listing input.filters').each(function() {
+	});	
+	$('.product-listing input.filters').each(function() {
 		 	if ($(this).is(':checked')) {
-		 		if(filters.length>0)
-		 			filters=filters+",";
-		 		filters = filters+$.trim($(this).parent().find("span").text());
-		      	
+				if(filters.length>0)
+		 			filters=filters+",P&S Search:";
+				filters = filters+$.trim($(this).parent().find("span").text());
 		 	}
 		 });
 	$('.result-product ul.sortAlpha a.current').each(function() {
 			if(filters.length>0)
-	 			filters=filters+",";
+	 			filters=filters+",P&S Search:Product Name-";
 	 		filters = filters+ $.trim($(this).text());
-	  	
 		});	
 	return filters.toLowerCase();
 }
+
+
 //press release , news and awards filters
 function getPnaFilters()
 {
@@ -1409,7 +1307,7 @@ function getPnaFilters()
 	 		filters = filters+ year;
 	  	
 		});	
-	return filters.toLowerCase();
+	return  filters.toLowerCase();
 }
 function eventsFilters()
 {
@@ -1418,17 +1316,17 @@ function eventsFilters()
 	 var fromDate =$('#date-range200').val();
 	 var toDate =$('#date-range201').val();
 	 if($.trim(fromDate).length>0)
-		 filters = filters+fromDate;
+		 filters = filters + "event search:from date-" + fromDate;
 	 if($.trim(toDate).length>0){
 		 if(filters.length>0)
 	 			filters=filters+",";
-		 filters = filters+toDate; 
+		 filters = filters + "event search:to date-" + toDate; 
 	 }
 		 
 	 if(dropDown!="" && dropDown!="Filter By Region"){
 		 if(filters.length>0)
 	 			filters=filters+",";
-		 filters = filters+dropDown;
+		 filters = filters + "event search:region-" + dropDown;
 	 }
 	$('.newsEvents-category-list .news-listing li.active').each(function() {
 		if(filters.length>0)
@@ -1436,7 +1334,7 @@ function eventsFilters()
           var eventType = $(this).find('a').text();
          eventType=eventType.replace(/\t/g, '');
  		 eventType=eventType.replace(/\t/g, '');
-		 filters = filters+ $.trim(eventType);
+		 filters = filters+ "event search:" + $.trim(eventType);
 	});	
 	return filters.toLowerCase();
 }
