@@ -18,6 +18,7 @@
                         allowBlank="{Boolean}false"
                         fieldLabel="Location Title"
                         name="./loctitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var loctitle = dialog.getField('./loctitle')&#xa; var loctitlevalue = loctitle.getValue();&#xa; if($.trim(loctitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
                     <locationimage
                         jcr:primaryType="cq:Widget"
