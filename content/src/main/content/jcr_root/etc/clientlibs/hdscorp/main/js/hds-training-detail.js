@@ -276,7 +276,7 @@ var hds = window.hds || {};
 					console.log("no results after filters")
 					$('.result-btn a').hide();
 					$('.noResults').remove();
-					$('.searchnotfound').append("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
+					$('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
 				}else{
 					$('.noResults').remove();
 					$('.result-btn a').show();
@@ -337,7 +337,7 @@ var hds = window.hds || {};
 							if($(".result-product").length == 0){
 								console.log('no results')
 								$('.result-btn a').hide();
-								$('.searchnotfound').append("<div style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
+								$('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
 								return false;
 							}
 							 $('#contentCatagory').html(html)
