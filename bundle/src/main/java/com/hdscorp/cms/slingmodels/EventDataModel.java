@@ -132,6 +132,8 @@ public class EventDataModel {
 						eventNode.setThirdpartyicon(
 								properties.get(ServiceConstants.EVENT_JCR_THIRD_PARTY_ICON, (String) null));
 						eventNode.setNewwindow(properties.get(ServiceConstants.EVENT_JCR_NEW_WINDOW, (String) null));
+						eventNode.setEventId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null));
+						
 
 						String startDate = ServiceUtil.getDisplayDateFormat(
 								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),

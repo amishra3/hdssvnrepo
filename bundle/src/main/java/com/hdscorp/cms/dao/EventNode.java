@@ -47,6 +47,9 @@ public class EventNode {
 	private String thirdpartyicon;
 	
 	private String newwindow;
+	
+	private String eventId;
+	
 
 	/**
 	 * Webcast fields
@@ -226,10 +229,18 @@ public class EventNode {
 		this.newwindow = newwindow;
 	}
 
+	public String getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(String eventId) {
+		this.eventId = eventId;
+	}
+
 	
 	// Webcast setter/getter
 
-	
+
 	public String getIsWebcast() {
 		return isWebcast;
 	}

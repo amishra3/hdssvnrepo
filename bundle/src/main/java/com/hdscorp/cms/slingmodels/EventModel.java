@@ -76,6 +76,11 @@ public class EventModel {
 	@Default(values = {""})
 	private String newwindow;
 	
+	@Inject
+	@Named("jcr:eventid")
+	@Default(values = {""})
+	private String eventId;
+	
 
 	public String[] getEventType() {
 		return eventType;
@@ -125,8 +130,13 @@ public class EventModel {
 	public String getNewwindow() {
 		return newwindow;
 	}
+
+	public String getEventId() {
+		return eventId;
+	}
 		
 
+	
 	}
 
 
