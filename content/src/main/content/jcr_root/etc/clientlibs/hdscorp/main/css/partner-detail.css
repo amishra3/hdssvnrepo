@@ -391,6 +391,7 @@ list-style-type: none;
 
 @media only screen and (max-width: 768px) {
 .partners-section .more-solutions {width:100%;}
+#partners .accordion-content.open{overflow:visible;}
 }
 
 /* Partner Mobile Overlay */
