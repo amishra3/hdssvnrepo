@@ -8,11 +8,8 @@
 	<div class="content-container">
 		<div class="col-sm-12">
 			<div class="icon-border">
-				<h3>
-					<img src="${model.priconimage}" />${model.pressReleasesLabel}
-                    <span class="glyphicon glyphicon-menu-right animateIcon"></span>
-				</h3>
-			</div>
+      			  <h3> <img src="${model.priconimage}" /> <a class="animateLink" href="${model.viewAllPrLink}">${model.pressReleasesLabel} <span class="glyphicon glyphicon-menu-right animateIcon"></span></a></h3>
+     		 </div>
 		</div>
 
 		<div class="col-sm-12 col-md-6 col-lg-6">

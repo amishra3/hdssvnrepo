@@ -31,6 +31,11 @@
                         <input type="text" name ="fulltext" id="fulltext" placeholder="${model.searchText}">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                     </div>
+                    <c:if test="${not empty properties.prlinktext}">
+                    <div class="pr-md-con-cta">
+                   	 	<a class="animateLink" href="${properties.prllinkurl}" target="${properties.prtargettype?'_blank':'_self'}">${properties.prlinktext}${properties.prthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                    </div>
+					</c:if>
                     <div class="col-md-3 pr-list-archives">
                         <ul id="asideLinks">
 	                        <c:forEach var="filterUrl" items="${model.filterUrls}" varStatus="loopcnt">
