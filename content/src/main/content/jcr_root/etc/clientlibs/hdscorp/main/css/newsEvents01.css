@@ -483,7 +483,7 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
     display: table;
     font-size: 1.125em;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: 300;
 }
@@ -526,10 +526,9 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 .newsEvents .eventDetails .request a{
    color: #fff;
 }
-.newsEvents .eventDetails .request a:hover{
-   color: #cc0000;
+.newsEvents .eventDetails .btn-square-white.request a:hover{
+	color: #000;
 }
-.newsEvents .eventDetails .request:hover{color: #cc0000; border:1px solid #cc0000;}
 
 .newsEvents span.glyphicon-plus-sign,
 .newsEvents span.glyphicon-minus-sign {
@@ -558,6 +557,10 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     color: #ac1f25;
 }
 
+.newsWrapper-listing .newsEvents .expandMe{
+	display: inline-block;
+	padding-top: 10px;	
+}
 
 /*Calender Functionality*/
 
