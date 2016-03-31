@@ -28,7 +28,6 @@ import com.hdscorp.cms.constants.PageConstants;
 import com.hdscorp.cms.constants.ServiceConstants;
 import com.hdscorp.cms.dao.EventNode;
 import com.hdscorp.cms.search.SearchServiceHelper;
-import com.hdscorp.cms.util.PageUtils;
 import com.hdscorp.cms.util.ServiceUtil;
 import com.hdscorp.cms.util.ViewHelperUtil;
 
@@ -129,6 +128,11 @@ public class EventDataModel {
 						eventNode.setEventTyptagName(tagName.toString());
 						eventNode.setEventTyptagId(tagId.toString());
 						eventNode.setEventTitle(properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));
+
+						eventNode.setThirdpartyicon(
+								properties.get(ServiceConstants.EVENT_JCR_THIRD_PARTY_ICON, (String) null));
+						eventNode.setNewwindow(properties.get(ServiceConstants.EVENT_JCR_NEW_WINDOW, (String) null));
+
 						String startDate = ServiceUtil.getDisplayDateFormat(
 								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
 								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT);
@@ -156,8 +160,8 @@ public class EventDataModel {
 								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
 						eventNode.setEventLocation(properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
 						eventNode.setEventDescription(
-								properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));						
-						eventNode.setStatus(properties.get(ServiceConstants.JSON_STATUS,(String) null));						
+								properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
+						eventNode.setStatus(properties.get(ServiceConstants.JSON_STATUS, (String) null));
 						eventNode.setEventImageBackground(
 								properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
 						eventNode.setEventRegisterNowLabel(
@@ -204,8 +208,8 @@ public class EventDataModel {
 		EventNode EventObject = new EventNode();
 		List<EventNode> listOfNodes = getEventNodes();
 		List<Map<String, String>> listMapsUpcoming = ServiceUtil.getBrightTalkMapFromJSON(resourceResolver,
-				HdsCorpGlobalConfiguration.BRIGHTTALK_DATA_STORAGE_PATH,
-				ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME, ServiceConstants.FEED_UPCOMING);
+				HdsCorpGlobalConfiguration.BRIGHTTALK_DATA_STORAGE_PATH, ServiceConstants.SAVE_FEED_DATA_PROPERTY_NAME,
+				ServiceConstants.FEED_UPCOMING);
 		if (listMapsUpcoming != null && listMapsUpcoming.size() > 0) {
 			for (int index = 0; index < listMapsUpcoming.size(); index++) {
 				Map<String, String> hsmap = listMapsUpcoming.get(index);
@@ -239,7 +243,7 @@ public class EventDataModel {
 				eventNode.setFormat(hsmap.get(ServiceConstants.JSON_FORMAT));
 				eventNode.setDuration(hsmap.get(ServiceConstants.JSON_DURATION));
 				eventNode.setStart(hsmap.get(ServiceConstants.JSON_START));
-				eventNode.setStart(hsmap.get(ServiceConstants.JSON_STATUS));		
+				eventNode.setStart(hsmap.get(ServiceConstants.JSON_STATUS));
 				eventNode.setRating(hsmap.get(ServiceConstants.JSON_RATING));
 				eventNode.setCategory(hsmap.get(ServiceConstants.JSON_CATEGORY));
 				eventNode.setCommunicationId(hsmap.get(ServiceConstants.JSON_COMMUNICATION_ID));
