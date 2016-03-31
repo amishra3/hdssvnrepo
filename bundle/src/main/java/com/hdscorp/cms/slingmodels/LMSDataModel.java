@@ -5,7 +5,9 @@ import java.io.StringWriter;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -124,7 +126,7 @@ public class LMSDataModel {
 
 	public List<LMSBean> getLmsBeanNode() {
 		log.info("Start Execution of getLmsBeanNode() method");
-		String lookupPath = this.searchlookuppath;
+		String lookupPath = this.searchlookuppath;		
 		log.info("lookup path is::" + lookupPath);
 
 		String searchKeyword = request.getParameter("searchKey");
@@ -271,12 +273,14 @@ public class LMSDataModel {
 	public HashMap<String, List<LMSBean>> getMaplmsBeanList() {
 
 		log.info("Start Execution of getMaplmsBeanList()");
-		List<LMSBean> listOfNodes = getLmsBeanNode();
-
-		if (listOfNodes != null && listOfNodes.size() > 0) {
-			// Collections.sort(listOfNodes, lmsObject.new CompareByMonth());
-			// Collections.sort(listOfNodes, lmsObject.new CompareByYear());
-			maplmsBeanList = new HashMap<String, List<LMSBean>>();
+		List<LMSBean> listOfNodes = getLmsBeanNode();	
+		LMSBean lMSBean=new LMSBean();
+				
+		if (listOfNodes != null && listOfNodes.size() > 0) {	
+			Collections.sort(listOfNodes, lMSBean.new CompareByMonth());
+			Collections.sort(listOfNodes, lMSBean.new CompareByYear());
+			
+			maplmsBeanList = new LinkedHashMap<String, List<LMSBean>>();
 			for (int index = 0; index < listOfNodes.size(); index++) {
 				LMSBean lmsNode = listOfNodes.get(index);
 				if (!maplmsBeanList.containsKey(lmsNode.getMonth())) {
