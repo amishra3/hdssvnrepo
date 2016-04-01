@@ -68,6 +68,13 @@
                         name="./abouthdsbannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <overlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in marketo Form"
+                        key="mform"
+                        name="./mform"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
