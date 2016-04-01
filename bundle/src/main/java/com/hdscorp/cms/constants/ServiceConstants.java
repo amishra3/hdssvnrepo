@@ -137,7 +137,7 @@ public final class ServiceConstants {
 	public static final String TWITTER_MEDIA_URL = "twitterMediaUrl";
 	public static final String TWITTER_SAVE_FEED_DATA_PROPERTY_NAME = "twitterResponse";
 	public static final String TWITTER_URL = "twitterURL";
-
+	public static final String TWITTER_HANDLE = "twitterHandle";
 	/*
 	 * Facebook constraints
 	 */
