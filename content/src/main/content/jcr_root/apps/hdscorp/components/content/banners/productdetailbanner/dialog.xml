@@ -69,6 +69,18 @@
                         name="./simplebannerurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <overlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in marketo Form"
+                        key="mform"
+                        name="./mform"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <bannertitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./btitle"
+                        xtype="textfield"/>
                     <simplebannercontentalign
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Align Content on Right ?"

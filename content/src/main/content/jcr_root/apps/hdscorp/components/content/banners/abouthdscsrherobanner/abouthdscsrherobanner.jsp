@@ -32,7 +32,7 @@
 
                     <c:if test="${not empty properties.abouthdsbannerbuttonlabel}">
                         <div class="btn-square-white request">
-                            <a rel="${properties.mform?'iframemodal':''}" href="${buttonUrl}" target="${properties.abouthdsbannerurltargettype?'_blank':'_self'}">
+                        <a data-formtitle="${properties.btitle}"rel="${properties.mform?'iframemodal':''}" href="${buttonUrl}" target="${properties.abouthdsbannerurltargettype?'_blank':'_self'}">
                                 ${properties.abouthdsbannerbuttonlabel}
                             </a>
                         </div>

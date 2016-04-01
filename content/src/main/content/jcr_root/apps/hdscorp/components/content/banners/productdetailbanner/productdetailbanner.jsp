@@ -61,7 +61,7 @@
 
 					<c:if test="${not empty properties.simpllebannerbuttonlabel}">
 						<div class="btn-square-white request">
-							<a href="${buttonUrl}" rel="iframemodal" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
+                        <a data-formtitle="${properties.btitle}" href="${buttonUrl}" rel="${properties.mform?'iframemodal':''}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
 								${properties.simpllebannerbuttonlabel} </a>
 						</div>
 					</c:if>

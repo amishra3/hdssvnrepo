@@ -75,6 +75,11 @@
                         name="./mform"
                         type="checkbox"
                         xtype="selection"/>
+                    <bannertitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./btitle"
+                        xtype="textfield"/>
                 </items>
             </tab1>
         </items>
