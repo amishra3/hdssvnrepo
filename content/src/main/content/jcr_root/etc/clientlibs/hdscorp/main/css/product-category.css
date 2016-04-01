@@ -98,8 +98,8 @@
 
 /* Product Category List */
 .product-category-list {
-    background-image: #ffffff;
-    padding: 72px 0 80px 38px;
+    background: #ffffff;
+    padding: 72px 15px 80px;
     position: relative;
     z-index: 2;
     min-height: 650px;
@@ -123,9 +123,6 @@
 .category-products-listing .glyphicon.glyphicon-menu-right.animateIcon {
     top: 3px;
 }
-
-
-
 
 .category-listing{
   background: #f1f1f1;

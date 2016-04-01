@@ -15,9 +15,11 @@ var hds = window.hds || {};
         },
         processHTML: function(url, index) {
         	$('#contentCatagoryHTML').fadeOut('medium', function(){
-	            $("#contentCatagoryHTML").html(" ").load(url + " .subcategorycontent", function(data) {
+	            $("#contentCatagoryHTML").html(" ").load(url + " .subcategorycontent", function(responseText, textStatus) {
+	            	if (textStatus === 'success' || textStatus === 'notmodified') {
 	            	$('#contentCatagoryHTML').fadeIn('medium');
 	                hds.productCatagory.bindHTMLLoad();
+	            	}
 	            });
         	});
         },
