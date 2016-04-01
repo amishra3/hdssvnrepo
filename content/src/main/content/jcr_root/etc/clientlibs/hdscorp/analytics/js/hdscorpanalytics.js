@@ -23,6 +23,13 @@ var leadFormName="";
 //document.domain("hds.com");
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
+
+
+function childLoaded() {var dom = childGetElementById('Email'); console.log("email");}
+
+
+
+
 $(document).ready(function() {
 if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
 	{
@@ -163,98 +170,7 @@ if(isErrorPage())
 	digitalData["site"]["siteInfo"]["country"]="US:404error";
 
 }
-// *****this section would perform the internal search tracking if the search page is hit *******  //
-// ***********************************************************************************************//
 
-if(isInternalSearchPage()){    
-		setTimeout(function(){
-		var parentPageURL=window.referrer;
-		var result = $('#num_results').next('b').text();//$('.searchresultitem').size();
-		var searchTerm = $('#SearchTextBox').val();
-		var searchAction = "";
-		var pageName = "internal search results page";//digitalData.page.pageInfo.pageName;
-		result=result.toString();
-		if($('#SearchTextBox').val() != ""){
-		   searchAction = "search box"
-		}
-		if($('.dn-attr input:checkbox:checked').length > 0){
-		   searchAction = "sub category filter"
-		}
-
-		if(result == 0){
-			result='zero';
-			internalSearch(pageName, "internalSearch", "unsuccessful search", searchTerm, result)
-		}else{
-			internalSearch(pageName, "internalSearch", "success search", searchTerm, result)
-		}
-	function internalSearch(pageName, pageType,pageLoadEvent, searchTerm, result){
-			digitalData["page"]["pageInfo"]["searchAction"] = searchAction;
-			digitalData["page"]["pageInfo"]["searchResult"] = result;
-			digitalData["page"]["pageInfo"]["searchType"] = "internal search";
-			digitalData["page"]["pageInfo"]["searchPage"] = "parent page url";
-			digitalData["page"]["pageInfo"]["pageName"] = pageName;
-			digitalData["page"]["pageInfo"]["pageType"] = pageType;
-			digitalData["page"]["pageInfo"]["pageLoadEvent"] = pageLoadEvent;
-			if(searchTerm!="")
-				digitalData["page"]["pageInfo"]["searchTerm"]=searchTerm;
-			else
-				digitalData["page"]["pageInfo"]["searchTerm"]="no term searched";
-		}
-
-			$('.navpage').click(function(){
-			 var pagination = currentpagenumber;
-			 pagination(searchTerm,pagination, searchResultType)
-			});
-			$('.navnext, .navprev').click(function(){
-			 var pagination = currentpagenumber+1;
-			 pagination(searchTerm,pagination, searchResultType)
-			});
-			$('.navprev').click(function(){
-			 var pagination = currentpagenumber-1;
-			 pagination(searchTerm,pagination, searchResultType)
-			})
-		function pagination(searchTerm,pagination, searchResultType){ 
-			digitalData.eventData={ 
-				pagination: pagination, // pagination no."3",
-				searchTerm:searchTerm,
-				searchResultType:'internalSearch'
-
-			}    
-			_satellite.track('pagination');
-		}
-
-		$('.dn-attr-a').each(function(){
-			$(this).click(function(){
-				var searchfilter = $(this).attr('title');
-				var text = $(this).parent().parent().find('span').attr('title');
-				var isChecked=$(this).parent().find('a').size();
-				searchfilter=text + ":" + searchfilter;
-				if(isChecked == 1 ){
-				if (gInternalSearchFilter!=""){gInternalSearchFilter = gInternalSearchFilter + "," + searchfilter;}
-				else{gInternalSearchFilter = searchfilter;}}
-				Internalfilter(searchTerm,searchfilter)
-			});
-		});
-		function Internalfilter (searchTerm,searchfilter){ 
-			
-			    digitalData.eventData={ 
-				//searchTerm:searchTerm,
-				searchType:'internalSearch',
-				//searchFilters:searchfilter
-
-    } 
-			if(searchTerm!="")
-			digitalData["eventData"]["searchTerm"]=searchTerm;
-        else
-			digitalData["eventData"]["searchTerm"]="no term searched";
-		if(searchFilters!="")
-			digitalData["eventData"]["searchFilters"]=searchfilter;
-			_satellite.track('internalfilter');
-		}
-		},2000);
-}
-// ****************************************************************************************************************//
-// *****  --END-- the above section would perform the internal search tracking if the search page is hit *******  //
 
 // *****  --START-- the below section would perform the resource search tracking if the search page is hit *******  //
 if(isResourceSearchPage()){  
@@ -274,7 +190,7 @@ if(isResourceSearchPage()){
 			result = $('.category-resources-listing').find('.resource.visible').size();
 			searchAction = "search box";
 			result=result.toString();
-			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			searchFilters =  getIndustryFilters() + "," + getContentFilters();// + "," + getCategoryFilters();
 			specificSearchClick(searchTerm, searchAction, result)
 			},8000);
 		}
@@ -288,7 +204,7 @@ if(isResourceSearchPage()){
 			result = $('.category-resources-listing').find('.resource.visible').size();
 			searchAction = "search box";
 			result=result.toString();
-			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			searchFilters =  getIndustryFilters() + "," + getContentFilters();// + "," + getCategoryFilters();
 			specificSearchClick(searchTerm, searchAction, result)
 			},5000);
 	});
@@ -967,6 +883,103 @@ $(document).on('keypress', '#searchFilter', function(event) {
 
 });	
 
+// *****this section would perform the internal search tracking if the search page is hit *******  //
+// ***********************************************************************************************//
+
+if(isInternalSearchPage()){   
+		console.log("***************************internal search fired*****************");
+		setTimeout(function(){
+		var parentPageURL=window.document.referrer;
+		var result = $('#num_results').next('b').text();//$('.searchresultitem').size();
+		var searchTerm = $('#SearchTextBox').val();
+		var searchAction = "";
+		var pageName = "internal search results page";//digitalData.page.pageInfo.pageName;
+		result=result.toString();
+		if($('#SearchTextBox').val() != ""){
+		   searchAction = "search box"
+		}
+		if($('.dn-attr input:checkbox:checked').length > 0){
+		   searchAction = "sub category filter"
+		}
+
+		if(result == 0){
+			result='zero';
+			internalSearch(pageName, "internalSearch", "unsuccessful search", searchTerm, result)
+		}else{
+			internalSearch(pageName, "internalSearch", "success search", searchTerm, result)
+		}
+	function internalSearch(pageName, pageType,pageLoadEvent, searchTerm, result){
+			digitalData["page"]["pageInfo"]["searchAction"] = searchAction;
+			digitalData["page"]["pageInfo"]["searchResult"] = result;
+			digitalData["page"]["pageInfo"]["searchType"] = "internal search";
+			digitalData["page"]["pageInfo"]["searchPage"] = "parent page url";
+			digitalData["page"]["pageInfo"]["pageName"] = pageName;
+			digitalData["page"]["pageInfo"]["pageType"] = pageType;
+			digitalData["page"]["pageInfo"]["pageLoadEvent"] = pageLoadEvent;
+			if(searchTerm!="")
+				digitalData["page"]["pageInfo"]["searchTerm"]=searchTerm;
+			else
+				digitalData["page"]["pageInfo"]["searchTerm"]="no term searched";
+		}
+
+			$('.navpage').click(function(){
+			 var pagination = currentpagenumber;
+			 pagination(searchTerm,pagination, searchResultType)
+			});
+			$('.navnext, .navprev').click(function(){
+			 var pagination = currentpagenumber+1;
+			 pagination(searchTerm,pagination, searchResultType)
+			});
+			$('.navprev').click(function(){
+			 var pagination = currentpagenumber-1;
+			 pagination(searchTerm,pagination, searchResultType)
+			})
+		function pagination(searchTerm,pagination, searchResultType){ 
+			digitalData.eventData={ 
+				pagination: pagination, // pagination no."3",
+				searchTerm:searchTerm,
+				searchResultType:'internalSearch'
+
+			}    
+			_satellite.track('pagination');
+		}
+
+		$('.dn-attr-a').each(function(){
+			$(this).click(function(){
+				var searchfilter = $(this).attr('title');
+				var text = $(this).parent().parent().find('span').attr('title');
+				var isChecked=$(this).parent().find('a').size();
+				searchfilter=text + ":" + searchfilter;
+				if(isChecked == 1 ){
+				if (gInternalSearchFilter!=""){gInternalSearchFilter = gInternalSearchFilter + "," + searchfilter;}
+				else{gInternalSearchFilter = searchfilter;}}
+				Internalfilter(searchTerm,searchfilter)
+			});
+		});
+		function Internalfilter (searchTerm,searchfilter){ 
+			
+			    digitalData.eventData={ 
+				//searchTerm:searchTerm,
+				searchType:'internalSearch',
+				//searchFilters:searchfilter
+
+    } 
+			if(searchTerm!="")
+			digitalData["eventData"]["searchTerm"]=searchTerm;
+        else
+			digitalData["eventData"]["searchTerm"]="no term searched";
+		if(searchFilters!="")
+			digitalData["eventData"]["searchFilters"]=searchfilter;
+			_satellite.track('internalfilter');
+		}
+		},2000);
+		console.log("***************** internal search digital data fired*****************")
+}
+// ****************************************************************************************************************//
+// *****  --END-- the above section would perform the internal search tracking if the search page is hit *******  //
+
+
+
 //Press Releases, Awards and News Search events start here
 
 var searchType="press release";
@@ -1239,8 +1252,8 @@ function setVirtualCategoryEvent()
 }
 function isErrorPage()
 {
-	var url=$(location).attr('href');
-	if(url.indexOf("us/errors")>-1)
+	var url=document.title; //$(location).attr('href');
+	if(url.indexOf("404")>-1)
 		return true;
 	else
 		false;
