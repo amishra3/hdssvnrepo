@@ -55,11 +55,11 @@
 <div class="hds-global-header clearfix">
 	<c:if test="${selectorString!= 'excludetop'}">
 		<div class="header-container content-container">
-			<a href="${hdscorp:shortURL(properties.topimageurl)}">
-				<span class="hitachi-logo hidden-xs hidden-sm"></span>
-			</a> 
-			<a href="${hdscorp:shortURL(properties.topimageurl)}" >
-				<span class="hitachi-logo-mobile hidden-md hidden-lg"></span>
+			<a target="_blank" href="${properties.topimageurl}">
+			<span class="hitachi-logo hidden-xs hidden-sm"></span>
+			</a>
+			 <a href="${properties.topimageurl}" target="_blank"><span
+				class="hitachi-logo-mobile hidden-md hidden-lg"></span>
 			</a>
 
 			<div class="hds-quick-navigation hidden-xs hidden-sm">
@@ -132,6 +132,9 @@
 						Data Systems</span>
 				</a>
 			</div>
+
+             <c:set var="requestURL" value="${pageContext.request.requestURI}" />
+
 			<ul class="col-md-9 col-xs-12 removePosRelative globalNavWrapper  hidden-xs hidden-sm">
 				<c:forEach var="childPage" items="${childPages}" varStatus="count">
 					<c:if test="${childPage.hideInNav != true}">
@@ -143,8 +146,12 @@
 						<c:if test="${not empty childPage.navigationTitle}">
 							<c:set var="navTitle" value="${childPage.navigationTitle}" />
 						</c:if>
-						
-						<li>
+
+                        <c:set var="childPagePath" value="${hdscorp:shortURL(childPage.path)}" />
+
+                        <c:set var="childPagePathWithoutHTML" value="${fn:substringBefore(childPagePath,'.html')}" />
+
+						<li class="${fn:contains(requestURL, childPagePathWithoutHTML)?'active':''}">
 						    <a 
 						    	href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"
 						    	>${navTitle}
