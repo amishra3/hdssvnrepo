@@ -477,7 +477,7 @@ ul.stickyNav li:hover a{
 }
 
 .specific-tech {
-  padding: 40px 10px 60px 10px;
+  padding: 40px 0 60px 0;
   color: #ffffff;
   background: url("../images/hero-specific-tech.jpg") center center no-repeat;
   background-size: cover;

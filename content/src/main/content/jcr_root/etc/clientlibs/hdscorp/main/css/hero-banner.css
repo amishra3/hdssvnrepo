@@ -1,6 +1,6 @@
 .hero-homepage {
   position: relative;
-  padding: 70px 15px 115px 15px;
+  padding: 70px 15px 90px 15px;
 }
 
 .hero-homepage .hero-homepage-container {
@@ -32,7 +32,6 @@
 
 .hero-homepage.general {
   padding-top: 150px;
-  padding-bottom: 40px;
   background: url("../images/hero-city-night.jpg") top center no-repeat;
   background-size: cover;
   z-index: 2;
@@ -142,7 +141,6 @@
   position: relative;
   top: 2px;
 }
-
 /*
 .hero-homepage.general .hero-homepage-container .scroll-down {
     bottom: -145px;
@@ -260,6 +258,7 @@
   text-transform: uppercase;
 }
 
+
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a .icon-caret-red {
   position: relative;
   top: 2px;
@@ -299,7 +298,7 @@
     background-size: auto 100%;
   }
   .hero-homepage.general .hero-homepage-container .general-list li a {
-    /* padding-top: 17px; */
+       /* padding-top: 17px; */
     font-size: 1em;
     line-height: 1;
   }
