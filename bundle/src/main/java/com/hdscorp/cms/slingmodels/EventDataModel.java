@@ -1,7 +1,10 @@
 package com.hdscorp.cms.slingmodels;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -85,7 +88,7 @@ public class EventDataModel {
 		String paths[] = { getEventLookupPath() };
 		String type[] = { "cq:Page" };
 
-		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, null, null, type, null, true, null,
+		SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths, null, null, type, null, false, null,
 				null, resourceResolver, null, null);
 		if (result.getHits().size() > 0) {
 			TagManager tm = resourceResolver.adaptTo(TagManager.class);
@@ -105,6 +108,14 @@ public class EventDataModel {
 
 					if (res != null) {
 						ValueMap properties = res.adaptTo(ValueMap.class);
+
+						String streventEndDate = properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null);
+						Date eventEndDate = ServiceUtil.getDateFromString(streventEndDate,
+								ServiceConstants.DATE_FORMAT_FROM_EVENT);
+						Date currentDate = new Date();
+						
+						
+						if(eventEndDate.after(currentDate) || isSameDay(eventEndDate,currentDate)){						
 						eventNode.setEventType(
 								(String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
 						String eventType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE,
@@ -133,7 +144,6 @@ public class EventDataModel {
 								properties.get(ServiceConstants.EVENT_JCR_THIRD_PARTY_ICON, (String) null));
 						eventNode.setNewwindow(properties.get(ServiceConstants.EVENT_JCR_NEW_WINDOW, (String) null));
 						eventNode.setEventId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null));
-						
 
 						String startDate = ServiceUtil.getDisplayDateFormat(
 								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
@@ -191,6 +201,8 @@ public class EventDataModel {
 						}
 						eventNode.setEventRegiontagId(eventRegiontagId.toString());
 						eventNode.setEventRegiontagName(eventRegiontaName.toString());
+						eventNodes.add(eventNode);
+					}
 
 					}
 
@@ -199,7 +211,7 @@ public class EventDataModel {
 					log.error("Error occured during getting value from the pages" + e);
 				}
 
-				eventNodes.add(eventNode);
+				
 			}
 		}
 		return eventNodes;
@@ -288,4 +300,47 @@ public class EventDataModel {
 		return eventFinalNodesData;
 	}
 
+	public static void main(String args[]) {
+		String streventEndDate = "03/02/16";
+		try {
+			Date eventEndDate = ServiceUtil.getDateFromString(streventEndDate, ServiceConstants.DATE_FORMAT_FROM_EVENT);
+
+			Date currentDate = new Date();
+			System.out.println("currentDate::"+currentDate);
+
+			System.out.println("End Date::"+eventEndDate);
+			System.out.println(eventEndDate.after(currentDate));
+			
+			System.out.println(isSameDay(eventEndDate,currentDate));
+			
+			if(eventEndDate.after(currentDate) || isSameDay(eventEndDate,currentDate)){
+				System.out.println("hello");
+			}
+			
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	   public static boolean isSameDay(Date date1, Date date2) {
+	        if (date1 == null || date2 == null) {
+	            throw new IllegalArgumentException("The dates must not be null");
+	        }
+	        Calendar cal1 = Calendar.getInstance();
+	        cal1.setTime(date1);
+	        Calendar cal2 = Calendar.getInstance();
+	        cal2.setTime(date2);
+	        return isSameDay(cal1, cal2);
+	    }
+	   
+	   public static boolean isSameDay(Calendar cal1, Calendar cal2) {
+	        if (cal1 == null || cal2 == null) {
+	            throw new IllegalArgumentException("The dates must not be null");
+	        }
+	        return (cal1.get(Calendar.ERA) == cal2.get(Calendar.ERA) &&
+	                cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+	                cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR));
+	    }
 }
