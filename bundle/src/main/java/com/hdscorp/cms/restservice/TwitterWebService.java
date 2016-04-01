@@ -20,6 +20,7 @@ import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
+import twitter4j.UserMentionEntity;
 import twitter4j.auth.AccessToken;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -103,7 +104,14 @@ public class TwitterWebService extends GenericRestfulServiceInvokers {
 					twitterFeed.put(ServiceConstants.TIME_DIFF_POSTDATE_CURRENTDATE,
 							ServiceUtil.getFeedTimeDifference(status.getCreatedAt().toString()));
 					twitterFeed.put(ServiceConstants.TWITTER_MESSAGE_TEXT, status.getText());
+
 					List<String> urls = ServiceUtil.extractUrls(status.getText().toString());
+
+					for (UserMentionEntity nameEntity : status.getUserMentionEntities()) {
+
+						twitterFeed.put(ServiceConstants.TWITTER_HANDLE, nameEntity.getName());
+					}
+
 					if (urls != null && urls.size() > 0) {
 						StringBuffer twURLs = new StringBuffer(140);
 						for (String url : urls) {
