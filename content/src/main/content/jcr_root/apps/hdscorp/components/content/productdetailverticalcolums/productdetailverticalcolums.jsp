@@ -9,10 +9,14 @@
 		<div class="resources-category">
 			<h3 class="resources-category-heading">${properties.columntitle}</h3>
 
-			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1-thirdparty")%>" />
+			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1-thirdparty-voverlay-videoid")%>" />
 					<c:forEach var="column" items="${contentColumns}" varStatus="loop">
 						<c:set var="linkUrl" value="${column.seemoretargeturl}"/>
-                         
+                            <c:if test="${not empty column.videoid}">
+                              <c:set var="vid" value="${column.videoid}" />
+                                <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
+                             </c:if>
+
 						<c:if test="${fn:startsWith(linkUrl,'/content/')}">
 							<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
 						</c:if>	
@@ -25,7 +29,7 @@
                             <c:choose>
                             	<c:when test="${not empty linkUrl && not empty column.seemorelabel}">
                                       <div class="resources-category-more">
-                                            <a class="animateLink" href="${linkUrl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                         <a class="animateLink" href="${column.voverlay==1?'javascript:void(0);':linkUrl}" onclick="${column.voverlay==2?'':vidurl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                       </div>
                                 </c:when>
                                 <c:otherwise>

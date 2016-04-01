@@ -49,6 +49,28 @@
                                 fieldLabel="See More Link Label"
                                 name="./seemorelabel"
                                 xtype="textfield"/>
+                            <videoid
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Video ID"
+                                name="./videoid"
+                                xtype="textfield"/>
+                            <openoverlay
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open video overlay ?"
+                                name="./voverlay"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </openoverlay>
                             <seemoretargeturl
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Link target URL"
