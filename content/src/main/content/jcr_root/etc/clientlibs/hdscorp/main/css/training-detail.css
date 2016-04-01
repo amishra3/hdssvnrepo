@@ -213,3 +213,5 @@
 #trainingDetail .result-section{display:none}
 #trainingDetail #contentCatagory{visibility:hidden}
 #trainingDetail{padding-bottom:40px;}
+div#contentCatagory .training-result .category-heading{padding-top:40px;}
+div#contentCatagory .training-result:first-child .category-heading{padding-top:0;}
