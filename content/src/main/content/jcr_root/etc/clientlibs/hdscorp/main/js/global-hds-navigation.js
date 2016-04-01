@@ -65,7 +65,7 @@ var hds = window.hds || {};
         desktopMobileFunction: function() {
             $('.no-touch .globalNavWrapper > li').hover(function() {
                 $('.globalNavWrapper li').removeClass('open');                
-                $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(200);
+                $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(300);
                 var megaMenuWrapper = $(this).find( ".hds-megaMenuWrapper");
                 var bgImgUrl = $(megaMenuWrapper).attr('data-bg-url'); 
                 $(megaMenuWrapper).css("background-image", "url("+bgImgUrl+")");
@@ -79,7 +79,7 @@ var hds = window.hds || {};
                 var that=arg;
         		var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
         		if (slideOut.is(":hidden")) {
-        			slideOut.clearQueue().slideDown("slow",function(){
+        			slideOut.clearQueue().slideDown(300,function(){
         			 $('a#showGeo').addClass("active");
         			 $('a#showGeo').parent('li').addClass('open');
                      });
@@ -90,7 +90,7 @@ var hds = window.hds || {};
         	var that=arg;
         		 var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
         		 if (slideOut.is(":visible")) {
-        			 slideOut.clearQueue().slideUp("slow",function(){
+        			 slideOut.clearQueue().slideUp(200,function(){
         				 $('a#showGeo').parent('li').removeClass('open');
         				 $('a#showGeo').removeClass("active");
                      });
