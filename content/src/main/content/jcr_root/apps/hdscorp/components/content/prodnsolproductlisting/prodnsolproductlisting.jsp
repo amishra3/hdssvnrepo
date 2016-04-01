@@ -27,8 +27,9 @@
                     
                     	<cq:include path="subcategoryfilterpar" resourceType="hdscorp/components/content/categoryfacets" />
                         
-                        <div id="loading"></div>
+                        
                         <div class="col-md-9" id="contentCatagory">
+                        <div id="loading"></div>
                             <div class="result-product">
                                 <div class="category-heading hidden-xs hidden-sm">
                                     <h3></h3>
