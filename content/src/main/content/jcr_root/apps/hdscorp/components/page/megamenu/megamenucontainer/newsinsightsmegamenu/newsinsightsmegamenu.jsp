@@ -62,8 +62,8 @@
 								<c:when test="${not empty subnavlinks.mgmnewsinsightssubnavlabel}">
                                     <c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmnewsinsightssubnavlink)}" />
 									 <li>
-                                    	<a
-										target="${subnavlinks.mgmnewsinsightsopeninnewwindow?'_blank':'_self'}"
+                                   	<a
+										target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
 										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
 											aria-hidden="true"
