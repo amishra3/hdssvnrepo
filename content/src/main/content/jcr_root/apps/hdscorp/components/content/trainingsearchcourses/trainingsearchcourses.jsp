@@ -11,15 +11,7 @@
 <c:set var="tabList"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"locationlabel-locationid")%>" />
 
-
-	<div class="accordion-menu-container">
-		<div class="accordion-menu hidden-sm hidden-md hidden-lg">
-			<span id="stickyNav-0" class="acc-label">${trainingSearchCoursesModel.trainingoverviewheadline}</span>
-			<span class="icon-accordion-closed"></span> <span
-				class="icon-accordion-opened"></span>
-		</div>
-	</div>
-	<div class="accordion-content">
+	<div class="accordion-content-open">
 		<div id="overview"></div>
 		<div class="service-support-main training clearfix">
 			<div class="content-container clearfix">
