@@ -21,8 +21,9 @@
     <div class="modal-dialog modal-full-screen">
         <div class="modal-content">
             <div class="modal-header">
+                <div class="title"></div>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                  <span class="glyphicon glyphicon-remove-circle"></span>
+                  <span class="close"></span>
                 </button>
             </div>
             <div class="modal-body">
