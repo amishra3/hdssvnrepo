@@ -165,10 +165,12 @@ public class NewsInsightVerticalExplorerModel {
 			if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 				newsInsightExplorerTop.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
+				newsInsightExplorerTop.setId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null).toString());
 				try {
 					newsInsightExplorerTop.setPubDate(ServiceUtil.getDisplayDateFormat(
 							properties.get("jcr:eventenddate", (String) null).toString(),
 							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
+										
 				} catch (ParseException e) {
 					log.info("Exception occurs duing getting value from Node: " + e);
 				}
@@ -261,6 +263,7 @@ public class NewsInsightVerticalExplorerModel {
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 
 				newsInsightExplorerBottom.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
+				newsInsightExplorerBottom.setId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null).toString());
 
 				try {
 					newsInsightExplorerBottom.setPubDate(ServiceUtil.getDisplayDateFormat(
