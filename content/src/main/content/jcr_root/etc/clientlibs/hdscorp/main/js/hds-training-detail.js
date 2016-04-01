@@ -179,7 +179,8 @@ var hds = window.hds || {};
 			if(searchKey && searchKey != ""){
 				$('.search').val(searchKey)
 			}
-			getResults(true)
+			getResults(true);
+			$( "#trainingDetail" ).focus();
 			if(locations && locations != ""){
 				console.log($('input[id='+locations.toUpperCase()+']'))
 				setTimeout(function(){

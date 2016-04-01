@@ -57,7 +57,7 @@ var hds = window.hds || {};
 
             $('.btn-square-red a').unbind('click').click(function(){
 				if($('.training-search input').val() == "" && $('.from_date').val() == "" && $('.to_date').val() == "" && locations == ""){
-					var url = "training-details.html";
+					var url = "training-details.html#trainingDetail";
 					console.log("aLL EMPTY")
 				}else if($('.training-search input').val() == "" && $('.from_date').val() != "" && locations == ""){
 					console.log('keyword and locations empty')
