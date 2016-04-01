@@ -17,6 +17,11 @@
                         fieldLabel="Hero Title Content"
                         name="./secondaryherotitlecontent"
                         xtype="textfield"/>
+                    <secondaryherobanner
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Seondary Hero Banner"
+                        name="./secondarybanner"
+                        xtype="pathfield"/>
                     <secondaryherosubtitlecontent
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Hero Sub Title Content"
