@@ -10,6 +10,7 @@ private String link;
 private String title;
 private String pubDate;
 private String description;
+private String id;
 public String getLink() {
 	return link;
 }
@@ -34,5 +35,12 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
+public String getId() {
+	return id;
+}
+public void setId(String id) {
+	this.id = id;
+}
+
 
 }
