@@ -1,8 +1,6 @@
 package com.hdscorp.cms.slingmodels;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -113,96 +111,98 @@ public class EventDataModel {
 						Date eventEndDate = ServiceUtil.getDateFromString(streventEndDate,
 								ServiceConstants.DATE_FORMAT_FROM_EVENT);
 						Date currentDate = new Date();
-						
-						
-						if(eventEndDate.after(currentDate) || isSameDay(eventEndDate,currentDate)){						
-						eventNode.setEventType(
-								(String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
-						String eventType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE,
-								String[].class);
-						StringBuffer tagId = new StringBuffer();
-						StringBuffer tagName = new StringBuffer();
-						for (int index = 0; index < eventType.length; index++) {
-							Tag tag = tm.resolve((String) eventType[index]);
 
-							if (tag != null) {
-								if (index == 0) {
-									tagId.append(tag.getTagID());
-									tagName.append(tag.getName());
-								} else {
-									tagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
-									tagName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+						if (eventEndDate.after(currentDate) || ServiceUtil.isSameDay(eventEndDate, currentDate)) {
+							eventNode.setEventType(
+									(String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE, String[].class));
+							String eventType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_EVENTTYPE,
+									String[].class);
+							StringBuffer tagId = new StringBuffer();
+							StringBuffer tagName = new StringBuffer();
+							for (int index = 0; index < eventType.length; index++) {
+								Tag tag = tm.resolve((String) eventType[index]);
+
+								if (tag != null) {
+									if (index == 0) {
+										tagId.append(tag.getTagID());
+										tagName.append(tag.getName());
+									} else {
+										tagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
+										tagName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+									}
 								}
 							}
-						}
 
-						eventNode.setEventTyptagName(tagName.toString());
-						eventNode.setEventTyptagId(tagId.toString());
-						eventNode.setEventTitle(properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));
+							eventNode.setEventTyptagName(tagName.toString());
+							eventNode.setEventTyptagId(tagId.toString());
+							eventNode.setEventTitle(
+									properties.get(ServiceConstants.EVENT_JCR_EVENTTITLE, (String) null));
 
-						eventNode.setThirdpartyicon(
-								properties.get(ServiceConstants.EVENT_JCR_THIRD_PARTY_ICON, (String) null));
-						eventNode.setNewwindow(properties.get(ServiceConstants.EVENT_JCR_NEW_WINDOW, (String) null));
-						eventNode.setEventId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null));
+							eventNode.setThirdpartyicon(
+									properties.get(ServiceConstants.EVENT_JCR_THIRD_PARTY_ICON, (String) null));
+							eventNode
+									.setNewwindow(properties.get(ServiceConstants.EVENT_JCR_NEW_WINDOW, (String) null));
+							eventNode.setEventId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null));
 
-						String startDate = ServiceUtil.getDisplayDateFormat(
-								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
-								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT);
+							String startDate = ServiceUtil.getDisplayDateFormat(
+									properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
+									ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT);
 
-						eventNode
-								.setEventMonth(
-										ServiceUtil
-												.getMonth(Integer
-														.parseInt(startDate.substring(0,
-																startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))
-										- 1).toUpperCase() + ServiceConstants.EMPTY_SPACE
-								+ startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
+							eventNode
+									.setEventMonth(
+											ServiceUtil
+													.getMonth(Integer
+															.parseInt(startDate.substring(0,
+																	startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))
+											- 1).toUpperCase() + ServiceConstants.EMPTY_SPACE
+									+ startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
 
-						eventNode.setYear(Integer.parseInt(
-								startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
+							eventNode.setYear(Integer.parseInt(
+									startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
 
-						eventNode.setMonthInt((Integer
-								.parseInt(startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
+							eventNode.setMonthInt((Integer.parseInt(
+									startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
 
-						eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(
-								properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
-								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
-						eventNode.setEventEndDate(ServiceUtil.getDisplayDateFormat(
-								properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null),
-								ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
-						eventNode.setEventLocation(properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
-						eventNode.setEventDescription(
-								properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
-						eventNode.setStatus(properties.get(ServiceConstants.JSON_STATUS, (String) null));
-						eventNode.setEventImageBackground(
-								properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
-						eventNode.setEventRegisterNowLabel(
-								properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LABEL, (String) null));
-						eventNode.setEventRegisterNowLink(
-								properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LINK, (String) null));
-						eventNode.setEventRegion(
-								(String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG, String[].class));
+							eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(
+									properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
+									ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
+							eventNode.setEventEndDate(ServiceUtil.getDisplayDateFormat(
+									properties.get(ServiceConstants.EVENT_JCR_END_DATE, (String) null),
+									ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_EVENT));
+							eventNode.setEventLocation(
+									properties.get(ServiceConstants.EVENT_JCR_LOCATION, (String) null));
+							eventNode.setEventDescription(
+									properties.get(ServiceConstants.EVENT_JCR_DESCRIPTION, (String) null));
+							eventNode.setStatus(properties.get(ServiceConstants.JSON_STATUS, (String) null));
+							eventNode.setEventImageBackground(
+									properties.get(ServiceConstants.EVENT_JCR_BACKGROUND_IMAGE, (String) null));
+							eventNode.setEventRegisterNowLabel(
+									properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LABEL, (String) null));
+							eventNode.setEventRegisterNowLink(
+									properties.get(ServiceConstants.EVENT_JCR_REGISTER_NOW_LINK, (String) null));
+							eventNode.setEventRegion(
+									(String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG, String[].class));
 
-						String regionType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG,
-								String[].class);
-						StringBuffer eventRegiontagId = new StringBuffer();
-						StringBuffer eventRegiontaName = new StringBuffer();
-						for (int index = 0; index < regionType.length; index++) {
-							Tag tag = tm.resolve((String) regionType[index]);
-							if (tag != null) {
-								if (index == 0) {
-									eventRegiontagId.append(tag.getTagID());
-									eventRegiontaName.append(tag.getName());
-								} else {
-									eventRegiontagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
-									eventRegiontaName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+							String regionType[] = (String[]) properties.get(ServiceConstants.EVENT_JCR_REGION_TAG,
+									String[].class);
+							StringBuffer eventRegiontagId = new StringBuffer();
+							StringBuffer eventRegiontaName = new StringBuffer();
+							for (int index = 0; index < regionType.length; index++) {
+								Tag tag = tm.resolve((String) regionType[index]);
+								if (tag != null) {
+									if (index == 0) {
+										eventRegiontagId.append(tag.getTagID());
+										eventRegiontaName.append(tag.getName());
+									} else {
+										eventRegiontagId.append(ServiceConstants.COMMA_SEPRATOR + tag.getTagID());
+										eventRegiontaName.append(ServiceConstants.COMMA_SEPRATOR + tag.getName());
+									}
 								}
 							}
+							eventNode.setEventRegiontagId(eventRegiontagId.toString());
+							eventNode.setEventRegiontagName(eventRegiontaName.toString());
+							eventNodes.add(eventNode);
 						}
-						eventNode.setEventRegiontagId(eventRegiontagId.toString());
-						eventNode.setEventRegiontagName(eventRegiontaName.toString());
-						eventNodes.add(eventNode);
-					}
 
 					}
 
@@ -211,7 +211,6 @@ public class EventDataModel {
 					log.error("Error occured during getting value from the pages" + e);
 				}
 
-				
 			}
 		}
 		return eventNodes;
@@ -300,47 +299,4 @@ public class EventDataModel {
 		return eventFinalNodesData;
 	}
 
-	public static void main(String args[]) {
-		String streventEndDate = "03/02/16";
-		try {
-			Date eventEndDate = ServiceUtil.getDateFromString(streventEndDate, ServiceConstants.DATE_FORMAT_FROM_EVENT);
-
-			Date currentDate = new Date();
-			System.out.println("currentDate::"+currentDate);
-
-			System.out.println("End Date::"+eventEndDate);
-			System.out.println(eventEndDate.after(currentDate));
-			
-			System.out.println(isSameDay(eventEndDate,currentDate));
-			
-			if(eventEndDate.after(currentDate) || isSameDay(eventEndDate,currentDate)){
-				System.out.println("hello");
-			}
-			
-			
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	   public static boolean isSameDay(Date date1, Date date2) {
-	        if (date1 == null || date2 == null) {
-	            throw new IllegalArgumentException("The dates must not be null");
-	        }
-	        Calendar cal1 = Calendar.getInstance();
-	        cal1.setTime(date1);
-	        Calendar cal2 = Calendar.getInstance();
-	        cal2.setTime(date2);
-	        return isSameDay(cal1, cal2);
-	    }
-	   
-	   public static boolean isSameDay(Calendar cal1, Calendar cal2) {
-	        if (cal1 == null || cal2 == null) {
-	            throw new IllegalArgumentException("The dates must not be null");
-	        }
-	        return (cal1.get(Calendar.ERA) == cal2.get(Calendar.ERA) &&
-	                cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
-	                cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR));
-	    }
 }
