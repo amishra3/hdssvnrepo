@@ -45,7 +45,7 @@ pageContext.setAttribute("listMaps", listMaps);
                     <div class="col-md-9 newsWrapper">
                         <div class="noWebcastFilter">${properties.nowebcastfoundmessage} </div>
                         <c:forEach items="${listMaps}" var="listm" varStatus="status">
-                            <div class="newsEvents ${status.first ? 'firstChild' : ''}" data-webcast="${listm.category}">
+                            <div class="newsEvents ${status.first ? 'firstChild' : ''} scrollto${listm.communicationId}" data-webcast="${listm.category}">
                                 <h3>${listm.title}</h3>
                                 <small>${listm.duration}</small>
                                 <h4 class="author">${listm.author}</h4>
@@ -67,7 +67,7 @@ pageContext.setAttribute("listMaps", listMaps);
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
-                                        <a href="javascript:void(0);" class="animateLink expandMe less"><span class="glyphicon glyphicon-plus-sign"></span>${properties.detailslabel} </a>
+                                        <a href="javascript:void(0);" class="animateLink expandMe less ${listm.communicationId}"><span class="glyphicon glyphicon-plus-sign"></span>${properties.detailslabel} </a>
                             </div>
                         </c:forEach>
                     </div>

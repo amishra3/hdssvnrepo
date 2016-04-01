@@ -22,7 +22,29 @@ var hds = window.hds || {};
             hds.webcastEvents.showDetails();
             hds.webcastEvents.showModal();
 			hds.webcastEvents.bindWebCatsLoad();
+			hds.webcastEvents.processUrlHash();
 
+        },
+        processUrlHash:function(){
+        	var qURL = window.location.href;
+        	var indexOfQueryStart = qURL.indexOf("?") ;
+        	if(indexOfQueryStart > 0){
+        		qURL = qURL.substring(0,indexOfQueryStart); 
+        	}
+        	var parms = hds.resourceLib._getParmsFromURLHash(qURL);
+        	var tabID = parms["tab"];
+        	var comid = parms["comid"];
+        	if(typeof tabID!== "undefined" && tabID==2 ){
+        		$('a[href^="#webcasts-demand"]').click();
+        		if(typeof comid!== "undefined"){
+        			var webCast = $('a.'+comid) ;
+        			if($(webCast).length > 0){
+	        			$(webCast).click();
+	        			$('body').scrollTo('.scrollto'+comid,{duration:'slow', offsetTop : '0'});
+        			}
+        		}
+        	}
+        	
         },
         truncateText:function(){
             var defaultTextValue=this.options.countParagraph;
@@ -30,12 +52,12 @@ var hds = window.hds || {};
             var parentDiv= this.options.element;
             $(parentDiv).each(function() {
             var selfHtml=$(this).find('p').html();
-            if(selfHtml.length > defaultTextValue);
-            var c = selfHtml.substr(0, defaultTextValue);
-            var h = selfHtml.substr(defaultTextValue-1, selfHtml.length - defaultTextValue); 
-            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span></span>'; 
-            $(this).find('p').html(html);    
-        });            
+	            if(selfHtml.length > defaultTextValue);
+	            var c = selfHtml.substr(0, defaultTextValue);
+	            var h = selfHtml.substr(defaultTextValue-1, selfHtml.length - defaultTextValue); 
+	            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span></span>'; 
+	            $(this).find('p').html(html);    
+            });            
         },
         showDetails:function(){
             var showDetails=this.options.detailsBtn;
