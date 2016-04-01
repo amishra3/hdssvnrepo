@@ -15,7 +15,7 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 	/**
 	 * Return to Top button funionality
 	 */
-	
+
 	$(document).on('click','.cta-scroll-top, .cta-scroll-top-mobile', function() {
 		$(window).scrollTo(0, 0, {
 			duration: 1000
@@ -53,6 +53,10 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 * Modal Box
 */
 $(document).ready(function () {
+	/* Cross Domain */
+	if (window.location.href.match(/hds.com/gi)) {
+        document.domain = "hds.com";
+    }
 	
 	/**
 	 * Black Color Breadcrumb
@@ -90,15 +94,25 @@ $(document).ready(function () {
 		1000);
 	});
 	
-	
-    $('a[rel=iframemodal]').on('click', function(evt) {
+
+	/* function to open modal window start */
+    $(document).on('click','a[rel=iframemodal]',function(evt){
         evt.preventDefault();
         var modal = $('#modal').modal();
+        var formTitle = $(this).attr('data-formtitle'); 
         var targetURL= $(this).attr('href');
-        modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='700px' frameborder='0'></iframe>");
+        modal.find('.modal-header .title').text('').append(formTitle);
+        modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='700' frameborder='0' scrolling='no' id='hdsModalWindow' onload='setIframeHeight(this.id)'></iframe>");
         modal.show(); 
     });
-    
+
+    $(window).resize(function() {
+        if($(window).width() >= 768 ){
+            $('.modal-header button.close').trigger('click');
+            //document.getElementById('hdsModalWindow').contentWindow.location.reload();
+        }                
+    });
+    /* function to open modal window ends */
     
     if($('#contentResourceLibrary').length < 1){
 	    $('a.isGatedLock').each(function(index, el) {
@@ -133,3 +147,20 @@ function equalColumns(htmlElements){
     $(htmlElements).height(maxHeight);
 }
 
+function getDocHeight(doc) {
+    doc = doc || document;
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+
+function setIframeHeight(id) {
+    var ifrm = document.getElementById(id);
+    var doc = ifrm.contentDocument? ifrm.contentDocument: 
+        ifrm.contentWindow.document;
+    ifrm.style.visibility = 'hidden';
+    ifrm.style.height = "10px";
+    ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+    ifrm.style.visibility = 'visible';
+}

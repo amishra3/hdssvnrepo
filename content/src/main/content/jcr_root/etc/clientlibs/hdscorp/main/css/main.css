@@ -6776,8 +6776,16 @@ button.close {
 }
 
 .modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 30px 20px 15px 25px;
+
+}
+.modal-header .title{
+  font-size: 1.6rem;
+  font-family: Museo-slab;
+  font-weight: 600;
+  text-transform: uppercase; 
+  width:86%;
+  float: left;
 }
 
 .modal-header:before, .modal-header:after {
@@ -6789,8 +6797,20 @@ button.close {
   clear: both;
 }
 
-.modal-header .close {
-  margin-top: -2px;
+.modal-header button.close{
+
+  opacity: 1;
+  width:14%;
+  float: right;
+}
+
+.modal-header button span.close {
+    opacity: 1;
+    cursor: pointer;
+    background-image:url(../images/partner-detail-close.png);
+    background-repeat:no-repeat;
+    width: 32px;
+    height: 32px;
 }
 
 .modal-title {
@@ -6800,7 +6820,7 @@ button.close {
 
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 10px 15px 30px 15px;
 }
 
 .modal-footer {
@@ -6839,6 +6859,11 @@ button.close {
   overflow: scroll;
 }
 
+@media (max-width: 480px) {
+  .modal-header .title{
+    font-size: 1.2rem;
+  }
+}
 @media (min-width: 768px) {
   .modal-dialog {
     width: 600px;
