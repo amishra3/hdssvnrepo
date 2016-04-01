@@ -13,6 +13,11 @@
                 jcr:primaryType="cq:Panel"
                 title="Sub Categories">
                 <items jcr:primaryType="cq:WidgetCollection">
+                    <labletext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Cateogry Label"
+                        name="./cateogrylabel"
+                        xtype="textfield"/>
                     <contents
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Categories"

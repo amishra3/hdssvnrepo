@@ -21,7 +21,7 @@
 <div class="legal-content-area clearfix">
 <div class="content-container">
 	<div id="legal" class="Container-legal-terms container-fluid overRideRight">
-         <h2>Legal</h2>
+         <h2>${properties.cateogrylabel}</h2>
 				<div class="col-md-3 leftsidelisting">
 				<ul id="asideLinks-product">
 				<c:forEach var="listCat" items="${legalSubCategoryModel.legalcategories}" varStatus="loopCatCount">

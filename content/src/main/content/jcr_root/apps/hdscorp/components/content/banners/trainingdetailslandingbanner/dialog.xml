@@ -64,6 +64,13 @@
                         fieldLabel="Button Target URL"
                         name="./trainingdetailsbannerbuttonurl"
                         xtype="pathfield"/>
+                    <buttonoverlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in marketo Form"
+                        key="buttonmform"
+                        name="./buttonmform"
+                        type="checkbox"
+                        xtype="selection"/>
                     <trainingdetailsbannerurltargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
