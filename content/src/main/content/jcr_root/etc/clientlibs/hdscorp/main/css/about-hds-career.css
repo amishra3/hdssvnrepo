@@ -642,8 +642,15 @@
     width: 74%;
 }
 
-.bannerCarsoul .bannerSectionImage .playVideo {
-    padding-top: 33px;
+.bannerCarsoul .watchVideoBtn{
+	margin-top: 50px;	
+}
+
+.bannerCarsoul .bannerSectionImage .playVideoBox{
+	padding-top: 33px;
+}
+
+.bannerCarsoul .bannerSectionImage .playVideo {    
     text-align: left;
 }
 

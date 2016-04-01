@@ -1037,6 +1037,11 @@ div#Selector ul li a {
     font-weight: 300;
     line-height: 125%;	 
  }
+ .cert-training-box ul {
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+    font-weight: 300; 
+ }
  
  .cert-training-box h4{
 	margin-bottom: 20px;

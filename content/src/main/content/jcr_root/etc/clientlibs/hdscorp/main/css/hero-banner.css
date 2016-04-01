@@ -141,6 +141,7 @@
   position: relative;
   top: 2px;
 }
+
 /*
 .hero-homepage.general .hero-homepage-container .scroll-down {
     bottom: -145px;
@@ -258,7 +259,6 @@
   text-transform: uppercase;
 }
 
-
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a .icon-caret-red {
   position: relative;
   top: 2px;
@@ -267,7 +267,7 @@
 
 @media only screen and (min-width: 1280px) {
   .hero-homepage.healthcare {
-    background-size: 128%;
+    background-size: cover;
   }
 }
 
@@ -298,7 +298,7 @@
     background-size: auto 100%;
   }
   .hero-homepage.general .hero-homepage-container .general-list li a {
-       /* padding-top: 17px; */
+    /* padding-top: 17px; */
     font-size: 1em;
     line-height: 1;
   }
@@ -333,8 +333,9 @@
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-connect {
     background-image: url(../images/sprite.png);
     background-position: -60px -215px;
+	background-size: 100% auto;
     width: 27px;
-    height: 31px;
+    height: 44px;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-transform {
     background-image: url(../images/sprite.png);
@@ -408,6 +409,9 @@
   }
   .hero-homepage.healthcare .hero-homepage-container .close-hero {
     right: 15px;
+  }
+  .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li p{
+    font-size: 1em;
   }
   .homepage  .hexagon270{
 	 min-height: 150px;
