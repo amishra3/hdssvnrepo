@@ -1,3 +1,4 @@
+<%@page import="com.hdscorp.cms.constants.GlobalConstants"%>
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
@@ -35,11 +36,19 @@
 				breadcrumbContent.append("<a class='breadcrumblink' href='" + parentPath + "'>"+ parentPageHandle.getTitle() + "</a>");
 			}
 		}
+		
+		String[] selectorArray = slingRequest.getRequestPathInfo().getSelectors();
+		String productBookMarkLink = "" ;
+		if (selectorArray != null && selectorArray.length > 0 && selectorArray[0].equalsIgnoreCase(GlobalConstants.PRODUCT_TECH_SPEC_SELECTOR)) {
+			productBookMarkLink = " > <a class='breadcrumblink' href='" + PathResolver.getShortURLPath(currentPage.getPath()) + "'>"+ currentPage.getTitle() + "</a>" ;
+		}
+
+		
 	%>
 
 	<div class="breadcrumb-container">
 		<div class="breadcrumb">
-			<%=breadcrumbContent%>
+			<%=breadcrumbContent%><%=productBookMarkLink%>
 		</div>
 	</div>
 </c:if>

@@ -60,6 +60,8 @@ public final class GlobalConstants {
 	public static final String BREAK = "<br/>";
 
 	public static final String JCR_CONTENT_DATA = "jcr:content/jcr:data";
+	
+	public static final String PRODUCT_TECH_SPEC_SELECTOR = "specifications";
 
 	private GlobalConstants() {
 	}

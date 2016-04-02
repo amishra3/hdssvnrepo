@@ -1,3 +1,4 @@
+<%@page import="com.hdscorp.cms.constants.GlobalConstants"%>
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
@@ -91,7 +92,7 @@ node.save();
 	</div>
 	<c:if test="${showviewallbutton and !techspeconlypage}">
         <div class="tbd-dl btn-square btn-square-white">
-			<a href ="${currentPage.path}.techspec.html" target="${properties.viewopeninnew?'_blank':'_self'}">${properties.viewalllinklabel}</a>
+			<a href ="${currentPage.path}.<%=GlobalConstants.PRODUCT_TECH_SPEC_SELECTOR%>.html" target="${properties.viewopeninnew?'_blank':'_self'}">${properties.viewalllinklabel}</a>
         </div>
 	</c:if>
 </div>
