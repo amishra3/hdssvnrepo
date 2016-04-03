@@ -21,6 +21,15 @@
 <sling:adaptTo adaptable="${resource}"
 	adaptTo="com.hdscorp.cms.slingmodels.NewsInsightVerticalExplorerModel"
 	var="newsInsightVerticalExplorer" />
+
+<c:if test="${properties.nibteventtype ne 'Event'}">
+		<c:set var="linkUrl" value="${hdscorp:shortURL(newsInsightVerticalExplorer.targetURL)}" />
+	</c:if>
+	
+	<c:if test="${properties.nibteventtype eq 'Event'}">
+		<c:set var="linkUrl" value="${eventLandingURL}#event-id=${newsInsightVerticalExplorer.newsInsightExplorerTop.id}" />
+	</c:if>
+
 <div class="news-insight-explore-spotlight"
 	style="background-image: url('${newsInsightVerticalExplorer.backgroundImagePath}')">
 	<div class="spotlight-mobile hidden-md hidden-lg"></div>
@@ -35,13 +44,23 @@
 		<div class="type">${newsInsightVerticalExplorer.iconImageLabel}
 			${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
 		<div class="spotlight-title">
-			<a href="${hdscorp:shortURL(newsInsightVerticalExplorer.targetURL)}"
+			<a href="${linkUrl}"
 				class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
 				aria-hidden="true"
 				class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 		</div>
 	</div>
 </div>
+
+
+<c:if test="${properties.nibtbeventtype ne 'Event'}">
+		<c:set var="linkBottomUrl" value="${hdscorp:shortURL(newsInsightVerticalExplorer.targetBottomURL)}" />
+	</c:if>
+	
+	<c:if test="${properties.nibtbeventtype eq 'Event'}">
+		<c:set var="linkBottomUrl" value="${eventLandingURL}#event-id=${newsInsightVerticalExplorer.newsInsightExplorerBottom.id}" />
+	</c:if>
+
 <div class="news-insight-explore-spotlight spotlight-normal">
 	<div class="spotlight-content">
 		<div class="icon hidden-xs">
@@ -58,13 +77,13 @@
 		<div class="read-more">
 			<c:choose>
 				<c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
-					<a href="${hdscorp:shortURL(newsInsightVerticalExplorer.targetBottomURL)}"
+					<a href="${linkBottomUrl}"
 						target="_blank" class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
 				</c:when>
 				<c:otherwise>
-					<a href="${hdscorp:shortURL(newsInsightVerticalExplorer.targetBottomURL)}"
+					<a href="${linkBottomUrl}"
 						class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
