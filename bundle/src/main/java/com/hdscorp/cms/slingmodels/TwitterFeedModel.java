@@ -80,7 +80,16 @@ public class TwitterFeedModel extends MultifieldUtil {
 	@Default(values = { "Ago" })
 	private String twAgoMessage;
 
-	private String twitterFeedData;
+	@Inject
+	@Named(value = "jcr:twdefaulttwitterhandlemessage")
+	@Default(values = { "Hitachi Data Systems" })
+
+	private String twdefaulttwitterhandlemessage;
+	
+	
+	public String getTwdefaulttwitterhandlemessage() {
+		return twdefaulttwitterhandlemessage;
+	}
 
 	public String getTitle() {
 		return this.title;
