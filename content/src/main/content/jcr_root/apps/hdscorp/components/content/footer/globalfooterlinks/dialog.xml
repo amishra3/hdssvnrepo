@@ -15,6 +15,11 @@
                         fieldLabel="Number of Columns"
                         name="./columns"
                         xtype="numberfield"/>
+                    <linkUrl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Logo Link URL"
+                        name="./logolinkUrl"
+                        xtype="pathfield"/>
                 </items>
             </tab1>
         </items>

@@ -55,6 +55,12 @@
                         name="./jcr:bopeninnew"
                         type="checkbox"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdpartyicon"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </blog>
         </items>

@@ -38,7 +38,7 @@
     						resourceType="hdscorp/components/content/footer/footersocialconnect" />
 
     				</div>
-    				<a href="#" class="footer-logo"><span class="sprite hitachi-footer-logo"></span></a>
+        <a href="${properties.logolinkUrl}" class="footer-logo"><span class="sprite hitachi-footer-logo"></span></a>
     			
     		
 </c:otherwise>

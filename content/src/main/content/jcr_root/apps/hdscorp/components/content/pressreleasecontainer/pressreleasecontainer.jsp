@@ -31,11 +31,7 @@
                         <input type="text" name ="fulltext" id="fulltext" placeholder="${model.searchText}">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                     </div>
-                    <c:if test="${not empty properties.prlinktext}">
-                    <div class="pr-md-con-cta">
-                   	 	<a class="animateLink" href="${properties.prllinkurl}" target="${properties.prtargettype?'_blank':'_self'}">${properties.prlinktext}${properties.prthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
-                    </div>
-					</c:if>
+
                     <div class="col-md-3 pr-list-archives">
                         <ul id="asideLinks">
 	                        <c:forEach var="filterUrl" items="${model.filterUrls}" varStatus="loopcnt">
@@ -53,7 +49,7 @@
 	                        		<c:set var="activeFilter" value="${true}"/>
 	                        		<c:set var="includetargetURL" value="${filterUrl.fullFilterUrl}.html"/>	                        	
 	                        	</c:if>
-	                        	
+
 	                        	
 	                        	<c:set var="filterHrefURL" value="${hdscorp:shortURL(currentPage.path)}"/>
 	                        	<c:set var="selectorHrefString" value="${hdscorp:concatString(filterUrl.filterText, '.html')}"/>
@@ -71,7 +67,14 @@
 	                            <c:set var="activeFilter" value="${false}"/>
                             </c:forEach>
                           </ul>
+					<c:if test="${not empty properties.prlinktext}">
+                            <div class="pr-md-con-cta">
+                                <a class="animateLink" href="${properties.prllinkurl}" target="${properties.prtargettype?'_blank':'_self'}">${properties.prlinktext}${properties.prthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                            </div>
+					</c:if>
                     </div>
+
+
                     <!-- Press Release List Content to Loaded here -->
 
                     <div id="contentCatagory">

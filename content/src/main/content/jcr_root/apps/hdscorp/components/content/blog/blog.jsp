@@ -17,7 +17,7 @@
 	<c:choose>
      <c:when test="${not empty blogModel.breadmore}">
          <div class="read-more">
-               <a href="${hdscorp:shortURL(blogModel.breadmorelink)}" class="animateLink" target="${blogModel.bopeninnew?'_blank':'_self'}">${blogModel.breadmore} <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+               <a href="${hdscorp:shortURL(blogModel.breadmorelink)}" class="animateLink" target="${blogModel.bopeninnew?'_blank':'_self'}">${blogModel.breadmore}${properties.thirdpartyicon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}</a>
           </div>
        </c:when>
         <c:otherwise>
