@@ -115,6 +115,7 @@
     margin-right: 10px;
 }
 .side-block a {
+	font-family: "museo-sans", Helvetica, Arial, sans-serif;
     color: #ce0000;
     float: left;
     font-size: 0.8125em;
@@ -126,6 +127,7 @@
 }
 .side-block a:hover {
     color: #ac1f25;
+	text-decoration: none;
 }
 .side-block:last-child {
     border-bottom: none;

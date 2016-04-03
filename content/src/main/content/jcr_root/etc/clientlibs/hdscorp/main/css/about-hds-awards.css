@@ -64,6 +64,18 @@
   }
 }
 
+@media screen and (max-width: 768px){
+  .pr-list .pr-list-container.isawardspage .pr-search{
+	 border: 5px solid #e6e6e6; 
+  }	
+  .pr-list .pr-list-container.isawardspage .pr-search > input{
+	  background: transparent;	  
+  }
+  .pr-list .pr-list-container.isawardspage .pr-search span.glyphicon.glyphicon-search{
+	  top: 5px;
+  }
+}
+
 @media screen and (max-width: 480px){
   .award-logo {
     /*width: 100%;*/

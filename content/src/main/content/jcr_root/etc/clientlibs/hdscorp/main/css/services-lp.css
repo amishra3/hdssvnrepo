@@ -275,17 +275,28 @@
   .service-support-main .section-service-col{margin-bottom:20px;}
   .millennials .millennials-container .millennials-content .learn{margin-bottom:0;}
   .accordion-level .accordion-menu-container .accordion-menu{font-size:1.1em}  
-    .news-insight-resources.news-insights-section .news-resources-col .headline a{font-size: 1.125em; font-weight: 700;text-transform: none; }
+   .news-insight-resources.news-insights-section .news-resources-col .headline a{
+	 font-size: 1.125em; 
+	 font-weight: 700;
+	 text-transform: none; 
+	 letter-spacing: normal;
+	}
   
   #insight-center-excellence .accordion-menu-container .accordion-menu, 
   #insight-it-operations .accordion-menu-container .accordion-menu, 
-  #analytics-accelerator-service .accordion-menu-container .accordion-menu{
+  #analytics-accelerator-service .accordion-menu-container .accordion-menu,
+   #sub-service-title .accordion-menu-container .accordion-menu, 
+   #hitachi-cloud-services .accordion-menu-container .accordion-menu, 
+   #sub-service-title .accordion-menu-container .accordion-menu{
 	 padding:20px 15px;		
   }
   
   #insight-center-excellence .accordion-menu-container .accordion-menu span.acc-label, 
   #insight-it-operations .accordion-menu-container .accordion-menu span.acc-label, 
-  #analytics-accelerator-service .accordion-menu-container .accordion-menu span.acc-label{
+  #analytics-accelerator-service .accordion-menu-container .accordion-menu span.acc-label,
+   #sub-service-title .accordion-menu-container .accordion-menu span.acc-label,
+   #hitachi-cloud-services .accordion-menu-container .accordion-menu span.acc-label,
+   #sub-service-title .accordion-menu-container .accordion-menu span.acc-label{
 	  padding-left:0	  
   }
   

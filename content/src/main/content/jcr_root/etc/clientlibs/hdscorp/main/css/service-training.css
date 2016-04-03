@@ -4,7 +4,7 @@
 }
 div.training {
     text-align: left!important;
-    padding: 60px 0 84px!important;
+    padding: 60px 0 84px;
 }
 .service-support-main .serv-training-overview h2 {
     font-family: "museo-slab", Helvetica, Arial, sans-serif;
@@ -20,7 +20,7 @@ div.training {
 .service-support-main .serv-training-overview h3 {
     font-size: 1.2em;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    text-transform: capitalize;
+    text-transform: none;
     margin: 0;
     padding: 0;
 }
@@ -229,19 +229,28 @@ div.training {
 .service-chart h2 {
     color: #000;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    font-size: 3.6em;
+    font-size: 3em;
     font-weight: 100;
     margin: 0;
     padding-bottom: 47px;
 }
 .service-chart p {
+	font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 12px;
     margin: 0 0 58px;
 }
 .service-chart p span {
-    font-family: "museo-sans", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
+
+.service-chart a.cert-matrix-link{
+	float: right;
+	color: #ce0000;
+    font-size: 0.8125rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+}
+
 .service-chart h3 {
     color: #000;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
@@ -338,10 +347,19 @@ div.training {
     }
 }
 @media only screen and (max-width: 768px) {
+	.service-support-main.training{
+		padding: 0;
+	}
+	.service-support-main.train-partner.training{
+		padding: 30px 0 20px;
+	}
     .train-resrcprdct-bx {
         margin: 0 0 15px 0;
     }
-    .service-chart table tr td table tr {
+	.service-chart{
+		padding: 40px 0 0;
+	}
+        .service-chart table tr td table tr {
         display: inline-block!important;
     }
     .service-chart .table-bordered > thead > tr > td,
@@ -373,6 +391,7 @@ div.training {
     }
     .service-support-main .serv-training-overview p {
         font-size: 1.1em;
+		padding-bottom: 20px;
     }
     .service-support-main .serv-training-overview h2 {
         font-size: 1.2em;
@@ -404,6 +423,11 @@ div.training {
     .serv-training-overview .training-learn {
         padding-bottom: 0;
     }
+	#training .resources-container h2.section-heading,
+	#certification .resources-container h2.section-heading{
+		display: block !important;
+		font-size: 2.5em;
+	}
 }
 @media only screen and (min-width: 768px) {
     /* .train-resrcprdct-bx{margin:0 15px 0 0;} */

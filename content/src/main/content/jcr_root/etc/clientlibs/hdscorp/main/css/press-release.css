@@ -379,7 +379,7 @@ color: #cccccc !important;
   }
 
 }	
-	
+
 @media (min-width: 320px) and (max-width: 991px) {  
   .pr-detail .pr-detail-container .pr-detail-desc h1{
     font-size: 1.5rem;
@@ -437,12 +437,20 @@ color: #cccccc !important;
   }
 }
 
-.pr-md-con-cta{float:left; width:100%; text-align:right;}
-.pr-md-con-cta a{color: #c00;
+.pr-md-con-cta{
+    float:left; 
+    width:100%; 
+    text-align: left; 
+    background: #ffffff;
+    padding: 10px 0 0;
+   }
+
+.pr-md-con-cta a{
+    color: #c00;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-weight: 900;
     letter-spacing: 0.15em;
-	font-size:0.9em;
+	font-size:1em;
     text-decoration:none;
 }
 

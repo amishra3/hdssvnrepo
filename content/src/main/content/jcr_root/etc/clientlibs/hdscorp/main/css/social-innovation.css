@@ -191,7 +191,7 @@
 }
 .social-innovation-article .si-article-content{
   margin-bottom: 40px;
-  font-size: 1.125rem;
+  font-size: 1.125em;
 }
 .social-innovation-article .si-article-content .icon{
   display: inline-block;
@@ -199,6 +199,8 @@
 }
 .social-innovation-article .si-article-content .desc{
   display: inline-block;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-weight: 300;
 }
 
 .social-innovation-article .si-article-more {
