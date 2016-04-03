@@ -12,6 +12,7 @@
 				var="nevcMultifield" varStatus="multfieldStatus">
 				<c:forEach items="${nevcMultifield}" var="nevcMultiObject"
 					varStatus="multiStatus">
+					 <c:set var="eventLandingURL" value="${hdscorp:shortURL(fn:substringBefore(nevcMultiObject.value,'$'))}" scope="request"/>
 					<div class="col-sm-4">
 
 						<c:choose>
