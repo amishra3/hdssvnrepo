@@ -118,6 +118,7 @@ public class NewsVerticalExplorerModel {
 				ValueMap properties = resource.adaptTo(ValueMap.class);
 
 				newsInsightExplorer.setTitle(properties.get("jcr:eventtitle", (String) null).toString());
+				newsInsightExplorer.setId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null).toString());
 
 				try {
 					newsInsightExplorer.setPubDate(ServiceUtil.getDisplayDateFormat(

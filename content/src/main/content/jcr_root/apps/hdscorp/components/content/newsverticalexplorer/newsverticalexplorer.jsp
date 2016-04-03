@@ -18,9 +18,17 @@
  <%@page import="java.util.Date"%>
 
 <c:if test="${properties.nveeventtype ne 'Blog'}">
-
+	<c:set var="eventLandingURL" value="${requestScope['eventLandingURL']}" />
+	
 	<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsVerticalExplorerModel" var="newsVerticalExplorer" />
-	<c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
+	<c:if test="${properties.nveeventtype ne 'Event'}">
+		<c:set var="linkUrl" value="${hdscorp:shortURL(newsVerticalExplorer.targetURL)}" />
+	</c:if>
+	
+	<c:if test="${properties.nveeventtype eq 'Event'}">
+		<c:set var="linkUrl" value="${eventLandingURL}#event-id=${newsVerticalExplorer.newsInsightExplorer.id}" />
+	</c:if>
+	
 	
 	<div class="pr-common-box hidden-xs">
 		<div class="icon">

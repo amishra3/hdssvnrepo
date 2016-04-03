@@ -43,7 +43,8 @@
                 <div data-events="${eventNodes.eventTyptagId}" 
                 data-startDate="${eventNodes.eventStartDate}" 
                 data-endDate="${eventNodes.eventEndDate}" 
-                data-region="${eventNodes.eventRegiontagId}" 
+                data-region="${eventNodes.eventRegiontagId}"
+                data-event-id="${eventNodes.eventId}" 
                 class="newsEvents">
                     <small> ${eventNodes.eventTyptagName}</small> 
                     
