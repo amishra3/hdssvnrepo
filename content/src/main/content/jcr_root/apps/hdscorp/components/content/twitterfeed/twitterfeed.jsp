@@ -129,10 +129,20 @@
 							<div class="icon">
 								<img src="${twitterFeedModel.iconPath}" alt="" title="">
 							</div>
+                       <c:choose>
 
-							<p>${twitterPostMsg}</p>
+						<c:when test="${not empty innerList.twitterHandle}">
 
+                            <h4>${innerList.twitterHandle}</h4>
+                      </c:when>
 
+						<c:otherwise>
+                     <h4>${twitterFeedModel.twdefaulttwitterhandlemessage}</h4>
+						</c:otherwise>
+
+                       </c:choose>
+
+                            <p>${twitterPostMsg}</p>
 
 							<p>${postedDate}${propertyValue}
 							<p>
