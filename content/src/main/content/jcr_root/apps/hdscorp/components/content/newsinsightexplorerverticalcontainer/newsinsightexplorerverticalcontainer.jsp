@@ -20,6 +20,7 @@
 						${nivcMultiObject.key}
 							<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>						
 					</a></h2>
+					 <c:set var="eventLandingURL" value="${hdscorp:shortURL(fn:substringBefore(nivcMultiObject.value,'$'))}" scope="request"/>               
 					<cq:include path="firstpar${multfieldStatus.count}" resourceType="/apps/hdscorp/components/content/newsinsightverticalexplorer" />
 				</div>
 			</c:forEach>
