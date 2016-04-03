@@ -78,9 +78,9 @@ var hds = window.hds || {};
         subListTab: function() {
             var allPanels = $('.product-listing li ul').hide();
             $('.product-listing li a').on('click', function(event ) {
-            	event.preventDefault();
-                hds.loadDataFilters.setHTMLContainer();
+            	event.preventDefault();                
                 if (!$(this).parent().hasClass('active')) {
+                	hds.loadDataFilters.setHTMLContainer();
                     $('#searchFilter').val('');
                     $('.toggleLinks a,.headerSort li a').removeClass('current');
                     $('.toggleLinks a:eq(0),.headerSort li a:eq(0)').addClass('current');
@@ -89,6 +89,11 @@ var hds = window.hds || {};
                     $('.countProducts').show();
                     allPanels.slideUp();
                     var content = $(this).attr('data-href');
+                    if($(window).width()<991){                    	
+                   	 $("body, html").animate({ 
+                            scrollTop: $( $(this)).offset().top                             
+                        }, 600);
+                   }
                     hds.loadDataFilters.loadCatagoryContent(content);
                     if ($(this).parent().index() == 0) {
                         $("#loadCatagoryContent").attr('data-content', 'all');
@@ -98,13 +103,7 @@ var hds = window.hds || {};
                     if ($(this).parent().has('ul').length) {
                         $(this).parent().find('ul').slideDown();
                     }
-                    if($(window).width()<991){
-                    	
-                    	 $("body, html").animate({ 
-                             scrollTop: $( $(this).data('href') ).offset().top
-                             
-                         }, 600);
-                    }
+                    
                 } else {
                     return false;
                 }
@@ -209,9 +208,8 @@ var hds = window.hds || {};
 	                var getSearchFilter = $(this).val();
 	                if (getSearchFilter.length > 0) {
 	                    hds.loadDataFilters.checkSearchEmpty();
-	                } else {
-	                   hds.loadDataFilters.checkSearchEmpty();
-	
+	                } else {	                 
+	                   return false;
 	                }                
             	}
             });
@@ -220,8 +218,7 @@ var hds = window.hds || {};
 	                var getSearchFilter = $('#searchFilter').val();
 	                if (getSearchFilter.length > 0) {
 	                    hds.loadDataFilters.checkSearchEmpty();
-	                } else {
-	                	hds.loadDataFilters.checkSearchEmpty();
+	                } else {	                	
 	                   return false;
 	                }              
 
@@ -257,7 +254,7 @@ var hds = window.hds || {};
                 haveTextInInput = null;
             }
              $('.product').find('li').addClass("filterText");
-            hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
+             hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
             setTimeout(function() {
                 hds.loadDataFilters.controlCount();
                  if ($(".product:visible").length === 0) {
