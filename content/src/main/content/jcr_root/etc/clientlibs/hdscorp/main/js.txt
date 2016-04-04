@@ -1,6 +1,7 @@
 #base=js
 vendor.js
 plugins.js
+jquery.inview.js
 hds-mobile-overlay.js
 hds-overlay-video.js
 hds-brithcove-impl.js
