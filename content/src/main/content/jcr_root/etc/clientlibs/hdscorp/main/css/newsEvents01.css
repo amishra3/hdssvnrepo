@@ -815,14 +815,30 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 }
 
 .date-picker-wrapper .month-wrapper table {
-    width: 190px;
+    width: 225px;
     float: left;
 }
 
 .date-picker-wrapper .month-wrapper table.month2 {
-    width: 190px;
+    width: 225px;
     float: left;
 }
+
+.date-picker-wrapper#trainingDetailCalendar .month-wrapper table{width: 225px;}
+.date-picker-wrapper#trainingDetailCalendar .month-wrapper table.month2{width: 225px;}
+
+.date-picker-wrapper#serviceTrainingCalendar .month-wrapper table{width: 236px;}
+.date-picker-wrapper#serviceTrainingCalendar .month-wrapper table.month2{width: 236px;}
+.caltitle{
+    text-align: center;
+    color: #333;
+    padding-bottom: 4px;
+	font-weight:bold; font-size:1.125em;
+}
+.caltitleinner{color:#cc0000; text-align:left;}
+.date-picker-wrapper .month-wrapper table th.caltitleinner{ text-align:left; font-weight:normal}
+
+
 
 .date-picker-wrapper .month-wrapper table th,
 .date-picker-wrapper .month-wrapper table td {
