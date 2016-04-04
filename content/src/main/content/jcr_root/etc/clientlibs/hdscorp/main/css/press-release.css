@@ -442,7 +442,7 @@ color: #cccccc !important;
     width:100%; 
     text-align: left; 
     background: #ffffff;
-    padding: 10px 0 0;
+    padding: 10px 0;
    }
 
 .pr-md-con-cta a{
@@ -451,6 +451,7 @@ color: #cccccc !important;
     font-weight: 900;
     letter-spacing: 0.15em;
 	font-size:1em;
+	padding: 0 20px;
     text-decoration:none;
 }
 

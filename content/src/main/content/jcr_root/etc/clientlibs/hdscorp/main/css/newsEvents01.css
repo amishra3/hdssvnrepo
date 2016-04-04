@@ -1274,7 +1274,6 @@ display:none;
     .pr-list .pr-list-container .pr-search > input {
         background: #c50000;
         color: #fff;
-        text-transform: uppercase;
     }
     .pr-list .pr-list-container.res-container .pr-search *::-moz-placeholder {
         color: #fff;

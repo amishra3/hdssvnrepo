@@ -158,7 +158,8 @@ text-transform:uppercase;
 /* End */
 .icon-border img{ margin-right:15px; float:left;}
 /*Explore */
-.pr-explore.news-explore .pr-explore-container h2 a:hover{
+.pr-explore.news-explore .pr-explore-container h2 a:hover, 
+.pr-explore.news-explore .pr-explore-container h2 a:focus{
 	text-decoration:none;
 }
 

@@ -264,6 +264,9 @@
   top: 2px;
   left: 5px;
 }
+.hero-homepage .hero-homepage-container p{
+max-width:950px; margin:0 auto;
+ }
 
 @media only screen and (min-width: 1280px) {
   .hero-homepage.healthcare {
