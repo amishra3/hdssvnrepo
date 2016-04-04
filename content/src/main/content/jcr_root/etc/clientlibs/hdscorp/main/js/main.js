@@ -102,13 +102,13 @@ $(document).ready(function () {
         var formTitle = $(this).attr('data-formtitle'); 
         var targetURL= $(this).attr('href');
         modal.find('.modal-header .title').text('').append(formTitle);
-        modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='700' frameborder='0' scrolling='no' id='hdsModalWindow' onload='setIframeHeight(this.id)'></iframe>");
+        modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='540' frameborder='0' scrolling='no' id='hdsModalWindow' onload='setIframeHeight(this.id)'></iframe>");
         modal.show(); 
     });
 
     $(window).resize(function() {
         if($(window).width() >= 768 ){
-            $('.modal-header button.close').trigger('click');
+            //$('.modal-header button.close').trigger('click');
             //document.getElementById('hdsModalWindow').contentWindow.location.reload();
         }                
     });
