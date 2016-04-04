@@ -21,7 +21,7 @@
 }
 
 .cloud-storage .cloud-storage-container .cloud-content h1 {
-    margin: 25% 0 20px;
+    margin: 20% 0 20px;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 3em;
@@ -80,14 +80,14 @@
 
 @media only screen and (min-width: 1280px) {
     .cloud-storage {
-        min-height: 625px;
+       /*  min-height: 625px; */
     }
 }
 
 @media only screen and (min-width: 992px) {
     .cloud-storage .cloud-storage-container .cloud-content,
     .cloud-storage .cloud-storage-container .cloud-image {
-        margin-bottom: 80px;
+        margin-bottom: 130px;
     }
 }
 
