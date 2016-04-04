@@ -21,7 +21,11 @@
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
 		<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
+<c:if test="${not empty properties.videooverlay}">
+  <c:set var="vid" value="${properties.simplebannervideoembedcode}" />
+    <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
 
+ </c:if>
 
 <c:choose>
 	<c:when test="${not empty properties.simplebannertitle}">
@@ -88,7 +92,7 @@
 							<c:otherwise>
                                 	<c:choose>
                                             <c:when test="${not empty properties.simplebannervideoembedcode}">
-                                                <a href="#" class="servers hidden-xs hidden-sm btn-play-video"></a>
+                                                <a href="${properties.videooverlay?'javascript:void(0);':'#'}" onclick="${!properties.videooverlay?'':vidurl}" class="servers hidden-xs hidden-sm btn-play-video"></a>
                                             </c:when>
                                         <c:otherwise>
                                         </c:otherwise>
@@ -108,6 +112,7 @@
 				</c:if>
 			</div>
 		</div>
+                    <c:if test="${empty properties.videooverlay}">
 		<c:if test="${empty properties.thirdpartyvideolink}">
 		<c:if test="${not empty properties.simplebannerusevideomodal}">
 			<div class="hero-product-solutions video clearfix"
@@ -127,6 +132,7 @@
 			</div>
 		</c:if>
 		</c:if>
+            </c:if>
 
 
 	</c:when>

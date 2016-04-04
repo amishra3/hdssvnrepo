@@ -58,16 +58,28 @@
                         fieldLabel="Customer Statement Author Details"
                         name="./customerstatementauthortext"
                         xtype="textfield"/>
-                    <readasestudylinktargeturl
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Read Case Study Target URL"
-                        name="./readasestudylinktargeturl"
-                        xtype="pathfield"/>
                     <readcasestudylinktext
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Label for Read Case Study"
                         name="./readcasestudylinktext"
                         xtype="textfield"/>
+                    <readasestudylinktargeturl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Read Case Study Target URL"
+                        name="./readasestudylinktargeturl"
+                        xtype="pathfield"/>
+                    <casestudyvid
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="video ID"
+                        name="./casestudyvid"
+                        xtype="textfield"/>
+                    <videooverlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in Video Overlay ?"
+                        key="videooverlay"
+                        name="./videooverlay"
+                        type="checkbox"
+                        xtype="selection"/>
                     <readcasestudylinkopeninnew
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"

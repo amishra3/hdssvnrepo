@@ -70,4 +70,9 @@
             <!--/ All Events are Loaded here -->
         </div>
     </c:forEach>   
+    								<div id="loadMoreMonth" class="btn-square-red load-more-link">
+										<a title="See Next 3 Months of Events"
+                                        href="javascript:void(0);">${evemodval}</a>
+									</div>
+
 </div>

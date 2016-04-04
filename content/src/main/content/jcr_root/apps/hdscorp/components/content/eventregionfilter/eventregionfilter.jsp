@@ -14,6 +14,7 @@
 
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.EventRegionFilterComponent" var="eventRegionFilterModel" />
 
+<c:set var="evemodval" value="${eventRegionFilterModel.seenextthreemonth}" scope="application" />
 
 <div class="tabbing-container">
 	<div class="content-container">
@@ -144,10 +145,7 @@
 								<div id="newsEventCatagory">
 									<cq:include path="eventservice"
 										resourceType="hdscorp/components/content/eventservice" />
-									<div id="loadMoreMonth" class="btn-square-red load-more-link">
-										<a title="See Next 3 Months of Events"
-                                        href="javascript:void(0);">${eventRegionFilterModel.seenextthreemonth}</a>
-									</div>
+
 
 								</div>
 							</div>

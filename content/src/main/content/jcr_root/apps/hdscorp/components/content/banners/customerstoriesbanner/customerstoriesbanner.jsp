@@ -13,7 +13,12 @@
 <c:if test="${fn:startsWith(buttonUrl,'/content/')}">
 	<c:set var="buttonUrl" value="${hdscorp:shortURL(buttonUrl)}" />
 </c:if>
+<c:if test="${not empty properties.videooverlay}">
+  <c:set var="csvid" value="${properties.casestudyvid}" />
+    <c:set var="csvidurl" value="hds.resourceLib._openvideooverlayById(${csvid});"/>
 
+ </c:if>
+<c:set var="vlinkurl" value="${properties.readasestudylinktargeturl}"/>
 
 <%--<div class="cs-section" style="background-image: url('${properties.storiesbannermagePath}');">--%>
     <div class="cs-section rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.storiesbannermagePath,properties.storiesbannermobileimage)} > 
@@ -37,7 +42,7 @@
                   <span>${properties.customerstatementauthortext}</span>
                 </div>
                 <div class="cs-highlight-box-read">
-                  <a class="animateLink" href="${properties.readasestudylinktargeturl}" target="${properties.readcasestudylinkopeninnew?'_blank':'_self'}">${properties.readcasestudylinktext}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+    				<a class="animateLink" href="${properties.videooverlay?'javascript:void(0);':vlinkurl}" onclick="${!properties.videooverlay?'':csvidurl}" target="${properties.readcasestudylinkopeninnew?'_blank':'_self'}">${properties.readcasestudylinktext}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                 </div>
               </div>
 
@@ -55,7 +60,7 @@
               <div class="cs-all">
                 <c:if test="${not empty properties.viewallctatext}">
                     <div class="cs-all-box btn-square btn-square-white">
-                      <a href="${buttonUrl}" target="_self">${properties.viewallctatext}</a>
+   <a href="${buttonUrl}" target="_self">${properties.viewallctatext}</a>
                 </div>
     		  </c:if>
               </div>

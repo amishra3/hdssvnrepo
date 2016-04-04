@@ -127,7 +127,7 @@
                         xtype="html5smartimage"/>
                     <simplebannervideoembedcode
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Video Embed code"
+                        fieldLabel="Video Embed code / Video ID"
                         name="./simplebannervideoembedcode"
                         xtype="textarea"/>
                     <thirdpartyvideolink
@@ -135,6 +135,13 @@
                         fieldLabel="Third Party Video"
                         name="./thirdpartyvideolink"
                         xtype="pathfield"/>
+                    <videooverlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in Video Overlay ?"
+                        key="videooverlay"
+                        name="./videooverlay"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
