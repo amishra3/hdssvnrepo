@@ -1,30 +1,42 @@
 <%@include file="/apps/foundation/global.jsp"%>
+<%@page import="com.hdscorp.cms.util.PageUtils"%>
+<%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page session="false" %>
-<sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.NewsInsightExplorerVerticalContainerModel" var="newsInsightContainerModel" />
+
+
+<c:set var="newinsightBlogList" value="<%=PageUtils.convertMultiWidgetToList(properties,"nilesectionlabel-nilesectionlink-nileopeninnewwindow-nithirdparty")%>" />
+
+
  <div class="explore-insight">
           <div class="explore-insight-container container-fluid">
 					<div class="row">
-						<c:forEach items="${newsInsightContainerModel.nivcList}" var="nivcMultifield" varStatus="multfieldStatus">
-							<c:forEach items="${nivcMultifield}" var="nivcMultiObject" varStatus="multiStatus">
-						<div class="container-fluid">
+<c:forEach items="${newinsightBlogList}" var="newinsightBlog" varStatus="newsinsightfieldStatus">
+
+
+    <div class="container-fluid">
 									<c:choose>
-                                        <c:when test="${fn:substringAfter(nivcMultiObject.value, '$') == '1'}"> 
-                                            <h2><a href="${fn:substringBefore(nivcMultiObject.value, "$")}" target="_blank" class="animateLink">${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
+                                          <c:when test="${newinsightBlog.nithirdparty == '1'}"> 
+                                            <h2><a href="${newinsightBlog.nilesectionlink}" target="_blank" class="animateLink"> ${newinsightBlog.nilesectionlabel}<span aria-hidden="true" class="glyphicon glyphicon-new-window"></span></a></h2>
+										</c:when>
+                                        <c:when test="${newinsightBlog.nileopeninnewwindow == '1'}"> 
+                                            <h2><a href="${newinsightBlog.nilesectionlink}" target="_blank" class="animateLink"> ${newinsightBlog.nilesectionlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
 										</c:when>
 										<c:otherwise>
-                                            <h2><a href="${fn:substringBefore(nivcMultiObject.value, "$")}" class="animateLink">${nivcMultiObject.key}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
+                                            <h2><a href="${newinsightBlog.nilesectionlink}" class="animateLink">${newinsightBlog.nilesectionlabel}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
 									   </c:otherwise>
 									</c:choose>
 						</div>
-						<div class="col-sm-6">    
-							<cq:include path="newsandinsightfirst${multfieldStatus.count}" resourceType="foundation/components/parsys" />
+
+    					<div class="col-sm-6">    
+							<cq:include path="newsandinsightfirst${newsinsightfieldStatus.count}" resourceType="foundation/components/parsys" />
 					    </div>
 						 <div class="col-sm-6"> 
-							<cq:include path="newsandinsightsecond${multfieldStatus.count}" resourceType="foundation/components/parsys" />
+							<cq:include path="newsandinsightsecond${newsinsightfieldStatus.count}" resourceType="foundation/components/parsys" />
 						</div>
-								</c:forEach>
 
-						</c:forEach>
+</c:forEach>
+
 					</div>
 			</div>
- </div> 
+ </div>                         
+

@@ -57,6 +57,25 @@
                                             value="2"/>
                                     </options>
                                 </nileopeninnewwindow>
+                                <nithirdparty
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Show third party icon?"
+                                    key="nithirdparty"
+                                    name="./nithirdparty"
+                                    type="select"
+                                    width="300"
+                                    xtype="selection">
+                                    <options jcr:primaryType="cq:WidgetCollection">
+                                        <opt1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="YES"
+                                            value="1"/>
+                                        <opt2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="NO"
+                                            value="2"/>
+                                    </options>
+                                </nithirdparty>
                             </items>
                         </fieldConfig>
                     </nivcmuultifield>
