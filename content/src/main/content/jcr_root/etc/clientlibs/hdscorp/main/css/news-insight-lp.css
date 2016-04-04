@@ -287,7 +287,7 @@
 }
 .explore-insight .explore-insight-container h2{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;
-  font-size: 1.55rem;
+  font-size: 1.5em;
   font-weight: 500;
   color: #000000;
   margin:0;
@@ -300,6 +300,10 @@
 .explore-insight h2 span.glyphicon.glyphicon-menu-right.animateIcon {
     top: 0px;
     font-size: 1rem;
+}
+
+.explore-insight .explore-insight-container h2 span.glyphicon.glyphicon-new-window{
+	font-size: 1rem;	
 }
 
 .explore-insight .explore-insight-container .insight-common-box{
