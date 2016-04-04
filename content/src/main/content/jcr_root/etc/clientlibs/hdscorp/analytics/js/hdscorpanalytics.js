@@ -19,114 +19,89 @@ var screenSize;
 var delay=4000;
 var gInternalSearchFilter="";
 var leadFormName="";
-
-//document.domain("hds.com");
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
 
-
-function childLoaded() {var dom = childGetElementById('Email'); console.log("email");}
-
-
-
-
 $(document).ready(function() {
-if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
-	{
-		desktopType="mobile";
-	}
+	if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
+		{
+			desktopType="mobile";
+		}
 	else if(window.outerWidth < 992 && /Mobi/.test(navigator.userAgent))
-	{
-		desktopType="tablet";
-	}
+		{
+			desktopType="tablet";
+		}
 	else if(/Mobi/.test(navigator.userAgent))
-	{
-		desktopType="tablet";
-	}
+		{
+			desktopType="tablet";
+		}
 	else
-	{
-		desktopType="desktop";
-	}
+		{
+			desktopType="desktop";
+		}
 
-if (screen.height < screen.width) {
-        orientation="landscape";
-    }
-    else{
-        orientation="portrait";
-    }
+	if (screen.height < screen.width) {
+			orientation="landscape";
+		}
+	else{
+			orientation="portrait";
+		}
 
 
 var screenSize = screen.width+"x" +screen.height;
 
-//console.log("count"+count);
-for(index=0;index<count;index++)
-{
- if(index>0 && index<(count-1) )
-  {
-    //console.log("index"+index);
-  	switch(index)
-  	{
-  		case 1:
-  		  primaryCategory=$.trim(items[index]);
-  		  break;
-  		  case 2:
-  		  subSection=$.trim(items[index]);
-  		  break;
+	for(index=0;index<count;index++)
+		{
+		 if(index>0 && index<(count-1) )
+		  {
+			switch(index)
+			{
+				case 1:
+					primaryCategory=$.trim(items[index]);
+					break;
+				  case 2:
+					subSection=$.trim(items[index]);
+					break;
+				}
+		  }
 		}
-  }
+	if(primaryCategory == "")
+		primaryCategory=pageTitle;
 
-}
-if(primaryCategory == "")
-	primaryCategory=pageTitle;
+	if(subSection == "" && items.length>=3)
+		subSection=$.trim(pageTitle);
 
-if(subSection == "" && items.length>=3)
-	subSection=$.trim(pageTitle);
+	if(isProductCategory())
+	{
+		setVirtualCategoryEvent();
 
-if(isProductCategory())
-{
-	setVirtualCategoryEvent();
+		var cLeftNav = $('ul[id=asideLinks]');
+		cLeftNav.each(function() {
 
-    var cLeftNav = $('ul[id=asideLinks]');
-	cLeftNav.each(function() {
+			var links = $(this).find("a");
+			links.each(function() {
 
-	 	var links = $(this).find("a");
-	 	links.each(function() {
-
-            $(this).click(function(){
-                setTimeout(function() {
-                setVirtualCategoryEvent();
-    			 }, 1000);
-             });
-        });
-	});
-}
-if(isLeadFormPage()){
-digitalData.page={
+				$(this).click(function(){
+					setTimeout(function() {
+					setVirtualCategoryEvent();
+					 }, 1000);
+				 });
+			});
+		});
+	}
 	
-	pageInfo:{
-	pageName: $.trim(pageTitle),
-	pageType: $.trim(primaryCategory),
-    },
-	category:{
-	primaryCategory: $.trim(primaryCategory),
-	}
-	}
-} else
-{
 	digitalData.page={
-	
-	pageInfo:{
-	pageName: $.trim(pageTitle),
-	pageType: $.trim(primaryCategory),
-	hier1: $.trim(data),
-    },
-	category:{
-	primaryCategory: $.trim(primaryCategory),
-	}
-	}
-}
+			pageInfo:{
+			pageName: $.trim(pageTitle),
+			pageType: $.trim(primaryCategory),
+			hier1: $.trim(data),
+			},
+			category:{
+			primaryCategory: $.trim(primaryCategory),
+			}
+		}
 
-digitalData.site={
+	digitalData.site={
         siteInfo:{
         language:"en",
         server:"hds",
@@ -607,16 +582,45 @@ $(".hero-homepage").each(function() {
      }
     });
 	
-	$(".tbd-dl").each(function(){
+	$(".tbd-dl, .cs-all-box").each(function(){
+		var panel="";
 		var listitem = $(this).find("a");
 		if(listitem.length>0){
 			listitem.each(function(){
 				var linktext = jQuery(this).text();
 				linktext = $.trim(linktext);
-				$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"button","Specifications-Panel"); });
+				if(linktext.indexOf("STUDIES")>-1){panel="Case Study";}
+				else if(linktext.indexOf("specifications")>-1){panel="Specifications-Panel";}
+				$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"button",panel); });
+				$(this).mousedown(function(e){
+				if(e.which == 3){
+					$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"button",panel); });
+					} 			
+				});
 			});                 
 		}
     });
+
+	// Alliance partners logo
+jQuery("div.partner-list").each(function() {
+		var links = jQuery(this).find("img");
+		var headingtext=$('.partner-program .heading').find("h2").text();
+	   links.each(function() {
+		 var linktext = jQuery(this).attr("title");
+		 linktext=$.trim(linktext);
+         if(linktext!="" || linktext.length > 0)
+		 {
+			$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",headingtext); });
+			$(this).mousedown(function(e){
+			if(e.which == 3){
+				globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",headingtext);
+				} 			
+			});
+		 }
+	  })
+
+	});	
+	
 $(".hds-quick-navigation").each(function() {
      var listitem = $(this).find("a");
      if( listitem.length>0)
@@ -634,6 +638,7 @@ $(".hds-quick-navigation").each(function() {
 		});                 
      }
     });	
+	
 $(".hds-main-navigation h5").each(function() {
      var listitem = $(this).find("a");
      if( listitem.length>0)
@@ -735,7 +740,19 @@ $(".hds-main-navigation h5").each(function() {
 
 	});		
 	
+//Featured P&S tracking 
 
+	$(".acs-commons-resp-colctrl-row .acs-commons-resp-colctrl-col .product-box .product-link").each(function() {
+     var listitem = $(this).find("a");
+	 var linktext = $(this).parent().find('.product-copy-main').text();
+          linktext = "Featured P&S-" + $.trim(linktext);
+            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Featured P&S"); });
+			$(this).mousedown(function(e){
+				if(e.which == 3){
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Featured P&S");
+				} 			
+			});
+    });
 	
 	// tabs on careers page
 	$(".PagerBar").each(function() {
@@ -790,6 +807,19 @@ $(".hds-main-navigation h5").each(function() {
         }
 
        });
+	   
+	   
+	/*// tabs on location page
+	$("#allRegion :selected").on("blur", function() {
+	 	var links = $(this).text();
+		if (links.indexOf("Select Region")>-1){}
+                var tabTitle = "Select Region:"+$.trim($(this).text()).toLowerCase().replace(/\s/g,"-");
+                tabClick(primaryCategory,tabTitle,pageTitle,"Worldwide Locations"); 
+            });
+	  	});
+
+	});*/
+	
 	//Added on 20160218
 	$('.talk .call').click(function(){
 		if(window.outerWidth < 992){
@@ -831,7 +861,7 @@ $(document).on('keypress', '#searchFilter', function(event) {
                          }, 1500);           
 
             });
-	$('.product-listing input.filters').each(function() {
+	$('.product-search-area .product-listing input.filters').each(function() {
 		 $(this).click(function(){
 			 setTimeout(function() {
 			   var text = $(this).parent().find("span").text();
@@ -880,105 +910,7 @@ $(document).on('keypress', '#searchFilter', function(event) {
 	  	});
 		});	
 
-
 });	
-
-// *****this section would perform the internal search tracking if the search page is hit *******  //
-// ***********************************************************************************************//
-
-if(isInternalSearchPage()){   
-		console.log("***************************internal search fired*****************");
-		setTimeout(function(){
-		var parentPageURL=window.document.referrer;
-		var result = $('#num_results').next('b').text();//$('.searchresultitem').size();
-		var searchTerm = $('#SearchTextBox').val();
-		var searchAction = "";
-		var pageName = "internal search results page";//digitalData.page.pageInfo.pageName;
-		result=result.toString();
-		if($('#SearchTextBox').val() != ""){
-		   searchAction = "search box"
-		}
-		if($('.dn-attr input:checkbox:checked').length > 0){
-		   searchAction = "sub category filter"
-		}
-
-		if(result == 0){
-			result='zero';
-			internalSearch(pageName, "internalSearch", "unsuccessful search", searchTerm, result)
-		}else{
-			internalSearch(pageName, "internalSearch", "success search", searchTerm, result)
-		}
-	function internalSearch(pageName, pageType,pageLoadEvent, searchTerm, result){
-			digitalData["page"]["pageInfo"]["searchAction"] = searchAction;
-			digitalData["page"]["pageInfo"]["searchResult"] = result;
-			digitalData["page"]["pageInfo"]["searchType"] = "internal search";
-			digitalData["page"]["pageInfo"]["searchPage"] = "parent page url";
-			digitalData["page"]["pageInfo"]["pageName"] = pageName;
-			digitalData["page"]["pageInfo"]["pageType"] = pageType;
-			digitalData["page"]["pageInfo"]["pageLoadEvent"] = pageLoadEvent;
-			if(searchTerm!="")
-				digitalData["page"]["pageInfo"]["searchTerm"]=searchTerm;
-			else
-				digitalData["page"]["pageInfo"]["searchTerm"]="no term searched";
-		}
-
-			$('.navpage').click(function(){
-			 var pagination = currentpagenumber;
-			 pagination(searchTerm,pagination, searchResultType)
-			});
-			$('.navnext, .navprev').click(function(){
-			 var pagination = currentpagenumber+1;
-			 pagination(searchTerm,pagination, searchResultType)
-			});
-			$('.navprev').click(function(){
-			 var pagination = currentpagenumber-1;
-			 pagination(searchTerm,pagination, searchResultType)
-			})
-		function pagination(searchTerm,pagination, searchResultType){ 
-			digitalData.eventData={ 
-				pagination: pagination, // pagination no."3",
-				searchTerm:searchTerm,
-				searchResultType:'internalSearch'
-
-			}    
-			_satellite.track('pagination');
-		}
-
-		$('.dn-attr-a').each(function(){
-			$(this).click(function(){
-				var searchfilter = $(this).attr('title');
-				var text = $(this).parent().parent().find('span').attr('title');
-				var isChecked=$(this).parent().find('a').size();
-				searchfilter=text + ":" + searchfilter;
-				if(isChecked == 1 ){
-				if (gInternalSearchFilter!=""){gInternalSearchFilter = gInternalSearchFilter + "," + searchfilter;}
-				else{gInternalSearchFilter = searchfilter;}}
-				Internalfilter(searchTerm,searchfilter)
-			});
-		});
-		function Internalfilter (searchTerm,searchfilter){ 
-			
-			    digitalData.eventData={ 
-				//searchTerm:searchTerm,
-				searchType:'internalSearch',
-				//searchFilters:searchfilter
-
-    } 
-			if(searchTerm!="")
-			digitalData["eventData"]["searchTerm"]=searchTerm;
-        else
-			digitalData["eventData"]["searchTerm"]="no term searched";
-		if(searchFilters!="")
-			digitalData["eventData"]["searchFilters"]=searchfilter;
-			_satellite.track('internalfilter');
-		}
-		},2000);
-		console.log("***************** internal search digital data fired*****************")
-}
-// ****************************************************************************************************************//
-// *****  --END-- the above section would perform the internal search tracking if the search page is hit *******  //
-
-
 
 //Press Releases, Awards and News Search events start here
 
@@ -1113,6 +1045,31 @@ $('.newsEvents-category-list .news-listing').each(function() {
              });
         });
 	});	
+
+// Training detail page search
+
+$(document).on('click', '.srching .search-course-btn', function(event) {
+    setTimeout(function() {
+        var searchTerm=$(".daterangepicker_input .search").val();
+        var result=$('#contentCatagory').find('.result-product .tab-content .category-products-listing .result-section').size();
+        result=result.toString();
+         if(result==0)
+             result="zero";
+        	searchClick(searchTerm, "search button",result,trainingFilters(),'training','specificSearchClick');
+      }, 1000); 
+    });
+
+$('#trainingDetail .Container-Results .product-listing li.active input.filters').on('click', function(event) {
+    setTimeout(function() {
+            var searchTerm=$(".daterangepicker_input .search").val();
+			var text=$(this).text();
+            var result=$('#contentCatagory').find('.result-product .tab-content .category-products-listing .result-section').size();
+        	result=result.toString();
+            if(result==0)
+            	result="zero";
+     		searchClick(searchTerm, "location filter",result,trainingFilters(),'training','specificSearchClick');
+         }, 1000); 
+    });
 
 //globalMenuClick(eventname,triggername,page)
 function globalMenuClick(eventName,triggerName,page,triggerType,Position){
@@ -1258,13 +1215,7 @@ function isErrorPage()
 	else
 		false;
 }
-function isInternalSearchPage(){
-	var url=$(location).attr('href');
-	if(url.indexOf("/search")>-1)
-		return true;
-	else
-		false;
-}
+
 function isResourceSearchPage(){
 	var url=$(location).attr('href');
 	if(url.indexOf("/en-us/news-insights/resources.html")>-1)
@@ -1350,4 +1301,36 @@ function eventsFilters()
 		 filters = filters+ "event search:" + $.trim(eventType);
 	});	
 	return filters.toLowerCase();
+}
+
+function trainingFilters()
+{
+	var selection = [];
+	var trafilters="";
+	 //var dropDown=$(".filter-option").text();
+	 var fromDate =$('#date-range200').val();
+	 var toDate =$('#date-range201').val();
+	 if($.trim(fromDate).length>0)
+		 trafilters = trafilters + "training search:from date-" + fromDate;
+	 if($.trim(toDate).length>0){
+		 if(trafilters.length>0)
+	 			trafilters=trafilters+",";
+		 trafilters = trafilters + "training search:to date-" + toDate; 
+	 }
+		 
+	$('#trainingDetail .Container-Results .product-listing li.active input.filters').each(function() 
+	{
+		if ($(this).is(':checked')) 
+			{selection.push($.trim($(this).parent().find("span").text()));}
+	});	
+	if(selection.length>0)
+		{
+			for(var i=0;i<selection.length;i++)
+			{
+				trafilters = trafilters + ",Training Search:Location-" + selection[i];
+			}
+		}
+	else if(trafilters==""){trafilters = "Training Search:Location-all";}
+	
+	return trafilters.toLowerCase();
 }
