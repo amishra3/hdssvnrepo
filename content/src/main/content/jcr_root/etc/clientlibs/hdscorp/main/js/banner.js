@@ -24,6 +24,6 @@ $(document).ready(function () {
 
 $(".ico-arrow-hm").click(function() {
     $('html, body').animate({
-        scrollTop: $(".cloud-storage").offset().top
+        scrollTop: $(".calculating-success").offset().top
     }, 1000);
 });
