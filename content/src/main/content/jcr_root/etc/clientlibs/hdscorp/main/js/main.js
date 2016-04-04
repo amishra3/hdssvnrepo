@@ -106,6 +106,9 @@ $(document).ready(function () {
         modal.show(); 
     });
 
+	$(document).on('click','.modal-header button.close',function(evt){
+        $('#modal').find('.modal-body').html('');
+    })
     $(window).resize(function() {
         if($(window).width() >= 768 ){
             //$('.modal-header button.close').trigger('click');

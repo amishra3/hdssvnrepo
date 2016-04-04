@@ -6753,6 +6753,24 @@ button.close {
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
   outline: 0;
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width:inherit;
+  height:inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+  pointer-events: all;
+}
+.modal .modal-vertical-align-section {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none;
+}
+.modal .modal-vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
 }
 
 .modal-backdrop {
@@ -6859,15 +6877,19 @@ button.close {
   overflow: scroll;
 }
 
-@media (max-width: 480px) {
-  .modal-header .title{
-    font-size: 1.2rem;
+@media (max-width: 767px) {
+  .modal-dialog {
+    width: 480px;
+    margin: 15px auto;
   }
 }
 @media (min-width: 768px) {
   .modal-dialog {
     width: 600px;
     margin: 15px auto;
+  }
+  .modal-header {
+    padding: 10px 20px 0px 15px;
   }
   .modal-content {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -6878,11 +6900,20 @@ button.close {
 }
 
 @media (min-width: 992px) {
-	.modal-dialog {
-    width: 980px;
-	}
+  .modal-dialog {
+    width: 1024px;
+  }
   .modal-lg {
-    width: 900px;
+    width: 1024px;
+  }
+}
+@media (max-width: 480px) {
+  .modal-header .title{
+    font-size: 1.2rem;
+  }
+  .modal-dialog {
+    width: 290px;
+    margin: 15px auto;
   }
 }
 
