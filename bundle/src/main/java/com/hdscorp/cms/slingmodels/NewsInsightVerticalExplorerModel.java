@@ -84,6 +84,11 @@ public class NewsInsightVerticalExplorerModel {
 	@Named("nibttopeninnewwindow")
 	@Default(values = { "false" })
 	private String openinnewwindow;
+	
+	@Inject
+	@Named("nibtbottompeninnewwindow")
+	@Default(values = { "false" })
+	private String bottomopeninnewwindow;
 
 	@Inject
 	@Named("nibtbeventtype")
@@ -136,6 +141,10 @@ public class NewsInsightVerticalExplorerModel {
 		return eventTypeBottom;
 	}
 
+	public String getBottomopeninnewwindow() {
+		return bottomopeninnewwindow;
+	}
+	
 	public NewsInsightExplorerModel getNewsInsightExplorerTop() {
 
 		Resource resource = null;
