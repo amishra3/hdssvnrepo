@@ -21,3 +21,9 @@ $(document).ready(function () {
 	}
 
 });
+
+$(".ico-arrow-hm").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".cloud-storage").offset().top
+    }, 1000);
+});
