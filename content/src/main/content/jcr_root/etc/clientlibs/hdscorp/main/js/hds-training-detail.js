@@ -180,7 +180,6 @@ var hds = window.hds || {};
 				$('.search').val(searchKey)
 			}
 			getResults(true);
-			$( "#trainingDetail" ).focus();
 			if(locations && locations != ""){
 				console.log($('input[id='+locations.toUpperCase()+']'))
 				setTimeout(function(){
@@ -404,6 +403,6 @@ var hds = window.hds || {};
 
 $(function() {
     if($('#trainingDetail').length>0){
-    hds.trainingDetail.init();
-}
+		hds.trainingDetail.init();
+	}
 })
