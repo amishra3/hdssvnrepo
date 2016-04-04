@@ -68,6 +68,12 @@
                         name="./commonbannertargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                     <commonbannerimageoverlaypath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}true"

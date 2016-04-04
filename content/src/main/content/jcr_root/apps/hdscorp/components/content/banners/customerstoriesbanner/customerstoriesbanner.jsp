@@ -8,7 +8,7 @@
 </wcmmode:edit>
 
 
-<c:set var="buttonUrl" value="${properties.viewallctatargeturl}" />
+<c:set var="buttonUrl" value="${properties.buttonUrl}" />
 
 <c:if test="${fn:startsWith(buttonUrl,'/content/')}">
 	<c:set var="buttonUrl" value="${hdscorp:shortURL(buttonUrl)}" />

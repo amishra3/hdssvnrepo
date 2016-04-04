@@ -52,7 +52,7 @@
     			</div>
     		</c:if>
     			<div class="scroll-down">
-    				<a href="javascript:void(0);"><span class="sprite icon-arrow-down"></span></a>
+    				<a class="ico-arrow-hm" href="javascript:void(0);"><span class="sprite icon-arrow-down"></span></a>
     			</div>
     		</div>
     	</div> 

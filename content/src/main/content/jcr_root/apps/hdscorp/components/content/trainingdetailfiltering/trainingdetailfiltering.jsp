@@ -47,7 +47,7 @@
                                             </div>
                                             <div class="col-md-2 key-wrd-src">
                                                 <div class="daterangepicker">
-                                                    <div class="daterangepicker_input visible-lg visible-md">
+                                                    <div class="daterangepicker_input">
                                                        <input type="text" class="search" placeholder="${trainingDetailFilterModel.tdfKeywordSearchLabel}">
                                                      </div>
                                                 </div>

@@ -35,7 +35,7 @@
                                  <c:if test="${not empty properties.commonbannerbuttonlabel}">
                                 <div class="btn-square-white request">
                                     <a href="${properties.commonbannerbuttonurl}" target="${properties.commonbannertargettype?'_blank':'_self'}">
-                                        ${properties.commonbannerbuttonlabel}
+                                        ${properties.commonbannerbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}
                                     </a>
                                 </div>
                             </c:if>
