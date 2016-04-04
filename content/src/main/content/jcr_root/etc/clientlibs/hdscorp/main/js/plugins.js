@@ -3441,6 +3441,15 @@ Nd.preparse=Zb,Nd.postformat=Zb,Nd._relativeTime=Md,Nd.relativeTime=$b,Nd.pastFu
       var w2 = box.find('.gap').width() + ( gapMargin ? gapMargin*2 : 0 );
       var w3 = box.find('.month2').width();
       box.find('.month-wrapper').width(w1 + w2 + w3);
+	  
+	  if($('#trainingDetail').length > 0){
+		$('.date-picker-wrapper').attr('id', 'trainingDetailCalendar')  
+	}
+	if($('#serviceTraining').length > 0){
+		$('.date-picker-wrapper').attr('id', 'serviceTrainingCalendar')  
+	}
+	
+	  
     }
 
     function renderTime (name, date) {
@@ -4235,7 +4244,7 @@ Nd.preparse=Zb,Nd.postformat=Zb,Nd._relativeTime=Md,Nd.relativeTime=$b,Nd.pastFu
       }
 
       var _colspan = opt.showWeekNumbers ? 6 : 5;
-      html += '<div class="month-wrapper">'
+      html += '<div class="caltitle">Select Start and End dates below.</div><div class="month-wrapper">'
         +'<table class="month1" cellspacing="0" border="0" cellpadding="0"><thead><tr class="caption"><th style="width:27px;"><span class="prev">&lt;</span></th><th colspan="'+_colspan+'" class="month-name"></th><th style="width:27px;">' + (opt.singleDate || !opt.stickyMonths ? '<span class="next">&gt;</span>': '') + '</th></tr><tr class="week-name">'+getWeekHead()+'</thead><tbody></tbody></table>';
 
       if ( hasMonth2() )
