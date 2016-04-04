@@ -18,7 +18,8 @@
 <cq:includeClientLib js="hdscorp.analytics"/>
 
 <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="plan-info" aria-hidden="true">
-    <div class="modal-dialog modal-full-screen">
+    <div class="modal-vertical-align-section">
+    <div class="modal-dialog modal-full-screen modal-vertical-align-center">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="title"></div>
@@ -30,5 +31,6 @@
                 <!-- /# content goes here -->
             </div>
         </div>
+    </div>
     </div>
 </div> 
