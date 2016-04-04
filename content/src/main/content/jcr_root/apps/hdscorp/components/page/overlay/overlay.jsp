@@ -24,10 +24,11 @@
 	  <!-- Load sidekick only when viewing page on its own -->
 	  <% if(currentPage.getPath().equals(resourcePage.getPath())) {  %>
 			<cq:include script="/libs/wcm/core/components/init/init.jsp"/>
+			<cq:includeClientLib js="hdscorp.main" />
 	  <%}%>
 		
 	
-		<cq:includeClientLib js="hdscorp.main" />	
+			
 		
 		<wcmmode:edit>
 			<cq:includeClientLib categories ="cq.widgets"/>
