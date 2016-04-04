@@ -42,6 +42,14 @@
                         fieldLabel="Item URL"
                         name="./nibtlabeltargeturl"
                         xtype="pathfield"/>
+                    <nibttopeninnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window?"
+                        key="nibttopeninnewwindow"
+                        name="./nibttopeninnewwindow"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
                     <nibteventtype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Event Type"
@@ -102,8 +110,8 @@
                     <nibttopeninnewwindow
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window?"
-                        key="nibtopeninnewwindow"
-                        name="./nibttopeninnewwindow"
+                        key="nibtbottompeninnewwindow"
+                        name="./nibtbottompeninnewwindow"
                         type="checkbox"
                         width="300"
                         xtype="selection"/>

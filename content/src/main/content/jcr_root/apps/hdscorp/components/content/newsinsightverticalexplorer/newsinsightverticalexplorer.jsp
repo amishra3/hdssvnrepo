@@ -44,10 +44,20 @@
 		<div class="type">${newsInsightVerticalExplorer.iconImageLabel}
 			${newsInsightVerticalExplorer.newsInsightExplorerTop.pubDate}</div>
 		<div class="spotlight-title">
-			<a href="${linkUrl}"
-				class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
-				aria-hidden="true"
-				class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+				<c:choose>
+				<c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
+					<a href="${linkUrl}"
+						target="_blank" class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
+						class="glyphicon glyphicon-new-window"
+						aria-hidden="true"></span></a>
+				</c:when>
+				<c:otherwise>
+					<a href="${linkBottomUrl}"
+						class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
+						class="glyphicon glyphicon-menu-right animateIcon"
+						aria-hidden="true"></span></a>
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
 </div>
@@ -76,10 +86,10 @@
 		<div class="spotlight-title">${newsInsightVerticalExplorer.newsInsightExplorerBottom.title}</div>
 		<div class="read-more">
 			<c:choose>
-				<c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
+				<c:when test="${newsInsightVerticalExplorer.bottomopeninnewwindow}">
 					<a href="${linkBottomUrl}"
 						target="_blank" class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
-						class="glyphicon glyphicon-menu-right animateIcon"
+						class="glyphicon glyphicon-new-window"
 						aria-hidden="true"></span></a>
 				</c:when>
 				<c:otherwise>
