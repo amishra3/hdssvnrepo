@@ -39,7 +39,7 @@ var hds = window.hds || {};
         },
         setSearchIframe: function() {
 			var iframe = $('#searchFrame');
-            var iframeUrl="http://wwwstage-revamp.hds.com/search?access=p&output=xml_no_dtd&client=hdsrevamp&proxystylesheet=hdsrevamp&sort=date:D:L:d1&oe=UTF-8&ie=UTF-8&ud=1&exclude_apps=1&site=hdsrevamp&q="+hds.gsasearch.getQueryParameter('q');
+            var iframeUrl="/search?access=p&output=xml_no_dtd&client=hdsrevamp&proxystylesheet=hdsrevamp&sort=date:D:L:d1&oe=UTF-8&ie=UTF-8&ud=1&exclude_apps=1&site=hdsrevamp&q="+hds.gsasearch.getQueryParameter('q');
 			 iframe.attr('src', iframeUrl);
         }
         ,
