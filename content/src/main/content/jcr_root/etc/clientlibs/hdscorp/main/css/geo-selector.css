@@ -50,6 +50,10 @@
 .hds_globalNav_geo-selc ul.nav li:last-child {
 	border-right: 1px solid #444444;
 }
+.hds_globalNav_geo-selc ul.nav{border-right: 1px solid #444444;}
+.hds_globalNav_geo-selc ul.nav li:last-child{display:none;}
+.tab-content > .tab-pane#regions{display:block; opacity:1; clear:both}
+.tab-content > .tab-pane#regions .states-names{border-top: 1px solid #444444;}
 .global-sel {
 	position: relative;
 }
@@ -101,7 +105,7 @@
 	display:block;
 }
 .hds_globalNav_geo-selc .tab-content .states-names {
-	margin-top: 25px
+	margin-top: 10px; overflow:hidden; padding-top:15px;
 }
 .hds_globalNav_geo-selc .tab-content .states-names ul {
 	list-style: none;
@@ -117,6 +121,7 @@
 	text-decoration: none;
 }
 @media only screen and (max-width:768px) {
+	.tab-content > .tab-pane#regions .states-names{border-top:none}
 	.hds-mobile-navigation .hds_globalNav_geo{
 	top:0;		
 		position:relative;	
