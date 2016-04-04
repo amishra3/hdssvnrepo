@@ -403,6 +403,11 @@ var hds = window.hds || {};
 
 $(function() {
     if($('#trainingDetail').length>0){
-		hds.trainingDetail.init();
-	}
+    hds.trainingDetail.init();
+	$( document ).ready(function() {
+		if(window.location.hash) {
+            window.scrollTo(0, $("#trainingDetail").offset().top);
+		}
+	});	
+}
 })
