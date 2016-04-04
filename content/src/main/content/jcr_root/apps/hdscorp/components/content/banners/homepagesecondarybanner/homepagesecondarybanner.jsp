@@ -16,7 +16,7 @@
 </c:if>
 
 
-<div class="cloud-storage" style="background: url('${properties.secondarybanner}') no-repeat;">
+<div class="cloud-storage" style="background: url('${properties.secondarybanner}') no-repeat;background-size: cover;">
 	<div class="cloud-storage-container content-container clearfix col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="cloud-content col-sm-9 col-md-7 ${properties.secondarycontentalign?'floatright':''}">
 			<h1>${properties.secondaryherotitlecontent}</h1>
