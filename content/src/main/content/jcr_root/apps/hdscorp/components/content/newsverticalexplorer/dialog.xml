@@ -2,7 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
     height="600"
-    title="News Insights Vertical Explorer Component"
+    title="News Vertical Explorer"
     xtype="dialog">
     <items
         jcr:primaryType="cq:Widget"
@@ -69,6 +69,10 @@
                                 jcr:primaryType="nt:unstructured"
                                 text="Resource"
                                 value="Resource"/>
+                            <opt5
+                                jcr:primaryType="nt:unstructured"
+                                text="Blog"
+                                value="Blog"/>
                         </options>
                     </nveeventtype>
                     <thirdparty
@@ -78,6 +82,11 @@
                         type="checkbox"
                         width="300"
                         xtype="selection"/>
+                    <nvecondesc
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Item Description(Only for Blog)"
+                        name="./nvecondesc"
+                        xtype="textfield"/>
                 </items>
             </bottom>
         </items>

@@ -1,8 +1,6 @@
 <%--
 
-  News Insights Big Tile Component component.
-
-  This is news insights big tile component
+  News Veritical Explorer component.
 
 --%>
 <%@include file="/apps/foundation/global.jsp"%>
@@ -57,6 +55,26 @@
 
 <c:if test="${properties.nveeventtype eq 'Blog'}">
 
-<!-- 	<cq:include path="resourctatpar" resourceType="hdscorp/components/content/newsinsightsbigtile" /> -->
 
+
+<div class="pr-common-box hidden-xs">
+		<div class="icon">
+			<img src="${properties.nveiconbimagepath}" alt="" title="">
+		</div>
+		<div class="type">${properties.nveiconbimagelabel}</div>
+    <div class="description">${properties.nvecondesc}</div>
+		<div class="read-more">
+			<c:choose>
+				<c:when test="${properties.nveopeninnewwindow}">
+					<a href="${properties.nvelabelbtargeturl}" target="_blank" class="animateLink">${properties.nveiconreadmorelabel}
+						${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
+					</a>
+				</c:when>
+				<c:otherwise>
+					<a href="${properties.nvelabelbtargeturl}"  target="_blank" class="animateLink">${properties.nveiconreadmorelabel}
+                        ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
 </c:if>
