@@ -102,7 +102,7 @@ $(document).ready(function () {
         var formTitle = $(this).attr('data-formtitle'); 
         var targetURL= $(this).attr('href');
         modal.find('.modal-header .title').text('').append(formTitle);
-        modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='540' frameborder='0' scrolling='no' id='hdsModalWindow' onload='setIframeHeight(this.id)'></iframe>");
+        modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='540' frameborder='0' scrolling='no' id='hdsModalWindow' onload='setIframeHeight(this.id)'></iframe><div id='modal-loading'></div>");
         modal.show(); 
     });
 
@@ -166,4 +166,5 @@ function setIframeHeight(id) {
     ifrm.style.height = "10px";
     ifrm.style.height = getDocHeight( doc ) + 4 + "px";
     ifrm.style.visibility = 'visible';
+	document.getElementById('modal-loading').style.display = 'none';
 }

@@ -6841,6 +6841,17 @@ button.close {
   padding: 10px 15px 5px 15px;
 }
 
+.modal-body #modal-loading{
+  background: url("../images/load-indicator.gif") no-repeat 50% 50% #ffffff;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
 .modal-footer {
   padding: 15px;
   text-align: right;
