@@ -37,7 +37,7 @@ var ResponsiveBootstrapToolkit = ResponsiveBootstrapToolkit || {};
 	/**
 	 * Click to call phone number on mobile
 	 */
-    phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
+    var phoneDialNumber = ((/iphone|android|ie|blackberry|fennec/).test(navigator.userAgent.toLowerCase()) && 'ontouchstart' in document.documentElement);
 	//})( jQuery, ResponsiveBootstrapToolkit );
 
 	/**
@@ -61,9 +61,9 @@ $(document).ready(function () {
 	/**
 	 * Black Color Breadcrumb
 	 */
-    if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions, .bannerCarsoul").length > 0){
-        $('.breadcrumb-container .breadcrumb').addClass('black');
-		$('.hds-main-navigation-container').addClass('navwithouthero');
+    if (!$(".common-hero-banner, .common-hero-short-banner, .hero-product-solutions, .bannerCarsoul, .hero-homepage").length > 0){
+        $('.breadcrumb-container .breadcrumb').addClass('black');       
+		$('.hds-main-navigation-container').addClass('navwithouthero');        
     }
 	
 	/**

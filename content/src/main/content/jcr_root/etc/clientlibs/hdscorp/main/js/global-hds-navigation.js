@@ -21,7 +21,7 @@ var hds = window.hds || {};
         matchLocale : function(pageUrl){
         	if(pageUrl){
         		if(/(en_us|en-us)/.test(pageUrl)){        			
-        			$('a#showGeo').find('span.labelText').after('U.S.A');
+        			$('a#showGeo').find('span.labelText').after('U.S.A.');
         		}
         	}        	
         },
