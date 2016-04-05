@@ -6736,6 +6736,7 @@ button.close {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 10000 ;
+  background:rgba(0,0,0,0.75);
 }
 
 .modal-dialog {
