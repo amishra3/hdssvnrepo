@@ -122,7 +122,7 @@ public class NewsVerticalExplorerModel {
 
 				try {
 					newsInsightExplorer.setPubDate(ServiceUtil.getDisplayDateFormat(
-							properties.get("jcr:eventenddate", (String) null).toString(),
+							properties.get("jcr:eventstartdate", (String) null).toString(),
 							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 				} catch (ParseException e) {
 					log.info("Exception occurs duing getting value from Node: " + e);

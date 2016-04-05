@@ -177,7 +177,7 @@ public class NewsInsightVerticalExplorerModel {
 				newsInsightExplorerTop.setId(properties.get(ServiceConstants.EVENT_JCR_EVENT_ID, (String) null).toString());
 				try {
 					newsInsightExplorerTop.setPubDate(ServiceUtil.getDisplayDateFormat(
-							properties.get("jcr:eventenddate", (String) null).toString(),
+							properties.get("jcr:eventstartdate", (String) null).toString(),
 							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 										
 				} catch (ParseException e) {
@@ -276,7 +276,7 @@ public class NewsInsightVerticalExplorerModel {
 
 				try {
 					newsInsightExplorerBottom.setPubDate(ServiceUtil.getDisplayDateFormat(
-							properties.get("jcr:eventenddate", (String) null).toString(),
+							properties.get("jcr:eventstartdate", (String) null).toString(),
 							ServiceConstants.DATE_FORMAT_FROM_EVENT, ServiceConstants.DATE_FORMAT_TO_FULL_MONTH_YEAR));
 				} catch (ParseException e) {
 					log.info("Exception occurs duing getting value from Node: " + e);
