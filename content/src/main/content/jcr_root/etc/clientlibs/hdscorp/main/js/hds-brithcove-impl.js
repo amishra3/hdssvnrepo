@@ -1,4 +1,4 @@
-var player, modVP, currentVideo;
+var player, modVP, modExp, currentVideo,brightcove;
 
 function onTemplateLoad(experienceID) {
 
@@ -9,14 +9,62 @@ function onTemplateLoad(experienceID) {
     captionsModule.setLanguage(gObj[experienceID].language);
     captionsModule.loadDFXP(gObj[experienceID].href, gObj[experienceID].id);
     modVP = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+    modExp.addEventListener(brightcove.api.events.ExperienceEvent.TEMPLATE_READY, onTemplateReady);
 }
 
 function onTemplateReady(event) {
     modVP.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onMediaEventFired);
+    modExp = player.getModule(brightcove.api.modules.APIModules.EXPERIENCE);
+    
+    modVP.addEventListener(brightcove.api.events.MediaEvent.PLAY, onPlay);
+    modVP.addEventListener(brightcove.api.events.MediaEvent.STOP, onStop);
+    modVP.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, onProgress);
 }
 
 function onMediaEventFired(evt) {
     onVideoPlayBeginCallBack(modVP.getCurrentVideo(onVideoPlayBeginCallBack));
+}
+
+function onPlay(evt){
+	mediaLength=evt.duration;  //Required video duration
+	mediaOffset=Math.floor(evt.position); //Required video position
+	mediaID=(evt.media.id).toString();  //Required video id
+	mediaFriendly=evt.media.displayName; //Required video title
+	mediaName=mediaID+":"+mediaFriendly; //Required Format video name
+	//mediaRefID=evt.media.referenceId;  //Optional reference id
+	//mediaPlayerType=player.type; //Optional player type
+	//mediaTagsArray=evt.media.tags; //Optional tags
+	//or (i=0;i<mediaTagsArray.length;i++) {mediaTagsArray2[i]=mediaTagsArray[i]['name'];}
+	/* Check for start of video */
+		if (mediaOffset==0){
+			/* These data points are optional. If using SC14, change context data variables to hard coded variable names and change trackVars above. */
+			//s.contextData['bc_tags']=mediaTagsArray2.toString(); //Optional returns list of tags for current video.  Flash only.
+			//s.contextData['bc_refid']=mediaRefID; //Optional returns reference id
+			//s.contextData['bc_player']=mediaPlayerName; //Optional player name is currently hard coded.  Will be dynamic in later releases.
+			//s.contextData['bc_playertype']=mediaPlayerType; //Optional returns flash or html
+			s.Media.open(mediaName,mediaLength,mediaPlayerName);
+			s.Media.play(mediaName,mediaOffset);}
+		else{
+			s.Media.play(mediaName,mediaOffset);
+		}
+}
+
+function onStop(evt){
+	mediaOffset=Math.floor(evt.position);
+	if (mediaOffset==mediaLength) {
+		s.Media.stop(mediaName,mediaOffset);
+		s.Media.close(mediaName);}else{
+		s.Media.stop(mediaName,mediaOffset);
+	}
+}
+
+function onProgress(evt){
+	s.Media.monitor = function (s,media) {
+		if (media.event == "MILESTONE") {
+		/* Use to set additional data points during milestone calls */
+		//s.Media.track(media.name); Uncomment if setting extra milestone data.
+		}
+	}
 }
 
 function onVideoPlayBeginCallBack(currentVideo) {
@@ -35,13 +83,9 @@ function initiateVideo() {
             protocol = window.location.protocol;
         }
 
-        if (protocol == 'https') {
-            bcUrl = 'https://sadmin.brightcove.com/js/BrightcoveExperiences.js';
-            bcApi = 'https://sadmin.brightcove.com/js/APIModules_all.js';
-        } else {
-            bcUrl = 'https://sadmin.brightcove.com/js/BrightcoveExperiences.js';
-            bcApi = 'https://sadmin.brightcove.com/js/APIModules_all.js';
-        }
+        bcUrl = '//sadmin.brightcove.com/js/BrightcoveExperiences.js';
+        bcApi = '//sadmin.brightcove.com/js/APIModules_all.js';
+            
         if (!window.brightcove) {
             $('#loading').hide();
             $.getScript(bcUrl, function(data, textStatus, jqxhr) {
@@ -59,7 +103,7 @@ function initiateVideo() {
             }
             if (window.brightcove) {
                 window.setTimeout(function() {
-                    window.brightcove.createExperiences()
+                    window.brightcove.createExperiences();
                 }, 301);
             } else {
                 console.log('Brightcove not loaded');
@@ -69,18 +113,20 @@ function initiateVideo() {
 }
 var gblPlayingVideo;
 $(document).on('click', 'a.l-overlay', function(e) {
+    e.preventDefault();
     $('#loading').hide();
     videobox = new HDS.Lightbox();
     var $this = $(this);
-    var $PreObject = $this.find('.overlay-content');
-    var object = $PreObject.find('object').parent().addClass('video-div');
-    gblPlayingVideo = object.html();
-    object.html('');    
-    videobox.setContent('')
-    videobox.setContent($('#' + $(this).data('target-content')).html());    
-    videobox.show();
-    initiateVideo();
-    e.preventDefault();
+    var videoID = $this.attr("data-target-content");
+    hds.resourceLib._openvideooverlayById(videoID.replace("rl",""));
+//    var $PreObject = $this.find('.overlay-content');
+//    var object = $PreObject.find('object').parent().addClass('video-div');
+//    gblPlayingVideo = object.html();
+//    object.html('');    
+//    videobox.setContent('')
+//    videobox.setContent($('#' + $(this).data('target-content')).html());    
+//    videobox.show();
+//    initiateVideo();
 });
 $(document).on('click', '.close-overlay', function(event) {
 

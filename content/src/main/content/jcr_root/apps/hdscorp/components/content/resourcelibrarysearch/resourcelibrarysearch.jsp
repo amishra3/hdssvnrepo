@@ -37,17 +37,17 @@ String videooverlaymarkup ="<object class='BrightcoveExperience' id='#videoGuid'
 	        		<h3>
 	        			<a href="javascript:void(0)" class="l-overlay animateLink" data-is-video="true" data-target-content="rl${resource.videoTitleId}" 
 	                               target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
-						<div class="overlay-content" id="rl${resource.videoTitleId}">
+<%-- 						<div class="overlay-content" id="rl${resource.videoTitleId}"> --%>
 						
-						<c:set var="videooverlaymarkup" value="${fn:trim(videooverlaymarkup)}"/>
+<%-- 						<c:set var="videooverlaymarkup" value="${fn:trim(videooverlaymarkup)}"/> --%>
 						
-						 <c:set var="videooverlaymarkup" value="${fn:replace(videooverlaymarkup,'#videoGuid',resource.videoGuid)}"/>
-						 <c:set var="videooverlaymarkup" value="${fn:replace(videooverlaymarkup,'#videoTitleId',resource.videoTitleId)}"/>                          
-	                          <div class="">
+<%-- 						 <c:set var="videooverlaymarkup" value="${fn:replace(videooverlaymarkup,'#videoGuid',resource.videoGuid)}"/> --%>
+<%-- 						 <c:set var="videooverlaymarkup" value="${fn:replace(videooverlaymarkup,'#videoTitleId',resource.videoTitleId)}"/>                           --%>
+<!-- 	                          <div class=""> -->
 	                          
-		                          ${videooverlaymarkup}
-	                          </div>
-						</div>
+<%-- 		                          ${videooverlaymarkup} --%>
+<!-- 	                          </div> -->
+<!-- 						</div> -->
 					</h3>
 		    </c:when>
 	    
