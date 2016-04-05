@@ -32,10 +32,22 @@
   border-top: 76px solid #ffffff;
   z-index: -1;
 }
+
+/* home page overlay hexagon */
+.homepage .hexagon:before, .homepage .hexagon:after{
+	border: none;
+}
+
+.homepage .hexagon{
+	width: 390px;
+	background: none;	
+}
+
 @media only screen and (min-width: 1024px) {
 .hexagon:before{top:-76px}
 .hexagon:after{bottom:-76px}
 }
+
 .hexagon270 {
   top: 56px;
   width: 270px;

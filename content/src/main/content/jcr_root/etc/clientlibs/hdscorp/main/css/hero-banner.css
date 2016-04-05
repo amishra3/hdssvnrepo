@@ -1,6 +1,6 @@
 .hero-homepage {
   position: relative;
-  padding: 70px 15px 90px 15px;
+  padding: 70px 15px 40px;
 }
 
 .hero-homepage .hero-homepage-container {
@@ -167,13 +167,13 @@
 
 .hero-homepage.healthcare {
   display: none;
-  background: url("../images/hero-doctors.jpg") top center no-repeat;
+  /* background: url("../images/hero-doctors.jpg") top center no-repeat; */
 }
 
 .hero-homepage.healthcare .hero-homepage-container > h1 {
   margin: 15px 0 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   font-size: 3em;
   line-height: 1;
 }
@@ -182,17 +182,19 @@
   margin-bottom: 12px;
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.125em;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: normal;
 }
 
 .hero-homepage.healthcare .hero-homepage-container > p {
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
-  font-size: 1.125em;
-  line-height: 1;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .hexagon-connect, .hero-homepage.healthcare .hero-homepage-container .hexagon-transform, .hero-homepage.healthcare .hero-homepage-container .hexagon-advance {
@@ -212,10 +214,10 @@
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list {
-  margin-top: 35px;
+  margin-top: 20px;
   padding: 0;
   list-style-type: none;
-  min-height: 380px;
+  min-height: 300px;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li {
@@ -226,16 +228,17 @@
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li h4 {
-  color: #000000;
+  color: #ffffff;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 1.125em;
+  font-size: 1.25em;
   line-height: 1;
-  margin: 0 10px 10px;
+  margin: 20px 10px 10px;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li p {
-  margin: 0 10px;
+  color: #ffffff;
+  margin: 0 10px 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-size: 1.125em;
   line-height: 110%;
@@ -254,9 +257,17 @@
   font-weight: 800;
   font-size: 0.8125em;
   line-height: 1.2em;
-  color: #c91c13;
+  color: #ffffff;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a.animateAnchor{
+	left: 2px;
+}
+
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li .animateAnchor:hover > .animateIcon{
+	color: #ffffff;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a .icon-caret-red {
@@ -279,7 +290,7 @@ max-width:950px; margin:0 auto;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#012e32+0,121a1a+100 */
     background: #012e32;
     /* Old browsers */
-    background-image: url("../images/hero-doctors_gradient.jpg");
+    /* background-image: url("../images/hero-doctors_gradient.jpg"); */
     background-image: url("../images/hero-doctors_gradient.jpg"), linear-gradient(to bottom, #012e32 0%, #121a1a 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#012e32', endColorstr='#121a1a',GradientType=0 );
@@ -289,7 +300,7 @@ max-width:950px; margin:0 auto;
     background-position: top left;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li {
-    margin-bottom: 190px;
+    margin-bottom: 120px;
   }
 }
 
@@ -313,32 +324,32 @@ max-width:950px; margin:0 auto;
     padding-top: 0;
     top: 56px;
     width: 270px;
-    height: 144px;
+    height: auto;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon:before {
-    top: -76px;
+    /* top: -76px;
     border-left: 135px solid transparent;
     border-right: 135px solid transparent;
-    border-bottom: 76px solid #ffffff;
+    border-bottom: 76px solid #ffffff; */
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon:after {
-    bottom: -76px;
+    /* bottom: -76px;
     border-left: 135px solid transparent;
     border-right: 135px solid transparent;
-    border-top: 76px solid #ffffff;
+    border-top: 76px solid #ffffff; */
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon h4 {
     font-weight: 500;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon a {
-    top: 120px;
+    top: 150px;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-connect {
     background-image: url(../images/sprite.png);
     background-position: -60px -215px;
 	background-size: 100% auto;
-    width: 27px;
-    height: 44px;
+    width: 70px;
+    height: 70px;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-transform {
     background-image: url(../images/sprite.png);
@@ -390,7 +401,7 @@ max-width:950px; margin:0 auto;
   .hero-homepage.healthcare {
     display: none;
     padding-top: 120px;
-    background-size: auto 40%;
+    background-size: cover;
     background-position: top left;
   }
   .hero-homepage.healthcare .hero-homepage-container > h1 {
@@ -409,6 +420,7 @@ max-width:950px; margin:0 auto;
     font-size: 0.8125em;
     line-height: 1;
     line-height: 150%;
+	width: 100%;
   }
   .hero-homepage.healthcare .hero-homepage-container .close-hero {
     right: 15px;

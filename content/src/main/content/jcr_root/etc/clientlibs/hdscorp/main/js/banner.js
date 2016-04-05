@@ -14,8 +14,10 @@ $(document).ready(function () {
 		$generalList.click(function(event){
 			event.preventDefault();
 			var tabClass = $(this).attr('data-class');
+            var tabImage = $(this).next('.hiddencontent').find('.hero-homepage-container').attr('data-indtab');
 			var tabHtml = $(this).next('.hiddencontent').html();
 			$heroHomepage.siblings('.list-content-container').addClass(tabClass).append(tabHtml).fadeIn(1000);
+            $heroHomepage.siblings('.list-content-container').css("background-image", "url(" + tabImage + ")");
 			$heroHomepage.siblings('.general').hide();
 		})
 	}

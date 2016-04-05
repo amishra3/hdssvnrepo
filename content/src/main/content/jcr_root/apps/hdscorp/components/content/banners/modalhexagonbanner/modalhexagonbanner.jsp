@@ -5,6 +5,7 @@
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
+<c:set var="heximagePath" value="${properties.heximagePath}"  />
 
 <c:set var="linkUrl" value="${properties.hexbuttonurl}" />
 
@@ -20,7 +21,8 @@
 <c:choose>
 	<c:when test="${not empty properties.hextitlecontent}">
         <c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardlinklabel-placardlinkurl-seemorenewwin-thirdparty")%>" />
-            <div class="hero-homepage-container">
+
+              <div class="hero-homepage-container" data-indtab="${heximagePath}">
                 <a href="javascript:void(0);" class="close-hero"><span class="sprite icon-close-hero"></span></a>
                 <c:if test="${not empty properties.bannericonpath}">
                     <!-- IF ICON PATH IS PRODIVDED -->
@@ -32,18 +34,19 @@
                 <h4>${properties.hexsubtitlecontent}</h4>
                 <p>${properties.hexcontent}</p>
 
-                <ul class="healthcare-list">
+
+                  <ul class="healthcare-list">
                     <c:forEach var="placardList" items="${placardList}" varStatus="loop">
                         <c:set var="placardTitle" value="${placardList.placardTitle}" />
                         <c:set var="placardIconPath" value="${placardList.placardIconPath}" />
                         <c:set var="placardcontent" value="${placardList.placardcontent}" />
                         <c:set var="placardlinklabel" value="${placardList.placardlinklabel}" />
 						<c:set var="placardlinkurl" value="${placardList.placardlinkurl}" />
-						
+
 						<c:if test="${fn:startsWith(placardlinkurl,'/content/')}">
 							<c:set var="placardlinkurl" value="${hdscorp:shortURL(placardlinkurl)}" />
 						</c:if>
-	                                            
+
 	                    <li class="hexagon-connect hexagon">
 	                        <span class="sprite icon-connect" style="background-image: url(${placardIconPath});background-position: 0 0;background-repeat:no-repeat;"></span>
 	                        <h4>${placardTitle}</h4>
@@ -54,7 +57,8 @@
                 </c:forEach>
                 </ul>
             </div>
-	</c:when>
+
+        </c:when>
 	<c:otherwise>
 		<wcmmode:edit>
 			<p>
