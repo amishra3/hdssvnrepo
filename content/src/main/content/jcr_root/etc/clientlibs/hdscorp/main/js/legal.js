@@ -4,6 +4,9 @@ var hds = window.hds || {};
     hds.loadDataFiltersLegal = {
         init: function() {
             hds.loadDataFiltersLegal.loadCatagoryContentLegal();
+//        	hds.loadDataFiltersLegal.bindHTMLLoad();
+//        	$('.leftsidelisting > ul > li').eq(0).addClass('active');
+//        	$("#loadCatagoryContent").removeAttr('data-content');
             hds.loadDataFiltersLegal.checkForNestedUl();
             hds.loadDataFiltersLegal.subListTabLegal();
             hds.loadDataFiltersLegal.bindEventsOnResizeLegal();

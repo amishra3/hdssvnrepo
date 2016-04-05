@@ -1,7 +1,7 @@
 var player, modVP, modExp, currentVideo,brightcove;
 
 function onTemplateLoad(experienceID) {
-
+	brightcove = window.brightcove ;
     player = brightcove.getExperience(experienceID);
     captionsModule = player.getModule(brightcove.api.modules.APIModules.CAPTIONS);
     captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_SUCCESS, onDFXPLoadSuccess);
@@ -118,7 +118,9 @@ $(document).on('click', 'a.l-overlay', function(e) {
     videobox = new HDS.Lightbox();
     var $this = $(this);
     var videoID = $this.attr("data-target-content");
-    hds.resourceLib._openvideooverlayById(videoID.replace("rl",""));
+    videoID = videoID.replace("rl","");
+    hds.resourceLib._openvideooverlayById(videoID);
+//    onTemplateLoad("video"+videoID);
 //    var $PreObject = $this.find('.overlay-content');
 //    var object = $PreObject.find('object').parent().addClass('video-div');
 //    gblPlayingVideo = object.html();

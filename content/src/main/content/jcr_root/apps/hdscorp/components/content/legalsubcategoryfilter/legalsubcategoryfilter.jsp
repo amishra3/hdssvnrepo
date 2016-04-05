@@ -29,10 +29,12 @@
 							<c:if test="${fn:startsWith(linkUrl,'/content/')}">
 								<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
 							</c:if>	
+							
 							<c:set var="subcatid" value="${listCat.subCatId}" />
-								<c:if test="${empty selectorString && loopCatCount.index == 0}">
-									<c:set var="includeURL" value="${listCat.legalURL}" />
-								</c:if>
+							
+							<c:if test="${empty selectorString && loopCatCount.index == 0}">
+								<c:set var="includeURL" value="${listCat.legalURL}" />
+							</c:if>
 
 							<c:if test="${selectorString== listCat.subCatId}">
 								<c:set var="includeURL" value="${listCat.legalURL}" />
@@ -42,6 +44,7 @@
 								String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
 								String currentCategoryID = (String)pageContext.getAttribute("subcatid");
 								pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
+								
 							%>
 						<li>
 							 <a data-href="${listCat.legalURL}.html" href="javascript:void(0);">${listCat.label}
@@ -73,8 +76,10 @@
 					<div class="result-legal_pages">				
 						<div id="loading" style="display: none;"></div>
 						<div id="loadCatagoryContent" class="category-products-listing">
-							<div class="category-desc legalcontent">
-
+							<div class="leagaltext section">
+				                <c:if test="${not empty includeURL}">
+<%-- 				                    <sling:include path="${includeURL}.html" /> --%>
+				                </c:if>
 							</div>
 						</div>					
 					</div>
