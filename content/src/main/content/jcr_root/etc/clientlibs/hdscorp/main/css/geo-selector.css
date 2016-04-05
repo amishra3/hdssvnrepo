@@ -105,8 +105,10 @@
 	display:block;
 }
 .hds_globalNav_geo-selc .tab-content .states-names {
-	margin-top: 10px; overflow:hidden; padding-top:15px;
+	/*margin-top: 10px;*/ overflow:hidden; padding-top:15px; padding-bottom:10px; background:rgba(204, 0, 0, 0.5);
 }
+.tab-content>.tab-pane#regions .states-names{ background:none;}
+.hds-MobileMenu .hds_globalNav_geo-selc .tab-content .states-names{ background:none;}
 .hds_globalNav_geo-selc .tab-content .states-names ul {
 	list-style: none;
 	padding: 0;
