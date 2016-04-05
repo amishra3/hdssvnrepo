@@ -532,7 +532,8 @@ $(".hero-homepage").each(function() {
 		 listitem.each(function() {
 		 //var linktext = jQuery(this).text();
 		 if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-          linktext = $.trim(linktext);
+		 if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
+		 linktext = $.trim(linktext);
 		  var url=$(location).attr('href');
 			if(url.indexOf("us/home")>-1)
 				linkposition="home-hero-banner";
