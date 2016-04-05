@@ -64,8 +64,10 @@
                             </c:if>
                         </div>-->
                     </div>
+
+                    <noindex><div id="thanksmessage">${assetGettingModel.thanksyouMessage}</div></noindex>
                     <div class="col-md-6 grey-bg">
-					<div class="gatted-asset-form">
+					<div class="gatted-asset-form">                        
                   		<div class="form">
                             <h2>${assetGettingModel.message}</h2>
                             <!--<img src="images/gatted-asset-frm.png"  alt="" class="img-responsive">-->
