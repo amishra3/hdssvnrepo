@@ -11,7 +11,7 @@ var hds = window.hds || {};
             }
             this.options = $.extend(defaults, options);
             hds.newsEvents.loadCalender();
-            hds.newsEvents.loadMoreMonths();
+          //  hds.newsEvents.loadMoreMonths();
             hds.newsEvents.bindFilters();
             hds.newsEvents.sortFilter();
             hds.newsEvents.regionFilter();
