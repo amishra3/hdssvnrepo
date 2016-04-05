@@ -9,6 +9,11 @@ if(pageTitle!="Home")
 {
     data=data.substring(data.indexOf(":")+1);
 }
+if(pageTitle == 'Search')
+{
+	pageTitle="internal search page";
+}
+
 //console.log("data--"+data);
 
 var activeLinkText="top";
@@ -482,7 +487,7 @@ $(".hero-homepage").each(function() {
      }
     });	
 //hero banners for all pages  .btn-square-white
-	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions").each(function() {
+	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions, .bannerSectionImage").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).find('h1').text();
 	 var linkposition="";
@@ -492,6 +497,7 @@ $(".hero-homepage").each(function() {
 	 {
 		 listitem.each(function() {
 		 //var linktext = jQuery(this).text();
+		 if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
           linktext = $.trim(linktext);
 		  var url=$(location).attr('href');
 			if(url.indexOf("us/home")>-1)
@@ -740,16 +746,39 @@ $(".hds-main-navigation h5").each(function() {
 
 	});		
 	
+//read customer stories links	
+
+	$("div.cs-section, .animateLink").each(function() {
+     var listitem = $(this).find("a");
+     if( listitem.length>0)
+	 {
+		 listitem.each(function() {
+			 var linktext = $(this).text();
+		 	 //var linktext1 = $('.cs-section .cs-container .cs-title').text();
+			 console.log("link text:" + linktext);
+			 if(linktext.indexOf("READ THE CASE STUDY")>-1){linktext="case-study-panel-link-Klinikum";}
+			 linktext = "case-study-panel-link-" + $.trim(linktext);
+            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel"); });
+			$(this).mousedown(function(e){
+				if(e.which == 3){
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel");
+				} 			
+			});
+		});                 
+     }
+    });	
+	
 //Featured P&S tracking 
 
 	$(".acs-commons-resp-colctrl-row .acs-commons-resp-colctrl-col .product-box .product-link").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).parent().find('.product-copy-main').text();
-          linktext = "Featured P&S-" + $.trim(linktext);
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Featured P&S"); });
+	 var linktext1=$('.mes-container').find('h3').text();
+          linktext = linktext1 + "-" + $.trim(linktext);
+            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",linktext1); });
 			$(this).mousedown(function(e){
 				if(e.which == 3){
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Featured P&S");
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",linktext1 );
 				} 			
 			});
     });
@@ -809,17 +838,18 @@ $(".hds-main-navigation h5").each(function() {
        });
 	   
 	   
-	/*// tabs on location page
+	// tabs on location page
 	$("#allRegion :selected").on("blur", function() {
 	 	var links = $(this).text();
-		if (links.indexOf("Select Region")>-1){}
+		if (links.indexOf("Select Region")!=-1){
                 var tabTitle = "Select Region:"+$.trim($(this).text()).toLowerCase().replace(/\s/g,"-");
-                tabClick(primaryCategory,tabTitle,pageTitle,"Worldwide Locations"); 
+                tabClick(primaryCategory,tabTitle,pageTitle,"Worldwide Locations"); }
             });
-	  	});
+	  //	});
 
-	});*/
 	
+	
+		
 	//Added on 20160218
 	$('.talk .call').click(function(){
 		if(window.outerWidth < 992){
@@ -896,19 +926,18 @@ $(document).on('keypress', '#searchFilter', function(event) {
 		var links = $(this).find("a");
 	 	links.each(function() {
 
-        $(this).click(function(){
+			$(this).click(function(){
              var text = $(this).text();
-
-            setTimeout(function() {
-            	var result=$('#actualCount').text();
-         		if(result==0)
-            	 result="zero";
-        		 searchClick($('#searchFilter').val(), "a-z filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
-			 }, 1500); 
-        });
+				setTimeout(function() {
+					var result=$('#actualCount').text();
+					if(result==0)
+					 result="zero";
+					 searchClick($('#searchFilter').val(), "a-z filter",result,getProductsSearchFilters(),'products & solutions','specificSearchClick');
+				 }, 1500); 
+			});
         //}
 	  	});
-		});	
+	});	
 
 });	
 
@@ -1046,6 +1075,26 @@ $('.newsEvents-category-list .news-listing').each(function() {
         });
 	});	
 
+// training and certification page
+	$(window).on("load", function() 
+	{
+		var url=$(location).attr('href');
+		if(url.indexOf("/training-details")>-1){
+			var interval = setInterval(function() 
+			{
+				var searchTerm=$(".daterangepicker_input .search").val();
+				var result=$('#contentCatagory').find('.result-product .tab-content .category-products-listing .result-section').size();
+				result=result.toString();
+				if(result==0)
+				result="zero";
+				searchClick(searchTerm, "search button",result,trainingFilters(),'training&certification','specificSearchClick');
+				clearInterval(interval);
+			}, 1500); 
+		}
+	});
+
+
+//ends
 // Training detail page search
 
 $(document).on('click', '.srching .search-course-btn', function(event) {
