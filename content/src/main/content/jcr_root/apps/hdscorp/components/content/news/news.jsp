@@ -28,7 +28,7 @@
                                 </div> 
 
 
-   					<div class="title"><a class="animateLink" href="${properties.featurednewslink}" target="_self">${model.featuredNews.newsTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a></div>
+                                <div class="title"><a class="animateLink" href="${properties.featurednewslink}" target="${properties.newwin?'_blank':'_self'}">${model.featuredNews.newsTitle}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a></div>
                                 <div class="description">${model.featuredNewsDesc}</div>
                             </div>
                         </div>
