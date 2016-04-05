@@ -128,6 +128,10 @@ $(document).ready(function () {
 	    });
     }
     
+	$(document).on('click','.isGatedLock',function(evt){
+		localStorage.setItem('parentPageRef', window.location.href);
+    })
+	
     if ($(".stickyNav")[0]){
     	var anchorVal = window.location.hash;
     	if(typeof anchorVal != 'undefined' && anchorVal.length > 0){
