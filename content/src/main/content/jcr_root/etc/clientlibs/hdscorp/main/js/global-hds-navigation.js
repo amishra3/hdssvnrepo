@@ -63,7 +63,7 @@ var hds = window.hds || {};
             $('.hds-MobileMenu ul.removePosRelative').find('li.search').remove();
         },
         desktopMobileFunction: function() {
-            $('.no-touch .globalNavWrapper > li').hover(function() {
+            $('.globalNavWrapper > li').hover(function() {
                 $('.globalNavWrapper li').removeClass('open');                
                 $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(300);
                 var megaMenuWrapper = $(this).find( ".hds-megaMenuWrapper");

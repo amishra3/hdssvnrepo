@@ -89,9 +89,14 @@ var hds = window.hds || {};
                     $('.countProducts').show();
                     allPanels.slideUp();
                     var content = $(this).attr('data-href');
+                    var offsetFirst=$($('.product-listing li:eq(0)')).offset().top;
+                    var clickedIndexHeight= $(this).outerHeight();
+                    var clickedIndex= $(this).parent().index();
+                    var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
+                    console.log(finalIndex);
                     if($(window).width()<991){                    	
                    	 $("body, html").animate({ 
-                            scrollTop: $( $(this)).offset().top                             
+                            scrollTop: finalIndex                             
                         }, 600);
                    }
                     hds.loadDataFilters.loadCatagoryContent(content);
@@ -102,8 +107,7 @@ var hds = window.hds || {};
                     $('.filters').removeAttr('checked', 'false');
                     if ($(this).parent().has('ul').length) {
                         $(this).parent().find('ul').slideDown();
-                    }
-                    
+                    }                    
                 } else {
                     return false;
                 }
@@ -131,11 +135,11 @@ var hds = window.hds || {};
                 hds.loadDataFilters.udatePageCount();
                 if (x == sizeCatagoryList) {
                     $('#loadMoreBtn').hide();
-                }
-           
+                }           
         },
         controlCount: function() {
-            
+            var sizeCatagoryList = $(".category-products-listing .product:visible").size();            
+            hds.loadDataFilters.udatePageCount();            
         },
         udatePageCount: function() {
             var totalCount = $('div.product').size();
@@ -174,21 +178,22 @@ var hds = window.hds || {};
                     $('.headerSort li a:eq(0)').addClass('current');
                     $('.headerSort').hide();
                     $('.countProducts').show();
-
+                    hds.loadDataFilters.udatePageCount();
                 } else {
                     $('.countProducts').hide();
                     $('.product').addClass('alphasort');
                     $('.headerSort').show();
                     if ($('.product-listing input.filters').filter(':checked').length <= 0) {
-                        $(".product").show('medium')
+                        $(".product").show()
                     }
                     $('#loadMoreBtn').hide();
+                    hds.loadDataFilters.udatePageCount();
                 }
                 e.preventDefault();
             })
         },
         manageAlphaSorting: function() {
-            $('.headerSort li a').click(function() {
+        	 $(document).on('click', '.headerSort li a', function(e) {           
                 var ourClass = $(this).attr('data-cat');
                 $('.headerSort li a').removeClass('current');
                 $(this).addClass('current');
@@ -209,7 +214,7 @@ var hds = window.hds || {};
 	                if (getSearchFilter.length > 0) {
 	                    hds.loadDataFilters.checkSearchEmpty();
 	                } else {	                 
-	                   return false;
+	                	hds.loadDataFilters.checkSearchEmpty();
 	                }                
             	}
             });
@@ -234,8 +239,7 @@ var hds = window.hds || {};
 
             if ($ourClass === 'all') {
                 alphaSelected = null;
-            } 
-             if ($ourClass !== 'all') {
+            }else {
                 alphaSelected = $ourClass;
             } 
              if ($allCheckedFilters.length > 0) {
@@ -243,21 +247,20 @@ var hds = window.hds || {};
                     return el.value
                 });
                 haveFilters = checkedVals;
-            } 
-             if ($allCheckedFilters.length < 0) {
+            } else{
                 haveFilters = null;
             } 
              if ($.trim($searchBox).length > 0) {
                 haveTextInInput = 'inputsearc';
-            } 
-             if ($.trim($searchBox).length < 0) {
-                haveTextInInput = null;
-            }
+            }else{
+            	haveTextInInput = null;
+            }             
              $('.product').find('li').addClass("filterText");
+             console.log($ourClass)
              hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
             setTimeout(function() {
                 hds.loadDataFilters.controlCount();
-                 if ($(".product:visible").length === 0) {
+                if ($(".product:visible").length === 0) {
                 $('#loadCatagoryContent').find('.no-matched-result').remove();
                 $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
             }
@@ -288,9 +291,8 @@ var hds = window.hds || {};
                     if ($.isArray(filters[filter])) {
                         var cats = self.data('category').split(',');
                         var checkMatches = $.grep(filters[filter], function(val, index) {
-							console.log((val+"-----"+cats));
+							
                             return or_cond = or_cond || $.inArray(val, cats) !== -1;
-                          //return $.inArray(val, cats) !== -1;
                         });
                         result = (result && or_cond ) || checkMatches.length === filters[filter].length;
                         return
@@ -309,12 +311,11 @@ var hds = window.hds || {};
                                 self.find(".filterText").parent().show();
                                 var excludeList= self.find(".filterText:not(:Contains('" + getSearchFilter + "'))");
                                  if(excludeList.length>0)
-                               		self.find("a.filterText").parent().slideUp(function() { $(this).parent().slideUp();});
-                                
+                               		self.find("a.filterText").parent().slideUp(function() { $(this).parent().slideUp();});                                
                                  var includeList=self.find(".filterText:Contains('" + getSearchFilter + "')");
                                  if(includeList.length>0)
                                      self.find("a.filterText").parent().slideDown(function() { $(this).parent().slideDown();});
-
+                               
                             }
                         }
                     }
@@ -362,8 +363,6 @@ var hds = window.hds || {};
 	               		});
             		}
                 }
-                //Multiple Description Logic END
-
                 return result;
             }).show('medium');
            // hds.loadDataFilters.udatePageCount();
