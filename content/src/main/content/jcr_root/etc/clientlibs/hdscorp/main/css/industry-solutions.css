@@ -125,7 +125,8 @@
     padding:0 0 60px 0;
 }
 .solution-section .solution-category-box p{
-    font-size:13px; font-family:"Myriad Pro";
+    font-size: 1.125em; 
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
 }
 .solution-category-box{
     background: #fff none repeat scroll 0 0;
