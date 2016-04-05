@@ -48,11 +48,11 @@
 				<c:when test="${newsInsightVerticalExplorer.openinnewwindow}">
 					<a href="${linkUrl}"
 						target="_blank" class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
-						class="glyphicon glyphicon-new-window"
+						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
 				</c:when>
 				<c:otherwise>
-					<a href="${linkBottomUrl}"
+					<a href="${linkUrl}"
 						class="animateLink">${newsInsightVerticalExplorer.newsInsightExplorerTop.title}<span
 						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
@@ -89,7 +89,7 @@
 				<c:when test="${newsInsightVerticalExplorer.bottomopeninnewwindow}">
 					<a href="${linkBottomUrl}"
 						target="_blank" class="animateLink">${newsInsightVerticalExplorer.readMoreBottomLabel}<span
-						class="glyphicon glyphicon-new-window"
+						class="glyphicon glyphicon-menu-right animateIcon"
 						aria-hidden="true"></span></a>
 				</c:when>
 				<c:otherwise>
@@ -104,7 +104,3 @@
 
 	</div>
 </div>
-
-
-
-
