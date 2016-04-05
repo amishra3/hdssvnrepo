@@ -27,6 +27,57 @@ var leadFormName="";
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
 
+
+//  error page tracking out of ready due to page load event challenges in DTM
+function isErrorPage()
+{
+	var url=document.title; //$(location).attr('href');
+	if(url.indexOf("404")>-1 || url.indexOf("error")>-1)
+		return true;
+	else
+		false;
+}
+
+if(isErrorPage())
+{
+	var fileName = window.location.pathname;
+	var n=fileName.lastIndexOf("/");
+    fileName=fileName.substring(n+1, 1000);
+    n=fileName.lastIndexOf(".");
+    if(n>0){fileName=fileName.substring(0, n);}
+	
+	digitalData.page={
+			pageInfo:{
+			pageName: $.trim(fileName),
+			pageType: "errorPage",
+			pageLoadEvent: "404 error",
+			errorMessage: "page not found",
+			hier1: "404 error page"
+			},
+			category:{
+			primaryCategory: "404 error page",
+			}
+		}
+
+	digitalData.site={
+        siteInfo:{
+        language:"en",
+        server:"hds",
+        country:"US:404error"
+        },
+        dimensions:{
+        deviceType:desktopType,
+        screensize:screenSize,
+        Orientation:orientation
+        }
+	}
+	digitalData.user={
+        userInfo:{
+            authStatus:"guest"
+        }
+    }
+}
+
 $(document).ready(function() {
 	if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
 		{
@@ -95,6 +146,7 @@ var screenSize = screen.width+"x" +screen.height;
 		});
 	}
 	
+	
 	digitalData.page={
 			pageInfo:{
 			pageName: $.trim(pageTitle),
@@ -133,24 +185,6 @@ var screenSize = screen.width+"x" +screen.height;
 			}
 	});
 //---------------------------------------------
-if(isErrorPage())
-{
-	var fileName = window.location.pathname;
-	var n=fileName.lastIndexOf("/");
-    fileName=fileName.substring(n+1, 1000);
-    n=fileName.lastIndexOf(".");
-    if(n>0){fileName=fileName.substring(0, n);}
-	
-    digitalData["page"]["pageInfo"]["pageName"]= fileName;
-	digitalData["page"]["pageInfo"]["pageLoadEvent"]="404 error";
-    digitalData["page"]["pageInfo"]["errorMessage"]="page not found";
-	digitalData["page"]["pageInfo"]["pageType"]="errorPage";
-	digitalData["page"]["pageInfo"]["hier1"]="404 error page";
-	digitalData["page"]["category"]["primaryCategory"] = "404 error page";
-	digitalData["site"]["siteInfo"]["country"]="US:404error";
-
-}
-
 
 // *****  --START-- the below section would perform the resource search tracking if the search page is hit *******  //
 if(isResourceSearchPage()){  
@@ -1255,14 +1289,6 @@ function setVirtualCategoryEvent()
 		 });                 
       }
     });
-}
-function isErrorPage()
-{
-	var url=document.title; //$(location).attr('href');
-	if(url.indexOf("404")>-1)
-		return true;
-	else
-		false;
 }
 
 function isResourceSearchPage(){
