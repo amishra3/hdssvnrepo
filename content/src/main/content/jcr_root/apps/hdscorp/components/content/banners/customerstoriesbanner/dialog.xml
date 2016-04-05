@@ -38,6 +38,11 @@
                         fieldLabel="Customer Stories Section Title"
                         name="./customerstoriessectiontitle"
                         xtype="textfield"/>
+                    <iconalttext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Case Study Icon Alt text"
+                        name="./iconalttext"
+                        xtype="textfield"/>
                     <contentsectioniconimagepath
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Case Study Icon"

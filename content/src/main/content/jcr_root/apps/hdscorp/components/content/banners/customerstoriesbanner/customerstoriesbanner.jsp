@@ -26,7 +26,7 @@
               <div class="cs-title">${properties.customerstoriessectiontitle}</div>
               <div class="cs-highlight-box">
                 <div class="cs-highlight-box-logo">
-                  <img src="${properties.contentsectioniconimagepath}">
+                  <img alt="${properties.iconalttext}" src="${properties.contentsectioniconimagepath}">
                 </div>
                 <div class="cs-highlight-box-hwsw">
                   <span class="hardware">${properties.customerinfotext}</span>
