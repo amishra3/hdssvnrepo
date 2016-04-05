@@ -62,7 +62,7 @@ public class PDFMetaModel {
 					if (asset != null) {
 						pdfNode.setTitle(asset.getMetadataValue("dc:title") != null
 								? asset.getMetadataValue("dc:title").toString() : "");
-						pdfNode.setDescription(asset.getMetadataValue("dc:description") != null
+						pdfNode.setDescription(asset.getMetadataValue("pdf:summary") != null
 								? asset.getMetadataValue("dc:description").toString() : "");
 						pdfNode.setImagePath(asset.getMetadataValue("dc:imagePath") != null
 								? asset.getMetadataValue("dc:imagePath").toString() : "");
