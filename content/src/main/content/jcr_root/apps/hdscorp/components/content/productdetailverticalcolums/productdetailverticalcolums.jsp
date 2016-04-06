@@ -27,7 +27,7 @@
 	                      <div class="resources-category-title">${column.contenttitle}</div>
 	                      <div class="resources-category-description">${column.columncontent}</div>
                             <c:choose>
-                            	<c:when test="${not empty linkUrl && not empty column.seemorelabel}">
+                            	<c:when test="${not empty column.seemorelabel}">
                                       <div class="resources-category-more">
                                          <a class="animateLink" href="${column.voverlay==1?'javascript:void(0);':linkUrl}" onclick="${column.voverlay==2?'':vidurl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                       </div>
