@@ -33,7 +33,7 @@
 									<ul>
 										<c:forEach var="listCout" items="${listReg.countries}"
 											varStatus="looCount">
-                                               	<li class="col-md-4"><a href="${listCout.countrytargetUrl}" target="${listCout.openinnewwindow==1?'_blank':'_self'}">${listCout.countryLabel}</a></li>
+                                               	<li><a href="${listCout.countrytargetUrl}" target="${listCout.openinnewwindow==1?'_blank':'_self'}">${listCout.countryLabel}</a></li>
 										</c:forEach>
 									</ul>
 								</div>
