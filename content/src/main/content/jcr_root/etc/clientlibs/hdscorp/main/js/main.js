@@ -129,7 +129,8 @@ $(document).ready(function () {
     }
     
 	$(document).on('click','.isGatedLock',function(evt){
-		localStorage.setItem('parentPageRef', window.location.href);
+		//localStorage.setItem('parentPageRef', window.location.href);
+		document.cookie="hdsGatedParentPageRef="+window.location.href+"; path=/; domain=.hds.com";
     })
 	
     if ($(".stickyNav")[0]){
