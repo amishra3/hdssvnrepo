@@ -47,6 +47,7 @@ var hds = window.hds || {};
         },        
         _openvideooverlayById: function(videoID) {
             var videoID = videoID;
+            var pPageName = window.location.href;
             var videoGUID = "video"+videoID;
             var gblPlayingVideo;
             if($.trim(videoID).length > 0){
@@ -58,6 +59,7 @@ var hds = window.hds || {};
                 videobox.setContent(vidObjMkup);
                 videobox.show();
                 initiateVideo();
+                videoTracking(videoID, pPageName);
             }
         },
         _getParmsFromURLHash: function(url) {
@@ -132,14 +134,11 @@ var hds = window.hds || {};
         },
         _processSlingIncludedContent: function() {
             $('.resource').addClass('visible');
-            $('.category-resources-listing').find('.no-matched-result').remove();
-            if($.trim($("#featuredCards").html()).length === 0){
-                $("#featuredCards").hide();
-            }
+            $('.category-resources-listing').find('.no-matched-result').remove();            
             if ($.trim($(".resourceLibraryContent").html()).length === 0) {
                 if ($('#asideLinks-product li').eq(0).hasClass('active')) {
                     $('.category-resources-listing').find('.no-matched-result').remove();
-                }else{
+                }else{     
                     $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
                 }
             } else {
@@ -161,12 +160,20 @@ var hds = window.hds || {};
                 $('#filterTag .label').css({
                     'display': 'inline'
                 });
-                $('.resource-filters').find('div.disable-filter').remove();
+                if ($(window).width() < 991) {
+                    $('.topFilter').find('div.disable-filter').remove();
+                }else{
+                    $('.resource-filters').find('div.disable-filter').remove();
+                }
             }else{
                 $('#filterTag .label').css({
                     'display': 'none'
                 });
-                $('.resource-filters').append('<div class="disable-filter"/>');
+                if ($(window).width() < 991) {
+                    $('.topFilter').prepend('<div class="disable-filter"/>');
+                }else{
+                    $('.resource-filters').append('<div class="disable-filter"/>');
+                }                
             }
             var self = $(activeCat),
                 checkInputIfEmpty = $.trim($('#resSearch').val());
@@ -227,7 +234,11 @@ var hds = window.hds || {};
                 if (textStatus === 'success' || textStatus === 'notmodified') {
                     hds.resourceLib._processSlingIncludedContent();
                     $('#showIndustry, #showContentType').trigger('click');
-                    $('.resource-filters').find('div.disable-filter').remove();
+                    if ($(window).width() < 991) {
+                        $('.topFilter').find('div.disable-filter').remove();
+                    }else{
+                        $('.resource-filters').find('div.disable-filter').remove();
+                    }
                     $('.resource.visible:visible').last().css({"border-bottom":"none"});
                     localStorage.setItem('resStatus', 'false');
                 }
@@ -801,8 +812,13 @@ var hds = window.hds || {};
                 $('.errorSearchField,.clearSearchIcon').hide();
                 $('#asideLinks-product li').eq(0).find("a").trigger('click');
                 $('.closeKeyword').trigger('click');
-                $('.resource-filters').find('div.disable-filter').remove();
-                $('.resource-filters').append('<div class="disable-filter"/>');
+                if ($(window).width() < 991) {
+                    $('.topFilter').find('div.disable-filter').remove();
+                    $('.topFilter').prepend('<div class="disable-filter"/>');
+                }else{
+                    $('.resource-filters').find('div.disable-filter').remove();
+                    $('.resource-filters').append('<div class="disable-filter"/>');
+                }
                 $('#filterTag .label').css({
                     'display': 'none'
                 });

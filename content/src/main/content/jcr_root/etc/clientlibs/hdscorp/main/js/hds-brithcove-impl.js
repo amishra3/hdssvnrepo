@@ -127,6 +127,9 @@ $(document).on('click', 'a.l-overlay', function(e) {
     videobox.setContent($('#' + $(this).data('target-content')).html());    
     videobox.show();
     initiateVideo();
+    /* WA Video Tracking Code */
+    var pPageName = window.location.href;
+	videoTracking(videoID, pPageName);
 });
 $(document).on('click', '.close-overlay', function(event) {
 
