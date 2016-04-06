@@ -112,7 +112,17 @@
 .hds_globalNav_geo-selc .tab-content .states-names ul {
 	list-style: none;
 	padding: 0;
-	margin: 0
+	margin: 0;
+}
+@media only screen and (min-width:769px) {
+.hds_globalNav_geo-selc .tab-content .states-names ul{
+    -moz-column-count:1;
+    -moz-column-gap: 50px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 50px;
+    column-count: 3;
+    column-gap: 50px;
+}
 }
 .hds_globalNav_geo-selc .tab-content .states-names ul li a {
 	font-size: 20px;
