@@ -72,7 +72,8 @@
                             <h2>${assetGettingModel.message}</h2>
                             <!--<img src="images/gatted-asset-frm.png"  alt="" class="img-responsive">-->
                             <div class="asset-form">
-                            	<iframe src="${formIframeURL}" id="marketo_Iframe" style="border:none;"></iframe>
+                                <div id="gated-pdf-loader"></div>
+                            	<iframe src="${formIframeURL}" id="marketo_Iframe" style="border:none;" onload='gatedPdfIframeHeight(this.id)'></iframe>
                             </div>
                         </div>
                     </div>
