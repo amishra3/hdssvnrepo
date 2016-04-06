@@ -238,7 +238,7 @@
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li p {
   color: #ffffff;
-  margin: 0 10px 20px;
+  margin: 0 5px 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-size: 1.125em;
   line-height: 110%;
@@ -262,7 +262,7 @@
   text-transform: uppercase;
 }
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a.animateAnchor{
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a.animateAnchor .glyphicon-menu-right{
 	left: 2px;
 }
 
@@ -276,7 +276,8 @@
   left: 5px;
 }
 .hero-homepage .hero-homepage-container p{
-max-width:950px; margin:0 auto;
+  max-width:950px; 
+  margin:0 auto;
  }
 
 @media only screen and (min-width: 1280px) {

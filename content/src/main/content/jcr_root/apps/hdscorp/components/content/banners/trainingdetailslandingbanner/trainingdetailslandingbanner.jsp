@@ -24,7 +24,7 @@ request.setAttribute("bannerimage",bannerimage);
                             <h4 class="sub-headline">${properties.trainingdetailsbannercontent}</h4>
                             <c:if test="${not empty properties.trainingdetailsbannerbuttonlabel}">        					
 	                            <div class="btn-square-white request">
-	                             <a rel="${properties.buttonmform?'iframemodal':''}"href="${properties.trainingdetailsbannerbuttonurl}" target="${properties.trainingdetailsbannerurltargettype?'_blank':'_self'}">
+	                             <a data-formtitle="${properties.formtitle}" rel="${properties.buttonmform?'iframemodal':''}"href="${properties.trainingdetailsbannerbuttonurl}" target="${properties.trainingdetailsbannerurltargettype?'_blank':'_self'}">
 	                                ${properties.trainingdetailsbannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 	                            </div>
                             </c:if>
