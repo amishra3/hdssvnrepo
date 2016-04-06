@@ -102,7 +102,7 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
     border: 1px solid #ce0000;
     color: #fff
 }
-.pr-explore .pr-explore-container h2 a{color:#333!important;}
+#gatedpagepromobox.pr-explore .pr-explore-container h2 a{color:#333;}
 
 @media only screen and (max-width: 480px){
     
