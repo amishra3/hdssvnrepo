@@ -44,8 +44,10 @@ var hds = window.hds || {};
             });
         },
         activateFilter: function() {
-        	$('.leftsidelisting > ul > li').eq(activeMainCat).addClass('active');
-        	if(activeSubCatID){
+        	if(typeof activeMainCat  !== "undefined" && activeMainCat){
+        		$('.leftsidelisting > ul > li').eq(activeMainCat).addClass('active');	
+        	}
+        	if(typeof activeSubCatID  !== "undefined" && activeSubCatID){
         		$('.leftsidelisting > ul > li.active').find('#'+activeSubCatID).prop( "checked", true );	
         	}
         	$("#loadCatagoryContent").removeAttr('data-content');
