@@ -15,5 +15,4 @@
     resource.resolver.optimize.alias.resolution="{Boolean}true"
     resource.resolver.vanitypath.whitelist="[/apps/,/libs/,/content/]"
     resource.resolver.virtual="[/:/]"
-    resource.resolver.required.providers="[org.apache.sling.jcr.resource.internal.helper.jcr.JcrResourceProviderFactory]"
 />
