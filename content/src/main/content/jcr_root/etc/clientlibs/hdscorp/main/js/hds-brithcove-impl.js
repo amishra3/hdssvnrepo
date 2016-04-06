@@ -1,7 +1,6 @@
 var player, modVP, modExp, currentVideo,brightcove;
 
 function onTemplateLoad(experienceID) {
-	brightcove = window.brightcove ;
     player = brightcove.getExperience(experienceID);
     captionsModule = player.getModule(brightcove.api.modules.APIModules.CAPTIONS);
     captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_SUCCESS, onDFXPLoadSuccess);
@@ -83,8 +82,8 @@ function initiateVideo() {
             protocol = window.location.protocol;
         }
 
-        bcUrl = '//sadmin.brightcove.com/js/BrightcoveExperiences.js';
-        bcApi = '//sadmin.brightcove.com/js/APIModules_all.js';
+        bcUrl = protocol+'//sadmin.brightcove.com/js/BrightcoveExperiences.js';
+        bcApi = protocol+'//sadmin.brightcove.com/js/APIModules_all.js';
             
         if (!window.brightcove) {
             $('#loading').hide();
@@ -119,16 +118,15 @@ $(document).on('click', 'a.l-overlay', function(e) {
     var $this = $(this);
     var videoID = $this.attr("data-target-content");
     videoID = videoID.replace("rl","");
-    hds.resourceLib._openvideooverlayById(videoID);
-//    onTemplateLoad("video"+videoID);
-//    var $PreObject = $this.find('.overlay-content');
-//    var object = $PreObject.find('object').parent().addClass('video-div');
-//    gblPlayingVideo = object.html();
-//    object.html('');    
-//    videobox.setContent('')
-//    videobox.setContent($('#' + $(this).data('target-content')).html());    
-//    videobox.show();
-//    initiateVideo();
+    //hds.resourceLib._openvideooverlayById(videoID);
+    var $PreObject = $this.find('.overlay-content');
+    var object = $PreObject.find('object').parent().addClass('video-div');
+    gblPlayingVideo = object.html();
+    object.html('');    
+    videobox.setContent('')
+    videobox.setContent($('#' + $(this).data('target-content')).html());    
+    videobox.show();
+    initiateVideo();
 });
 $(document).on('click', '.close-overlay', function(event) {
 
