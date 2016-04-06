@@ -292,6 +292,14 @@
 	text-decoration:none;
 }
 
+/* for home page hexagons */
+.homepage .calculating-success .calculating-success-container .calculating-list>li.hexagon270 img{top:-50px !important; max-height:64px;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li img{max-height:64px;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li.hexagon270{padding-top:15px;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li .animateAnchor{margin:8px auto 0 auto;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li h4{margin:8px 0 3px 0}
+/* //for home page hexagons */
+
 @media only screen and (max-width: 1280px) {
     .calculating-success .calculating-success-container .calculating-list > li {
         margin-bottom: 170px;
