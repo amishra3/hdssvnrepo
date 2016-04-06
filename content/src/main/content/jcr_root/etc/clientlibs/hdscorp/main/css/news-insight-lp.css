@@ -5,6 +5,24 @@
 
 .common-hero-short-banner.news-insight .headline{ font-size: 1.75em; font-weight:bold;}
 
+.news-insight-explore-spotlight .spotlight-content .spotlight-title .glyphicon{margin-right:5px;}
+
+.common-hero-short-banner.news-insight .second-link{  display: inline-block;}
+
+.common-hero-short-banner.news-insight .second-link a{ font-family: 'museo-sans',Helvetica,Arial,sans-serif;
+    font-weight: 900;
+    font-size: .8em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+
+}
+
+@media only screen and (min-width: 1024px){
+
+    .news-insight-explore-spotlight .spotlight-content .spotlight-title .glyphicon{font-size:0.6em; }
+}
 
 @media only screen and (max-width: 1280px) {
   .common-hero-short-banner.about-hds .content-container{
