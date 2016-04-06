@@ -127,7 +127,7 @@
                         xtype="html5smartimage"/>
                     <simplebannervideoembedcode
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Video Embed code / Video ID"
+                        fieldLabel="Video ID"
                         name="./simplebannervideoembedcode"
                         xtype="textarea"/>
                     <thirdpartyvideolink

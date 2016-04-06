@@ -261,11 +261,7 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a.animateAnchor .glyphicon-menu-right{
-	left: 2px;
-}
-
+/* .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a:hover{color:red;} */
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li .animateAnchor:hover > .animateIcon{
 	color: #ffffff;
 }

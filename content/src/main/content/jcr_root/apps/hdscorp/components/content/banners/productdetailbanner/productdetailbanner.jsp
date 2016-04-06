@@ -50,16 +50,17 @@
 					<c:if test="${not empty properties.simplebannerusevideomodal}">
 
 						<div class="video-play hidden-lg">
-							<c:choose>
-								<c:when
-									test="${not empty properties.simplebannervideoembedcode}">
-									<a href="#" class="btn-play-video"> <span
-										class="sprite video-play-small"></span></a>
-								</c:when>
-								<c:otherwise>
-								</c:otherwise>
-							</c:choose>
+							<c:if test="${not empty properties.simplebannervideoembedcode || not empty properties.thirdpartyvideolink}">
+								<c:choose>
+                                         <c:when test="${not empty properties.thirdpartyvideolink}">
+												<a href="${properties.thirdpartyvideolink}" target="_blank"><span class="sprite video-play-small"></span></a>
+                                          </c:when>
+                                        <c:otherwise>
+                                           <a href="${properties.videooverlay?'javascript:void(0);':'#'}" onclick="${!properties.videooverlay?'':vidurl}" class="sprite video-play-small"></a>
+                                        </c:otherwise>
+                                    </c:choose>
 
+                            </c:if>
 						</div>
 					</c:if>
 
@@ -112,7 +113,7 @@
 				</c:if>
 			</div>
 		</div>
-                    <c:if test="${empty properties.videooverlay}">
+      <c:if test="${empty properties.videooverlay}">
 		<c:if test="${empty properties.thirdpartyvideolink}">
 		<c:if test="${not empty properties.simplebannerusevideomodal}">
 			<div class="hero-product-solutions video clearfix"
@@ -130,9 +131,9 @@
 					</c:choose>
 				</div>
 			</div>
+		 </c:if>
 		</c:if>
-		</c:if>
-            </c:if>
+      </c:if>
 
 
 	</c:when>
