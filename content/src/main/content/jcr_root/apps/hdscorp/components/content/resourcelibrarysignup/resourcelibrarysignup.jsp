@@ -7,7 +7,7 @@
 	<div class="common-hero-short-banner clearfix" style="background-image:url('${properties.backgroundimgpath}');">
         <div class="content-container">
             <div class="col-lg-6 col-md-12 col-xs-12">
-                <div class="top-banner-heading">${properties.resourcelabel}</div>
+                <h1 class="top-banner-heading">${properties.resourcelabel}</h1>
                 <h4 class="sub-headline">${properties.signupmessagetext}</h4>
             </div>
 
