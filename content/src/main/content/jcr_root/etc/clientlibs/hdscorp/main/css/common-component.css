@@ -571,7 +571,6 @@ line-height: 1;
 .pr-explore .pr-explore-container .pr-common-box .description{
   font-family: "museo-sans",Helvetica,Arial,sans-serif;  
   font-size: 1.125rem;
-
   color: #000000;
   font-weight: 300;
   margin: 12px 0 12px 0;
@@ -586,10 +585,13 @@ line-height: 1;
   font-weight: 800;
   letter-spacing: 0.15em;  
   outline: none;
-
   text-decoration: none;
   text-transform: uppercase;
 }
+.pr-explore .pr-explore-container .pr-common-box .read-more a:hover{
+  color: #ac1f25;	
+}
+
 @media screen and (max-width: 1024px) {
   .pr-explore .pr-explore-container h2{
       font-size: 1.45rem;

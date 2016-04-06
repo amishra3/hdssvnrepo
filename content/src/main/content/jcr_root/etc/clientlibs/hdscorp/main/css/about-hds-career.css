@@ -331,6 +331,10 @@
     text-transform: uppercase;
 }
 
+.career-commitment .company-list .company .read-more a:hover{
+	color: #ac1f25;
+}
+
 .career-commitment .company-list .view-all {
     margin: 51px 0 0px;
 }
