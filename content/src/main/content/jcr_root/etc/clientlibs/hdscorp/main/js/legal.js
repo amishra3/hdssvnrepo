@@ -45,7 +45,9 @@ var hds = window.hds || {};
         },
         activateFilter: function() {
         	$('.leftsidelisting > ul > li').eq(activeMainCat).addClass('active');
-        	$('.leftsidelisting > ul > li.active').find('#'+activeSubCatID).prop( "checked", true );
+        	if(activeSubCatID){
+        		$('.leftsidelisting > ul > li.active').find('#'+activeSubCatID).prop( "checked", true );	
+        	}
         	$("#loadCatagoryContent").removeAttr('data-content');
         },
         bindHTMLLoad: function() {
