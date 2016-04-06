@@ -101,4 +101,8 @@
 	var activeMainCat = "<%=pageContext.getAttribute("activeMainCatIndex")%>" ;
 	var activeSubCat = "<%=pageContext.getAttribute("activeSubCatIndex")%>" ;
 	var activeSubCatID = "<%=pageContext.getAttribute("activeSubCatId")%>" ;
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> legal selector based URL implementation
