@@ -72,7 +72,6 @@
 								String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
 								String currentCategoryID = (String)pageContext.getAttribute("subcatid");
 								pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
-
 						  %>
 						  
 					 <div class="MobileHolderWrapper"></div>
