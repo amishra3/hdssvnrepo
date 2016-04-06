@@ -1060,7 +1060,7 @@ h2.section-heading.fb-title{
     margin-top:0
   }
   .resources-section .resources-container .resources-category .resources-category-box {
-  margin-bottom: 25px; min-height:auto; margin-top:0; 
+  margin-bottom: 25px; min-height:inherit; margin-top:0; 
   }
   .resources-section .resources-container .resources-category .resources-category-box div[class|="resources-category"] {
     margin-bottom: 13px; width:100%; 
@@ -1430,7 +1430,6 @@ h2.section-heading.fb-title{
 .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{text-align:left!important;}
 
 
-
 }
 @media (min-width: 992px){
 #overview{position:relative; margin-top:-49px; padding-top:49px; z-index:1;}
@@ -1446,7 +1445,13 @@ h2.section-heading.fb-title{
     letter-spacing: 0;
 }
 
-
-
-.specific-benefit p{ font-family: "museo-sans",Helvetica,Arial,sans-serif; font-size: 1.125em;    font-weight: 300; }
-.vsp-soft-products-details .product-download a:hover{color: #ac1f25;}
+.specific-benefit p{ 
+   font-family: "museo-sans",Helvetica,Arial,sans-serif; 
+   font-size: 1.125em;    
+   font-weight: 300; 
+ }
+ 
+.vsp-soft-products-details .product-download a:hover{
+	color: #ac1f25; 
+	text-decoration: none;
+}
