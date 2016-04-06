@@ -37,7 +37,7 @@
                         xtype="pathfield"/>
                     <linktargettype
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Open in New Window"
+                        fieldLabel="Open in Same Window"
                         key="linktargettype"
                         name="./linktargettype"
                         type="checkbox"
@@ -45,7 +45,7 @@
                         xtype="selection"/>
                     <thirdparty
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Show third party icon?"
+                        fieldLabel="Hide third party icon?"
                         key="thirdparty"
                         name="./thirdparty"
                         type="checkbox"
