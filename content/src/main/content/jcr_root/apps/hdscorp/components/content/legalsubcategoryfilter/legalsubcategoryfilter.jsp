@@ -16,7 +16,9 @@
 %>
 
 <c:if test="${empty selectorString}">
+	<c:set var="activeMainCatIndex" value="0" />
 	<c:set var="activeSubCatIndex" value="0" />
+	<c:set var="activeSubCatId" value="" />
 </c:if>
 <div class="legal-content-area clearfix">
 <div class="content-container">
@@ -38,14 +40,8 @@
 
 							<c:if test="${selectorString== listCat.subCatId}">
 								<c:set var="includeURL" value="${listCat.legalURL}" />
-								<c:set var="activeSubCatIndex" value="${loopCatCount.index}" />			
+								<c:set var="activeMainCatIndex" value="${loopCatCount.index}" />			
 							</c:if>
-							 <% 
-								String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
-								String currentCategoryID = (String)pageContext.getAttribute("subcatid");
-								pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
-								
-							%>
 						<li>
 							 <a data-href="${listCat.legalURL}.html" href="javascript:void(0);">${listCat.label}
                             <span class="icon-accordion-closed"></span> 
@@ -55,16 +51,30 @@
 							 <c:if test="${fn:length(listCat.listSubCat)!=0}">					
 							  <ul>
 							   <c:forEach var="subCat" items="${listCat.listSubCat}" varStatus="looSubCount">
+								   <c:if test="${selectorString== subCat.subCatId}">
+										<c:set var="includeURL" value="${subCat.legalURL}" />
+										<c:set var="activeSubCatIndex" value="${looSubCount.index}" />
+										<c:set var="activeMainCatIndex" value="${loopCatCount.index}" />
+										<c:set var="activeSubCatId" value="${subCat.subCatId}" />			
+									</c:if>
+							   
 								   <li>
                                        <div class="checkbox">
-										<input type="radio" value="${subCat.legalURL}.html" id="${subCat.label}" name="cbxFunction" class="filters">
-											<label class="hds-icon" for="${subCat.label}"><span>${subCat.label}</span></label>
+										<input type="radio" value="${subCat.legalURL}.html" id="${subCat.subCatId}" name="cbxFunction" class="filters">
+											<label class="hds-icon" for="${subCat.subCatId}"><span>${subCat.label}</span></label>
 										</div>
 
                                        </li>
 							 </c:forEach>
 							   </ul>
 						  </c:if>
+						  <% 
+								String currentPageShortUrl = (String)pageContext.getAttribute("currentPageShortUrl");
+								String currentCategoryID = (String)pageContext.getAttribute("subcatid");
+								pageContext.setAttribute("currentCategoryUrl", currentPageShortUrl.replace(".html", "."+currentCategoryID+".html"));
+								System.out.println((String)pageContext.getAttribute("includeURL"));
+						  %>
+						  
 					 <div class="MobileHolderWrapper"></div>
 						</li>
 				</c:forEach>
@@ -78,7 +88,7 @@
 						<div id="loadCatagoryContent" class="category-products-listing">
 							<div class="leagaltext section">
 				                <c:if test="${not empty includeURL}">
-<%-- 				                    <sling:include path="${includeURL}.html" /> --%>
+				                    <sling:include path="${includeURL}.html" />
 				                </c:if>
 							</div>
 						</div>					
@@ -87,3 +97,9 @@
 			</div>
 		</div>
 </div>
+
+<script type="text/javascript">
+	var activeMainCat = "<%=pageContext.getAttribute("activeMainCatIndex")%>" ;
+	var activeSubCat = "<%=pageContext.getAttribute("activeSubCatIndex")%>" ;
+	var activeSubCatID = "<%=pageContext.getAttribute("activeSubCatId")%>" ;
+</script>
