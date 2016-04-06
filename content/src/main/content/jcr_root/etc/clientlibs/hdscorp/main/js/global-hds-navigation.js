@@ -65,7 +65,7 @@ var hds = window.hds || {};
         desktopMobileFunction: function() {
             $('.globalNavWrapper > li').hover(function() {
                 $('.globalNavWrapper li').removeClass('open');                
-                $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(300);
+                $('.hds-megaMenuWrapper', this).stop(true, true).delay(200).slideDown(100);
                 var megaMenuWrapper = $(this).find( ".hds-megaMenuWrapper");
                 var bgImgUrl = $(megaMenuWrapper).attr('data-bg-url'); 
                 $(megaMenuWrapper).css("background-image", "url("+bgImgUrl+")");
