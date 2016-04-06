@@ -1,1 +1,11 @@
 .modal-body > iframe {width:100%;}
+.asset-form #gated-pdf-loader{
+  background: url("../images/mform-loader.gif") no-repeat 50% 50% #ebebeb;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}

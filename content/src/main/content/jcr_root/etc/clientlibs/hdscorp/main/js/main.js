@@ -172,3 +172,14 @@ function setIframeHeight(id) {
     ifrm.style.visibility = 'visible';
 	document.getElementById('modal-loading').style.display = 'none';
 }
+
+function gatedPdfIframeHeight(id) {
+    var ifrm = document.getElementById(id);
+    var doc = ifrm.contentDocument? ifrm.contentDocument: 
+    ifrm.contentWindow.document;
+    ifrm.style.visibility = 'hidden';
+    ifrm.style.height = "10px";
+    ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+    ifrm.style.visibility = 'visible';
+    document.getElementById('gated-pdf-loader').style.display = 'none';
+}

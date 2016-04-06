@@ -6843,7 +6843,7 @@ button.close {
 }
 
 .modal-body #modal-loading{
-  background: url("../images/load-indicator.gif") no-repeat 50% 50% #ffffff;
+  background: url("../images/mform-loader.gif") no-repeat 50% 50% #ffffff;
   display: block;
   position: absolute;
   left: 0;
