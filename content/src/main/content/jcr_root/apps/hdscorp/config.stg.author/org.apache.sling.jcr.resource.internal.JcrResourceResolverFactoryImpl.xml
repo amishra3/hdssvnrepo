@@ -14,5 +14,4 @@
     resource.resolver.vanitypath.bloomfilter.maxBytes="1024000"
     resource.resolver.optimize.alias.resolution="{Boolean}true"
     resource.resolver.vanitypath.whitelist="[/apps/,/libs/,/content/]"
-    resource.resolver.virtual="[/:/]"
 />
