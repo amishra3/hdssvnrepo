@@ -1065,6 +1065,14 @@ span.ellipse.clickable {
   visibility: hidden;
 }
 
+@media only screen and (max-width:768px) {
+	.light-theme a, 
+	.light-theme span{
+		padding-left:8px;
+		padding-right:8px;
+	}
+}
+
 /* Resources Mobile Overlay */
 .bgCover {
   background-color: #000;
