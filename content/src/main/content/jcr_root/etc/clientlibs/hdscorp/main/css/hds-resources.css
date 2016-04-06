@@ -88,9 +88,9 @@
 }
 @media only screen and (max-width:568px) {
     .resSubscription{
-		margin-top:0;
+    margin-top:0;
         padding: 0 15px;
-	}
+  }
     .resSubscription iframe#resIframe {
       border:none; height:200px;
     }
@@ -526,7 +526,7 @@ color: #cccccc !important;
   margin: 0 0 15px 0;
 }
 .result-resources .category-resources-listing{
-	margin-left: -15px;
+  margin-left: -15px;
     margin-right: -15px;
 }
 .result-resources .category-resources-listing .resource {
@@ -1066,11 +1066,18 @@ span.ellipse.clickable {
 }
 
 @media only screen and (max-width:768px) {
-	.light-theme a, 
-	.light-theme span{
-		padding-left:8px;
-		padding-right:8px;
-	}
+  .light-theme a, 
+  .light-theme span{
+    padding-left:8px;
+    padding-right:8px;
+  }
+}
+
+@media only screen and (max-width:480px) {
+  .light-theme a, 
+  .light-theme span{
+    font-size:0.8125rem;
+  }
 }
 
 /* Resources Mobile Overlay */
@@ -1264,7 +1271,7 @@ span.ellipse.clickable {
 }
 
 .spotlight-content .spotlight-image-icon{
-	height: 30px;
+  height: 30px;
     width: 30px;
 }
 @media only screen and (max-width:991px) {
