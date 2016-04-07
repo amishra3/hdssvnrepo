@@ -1,6 +1,6 @@
 var digitalData = digitalData || {};
 var data=getCurrentBreadcrumb();
-data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
+data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'""',.<>\{\}\[\]\\\/]/gi, ' ');
 data = data.replace(/\s{2,}/g,' ');
 data = data.toLowerCase();
 items = data.split(":");
@@ -23,7 +23,7 @@ var delay=4000;
 var gInternalSearchFilter="";
 var leadFormName="";
 pageTitle=pageTitle.toLowerCase();
-pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
+pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'""',.<>\{\}\[\]\\\/]/gi, ' ');
 pageTitle=$.trim(pageTitle);
 // URL shorten for UCP and Press Release 
 var url=$(location).attr('href');
@@ -1027,7 +1027,7 @@ var screenSize = screen.width+"x" +screen.height;
 				//console.log(result)
 		});
 
-$(document).on('keypress', '#fulltext', function(event)
+$(document).on('keypress', '#fulltext', function(event) 
 	{
 		if(event.which == 13) {
 			var interval = setInterval(function() {
@@ -1448,10 +1448,10 @@ function getCurrentBreadcrumb()
 
 	function videoTracking(vId, pPageName)
 	{
-			digitalData.eventData= {
-				videoId:vid,
-				parentPage:pPageName
-			} 
-			_satellite.track('videotracking');
+		digitalData.eventData= {
+			videoId:vId,
+			parentPage:pPageName
+		} 
+		_satellite.track('videotracking');
 
 	}
