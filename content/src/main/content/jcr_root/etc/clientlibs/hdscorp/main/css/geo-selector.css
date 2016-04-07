@@ -116,7 +116,7 @@
 }
 @media only screen and (min-width:769px) {
 .hds_globalNav_geo-selc .tab-content .states-names ul{
-    -moz-column-count:1;
+    -moz-column-count:3;
     -moz-column-gap: 50px;
     -webkit-column-count: 3;
     -webkit-column-gap: 50px;
