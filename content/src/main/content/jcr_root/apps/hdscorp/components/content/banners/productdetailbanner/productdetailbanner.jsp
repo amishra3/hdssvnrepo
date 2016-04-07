@@ -92,6 +92,7 @@
 					<div
 						class="col-lg-6 col-md-6 col-xs-12 hidden-xs hidden-sm video-section"
 						style="background-image:url('${properties.simplebannerimageoverlaypath}');">
+                        <div class="video-play-desktop">            
 						<c:choose>
 							<c:when test="${not empty properties.thirdpartyvideolink}">
                                 <a href="${properties.thirdpartyvideolink}" target="_blank" class="servers hidden-xs hidden-sm btn-play-video"></a>
@@ -107,7 +108,7 @@
 
 							</c:otherwise>
 						</c:choose>
-
+                            </div>
 
 
 
