@@ -28,13 +28,12 @@
 		value="${properties.itemsVisibleonLoad}" />
 </c:if>
 
-<div class="col-md-9 pr-archives-list">
-    <div class="pr-archives-list-items">
-        <c:forEach var="news" items="${model.newsList}" varStatus="loopcnt">
+<div class="load-pr-archives-list">
+     <c:forEach var="news" items="${model.newsList}" varStatus="loopcnt">
             <div class="pr">
                 <c:if test="${searchType == 'awards'}">
                     <div class="award-logo">
-                        <img src="${news.imgpath}" alt="${news.imageAlt}" />
+                        <img src="${news.imgpath}" alt="" />
                     </div>
                 </c:if>
                 <div class="pr-content">
@@ -48,17 +47,4 @@
                 </div>
             </div>
         </c:forEach>
-    </div>
-    <c:if test="${resultSize!=0 and resultSize > itemsVisibleonLoad}">
-        <div class="pr-load-more">
-            <div class="learn-more-red-link" id="loadMorePrBtn">
-                <a href="javascript:void(0);">${model.loadMoreLabel}</a>
-            </div>
-        </div>
-    </c:if>
-    
-    <c:if test="${resultSize==0}">
-        <div class="no-matched-result"
-        style="padding: 50px 0; text-align: center;">${noResultMessage}</div>
-    </c:if>
 </div>
