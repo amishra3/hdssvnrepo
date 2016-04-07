@@ -238,6 +238,11 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 							Arrays.toString(
 									(String[]) properties.get(ServiceConstants.LOCATION_JCR_DRIVING_DIRECTION, String[].class))
 							.replace("[", "").replace("]", ""));
+			jsonObject
+			.put("locationlink",
+					Arrays.toString(
+							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATION_LINK, String[].class))
+					.replace("[", "").replace("]", ""));
 			
 
 		} catch (Exception e) {
