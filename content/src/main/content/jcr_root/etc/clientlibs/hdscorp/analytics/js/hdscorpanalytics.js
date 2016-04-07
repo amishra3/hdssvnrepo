@@ -1,7 +1,11 @@
 var digitalData = digitalData || {};
 var data=getCurrentBreadcrumb();
-data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'""',.<>\{\}\[\]\\\/]/gi, ' ');
-data = data.replace(/\s{2,}/g,' ');
+var url=$(location).attr('href');
+if(url.indexOf("/unified-compute-platform-director.html") < 0 && url.indexOf("/microsoft-hyper-v.html") < 0)
+{
+	data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
+	data = data.replace(/\s{2,}/g,' ');
+}
 data = data.toLowerCase();
 items = data.split(":");
 count = items.length;
@@ -23,10 +27,12 @@ var delay=4000;
 var gInternalSearchFilter="";
 var leadFormName="";
 pageTitle=pageTitle.toLowerCase();
-pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'""',.<>\{\}\[\]\\\/]/gi, ' ');
 pageTitle=$.trim(pageTitle);
 // URL shorten for UCP and Press Release 
-var url=$(location).attr('href');
+if(url.indexOf("/unified-compute-platform-director.html") < 0 && url.indexOf("/microsoft-hyper-v.html") < 0)
+{
+	pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
+}
 if(url.indexOf("/press-releases/")>-1)
 	{
 		var strngTitle = url;
