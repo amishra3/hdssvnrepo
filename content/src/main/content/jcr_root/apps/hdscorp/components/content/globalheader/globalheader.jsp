@@ -112,7 +112,7 @@
                         <label>Search within Hitachi</label>
                     </div>              
                     <div class="col-sm-12 col-no-pad">
-                        <input type="text" size="20" maxlength="40" placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}" id="gsaMobSearchBox" class="search-txt">
+                        <input type="text" size="20" maxlength="40" data-href="${shortseacrhUrl}" id="gsaMobSearchBox" class="search-txt">
                         <input type="submit" value="Search" class="btn-search" id="gsaMobSearchBtn">
                     </div>
                 </div>
