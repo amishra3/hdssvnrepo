@@ -372,6 +372,16 @@
 
 }
 
+@media only screen and (max-width: 1280px) {
+  .hero-homepage.general .hero-homepage-container .general-list li a{
+	  padding: 13px 10px 10px 42px;
+  }
+  .hero-homepage.general .hero-homepage-container .general-list li a .sprite{
+	  left: 5px;
+  } 
+	
+}
+
 @media only screen and (max-width: 768px) {
   .hero-homepage {
     padding-bottom: 20px;
@@ -392,9 +402,24 @@
     line-height: 1;
     line-height: 120%;
   }
+  
+  .hero-homepage.general .hero-homepage-container .general-list{
+	 padding: 0;
+  }
+  
   .hero-homepage.general .hero-homepage-container .general-list li {
     padding-right: 0;
   }
+  
+  .hero-homepage.general .hero-homepage-container .general-list li a{
+	  height: auto;
+	  padding: 15px 10px 15px 40px;
+  }
+  .hero-homepage.general .hero-homepage-container .general-list li a .sprite{
+	  left: 5px;
+	  top: 8px;
+  }
+  
   .hero-homepage.general .hero-homepage-container .view-all {
     margin-top: 23px;
   }
