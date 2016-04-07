@@ -40,6 +40,19 @@
                         fieldLabel="Location Link"
                         name="./jcr:locationlink"
                         xtype="textfield"/>
+                    <loclinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Link Text"
+                        name="./jcr:loclinktext"
+                        xtype="textfield"/>
+                    <loclinktargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window"
+                        key="jcr:loclinktargettype"
+                        name="./jcr:loclinktargettype"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
                     <directiondetail
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Direction Detail(optional)"
