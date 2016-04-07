@@ -101,7 +101,6 @@ public class GatedPDFReportsServlet extends SlingAllMethodsServlet {
 					if(isGated){
 						resultCnt++;
 						nodePath= anchorStart.replace("@replacewithpath", nodePath)+nodePath+anchorEnd ;
-						System.out.println(" --- "+nodePath);
 						out.println("==GATED ASSET AT =="+nodePath+"<br/>");
 						out.flush();
 					}else{
