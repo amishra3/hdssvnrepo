@@ -6799,9 +6799,9 @@ button.close {
 
 }
 .modal-header .title{
-  font-size: 1.6rem;
-  font-family: Museo-slab;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: Museo-sans;
+  font-weight: normal;
   text-transform: uppercase; 
   width:86%;
   float: left;
