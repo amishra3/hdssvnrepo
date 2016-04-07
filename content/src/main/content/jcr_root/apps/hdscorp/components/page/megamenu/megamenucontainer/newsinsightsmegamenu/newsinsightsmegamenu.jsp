@@ -21,7 +21,7 @@
 <c:set var="subnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmnewsinsightssubnavlabel-mgmnewsinsightssubnavlink-mgmnewsinsightsopeninnewwindow-mgmnewsinsightsalttext")%>" />
 <c:set var="subnavlinks2"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmnewsinsightsheadline-mgmnewsinsightsdescription-mgmnewsinsightsviewfeaturedproductslabel-mgmnewsinsightsviewfeaturedproductslink-mgmnewsinsightsopeninnewwindow2")%>" />
+	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmnewsinsightsheadline-mgmnewsinsightsdescription-mgmnewsinsightsviewfeaturedproductslabel-mgmnewsinsightsviewfeaturedproductslink-mgmnewsinsightsopeninnewwindow2-mgmnewsinsightsthirdparty")%>" />
 <c:set var="navpath" scope="request"
 	value="${properties.mgmnewsinsightsnavpath}" />
 
@@ -70,7 +70,7 @@
 											class="glyphicon ${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>
 
-								</c:when>
+					 			</c:when>
 							</c:choose>
 						</c:forEach>
 					</ul>
@@ -90,14 +90,13 @@
 								<c:if test="${not empty  subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink)}"/>
                                			<p>		
-                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
-											aria-hidden="true"
-											class="glyphicon ${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'glyphicon-menu-right':'glyphicon-menu-right'} animateIcon"></span></a>
+                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}
+                                            ${subnavlinks2.mgmnewsinsightsthirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 										</p>
                             </c:if>
 						</div>
 					</c:forEach>
-				</div>
+				</div> 
 </c:when>
 
 						<c:otherwise>
@@ -110,9 +109,8 @@
 								<c:if test="${not empty  subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmnewsinsightsviewfeaturedproductslink)}"/>
                                			<p>		
-                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}<span
-											aria-hidden="true"
-											class="glyphicon ${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'glyphicon-menu-right':'glyphicon-menu-right'} animateIcon"></span></a>
+                                    		<a href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmnewsinsightsopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmnewsinsightsviewfeaturedproductslabel}
+                                            ${subnavlinks2.mgmnewsinsightsthirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 										</p>
                             </c:if>
 						</div>
