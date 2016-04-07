@@ -70,7 +70,7 @@
 						</div>
 					</c:if>
 
-					<c:if test="${not empty properties.simpllebannerbuttonlabel}">
+					<c:if test="${not empty buttonUrl}">
 						<div class="btn-square-white request">
                         <a data-formtitle="<%=pageProperties.getInherited("btitle", "Need help? Please fill out the form")%>" href="${buttonUrl}" rel="${properties.mform?'iframemodal':''}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
 								${properties.simpllebannerbuttonlabel} </a>
