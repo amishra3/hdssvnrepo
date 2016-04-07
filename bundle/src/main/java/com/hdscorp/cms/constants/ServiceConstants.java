@@ -230,7 +230,8 @@ public final class ServiceConstants {
 	public static final String LOCATION_JCR_LOCATIONPHONENUMBER = "jcr:locphonenumber";
 	public static final String LOCATION_JCR_TITLE = "loctitle";
 	public static final String LOCATION_JCR_DRIVING_DIRECTION = "jcr:directiondetail";
-
+	public static final String LOCATION_JCR_LOCATION_LINK = "jcr:locationlink";
+	
 
 	/**
 	 * News and Insights Constraints
