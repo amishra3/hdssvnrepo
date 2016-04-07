@@ -8,6 +8,7 @@ public class NewsNode {
 	private String description;
 	private boolean openInNewTab;
 	private boolean newWinIcon;
+	private String imageAlt;
 	
 	public boolean isNewWinIcon() {
 		return newWinIcon;
@@ -66,6 +67,15 @@ public class NewsNode {
 	public void setNewsDate(String newsDate) {
 		this.newsDate = newsDate;
 	}
+
+	public String getImageAlt() {
+		return imageAlt;
+	}
+
+	public void setImageAlt(String imageAlt) {
+		this.imageAlt = imageAlt;
+	}
+
 
 	
 
