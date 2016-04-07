@@ -6805,6 +6805,7 @@ button.close {
   text-transform: uppercase; 
   width:86%;
   float: left;
+  padding-left:15px;
 }
 
 .modal-header:before, .modal-header:after {
