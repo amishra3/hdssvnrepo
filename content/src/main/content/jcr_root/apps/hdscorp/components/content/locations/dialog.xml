@@ -35,6 +35,11 @@
                         fieldLabel="Location Detail"
                         name="./jcr:locationdetail"
                         xtype="richtext"/>
+                    <loclink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Link"
+                        name="./jcr:locationlink"
+                        xtype="textfield"/>
                     <directiondetail
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Direction Detail(optional)"
