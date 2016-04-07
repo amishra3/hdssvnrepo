@@ -251,6 +251,12 @@ public class LocationServlet extends SlingSafeMethodsServlet {
 					.replace("[", "").replace("]", ""));
 						
 			
+			jsonObject
+			.put("loclinktargettype",
+					Arrays.toString(
+							(String[]) properties.get(ServiceConstants.LOCATION_JCR_LOCATION_LINK_TYPE, String[].class))
+					.replace("[", "").replace("]", ""));
+			
 
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
