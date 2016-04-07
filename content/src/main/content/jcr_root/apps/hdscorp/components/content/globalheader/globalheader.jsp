@@ -33,9 +33,9 @@
 	if (selectorArray != null && selectorArray.length > 0) {
 		viewtype = selectorArray[0];
 	}
-	
+
 	pageContext.setAttribute("selectorString", viewtype);	
-	
+
 %>
 
 <c:set var="domain" value="" />
@@ -70,7 +70,7 @@
 						<c:set var="linkIconPath" value="${externalLink.linkIconPath}" />
 						<c:set var="linkurltargettype" value="${externalLink.linkurltargettype}" />
                         <c:set var="linkoverlayURL" value="${externalLink.linkoverlayurl}" />
-						
+
  				        <c:choose>
                             <c:when test="${not empty linkoverlayURL}">
                                 <c:set var="linkoverlayURLPath" value="${linkoverlayURL}" />
@@ -112,8 +112,8 @@
                         <label>Search within Hitachi</label>
                     </div>              
                     <div class="col-sm-12 col-no-pad">
-                        <input type="text" size="20" maxlength="40" title="Search within Hitachi" class="search-txt">
-                        <input type="submit" value="Search" class="btn-search">
+                        <input type="text" size="20" maxlength="40" placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}" id="gsaMobSearchBox" class="search-txt">
+                        <input type="submit" value="Search" class="btn-search" id="gsaMobSearchBtn">
                     </div>
                 </div>
             </div>
