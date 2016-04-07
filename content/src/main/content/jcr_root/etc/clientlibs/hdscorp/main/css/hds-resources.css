@@ -881,7 +881,7 @@ color: #cccccc !important;
   .resources-spotlight .spotlight-mobile {
     min-height: 350px;
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: 50% 0%;
     background-repeat: no-repeat;
   }
 
