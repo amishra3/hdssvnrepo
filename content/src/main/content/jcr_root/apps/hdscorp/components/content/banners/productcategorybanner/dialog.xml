@@ -69,9 +69,15 @@
                         xtype="textfield"/>
                     <simplebannerbuttonurl
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Target URL"
+                        fieldLabel="Button Target URL/ Video ID"
                         name="./simplebannerbuttonurl"
                         xtype="pathfield"/>
+                    <openoverlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay ?"
+                        name="./voverlay"
+                        type="checkbox"
+                        xtype="selection"/>
                     <simplebannerurltargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"

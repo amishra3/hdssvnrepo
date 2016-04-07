@@ -11,6 +11,11 @@
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
 	<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
+<c:if test="${not empty properties.voverlay}">
+  <c:set var="vid" value="${properties.simplebannerbuttonurl}" />
+    <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
+
+ </c:if>
 <%-- <div class="common-hero-banner partner-program-banner clearfix" style="background-image: url('${properties.simplebannermagePath}');"> --%>
 		<div class="common-hero-banner partner-program-banner  clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.simplebannermobileimagePath)} > 
 	              <div class="common-hero-banner-container">
@@ -28,7 +33,7 @@
 	                  <h4 class="sub-headline">${properties.simplebannercontent}</h4>
 	                  <c:if test="${not empty properties.simpllebannerbuttonlabel}">
 		                  <div class="btn-square-white learn-more-white-link">
-		                      <a href="${linkUrl}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">${properties.simpllebannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+		                      <a href="${properties.voverlay?'javascript:void(0);':linkUrl}" onclick="${!properties.voverlay?'':vidurl}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">${properties.simpllebannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 		                  </div>
 	                  </c:if>
 					</div>
