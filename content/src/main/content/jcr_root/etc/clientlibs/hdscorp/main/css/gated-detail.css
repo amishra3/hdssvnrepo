@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-
+#thanksmessage{display:none}
 .gatted-asset-pg{
     padding: 140px 0 60px;
 }
@@ -70,12 +70,12 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
 
 .gatted-asset-form h2 { 
     color: #008eaa;
-    font-family: "museo-slab",Helvetica,Arial,sans-serif;
-    font-size: 1.5em;
-    font-weight: 600;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.75em;
+    font-weight: 500;
     margin: 0;
     padding: 0 0 20px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .mb-cta-btn{
     margin: 30px 0 0;
