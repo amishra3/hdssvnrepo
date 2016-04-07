@@ -1035,13 +1035,14 @@ input[type="radio"]:checked+label:before {
 }
 .search-mobile-container .search-section .search-txt {
     width: 230px;
-    height: 26px;
+    height: 27px;
     margin: 0;
     padding: 4px;
     vertical-align: top;
     border: 0 none;
-    font-size: 0.8125rem;
+    font-size: 1rem;
     border: 1px solid #dedede;
+	border-radius:0;
 }
 
 .search-mobile-container .search-section .btn-search {
@@ -1057,4 +1058,5 @@ input[type="radio"]:checked+label:before {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+	border-radius:0;
 }
