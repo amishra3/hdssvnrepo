@@ -73,7 +73,7 @@ var hds = window.hds || {};
              }else{            	 
             	 var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 + '/' + arg3+"&type="+typePage;
              }  
-             
+
             $.getJSON(url, function(data) {
                 var content = '';                    
                 var defaultPhoneConetnt= getJSONLocation.showphonenumberlabel,
@@ -85,6 +85,15 @@ var hds = window.hds || {};
                     }
                     content += '<h3>' + cat.locationtitle + '</h2>';
                     content += cat.locationdetail;
+
+                    if(cat.locationlink!='null'){
+                      if(cat.loclinktargettype!='null'){
+			          content += '<a href="'+cat.locationlink+'" class="animateLink" target="_blank">'+cat.loclinktext+' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
+                        } else{
+				 	content += '<a href="'+cat.locationlink+'" class="animateLink">'+cat.loclinktext+' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>';
+                        }
+                    }
+
                     if(cat.drivingdirection!=='null'){
                     content += '<a href="'+cat.drivingdirection+'" class="animateLink" target="_blank">'+defaultDirectionConetnt+' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>';
                     }
@@ -136,7 +145,7 @@ var hds = window.hds || {};
                 defultOptions = defultOptions + "<option value=" + val.countrylabel + ">" + val.countrylabel + "</option>";            	
             });
             $('#allCountries').html("").append(defultOptions);      
-        	
+
         },
         _getStateBasedOnLocation: function(arg1, arg2) {
             var countryData = getJSONLocation.data;
@@ -154,17 +163,17 @@ var hds = window.hds || {};
             });
             $('#allLocations').html("").append(defultOptions);
         }else{
-        	
+
         	$('#allLocations').prop('disabled', 'disabled');
         	 $('#allLocations').hide();
         	 $('#allLocations').parents('.select-style').hide();
-        	
+
         	 var selectedText = $.trim($("#allCountries option:selected").text()).toLowerCase();
              var selectedTextParent = $.trim($("#allRegion option:selected").text()).toLowerCase();
              $('.scrollbar-inner > h2').html('').html($.trim($("#allRegion option:selected").text()));
              hds.hdsContactLocations._setDetails(selectedTextParent, selectedText, null,true);
         }
- 
+
         },
         _bindEventsSelectors: function() {
             $('#allRegion').on('change', function(event) {
