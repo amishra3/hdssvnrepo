@@ -73,7 +73,7 @@
                                 xtype="textfield"/>
                             <ctalink
                                 jcr:primaryType="cq:Widget"
-                                fieldLabel="CTA Link"
+                                fieldLabel="CTA Link / Video ID"
                                 name="./ctalink"
                                 xtype="pathfield"/>
                             <openoverlay
