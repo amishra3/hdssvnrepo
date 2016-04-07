@@ -53,6 +53,11 @@
                         title="Image"
                         width="{Long}200"
                         xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./mobileimage"
+                        xtype="ddpathfield"/>
                     <multilinks
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./hexmultilinks"
