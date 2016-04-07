@@ -94,7 +94,7 @@ var hds = window.hds || {};
                     var clickedIndex= $(this).parent().index();
                     var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
                     console.log(finalIndex);
-                    if($(window).width()<991){                    	
+                    if($(window).width() < 991){                    	
                    	 $("body, html").animate({ 
                             scrollTop: finalIndex                             
                         }, 600);
@@ -130,7 +130,7 @@ var hds = window.hds || {};
             var sizeCatagoryList = $(".category-products-listing .product").size(),
             x = $(".category-products-listing .product:visible").size();
              hds.loadDataFilters.bindHTMLLoad();           
-                x = (x + 15 <= sizeCatagoryList) ? x + 15 : sizeCatagoryList;
+                x = (x + 10 <= sizeCatagoryList) ? x + 10 : sizeCatagoryList;
                 $('.product:lt(' + x + ')').show('medium');
                 hds.loadDataFilters.udatePageCount();
                 if (x == sizeCatagoryList) {
@@ -161,6 +161,7 @@ var hds = window.hds || {};
                 $('.result-product .navLinks').show();
                 hds.loadDataFilters.udatePageCount();
                 if ($(".product:visible").length === 0) {
+                	$('.toggleLinks').hide();
                     $('#loadCatagoryContent').find('.no-matched-result').remove();
                     $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
                 }
@@ -208,25 +209,35 @@ var hds = window.hds || {};
 
             $(document).on('keypress', '#searchFilter', function(event) {
             	var keycode = (event.keyCode ? event.keyCode : event.which);
+            	var getSearchFilter = $(this).val();
             	if(keycode == 13) {
-	            	event.preventDefault();
-	                var getSearchFilter = $(this).val();
+	            	event.preventDefault();	                
 	                if (getSearchFilter.length > 0) {
 	                    hds.loadDataFilters.checkSearchEmpty();
 	                } else {	                 
-	                	hds.loadDataFilters.checkSearchEmpty();
+	                	return false;
 	                }                
-            	}
+            	}            	            	
             });
-            $(document).on('click', '.glyphicon-search', function(event) {
-            	event.preventDefault();
-	                var getSearchFilter = $('#searchFilter').val();
-	                if (getSearchFilter.length > 0) {
-	                    hds.loadDataFilters.checkSearchEmpty();
-	                } else {	                	
-	                   return false;
-	                }              
-
+            
+            $(document).on('keydown', '#searchFilter', function(event) {
+            	var key = event.keyCode || event.charCode;
+            	var getSearchFilter = $.trim($(this).val());
+            	if( key == 8 || key == 46 ){
+            		console.log(getSearchFilter.length+"\n")
+            		 if (getSearchFilter.length <= 1) {
+            			 hds.loadDataFilters.checkSearchEmpty();            			 
+            		 }
+            		setTimeout(function() {
+           			 hds.loadDataFilters.loadSubContent();
+           			 }, 1000);
+            		
+            	}
+            })
+            
+            $(document).on('click', '.glyphicon-search', function(event) {            	
+	                $('#searchFilter').trigger('keypress');
+	                event.preventDefault();
             });
         },
         checkSearchEmpty: function() {
@@ -256,11 +267,11 @@ var hds = window.hds || {};
             	haveTextInInput = null;
             }             
              $('.product').find('li').addClass("filterText");
-             console.log($ourClass)
              hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
             setTimeout(function() {
                 hds.loadDataFilters.controlCount();
                 if ($(".product:visible").length === 0) {
+                $('.toggleLinks').hide();
                 $('#loadCatagoryContent').find('.no-matched-result').remove();
                 $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
             }
@@ -364,7 +375,7 @@ var hds = window.hds || {};
             		}
                 }
                 return result;
-            }).show('medium');
+            }).show();
            // hds.loadDataFilters.udatePageCount();
         },
         bindEventsOnResize: function() {

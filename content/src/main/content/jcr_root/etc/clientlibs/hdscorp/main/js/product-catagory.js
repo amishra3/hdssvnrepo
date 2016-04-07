@@ -14,10 +14,8 @@ var hds = window.hds || {};
             $('.linkLeft a').eq(0).parent().addClass('active');
         },
         processHTML: function(url, index) {
-        	//$('#contentCatagoryHTML').fadeOut('medium', function(){
 	            $("#contentCatagoryHTML").html(" ").load(url + " .subcategorycontent", function(responseText, textStatus) {
 	            	if (textStatus === 'success' || textStatus === 'notmodified') {
-	            	//$('#contentCatagoryHTML').fadeIn('medium');
 	                hds.productCatagory.bindHTMLLoad();
 	                console.log($($('.linkLeft.active')).offset().top )
 	                if($(window).width()<991){                        	
@@ -26,22 +24,21 @@ var hds = window.hds || {};
                           }, 600);
                      }
 	            	}
-	            });
-        	//});
+	            });        	
         },
         bindHTMLLoad: function() {
             if ($(window).width() < 991) {
                 $('.linkLeft a').each(function() {
                     if ($(this).hasClass('active')) {
-                    	 $(this).parent('li').find('.MobileHolderWrapper').slideDown(1000);
+                    	 //$(this).parent('li').find('.MobileHolderWrapper').slideDown(1000);
                         $(this).parent('li').find('.MobileHolderWrapper').append($('#contentCatagory').html());                       
                         $('#contentCatagory').empty();
                         $(this).parent('li').find('.icon-accordion-closed').css('display', 'none');
                         $(this).parent('li').find('.icon-accordion-opened').css('display', 'inline-block');
                     }
                 });
-            } else {
-               /* $('.linkLeft a').each(function() {                	
+            } else {            	
+            	$('.linkLeft a').each(function() {                	
                     if ($(this).hasClass('active')) {
                         $('#contentCatagory').append($(this).parent('li').find('.MobileHolderWrapper').html());
                         $('.MobileHolderWrapper').empty();                        
@@ -51,7 +48,7 @@ var hds = window.hds || {};
                         $('#contentCatagory').append($(this).parent('li').find('.MobileHolderWrapper').html());
                         $('.MobileHolderWrapper').empty().removeAttr('style');                        
                     }
-                });*/
+                });
             }
         },
         bindEventsOnResize: function() {
@@ -81,6 +78,16 @@ var hds = window.hds || {};
                             loadIndec = $(this).parent().index();
                         $(this).addClass('active');
                         $(this).parent().addClass('active');
+                        var offsetFirst=$($('.linkLeft:eq(0)')).offset().top;
+                        var clickedIndexHeight= $(this).outerHeight();
+                        var clickedIndex= $(this).parent().index();
+                        var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
+                        console.log(finalIndex);
+                        if($(window).width() < 991){                    	
+                       	 $("body, html").animate({ 
+                                scrollTop: finalIndex                             
+                            }, 600);
+                       }
                         hds.productCatagory.processHTML(loadUrl, loadIndec);                        
                         $('.linkLeft').find('.icon-accordion-closed').removeAttr('style').css('display', 'inline-block');
                         $('.linkLeft').find('.icon-accordion-opened').removeAttr('style').css('display', 'none');
@@ -88,16 +95,7 @@ var hds = window.hds || {};
                                               
                     } else if ($(this).hasClass('active') && $(window).width() < 991) {
                     	return false;
-                    	/*
-                        $(this).removeClass('active');
-                        $(this).parent().removeClass('active');
-                        $(this).parent('li').find('.icon-accordion-closed').css('display', 'inline-block');
-                        $(this).parent('li').find('.icon-accordion-opened').css('display', 'none');
-                        $('.MobileHolderWrapper').css({
-                            height: '0px',
-                            overflow: 'hidden'
-                        })
-                        */
+                    	
                     }  
 
                 event.preventDefault();
