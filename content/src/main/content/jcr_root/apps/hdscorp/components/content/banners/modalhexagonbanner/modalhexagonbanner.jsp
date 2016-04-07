@@ -6,6 +6,7 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 <c:set var="heximagePath" value="${properties.heximagePath}"  />
+<c:set var="mobileimagePath" value="${properties.mobileimage}"  />
 
 <c:set var="linkUrl" value="${properties.hexbuttonurl}" />
 
@@ -22,7 +23,8 @@
 	<c:when test="${not empty properties.hextitlecontent}">
         <c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-placardIconPath-placardlinklabel-placardlinkurl-seemorenewwin-thirdparty")%>" />
 
-              <div class="hero-homepage-container" data-indtab="${heximagePath}">
+        <div class="hero-homepage-container" data-indtab="${heximagePath}" data-indmob="${mobileimagePath}"> 
+
                 <a href="javascript:void(0);" class="close-hero"><span class="sprite icon-close-hero"></span></a>
                 <c:if test="${not empty properties.bannericonpath}">
                     <!-- IF ICON PATH IS PRODIVDED -->
