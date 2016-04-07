@@ -115,6 +115,11 @@
                                 fieldLabel="Contact Us Number"
                                 name="./mgmcontactusnumber"
                                 xtype="textfield"/>
+                            <secondmgmcontactusnumber
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Second Contact Us Number"
+                                name="./secondmgmcontactusnumber"
+                                xtype="textfield"/>
                             <mgmcontactusviewfeaturedproductslink
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="View Featured Products Path"

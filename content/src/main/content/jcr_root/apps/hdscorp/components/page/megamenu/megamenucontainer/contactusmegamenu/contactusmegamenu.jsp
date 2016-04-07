@@ -20,7 +20,7 @@
 <c:set var="subnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactussubnavlabel-mgmcontactussubnavlink-mgmcontactusopeninnewwindow-mgmcontactusalttext")%>" />
 <c:set var="subnavlinks2"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactusheadline-mgmcontactusdescription-mgmcontactusviewfeaturedproductslabel-mgmcontactusnumber-mgmcontactusviewfeaturedproductslink-mgmcontactusopeninnewwindow2-overlay")%>" />
+	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactusheadline-mgmcontactusdescription-mgmcontactusviewfeaturedproductslabel-mgmcontactusnumber-secondmgmcontactusnumber-mgmcontactusviewfeaturedproductslink-mgmcontactusopeninnewwindow2-overlay")%>" />
 <c:set var="navpath" scope="request"
 	value="${properties.mgmcontactusnavpath}" />
 <c:set var="mgmcontactusnavpath"
@@ -85,6 +85,9 @@
 							
 							<c:if test="${not empty  subnavlinks2.mgmcontactusnumber}">
 							<div class="phone-no">${subnavlinks2.mgmcontactusnumber}</div>
+							</c:if>
+                            <c:if test="${not empty  subnavlinks2.secondmgmcontactusnumber}">
+							<div class="phone-no">${subnavlinks2.secondmgmcontactusnumber}</div>
 							</c:if>
 								<c:if test="${not empty  subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"/>
