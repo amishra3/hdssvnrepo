@@ -10,7 +10,11 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 
-<c:set var="buttonUrl" value="${properties.simplebannerbuttonurl}" />
+<%-- <c:set var="buttonUrl" value="${properties.simplebannerbuttonurl}" /> --%>
+
+<!-- making config Global -->
+<c:set var="buttonUrl" value="<%=pageProperties.getInherited("simplebannerbuttonurl","https://pages.hds.com/request-info-aem.html")%>" />
+
 
 <c:if test="${fn:startsWith(buttonUrl,'/content/')}">
 	<c:set var="buttonUrl" value="${hdscorp:shortURL(buttonUrl)}" />
@@ -21,6 +25,8 @@
 <c:if test="${fn:startsWith(linkUrl,'/content/')}">
 		<c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
 </c:if>
+
+
 <c:if test="${not empty properties.videooverlay}">
   <c:set var="vid" value="${properties.simplebannervideoembedcode}" />
     <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
@@ -66,7 +72,7 @@
 
 					<c:if test="${not empty properties.simpllebannerbuttonlabel}">
 						<div class="btn-square-white request">
-                        <a data-formtitle="${properties.btitle}" href="${buttonUrl}" rel="${properties.mform?'iframemodal':''}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
+                        <a data-formtitle="<%=pageProperties.getInherited("btitle", "Need help? Please fill out the form")%>" href="${buttonUrl}" rel="${properties.mform?'iframemodal':''}" target="${properties.simplebannerurltargettype?'_blank':'_self'}">
 								${properties.simpllebannerbuttonlabel} </a>
 						</div>
 					</c:if>

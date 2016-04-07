@@ -58,11 +58,6 @@
                         fieldLabel="Button Label"
                         name="./simpllebannerbuttonlabel"
                         xtype="textfield"/>
-                    <simplebannerbuttonurl
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Target URL"
-                        name="./simplebannerbuttonurl"
-                        xtype="pathfield"/>
                     <simplebannerurltargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
@@ -76,11 +71,6 @@
                         name="./mform"
                         type="checkbox"
                         xtype="selection"/>
-                    <bannertitle
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Banner Title"
-                        name="./btitle"
-                        xtype="textfield"/>
                     <simplebannercontentalign
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Align Content on Right ?"

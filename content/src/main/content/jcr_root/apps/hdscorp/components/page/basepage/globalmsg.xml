@@ -57,6 +57,15 @@
             fieldDescription="Ex - &lt;object class=BrightcoveExperience id=#videoGuid&gt;..&lt;/object&gt;"
             name="./videooverlaymarkup"
             xtype="textarea"/> 
-            
+		<btitle
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Product Banner Marketo Form Label"
+            name="./btitle"
+            xtype="textfield"/>
+		<simplebannerbuttonurl
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Marketo Form URL"
+            name="./simplebannerbuttonurl"
+            xtype="pathfield"/>
     </items>
 </jcr:root>
