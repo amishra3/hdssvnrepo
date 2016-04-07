@@ -26,7 +26,7 @@
 			</c:forEach>
 
 		</c:forEach>
-
+<div class="orange-sep">&nbsp;</div>
 	</div>
-	<div class="orange-sep">&nbsp;</div>
+
 </div>

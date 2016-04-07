@@ -435,7 +435,7 @@
 
 .orange-sep{
   float: none;
-  margin: 45px auto 0;
+  margin: 45px 15px 0 15px;
   max-width: 1280px;
   border-bottom: 5px solid #f78e1e;
 }
