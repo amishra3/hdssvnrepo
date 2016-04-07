@@ -221,8 +221,7 @@ public class PressReleasesSearchModel {
 						newsNode.setImgpath(properties.get("awardimg",
 								(String) null).toString());
 
-						newsNode.setImageAlt(properties.get("awardimgalt",
-								(String) null).toString());
+						newsNode.setImageAlt(properties.get("awardimgalt")!=null?properties.get("awardimgalt",(String) null).toString():"");
 						
 						Calendar cal  =(Calendar) properties.get("awarddate");
 						
