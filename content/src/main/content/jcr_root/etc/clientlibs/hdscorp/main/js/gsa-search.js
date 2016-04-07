@@ -8,8 +8,11 @@ var hds = window.hds || {};
 
         },
         setGlobalSearch: function() {
-		var searchUrl=$('#gsaSearchBox').attr('data-href');
-
+             if ($(window).width() < 991) {
+		          var searchUrl=$('#gsaMobSearchBox').attr('data-href');
+             }else{
+                  var searchUrl=$('#gsaSearchBox').attr('data-href');
+             }
              $(document).on('keypress', '#gsaSearchBox', function(event) {
             	var keycode = (event.keyCode ? event.keyCode : event.which);
             	if(keycode == 13) {
@@ -21,7 +24,6 @@ var hds = window.hds || {};
             	}
             });
             $(document).on('click', '.nav-search', function(event) {
-                //alert("..");
             	event.preventDefault();
                  if(!hds.gsasearch.validateSearchBox())
                         return false;
@@ -29,6 +31,24 @@ var hds = window.hds || {};
 	               	window.location=searchUrl+"?q="+q;
             });
 
+            /* Mobile GSA Search */
+            $(document).on('keypress', '#gsaMobSearchBox', function(event) {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == 13) {
+                    event.preventDefault(); 
+                    if(!hds.gsasearch.validateSearchBox())
+                        return false;
+                    var q = $(this).val();
+                    window.location=searchUrl+"?q="+q;
+                }
+            });
+            $(document).on('click', '#gsaMobSearchBtn', function(event) {
+                event.preventDefault();
+                 if(!hds.gsasearch.validateSearchBox())
+                        return false;
+                    var q = $('#gsaMobSearchBox').val();
+                    window.location=searchUrl+"?q="+q;
+            });
         },
         getQueryParameter: function(param) {
             var results = new RegExp('[\?&]' + param + '=([^&#]*)').exec(window.location.href);
@@ -41,16 +61,17 @@ var hds = window.hds || {};
 			var iframe = $('#searchFrame');
             var iframeUrl="/search?access=p&getfields=*&output=xml_no_dtd&client=hdsrevamp&proxystylesheet=hdsrevamp&sort=date:D:L:d1&oe=UTF-8&ie=UTF-8&ud=1&exclude_apps=1&site=hdsrevamp&q="+hds.gsasearch.getQueryParameter('q');
 			 iframe.attr('src', iframeUrl);
-        }
-        ,
+        },
         validateSearchBox: function() {
-            var q = $('#gsaSearchBox').val();
+            if ($(window).width() < 991) {
+                var q = $('#gsaMobSearchBox').val();
+            }else{
+                var q = $('#gsaSearchBox').val();
+            }
             if(!q || q=="")
                 return false;
             else
                 return true;
-
-
         }
     }
 }(window, document, jQuery, hds));
