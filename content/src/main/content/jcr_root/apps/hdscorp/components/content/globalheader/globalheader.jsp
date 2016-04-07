@@ -151,7 +151,7 @@
 
                         <c:set var="childPagePathWithoutHTML" value="${fn:substringBefore(childPagePath,'.html')}" />
 
-						<li class="${fn:contains(requestURL, childPagePathWithoutHTML)?'active':''}">
+						<li class="${fn:contains(requestURL, childPagePathWithoutHTML)?'active':''} hds-default-nav">
 						    <a 
 						    	href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"
 						    	>${navTitle}
