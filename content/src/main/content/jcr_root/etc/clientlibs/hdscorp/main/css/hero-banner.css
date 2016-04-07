@@ -267,6 +267,8 @@
 	color: #ffffff;
 }
 
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a.animateAnchor .animateIcon{top:4px; left:0px;}
+
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a .icon-caret-red {
   position: relative;
   top: 2px;

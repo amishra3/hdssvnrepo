@@ -6895,6 +6895,7 @@ button.close {
     width: 480px;
     margin: 15px auto;
   }
+  .modal-header .title{padding-left:0;}
 }
 @media (min-width: 768px) {
   .modal-dialog {

@@ -483,6 +483,8 @@
     }
     .millennials .millennials-container .millennials-content .blurb-container p {
         float: left;
+    font-size: 1em;
+    line-height: 1.2em;    
     }
     .millennials .millennials-container .millennials-content .learn {
         font-size: 0.8125em;
