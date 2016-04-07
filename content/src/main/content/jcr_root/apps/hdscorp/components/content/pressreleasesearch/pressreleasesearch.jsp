@@ -34,7 +34,7 @@
             <div class="pr">
                 <c:if test="${searchType == 'awards'}">
                     <div class="award-logo">
-                        <img src="${news.imgpath}" alt="" />
+                        <img src="${news.imgpath}" alt="${news.imageAlt}" />
                     </div>
                 </c:if>
                 <div class="pr-content">

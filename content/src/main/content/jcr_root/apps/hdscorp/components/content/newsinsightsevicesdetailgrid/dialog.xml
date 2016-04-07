@@ -76,6 +76,23 @@
                                 fieldLabel="CTA Link"
                                 name="./ctalink"
                                 xtype="pathfield"/>
+                            <openoverlay
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open video overlay ?"
+                                name="./voverlay"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </openoverlay>
                             <seemorenewwin
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Open in New Window ?"

@@ -12,7 +12,7 @@
 	<div class="content-container">					
     <h2>${properties.biotilestitle}</h2>
 
-    <c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"leadername-leaderimagepath-leaderdesgniation-leaderviewbiotext-leaderviewbiotargeturl-leaderopeninnewwindow")%>" />    
+    <c:set var="contentColumn" value="<%=PageUtils.convertMultiWidgetToList(properties,"leadername-leaderimagepath-limagealt-leaderdesgniation-leaderviewbiotext-leaderviewbiotargeturl-leaderopeninnewwindow")%>" />    
 			<c:forEach var="column" items="${contentColumn}" varStatus="loop">
 
                 <c:set var="linkUrl" value="${column.leaderviewbiotargeturl}"/>
@@ -23,7 +23,7 @@
 
 	        <div class="col-md-4 col-sm-6">
             <div class="leaders-info">
-            <img src="${column.leaderimagepath}" alt=""/>
+            <img src="${column.leaderimagepath}" alt="${column.limagealt}"/>
                 <div class="leaders-info-panel">
                 <h2 class="leaders-name">${column.leadername}</h2>
 

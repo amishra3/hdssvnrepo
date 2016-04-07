@@ -47,6 +47,12 @@
                                 key="leaderimagepath"
                                 name="./leaderimagepath"
                                 xtype="pathfield"/>
+                            <leaderimagealt
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Image alt"
+                                key="limagealt"
+                                name="./limagealt"
+                                xtype="textfield"/>
                             <leaderdesgniation
                                 jcr:primaryType="cq:Widget"
                                 allowBlank="{Boolean}false"
