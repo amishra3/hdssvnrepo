@@ -808,6 +808,10 @@ ul.stickyNav li:hover a{
   max-width: 300px;
 }
 
+.cs-section .cs-container .cs-selections .cs-selection-box a{
+	padding: 0;
+}
+
 .cs-section .cs-container .cs-selections .cs-selection-box:hover .glyphicon.glyphicon-chevron-right {
   right: -8px;
 }
