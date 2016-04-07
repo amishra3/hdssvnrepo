@@ -130,7 +130,7 @@ $(document).ready(function () {
     
 	$(document).on('click','.isGatedLock',function(evt){
 		//localStorage.setItem('parentPageRef', window.location.href);
-		document.cookie="hdsGatedParentPageRef="+window.location.href+"; path=/; domain=.hds.com";
+		document.cookie="hdsGatedParentPageRef="+window.location.href+"; path='/'";
     })
 	
     if ($(".stickyNav")[0]){
