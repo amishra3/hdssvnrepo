@@ -322,7 +322,7 @@ text-transform: none;}
 .stay-inner-coloum{}
 
 @media only screen and (max-width: 1024px) {
-  .social-links{margin-left: -15px; margin-right: -15px;}
+  .social-links{margin:35px 15px;}
 }
 
 @media only screen and (max-width: 991px) {
