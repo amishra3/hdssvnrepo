@@ -1,4 +1,15 @@
-/* Hero Social Innovation CSS*/
+/* Hero Resources Banner CSS*/
+@media only screen and (max-width: 1024px){
+  .res-signup-banner{
+    padding-bottom: 0;
+  }
+  .res-signup-banner h1.headline{
+    margin-top: 0;
+  }
+  .res-signup-banner .sub-headline{
+    margin-bottom: 0;
+  }
+}
 .resSubscription{
   margin-top: 36px;
 }
