@@ -17,7 +17,7 @@ public class LeaderShipBIODetailsModel {
 
 	@Inject
 	@Named("jcr:lbdimage")
-	@Default(values = "/content/dam/public/en_us/images/aboutus/leader-img.jpg")
+	
 	private String lbdimage;
 
 	@Inject
