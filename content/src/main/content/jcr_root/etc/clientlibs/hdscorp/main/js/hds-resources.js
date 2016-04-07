@@ -94,8 +94,7 @@ var hds = window.hds || {};
             var parms = hds.resourceLib._getParmsFromURLHash(qURL);
             var filter1 = parms["ind"]; 
             var filter2 = parms["content"]; 
-            var filter3 = parms["subcat"];                  
-
+            var filter3 = parms["subcat"]; 
             $('#asideLinks-product li.active input').each(function(){
                 var inputId = $(this).attr('id');
                 if(inputId == filter3){
@@ -114,11 +113,21 @@ var hds = window.hds || {};
                     $(this).trigger('click');
                 }
             })
-            setTimeout(function(){
-                $('#showIndustry, #showContentType').trigger('click');
-                $('body').scrollTo('.res-filters-search',{duration:'slow', offsetTop : '50'});
-            }, 1000);
 
+            var stringUrl = qURL;
+            var n=stringUrl.lastIndexOf("/");
+            stringUrl=stringUrl.substring(n+1, 1000);
+            n=stringUrl.lastIndexOf(".");
+            if(n>0){
+                stringUrl=stringUrl.substring(0, n);
+                n=stringUrl.lastIndexOf(".");
+                if(n>0 || filter3 !== undefined){
+                    $('body').scrollTo('.res-filters-search',{duration:'slow', offsetTop : '50'});
+                }
+            }
+            setTimeout(function(){
+                $('#showIndustry, #showContentType').trigger('click');                
+            }, 1000);
         },
         _showFilterDropDown: function(arg) {
             var optionSelected = this.options.filterTopLeft;
