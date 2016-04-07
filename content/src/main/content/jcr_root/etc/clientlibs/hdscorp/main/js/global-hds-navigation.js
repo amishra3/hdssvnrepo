@@ -99,6 +99,7 @@ var hds = window.hds || {};
         linksExchange:function(){
         	$('.hds-main-navigation > ul > li> a').each(function(){
         		var href=$(this).attr('href');
+				$(this).attr('class', 'hds-default-nav-anchor');
         		var dataHref= $(this).attr('data-href',href);
         		$(this).parent('li').find('.megamenu-heading').find('h2 > a').attr('href',href);
         		  if ($(window).width() <= 768) {        		
@@ -176,12 +177,22 @@ var hds = window.hds || {};
         this.each(function() {
             var curItem = false;
 
-            $(this).on('click', function(e) {
-                var item = $(this);
-                if (item[0] != curItem[0]) {
-                    e.preventDefault();
-                    curItem = item;
-                }
+            $('.globalNavWrapper li.hds-default-nav > a.hds-default-nav-anchor').on('click', function(e) {
+				//$(this).on('click', function(e) {
+					if(!$(this).hasClass("oneclick")){
+						$(this).addClass('oneclick');
+						e.preventDefault();
+					}else{
+						return true
+					}
+					
+					/*var item = $(this);
+					if (item[0] != curItem[0]) {
+						
+						//if (item[0] != curItem[0] && $(this).hasClass("hds-default-nav-anchor")) {
+						e.preventDefault();
+						curItem = item;
+					}*/
             });
 
             $(document).on('click touchstart MSPointerDown', function(e) {
@@ -204,5 +215,6 @@ $(function() {
         hds.buildShowNav.init();
     }
     hds.buildShowNav.checkOrientations();
-    $('.globalNavWrapper li:has(div.hds-megaMenuWrapper)').doubleTapToGo();
+   // $('.globalNavWrapper li.hds-default-nav:has(div.hds-megaMenuWrapper)').doubleTapToGo();
+    $('.globalNavWrapper li.hds-default-nav').doubleTapToGo();
 })
