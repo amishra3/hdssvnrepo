@@ -14,6 +14,10 @@
 <!-- includeClientLib is not loading the JS lib and that is why doing it conventionally-->
 <!-- <script type="text/javascript" src="/etc/clientlibs/hdscorp/main.js"></script> -->
 
+<c:if test="${not empty analyticsinfooter}">
+	<cq:include script="headeranalytics.jsp"/>
+</c:if>
+
 <cq:include script="dtmsetup.jsp"/>
 <cq:includeClientLib js="hdscorp.analytics"/>
 

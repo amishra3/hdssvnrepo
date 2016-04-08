@@ -15,6 +15,12 @@
            fieldDescription="Ex - //assets.adobedtm.com/e171f6759c6c455550c5f666e64e8a56fe657d2f/satelliteLib-7f2faccf998d3a358edac4d790c59020820ff755.js"
            name="./stgAnalyticsScriptPath"
            xtype="textarea"/>
+        <analyticsinfooter
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Include analytics scripts in footer (instead of header) ?"
+            name="./analyticsinfooter"
+            type="checkbox"
+            xtype="selection"/>           
         <domain
             jcr:primaryType="cq:Widget"
             fieldLabel="Link Domain Value"

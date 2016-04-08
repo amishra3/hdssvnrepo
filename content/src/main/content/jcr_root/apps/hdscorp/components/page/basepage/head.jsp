@@ -63,7 +63,10 @@
       <script>try{Typekit.load({ async: true });}catch(e){}</script>
 	
 	  <cq:include script="headlibs.jsp"/>
-	  <cq:include script="headeranalytics.jsp"/>
+	  <c:if test="${empty analyticsinfooter}">
+		<cq:include script="headeranalytics.jsp"/>
+	  </c:if>
+	  
       <cq:include script="/libs/wcm/core/components/init/init.jsp"/>
 	  <% if (favIcon != null) { %>
 		<link rel="icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
