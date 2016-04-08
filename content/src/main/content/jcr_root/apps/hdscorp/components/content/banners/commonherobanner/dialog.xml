@@ -59,9 +59,15 @@
                         xtype="textfield"/>
                     <commonbannerbuttonurl
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Target URL"
+                        fieldLabel="Button Target URL / video ID"
                         name="./commonbannerbuttonurl"
                         xtype="pathfield"/>
+                    <commonoverlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay ?"
+                        name="./cvoverlay"
+                        type="checkbox"
+                        xtype="selection"/>
                     <commonbannertargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
@@ -92,9 +98,21 @@
                         xtype="html5smartimage"/>
                     <commonbannervideoembedcode
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Video Embed code"
+                        fieldLabel="Video Url / Video ID"
                         name="./commonbannervideoembedcode"
                         xtype="textarea"/>
+                    <commonoverlay2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay ?"
+                        name="./cvoverlay2"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <commonbannertargettype2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./commonbannertargettype2"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>

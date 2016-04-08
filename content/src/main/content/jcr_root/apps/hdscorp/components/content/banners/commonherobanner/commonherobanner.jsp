@@ -14,6 +14,13 @@
 <c:if test="${fn:startsWith(bannerimagePath,'/content/')}">
 	<c:set var="bannerimagePath" value="${hdscorp:shortURL(bannerimagePath)}" />
 </c:if>
+<c:if test="${not empty properties.commonbannerbuttonurl}">
+<c:set var="burl" value="${properties.commonbannerbuttonurl}" />
+ </c:if>
+<c:if test="${not empty properties.cvoverlay}">
+  <c:set var="vid" value="${burl}" />
+  <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
+</c:if>
 
 <c:choose>
 	<c:when test="${not empty properties.commonherobannertitle}">
@@ -34,15 +41,21 @@
 
                                  <c:if test="${not empty properties.commonbannerbuttonlabel}">
                                 <div class="btn-square-white request">
-                                    <a href="${properties.commonbannerbuttonurl}" target="${properties.commonbannertargettype?'_blank':'_self'}">
+                                    <a href="${properties.cvoverlay?'javascript:void(0);':burl}" onclick="${!properties.cvoverlay?'':vidurl}" target="${properties.commonbannertargettype?'_blank':'_self'}">
                                         ${properties.commonbannerbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}
                                     </a>
                                 </div>
                             </c:if>
+								<c:set var="burl2" value="${properties.commonbannervideoembedcode}" />
+                                        <c:if test="${not empty properties.cvoverlay2}">
+                                          <c:set var="vid2" value="${burl2}" />
+                                <c:set var="vidurl2" value="hds.resourceLib._openvideooverlayById(${vid2});"/>
+
+                             </c:if>
 
                         <c:if test="${not empty properties.commonherobannerbuttonlabel}">
                         <div class="video-play hidden-lg">
-                            <a href="javascript:void(0);" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
+                            <a href="${properties.cvoverlay2?'javascript:void(0);':burl2}" onclick="${!properties.cvoverlay2?'':vidurl2}" target="${properties.commonbannertargettype2?'_blank':'_self'}" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
                         </div>
 
 
@@ -54,7 +67,7 @@
 
                     <div class="col-lg-5 col-md-5 col-xs-12 hidden-xs hidden-xs hidden-sm">
                         <div class="video-play-desktop">
-                            <a href="javascript:void(0);" class="btn-play-video">
+                            <a href="${properties.cvoverlay2?'javascript:void(0);':burl2}" onclick="${!properties.cvoverlay2?'':vidurl2}" target="${properties.commonbannertargettype2?'_blank':'_self'}" class="btn-play-video">
                                 <img src="${properties.commonbannerimageoverlaypath}" alt="">                               
                             </a>
                         </div>
@@ -63,14 +76,7 @@
                 </div>
             </div>
 
-			    <div class="about-hds-csr-eco video clearfix" style="background-image:url('${properties.commonherobannerimagePath}');">
-                <div class="content-container">
-                    <div class="video-player">
-						<a href="javascript:void(0);" class="close-hero"><span class="sprite icon-close-hero"></span></a>
-                        ${properties.commonbannervideoembedcode}
-                    </div>
-                </div>
-            </div> 
+			    
 
     </c:when>
 
