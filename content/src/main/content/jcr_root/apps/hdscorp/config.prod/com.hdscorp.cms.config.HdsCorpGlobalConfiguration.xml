@@ -11,4 +11,5 @@
     hdscorp.pressreleasespaths="[/content/hdscorp/en_us/lookup/search-press-releases,/content/hdscorp/en_us/news-insights/news]"
     hdscorp.newspaths="[/content/hdscorp/en_us/lookup/search-news,/content/hdscorp/en_us/news-insights/news]"
     hdscorp.awardspaths="[/content/hdscorp/en_us/lookup/search-awards,/content/hdscorp/en_us/news-insights/news]"
-    hdscorp.facebook.fields="[id,message,picture,link,description,icon,created_time]"/>        
+    hdscorp.facebook.fields="[id,message,picture,link,description,icon,created_time]"
+    hdscorp.rsimg.imagepath = "/etc/clientlibs/hdscorp/main/images/loading.gif"/>        

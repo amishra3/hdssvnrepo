@@ -2,12 +2,14 @@ package com.hdscorp.cms.tag;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.hdscorp.cms.config.HdsCorpGlobalConfiguration;
 import com.hdscorp.cms.util.PathResolver;
 
 public class ELTagHelper {
 	
 //	public static String LOAD_IMAGE_PATH="/etc/clientlibs/hdscorp/main/images/load-indicator.gif";
-	public static String LOAD_IMAGE_PATH="";
+	public static String LOAD_IMAGE_PATH=HdsCorpGlobalConfiguration.RESPONSIVE_LOADING_IMAGE_PATH;
+//	public static String LOAD_IMAGE_PATH="";
 	
 	/**
      * This is the function that is called by the Expression Language processor.  It must be static.

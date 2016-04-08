@@ -64,6 +64,9 @@ public class HdsCorpGlobalConfiguration {
 	public static final String AWARDS_PATHS = "hdscorp.awardspaths";	
 	@Property(label = "Facebook Fields To Retreive", value = "",unbounded = PropertyUnbounded.ARRAY, description = "Facebook Fields To Retreive")
 	public static final String FACEBOOK_FIELDS = "hdscorp.facebook.fields";
+	@Property(label = "Responsive Image Loading animation GIF path", value = "",description = "Keep empty to disable")
+	public static final String RESPONSIVE_LOADING_IMAGE_PATH = "hdscorp.rsimg.imagepath";
+
 	
 	//DONT FOLLOW THIS PATTERN AS THIS IS A FIX FOR A BUG
 	public static String BRIGHTTALK_DATA_STORAGE_PATH = "hdscorp.brighttalk.data.storage.path";	
