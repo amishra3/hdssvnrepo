@@ -181,8 +181,10 @@ var hds = window.hds || {};
                     'display': 'none'
                 });
                 if ($(window).width() < 991) {
+					$('.topFilter').find('div.disable-filter').remove();
                     $('.topFilter').prepend('<div class="disable-filter"/>');
                 }else{
+					$('.resource-filters').find('div.disable-filter').remove();
                     $('.resource-filters').append('<div class="disable-filter"/>');
                 }                
             }
