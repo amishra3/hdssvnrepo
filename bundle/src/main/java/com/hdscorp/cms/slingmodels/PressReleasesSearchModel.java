@@ -151,6 +151,11 @@ public class PressReleasesSearchModel {
 					} else {
 						newsNode.setOpenInNewTab(false);
 					}
+					if(properties.get("thirdparty")!=null){
+						newsNode.setNewWinIcon(true);
+					} else {
+						newsNode.setNewWinIcon(false);
+					}
 					newsList.add(newsNode);
 				}
 
@@ -192,6 +197,11 @@ public class PressReleasesSearchModel {
 							newsNode.setOpenInNewTab(true);
 						} else {
 							newsNode.setOpenInNewTab(false);
+						}
+						if(properties.get("thirdparty")!=null){
+							newsNode.setNewWinIcon(true);
+						} else {
+							newsNode.setNewWinIcon(false);
 						}
 						newsList.add(newsNode);
 					}
