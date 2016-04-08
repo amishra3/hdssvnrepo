@@ -83,15 +83,16 @@ function initiateVideo() {
         }
 
         bcUrl = protocol+'//sadmin.brightcove.com/js/BrightcoveExperiences.js';
-        bcApi = protocol+'//sadmin.brightcove.com/js/APIModules_all.js';
+       // bcApi = protocol+'//sadmin.brightcove.com/js/APIModules_all.js';
             
-        if (!window.brightcove) {
+        /*if (!window.brightcove) {
             $('#loading').hide();
             $.getScript(bcUrl, function(data, textStatus, jqxhr) {
+                console.log('Brightcove loaded');
             });
-        }
+        }*/
 
-        $.getScript(bcApi, function(data, textStatus, jqxhr) {
+        /*$.getScript(bcApi, function(data, textStatus, jqxhr) {
 
             if (protocol == 'https') {
                 var bcParam = document.createElement('param');
@@ -104,8 +105,9 @@ function initiateVideo() {
                     window.brightcove.createExperiences();
                 }, 301);
             } else {
+                console.log('Brightcove not loaded');
             }
-        });
+        });*/
     }, 251);
 }
 var gblPlayingVideo;
@@ -122,20 +124,90 @@ $(document).on('click', 'a.l-overlay', function(e) {
     gblPlayingVideo = object.html();
     object.html('');    
     videobox.setContent('')
-    videobox.setContent($('#' + $(this).data('target-content')).html());    
+    vidObjMkup = '<object id="myExperience'+videoID+'" class="BrightcoveExperience">  <param name="bgcolor" value="#FFFFFF" />  <param name="width" value="920" />  <param name="height" value="517" />  <param name="playerID" value="'+videoID+'" /><param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot" />  <param name="isVid" value="true" />  <param name="isUI" value="true" />  <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="'+videoID+'" />  <param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="myTemplateLoaded" /></object>';
+
+    videobox.setContent(vidObjMkup);    
     videobox.show();
     initiateVideo();
+     brightcove.createExperiences();
+
     /* WA Video Tracking Code */
     var pPageName = window.location.href;
 	videoTracking(videoID, pPageName);
 });
+
 $(document).on('click', '.close-overlay', function(event) {
 
     $('.video-div').html(gblPlayingVideo);
     $('.video-div').removeClass("video-div");
     $('.innerContent').html('');
     gblPlayingVideo = null;
+	
+	
+	if($('.navContain').length!==0){
+	
+	function resetSticky(){
+		
+		var heroBannerClass;
+        if($('.hero-product-solutions').length!==0){
+			heroBannerClass=".hero-product-solutions";
+        }else{
+			heroBannerClass=".common-hero-banner";
+        }
+	
+		var secondaryNav = $('.navContain'),
+		secondaryNavTopPosition = secondaryNav.offset().top,
+		taglineOffesetTop = $(heroBannerClass).offset().top + $(heroBannerClass).height() + parseInt($(heroBannerClass).css('paddingTop').replace('px', '')),
+		contentSections = $('.accordion-level'),
+		endScroll = $('.stop'),
+		endScrollPos = endScroll.offset().top;
+
+	$(window).on('scroll', function(){
+	
+		
+		if($(window).scrollTop() > secondaryNavTopPosition && $(window).scrollTop() < endScrollPos) {
+			secondaryNav.addClass('is-fixed sticky fadeInDown animated');
+		}else if($(window).scrollTop() > endScrollPos ) {
+			secondaryNav.removeClass('is-fixed sticky fadeInDown animated');
+		} else {
+			secondaryNav.removeClass('is-fixed sticky fadeInDown animated');
+		}
+		updateSecondaryNavigation();
+		
+	});
+
+
+	function updateSecondaryNavigation() {
+		contentSections.each(function(){
+			var actual = $(this),
+				actualHeight = actual.height() + parseInt(actual.css('paddingTop').replace('px', '')) + parseInt(actual.css('paddingBottom').replace('px', '')),
+				actualAnchor = secondaryNav.find('a[href="#'+actual.attr('id')+'"]');
+			if ( ( actual.offset().top - secondaryNav.height() <= $(window).scrollTop() ) && ( actual.offset().top +  actualHeight - secondaryNav.height() > $(window).scrollTop() ) ) {
+				actualAnchor.addClass('active');
+			}else {
+				actualAnchor.removeClass('active');
+			}			
+		});
+	}
+	secondaryNav.find('ul a').on('click', function(event){
+		event.preventDefault();
+        var target= $(this.hash);
+        $('body,html').animate({
+			'scrollTop': target.offset().top + 4
+        	}, 400
+        );
+	});
+	
+	}
+	
+	}
+	resetSticky();
+	setTimeout(resetSticky, 1500);
+
+	
+	
 });
+
 $(document).keyup(function(e) { //play videos properly when closed by esc key
     var overlay = $('.hds-overlay');
     if (e.keyCode == 27 && typeof searchPlayingVideo  !== "undefined") {

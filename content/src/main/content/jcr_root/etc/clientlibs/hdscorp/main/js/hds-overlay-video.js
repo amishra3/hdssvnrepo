@@ -40,7 +40,7 @@ HDS.Lightbox.prototype = {
         var self = this;
         self.scale();
         $('body').append(self.$lightbox).css({
-            'overflow': 'hidden'
+            'overflow': ''
         });
         $(window).on('scroll resize', function(event) {
             self.scale();
