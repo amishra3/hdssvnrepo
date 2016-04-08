@@ -207,26 +207,25 @@ public final class PropertyResolver {
             if(!hideInSitemap && level>2)
             {
             	try{
-            	 InheritanceValueMap iProperties = new HierarchyNodeInheritanceValueMap(child.getContentResource());
-            	 pageTemplate=(String)child.getProperties().get("cq:template");
-            	 loc = PathResolver.getShortURLPath(child.getPath());//resourceResolver.map(child.getPath()+".html");
-                 changefreq = child.getProperties().get("pagechangefreq","monthly");
-                 priority = child.getProperties().get("sitemappagepriority","");
-                 
-                 if(priority.trim().length()== 0){
-                	 priority = (String)iProperties.getInherited("sitemappagepriority", "1.0");
-                 }
-                 
-                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
-                 
-                 if(child.getLastModified()!=null){
-                	 lastmod = fmt.format(child.getLastModified().getTime());
-                 }
-                 else{
-                	 lastmod = fmt.format(((java.util.GregorianCalendar)child.getProperties().get("jcr:created")).getTime());
-                 }
-            	}
-            	catch(Exception e){
+	            	 InheritanceValueMap iProperties = new HierarchyNodeInheritanceValueMap(child.getContentResource());
+	            	 pageTemplate=(String)child.getProperties().get("cq:template");
+	            	 loc = PathResolver.getShortURLPath(child.getPath());//resourceResolver.map(child.getPath()+".html");
+	                 changefreq = child.getProperties().get("pagechangefreq","monthly");
+	                 priority = child.getProperties().get("sitemappagepriority","");
+	                 
+	                 if(priority.trim().length()== 0){
+	                	 priority = (String)iProperties.getInherited("sitemappagepriority", "1.0");
+	                 }
+	                 
+	                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
+	                 
+	                 if(child.getLastModified()!=null){
+	                	 lastmod = fmt.format(child.getLastModified().getTime());
+	                 }
+	                 else{
+	                	 lastmod = fmt.format(((java.util.GregorianCalendar)child.getProperties().get("jcr:created")).getTime());
+	                 }
+            	}catch(Exception e){
             		LOG.error("Exception in buildSubList::"+e);
             	}
             	if(null != pageTemplate){
