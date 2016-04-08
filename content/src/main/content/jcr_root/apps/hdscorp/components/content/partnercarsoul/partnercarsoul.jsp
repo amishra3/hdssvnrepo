@@ -18,7 +18,7 @@
 
 		<c:set var="contentColumn"
 			value="<%=PageUtils.convertMultiWidgetToList(properties,
-					"partnerpagebartitle-bannertitle-bannerdescription-bannerimagepath-ctalabel-ctatargeturl-openinnewwindow-imagepath-thirdparty-mobileimage")%>" />
+					"partnerpagebartitle-bannertitle-bannerdescription-bannerimagepath-ctalabel-ctatargeturl-openinnewwindow-imagepath-thirdparty-mobileimage-voverlay")%>" />
 		<c:forEach var="column" items="${contentColumn}" varStatus="loop">
 
 			<c:set var="linkUrl" value="${column.ctatargeturl}" />
@@ -27,6 +27,10 @@
 					value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>" />
 			</c:if>
 
+          	  				<c:if test="${not empty column.ctatargeturl}">
+                              <c:set var="vid" value="${column.ctatargeturl}" />
+                                <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
+                             </c:if>
 			<%-- <div class="bannerSectionImage" style="background-image:url('${column.bannerimagepath}'); background-repeat: no-repeat;"> --%>
 			<div class="bannerSectionImage rsImg"
 				${hdscorp:bgImgAtrr(column.bannerimagepath,column.mobileimage)}; background-repeat:no-repeat;>
@@ -43,8 +47,8 @@
 						<p>${column.bannerdescription}</p>
 						<c:if test="${not empty column.ctalabel}">
 							<div class="btn-square-white request call-to-action">
-								<a href="${linkUrl}"
-									target="${column.openinnewwindow==true?'_blank':'_self'}">${column.ctalabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+								<a href="${column.voverlay==1?'javascript:void(0);':linkUrl}"
+									target="${column.openinnewwindow==true?'_blank':'_self'}" onclick="${column.voverlay==2?'':vidurl}">${column.ctalabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 							</div>
 						</c:if>
 					</div>

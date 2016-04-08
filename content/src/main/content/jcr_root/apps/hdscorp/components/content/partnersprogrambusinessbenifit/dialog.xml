@@ -107,7 +107,7 @@
                     <ppbboptionalprogramcalltoactionlink
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
-                        fieldLabel="Optional Progarm Call To Action Link"
+                        fieldLabel="Optional Progarm Call To Action Link / Video ID"
                         name="./jcr:ppbboptionalprogramcalltoactionlink"
                         validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./jcr:ppbboptionalprogramcalltoactionlink)&#xa; var ppbboptionalprogramcalltoactionlink = newsPathField.getValue();&#xa; if($.trim(ppbboptionalprogramcalltoactionlink)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
@@ -121,6 +121,12 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Show third party icon?"
                         name="./pthirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <overlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay ?"
+                        name="./pvoverlay"
                         type="checkbox"
                         xtype="selection"/>
                 </items>

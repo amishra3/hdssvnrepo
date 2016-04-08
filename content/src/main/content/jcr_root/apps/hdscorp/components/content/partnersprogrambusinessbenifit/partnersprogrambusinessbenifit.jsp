@@ -34,7 +34,10 @@
 	<c:set var="optionalProgramCallToActionLink"
 		value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("learnMoreLink").toString())%>" />
 </c:if>
-
+							<c:if test="${not empty properties.pvoverlay}">
+                              <c:set var="vid" value="${optionalProgramCallToActionLink}" />
+                                <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
+                             </c:if>
 
 <div class="business-specific partner-hexContain clearfix">
                 <div class="business-specific-container clearfix content-container">
@@ -56,7 +59,7 @@
                                         <span class="sprite"><img src="${partnerProgramBusinessBenifitModel.optionalProgramIconPath}" alt="" title="" style="position: absolute;top: -30px;left: 0px;right: 0px;margin: 0px auto;"></span>
                                         <h4>${partnerProgramBusinessBenifitModel.optionalProgramHeadLine}</h4>
                                         <p>${partnerProgramBusinessBenifitModel.optionalProgarmDescription}</p>
-                                        <a href="${optionalProgramCallToActionLink}" class="animateAnchor bottomPos text-center" target="${partnerProgramBusinessBenifitModel.callToActionOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.optionalProgarmCallToActionLabel}${properties.pthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
+                                        <a href="${properties.pvoverlay?'javascript:void(0);':optionalProgramCallToActionLink}" onclick="${!properties.pvoverlay?'':vidurl}" class="animateAnchor bottomPos text-center" target="${partnerProgramBusinessBenifitModel.callToActionOpenInNewWindow?'_blank':'_self'}">${partnerProgramBusinessBenifitModel.optionalProgarmCallToActionLabel}${properties.pthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}
 </a>
                                     </li>
                                 </ul>
