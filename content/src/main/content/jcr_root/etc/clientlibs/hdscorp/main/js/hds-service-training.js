@@ -54,6 +54,9 @@ var hds = window.hds || {};
                 }
             }); 
 
+			  if(locations==''){
+	                locations = $('#allRegion').val();
+	            }            
 
             $('.btn-square-red a').unbind('click').click(function(){
 				if($('.training-search input').val() == "" && $('.from_date').val() == "" && $('.to_date').val() == "" && locations == ""){
