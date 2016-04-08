@@ -114,7 +114,7 @@
 }
 
 .hero-homepage.general .hero-homepage-container .scroll-down{
-	margin-top: 90px;		
+  margin-top: 90px;   
 }
 
 .hero-homepage.general .hero-homepage-container .view-all:hover .glyphicon.glyphicon-chevron-right {
@@ -168,6 +168,7 @@
 .hero-homepage.healthcare {
   display: none;
   /* background: url("../images/hero-doctors.jpg") top center no-repeat; */
+  min-height: 670px;
 }
 
 .hero-homepage.healthcare .hero-homepage-container > h1 {
@@ -206,29 +207,25 @@
 }
 
 .hero-homepage.healthcare .hero-homepage-container .icon-connect, .hero-homepage.healthcare .hero-homepage-container .icon-transform, .hero-homepage.healthcare .hero-homepage-container .icon-advance {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  right: 0;
   margin: 0 auto;
 }
 
 .hero-homepage.healthcare .hero-homepage-container .healthcare-list {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 0;
   list-style-type: none;
-  min-height: 300px;
+  min-height: 265px;
 }
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li {
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect {
+  margin: 0;
+  padding-top: 30px;
   position: relative;
-  margin: 0 12px;
-  padding-top: 22px;
   vertical-align: top;
-  z-index:1;
+  z-index: 1;
 }
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li h4 {
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect > h4 {
   color: #ffffff;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -237,7 +234,7 @@
   margin: 20px 10px 10px;
 }
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li p {
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect > p {
   color: #ffffff;
   margin: 0 5px 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -246,11 +243,7 @@
   font-weight: 300;
 }
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a {
-  position: absolute;
-  top: 150px;
-  left: 0;
-  right: 0;
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect > a {
   margin: 0 auto;
   z-index: 10;
   display: block;
@@ -263,13 +256,13 @@
   text-transform: uppercase;
 }
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li .animateAnchor:hover > .animateIcon{
-	color: #ffffff;
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect > .animateAnchor:hover > .animateIcon{
+  color: #ffffff;
 }
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a.animateAnchor .animateIcon{top:4px; /*left:0px;*/}
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect > a.animateAnchor .animateIcon{top:4px; /*left:0px;*/}
 
-.hero-homepage.healthcare .hero-homepage-container .healthcare-list > li a .icon-caret-red {
+.hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect > a .icon-caret-red {
   position: relative;
   top: 2px;
   left: 5px;
@@ -279,6 +272,13 @@
   margin:0 auto;
  }
 
+@media only screen and (min-width: 1024px) {
+ .hero-homepage.healthcare .hero-homepage-container .healthcare-list > div.hexagon-connect > a{
+	 letter-spacing: 0.1em;
+ }
+ 
+}
+ 
 @media only screen and (min-width: 1280px) {
   .hero-homepage.healthcare {
     background-size: cover;
@@ -323,7 +323,7 @@
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon {
     padding-top: 0;
     top: 56px;
-    width: 270px;
+    width: 100%;
     height: auto;
   }
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon:before {
@@ -347,7 +347,7 @@
   .hero-homepage.healthcare .hero-homepage-container .healthcare-list .hexagon > .icon-connect {
     background-image: url(../images/sprite.png);
     background-position: -60px -215px;
-	background-size: 100% auto;
+  background-size: 100% auto;
     width: 70px;
     height: 70px;
   }
@@ -374,12 +374,12 @@
 
 @media only screen and (max-width: 1280px) {
   .hero-homepage.general .hero-homepage-container .general-list li a{
-	  padding: 13px 10px 10px 42px;
+    padding: 13px 10px 10px 42px;
   }
   .hero-homepage.general .hero-homepage-container .general-list li a .sprite{
-	  left: 5px;
+    left: 5px;
   } 
-	
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -404,7 +404,7 @@
   }
   
   .hero-homepage.general .hero-homepage-container .general-list{
-	 padding: 0;
+   padding: 0;
   }
   
   .hero-homepage.general .hero-homepage-container .general-list li {
@@ -412,12 +412,12 @@
   }
   
   .hero-homepage.general .hero-homepage-container .general-list li a{
-	  height: auto;
-	  padding: 15px 10px 15px 40px;
+    height: auto;
+    padding: 15px 10px 15px 40px;
   }
   .hero-homepage.general .hero-homepage-container .general-list li a .sprite{
-	  left: 5px;
-	  top: 8px;
+    left: 5px;
+    top: 8px;
   }
   
   .hero-homepage.general .hero-homepage-container .view-all {
@@ -445,7 +445,7 @@
     font-size: 0.8125em;
     line-height: 1;
     line-height: 150%;
-	width: 100%;
+  width: 100%;
   }
   .hero-homepage.healthcare .hero-homepage-container .close-hero {
     right: 15px;
@@ -454,28 +454,28 @@
     font-size: 1em;
   }
   .homepage  .hexagon270{
-	 min-height: 150px;
+   min-height: 150px;
   }
   .homepage  .hexagon270:before{
-	  top: -76px;
+    top: -76px;
   }
   .homepage  .hexagon270 img{
-	  top: -50px !important;
+    top: -50px !important;
    }
   .homepage  .calculating-success .calculating-success-container .calculating-list > li{
-	  padding-top: 30px;	  
+    padding-top: 30px;    
   }
   .homepage  .calculating-success .calculating-success-container .calculating-list > li h4{
-	  font-size: 1em;
-	  margin: 10px 5px 8px;	
+    font-size: 1em;
+    margin: 10px 5px 8px; 
   }
   .homepage  .calculating-success .calculating-success-container .calculating-list > li p{
-	  font-size: 1em;	  
+    font-size: 1em;   
   }
   .homepage  .hexagon270 .animateAnchor{
-	  letter-spacing: normal;
-	  font-size: 0.8125em;
-	  line-height: 1.2em;	  
+    letter-spacing: normal;
+    font-size: 0.8125em;
+    line-height: 1.2em;   
   }
   
   /*

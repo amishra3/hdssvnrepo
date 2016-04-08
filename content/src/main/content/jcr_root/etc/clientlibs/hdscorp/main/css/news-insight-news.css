@@ -116,7 +116,7 @@ padding-bottom: 60px;
   .news-press-container .image-container > img {
     min-height: 500px;
   }
-  .common-hero-short-banner .request.cta-news{margin:0;} 
+  .common-hero-short-banner .request.cta-news{/* margin:0; */} 
   .news-press-container .view-all-pr{margin-top:30px;}
   	
   
@@ -266,6 +266,10 @@ text-transform: none;}
 
 .news-press-container.hds-news-section{
 	background:#ffffff;	
+}
+.common-hero-short-banner .request.cta-news{margin:0 0 10px;}
+.common-hero-short-banner.news-insight .second-link{
+	 display:block;
 }
 }
 

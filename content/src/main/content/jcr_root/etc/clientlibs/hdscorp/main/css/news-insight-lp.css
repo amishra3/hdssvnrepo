@@ -132,6 +132,9 @@
   .stay-touch-hexagon-list.twitter-feed .hexagon320 .tweet-content p{
 	 line-height: 1.3em;		
    }
+   .common-hero-short-banner.news-insight .second-link{
+	   display: block;
+   }
 }
 
 /* News & Insight Browse Resources Section */

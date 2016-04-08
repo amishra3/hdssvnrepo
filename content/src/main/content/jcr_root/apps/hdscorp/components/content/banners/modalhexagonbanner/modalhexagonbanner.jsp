@@ -37,7 +37,7 @@
                 <p>${properties.hexcontent}</p>
 
 
-                  <ul class="healthcare-list">
+                  <div class="healthcare-list col-md-12">
                     <c:forEach var="placardList" items="${placardList}" varStatus="loop">
                         <c:set var="placardTitle" value="${placardList.placardTitle}" />
                         <c:set var="placardIconPath" value="${placardList.placardIconPath}" />
@@ -49,15 +49,15 @@
 							<c:set var="placardlinkurl" value="${hdscorp:shortURL(placardlinkurl)}" />
 						</c:if>
 
-	                    <li class="hexagon-connect hexagon">
+	                    <div class="col-md-4 hexagon-connect">
 	                        <span class="sprite icon-connect" style="background-image: url(${placardIconPath});background-position: 0 0;background-repeat:no-repeat;"></span>
 	                        <h4>${placardTitle}</h4>
 	                        <p>${placardcontent}</p>
 	                        <a class="animateAnchor" href="${placardlinkurl}" target="${placardList.seemorenewwin==1?'_blank':'_self'}">${placardlinklabel}${placardList.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
-	                    </li>
+	                    </div>
 
                 </c:forEach>
-                </ul>
+                </div>
             </div>
 
         </c:when>
