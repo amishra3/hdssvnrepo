@@ -16,13 +16,9 @@
 </c:if>
 
 
-<c:choose>
-	<c:when test="${not empty properties.herotitlecontent}">
-		<c:set var="tabOverlayPath" value="" />
-		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tablink-tabIconPath")%>" />
 
 		
-	  <div class="iot-hero clearfix">
+	  <div class="iot-hero clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.heroimagePath,properties.heromobileimage)}>
        <div class="iot-hero-container content-container">
         <h1 class="headline col-md-7">Hitachi Internet of Things (IoT)</h2>
         
