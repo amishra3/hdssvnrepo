@@ -221,6 +221,15 @@
     margin-right: 5px;
 }
 
+/* .rsImg{ */
+/* 	position:inherit; */
+/* 	width:50px; */
+/* 	height:10px; */
+/* 	z-index: 10000 !important; */
+/* 	margin: auto; */
+/* 	padding: 0 !important; */
+/* } */
+
 @media only screen and (min-width: 768px) {
 
 	.pr-list-container{
