@@ -419,25 +419,6 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     }
 }
 
-@media screen and (min-width:992px) and (max-width:1213px) {
-    .daterangepicker .daterangepicker_input {
-        width: 55%;
-    }
-    .daterangepicker .calendar {
-        float: left;
-        width: 50%;
-    }
-    .daterangepicker .calendar strong {
-        font-size: 16px;
-    }
-    .daterangepicker input[type="text"] {
-        width: 100%;
-    }
-    .daterangepicker .calendar.left {
-        margin-right: 0;
-    }
-}
-
 .newsWrapper {
     background: #ffffff;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
@@ -646,6 +627,29 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     width: 100%;
 }
 
+@media screen and (min-width:992px) and (max-width:1213px) {
+    .daterangepicker .daterangepicker_input {
+        width: 65%;
+    }
+    .daterangepicker .calendar {
+        float: left;
+        width: 50%;
+    }
+    .daterangepicker .calendar strong {
+        font-size: 0.9em;
+		width: 35%;
+		padding-right: 5px;
+		text-align: center;
+    }
+    .daterangepicker input[type="text"] {
+        width: 100%;
+    }
+    .daterangepicker .calendar.left {
+        margin-right: 0;
+    }
+}
+
+
 .datepicker th {
     color: #a7a7a7;
 }
@@ -731,25 +735,6 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
    margin-bottom: 50px;
 }
     body.eventlanding .custom-nav-tabs ul{padding-left:20px;}
-}
-
-@media screen and (min-width:992px) and (max-width:1213px) {
-    .daterangepicker .daterangepicker_input {
-        width: 55%;
-    }
-    .daterangepicker .calendar {
-        float: left;
-        width: 50%;
-    }
-    .daterangepicker .calendar strong {
-        font-size: 16px;
-    }
-    .daterangepicker input[type="text"] {
-        width: 100%;
-    }
-    .daterangepicker .calendar.left {
-        margin-right: 0;
-    }
 }
 
 .date-picker {
