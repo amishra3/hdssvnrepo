@@ -590,7 +590,7 @@ var screenSize = screen.width+"x" +screen.height;
     });
 	
 	//Hexagons CTAs
-	$("div.hexContain, ul.calculating-list, li.hexagon-transformative").each(function() {
+	$("div.hexContain, li.hexagon-transformative").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).find('h4').text();
      if( listitem.length>0)
@@ -607,6 +607,25 @@ var screenSize = screen.width+"x" +screen.height;
 		});                 
      }
     });
+	
+//Hexagons home page page CTAs
+	$(".calculating-list, .hexagon270").each(function() {
+     var listitem = $(this).find("a");
+	 var linktext = $(this).find('h4').text();
+     if( listitem.length>0)
+	 {
+		 //listitem.each(function() {
+		 //var linktext = jQuery(this).text();
+          linktext = "hex-" + $.trim(linktext);
+            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
+			$(this).mousedown(function(e){
+				if(e.which == 3){
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
+				} 			
+			});
+		//});                 
+     }
+    });	
 	
 	//Hexagons Home page popup CTAs
 	$("ul.healthcare-list, li.hexagon-connect").each(function() {
@@ -645,15 +664,17 @@ var screenSize = screen.width+"x" +screen.height;
 		});                 
      }
     });
+
 	
-	$(".tbd-dl, .cs-all-box").each(function(){
+	$(".tbd-dl, .cs-all").each(function(){
 		var panel="";
 		var listitem = $(this).find("a");
 		if(listitem.length>0){
 			listitem.each(function(){
 				var linktext = jQuery(this).text();
+				linktext=linktext.toLowerCase();
 				linktext = $.trim(linktext);
-				if(linktext.indexOf("STUDIES")>-1){panel="Case Study";}
+				if(linktext.indexOf("studies")>-1){panel="Case Study";}
 				else if(linktext.indexOf("specifications")>-1){panel="Specifications-Panel";}
 				$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"button",panel); });
 				$(this).mousedown(function(e){
@@ -686,6 +707,28 @@ var screenSize = screen.width+"x" +screen.height;
 
 	});	
 	
+// Top menu drop down tracking
+	$(".states-names").each(function() 
+	{
+		 var listitem = $(this).find("a");
+		 if( listitem.length>0)
+		 {
+			 listitem.each(function() {
+			 var linktext = jQuery(this).text();
+			 var linktext1=jQuery(this).parent().parent().parent().parent().find("h2").text();
+			  linktext = $.trim(linktext);
+				$(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext1+ ":" + linktext.toLowerCase(),pageTitle,"link","top menu"); });
+				//Added on 20160218
+				$(this).mousedown(function(e){
+					if(e.which == 3){
+						globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu");
+					} 			
+				});
+			});                 
+		 }
+    });	
+	
+
 	$(".hds-quick-navigation").each(function() 
 	{
 		 var listitem = $(this).find("a");
