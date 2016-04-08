@@ -6735,7 +6735,7 @@ button.close {
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
-  z-index: 10000 ;
+  z-index: 99999 ;
   background:rgba(0,0,0,0.75);
 }
 
