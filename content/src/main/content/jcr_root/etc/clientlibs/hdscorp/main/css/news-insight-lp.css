@@ -108,6 +108,10 @@
     margin-right: auto;
     width: 270px;
   }
+
+ .stay-touch-hexagon-list .hex-contain .hexagon320 {
+    min-height:144px;
+  }
 }
 
 @media only screen and (max-width: 768px) {

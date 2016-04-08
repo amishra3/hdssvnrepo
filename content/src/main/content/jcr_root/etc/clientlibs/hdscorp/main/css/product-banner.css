@@ -310,7 +310,7 @@
   .hero-product-solutions.video .hero-product-solutions-container > iframe {
     width: 100%;
   }
-.hero-product-solutions .hero-product-solutions-container .headline sup{top:0px}
+.hero-product-solutions .hero-product-solutions-container .headline sup{top:-6px}
 }
 
 @media only screen and (max-width: 480px) {

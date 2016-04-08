@@ -684,6 +684,7 @@ color: #cccccc !important;
         padding-right: 0;
         padding-left: 0;
         padding-top: 40px;
+    	padding-bottom:0;
     }
     .product-search-area h2.sectionheading {
         margin-bottom: 20px;
@@ -710,6 +711,7 @@ color: #cccccc !important;
         padding-right: 0;
         padding-left: 0;
         padding-top: 40px;
+        padding-bottom:0;
     }
     .product-search-area h2.sectionheading {
         font-weight: 100;
@@ -783,5 +785,6 @@ color: #cccccc !important;
     color: #414141;
     font-size: 0.8125rem;
 }
+
 
 }

@@ -533,6 +533,7 @@
         padding-right: 0;
         padding-left: 0;
         padding-top: 40px;
+    	padding-bottom:0;
     }
     .product-search-area h2.sectionheading {
         margin-bottom: 20px;
@@ -558,6 +559,7 @@
         padding-right: 0;
         padding-left: 0;
         padding-top: 40px;
+        padding-bottom:0;
     }
     .product-search-area h2.sectionheading {
         font-weight: 100;
