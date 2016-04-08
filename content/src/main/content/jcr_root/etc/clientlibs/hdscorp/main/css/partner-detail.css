@@ -175,15 +175,15 @@ list-style-type: none;
     color: #414141;
 }
 .partner-filters-search .filters-list  input[type="checkbox"]{
-	opacity: 0;
+  opacity: 0;
 }
 .partner-filters-search .filters-list  input[type="checkbox"]+label:before {
     background: url('../images/radion-btn-white-sprite.png') no-repeat top left;
     background-position: 0 0;
     content: " ";
-	width: 20px;
-	height: 20px;
-	top: 2px;    
+  width: 20px;
+  height: 20px;
+  top: 2px;    
 }
 
 .partner-filters-search .filters-list  input[type="checkbox"]:checked+label:before {
@@ -353,12 +353,16 @@ list-style-type: none;
     top:0;
   }
 
+  .partner-filters-search .filters-list{
+    display:none;
+  }
+
   .partner-filters-search .search-overlay{
     background: #fff;
     padding: 0;
   }
   .partner-filters-search .search-overlay .launchLink{
-    padding: 6px 35px;
+    padding: 0;
     border: 1px solid #cc0000;
     color: #cc0000;
     width: 290px;
@@ -371,6 +375,8 @@ list-style-type: none;
     text-align: center;
     letter-spacing: 0.15em;
   }
+
+  .partner-filters-search .search-overlay .launchLink a{ display: block; padding:6px 35px; color: #cc0000; text-decoration: none;}
   .partner-filters-search .search-overlay span.glyphicon.glyphicon-search{
     color: #cc0000;
     font-size: 1.125rem;

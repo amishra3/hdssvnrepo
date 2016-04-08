@@ -27,7 +27,7 @@
 				<div class="content-container clearfix">
 					<div class="hidden-md hidden-lg col-xs-12 search-overlay">
 						<div class="launchLink">
-							${properties.sisearchpartnerlabel} <span aria-hidden="true" class="glyphicon glyphicon-search"></span> 
+							<a href="javascript:void(0);">${properties.sisearchpartnerlabel} <span aria-hidden="true" class="glyphicon glyphicon-search"></span></a>
 						</div>
 					</div>					
 				</div>
@@ -68,7 +68,7 @@
 
 				<!-- Mobile Placeholders -->
 				<!-- The dark background -->
-				<div class="bgCover" style="opacity: 0; display: none;">&nbsp;</div>
+				<div class="bgCover" style="opacity: 0; display: none;">
 				<div class="overlayBox partner-mobile hidden-md hidden-lg" style="display: none;">
 					<div class="heading">
 						<h3>${properties.sisearchpartnerlabel}</h3>
@@ -98,7 +98,7 @@
 						</div>
 					</div>
 					</div>
-				</div>
+				</div></div>
 			 <!-- Mobile Placeholders -->
 			</div>
 			</c:if>

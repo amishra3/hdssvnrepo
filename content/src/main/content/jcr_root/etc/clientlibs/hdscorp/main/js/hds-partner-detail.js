@@ -96,21 +96,26 @@ var hds = window.hds || {};
             $('.bgCover').css({
                 opacity: 0
             }).animate({
-                opacity: 0.5,
+                opacity: 1,
                 backgroundColor: '#000'
             });
         },
         _closeOverLayPopup: function() {
-            if (!hds.partnerDetail._isEmpty($('.FilterAreaIndustry'))) {
-                $('#FilterByIndustry .filters-list').html($('.FilterAreaIndustry').html());
-                $('.FilterAreaIndustry').html(" ")
+            if ($(window).width() > 768) {
+                if (!hds.partnerDetail._isEmpty($('.FilterAreaIndustry'))) {
+                    $('#FilterByIndustry .filters-list').html($('.FilterAreaIndustry').html());
+                    $('.FilterAreaIndustry').html('')
+                }
+                $('.bgCover').hide();
+            }else{
+                $('.bgCover').hide();
             }
-            $('.overlayBox').css('display', 'none');
+            /*$('.overlayBox').css('display', 'none');
             $('.bgCover').animate({
                 opacity: 0
             }, null, null, function() {
                 $(this).hide();
-            });
+            });*/
         },
         _getCheckboxValue: function(arg1) {
             if (arg1 != 0) {
@@ -147,8 +152,18 @@ var hds = window.hds || {};
             return $checkboxes;
         },
         _bindEventsSelectors: function() {
-            $(document).on('click', '.launchLink', function(event) {
-                hds.partnerDetail._showMobileOverlay();
+            $(document).on('click', '.launchLink a', function(event) {
+                if ($(window).width() <= 991) {
+                    if($('.FilterAreaIndustry').html() == ""){
+                        hds.partnerDetail._showMobileOverlay();
+                    }else{
+                        $('.bgCover').css({
+                            display: 'block',
+                            width: $(window).width(),
+                            height: ' 100%',
+                        });
+                    }
+                }                
                 event.preventDefault();
             });
 
@@ -238,7 +253,7 @@ var hds = window.hds || {};
                 });
                 return false;                
             });
-            $(window).resize(function() {
+            $( window ).on( "orientationchange", function( event ) {
                 hds.partnerDetail._closeOverLayPopup();
             });
             $(document).on('click', '#mobShowFilters', function() {
@@ -250,7 +265,6 @@ var hds = window.hds || {};
                 $('input[name="cbxFunction"]:checked').each(function() {
                     arrVal.push($(this).attr('id'));
                 });
-                console.log(arrVal);
                 hds.partnerDetail._getCheckboxValue(arrVal);
 
                 var $allCheckedIndFilters = $('.FilterByIndustryList input.filters').filter(':checked');

@@ -45,14 +45,14 @@
 @media screen and (max-width: 768px){
   .pr-list .pr-list-container.isnewspage .pr-search {
     border: 5px solid #e6e6e6;
-   }	
+   }  
   .pr-list .pr-list-container.isnewspage .pr-search > input{
-	  background: transparent;	  
+    background: transparent;    
   }
   .pr-list .pr-list-container.isnewspage .pr-search span.glyphicon.glyphicon-search {
     top: 5px;
 }
-	
+  
 }
 
 
@@ -187,7 +187,7 @@ color: #cccccc !important;
     padding: 0;
   }
   .pr-list .pr-list-container h1{
-	 padding: 0 15px;
+   padding: 0 15px;
   }
 
   .pr-list .pr-list-container .pr-search{
@@ -208,11 +208,7 @@ color: #cccccc !important;
   }
   
   .pr-list .pr-list-container.ispressreleasepage .pr-search {
-	  border: 5px solid #e6e6e6;	  
-  }
-  
-  .pr-list .pr-list-container.ispressreleasepage .pr-search input{
-	 background: transparent; 	  
+    border: 5px solid #e6e6e6;    
   }
   
   .pr-list .pr-list-container.ispressreleasepage .pr-search span.glyphicon.glyphicon-search{
@@ -259,6 +255,7 @@ color: #cccccc !important;
   .pr-archives-list{
     padding: 0 0 30px 0;
   }
+
   .pr-archives-list .pr-archives-list-items .pr:first-child{
     padding-top: 20px;
   }
@@ -285,7 +282,7 @@ color: #cccccc !important;
 
   .pr-archives-list .pr-load-more{
     text-align: center;
-	margin:25px auto 0;
+  margin:25px auto 0;
   }
 
 }
@@ -321,7 +318,7 @@ color: #cccccc !important;
 }
 
 .pr-detail .pr-detail-container .pr-detail-desc h4{
-  margin: 0 0 20px;		
+  margin: 0 0 20px;   
 }
 
 .pr-detail .pr-detail-container .pr-detail-desc .TextStyle1 i{
@@ -390,10 +387,10 @@ color: #cccccc !important;
 
 @media only screen and (max-width: 767px){
   .pr-detail{
-	  padding-top: 140px;	  
+    padding-top: 140px;   
   }
 
-}	
+} 
 
 @media (min-width: 320px) and (max-width: 991px) {  
   .pr-detail .pr-detail-container .pr-detail-desc h1{
@@ -465,8 +462,8 @@ color: #cccccc !important;
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-weight: 900;
     letter-spacing: 0.15em;
-	font-size:1em;
-	padding: 0 20px;
+  font-size:1em;
+  padding: 0 20px;
     text-decoration:none;
 }
 
