@@ -18,6 +18,12 @@ if(pageTemplatePath!=null){
 <c:set var="techspeconlypage" value="${true}" scope="request"/>
 
 <body class="<%=pageTemplatePath %> contentwidepage techspeconly hds-megaMenu-push" id="tech-specifications">
+        <div class="hds-MobileMenu hds-megaMenu-right">
+        <div class="closeHDSMenu">
+            <a href="javascript:void(0);" title="Close" id="closeHDSMenu">Close</a>
+        </div>
+	    <div class="hds-mobile-navigation"></div>
+	</div>
 	<div class="one-column">
 		<cq:include script="header.jsp" />
         <div class="spec-section">
