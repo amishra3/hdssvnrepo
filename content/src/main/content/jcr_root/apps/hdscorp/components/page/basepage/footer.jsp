@@ -22,7 +22,7 @@
     <div class="modal-dialog modal-full-screen modal-vertical-align-center">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="title"></div>
+                <div class="title" id="modalValProp"></div>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                   <span class="close"></span>
                 </button>
