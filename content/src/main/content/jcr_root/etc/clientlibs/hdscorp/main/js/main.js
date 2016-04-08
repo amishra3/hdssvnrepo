@@ -104,6 +104,7 @@ $(document).ready(function () {
         modal.find('.modal-header .title').text('').append(formTitle);
         modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='540' frameborder='0' scrolling='no' id='hdsModalWindow' onload='setIframeHeight(this.id)'></iframe><div id='modal-loading'></div>");
         modal.show();
+		$('#modalValProp').show();
 		// Code for iOS issue in overlay start
 		if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
 		   var styleEl = document.createElement('style'), styleSheet;
