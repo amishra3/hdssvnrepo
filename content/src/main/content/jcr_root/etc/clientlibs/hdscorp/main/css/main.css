@@ -6802,7 +6802,7 @@ button.close {
   font-size: 1.5rem;
   font-family: Museo-sans;
   font-weight: normal;
-  text-transform: uppercase; 
+  /*text-transform: uppercase;*/ 
   width:86%;
   float: left;
   padding:5px 0 5px 15px;
