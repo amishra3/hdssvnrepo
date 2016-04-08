@@ -22,9 +22,15 @@ Leadership BIO details component
                         </div>
                         <div class="share-links mt_mb hidden-sm hidden-md hidden-lg">
                               <strong>${currentStyle.lbdfollowlabel} ${leaderShipBIODetailsModel.lbdfallowname}</strong>
-                                <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
-    							<a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
-    							<a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
+                                  <c:if test="${not empty leaderShipBIODetailsModel.lbdTwiterFollowURL}">
+                                 <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
+                                 </c:if>
+                            <c:if test="${not empty leaderShipBIODetailsModel.lbdFacebookFollowURL}">
+                                 <a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
+                            </c:if>
+                           <c:if test="${not empty leaderShipBIODetailsModel.lbdLinkedinFollowURL}">
+                                <a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
+                            </c:if>
                      </div>
 						<div class="col-sm-4">
                             <div class="leader-profile"><img src="${leaderShipBIODetailsModel.lbdimage}" alt="${leaderShipBIODetailsModel.lbdimagealt}" title="${leaderShipBIODetailsModel.lbdimagealt}"></div>
@@ -39,10 +45,15 @@ Leadership BIO details component
 
     						<div class="share-links mt_mb hidden-xs">
     						      <strong>${currentStyle.lbdfollowlabel} ${leaderShipBIODetailsModel.lbdfallowname}</strong>
-    							 <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
-    							<a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
-    							<a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
-                            </div>
+    							   <c:if test="${not empty leaderShipBIODetailsModel.lbdTwiterFollowURL}">
+                                 <a href="${leaderShipBIODetailsModel.lbdTwiterFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdtwitteralt}" alt="${leaderShipBIODetailsModel.lbdtwitteralt}" src="${leaderShipBIODetailsModel.lbdtwittericonpath}"></a>
+                                 </c:if>
+                            <c:if test="${not empty leaderShipBIODetailsModel.lbdFacebookFollowURL}">
+                                 <a href="${leaderShipBIODetailsModel.lbdFacebookFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdfacebookalt}" alt="${leaderShipBIODetailsModel.lbdfacebookalt}" src="${leaderShipBIODetailsModel.lbdfacebookiconpath}"></a>
+                            </c:if>
+                           <c:if test="${not empty leaderShipBIODetailsModel.lbdLinkedinFollowURL}">
+                                <a href="${leaderShipBIODetailsModel.lbdLinkedinFollowURL}" target="_blank"><img title="${leaderShipBIODetailsModel.lbdlinkedinalt}" alt="${leaderShipBIODetailsModel.lbdlinkedinalt}" src="${leaderShipBIODetailsModel.lbdlinkediniconpath}"></a>
+                            </c:if> </div>
 						<div class="leaders_description">
                             <p>${leaderShipBIODetailsModel.lbdContent}</p>
                             </div>
