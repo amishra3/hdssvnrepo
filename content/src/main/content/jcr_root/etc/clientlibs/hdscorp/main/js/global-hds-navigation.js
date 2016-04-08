@@ -147,6 +147,7 @@ var hds = window.hds || {};
                 }             
             });
             $(document).on('click', '#closeHDSMenu', function(event) {
+				$('#hdsMobileNaV').removeClass('navOpen');
                 hds.buildShowNav.closeDropDown();
                 event.preventDefault();
             });
