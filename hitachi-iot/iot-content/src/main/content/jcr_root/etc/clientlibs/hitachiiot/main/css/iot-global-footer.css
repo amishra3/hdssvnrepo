@@ -1,0 +1,237 @@
+/* line 33, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+html {
+  font-size: 16px !important;
+}
+
+/*bootstrap override start*/
+/* line 38, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+.row-no-margin {
+  margin: 0 !important;
+}
+
+/* line 41, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+.row-reduce-half {
+  margin-left: -7.5px !important;
+  margin-right: -7.5px !important;
+}
+
+/* line 45, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+.col-no-pad {
+  padding: 0 !important;
+}
+
+/*bootstrap override end*/
+/* BOOTSTRAP OVERRIDES */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+.icon-home {
+  width: $icon-home-width;
+}
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+.icon-home {
+  @include sprite-width($icon-home);
+}
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+@include sprites($spritesheet-sprites);
+*/
+/* line 8, stdin */
+.footer .footer-container a:hover,
+.footer .footer-container a:active {
+  text-decoration: none;
+}
+
+/* line 14, stdin */
+.footer .footer-white {
+  margin: 4em 0;
+  background: #ffffff !important;
+}
+
+/* line 19, stdin */
+.footer .footer-white .footer-container p {
+  margin: 0;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  font-weight: 100;
+  font-size: 0.75em;
+  line-height: 1;
+}
+
+/* line 26, stdin */
+.footer .footer-white .footer-container p a {
+  color: #000000;
+}
+
+/* line 31, stdin */
+.footer .footer-white .footer-container h3 {
+  margin-bottom: 20px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1;
+  color: #000000;
+}
+
+/* line 39, stdin */
+.footer .footer-white .footer-container .footer-title {
+  margin-top: 0;
+}
+
+/* line 45, stdin */
+.footer .footer-white .footer-container .footer-links li,
+.footer .footer-white .footer-container .copyright-links li {
+  display: inline-block;
+  margin-right: 1.8em;
+  list-style-type: none;
+}
+
+/* line 50, stdin */
+.footer .footer-white .footer-container .footer-links li a,
+.footer .footer-white .footer-container .copyright-links li a {
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+/* line 63, stdin */
+.footer .footer-white .footer-container .footer-links {
+  margin-bottom: 2.5em;
+}
+
+/* line 65, stdin */
+.footer .footer-white .footer-container .footer-links li a {
+  font-size: 0.6875em;
+  line-height: 1;
+}
+
+/* line 71, stdin */
+.footer .footer-white .footer-container .social-links li {
+  display: inline-block;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+/* line 77, stdin */
+.footer .footer-white .footer-container .social-links .icon-linkedin-gray {
+  background-image: url(../images/sprite.png);
+  background-position: -322px -62px;
+  width: 30px;
+  height: 30px;
+}
+
+/* line 80, stdin */
+.footer .footer-white .footer-container .social-links .icon-twitter-gray {
+  background-image: url(../images/sprite.png);
+  background-position: -322px -92px;
+  width: 30px;
+  height: 30px;
+}
+
+/* line 83, stdin */
+.footer .footer-white .footer-container .social-links .icon-facebook-gray {
+  background-image: url(../images/sprite.png);
+  background-position: -322px -32px;
+  width: 30px;
+  height: 30px;
+}
+
+/* line 88, stdin */
+.footer .footer-white .footer-container .innovation-link {
+  margin-bottom: 1em;
+  color: #ce0000;
+  text-transform: uppercase;
+  font-size: 0.6875em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* line 95, stdin */
+.footer .footer-white .footer-container .innovation-link .icon-link-red {
+  background-image: url(../images/sprite.png);
+  background-position: -305px -177px;
+  width: 13px;
+  height: 13px;
+}
+
+/* line 100, stdin */
+.footer .footer-white .footer-container .social-links-desktop {
+  display: block;
+}
+
+/* line 104, stdin */
+.footer .footer-white .footer-container .social-links-mobile {
+  display: none;
+}
+
+/* line 109, stdin */
+.footer .footer-white .footer-container .copyright-links li a {
+  font-size: 0.5625em;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 121, stdin */
+  .footer .footer-white .footer-container .footer-title,
+  .footer .footer-white .footer-container .social-links,
+  .footer .footer-white .footer-container .footer-links li,
+  .footer .footer-white .footer-container .innovation-link,
+  .footer .footer-white .footer-container .copyright-links li {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+  /* line 131, stdin */
+  .footer .footer-white .footer-container .social-links li {
+    margin: 0 30px 0;
+  }
+  /* line 135, stdin */
+  .footer .footer-white .footer-container .footer-links li {
+    margin: 0;
+  }
+  /* line 137, stdin */
+  .footer .footer-white .footer-container .footer-links li a {
+    font-size: 0.875em;
+    line-height: 1;
+  }
+  /* line 142, stdin */
+  .footer .footer-white .footer-container .innovation-link {
+    font-size: 0.875em;
+    line-height: 1;
+  }
+  /* line 146, stdin */
+  .footer .footer-white .footer-container .copyright-links li a {
+    font-size: 0.625em;
+    line-height: 1;
+  }
+  /* line 150, stdin */
+  .footer .footer-white .footer-container .social-links-desktop {
+    display: none;
+  }
+  /* line 154, stdin */
+  .footer .footer-white .footer-container .social-links-mobile {
+    display: block;
+  }
+  /* line 157, stdin */
+  .footer .footer-white .footer-container .social-links-mobile hr {
+    max-width: 140px;
+    height: 2px;
+    background-color: #c0c0c0;
+    border: none;
+  }
+  /* line 165, stdin */
+  .footer .footer-white .footer-container .copyright {
+    padding-top: 0;
+  }
+}
