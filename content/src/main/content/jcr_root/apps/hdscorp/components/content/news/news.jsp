@@ -52,7 +52,7 @@
                       <div class="date-stamp hidden-xs"><strong>${news.newsDate}</strong></div>
 
                         <p>${title}</p>
-                       <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_self':'_blank'}">${model.readMoreLabel}${news.newWinIcon?'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>':' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>'}</a>
+                       <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreLabel}${news.newWinIcon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                     </div>
                                  <c:if test="${loopcnt.index==2}">
                                  </div> 
@@ -73,7 +73,7 @@
                       <div class="date-stamp hidden-xs"><strong>${news.newsDate}</strong></div>
 
                         <p>${title}</p>
-                       <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_self':'_blank'}">${model.readMoreLabel}${news.newWinIcon?'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>':' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>'}</a>
+                       <a class="animateLink" href="${news.newsDetailPath}" target="${news.openInNewTab?'_blank':'_self'}">${model.readMoreLabel}${news.newWinIcon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                     </div>
                              </c:otherwise>
                          </c:choose>
