@@ -42,7 +42,7 @@ Leadership BIO details component
     						<div class="leader-info hidden-xs">
                                 ${leaderShipBIODetailsModel.lbdJobTitle}
                             </div>
-<c:if test="${not empty currentStyle.lbdfollowlabel}">
+<c:if test="${not empty leaderShipBIODetailsModel.lbdfallowname}">
     						<div class="share-links mt_mb hidden-xs">
     						      <strong>${currentStyle.lbdfollowlabel} ${leaderShipBIODetailsModel.lbdfallowname}</strong>
     							   <c:if test="${not empty leaderShipBIODetailsModel.lbdTwiterFollowURL}">
