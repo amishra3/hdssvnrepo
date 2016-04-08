@@ -133,11 +133,7 @@ var hds = window.hds || {};
                             });
                         } else {
                               slideOut.clearQueue().slideUp("slow",function(){
-                                self.removeClass('open');                                                	
-                                  	 $("body, html").animate({ 
-                                           scrollTop: finalIndex                             
-                                       }, 600);
-                                  
+                                self.removeClass('open'); 
                             });
                         }
                 })
