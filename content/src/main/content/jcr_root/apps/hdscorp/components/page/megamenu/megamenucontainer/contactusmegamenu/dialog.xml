@@ -125,6 +125,11 @@
                                 fieldLabel="View Featured Products Path"
                                 name="./mgmcontactusviewfeaturedproductslink"
                                 xtype="pathfield"/>
+                            <marketoformtitle
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Form Title"
+                                name="./ftitle"
+                                xtype="textfield"/>
                             <overlay
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Open in marketo Form"

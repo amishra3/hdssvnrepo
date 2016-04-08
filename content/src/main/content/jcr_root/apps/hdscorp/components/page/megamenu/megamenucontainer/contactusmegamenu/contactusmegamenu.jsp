@@ -20,7 +20,7 @@
 <c:set var="subnavlinks"
 	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactussubnavlabel-mgmcontactussubnavlink-mgmcontactusopeninnewwindow-mgmcontactusalttext")%>" />
 <c:set var="subnavlinks2"
-	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactusheadline-mgmcontactusdescription-mgmcontactusviewfeaturedproductslabel-mgmcontactusnumber-secondmgmcontactusnumber-mgmcontactusviewfeaturedproductslink-mgmcontactusopeninnewwindow2-overlay")%>" />
+	value="<%=PageUtils.convertMultiWidgetToList(properties,"mgmcontactusheadline-mgmcontactusdescription-mgmcontactusviewfeaturedproductslabel-mgmcontactusnumber-secondmgmcontactusnumber-mgmcontactusviewfeaturedproductslink-mgmcontactusopeninnewwindow2-overlay-ftitle")%>" />
 <c:set var="navpath" scope="request"
 	value="${properties.mgmcontactusnavpath}" />
 <c:set var="mgmcontactusnavpath"
@@ -48,7 +48,6 @@
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmcontactustitle}
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
-							
 						</div>
 					</div>
 				</div>
@@ -82,7 +81,9 @@
 						<div class="col-xs-12 col-md-4">
 							<h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusheadline}</h3>
 							<div class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusdescription}</div>
-							
+							<c:if test="${not empty subnavlinks2.ftitle}">
+                            <c:set var="ftitle" value="${subnavlinks2.ftitle}" />
+                            </c:if>
 							<c:if test="${not empty  subnavlinks2.mgmcontactusnumber}">
 							<div class="phone-no">${subnavlinks2.mgmcontactusnumber}</div>
 							</c:if>
@@ -92,7 +93,7 @@
 								<c:if test="${not empty  subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
 									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"/>
                                			<p>		
-                                            <a rel="${subnavlinks2.overlay==1?'iframemodal':''}" href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
+                                            <a data-formtitle="${ftitle}" rel="${subnavlinks2.overlay==1?'iframemodal':''}" href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks2.mgmcontactusopeninnewwindow2==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 										</p>
