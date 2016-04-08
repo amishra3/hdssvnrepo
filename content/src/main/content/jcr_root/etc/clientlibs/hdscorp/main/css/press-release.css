@@ -249,8 +249,15 @@ color: #cccccc !important;
 
   .pr-list-archives ul > li .icon-accordion-opened {
     display: none;
-  } 
+  }
 
+  .pr-list-archives ul > li.active .icon-accordion-closed {
+    display: none;
+  }
+
+  .pr-list-archives ul > li.active .icon-accordion-opened {
+    display: inline-block;
+  }
 
   .pr-archives-list{
     padding: 0 0 30px 0;
