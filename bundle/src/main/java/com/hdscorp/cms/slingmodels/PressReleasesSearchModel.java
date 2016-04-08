@@ -146,7 +146,7 @@ public class PressReleasesSearchModel {
 							"MMMM d, yyyy"));
 					Page reourcePage = hit.getResource().adaptTo(Page.class);
 					newsNode.setNewsDetailPath(PathResolver.getShortURLPath(reourcePage.getPath()));
-					if(properties.containsKey("linktargettype")){
+					if(properties.get("linktargettype")!=null){
 						newsNode.setOpenInNewTab(true);
 					} else {
 						newsNode.setOpenInNewTab(false);
@@ -188,7 +188,7 @@ public class PressReleasesSearchModel {
 						
 						newsNode.setNewsDetailPath(properties.get("newslink",
 								(String) null).toString());
-						if(properties.containsKey("linktargettype")){
+						if(properties.get("linktargettype")!=null){
 							newsNode.setOpenInNewTab(true);
 						} else {
 							newsNode.setOpenInNewTab(false);
@@ -234,13 +234,13 @@ public class PressReleasesSearchModel {
 						
 						newsNode.setNewsDetailPath(properties.get("awardlink",
 								(String) null).toString());
-						if(properties.containsKey("linktargettype")){
+						if(properties.get("linktargettype")!=null){
 							newsNode.setOpenInNewTab(true);
 						} else {
 							newsNode.setOpenInNewTab(false);
 						}
 						
-						if(properties.containsKey("thirdparty")){
+						if(properties.get("thirdparty")!=null){
 							newsNode.setNewWinIcon(true);
 						} else {
 							newsNode.setNewWinIcon(false);
