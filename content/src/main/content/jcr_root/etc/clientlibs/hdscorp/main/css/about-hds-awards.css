@@ -51,7 +51,7 @@
 
   .about-hds-awards .pr-search > input {
       min-height: 35px;
-      font-size: 0.875rem;
+      font-size: 1rem;
       padding-right: 40px;
   }
 
@@ -66,7 +66,7 @@
 
 @media screen and (max-width: 768px){
   .pr-list .pr-list-container.isawardspage .pr-search{
-	 border: 5px solid #e6e6e6; 
+	 border: 2px solid #e6e6e6; 
   }	
   .pr-list .pr-list-container.isawardspage .pr-search > input{
 	  background: transparent;	  

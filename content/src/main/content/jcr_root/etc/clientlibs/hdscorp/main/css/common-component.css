@@ -771,7 +771,7 @@ color: #cccccc !important;
 
   .pr-list .pr-list-container .pr-search > input {
       min-height: 35px;
-      font-size: 0.875rem;
+      font-size: 1rem;
       padding-right: 40px;
   }
 }
