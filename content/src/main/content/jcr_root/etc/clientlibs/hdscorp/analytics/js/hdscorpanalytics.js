@@ -226,7 +226,6 @@ var screenSize = screen.width+"x" +screen.height;
 		$('.searchResource').click(function()
 			{
 				searchTerm = $('#resSearch').val();
-				console.log("img**********"+searchTerm+"*********")
 				setTimeout(function(){
 				result = $('.category-resources-listing').find('.resource.visible').size();
 				searchAction = "search box";
@@ -239,7 +238,6 @@ var screenSize = screen.width+"x" +screen.height;
 		$('#showIndustry').click(function()
 			{
 				searchTerm = $('#resSearch').val();
-				console.log("ind**********"+searchTerm+"*********")
 				setTimeout(function()
 					{
 						result = $('.category-resources-listing').find('.resource.visible').size();
@@ -253,7 +251,6 @@ var screenSize = screen.width+"x" +screen.height;
 		$('#showContentType').click(function()
 			{
 				searchTerm = $('#resSearch').val();
-				console.log("con**********"+searchTerm+"*********")
 				setTimeout(function()
 					{
 						result = $('.category-resources-listing').find('.resource.visible').size();
@@ -269,7 +266,6 @@ var screenSize = screen.width+"x" +screen.height;
 		{
 			searchTerm = $('#resSearch').val();
 			result =$('#actualCount').text();
-			console.log("cat**********"+searchTerm+"*********")
 			setTimeout(function()
 			{
 				result=result.toString();		
@@ -287,7 +283,6 @@ var screenSize = screen.width+"x" +screen.height;
 			{
 				searchTerm = $('#resSearch').val();
 				result =$('#actualCount').text();
-				console.log("sub cat**********"+searchTerm+"*********")
 				setTimeout(function()
 				{
 					result=result.toString();		
@@ -490,7 +485,6 @@ var screenSize = screen.width+"x" +screen.height;
             $(this).click(function(){
 				var megamenuHeader=$(this).closest(".hds-megaMenu");
                 var category="";
-                //console.log(megamenuHeader);
                 if(megamenuHeader && megamenuHeader!='undefined' && megamenuHeader!='null')
         			category = megamenuHeader.find('h2').find('a').text();
 					category = $.trim(category);
@@ -505,7 +499,6 @@ var screenSize = screen.width+"x" +screen.height;
 				if(e.which == 3){
 					var megamenuHeader=$(this).closest(".hds-megaMenu");
 					var category="";
-					//console.log(megamenuHeader);
 					if(megamenuHeader && megamenuHeader!='undefined' && megamenuHeader!='null')
 						category = megamenuHeader.find('h2').find('a').text();
 						category = $.trim(category);
@@ -589,13 +582,13 @@ var screenSize = screen.width+"x" +screen.height;
      }
     });
 	
-	//Hexagons CTAs
-	$("div.hexContain, li.hexagon-transformative").each(function() {
+	//Hexagons CTAs div.hexContain, 
+	$("li.hexagon-transformative").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).find('h4').text();
      if( listitem.length>0)
 	 {
-		 listitem.each(function() {
+		 //listitem.each(function() {
 		 //var linktext = jQuery(this).text();
           linktext = "hex-" + $.trim(linktext);
             $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
@@ -604,12 +597,12 @@ var screenSize = screen.width+"x" +screen.height;
 					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
 				} 			
 			});
-		});                 
+		//});                 
      }
     });
 	
-//Hexagons home page page CTAs
-	$(".calculating-list, .hexagon270").each(function() {
+//Hexagons home page page CTAs .calculating-list 
+	$(".hexagon270").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).find('h4').text();
      if( listitem.length>0)
@@ -858,9 +851,8 @@ var screenSize = screen.width+"x" +screen.height;
 	 {
 		 listitem.each(function() {
 			 var linktext = $(this).text();
-		 	 //var linktext1 = $('.cs-section .cs-container .cs-title').text();
-			 //console.log("link text:" + linktext);
-			 if(linktext.indexOf("READ THE CASE STUDY")>-1){linktext = $(".cs-highlight-box-logo").find("img").attr("alt");}
+			 linktext=linktext.toLowerCase();
+			 if(linktext.indexOf("read the case study")>-1){linktext = $(".cs-highlight-box-logo").find("img").attr("alt");}
 			 linktext = "case-study-panel-link-" + $.trim(linktext);
             $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel"); });
 			$(this).mousedown(function(e){
@@ -927,7 +919,6 @@ var screenSize = screen.width+"x" +screen.height;
                     	if(!isTabClicked)
                         {
     					var tabTitle = "tab-"+activeLink.text().toLowerCase().replace(/\s/g,"-")+" scroll";
-    					//console.log("tabTitle=="+tabTitle);
                         tabClick(primaryCategory,tabTitle,pageTitle,"Tabscroll");
                         }
                         	else
@@ -1073,7 +1064,6 @@ var screenSize = screen.width+"x" +screen.height;
 				$("#searchFrame").contents().find("[tokenid=searchresultitem]").size();
 				var result =$(".searchresultitem").size();
 			}	
-				//console.log(result)
 		});
 
 $(document).on('keypress', '#fulltext', function(event) 
@@ -1289,8 +1279,6 @@ $(document).on('keypress', '#fulltext', function(event)
 				digitalData["eventData"]["searchTerm"]="no term searched";
 			if(searchFilters!="")
 				digitalData["eventData"]["searchFilters"]=searchFilters;
-			//console.log(trackEvent+"********************")
-			//console.log("search tracking--"+JSON.stringify(digitalData.eventData));
 			_satellite.track(trackEvent);
 
 	}
@@ -1299,7 +1287,6 @@ function getCurrentBreadcrumb()
 	{
 		var hierarchy="";
 		$( "a.breadcrumblink").each(function( index ) {
-			//console.log(hierarchy+"........."+hierarchy.length);
 			  if(hierarchy.length>0)
 				hierarchy=hierarchy+":";
 			  hierarchy=hierarchy+$.trim($(this).text());
@@ -1320,11 +1307,8 @@ function getCurrentBreadcrumb()
 					hierarchy=hierarchy+":";
 			hierarchy=hierarchy+pageTitle;
 		}
-		//console.log( "hierarchy---->>"+hierarchy );
 		return hierarchy;
 	}
-//Added on 20160218
-
 
 	function isProductDetail()
 	{
