@@ -17,59 +17,59 @@ public class LeaderShipBIODetailsModel {
 
 	@Inject
 	@Named("jcr:lbdimage")
-	
+	@Default(values = "")
 	private String lbdimage;
 
 	@Inject
 	@Named("jcr:lbdtitle")
-
+	@Default(values = "")
 	private String lbdTitle;
 
 	
 	@Inject
 	@Named("jcr:lbdfallowname")
-
+	@Default(values = "")
 	private String lbdfallowname;
 	
 	
 	@Inject
 	@Named("jcr:lbdjobtitle")
-
+	@Default(values = "")
 	private String lbdJobTitle;
 
 	@Inject
 	@Named("jcr:lbdtwitterfollowurl")
-
+	@Default(values = "")
 	private String lbdTwiterFollowURL;
 
 	@Inject
 	@Named("jcr:lbdfacebookfollowurl")
-	
+	@Default(values = "")
 	private String lbdFacebookFollowURL;
 
 	@Inject
 	@Named("jcr:lbdlinkedinfollowurl")
-
+	@Default(values = "")
 	private String lbdLinkedinFollowURL;
 
 	@Inject
 	@Named("jcr:lbdcontent")
-	
+	@Default(values = "")
 	private String lbdContent;
 	
 	@Inject
 	@Named("jcr:lbdtwittericonpath")
-	
+	@Default(values = "")
 	private String lbdtwittericonpath;
 	
 	@Inject
 	@Named("jcr:lbdfacebookiconpath")
-	
+	@Default(values = "")
 	private String lbdfacebookiconpath;
 	
 	@Inject
 	@Named("jcr:lbdlinkediniconpath")
-	
+	@Default(values = "")
 	private String lbdlinkediniconpath;
 	
 	@Inject
