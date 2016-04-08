@@ -207,7 +207,10 @@ font-family: "museo-sans",Helvetica,Arial,sans-serif;
     letter-spacing: 0.1em;
  }
     
-.resources a:hover{  color: #ac1f25;}   
+.resources a:hover{  color: #ac1f25;}
+
+.stickNav-container .resources a:hover{color:#000;}
+ 
 .resources .animateLink .animateIcon {
     font-size: 0.875em;
     top: 1px;
