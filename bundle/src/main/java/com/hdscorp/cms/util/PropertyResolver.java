@@ -274,7 +274,7 @@ public final class PropertyResolver {
     	 
     	 Resource metadataResource = hit.getResource().getChild("jcr:content/metadata");
     	 ValueMap properties = metadataResource.adaptTo(ValueMap.class);
-         changefreq = "weekly";
+         changefreq = "monthly";
          priority = ".5";
          if(properties.containsKey("jcr:lastModified")){
         	 

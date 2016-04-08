@@ -42,9 +42,7 @@ Following things can be configured:
     {
         out.write("\n<urlset xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\" xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
         %>
-        out.write("<url>\n");
-        out.write("<loc><%=domain%></loc>\n");
-        out.write("</url>\n");
+        
         <%=PropertyResolver.buildSubList(navRootPage,domain)%>
         <c:if test="${!hidepdfsinsitemap}">
         	<%=PropertyResolver.buildAssetSitemap(rlpdfspath,domain)%>
