@@ -6,8 +6,8 @@ import com.hdscorp.cms.util.PathResolver;
 
 public class ELTagHelper {
 	
-//	public static String LOAD_IMAGE_PATH="/etc/clientlibs/hdscorp/main/images/load-indicator.gif";
-	public static String LOAD_IMAGE_PATH="";
+	public static String LOAD_IMAGE_PATH="/etc/clientlibs/hdscorp/main/images/load-indicator.gif";
+//	public static String LOAD_IMAGE_PATH="";
 	
 	/**
      * This is the function that is called by the Expression Language processor.  It must be static.
@@ -25,9 +25,7 @@ public class ELTagHelper {
     	String bgImgAtrr = "";
     	String mobileImageURL= getMobileImagePath(desktopImagePath,mobileImagePath);
 //    	bgImgAtrr="data-image-desktop='"+desktopImagePath+"'"+" data-image-mobile="+"'"+mobileImageURL+"'";
-//    	bgImgAtrr="style=\"background-image: url();\"data-image-desktop='"+desktopImagePath+"'"+" data-image-mobile="+"'"+mobileImageURL+"'";
     	bgImgAtrr="style=\"background-image: url(\'"+LOAD_IMAGE_PATH+"\'); \"data-image-desktop='"+desktopImagePath+"'"+" data-image-mobile="+"'"+mobileImageURL+"'";
-
     	return bgImgAtrr;
     }
 
