@@ -60,29 +60,29 @@ var hds = window.hds || {};
 
             $('.btn-square-red a').unbind('click').click(function(){
 				if($('.training-search input').val() == "" && $('.from_date').val() == "" && $('.to_date').val() == "" && locations == ""){
-					var url = "training-certification/training-details.html#trainingDetail";
+					var url = "training-certification/training.html#trainingDetail";
 					
 				}else if($('.training-search input').val() == "" && $('.from_date').val() != "" && locations == ""){
 					
-					var url = "training-certification/training-details.html#lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()
+					var url = "training-certification/training.html#lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()
 				}else if($('.training-search input').val() != "" && $('.from_date').val() != "" && locations == ""){
 					
-					var url = "training-certification/training-details.html#searchKey="+$('.training-search input').val()+"&lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()
+					var url = "training-certification/training.html#searchKey="+$('.training-search input').val()+"&lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()
 				}else if($('.training-search input').val() == "" && $('.from_date').val() != "" && locations != ""){
 					
-					var url = "training-certification/training-details.html#lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()+"&locations="+locations
+					var url = "training-certification/training.html#lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()+"&locations="+locations
 				}else if($('.training-search input').val() != "" && $('.from_date').val() == "" && locations != ""){
 					
-					var url = "training-certification/training-details.html#searchKey="+$('.training-search input').val()+"&locations="+locations
+					var url = "training-certification/training.html#searchKey="+$('.training-search input').val()+"&locations="+locations
 				}else if($('.training-search input').val() == "" && $('.from_date').val() == "" && locations != ""){
 					
-					var url = "training-certification/training-details.html#locations="+locations
+					var url = "training-certification/training.html#locations="+locations
 				}else if($('.training-search input').val() != "" && $('.from_date').val() == "" && locations == "" ){
 					
-					var url = "training-certification/training-details.html#searchKey="+$('.training-search input').val();
+					var url = "training-certification/training.html#searchKey="+$('.training-search input').val();
 				}else{
 					
-					var url = "training-certification/training-details.html#searchKey="+$('.training-search input').val()+"&lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()+"&locations="+locations
+					var url = "training-certification/training.html#searchKey="+$('.training-search input').val()+"&lowerBound="+$('.from_date').val()+"&upperBound="+$('.to_date').val()+"&locations="+locations
 				}
                 window.location.href = url;
             })
