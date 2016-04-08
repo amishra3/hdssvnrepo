@@ -46,6 +46,7 @@
 	} 
 %>
 <c:set var="titleprefix" value="<%= pageProperties.getInherited("titleprefix", "") %>" />
+<c:set var="analyticsinfooter" value="<%= pageProperties.getInherited("analyticsinfooter", "") %>" />
 <head>
       <meta charset="utf-8"/>
       <meta name="format-detection" content="telephone=yes" />
@@ -94,15 +95,5 @@
 			document.domain = "hds.com";
 		  </script>
 	  </c:if>
-
-
-	<% 
-		String videooverlaymarkup ="<object class='BrightcoveExperience' id='#videoGuid'><param name='playerID' value='#videoTitleId'><param name='playerKey' value='AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot'><param name='@videoPlayer' value='#videoTitleId'><param name='isVid' value='true'><param name='isUI' value='true'><param name='dynamicStreaming' value='true'><param name='htmlFallback' value='true'><param name='includeAPI' value='true'><param name='templateLoadHandler' value='onTemplateLoad'><param name='width' value='720'><param name='height' value='455'><param name='showNoContentMessage' value='false' /><param name='secureConnections' value='true' /><param name='secureHTMLConnections' value='true' /><param name='includeAPI' value='true' /><param name='templateLoadHandler' value='myTemplateLoaded' /><param name='linkBaseURL' value='https://wwwstage-revamp.hds.com/en-us/news-insights/resources.html#vid=#videoTitleId'/></object>";
-	%>
-	<c:set var="overlaymarkup" value="<%=pageProperties.getInherited("videooverlaymarkup", videooverlaymarkup) %>"/>
-      
-	<div style="display: none;" class="bcobjmarkup">
-		${overlaymarkup}
-	</div>
       
 </head>

@@ -8,7 +8,8 @@
 
     	
 <cq:include path="globalfooter" resourceType="hdscorp/components/content/footer/footerwrapper"/>
-<cq:include path="cloudservices" resourceType="cq/cloudserviceconfigs/components/servicecomponents"/> 
+<cq:include path="cloudservices" resourceType="cq/cloudserviceconfigs/components/servicecomponents"/>
+<c:set var="analyticsinfooter" value="<%= pageProperties.getInherited("analyticsinfooter", "") %>" /> 
 
 <cq:includeClientLib js="hdscorp.main"/> 
 <!-- includeClientLib is not loading the JS lib and that is why doing it conventionally-->
@@ -38,3 +39,12 @@
     </div>
     </div>
 </div> 
+
+<% 
+	String videooverlaymarkup ="<object class='BrightcoveExperience' id='#videoGuid'><param name='playerID' value='#videoTitleId'><param name='playerKey' value='AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot'><param name='@videoPlayer' value='#videoTitleId'><param name='isVid' value='true'><param name='isUI' value='true'><param name='dynamicStreaming' value='true'><param name='htmlFallback' value='true'><param name='includeAPI' value='true'><param name='templateLoadHandler' value='onTemplateLoad'><param name='width' value='720'><param name='height' value='455'><param name='showNoContentMessage' value='false' /><param name='secureConnections' value='true' /><param name='secureHTMLConnections' value='true' /><param name='includeAPI' value='true' /><param name='templateLoadHandler' value='myTemplateLoaded' /><param name='linkBaseURL' value='https://wwwstage-revamp.hds.com/en-us/news-insights/resources.html#vid=#videoTitleId'/></object>";
+%>
+<c:set var="overlaymarkup" value="<%=pageProperties.getInherited("videooverlaymarkup", videooverlaymarkup) %>"/>
+     
+<div style="display: none;" class="bcobjmarkup">
+	${overlaymarkup}
+</div>
