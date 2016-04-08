@@ -63,6 +63,12 @@
                         name="./subcatbuttonurltargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <overlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay?"
+                        name="./voverlay"
+                        type="checkbox"
+                        xtype="selection"/>
                     <thirdparty
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Show third party icon?"
@@ -99,14 +105,14 @@
                         xtype="tags"/>
                     <lookuTemplates
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Comma Delimited Value of LookupTemplates "
                         fieldDescription="Default - /apps/hdscorp/templates/productdetail,/apps/hdscorp/templates/servicedetail"
+                        fieldLabel="Comma Delimited Value of LookupTemplates "
                         name="./lookuTemplates"
                         xtype="textfield"/>
                     <lookupPathFields
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="These are the Search Lookup Paths"
                         fieldDescription="Defaults are - /content/hdscorp/en_us/products-solutions,/content/hdscorp/en_us/services"
+                        fieldLabel="These are the Search Lookup Paths"
                         name="./lookupPathFields"
                         xtype="multifield">
                         <fieldConfig
@@ -118,12 +124,12 @@
                                     allowBlank="{Boolean}false"
                                     fieldLabel="Search Lookup Path"
                                     key="lookupPaths"
-                                    width="300"
                                     name="./lookupPaths"
+                                    width="300"
                                     xtype="pathfield"/>
                             </items>
                         </fieldConfig>
-                    </lookupPathFields>                        
+                    </lookupPathFields>
                 </items>
             </tab3>
         </items>

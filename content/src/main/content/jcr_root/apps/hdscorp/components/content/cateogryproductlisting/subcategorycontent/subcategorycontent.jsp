@@ -24,7 +24,10 @@
 	</div>
 </c:if>
 
-
+                            <c:if test="${not empty properties.subcatbuttonurl}">
+                              <c:set var="vid" value="${properties.subcatbuttonurl}" />
+                                <c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${vid});"/>
+                             </c:if>
 
 	<c:set var="linkUrl" value="${properties.subcatbuttonurl}" />
 	
@@ -53,7 +56,7 @@
 	         <p>${properties.subcategorybanneresubtext}</p>
              <c:if test="${not empty properties.subcatbuttonlabel}">
 	         <div class="btn-square-red learn-more-promo">
-	            <a href="${linkUrl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' '}</a>
+	            <a href="${properties.voverlay?'javascript:void(0);':linkUrl}" onclick="${!properties.voverlay?'':vidurl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' '}</a>
 	          </div>
               </c:if>
 	     </div>
