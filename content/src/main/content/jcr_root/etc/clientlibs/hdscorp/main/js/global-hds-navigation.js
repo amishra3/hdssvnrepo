@@ -114,6 +114,12 @@ var hds = window.hds || {};
             if ($(window).width() <= 768) {
             	$(document).on("click",'.hds-MobileMenu .globalNavWrapper > li', function() {
                     var self=$(this);
+                    var offsetFirst=$($('.hds-MobileMenu .globalNavWrapper > li:eq(0)')).offset().top;
+                    var clickedIndexHeight= $(this).outerHeight();
+                    var clickedIndex= $(this).index();
+                    var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
+                    console.log(finalIndex);
+                    
                     var slideOut =  $(this).find('.hds-megaMenuWrapper,.hds_globalNav_geo'),
                         tease = function () { 
                             slideOut.slideDown(300);
@@ -128,7 +134,11 @@ var hds = window.hds || {};
                             });
                         } else {
                               slideOut.clearQueue().slideUp("slow",function(){
-                                self.removeClass('open');
+                                self.removeClass('open');                                                	
+                                  	 $("body, html").animate({ 
+                                           scrollTop: finalIndex                             
+                                       }, 600);
+                                  
                             });
                         }
                 })

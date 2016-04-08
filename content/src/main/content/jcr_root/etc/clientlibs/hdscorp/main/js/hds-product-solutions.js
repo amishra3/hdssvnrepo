@@ -32,7 +32,7 @@ var hds = window.hds || {};
                 getURL = url;
                 $("#loadCatagoryContent").removeAttr('data-content');
             }           
-             
+             $('.toggleLinks').show();
             $("#loadCatagoryContent").html(" ").load(getURL + " .prodnsolcategorycontent ", function(responseText, textStatus) { 
             	$('.category-heading > h2').html(" ").html($('.product-listing > ul > li.active').find('a').text());
             	if (textStatus === 'success' || textStatus === 'notmodified') {
@@ -43,8 +43,7 @@ var hds = window.hds || {};
                       if (sizeCatagoryList<=defSize) {
                           $('#loadMoreBtn').hide();
                       	}
-                      }             
-              
+                      }   
             });
         },
 
@@ -58,7 +57,7 @@ var hds = window.hds || {};
                 });
             } else {
                 $('.product-listing li').each(function() {
-                    if ($(this).hasClass('active') && $(this).index() > 1) {
+                    if ($(this).hasClass('active') && $(this).index() > 0) {
                         $('#contentCatagory').append($(this).find('.MobileHolderWrapper').html());
                         $('.MobileHolderWrapper').empty();
                     }
@@ -224,8 +223,9 @@ var hds = window.hds || {};
             	var key = event.keyCode || event.charCode;
             	var getSearchFilter = $.trim($(this).val());
             	if( key == 8 || key == 46 ){
-            		console.log(getSearchFilter.length+"\n")
-            		 if (getSearchFilter.length <= 1) {
+            		
+            		 if (getSearchFilter.length === 0) {
+            			 console.log(getSearchFilter.length+"\n going to hit ")
             			 hds.loadDataFilters.checkSearchEmpty();            			 
             		 }
             		setTimeout(function() {
@@ -268,6 +268,7 @@ var hds = window.hds || {};
             }             
              $('.product').find('li').addClass("filterText");
              hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
+             $('.toggleLinks').show();	
             setTimeout(function() {
                 hds.loadDataFilters.controlCount();
                 if ($(".product:visible").length === 0) {
@@ -275,7 +276,6 @@ var hds = window.hds || {};
                 $('#loadCatagoryContent').find('.no-matched-result').remove();
                 $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
             }
-
             }, 1000);
         },
 
