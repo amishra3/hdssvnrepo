@@ -1,6 +1,7 @@
 package com.hdscorp.cms.util;
 
 import java.text.CharacterIterator;
+import java.text.SimpleDateFormat;
 import java.text.StringCharacterIterator;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,6 +31,8 @@ import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.day.cq.commons.inherit.HierarchyNodeInheritanceValueMap;
+import com.day.cq.commons.inherit.InheritanceValueMap;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.mailer.MailService;
 import com.day.cq.search.result.Hit;
@@ -195,7 +198,6 @@ public final class PropertyResolver {
         {
             Page child = children.next();
             String displayDescendants = child.getProperties().get("displaydescendants", "yes");
-           // String navpath = child.getProperties().get("navpath", "");
             Boolean hideInSitemap = false;
             if(child.getProperties().containsKey("hideinsitemap")) {
             	hideInSitemap =Boolean.valueOf(child.getProperties().get("hideinsitemap").toString());
@@ -205,15 +207,23 @@ public final class PropertyResolver {
             if(!hideInSitemap && level>2)
             {
             	try{
+            	 InheritanceValueMap iProperties = new HierarchyNodeInheritanceValueMap(child.getContentResource());
             	 pageTemplate=(String)child.getProperties().get("cq:template");
             	 loc = PathResolver.getShortURLPath(child.getPath());//resourceResolver.map(child.getPath()+".html");
-                 changefreq = child.getProperties().get("pagechangefreq","weekly");
-                 priority = child.getProperties().get("pagepriority","1.0");
+                 changefreq = child.getProperties().get("pagechangefreq","monthly");
+                 priority = child.getProperties().get("sitemappagepriority","");
+                 
+                 if(priority.trim().length()== 0){
+                	 priority = (String)iProperties.getInherited("sitemappagepriority", "1.0");
+                 }
+                 
+                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
+                 
                  if(child.getLastModified()!=null){
-                	 lastmod = child.getLastModified().getTime().toString();
+                	 lastmod = fmt.format(child.getLastModified().getTime());
                  }
                  else{
-                	 lastmod= ((java.util.GregorianCalendar)child.getProperties().get("jcr:created")).getTime().toString();
+                	 lastmod = fmt.format(((java.util.GregorianCalendar)child.getProperties().get("jcr:created")).getTime());
                  }
             	}
             	catch(Exception e){
@@ -261,7 +271,7 @@ public final class PropertyResolver {
     	 Resource metadataResource = hit.getResource().getChild("jcr:content/metadata");
     	 ValueMap properties = metadataResource.adaptTo(ValueMap.class);
          changefreq = "weekly";
-         priority = "1.0";
+         priority = ".5";
          if(properties.containsKey("jcr:lastModified")){
         	 
         	 lastmod= ((Calendar)properties.get("jcr:lastModified")).getTime().toString();

@@ -88,6 +88,11 @@
 					            value="no"/>   
 					    </options>
             </displaydescendants>
+         <sitemappriority
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Page/Heirarchy Sitemap priority"
+            name="./sitemappagepriority"
+            xtype="textfield"/>
          <hidepdfsinsitemap
             jcr:primaryType="cq:Widget"
             fieldLabel="Hide PDFS in  Sitemap"

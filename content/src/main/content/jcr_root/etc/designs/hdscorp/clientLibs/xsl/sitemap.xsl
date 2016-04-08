@@ -87,7 +87,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <xsl:value-of select="concat(sitemap:priority*100,'%')"/>
+                                    <xsl:value-of select="concat(sitemap:priority,'')"/>
                                 </td>
                                 <td>
                                     <xsl:value-of select="concat(translate(substring(sitemap:changefreq, 1, 1),concat($lower, $upper),concat($upper, $lower)),substring(sitemap:changefreq, 2))"/>

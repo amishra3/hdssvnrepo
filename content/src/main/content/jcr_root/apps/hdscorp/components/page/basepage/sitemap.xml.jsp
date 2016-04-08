@@ -43,10 +43,9 @@ Following things can be configured:
         out.write("</url>\n");
         <%=PropertyResolver.buildSubList(navRootPage,domain)%>
         <c:if test="${!hidepdfsinsitemap}">
-        <%=PropertyResolver.buildAssetSitemap(rlpdfspath,domain)%>
-        
+        	<%=PropertyResolver.buildAssetSitemap(rlpdfspath,domain)%>
         </c:if>
-        <%
+    <%
         out.write("</urlset>\n");
     }
-%>
+	%>
