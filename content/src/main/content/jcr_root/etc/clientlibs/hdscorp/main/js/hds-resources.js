@@ -53,8 +53,8 @@ var hds = window.hds || {};
             if($.trim(videoID).length > 0){
                 var vidObjMkup = $(".bcobjmarkup").html();
                 vidObjMkup = vidObjMkup.replace(/#videoTitleId/g,videoID).replace("#videoGuid",videoGUID);
-				vidObjMkup = '<object id="myExperience'+videoID+'" class="BrightcoveExperience">  <param name="bgcolor" value="#FFFFFF" />  <param name="width" value="920" />  <param name="height" value="517" />  <param name="playerID" value="'+videoID+'" /><param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot" />  <param name="isVid" value="true" />  <param name="isUI" value="true" />  <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="'+videoID+'" />  <param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="myTemplateLoaded" /></object>';
-				brightcove.createExperiences();
+                vidObjMkup = '<object id="myExperience'+videoID+'" class="BrightcoveExperience">  <param name="bgcolor" value="#FFFFFF" />  <param name="width" value="920" />  <param name="height" value="517" />  <param name="playerID" value="'+videoID+'" /><param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot" />  <param name="isVid" value="true" />  <param name="isUI" value="true" />  <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="'+videoID+'" />  <param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="myTemplateLoaded" /></object>';
+                brightcove.createExperiences();
                 videobox = new HDS.Lightbox();
                 gblPlayingVideo = undefined ; 
                 videobox.setContent('');
@@ -181,10 +181,10 @@ var hds = window.hds || {};
                     'display': 'none'
                 });
                 if ($(window).width() < 991) {
-					$('.topFilter').find('div.disable-filter').remove();
+                    $('.topFilter').find('div.disable-filter').remove();
                     $('.topFilter').prepend('<div class="disable-filter"/>');
                 }else{
-					$('.resource-filters').find('div.disable-filter').remove();
+                    $('.resource-filters').find('div.disable-filter').remove();
                     $('.resource-filters').append('<div class="disable-filter"/>');
                 }                
             }
@@ -202,21 +202,26 @@ var hds = window.hds || {};
                 self.addClass('active');
                 if (self.parent('li').index() > 0) {
                     $('#resSearch').attr('placeholder', "Search " + $.trim($('#asideLinks-product > li.active').find('a').text()));
+                    if (checkInputIfEmpty.length > 0) {
+                        //Check If Input is empty
+                        $url = $url + "?fulltext=" + encodeURIComponent(checkInputIfEmpty);
+                    } else {
+                        $url = $url;
+                    }
                 } else {
+                    $('#resSearch').val('');
+                    $('#searchTag .keyword').html('');
+                    $('#searchTag .label').css({
+                        'display': 'none'
+                    });
+                    $('.clearSearchIcon').hide();
                     $('#resSearch').attr('placeholder', "Search All Resources");
                 }
 
                 $('.resource-heading > h2').html('').html($('#asideLinks-product > li.active').find('a').text());
                 if ($(activeCat).parent().has('ul').length) {
                     $(activeCat).parent().find('ul').slideDown();
-                }
-
-                if (checkInputIfEmpty.length > 0) {
-                    //Check If Input is empty
-                    $url = $url + "?fulltext=" + encodeURIComponent(checkInputIfEmpty);
-                } else {
-                    $url = $url;
-                }
+                }                
 
                 if ($url !== "") {
                     hds.resourceLib._processClickAside($url);
@@ -224,9 +229,9 @@ var hds = window.hds || {};
                     $("#prodnsolcategorycontent").html('');
                     $("#loadResourceContent").html('');
                     $('.resource-heading > h2').html('').html($('#asideLinks-product > li.active').find('a').text());
-                    localStorage.setItem('resStatus', 'false');
+                    localStorage.setItem('resStatus', 'false');                    
                 }
-                if ($featuredurl !== "" && hasTextInput.length <= 0) {
+                if ($featuredurl !== "") {
                     hds.resourceLib._processCatagoryCards($featuredurl);
                 } else {
                     localStorage.setItem('cardStatus', 'false');                    
