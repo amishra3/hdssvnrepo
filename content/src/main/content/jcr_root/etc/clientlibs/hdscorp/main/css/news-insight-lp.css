@@ -19,6 +19,13 @@
 
 }
 
+@media only screen and (max-width: 768px){
+  .common-hero-short-banner.news-insight .headline{
+	  font-size: 1.5em;
+	  font-weight: 500;
+  }	 
+}	
+
 @media only screen and (min-width: 1024px){
 
     .news-insight-explore-spotlight .spotlight-content .spotlight-title .glyphicon{font-size:0.6em; }
@@ -234,10 +241,7 @@
     padding-right: 15px;
   }
 }
-@media only screen and (max-width: 768px) {
- .common-hero-short-banner.news-insight .top-banner-heading{
-	 text-align: center; 
- }
+@media only screen and (max-width: 768px) { 
   .news-insight-resources .container-fluid{
     margin-right: -15px;
   }
@@ -712,7 +716,10 @@
 
   .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .spotlight-title{
     font-size: 0.875rem;
-  }  
+  } 
+  .common-hero-short-banner.news-insight .second-link{
+	 display:block;
+   }  
 }
 
 @media only screen and (max-width: 480px) {

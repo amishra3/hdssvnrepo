@@ -217,6 +217,9 @@ text-transform: none;}
 .news-press-container .icon-border {
   margin-top:0;
 }
+
+.common-hero-short-banner .request.cta-news{margin:0 0 10px;}
+
 }
 
 @media only screen and (max-width:767px){
@@ -267,10 +270,7 @@ text-transform: none;}
 .news-press-container.hds-news-section{
 	background:#ffffff;	
 }
-.common-hero-short-banner .request.cta-news{margin:0 0 10px;}
-.common-hero-short-banner.news-insight .second-link{
-	 display:block;
-}
+
 }
 
 /* Stay in Touch */
@@ -340,6 +340,8 @@ text-transform: none;}
 @media only screen and (max-width: 991px) {
 .comment_box {
   margin-bottom: 20px;
+}
+
 }
 
 @media only screen and (min-width:768px){
