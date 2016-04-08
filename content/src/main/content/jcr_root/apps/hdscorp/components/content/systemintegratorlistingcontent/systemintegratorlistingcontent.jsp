@@ -1,6 +1,7 @@
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
+<%@page import="com.hdscorp.cms.util.PathResolver"%>
 <c:set var="industryfilterlist" value="${widgets:getMultiFieldPanelValues(resource, 'industryfilterlist')}"/>
 <c:set var="contenttypefilterlist" value="${widgets:getMultiFieldPanelValues(resource, 'contenttypefilterlist')}"/>
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.SystemIntegratorsContentModel" var="systemIntegratorsContentModel" />
@@ -131,12 +132,18 @@
                                     <p> ${systemIntegrators.partnerIntroduction}</p>
 
 										<c:forEach var="column" items="${systemIntegrators.contentCell}" varStatus="loop">
-                                        		<a class="animateLink" href="${column.seemoretargeturl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a><br>
+		                                    <c:set var="ctatargeturl" value="${column.seemoretargeturl}" />
+		                                    <c:if test="${fn:startsWith(ctatargeturl,'/content/')}">
+		                                    	<c:set var="ctatargeturl"
+		                                    		value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("ctatargeturl").toString())%>" />
+		                                    </c:if>
+		                                    <a class="animateLink" href="${ctatargeturl}"
+		                                    target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+		                                    <br>
                                         </c:forEach>
                            		 </div>
                                 </c:if>
-                                </div> 
-
+                                </div>
 				 
 				     </c:forEach>
 			</div>
