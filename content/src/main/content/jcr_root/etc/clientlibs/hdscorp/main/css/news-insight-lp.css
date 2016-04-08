@@ -110,6 +110,20 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+ .stay-touch-hexagon-list.twitter-feed .hexagon320 .tweet-content{
+	 margin-top: -65px;
+ }
+ 
+ .stay-touch-hexagon-list.twitter-feed .hexagon320 h4{
+	 margin: 15px 0 10px;
+ }
+ .stay-touch-hexagon p{
+	 line-height: 1.3em;
+ }  
+ 
+}
+
 @media only screen and (max-width: 767px) { 
   .stay-touch-hexagon-list.twitter-feed .hexagon320 .tweet-content p{
 	 line-height: 1.3em;		
