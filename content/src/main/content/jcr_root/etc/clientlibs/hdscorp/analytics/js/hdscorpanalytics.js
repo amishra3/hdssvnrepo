@@ -33,7 +33,7 @@ if(url.indexOf("/unified-compute-platform-director.html") < 0 && url.indexOf("/m
 {
 	pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 }
-if(url.indexOf("/press-releases/")>-1)
+if(url.indexOf("/press-releases/")>-1 || url.indexOf("/industry-solutions/")>-1)
 	{
 		var strngTitle = url;
 		var n=strngTitle.lastIndexOf("/");
@@ -893,8 +893,7 @@ var screenSize = screen.width+"x" +screen.height;
 	});
 	
 	//Tabs Custom Tracking tabbing-container :event, category-listing: storage  page tabs
-	$(".stickNav-container, .tabbing-container li.active, .category-listing").each(function() {
-	//$(".stickNav-container, .webcast-listing li.active, .category-listing").each(function() {
+	$(".stickNav-container, .tabbing-container li.active, .category-listing, .webcast-listing").each(function() {
 	 	var links = $(this).find("a")
        links.each(function() {
 		 	$(this).click(function(){
