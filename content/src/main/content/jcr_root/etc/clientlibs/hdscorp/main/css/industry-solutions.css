@@ -130,7 +130,7 @@
 }
 .solution-category-box{
     background: #fff none repeat scroll 0 0;
-    box-shadow: 0 2px 2px #c5c5c5;
+    box-shadow: 1px 1px 4px #c5c5c5;
     color: #000;
     display: block;
     padding: 20px 25px;
