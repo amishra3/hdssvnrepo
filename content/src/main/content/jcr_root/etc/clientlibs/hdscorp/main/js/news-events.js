@@ -127,7 +127,6 @@ var hds = window.hds || {};
                 var endFilter = $(this).attr('data-enddate').split('/');
                 startFilter = new Date(startFilter[2], startFilter[0] - 1, startFilter[1]);
                 endFilter = new Date(endFilter[2], endFilter[0] - 1, endFilter[1]);
-                console.log(startDate+'<=====>'+startFilter+'<=====>'+ endDate+'<=====>'+endFilter);
                 return ((startFilter >= startDate) && (endFilter <= endDate)) || (startFilter <= endDate)
             }).show();
             

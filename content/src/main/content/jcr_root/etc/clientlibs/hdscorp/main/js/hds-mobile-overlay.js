@@ -17,7 +17,6 @@ window.HDS = {
                 minHeight = 450;
             if (listLen) minHeight = 550;
             videobox = new HDS.Lightbox();
-            console.log($('#' + $(this).data('target-content')).html());
             videobox.setContent('')
                         videobox.setContent($('#' + $(this).data('target-content')).html());
                         videobox.setContent('')

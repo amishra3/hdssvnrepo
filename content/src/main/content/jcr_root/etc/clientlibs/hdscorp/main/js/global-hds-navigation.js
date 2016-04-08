@@ -118,7 +118,6 @@ var hds = window.hds || {};
                     var clickedIndexHeight= $(this).outerHeight();
                     var clickedIndex= $(this).index();
                     var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
-                    console.log(finalIndex);
                     
                     var slideOut =  $(this).find('.hds-megaMenuWrapper,.hds_globalNav_geo'),
                         tease = function () { 

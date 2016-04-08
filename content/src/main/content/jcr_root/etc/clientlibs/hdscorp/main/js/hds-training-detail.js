@@ -127,7 +127,6 @@ var hds = window.hds || {};
                 var endFilter = $(this).attr('data-enddate').split('/');
                 startFilter = new Date(startFilter[2], startFilter[0] - 1, startFilter[1]);
                 endFilter = new Date(endFilter[2], endFilter[0] - 1, endFilter[1]);
-                console.log(startDate+'<=====>'+startFilter+'<=====>'+ endDate+'<=====>'+endFilter);
                 return ((startFilter >= startDate) && (endFilter <= endDate)) || (startFilter <= endDate)
             }).show();
 
@@ -181,7 +180,6 @@ var hds = window.hds || {};
 			}
 			getResults(true);
 			if(locations && locations != ""){
-				console.log($('input[id='+locations.toUpperCase()+']'))
 				setTimeout(function(){
 					
 					$('input[countryid='+locations+']').click()
@@ -198,7 +196,7 @@ var hds = window.hds || {};
 				  var locations = $(this).attr("data-location");
 				  locations_list.push(locations);//Push each check item's value into an array
 				});
-				console.log(locations_list);
+				
 				$('.result-section').each(function(index){
 				  var item = $(this).attr('data-country');
                     if(jQuery.inArray(item,locations_list) > -1){//Check if data-tag's value exist in array
@@ -206,7 +204,7 @@ var hds = window.hds || {};
 						$(this).parent().parent().parent().show();
 						$(this).parent().parent().prev().show();
 						$(this).attr('filter','show')
-                        console.log(item);
+                      
                     }
                     else{
                         $(this).hide();
@@ -214,9 +212,9 @@ var hds = window.hds || {};
                     }
 				});
 				if ($('input[name="cbxFunction"]:checkbox:checked').length > 0){
-						console.log("filters selected")
+						
 					}else{
-						console.log(" no filters selected")
+						
 						$('.result-section:lt('+max_items_page+')').show();
 						$('.result-product').show();
 						$('.result-product').each(function(){
@@ -269,11 +267,11 @@ var hds = window.hds || {};
 						}
 				});
 				if($('.result-section[filter="show"]').size() < 10 && $('.result-section[filter="show"]').size() != 0 ){
-					console.log("less results after filters")
+					
 					$('.result-btn a').hide();
 					$('.noResults').remove();
 				}else if($('.result-section[filter="show"]').size() == 0){
-					console.log("no results after filters")
+					
 					$('.result-btn a').hide();
 					$('.noResults').remove();
 					$('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
@@ -283,13 +281,13 @@ var hds = window.hds || {};
 				}
 				
 				$('.result-btn a').unbind('click').click(function(e){
-					console.log("clicked")
+					
 					$('.result-product').show();
 					shown = $('.result-section:visible').length+max_items_page;
 					
-					if(shown<items) {console.log(shown)
+					if(shown<items) {
 						$('.result-section[filter="show"]:lt('+shown+')').show();
-					}else {console.log("else"+shown)
+					}else {
 						$('.result-section[filter="show"]:lt('+items+')').show();
 						$('.result-btn a').hide();
 					}
@@ -330,12 +328,12 @@ var hds = window.hds || {};
 							method: "GET",
 							url: url
 						  }).done(function(response) {
-							//console.log(response);
+							
 							var html = $(response).find("#contentCatagory").html();
-							console.log($(html).find(".result-product").length)
+							
 							$('#contentCatagory').html(html)
 							if($(".result-product").length == 0){
-								console.log('no results')
+								
 								$('.result-btn a').hide();
 								$('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
 								return false;

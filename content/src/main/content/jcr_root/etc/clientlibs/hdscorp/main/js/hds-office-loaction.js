@@ -153,7 +153,6 @@ var hds = window.hds || {};
             var defultOptions = '<option>--Select Location--</option>';
             var state = hds.hdsContactLocations._returnJSON(countryData, arg2);
             var location = hds.hdsContactLocations._returnLocationJSON(state, arg1);
-            console.log($.isEmptyObject(location));
            if(!$.isEmptyObject(location)){ 
         	  $('#allLocations').removeAttr('disabled');
         	  $('#allLocations').show();

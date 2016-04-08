@@ -92,7 +92,6 @@ var hds = window.hds || {};
                     var clickedIndexHeight= $(this).outerHeight();
                     var clickedIndex= $(this).parent().index();
                     var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
-                    console.log(finalIndex);
                     if($(window).width() < 991){                    	
                    	 $("body, html").animate({ 
                             scrollTop: finalIndex                             
@@ -225,7 +224,6 @@ var hds = window.hds || {};
             	if( key == 8 || key == 46 ){
             		
             		 if (getSearchFilter.length === 0) {
-            			 console.log(getSearchFilter.length+"\n going to hit ")
             			 hds.loadDataFilters.checkSearchEmpty();            			 
             		 }
             		setTimeout(function() {

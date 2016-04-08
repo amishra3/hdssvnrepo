@@ -17,7 +17,6 @@ var hds = window.hds || {};
 	            $("#contentCatagoryHTML").html(" ").load(url + " .subcategorycontent", function(responseText, textStatus) {
 	            	if (textStatus === 'success' || textStatus === 'notmodified') {
 	                hds.productCatagory.bindHTMLLoad();
-	                console.log($($('.linkLeft.active')).offset().top )
 	                if($(window).width()<991){                        	
                      	 $("body, html").animate({ 
                               scrollTop: $($('.linkLeft.active')).offset().top                                
@@ -82,7 +81,6 @@ var hds = window.hds || {};
                         var clickedIndexHeight= $(this).outerHeight();
                         var clickedIndex= $(this).parent().index();
                         var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
-                        console.log(finalIndex);
                         if($(window).width() < 991){                    	
                        	 $("body, html").animate({ 
                                 scrollTop: finalIndex                             
@@ -91,7 +89,6 @@ var hds = window.hds || {};
                         hds.productCatagory.processHTML(loadUrl, loadIndec);                        
                         $('.linkLeft').find('.icon-accordion-closed').removeAttr('style').css('display', 'inline-block');
                         $('.linkLeft').find('.icon-accordion-opened').removeAttr('style').css('display', 'none');
-                        console.log($( $(this).parent('li.active')).offset().top);                      
                                               
                     } else if ($(this).hasClass('active') && $(window).width() < 991) {
                     	return false;

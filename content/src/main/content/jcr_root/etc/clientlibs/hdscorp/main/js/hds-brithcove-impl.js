@@ -88,7 +88,6 @@ function initiateVideo() {
         if (!window.brightcove) {
             $('#loading').hide();
             $.getScript(bcUrl, function(data, textStatus, jqxhr) {
-                console.log('Brightcove loaded');
             });
         }
 
@@ -105,7 +104,6 @@ function initiateVideo() {
                     window.brightcove.createExperiences();
                 }, 301);
             } else {
-                console.log('Brightcove not loaded');
             }
         });
     }, 251);
