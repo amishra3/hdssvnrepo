@@ -271,7 +271,7 @@ text-transform: none;}
 
 /* Stay in Touch */
 .stay_touch_container{ width:100%; float:left; background:#ac1f25;}
-.stay_touch_container .comment_box{ background: #fff none repeat scroll 0 0; border-top: 10px solid #008eaa; padding: 20px; min-height:475px;}
+.stay_touch_container .comment_box{ background: #fff none repeat scroll 0 0; border-top: 10px solid #008eaa; padding: 20px; min-height:0;}
 .stay_touch_container .comment_box .icon > img { float: left; margin-right: 10px;}
 .stay_touch_container .comment_box .type{ float: left; font-size: 0.75rem; font-weight: bold; margin-top: 16px;}
 .stay_touch_container .comment_box .post-img{
@@ -340,7 +340,7 @@ text-transform: none;}
 
 @media only screen and (min-width:768px){
 .stay_touch_container .comment_box{
-  min-height: 565px;
+  min-height: 0;
  }
 }
 
