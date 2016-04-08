@@ -164,6 +164,9 @@ var hds = window.hds || {};
 				}
 			});
 			
+			$(document).on('click','.hds-megaMenu a[rel=iframemodal]',function(){
+                hds.buildShowNav.closeDropDown();
+            })
         }
     }
 }(window, document, jQuery, hds));
