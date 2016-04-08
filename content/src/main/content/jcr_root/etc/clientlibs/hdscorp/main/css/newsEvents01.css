@@ -209,6 +209,7 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     font-size: 14px;
     text-transform: none;
     color: #333333;
+	text-align: left;
 }
 #webcasts-demand .newsEvents p span.morecontent span{
     display: none;
@@ -466,7 +467,7 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 .newsEvents p {
     color: #000;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
-    display: table;
+    display: block;
     font-size: 1.125em;
     margin-bottom: 20px;
     text-transform: uppercase;
