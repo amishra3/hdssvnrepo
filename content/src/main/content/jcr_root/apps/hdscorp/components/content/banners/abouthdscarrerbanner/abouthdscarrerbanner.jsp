@@ -20,7 +20,7 @@ request.setAttribute("bannerimage",bannerimage);
 <c:choose>
 	<c:when test="${not empty properties.abouthdscarrerbannertitle}">
 <%-- <div class="common-hero-banner about-hds-career new-abouthds-banner clearfix"  style="background-image:url('${requestScope.bannerimage}')">--%>
-     <div class="common-hero-banner about-hds-career new-abouthds-banner clearfix rsImg"  style="background-image: url();" ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.abouthdscarrerbannermobileimage)} > 
+     <div class="common-hero-banner about-hds-career new-abouthds-banner clearfix rsImg"   ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.abouthdscarrerbannermobileimage)} > 
                 <div class="common-hero-banner-container">
                         <div class="col-lg-6 col-md-6 col-xs-12">
     

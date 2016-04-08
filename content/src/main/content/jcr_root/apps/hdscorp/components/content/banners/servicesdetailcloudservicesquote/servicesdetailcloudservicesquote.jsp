@@ -12,7 +12,7 @@
 <c:choose>
 	<c:when test="${not empty properties.quoteheadline}">
 <%-- <div class="managed-cloud-services background-img services-det-bg1 clearfix" style="background-image:url('${properties.quotebackgroundimage}');"> --%>
-    <div class="managed-cloud-services background-img services-det-bg1 clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.quotebackgroundimage,properties.quotebackgroundmobileimage)} > 
+    <div class="managed-cloud-services background-img services-det-bg1 clearfix rsImg"  ${hdscorp:bgImgAtrr(properties.quotebackgroundimage,properties.quotebackgroundmobileimage)} > 
     <div class="managed-cloud-services-container">
         <h2 class="headline">${properties.quoteheadline}</h2>
 		<c:choose>

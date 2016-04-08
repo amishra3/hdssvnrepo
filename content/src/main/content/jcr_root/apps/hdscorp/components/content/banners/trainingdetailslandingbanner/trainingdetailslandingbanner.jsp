@@ -14,7 +14,7 @@ request.setAttribute("bannerimage",bannerimage);
 
 <c:choose>
 	<c:when test="${not empty properties.trainingdetailsbannertitle}">	
-            <div class="common-hero-banner hds-training-detail clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.trainingdetailsbannermobileimage)} > 
+            <div class="common-hero-banner hds-training-detail clearfix rsImg"  ${hdscorp:bgImgAtrr(requestScope.bannerimage,properties.trainingdetailsbannermobileimage)} > 
                 <div class="common-hero-banner-container">
                     <div class="col-lg-7 col-md-7 col-xs-12" >
         				    <h2 class="top-banner-heading">${properties.trainingdetailsbannertitle}</h2>

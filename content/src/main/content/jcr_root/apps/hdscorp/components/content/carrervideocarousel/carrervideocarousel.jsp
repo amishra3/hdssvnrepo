@@ -18,7 +18,7 @@
                     <c:forEach var="carrerVideocarousel" items="${carrerVideocarousel}">
 
  <%--<div class="bannerSectionImage sara" id="sara" style="background-image:url('${carrerVideocarousel.carrerbannerimagepath}'); background-repeat: no-repeat;">--%>
-     <div class="bannerSectionImage sara rsImg" id="sara" style="background-image: url();"${hdscorp:bgImgAtrr(carrerVideocarousel.carrerbannerimagepath,carrerVideocarousel.mobileimage)}; background-repeat:no-repeat;>
+          <div class="bannerSectionImage sara rsImg" id="sara" ${hdscorp:bgImgAtrr(carrerVideocarousel.carrerbannerimagepath,carrerVideocarousel.mobileimage)}; background-repeat:no-repeat;>
      
                         <div class="content-container hero-content-career">
                             <div class="col-md-4 playVideoBox col-md-push-8">

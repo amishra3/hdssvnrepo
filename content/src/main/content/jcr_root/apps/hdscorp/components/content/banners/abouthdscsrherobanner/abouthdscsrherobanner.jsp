@@ -19,7 +19,7 @@
 <c:choose>
 	<c:when test="${not empty properties.abouthdsherobannertitle}">
 	<%--<div class="common-hero-banner server-rack clearfix ${properties.abouthdbannerusevideomodal?'server-rack':'overview'}" style="background-image:url('${properties.abouthdsherobannermagePath}');${properties.abouthdbannerusevideomodal?'display:block;':''}">--%>
-        <div class="common-hero-banner server-rack clearfix rsImg ${properties.abouthdbannerusevideomodal?'server-rack':'overview'}" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.abouthdsherobannermagePath,properties.abouthdsherobannermobileimage)} > 
+        <div class="common-hero-banner server-rack clearfix rsImg ${properties.abouthdbannerusevideomodal?'server-rack':'overview'}"  ${hdscorp:bgImgAtrr(properties.abouthdsherobannermagePath,properties.abouthdsherobannermobileimage)} > 
 			<div class="common-hero-banner-container ${properties.abouthdsbannercontentalign?'floatright':''}">
 
 

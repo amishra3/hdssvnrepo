@@ -15,7 +15,7 @@
 			<c:set var="bannertypeclass1" value="${properties.bannertype}"/>
 		</c:if>
 		<%--<div class="${bannertypeclass1} clearfix" style="background-image: url('${properties.aboutusheximagePath}');">--%>
-            <div class="${bannertypeclass1} clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.aboutusheximagePath,properties.aboutushexmobileimage)} > 
+            <div class="${bannertypeclass1} clearfix rsImg"  ${hdscorp:bgImgAtrr(properties.aboutusheximagePath,properties.aboutushexmobileimage)} > 
 
             <c:if test="${not empty properties.aboutushextitlecontent}">
             <div class="content-container">

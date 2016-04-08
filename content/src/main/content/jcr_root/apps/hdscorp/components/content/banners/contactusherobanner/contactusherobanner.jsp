@@ -12,7 +12,7 @@
 		<c:set var="placardList" value="<%=PageUtils.convertMultiWidgetToList(properties,"placardTitle-placardcontent-phonenumbertext1-phonenumbertext2-contacturllabel1-contacttargeturl1-contacturllabel2-contacttargeturl2-seemorenewwin-seemorenewwin2-thirdparty-thirdparty2-mform-mform1")%>" />
 
             <%--<div class="common-hero-short-banner contact-banner clearfix" style="background: url('${properties.contactusimagePath}')">--%>
-                <div class="common-hero-short-banner contact-banner clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.contactusimagePath,properties.mobileimage)} > 
+                <div class="common-hero-short-banner contact-banner clearfix rsImg"  ${hdscorp:bgImgAtrr(properties.contactusimagePath,properties.mobileimage)} > 
                 <div class="content-container">
                     <h1 class="headline">${properties.contactustitlecontent}</h1>
 					<div class="row detail-container">

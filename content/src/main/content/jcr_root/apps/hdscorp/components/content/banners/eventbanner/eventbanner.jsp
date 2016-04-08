@@ -18,7 +18,7 @@
 <c:choose>
 	<c:when test="${not empty properties.eventbannertitle}">
        <%-- <div class="common-hero-banner services-training-banner clearfix" style="background-image:url(${properties.eventbannerimage});">--%>
-            <div class="common-hero-banner services-training-banner clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.eventbannerimage,properties.eventmobileimage)} > 
+            <div class="common-hero-banner services-training-banner clearfix rsImg"  ${hdscorp:bgImgAtrr(properties.eventbannerimage,properties.eventmobileimage)} > 
                 <div class="common-hero-banner-container">
                     <div class="col-lg-6 col-md-6 col-xs-12" >
         				    <h2 class="top-banner-heading">${properties.eventbannertitle}</h2>

@@ -17,7 +17,7 @@
 <c:choose>
 	<c:when test="${not empty properties.simplebannertitle}">
 		<%-- <div class="common-hero-short-banner server-rack clearfix" style="background-image: url('${properties.simplebannermagePath}');"> --%>
-		<div class="common-hero-short-banner server-rack  clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.simplebannermobilemagePath)} > 
+		<div class="common-hero-short-banner server-rack  clearfix rsImg"  ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.simplebannermobilemagePath)} > 
           <div class="content-container">
               <div class="col-lg-6 col-md-6 col-xs-12">
                   <h1 class="headline">${properties.simplebannertitle}</h1>

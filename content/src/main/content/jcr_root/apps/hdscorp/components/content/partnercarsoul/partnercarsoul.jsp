@@ -29,7 +29,7 @@
 
 			<%-- <div class="bannerSectionImage" style="background-image:url('${column.bannerimagepath}'); background-repeat: no-repeat;"> --%>
 			<div class="bannerSectionImage rsImg"
-				style="background-image: url();"${hdscorp:bgImgAtrr(column.bannerimagepath,column.mobileimage)}; background-repeat:no-repeat;>
+				${hdscorp:bgImgAtrr(column.bannerimagepath,column.mobileimage)}; background-repeat:no-repeat;>
 				<div class="content-container hero-content-partner">
 
 					<div class="col-md-4 partnerLogo col-md-push-8">

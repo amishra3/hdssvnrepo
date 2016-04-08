@@ -17,7 +17,7 @@
 	<c:when test="${not empty properties.abouthdsbannertitle}">
 
 		<%-- <div class="about-hds-career-leader bg-cover-career clearfix" style="background: url('${properties.abouthdsbannermagePath}') 50% 0% / cover no-repeat;;"> --%>
-            <div class="about-hds-career-leader bg-cover-career clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.abouthdsbannermagePath,properties.abouthdsbannermobileimage)} >
+            <div class="about-hds-career-leader bg-cover-career clearfix rsImg"  ${hdscorp:bgImgAtrr(properties.abouthdsbannermagePath,properties.abouthdsbannermobileimage)} >
                <div class="content-container container-fluid">
                    <div class="col-sm-6 col-xs-12 col-no-pad ${ not empty properties.abouthdsbannercontentalign?'about-hds-leader-content':'about-hds-career-content'}">
                        <h2>${properties.abouthdsbannertitle}</h2>

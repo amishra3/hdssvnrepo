@@ -39,7 +39,7 @@
 			<%-- class="hero-product-solutions clearfix ${properties.simplebannerusevideomodal?'server-rack':'overview'}"
 			style="background-image:url('${properties.simplebannermagePath}');${properties.simplebannerusevideomodal?'display:block;':''}"> --%>
             	 class="hero-product-solutions clearfix ${properties.simplebannerusevideomodal?'server-rack':'overview'} rsImg"
-	        style="background-image: url();" ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.heromobileimage)} >
+	         ${hdscorp:bgImgAtrr(properties.simplebannermagePath,properties.heromobileimage)} >
 			<div
 				class="hero-product-solutions-container ${properties.simplebannercontentalign?'floatright':''}">
 

@@ -18,7 +18,7 @@
 <c:choose>
 	<c:when test="${not empty properties.commonherobannertitle}">
                 <%--<div class="about-hds-csr-eco server-rack clearfix" style="background-image:url('${properties.commonherobannerimagePath}');">--%>
-                    <div class="about-hds-csr-eco server-rack clearfix rsImg" style="background-image: url();" ${hdscorp:bgImgAtrr(properties.commonherobannerimagePath,properties.commonherobannermobileimage)} > 
+                    <div class="about-hds-csr-eco server-rack clearfix rsImg"  ${hdscorp:bgImgAtrr(properties.commonherobannerimagePath,properties.commonherobannermobileimage)} > 
                 <div class="content-container container-fluid">
                     <div class="col-lg-7 col-md-7 col-xs-12 col-no-pad">
                         <div class="video-play hidden-lg hidden-md">
