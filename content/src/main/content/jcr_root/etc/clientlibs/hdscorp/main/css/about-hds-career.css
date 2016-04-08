@@ -16,14 +16,14 @@
 }*/
 .new-abouthds-banner .cta-text{float:left; width:100%; text-align:center; }
 .new-abouthds-banner .cta-text h4{
-	display:inline-block; 
-	font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    display:inline-block; 
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     text-transform: uppercase;
-	margin:5px 50px 0 0;
-	padding:0;
-	color:#fff; 
+    margin:5px 50px 0 0;
+    padding:0;
+    color:#fff; 
 }
 .career-benefits-hexagon .hexagon320 .hexagon-content {
     margin-top: -41px;
@@ -34,39 +34,39 @@
 .csr-governance-resource .resources-container .resources-category .resources-category-box{min-height:120px;}
 
 @media only screen and (max-width: 767px) {
-	
+    
 .new-abouthds-banner .cta-text h4 {
-	margin:0 0 5px 0;
-	text-align:center;
-	font-size:15px;
-	display:block;
-	float:none;
-	}
-	.new-abouthds-banner .cta-btn{   display: block;
+    margin:0 0 5px 0;
+    text-align:center;
+    font-size:15px;
+    display:block;
+    float:none;
+    }
+    .new-abouthds-banner .cta-btn{   display: block;
     margin: 0 auto !important;
     } 
-	.red-bg { margin: 0 0 50px;
+    .red-bg { margin: 0 0 50px;
     padding: 20px 0;
 
-	}
+    }
 .new-abouthds-banner .common-hero-banner-container{padding:0px 15px 50px 0px;}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
-	
-	.new-abouthds-banner .common-hero-banner-container .request{
+    
+    .new-abouthds-banner .common-hero-banner-container .request{
     display: inline-block!important;
-	}	
-	
-	.new-abouthds-banner .red-bg { margin: 0 0 50px;
-   	 padding: 40px 0;
-	}
-	.new-abouthds-banner .common-hero-banner-container{padding-right:50px;}
+    }   
+    
+    .new-abouthds-banner .red-bg { margin: 0 0 50px;
+     padding: 40px 0;
+    }
+    .new-abouthds-banner .common-hero-banner-container{padding-right:50px;}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-	.new-abouthds-banner .cta-text h4 {
+    .new-abouthds-banner .cta-text h4 {
     font-size:17px;
-	}
+    }
 
 }
 
@@ -117,7 +117,7 @@
     .career-benefits-hexagon-list .hex-contain .hexagon320:last-child {
         margin-right: 0;
     }
-	
+    
 }
 
 @media only screen and (max-width: 991px) {
@@ -132,7 +132,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 270px;
-	}
+    }
 }
 
 .career-featured-jobs {
@@ -232,8 +232,8 @@
     .career-featured-jobs .col-sm-4 .career-jobs:last-child{
 
     }
-	.csr-governance-resource div.acs-commons-resp-colctrl-row>div{width:98%;}
-	.new-abouthds-banner .common-hero-banner-container{margin-right:0 !important}
+    .csr-governance-resource div.acs-commons-resp-colctrl-row>div{width:98%;}
+    .new-abouthds-banner .common-hero-banner-container{margin-right:0 !important}
 }
 
 .career-commitment {
@@ -306,7 +306,7 @@
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
     font-size: 0.813em;
     margin-bottom: 10px;
-	font-weight: 500;
+    font-weight: 500;
 }
 
 .career-commitment .company-list .company .description {
@@ -332,7 +332,7 @@
 }
 
 .career-commitment .company-list .company .read-more a:hover{
-	color: #ac1f25;
+    color: #ac1f25;
 }
 
 .career-commitment .company-list .view-all {
@@ -393,7 +393,7 @@
         line-height: 110%;
         color: #000000;
     }
-	.career-commitment .career-commitment-spotlight .description p:last-child{font-weight:300;}
+    .career-commitment .career-commitment-spotlight .description p:last-child{font-weight:300;}
     .career-commitment .career-commitment-spotlight .learn-more {               
         text-align: center;
     }
@@ -474,8 +474,8 @@
     .hitachi-spirit-hexagon-list .hex-contain .hexagon320:last-child {
         margin-right: 0;
     }
-	 .new-abouthds-banner .common-hero-banner-container{
-	margin-left:0!important; margin-right:0!important;
+     .new-abouthds-banner .common-hero-banner-container{
+    margin-left:0!important; margin-right:0!important;
 }
 
 }
@@ -647,11 +647,11 @@
 }
 
 .bannerCarsoul .watchVideoBtn{
-	margin-top: 50px;	
+    margin-top: 50px;   
 }
 
 .bannerCarsoul .bannerSectionImage .playVideoBox{
-	padding-top: 33px;
+    padding-top: 33px;
 }
 
 .bannerCarsoul .bannerSectionImage .playVideo {    
@@ -779,7 +779,19 @@
     }
     .bannerCarsoul .bannerSectionImage .playVideo {
         text-align: center;
-        padding-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .bannerCarsoul .bannerSectionImage .playVideo img {
+        width: 75px;
+        height: 75px;
+    }
+    .bannerCarsoul .watchVideoBtn {
+        margin-top: 10px;
+    }
+    .bannerCarsoul .bannerSectionImage .playVideoBox{
+        padding-top:10px;
     }
 }
 
@@ -834,7 +846,7 @@
         top:-35px;
         right:5%;
     }
-	.hitachi-spirit-hexagon .hitachi-spirit-hexagon-list h4 br{display:none;}
+    .hitachi-spirit-hexagon .hitachi-spirit-hexagon-list h4 br{display:none;}
 }
 
 @media only screen and (max-width: 768px) {
