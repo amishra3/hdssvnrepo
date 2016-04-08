@@ -18,8 +18,6 @@ global-hds-navigation.js
 hds-product-solutions.js
 social-innovation.js
 press-release.js
-news-insight-news.js
-about-hds-awards.js
 about-hds-csr.js
 news-events.js
 hds-career-herobanner.js

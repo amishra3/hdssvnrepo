@@ -57,12 +57,12 @@ var hds = window.hds || {};
                     }
                 });
             } else {
-                //$('.product-listing li').each(function() {
-                    //if ($(this).hasClass('active') && $(this).index() > 1) {
-                       // $('#contentCatagory').append($(this).find('.MobileHolderWrapper').html());
-                       // $('.MobileHolderWrapper').empty();
-                    //}
-                //})
+                $('.product-listing li').each(function() {
+                    if ($(this).hasClass('active') && $(this).index() > 1) {
+                        $('#contentCatagory').append($(this).find('.MobileHolderWrapper').html());
+                        $('.MobileHolderWrapper').empty();
+                    }
+                })
             }
         },        
         setHTMLContainer: function() {
