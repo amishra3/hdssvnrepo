@@ -307,6 +307,12 @@
     color: #000000;
 }
 
+@media only screen and (min-width:1024px) and (max-width:1190px) {
+   .product-category-list .product-category-list-container { 
+      padding-left:15px;
+    }
+}
+
 @media (min-width: 320px) and (max-width: 991px) {
   .hero-product-category{
     padding-bottom: 60px;

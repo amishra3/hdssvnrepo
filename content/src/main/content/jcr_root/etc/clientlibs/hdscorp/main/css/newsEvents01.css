@@ -722,6 +722,17 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     }
 }
 
+@media screen and (min-width:992px) and (max-width:1190px) {
+#upcoming-events {
+    padding-left:15px; padding-right:15px;
+    }
+
+ body.eventlanding .common-hero-banner .common-hero-banner-container .request {
+   margin-bottom: 50px;
+}
+    body.eventlanding .custom-nav-tabs ul{padding-left:20px;}
+}
+
 @media screen and (min-width:992px) and (max-width:1213px) {
     .daterangepicker .daterangepicker_input {
         width: 55%;
