@@ -229,12 +229,17 @@ public final class PropertyResolver {
             		LOG.error("Exception in buildSubList::"+e);
             	}
             	if(null != pageTemplate){
-                sbuilder += ("<url>\n");
-                sbuilder += ("<loc>http://"+domain+loc+"</loc>\n");
-                sbuilder += ("<lastmod>"+lastmod+"</lastmod>\n");
-                sbuilder += ("<changefreq>"+changefreq+"</changefreq>\n");
-                sbuilder += ("<priority>"+priority+"</priority>\n");
-                sbuilder += ("</url>\n");
+	                sbuilder += ("<url>\n");
+	                if(!domain.contains("http")){
+	                	sbuilder += ("<loc>http://"+domain+loc+"</loc>\n");	
+	                }else{
+	                	sbuilder += ("<loc>"+domain+loc+"</loc>\n");
+	                }
+	                
+	                sbuilder += ("<lastmod>"+lastmod+"</lastmod>\n");
+	                sbuilder += ("<changefreq>"+changefreq+"</changefreq>\n");
+	                sbuilder += ("<priority>"+priority+"</priority>\n");
+	                sbuilder += ("</url>\n");
             	}
             }
             if(child.listChildren(null).hasNext() && displayDescendants.equals("yes"))
@@ -282,7 +287,7 @@ public final class PropertyResolver {
     	
     	
          assetbuilder += ("<url>\n");
-         assetbuilder += ("<loc>http://"+domain+loc+"</loc>\n");
+         assetbuilder += ("<loc>"+domain+loc+"</loc>\n");
          assetbuilder += ("<lastmod>"+lastmod+"</lastmod>\n");
          assetbuilder += ("<changefreq>"+changefreq+"</changefreq>\n");
          assetbuilder += ("<priority>"+priority+"</priority>\n");

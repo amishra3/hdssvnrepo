@@ -23,13 +23,17 @@ Following things can be configured:
 
     Page navRootPage = currentPage.getAbsoluteParent(1); //Get Main Navigation Root
 	String 	rlpdfspath = pageProperties.getInherited("rlpdfspath", "/content/dam/public/en_us/pdfs");
-    String domain = request.getServerName();
+    String domain = pageProperties.getInherited("domain", "https://www.hds.com");
+    
+    if(domain==null || domain.trim().length()==0){
+    	domain = request.getServerName();
+    }
     Integer integerPort = new Integer(request.getServerPort());
     String port = integerPort.toString();
-    if(!(port.equals(""))&&(!(port.equals("80"))))
-    {
-        domain += (":" + port);
-    }
+//     if(!(port.equals(""))&&(!(port.equals("80"))))
+//     {
+//         domain += (":" + port);
+//     }
     if(navRootPage == null && currentPage != null) //Check if page exists
     {
         navRootPage = currentPage;
@@ -39,7 +43,7 @@ Following things can be configured:
         out.write("\n<urlset xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\" xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
         %>
         out.write("<url>\n");
-        out.write("<loc>http://<%=domain%></loc>\n");
+        out.write("<loc><%=domain%></loc>\n");
         out.write("</url>\n");
         <%=PropertyResolver.buildSubList(navRootPage,domain)%>
         <c:if test="${!hidepdfsinsitemap}">
