@@ -344,6 +344,9 @@ line-height: 1;
   color: #414141;
   position: relative;
 }
+.pr-list-archives ul>li:last-child a {
+    border-bottom: none;
+}
 .pr-list-archives ul > li.active {   
   background: #414141;
   margin-top: -3px;
