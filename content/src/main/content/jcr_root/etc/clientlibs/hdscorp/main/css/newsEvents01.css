@@ -470,6 +470,10 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     display: block;
 }
 
+.newsEvents:last-child {
+    border-bottom: none;
+    padding-bottom:0;
+}
 .newsEvents small {
     color: #8d8d8d;
     font-size: 0.75em;
