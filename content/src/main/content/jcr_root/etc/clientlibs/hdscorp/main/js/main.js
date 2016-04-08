@@ -103,7 +103,15 @@ $(document).ready(function () {
         var targetURL= $(this).attr('href');
         modal.find('.modal-header .title').text('').append(formTitle);
         modal.find('.modal-body').html("<iframe src='"+targetURL+"' height='540' frameborder='0' scrolling='no' id='hdsModalWindow' onload='setIframeHeight(this.id)'></iframe><div id='modal-loading'></div>");
-        modal.show(); 
+        modal.show();
+		// Code for iOS issue in overlay start
+		if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
+		   var styleEl = document.createElement('style'), styleSheet;
+		   document.head.appendChild(styleEl);
+		   styleSheet = styleEl.sheet;
+		   styleSheet.insertRule(".modal { position:absolute; bottom:auto; }", 0);
+		 }
+		// Code for iOS issue in overlay end
     });
 
 	$(document).on('click','.modal-header button.close',function(evt){
