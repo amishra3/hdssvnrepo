@@ -1064,3 +1064,7 @@ input[type="radio"]:checked+label:before {
     appearance: none;
   border-radius:0;
 }
+
+.cert-btn .comm-read-more a:hover{
+	color: #ac1f25;	
+}

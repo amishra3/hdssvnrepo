@@ -732,9 +732,32 @@ HDS Global Header and Navigation
     }
     .spotlightNavigation {
     background: none;
+  }
+  
+  .spotlightNavigation .phone-no{
+        margin-left: 0;
+        font-size: 1rem;
+		line-height: 1.3em;
+        margin-bottom: 0px;
+        font-weight: 300;
+		color: #d42727;
+    }
+	.spotlightNavigation .phone-no + p a{
+		padding: 5px 0;
+		margin-left: 0;
+	}
+	
+	.spotlightNavigation .phone-box{   
+	background: #f1f1f1;
+	border: 1px solid #ccc;
+	padding:5px 5px 0 5px;
+	margin-left: -10px;
+	margin-right: -10px;
+   }
+   
+   
+   
 }
-}
-
 @media only screen and (max-width: 768px) {
     .hds-mobile-navigation .nopading {
         padding-left: 0;
@@ -795,16 +818,10 @@ HDS Global Header and Navigation
         font-size: 0.875rem;
         font-weight: bold;
     }
-        .hds-mobile-navigation ul > li ul > li > a {
+    .hds-mobile-navigation ul > li ul > li > a {
         font-weight: 400;
-    }
-
-    .spotlightNavigation .phone-no{
-        margin-left: -5px;
-        font-size: 1rem;
-        margin-bottom: 6px;
-        font-weight: 300;
-    }
+    }   
+	
 }
 
 .override-left {
