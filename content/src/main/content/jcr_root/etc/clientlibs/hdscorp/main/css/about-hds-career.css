@@ -71,12 +71,10 @@
 }
 
 .common-hero-banner.about-hds-career {
-    background-image: url("");
     z-index: 2;
 }
 
 .career-benefits-hexagon {
-    background-image: url("");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -412,7 +410,6 @@
 }
 
 .hitachi-spirit-hexagon {
-    background-image: url("");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;

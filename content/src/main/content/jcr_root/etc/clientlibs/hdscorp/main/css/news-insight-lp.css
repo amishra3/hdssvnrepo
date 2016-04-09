@@ -1,6 +1,5 @@
 /* Hero News & Insight CSS*/
 .common-hero-short-banner.news-insight{
-  background-image: url("../images/news-insight-banner.jpg");
 }
 
 .common-hero-short-banner.news-insight .headline{ font-size: 1.75em; font-weight:bold;}
@@ -47,7 +46,6 @@
 .stay-touch-hexagon{
   position: relative;
   padding: 0 15px;
- /* background-image: url("../images/stay-touch-bg.jpg");*/
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,8 +143,7 @@
 }
 
 /* News & Insight Browse Resources Section */
-.news-insight-resources{
-  background-image:url("../images/service-detail-bg2.jpg"); 
+.news-insight-resources{ 
   background-repeat: no-repeat;
   background-size: cover;
  /* background-position: 50% 50%;*/

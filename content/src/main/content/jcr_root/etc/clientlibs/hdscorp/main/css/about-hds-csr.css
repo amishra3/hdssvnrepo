@@ -1,10 +1,8 @@
 .common-hero-banner.about-hds-csr{
-  background-image: url("../images/about-hds-csr-banner.jpg");
   z-index: 2;
 }
 
-.about-hds-csr-quote{.resources-section.csr-governance-resource .resources-title
-  background-image: url("../images/service-detail-bg1.jpg");
+.about-hds-csr-quote{
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,7 +32,6 @@
   color: #ffffff;
 }
 .about-hds-csr-quote.csr-quote-5{
-  background-image: url("../images/about-hds-csr-bg3.jpg");
   color: #ffffff;
   text-align: left;
   padding-top: 160px;
@@ -164,7 +161,6 @@
 
 /* About HDS CSR Hexagon */
 .behind-scene-hexagon.about-hds-csr-hexagon{
-    background-image: url("../images/about-hds-csr-bg1.jpg");
     padding: 45px auto 30px;
     min-height: 545px;
 }

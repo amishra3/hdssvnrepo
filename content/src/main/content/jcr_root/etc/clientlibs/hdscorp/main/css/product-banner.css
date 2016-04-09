@@ -3,7 +3,6 @@
   position: relative;
   min-height: 718px;
   padding: 120px 15px 0;
-  background-image: url("");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -315,7 +314,6 @@
 
 @media only screen and (max-width: 480px) {
   .hero-product-solutions {
-    background-image: url("../images/hero-product-solutions_mobile.jpg");
     background-position: top center;
   }
   .hero-product-solutions .request {

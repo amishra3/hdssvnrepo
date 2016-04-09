@@ -1,7 +1,6 @@
 /* Contact Us Hero Banner */
 
 .common-hero-short-banner.contact-banner {
-  background-image: url("../images/contact_banner.jpg");
   min-height: inherit;
 }
 .common-hero-short-banner.contact-banner .headline{

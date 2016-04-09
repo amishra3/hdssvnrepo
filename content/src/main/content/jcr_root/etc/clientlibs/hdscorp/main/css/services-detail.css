@@ -1,11 +1,10 @@
 /* Service Detail Hero Banner */
 .common-hero-banner.service-detail-banner{
-	background-image: url("../images/service-detail-banner1.jpg");
+	
 }
 
 /* Accordion First tab CSS */
 .managed-cloud-services{
-  background-image: url("../images/service-detail-bg1.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -64,12 +63,10 @@
 
 
 .services-list-section.services-list1{
-  background-image:url("../images/service-detail-bg2.jpg") !important; 
   background-size: cover;
   padding: 50px 0;
 }
 .services-list-section.services-list2{
-  background-image: url("../images/service-detail-bg4.jpg") !important;
   background-size: cover;
   padding: 50px 0;
 }
