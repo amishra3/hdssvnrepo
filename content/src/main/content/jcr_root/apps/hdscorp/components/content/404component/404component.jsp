@@ -15,7 +15,7 @@
                          <h1 class="headline">${properties.nftitle}</h1>
 						 ${properties.nfsubtitle}
                          <c:forEach var="multilink" items="${multilinks}">
-                        <p><a class="animateLink" href="${multilink.nflink}" target="${multilink.nfopeninnewwindow==1?'_blank':'_self'}">${multilink.nflinklabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
+                        <p><a class="animateLink" href="${hdscorp:shortURL(multilink.nflink)}" target="${multilink.nfopeninnewwindow==1?'_blank':'_self'}">${multilink.nflinklabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a></p>
 
 						</c:forEach>
 
