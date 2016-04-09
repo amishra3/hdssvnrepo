@@ -58,7 +58,7 @@ HDS.Lightbox.prototype = {
     hide: function() {
         var self = this;
         self.$lightbox.detach();
-        $(window).off('scroll');
+        //$(window).off('scroll');
         $('body').css('overflow', '');
         self.isVisible = false;
         if (self.isVideo) {

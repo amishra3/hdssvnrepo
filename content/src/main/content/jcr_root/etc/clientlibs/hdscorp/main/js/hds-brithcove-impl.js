@@ -143,69 +143,6 @@ $(document).on('click', '.close-overlay', function(event) {
     $('.innerContent').html('');
     gblPlayingVideo = null;
 	
-	
-	if($('.navContain').length!==0){
-	
-	function resetSticky(){
-		
-		var heroBannerClass;
-        if($('.hero-product-solutions').length!==0){
-			heroBannerClass=".hero-product-solutions";
-        }else{
-			heroBannerClass=".common-hero-banner";
-        }
-	
-		var secondaryNav = $('.navContain'),
-		secondaryNavTopPosition = secondaryNav.offset().top,
-		taglineOffesetTop = $(heroBannerClass).offset().top + $(heroBannerClass).height() + parseInt($(heroBannerClass).css('paddingTop').replace('px', '')),
-		contentSections = $('.accordion-level'),
-		endScroll = $('.stop'),
-		endScrollPos = endScroll.offset().top;
-
-	$(window).on('scroll', function(){
-	
-		
-		if($(window).scrollTop() > secondaryNavTopPosition && $(window).scrollTop() < endScrollPos) {
-			secondaryNav.addClass('is-fixed sticky fadeInDown animated');
-		}else if($(window).scrollTop() > endScrollPos ) {
-			secondaryNav.removeClass('is-fixed sticky fadeInDown animated');
-		} else {
-			secondaryNav.removeClass('is-fixed sticky fadeInDown animated');
-		}
-		updateSecondaryNavigation();
-		
-	});
-
-
-	function updateSecondaryNavigation() {
-		contentSections.each(function(){
-			var actual = $(this),
-				actualHeight = actual.height() + parseInt(actual.css('paddingTop').replace('px', '')) + parseInt(actual.css('paddingBottom').replace('px', '')),
-				actualAnchor = secondaryNav.find('a[href="#'+actual.attr('id')+'"]');
-			if ( ( actual.offset().top - secondaryNav.height() <= $(window).scrollTop() ) && ( actual.offset().top +  actualHeight - secondaryNav.height() > $(window).scrollTop() ) ) {
-				actualAnchor.addClass('active');
-			}else {
-				actualAnchor.removeClass('active');
-			}			
-		});
-	}
-	secondaryNav.find('ul a').on('click', function(event){
-		event.preventDefault();
-        var target= $(this.hash);
-        $('body,html').animate({
-			'scrollTop': target.offset().top + 4
-        	}, 400
-        );
-	});
-	
-	}
-	
-	}
-	resetSticky();
-	setTimeout(resetSticky, 1500);
-
-	
-	
 });
 
 $(document).keyup(function(e) { //play videos properly when closed by esc key
