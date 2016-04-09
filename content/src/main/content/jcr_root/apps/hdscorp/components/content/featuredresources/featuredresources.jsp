@@ -56,6 +56,8 @@
 									                            <param name="templateLoadHandler" value="onTemplateLoad">
 									                            <param name="width" value="720">
 									                            <param name="height" value="455">
+									                            <param name='secureConnections' value='true' />
+  																<param name='secureHTMLConnections' value='true' /> 
 									                            <param name="showNoContentMessage" value="false" />
 									                          </object></div>
 									                          </div>
