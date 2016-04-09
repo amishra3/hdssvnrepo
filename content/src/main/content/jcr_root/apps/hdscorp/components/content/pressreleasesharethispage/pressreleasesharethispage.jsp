@@ -65,7 +65,8 @@
 
 
 			<c:set var="twitterPageTitle" value="${twitterPageTitle}${twittitle}" />
-
+             <c:set var="twitterPageTitle"
+				    value='${fn:replace(twitterPageTitle, "&nbsp;", "%20")}' />
 
 		</c:if>
 
