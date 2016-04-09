@@ -7,10 +7,6 @@ import com.hdscorp.cms.util.PathResolver;
 
 public class ELTagHelper {
 	
-//	public static String LOAD_IMAGE_PATH="/etc/clientlibs/hdscorp/main/images/load-indicator.gif";
-	public static String LOAD_IMAGE_PATH= (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.RESPONSIVE_LOADING_IMAGE_PATH);
-//	public static String LOAD_IMAGE_PATH="";
-	
 	/**
      * This is the function that is called by the Expression Language processor.  It must be static.
      * @param longURL
@@ -24,10 +20,11 @@ public class ELTagHelper {
 
     public static String bgImgAtrr(String desktopImagePath,String mobileImagePath)
     {
+    	String load_image_path= (String)HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.RESPONSIVE_LOADING_IMAGE_PATH);
     	String bgImgAtrr = "";
     	String mobileImageURL= getMobileImagePath(desktopImagePath,mobileImagePath);
 //    	bgImgAtrr="data-image-desktop='"+desktopImagePath+"'"+" data-image-mobile="+"'"+mobileImageURL+"'";
-    	bgImgAtrr="style=\"background-image: url(\'"+LOAD_IMAGE_PATH+"\'); \"data-image-desktop='"+desktopImagePath+"'"+" data-image-mobile="+"'"+mobileImageURL+"'";
+    	bgImgAtrr="style=\"background-image: url(\'"+load_image_path+"\'); \"data-image-desktop='"+desktopImagePath+"'"+" data-image-mobile="+"'"+mobileImageURL+"'";
     	return bgImgAtrr;
     }
 
