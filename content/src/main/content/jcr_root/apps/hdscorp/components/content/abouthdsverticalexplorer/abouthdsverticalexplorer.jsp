@@ -30,7 +30,7 @@
         </div>
         <div class="clearfix"></div>
         <div class="title">
-            <a href="${properties.aheiconbimagedesclink}" class="animateLink">${aboutHDSVerticalExplorerModel.iconImageDesc}<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
+            <a href="${properties.aheiconbimagedesclink}" target="${not empty properties.openinnewwindow?'_blank':'_self'}" class="animateLink">${aboutHDSVerticalExplorerModel.iconImageDesc}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 
         </div>
     </div>

@@ -54,6 +54,19 @@
                         fieldLabel="Item Description Link"
                         name="./aheiconbimagedesclink"
                         xtype="textfield"/>
+                    <openinnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open In New Window?"
+                        name="./openinnewwindow"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </abouthds>
         </items>
