@@ -76,29 +76,40 @@
 					</ul>
 				</div>
 				<div class="col-md-9 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgconmobilebackgroundimagepath)}">
-					<c:forEach var="subnavlinks2" items="${subnavlinks2}"
-						varStatus="count">
+					<c:forEach var="subnavlinks2" items="${subnavlinks2}" varStatus="count">
 						<div class="col-xs-12 col-md-4">
-							<h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusheadline}</h3>
-							<div class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusdescription}</div>
-							<c:if test="${not empty subnavlinks2.ftitle}">
-                            <c:set var="ftitle" value="${subnavlinks2.ftitle}" />
+                            <c:if test="${count.index != 1}">
+<div class="hidden-lg hidden-md phone-box">
                             </c:if>
-							<c:if test="${not empty  subnavlinks2.mgmcontactusnumber}">
-							<div class="phone-no">${subnavlinks2.mgmcontactusnumber}</div>
-							</c:if>
-                            <c:if test="${not empty  subnavlinks2.secondmgmcontactusnumber}">
-							<div class="phone-no">${subnavlinks2.secondmgmcontactusnumber}</div>
-							</c:if>
-								<c:if test="${not empty  subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
-									<c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"/>
-                               			<p>		
-                                            <a data-formtitle="${ftitle}" rel="${subnavlinks2.overlay==1?'iframemodal':''}" href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
-											aria-hidden="true"
-											class="glyphicon ${subnavlinks2.mgmcontactusopeninnewwindow2==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
-										</p>
-                            </c:if>
+
+
+                                <h3 class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusheadline}</h3>
+                                <div class="hidden-xs hidden-sm">${subnavlinks2.mgmcontactusdescription}</div>
+                                <c:if test="${not empty subnavlinks2.ftitle}">
+                                <c:set var="ftitle" value="${subnavlinks2.ftitle}" />
+                                </c:if>
+    
+                                <c:if test="${not empty  subnavlinks2.mgmcontactusnumber}">
+                                <div class="phone-no">${subnavlinks2.mgmcontactusnumber}</div>
+                                </c:if>
+                                <c:if test="${not empty  subnavlinks2.secondmgmcontactusnumber}">
+                                <div class="phone-no">${subnavlinks2.secondmgmcontactusnumber}</div>
+                                </c:if>
+    
+                                    <c:if test="${not empty  subnavlinks2.mgmcontactusviewfeaturedproductslabel}">
+                                        <c:set var="pageUrlVal2" value="${fn:contains(subnavlinks2.mgmcontactusviewfeaturedproductslink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks2.mgmcontactusviewfeaturedproductslink)}"/>
+                                            <p>		
+                                                <a data-formtitle="${ftitle}" rel="${subnavlinks2.overlay==1?'iframemodal':''}" href="${subnavlinks2.mgmnewsinsightsviewfeaturedproductslink=='#'?'javascript:void(0)':pageUrlVal2}" target="${subnavlinks2.mgmcontactusopeninnewwindow2==1?'_blank':'_self'}" class="animateLink">${subnavlinks2.mgmcontactusviewfeaturedproductslabel}<span
+                                                aria-hidden="true"
+                                                class="glyphicon ${subnavlinks2.mgmcontactusopeninnewwindow2==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
+                                            </p>
+                                   </c:if>
+<c:if test="${count.index != 1}">
+                              </div>
+</c:if>
 						</div>
+
+
 					</c:forEach>
 				</div>
 			</div>

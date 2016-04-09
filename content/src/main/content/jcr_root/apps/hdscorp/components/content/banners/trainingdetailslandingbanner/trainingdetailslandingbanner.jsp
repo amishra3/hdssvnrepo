@@ -25,7 +25,7 @@ request.setAttribute("bannerimage",bannerimage);
                             <c:if test="${not empty properties.trainingdetailsbannerbuttonlabel}">        					
 	                            <div class="btn-square-white request">
 	                             <a data-formtitle="${properties.formtitle}" rel="${properties.buttonmform?'iframemodal':''}"href="${properties.trainingdetailsbannerbuttonurl}" target="${properties.trainingdetailsbannerurltargettype?'_blank':'_self'}">
-	                                ${properties.trainingdetailsbannerbuttonlabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+	                                ${properties.trainingdetailsbannerbuttonlabel}</a>
 	                            </div>
                             </c:if>
 
