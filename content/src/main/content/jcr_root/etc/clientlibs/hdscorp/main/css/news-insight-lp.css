@@ -90,6 +90,12 @@
 
 .result-resources .category-resources-listing .resource h3{text-transform:capitalize;}
 
+@media only screen and (max-width: 1280px) {
+   .stay-touch-hexagon-list .hex-contain .hexagon320{
+    margin-right:22px;
+  }
+}	
+
 @media only screen and (max-width: 1024px) {
   .stay-touch-hexagon-list .hex-contain{
     width:100%;
@@ -143,7 +149,7 @@
 }
 
 /* News & Insight Browse Resources Section */
-.news-insight-resources{ 
+.news-insight-resources{
   background-repeat: no-repeat;
   background-size: cover;
  /* background-position: 50% 50%;*/
