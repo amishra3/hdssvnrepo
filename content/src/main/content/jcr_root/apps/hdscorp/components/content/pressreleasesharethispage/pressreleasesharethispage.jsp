@@ -13,31 +13,23 @@
 	<div class="heading">${currentStyle.prstptitle}</div>
 
 	<div class="share-links">
-
-
-
-
+		<c:set var="path" value="<%=request.getRequestURL().toString()%>" />
 		<%
 			ShortenerURLService sus = sling.getService(ShortenerURLService.class);
-        String shortURL = sus
-				.getShortURL(request.getRequestURL().toString());
-             pageContext.setAttribute("shortURL", shortURL);
-             ValueMap valueMap = currentPage.getProperties();
-
+// 			String shortURL = sus.getShortURL(request.getRequestURL().toString());
+		    ValueMap valueMap = currentPage.getProperties();
+			String shortPath = PathResolver.getShortURLPath(pageContext.getAttribute("path").toString());
+			String domainVal = (String)pageProperties.getInherited("domain", "");
+			String absolutePath = PathResolver.getAbsoluteDomainUrl(shortPath, domainVal);
+			String shortURL = sus.getShortURL(absolutePath);
+		    pageContext.setAttribute("shortURL", shortURL);
+		
 		%>
-
-
 
 		<c:set var="title" value='<%=valueMap.get("jcr:title", "null")%>' />
 
-
-
-
-
 		<c:if test="${not empty title}">
 			<c:set var="pageTitle" value='${fn:replace(title, " ", "+")}' />
-
-
 
 			<c:set var="twitterPageTitle"
 				value='${fn:replace(title, " ", "%20")}' />
@@ -49,9 +41,6 @@
 				value="${fn:length(twitterPageTitle)- fn:length(shortURL)}" />
 			<c:set var="twitterPageTitle"
 				value="${fn:substring(twitterPageTitle, 0, count)}" />
-
-
-
 
 
 			<c:set var="twittitle"
@@ -79,16 +68,11 @@
 		</c:if>
 		<c:set var="email" value="${currentStyle.prstpresscontactmailid}" />
 		<c:if test="${not empty email}">
-			<c:set var="encodedEmailId"
-				value="${fn:replace(email, 
-                                '@', '(at)')}" />
+			<c:set var="encodedEmailId" value="${fn:replace(email, '@', '(at)')}" />
 		</c:if>
 
 
-		<c:set var="path" value="<%=request.getRequestURL().toString()%>" />
-
-		<c:set var="path"
-			value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("path").toString())%>" />
+		<c:set var="path" value="<%=absolutePath%>" />
 
 		<div class="block-share spread-share p-t-md">
 

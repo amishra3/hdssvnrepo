@@ -198,6 +198,18 @@ public final class PathResolver {
 		
 	}
 	
+	public static String getAbsoluteDomainUrl(String shortURL, String domain){
+		String returnURL = "";
+		if(shortURL.contains("http")){
+			int startIndex = StringUtils.ordinalIndexOf(shortURL, "/", 3);
+			String relativePath = shortURL.substring(startIndex);
+			returnURL = domain+relativePath;
+		}else{
+			returnURL = domain+shortURL;
+		}
+		return returnURL ;
+	}
+	
 	public static String getAbsoluteImgUrl(final String imgUrl, final HttpServletRequest request)
 	{
 		URL externalURL = null;
