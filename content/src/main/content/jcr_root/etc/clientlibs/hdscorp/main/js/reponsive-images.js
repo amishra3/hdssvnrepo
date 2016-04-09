@@ -11,7 +11,7 @@ $(function() {
     function checkWidth() {
     	var imgName = "";
         var lazyLoadImages = false ;
-//        lazyLoadImages = true ;
+        lazyLoadImages = true ;
         
         if(!lazyLoadImages){
 			$('.'+imgTargetClass).each(function (index, value){
