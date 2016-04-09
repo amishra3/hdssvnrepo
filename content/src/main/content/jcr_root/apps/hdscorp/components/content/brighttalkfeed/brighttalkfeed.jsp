@@ -24,7 +24,7 @@ pageContext.setAttribute("listMaps", listMaps);
 
 <c:set var='playerpath' value='${properties.playerpagepath}'/>
 <c:if test="${empty properties.playerpagepath}">
-	<c:set var='playerpath' value='/content/hdscorp/en_us/lookup/Webcast'/>
+	<c:set var='playerpath' value='/content/hdscorp/en_us/lookup/webcast'/>
 </c:if>
 
 <c:set var='playerpath' value='${hdscorp:shortURL(playerpath)}'/>
@@ -58,12 +58,12 @@ pageContext.setAttribute("listMaps", listMaps);
                                             	<img src="${listm.previewImagePath}" alt=""/>
                                                 <%--<a rel="modal" href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo brighttalklink" title="${properties.playlabel}">${properties.playlabel}</a> --%>
 												<!-- Make the URL of the rendering page authorable -->
-                                                <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?wcmmode=disabled&commid=${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo" title="${properties.playlabel}">${properties.playlabel}</a>
+                                                <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?commid=${listm.communicationId}" comid="${listm.communicationId}" target="_blank" class="playvideo" title="${properties.playlabel}">${properties.playlabel}</a>
                                             </div>
                                         </c:when>
                                         <c:otherwise>
                                             <%--<a href="https://www.brighttalk.com/webcast/${listm.channelId}/${listm.communicationId}" comid="${listm.communicationId}" class="brighttalklink" title="Play">${properties.registerlabel}</a> --%>
-                                            <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?wcmmode=disabled&commid=${listm.communicationId}" comid="${listm.communicationId}" target="_blank" title="Play">${properties.registerlabel}</a>
+                                            <a rel="${not empty properties.playeropeninmodal?'modal':'dummy'}" href="${playerpath}?commid=${listm.communicationId}" comid="${listm.communicationId}" target="_blank" title="Play">${properties.registerlabel}</a>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
