@@ -62,6 +62,7 @@ var hds = window.hds || {};
                 initiateVideo();
                 brightcove.createExperiences();
 
+
                 videoTracking(videoID, pPageName);
             }
         },
@@ -151,7 +152,7 @@ var hds = window.hds || {};
                 if ($('#asideLinks-product li').eq(0).hasClass('active')) {
                     $('.category-resources-listing').find('.no-matched-result').remove();
                 }else{     
-                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                 }
             } else {
                 $('.category-resources-listing').find('.no-matched-result').remove();
@@ -283,7 +284,7 @@ var hds = window.hds || {};
                 }
                 if ($.trim($(".resourceLibraryfeatered").html()) === '') {
                     $("#featuredCards").hide();
-                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                 } else {
                     $("#featuredCards").show();
                     $('#featuredCards a.isGatedLock').each(function(index, el) {
@@ -374,7 +375,7 @@ var hds = window.hds || {};
             if ($(".resource:visible").length === 0) {                
                 if(!$('#featuredCards').is(":visible")){
                     $('.category-resources-listing').find('.no-matched-result').remove();
-                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                 }
             }else{
                 $('.category-resources-listing').find('.no-matched-result').remove();
@@ -435,7 +436,7 @@ var hds = window.hds || {};
                 if ($(".resource:visible").length === 0) {
                     if(!$('#featuredCards').is(":visible")){
                         $('.category-resources-listing').find('.no-matched-result').remove();
-                        $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+                        $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                     }
                 }
                 $('.resource.visible:visible').last().css({"border-bottom":"none"});
