@@ -46,7 +46,7 @@
                         <c:if test="${not empty properties.socialinnovationbannervideoembedcode}">
                             <div class="video-play hidden-lg hidden-md">
 
-                                <a href="${code}" target="${properties.thirdpartyvideo?'_blank':'_self'}" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
+                                <a href="${code}" target="${properties.thirdpartyvideo?'_blank':'_self'}" onclick="${!properties.videooverlay?'':vidurl}" class="btn-play-video"> <span class="sprite video-play-small"></span></a>
                             </div>
                         </c:if> 
 
