@@ -276,16 +276,21 @@ public final class PropertyResolver {
     	 ValueMap properties = metadataResource.adaptTo(ValueMap.class);
          changefreq = "monthly";
          priority = ".5";
+         
+         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
+         
          if(properties.containsKey("jcr:lastModified")){
         	 
-        	 lastmod= ((Calendar)properties.get("jcr:lastModified")).getTime().toString();
+//        	 lastmod= ((Calendar)properties.get("jcr:lastModified")).getTime().toString();
+        	 lastmod = fmt.format(((Calendar)properties.get("jcr:lastModified")).getTime());
+        	 
          }
            else if(properties.containsKey("dc:creationdate")) {
-        	  lastmod= ((Calendar)properties.get("dc:creationdate")).getTime().toString();
+//        	  lastmod= ((Calendar)properties.get("dc:creationdate")).getTime().toString();
+        	  lastmod = fmt.format(((Calendar)properties.get("dc:creationdate")).getTime());
+        	  
          }
          
-    	
-    	
          assetbuilder += ("<url>\n");
          assetbuilder += ("<loc>"+domain+loc+"</loc>\n");
          assetbuilder += ("<lastmod>"+lastmod+"</lastmod>\n");
