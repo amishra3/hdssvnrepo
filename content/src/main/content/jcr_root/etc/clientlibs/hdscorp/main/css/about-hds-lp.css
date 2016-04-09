@@ -402,6 +402,9 @@
 .about-hds-latest .about-hds-events .about-hds-events-content .title a span{font-size:1.25rem;}
 .about-hds-latest  .about-hds-events .about-hds-events-content .title a, .about-hds-latest  .about-hds-events .about-hds-events-content .title a:hover{color:#FFF;}
 
+.about-hds-latest .about-hds-events .about-hds-events-content .title a span.glyphicon-new-window{
+ font-size: 0.8em;
+}
 @media only screen and (max-width: 991px) {
   .about-hds-latest  {
     padding-top: 22px;
