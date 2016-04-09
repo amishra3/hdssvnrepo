@@ -34,7 +34,12 @@
 			<c:set var="twitterPageTitle"
 				value='${fn:replace(title, " ", "%20")}' />
 
+              <c:set var="twitterPageTitle"
+				    value='${fn:replace(twitterPageTitle, "&nbsp;", "%20")}' />
 
+
+
+            <c:if test="${fn:length(twitterPageTitle)>139}">
 			<c:set var="twitterPageTitle"
 				value="${fn:substring(twitterPageTitle, 0, 139)}" />
 			<c:set var="count"
@@ -43,19 +48,21 @@
 				value="${fn:substring(twitterPageTitle, 0, count)}" />
 
 
+
+
+
 			<c:set var="twittitle"
 				value="${fn:substring(twitterPageTitle, fn:length(twitterPageTitle)-3, fn:length(twitterPageTitle))}" />
 
 
 			<c:set var="twitterPageTitle"
 				value="${fn:substring(twitterPageTitle, 0, count-3)}" />
-
+            </c:if>
 			<c:set var="twittitle" value="${fn:replace(twittitle, '%', '%20')}" />
 
 
 			<c:set var="twitterPageTitle" value="${twitterPageTitle}${twittitle}" />
-             <c:set var="twitterPageTitle"
-				    value='${fn:replace(twitterPageTitle, "&nbsp;", "%20")}' />
+
 
 		</c:if>
 
