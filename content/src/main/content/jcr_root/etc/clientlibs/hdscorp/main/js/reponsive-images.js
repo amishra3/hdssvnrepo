@@ -11,12 +11,14 @@ $(function() {
     function checkWidth() {
     	var imgName = "";
         var lazyLoadImages = false ;
-        lazyLoadImages = true ;
+//        lazyLoadImages = true ;
         
         if(!lazyLoadImages){
 			$('.'+imgTargetClass).each(function (index, value){
 				imgName = $(this).attr(imageAttrName);
 				$(this).css("background-image", "url('"+imgName+"')");
+				$(this).addClass(imglazyLoadCompletionClass);
+				$(this).removeClass(imgTargetClass);
 			});
 			return false;
         }else{
