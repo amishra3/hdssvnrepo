@@ -78,7 +78,7 @@
 				<div class="col-md-9 col-xs-12 spotlightNavigation" data-style="${domain}${hdscorp:shortURL(properties.mgconmobilebackgroundimagepath)}">
 					<c:forEach var="subnavlinks2" items="${subnavlinks2}" varStatus="count">
 						<div class="col-xs-12 col-md-4">
-                            <c:if test="${count.index != 1}">
+                            <c:if test="${count.index %2 eq 0}">
 <div class="hidden-lg hidden-md phone-box">
                             </c:if>
 
@@ -104,7 +104,7 @@
                                                 class="glyphicon ${subnavlinks2.mgmcontactusopeninnewwindow2==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
                                             </p>
                                    </c:if>
-<c:if test="${count.index != 1}">
+ <c:if test="${count.index %2 eq 0}">
                               </div>
 </c:if>
 						</div>
