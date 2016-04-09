@@ -271,6 +271,7 @@ var screenSize = screen.width+"x" +screen.height;
 				result=result.toString();		
 				searchAction = "category filter";
 				searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+				if(searchFilters.indexOf("Category-Featured")>-1){result=$('.resourceLibraryfeatered').find('.resources-spotlight').size();}
 				specificSearchClick(searchTerm, searchAction, result);	
 			},7000);
 		});	
@@ -319,15 +320,16 @@ var screenSize = screen.width+"x" +screen.height;
 			var pagination = parseInt(currentpagenumber) - 1;
 			resourcePagination(searchTerm, pagination, 'resource')
 		});
-	
+
 	$('.clear-results a').click(function()
 		{
 			searchTerm = $('#resSearch').val();
 			searchAction = "Clear all filters"
 			result = $('.resourceLibraryfeatered').find('.resources-spotlight').size();
+			if(searchTerm == ""){searchTerm = "Clear All Filters";}
 			specificSearchClick(searchTerm, searchAction, result)
 		});
-	
+		
 	function specificSearchClick(searchTerm, searchAction, result)
 		{ 
 			if(searchTerm == "" || !searchTerm){
@@ -526,11 +528,11 @@ var screenSize = screen.width+"x" +screen.height;
 				$(this).click(function(){
 					if ($(this).parent().attr("class") != "view-all")
 					{eType = "button";}
-					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
+					globalMenuClick("linkclick","hero-chevron",pageTitle,eType,linkposition); });
 				$(this).mousedown(function(e){
 					if ($(this).parent().attr("class") != "view-all")
 					{eType = "button";}
-					if(e.which == 3){globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
+					if(e.which == 3){globalMenuClick("linkclick","hero-chevron" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 					} 			
 				});
 			});                 
@@ -893,9 +895,9 @@ var screenSize = screen.width+"x" +screen.height;
 	});
 	
 	//Tabs Custom Tracking tabbing-container :event, category-listing: storage  page tabs
-	$(".stickNav-container, .tabbing-container li.active, .category-listing, .webcast-listing").each(function() {
-	 	var links = $(this).find("a")
-       links.each(function() {
+	$(".stickNav-container, .custom-nav-tabs .nav-tabs, .category-listing, .webcast-listing").each(function() {
+	 	var links = $(this).find("a");
+	  links.each(function() {
 		 	$(this).click(function(){
                 isTabClicked=true;
 				
@@ -903,8 +905,8 @@ var screenSize = screen.width+"x" +screen.height;
                 tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick"); 
             });
 	  	});
-
 	});
+	
     $(window).on('scroll', function(){
         var tabs = $(".stickNav-container");
 		var activeLink = tabs.find("a.active");
