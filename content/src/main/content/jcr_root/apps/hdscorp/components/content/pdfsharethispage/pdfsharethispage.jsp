@@ -16,7 +16,7 @@
 %>
 
 <c:set var="titleTw" value="${fn:replace(pdfTitle,' ','%20')}" />
-
+<c:set var="titleTw" value="${fn:replace(titleTw,'&nbsp;', '%20')}" />
 <c:set var="twitterPageTitle" value="${fn:substring(titleTw, 0, 139)}" />
 
 <c:set var="count"
