@@ -29,7 +29,7 @@
                 <div class="content-container container-fluid">
                     <div class="col-lg-7 col-md-7 col-xs-12 col-no-pad">
                         <div class="video-play hidden-lg hidden-md">
-                            <a href="javascript:void(0);" class="btn-play-video"> 
+                            <a href="${properties.cvoverlay2?'javascript:void(0);':burl}" class="btn-play-video" onclick="${!properties.cvoverlay2?'':vidurl}" target="${properties.commonbannertargettype2?'_blank':'_self'}"> 
                                 <span class="sprite">
                                     <img src="${properties.commonbannerimageoverlaypath}" alt="">
                                 </span>
