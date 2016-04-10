@@ -10,8 +10,8 @@
 	var="shareThisPageModel" />
 
 
-		<c:set var="pdfPath" value="<%=request.getRequestURL().toString()%>" />
-		<%
+<c:set var="pdfPath" value="<%=request.getRequestURL().toString()%>" />
+<%
 			ShortenerURLService sus = sling.getService(ShortenerURLService.class);
 		    ValueMap valueMap = currentPage.getProperties();
 			String shortPath = PathResolver.getShortURLPath(pageContext.getAttribute("pdfPath").toString());
@@ -23,29 +23,36 @@
 		%>
 
 
-		<c:set var="titleTw" value="${fn:replace(pdfTitle,' ','%20')}" />
-		<c:set var="titleTw" value="${fn:replace(titleTw,'&nbsp;', '%20')}" />
-		<c:set var="twitterPageTitle" value="${fn:substring(titleTw, 0, 139)}" />
-		
+<c:if test="${not empty pdfTitle}">
+	<c:set var="twitterPageTitle" value="${fn:replace(pdfTitle,' ','%20')}" />
+	<c:set var="twitterPageTitle"
+		value='${fn:replace(twitterPageTitle, "&nbsp;", "%20")}' />
+	<c:if test="${fn:length(twitterPageTitle)>139}">
+		<c:set var="twitterPageTitle"
+			value="${fn:substring(twitterPageTitle, 0, 139)}" />
+
 		<c:set var="count"
 			value="${fn:length(twitterPageTitle)- fn:length(shortURL)}" />
-		
+
 		<c:set var="twitterPageTitle"
 			value="${fn:substring(twitterPageTitle, 0, count)}" />
-		
+
 		<c:set var="twittitle"
 			value="${fn:substring(twitterPageTitle, fn:length(twitterPageTitle)-3, fn:length(twitterPageTitle))}" />
-		
+
 		<c:set var="twitterPageTitle"
 			value="${fn:substring(twitterPageTitle, 0, count-3)}" />
-		
+
 		<c:set var="twittitle" value="${fn:replace(twittitle, '%', '%20')}" />
-		
+
+
 		<c:set var="twitterPageTitle" value="${twitterPageTitle}${twittitle}" />
-		
-		<c:set var="pdfTitleShare" value="${fn:replace(pdfTitle,' ','+')}" />
-		
-		<c:set var="pdfDescShare" value="${fn:replace(pdfDesc,' ','+')}" />
+	</c:if>
+</c:if>
+
+<c:set var="pdfTitleShare" value="${fn:replace(pdfTitle,' ','+')}" />
+
+<c:set var="pdfDescShare" value="${fn:replace(pdfDesc,' ','+')}" />
 
 
 ${shareThisPageModel.stpTitle}&nbsp; &nbsp;
