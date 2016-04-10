@@ -745,19 +745,19 @@ HDS Global Header and Navigation
 	.spotlightNavigation .phone-no + p a{
 		padding: 5px 0;
 		margin-left: 0;
-	}
-	
-	.spotlightNavigation .phone-box{   
-	background: #f1f1f1;
-	border: 1px solid #ccc;
-	padding:5px 5px 0 5px;
-	margin-left: -10px;
-	margin-right: -10px;
-   }
-   
-   
-   
+	}   
 }
+
+@media only screen and (max-width: 991px) {
+    .spotlightNavigation .phone-box{   
+        background: #f1f1f1;
+        border: 1px solid #ccc;
+        padding:5px 5px 0 5px;
+        margin-left: -10px;
+        margin-right: -10px;
+   }
+}
+
 @media only screen and (max-width: 768px) {
     .hds-mobile-navigation .nopading {
         padding-left: 0;

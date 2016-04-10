@@ -79,7 +79,7 @@
 					<c:forEach var="subnavlinks2" items="${subnavlinks2}" varStatus="count">
 						<div class="col-xs-12 col-md-4">
                             <c:if test="${count.index %2 eq 0}">
-<div class="hidden-lg hidden-md phone-box">
+<div class="phone-box">
                             </c:if>
 
 
