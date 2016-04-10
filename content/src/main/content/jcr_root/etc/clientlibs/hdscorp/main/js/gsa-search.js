@@ -59,8 +59,10 @@ var hds = window.hds || {};
         },
         setSearchIframe: function() {
 			var iframe = $('#searchFrame');
-            var iframeUrl=location.protocol+"//"+window.location.hostname+"/search?access=p&getfields=*&output=xml_no_dtd&client=hdsrevamp&proxystylesheet=hdsrevamp&sort=date:D:L:d1&oe=UTF-8&ie=UTF-8&ud=1&exclude_apps=1&site=hdsrevamp&q="+hds.gsasearch.getQueryParameter('q');
-			 iframe.attr('src', iframeUrl);
+//            var iframeUrl=location.protocol+"//"+window.location.hostname+"/search?access=p&getfields=*&output=xml_no_dtd&client=hdsrevamp&proxystylesheet=hdsrevamp&sort=date:D:L:d1&oe=UTF-8&ie=UTF-8&ud=1&exclude_apps=1&site=hdsrevamp&q="+hds.gsasearch.getQueryParameter('q');
+            var iframeUrl= "/search/?getfields=*&output=xml_no_dtd&client=hdsrevamp&proxystylesheet=hdsrevamp&site=hdsrevamp&q="+hds.gsasearch.getQueryParameter('q');             
+            document.getElementById('searchFrame').src = iframeUrl;
+//			 iframe.attr('src', iframeUrl);
         },
         validateSearchBox: function() {
             if ($(window).width() < 991) {
