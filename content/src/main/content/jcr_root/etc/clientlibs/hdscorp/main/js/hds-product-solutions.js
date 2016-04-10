@@ -112,7 +112,6 @@ var hds = window.hds || {};
 
             });
         },
-
         loadSubContent: function() {
             var sizeCatagoryList = $(".category-products-listing .product").size(),
             x = this.options.countToShow;
@@ -161,7 +160,7 @@ var hds = window.hds || {};
                 if ($(".product:visible").length === 0) {
                 	$('.toggleLinks').hide();
                     $('#loadCatagoryContent').find('.no-matched-result').remove();
-                    $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+                    $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>No Products/Solutions Found</strong><br>Please change your search criteria and try again.</div>');
                 }
             });
         },
@@ -221,15 +220,10 @@ var hds = window.hds || {};
             $(document).on('keydown', '#searchFilter', function(event) {
             	var key = event.keyCode || event.charCode;
             	var getSearchFilter = $.trim($(this).val());
-            	if( key == 8 || key == 46 ){
-            		
+            	if( key == 8 || key == 46 ){            		
             		 if (getSearchFilter.length === 0) {
             			 hds.loadDataFilters.checkSearchEmpty();            			 
             		 }
-            		setTimeout(function() {
-           			 hds.loadDataFilters.loadSubContent();
-           			 }, 1000);
-            		
             	}
             })
             
@@ -264,7 +258,7 @@ var hds = window.hds || {};
             }else{
             	haveTextInInput = null;
             }             
-             $('.product').find('li').addClass("filterText");
+             //$('.product').find('li').addClass("filterText");
              hds.loadDataFilters.updateSearchFilters(alphaSelected, haveFilters, haveTextInInput);
              $('.toggleLinks').show();	
             setTimeout(function() {
@@ -272,9 +266,9 @@ var hds = window.hds || {};
                 if ($(".product:visible").length === 0) {
                 $('.toggleLinks').hide();
                 $('#loadCatagoryContent').find('.no-matched-result').remove();
-                $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;">No results found.</div>');
+                $('#loadCatagoryContent').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>No Products/Solutions Found</strong><br> Please change your search criteria and try again.</div>');
             }
-            }, 1000);
+            }, 1000)
         },
 
         searchNavigator:function(){
@@ -308,6 +302,9 @@ var hds = window.hds || {};
                     } else {
                         if (filters[filter]) {
                             if ((filters[filter] != 'inputsearc')) {
+                            	
+                            	
+                            	
 
                                 result = result && filters[filter] === self.data(filter);
                             } else {
@@ -316,14 +313,12 @@ var hds = window.hds || {};
                                 };
                                 var getSearchFilter = $('#searchFilter').val();
                                 self.show();
-								$('#loadMoreBtn').hide();
-                                self.find(".filterText").parent().show();
-                                var excludeList= self.find(".filterText:not(:Contains('" + getSearchFilter + "'))");
-                                 if(excludeList.length>0)
-                               		self.find("a.filterText").parent().slideUp(function() { $(this).parent().slideUp();});                                
-                                 var includeList=self.find(".filterText:Contains('" + getSearchFilter + "')");
-                                 if(includeList.length>0)
-                                     self.find("a.filterText").parent().slideDown(function() { $(this).parent().slideDown();});
+								//$('#loadMoreBtn').hide();
+								self.find(".filterText:not(:Contains(" + getSearchFilter + "))").parent().parent().slideUp();
+                                self.find(".filterText:Contains(" + getSearchFilter + ")").parent().parent().slideDown();
+                                setTimeout(function() {
+                                    hds.loadDataFilters.udatePageCount();
+                                }, 500);
                                
                             }
                         }
