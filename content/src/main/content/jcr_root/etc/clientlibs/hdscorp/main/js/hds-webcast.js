@@ -95,11 +95,16 @@ var hds = window.hds || {};
             $(document).on('click', playBtn, function(evt) {
 
                 evt.preventDefault();
+				var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                 var modal = $('#modal').modal();
                 var commId= $(this).attr('comid');
                 //modal.find('.modal-body').html('<script type="text/javascript" src="https://www.brighttalk.com/clients/js/embed/embed.js"></script><object class="BrightTALKEmbed" width="100%" height="627"><param name="player" value="webcast_player"/>   <param name="domain" value="https://www.brighttalk.com"/>   <param name="channelid" value="12821"/>   <param name="communicationid" value="'+commId+'"/>    <param name="autoStart" value="false"/>    <param name="theme" value=""/></object>');
-                modal.find('.modal-body').html('<script type="text/javascript" src="https://www.brighttalk.com/clients/js/embed/embed.js"></script><object class="BrightTALKEmbed" width="'+$(".modal-body").width()+'" height="627"><param name="player" value="webcast_player"/>   <param name="domain" value="https://www.brighttalk.com"/>   <param name="channelid" value="12821"/>   <param name="communicationid" value="'+commId+'"/>    <param name="autoStart" value="false"/>    <param name="theme" value="core.3.1.0/generic.swf"/></object>');
-                modal.show();
+				if(iOS){
+                    modal.find('.modal-body').html('<div class="ios-alert">This feature is not supported on iOS.</div>');
+                }else{
+                    modal.find('.modal-body').html('<script type="text/javascript" src="https://www.brighttalk.com/clients/js/embed/embed.js"></script><object class="BrightTALKEmbed" width="'+$(".modal-body").width()+'" height="627"><param name="player" value="webcast_player"/>   <param name="domain" value="https://www.brighttalk.com"/>   <param name="channelid" value="12821"/>   <param name="communicationid" value="'+commId+'"/>    <param name="autoStart" value="false"/>    <param name="theme" value="core.3.1.0/generic.swf"/></object>');
+                    modal.show();
+                }
                 return false;
             })
         },

@@ -241,6 +241,16 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     border: none;
 }
 
+@media screen and (max-width:1024px) {
+    .ios-alert {
+        font-weight: bold;
+        padding: 15px 10px 25px;
+        text-align: center;
+        font-size: 1.25rem;
+        font-family: museo-sans;
+        margin-top: -15px;
+    }
+}
 @media screen and (max-width:991px) {
     .custom-nav-tabs {
         top: -66px;
