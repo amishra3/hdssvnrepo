@@ -167,7 +167,8 @@ var screenSize = screen.width+"x" +screen.height;
 	var url=document.title; //$(location).attr('href');
 	if(!(url.indexOf("404")>-1 || url.indexOf("error")>-1))
 	{	
-		/* if($.trim(primaryCategory.toLowerCase()) == "about hds" || $.trim(primaryCategory.toLowerCase()) == "contact us" || $.trim(primaryCategory.toLowerCase()) == "home" || $.trim(primaryCategory.toLowerCase()) == "news & insights" || $.trim(primaryCategory.toLowerCase()) == "partners" || $.trim(primaryCategory.toLowerCase()) == "products & solutions" || $.trim(primaryCategory.toLowerCase()) == "services" || $.trim(primaryCategory.toLowerCase()) == "404 error page"){} */
+		primaryCategory = $.trim(primaryCategory.toLowerCase());
+		if(primaryCategory != "about hds" && primaryCategory != "contact us" && primaryCategory != "home" && primaryCategory != "news & insights" && primaryCategory != "partners" && primaryCategory != "products & solutions" && primaryCategory != "services" && primaryCategory != "404 error page" && primaryCategory != "internal search"){primaryCategory="";}
 		digitalData.page=
 			{
 				pageInfo:{
@@ -199,7 +200,7 @@ var screenSize = screen.width+"x" +screen.height;
 	}
 
 	// *****  --START-- the below section would perform the resource search tracking if the search page is hit *******  //
-$(document).ready(function() {
+//$(document).ready(function() {
 	if(isResourceSearchPage())
 	{  
 			var searchTerm = $('#resSearch').val();
@@ -463,7 +464,11 @@ $(document).ready(function() {
 			digitalData["page"]["category"]["productName"]=pageTitle;
 			digitalData["page"]["category"]["productInfo"]="product";
 		}
-
+	if(isServiceDetail())
+		{
+			digitalData["page"]["category"]["productName"]=pageTitle;
+			digitalData["page"]["category"]["productInfo"]="product";
+		}
 	if(subSection!="" && subSection.length>0)
 		{
 			digitalData["page"]["category"]["subSection"]=subSection;
@@ -528,14 +533,15 @@ $(document).ready(function() {
 			 listitem.each(function() {
 				var linktext = $.trim(jQuery(this).text());			
 				linkposition="home-hero-banner";
+				if(linktext==""){linktext="chevron";}
 				$(this).click(function(){
 					if ($(this).parent().attr("class") != "view-all")
 					{eType = "button";}
-					globalMenuClick("linkclick","hero-chevron",pageTitle,eType,linkposition); });
+					globalMenuClick("linkclick","hero-"+ linktext.toLowerCase(),pageTitle,eType,linkposition); });
 				$(this).mousedown(function(e){
 					if ($(this).parent().attr("class") != "view-all")
 					{eType = "button";}
-					if(e.which == 3){globalMenuClick("linkclick","hero-chevron" + linktext.toLowerCase(),pageTitle,eType,linkposition);
+					if(e.which == 3){globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 					} 			
 				});
 			});                 
@@ -573,8 +579,9 @@ $(document).ready(function() {
 						linktext = "FIND AN HDS PARTNER";
 						eType = "link";
 					}
-					else if ( eClass.indexOf("btn-square-white")!= -1)
-				{eType = "button";}
+					//else if(eClass.indexOf("video-play-desktop")!=1){eType = " video button";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}
+					
 				globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
 			$(this).mousedown(function(e){
 				if(e.which == 3){
@@ -653,7 +660,7 @@ $(document).ready(function() {
 	//Hexagons about us page CTAs
 	$(".hexagon320").each(function() {
      var listitem = $(this).find("a");
-	 var linktext = $(this).find('h4').text();
+	 var linktext = $(this).parent().parent().find('h4').text();
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
@@ -855,10 +862,12 @@ $(document).ready(function() {
 
 	});		
 	
-//read customer stories links	
+//read customer stories links	 
 
 	$("div.cs-section, .animateLink").each(function() {
      var listitem = $(this).find("a");
+	 var mtext= $(this).text();
+	 if(mtext.toLowerCase() != "view more case studies"){
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
@@ -869,11 +878,13 @@ $(document).ready(function() {
             $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel"); });
 			$(this).mousedown(function(e){
 				if(e.which == 3){
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel");
+					var mtext= $(this).text();
+					if(mtext.toLowerCase() != "view more case studies"){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel");}
 				} 			
 			});
 		});                 
      }
+	 }
     });	
 	
 //Featured P&S tracking 
@@ -1050,7 +1061,7 @@ $(document).ready(function() {
 	  	});
 	});	
 
-});	
+//});	// docoment.ready close
 
 //Press Releases, Awards and News Search events start here
 
@@ -1328,6 +1339,15 @@ function getCurrentBreadcrumb()
 		else
 			return false;
 	}
+	function isServiceDetail()
+	{
+		
+		if($("body.servicedetail").size()>0)
+			return true;
+		else
+			return false;
+	}
+	
 	function isProductCategory()
 	{
 		if($("body.productcategory").size()>0)
