@@ -37,21 +37,7 @@ $(function() {
     }
 
     // Execute on load & scroll
-    $(window).on('load scroll', function() {
+    $(window).on('load', function() {
     	checkWidth();
     });
-    
-//    $(window).bind('resize', function() {
-//    	windowSize = $(window).width();
-//    	imageAttrName = "data-image-desktop" ;
-//        if (windowSize <= 500) {
-//        	imageAttrName = "data-image-mobile" ;
-//        }
-//    	$('.'+imglazyLoadCompletionClass).each(function (index, value){
-//    		$(this).addClass(imgTargetClass);
-//			$(this).removeClass(imglazyLoadCompletionClass);
-//			checkWidth();
-//    	});
-//    });
-
 });	
