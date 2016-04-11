@@ -32,7 +32,7 @@
                                             <p>${eventNodes.summary}<br><br><small>UPCOMING</small></p>
                                              <div class="WebcastDetails">
                                                  <img src="${eventNodes.previewImagePath}" alt=""/>
-                                                <a rel="${not empty playermodal?'modal':'dummy'}" href="${playerpath}?commid=${eventNodes.communicationId}" target="_blank" title="Play">${registernow}</a>
+                                                <a rel="${not empty playermodal?'modal':'dummy'}" href="${eventNodes.herfLink}" target="_blank" title="Play">${registernow}</a>
                                             </div>
                                                 <a href="javascript:void(0);" class="animateLink expandMe less"><span class="glyphicon glyphicon-plus-sign"></span>${detailslabel}</a>
                                         </div>	
