@@ -22,6 +22,7 @@ function responsiveImg(){
 
     $(window).on('load', function() {
     	checkWidth();
+    	$('body').removeClass('rsvis');
     });
 }
 

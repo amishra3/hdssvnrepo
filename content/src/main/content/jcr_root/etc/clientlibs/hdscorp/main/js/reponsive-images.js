@@ -39,5 +39,6 @@ $(function() {
     // Execute on load & scroll
     $(window).on('load', function() {
     	checkWidth();
+    	$('body').removeClass('rsvis');
     });
 });	

@@ -7,7 +7,7 @@ if(pageTemplatePath!=null){
 }
 %>
 
-<body class="<%=pageTemplatePath %> home-page hds-megaMenu-push">
+<body class="<%=pageTemplatePath %> home-page hds-megaMenu-push rsvis">
     <div class="hds-MobileMenu hds-megaMenu-right">
         <div class="closeHDSMenu">
             <a href="javascript:void(0);" title="Close" id="closeHDSMenu">Close</a>

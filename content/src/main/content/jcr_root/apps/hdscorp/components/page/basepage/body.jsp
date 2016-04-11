@@ -5,7 +5,7 @@
 <div style="display: none;" id="pageTemplate"></div>
 
 
-<body class="<%=currentPage.getProperties().get("cq:template")%>">
+<body class="<%=currentPage.getProperties().get("cq:template")%> rsvis">
     <cq:include script="header.jsp"/>
     <cq:include script="content.jsp"/>
     <cq:include script="footer.jsp" />
