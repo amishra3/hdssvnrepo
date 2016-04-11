@@ -109,6 +109,11 @@
                                         value="2"/>
                                 </options>
                             </formoverlay>
+                            <mformtitle
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Marketo Form Title"
+                                name="./mformtitle"
+                                xtype="textfield"/>
                             <thirdparty
                                 jcr:primaryType="cq:Widget"
                                 fieldLabel="Show third party icon?"
@@ -187,6 +192,11 @@
                                         value="2"/>
                                 </options>
                             </formoverlay1>
+                            <mformtitle2
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Marketo Form Title"
+                                name="./mformtitle2"
+                                xtype="textfield"/>
                         </fieldConfig>
                     </multilinks>
                 </items>
