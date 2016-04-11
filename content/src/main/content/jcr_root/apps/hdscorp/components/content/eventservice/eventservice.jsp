@@ -14,6 +14,9 @@
 
 
 
+<c:set var='playerpath' value='/content/hdscorp/en_us/lookup/webcast'/>
+<c:set var='playerpath' value='${hdscorp:shortURL(playerpath)}'/>
+
 <div class="col-md-9 newsWrapper">
     <div class="noEventFilter">${eventDataModel.noeventfoundMsg} </div>    
     <c:forEach items="${eventDataModel.eventFinalNodesData}" var="eventAlldata">
