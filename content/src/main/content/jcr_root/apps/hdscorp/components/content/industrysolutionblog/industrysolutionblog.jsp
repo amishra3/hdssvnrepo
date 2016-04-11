@@ -16,7 +16,8 @@
 
                                      <c:if test="${not empty fn:trim(blogModel.breadmore)}">
                                             <div class="more-solutions">
-                                               <a href="${blogModel.breadmorelink}" target="${blogModel.bopeninnew==1?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${blogModel.breadmore}${not empty properties.bthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                               <a href="${hdscorp:shortURL(blogModel.breadmorelink)}" target="${blogModel.bopeninnew==1?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${blogModel.breadmore}${not empty properties.bthirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                               
                                              </div>
                                               </c:if>
                                     </div>

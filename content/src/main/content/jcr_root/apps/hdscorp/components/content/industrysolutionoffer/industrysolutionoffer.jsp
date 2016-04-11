@@ -25,7 +25,7 @@ Industry Solution Offer Component
                            <div class="col-md-12">
                                <c:if test="${not empty industrySolutionOfferModel.contactUSLabel}">
                                 <div class="more-solutions">
-                                     <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'} </a>
+                                     <a href="${hdscorp:shortURL(industrySolutionOfferModel.targetURL)}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'} </a>
                                 </div>
                                </c:if>
                              </div>
@@ -60,7 +60,7 @@ Industry Solution Offer Component
 							<div class="col-sm-12 col-no-pad">
                                 <c:if test="${not empty industrySolutionOfferModel.contactUSLabel}">
                                     <div class="more-solutions">
-                                        <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                        <a href="${hdscorp:shortURL(industrySolutionOfferModel.targetURL)}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                     </div>
 								</c:if>
 							</div>
@@ -79,7 +79,7 @@ Industry Solution Offer Component
 										${industrySolutionOfferModel.description}
  									<c:if test="${not empty industrySolutionOfferModel.contactUSLabel}">
                                          <div class="more-solutions">
-                                         <a href="${industrySolutionOfferModel.targetURL}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                         <a href="${hdscorp:shortURL(industrySolutionOfferModel.targetURL)}" target="${not empty industrySolutionOfferModel.targetURLType?'_blank':'_self'}" class="animateAnchor bottomPos text-center">${industrySolutionOfferModel.contactUSLabel}${not empty properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                         </div>
                                     </c:if>
                                 </div>

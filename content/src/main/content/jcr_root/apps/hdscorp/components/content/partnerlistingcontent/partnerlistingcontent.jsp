@@ -42,7 +42,7 @@
           <a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}" target="_blank">${properties.learnmorelinklabel} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
  </c:when>
      <c:otherwise>
-          <a class="animateAnchor bottomPos text-center" href="${properties.learnmorelinkpath}">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+          <a class="animateAnchor bottomPos text-center" href="${hdscorp:shortURL(properties.learnmorelinkpath)}">${properties.learnmorelinklabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
      </c:otherwise>
  </c:choose>
 			</div>
