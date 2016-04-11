@@ -55,10 +55,8 @@ function checkWidth() {
 
 function whenJQueryIsLoaded() {
     if (window.$ && $.event.special){
-    	console.log("IF BLLOCK");
         responsiveImg();
     } else {
-    	console.log("whenJQueryIsLoaded");
         setTimeout(whenJQueryIsLoaded, 25);
     }
 }
