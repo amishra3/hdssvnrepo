@@ -63,7 +63,9 @@ var hds = window.hds || {};
                 brightcove.createExperiences();
 
 
-                videoTracking(videoID, pPageName);
+				/* WA Video Tracking Code */
+                var vidId = 'Video Id: ' + videoID;
+                videoTracking(vidId, pPageName);
             }
         },
         _getParmsFromURLHash: function(url) {

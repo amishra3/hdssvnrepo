@@ -105,6 +105,10 @@ var hds = window.hds || {};
                     modal.find('.modal-body').html('<script type="text/javascript" src="https://www.brighttalk.com/clients/js/embed/embed.js"></script><object class="BrightTALKEmbed" width="'+$(".modal-body").width()+'" height="627"><param name="player" value="webcast_player"/>   <param name="domain" value="https://www.brighttalk.com"/>   <param name="channelid" value="12821"/>   <param name="communicationid" value="'+commId+'"/>    <param name="autoStart" value="false"/>    <param name="theme" value="core.3.1.0/generic.swf"/></object>');
                     modal.show();
                 }
+				/* WA Video Tracking Code */
+                var pPageName = window.location.href;
+                var vidId = 'Webcast Id: ' + commId;
+                videoTracking(vidId, pPageName);
                 return false;
             })
         },

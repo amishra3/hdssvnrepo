@@ -133,7 +133,8 @@ $(document).on('click', 'a.l-overlay', function(e) {
 
     /* WA Video Tracking Code */
     var pPageName = window.location.href;
-	videoTracking(videoID, pPageName);
+	var vidId = 'Video Id: ' + videoID;
+	videoTracking(vidId, pPageName);
 });
 
 $(document).on('click', '.close-overlay', function(event) {
