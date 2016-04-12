@@ -24,7 +24,7 @@
                     <c:when test="${eventNodes.isWebcast=='true'}">
 							<div class="col-md-9 newsWrapper">
                                     <div class="noEventFilter">${webcastnotfound} </div>
-                                         <div data-events="hdscorp:events/webcasts" data-region="hdscorp:events/webcasts" class="newsEvents" style="display: block;">
+                                         <div data-events="hdscorp:events/webcasts" data-region="hdscorp:events/webcasts" class="newsEvents" style="display: block;" data-event-id="${eventNodes.communicationId}">
                                             <h3>${eventNodes.eventTitle}</h3>
                                             <small>${eventNodes.duration}</small>
                                             <h4 class="author">${eventNodes.author}</h4>
