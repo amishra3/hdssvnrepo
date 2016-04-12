@@ -15,7 +15,7 @@ if(pageTitle!="Home")
 	}
 if(pageTitle == 'Search')
 	{
-		pageTitle="internal search page";
+		pageTitle="internal search";
 	}
 
 var activeLinkText="top";
@@ -617,6 +617,8 @@ function getPartnerIndFilters()
 					}
 					//else if(eClass.indexOf("video-play-desktop")!=1){eType = " video button";}
 					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon";}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}
 					
 				globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
 			$(this).mousedown(function(e){
@@ -627,8 +629,9 @@ function getPartnerIndFilters()
 						linktext = "FIND AN HDS PARTNER";
 						eType = "link";
 					}
-					else if ( eClass.indexOf("btn-square-white")!= -1)
-				{eType = "button";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon";}
 					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 				} 			
 			});
@@ -696,19 +699,20 @@ function getPartnerIndFilters()
 	//Hexagons about us page CTAs
 	$(".hexagon320").each(function() {
      var listitem = $(this).find("a");
-	 var linktext = $(this).parent().parent().find('h4').text();
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
 		 //var linktext = jQuery(this).text();
-          if(linktext.indexOf("hex-")<0)
-		  {linktext = "hex-" + $.trim(linktext);}
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
-			$(this).mousedown(function(e){
-				if(e.which == 3){
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
-				} 			
-			});
+          //if(linktext.indexOf("hex-")<0)
+		  //{linktext = "hex-" + $.trim(linktext);}
+				$(this).click(function(){
+					var linktext = "hex-" + $(this).parent().parent().find('h4').text();
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
+				$(this).mousedown(function(e){
+					if(e.which == 3){
+						globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
+					} 			
+				});
 		});                 
      }
     });
@@ -904,7 +908,8 @@ function getPartnerIndFilters()
 	$("div.cs-section, .animateLink").each(function() {
      var listitem = $(this).find("a");
 	 var mtext= $(this).text();
-	 if(mtext.toLowerCase() != "view more case studies"){
+	 mtext = mtext.toLowerCase()
+	 if(mtext != "view more case studies" && mtext != "read more case studies"){
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
@@ -915,8 +920,8 @@ function getPartnerIndFilters()
             $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel"); });
 			$(this).mousedown(function(e){
 				if(e.which == 3){
-					var mtext= $(this).text();
-					if(mtext.toLowerCase() != "view more case studies"){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel");}
+					var mtext= $(this).text();mtext = mtext.toLowerCase();
+					if(mtext != "view more case studies" && mtext != "read more case studies"){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel");}
 				} 			
 			});
 		});                 
