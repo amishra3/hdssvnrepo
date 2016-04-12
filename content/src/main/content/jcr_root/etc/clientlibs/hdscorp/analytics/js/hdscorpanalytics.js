@@ -200,7 +200,8 @@ var screenSize = screen.width+"x" +screen.height;
 	}
 
 	// *****  --START-- the below section would perform the resource search tracking if the search page is hit *******  //
-//$(document).ready(function() {
+//$(document).ready(function() {	
+
 	if(isResourceSearchPage())
 	{  
 			var searchTerm = $('#resSearch').val();
@@ -328,33 +329,13 @@ var screenSize = screen.width+"x" +screen.height;
 	$('.clear-results a').click(function()
 		{
 			searchTerm = $('#resSearch').val();
-			searchAction = "Clear all filters"
+			searchAction = "Clear all filters";
+			searchTerm = "Clear All Filters";
 			result = $('.resourceLibraryfeatered').find('.resources-spotlight').size();
-			if(searchTerm == ""){searchTerm = "Clear All Filters";}
+			//if(searchTerm == ""){searchTerm = "Clear All Filters";}
 			specificSearchClick(searchTerm, searchAction, result)
 		});
 		
-	function specificSearchClick(searchTerm, searchAction, result)
-		{ 
-			if(searchTerm == "" || !searchTerm){
-				searchTerm = 'no term searched'
-			}
-			if(result == 0){
-				result = 'zero'
-			}
-			digitalData.eventData= 
-			{ 
-				searchTerm:searchTerm,
-				searchAction:searchAction,
-				searchResult:result,
-				searchType:'resource',
-				searchPage:digitalData.page.pageInfo.pageName,
-				searchFilters:searchFilters
-			}    
-			_satellite.track('specificSearchClick');
-			return;
-		}
-
 	function resourcePagination(searchTerm,pagination, searchResultType)
 		{ 
 			if(searchTerm == "" || !searchTerm){
@@ -454,7 +435,62 @@ var screenSize = screen.width+"x" +screen.height;
 			
 			return filters.toLowerCase();
 		}
-}
+	}
+
+	function specificSearchClick(searchTerm, searchAction, result)
+	{ 
+		if(searchTerm == "" || !searchTerm){
+			searchTerm = 'no term searched'
+		}
+		if(result == 0){
+			result = 'zero'
+		}
+		digitalData.eventData= 
+		{ 
+			searchTerm:searchTerm,
+			searchAction:searchAction,
+			searchResult:result,
+			searchType:'resource',
+			searchPage:digitalData.page.pageInfo.pageName,
+			searchFilters:searchFilters
+		}    
+		_satellite.track('specificSearchClick');
+		return;
+	}
+	
+	// Cloud partners search 
+	$('.partner-filters-search #showIndustry').click(function()
+		{
+			setTimeout(function()
+				{
+					searchAction = "Cloud Partner filter";
+					searchFilters =  getPartnerIndFilters();
+					result = $('#partner-list .partner:visible').length;
+					result=result.toString();
+					specificSearchClick("", searchAction, result);
+				},1000);
+		});
+
+function getPartnerIndFilters()
+		{
+			var indfilters="";
+			var selection = [];
+			
+			$.each($("input[name='cbxFunction']:checked"), function(){ 
+				if($(this).attr('value').indexOf('partners')>-1){selection.push($(this).attr('id'));}
+			});
+			if(selection.length>0)
+			{
+				for(var i=0;i<selection.length;i++)
+				{
+					if(i<(selection.length-1)){indfilters = indfilters + "CP Search:Service-" + selection[i] + ",";}
+					else {indfilters = indfilters + "CP Search:Service-" + selection[i];}
+				}
+			}
+			else{indfilters = "CP Search:Service-all";}	
+			return indfilters;
+		}
+//************************************************************************	
 
 // ****************************************************************************************************************//
 // *****  --END-- the above section would perform the resource search tracking if the search page is hit *******  //
@@ -719,6 +755,7 @@ var screenSize = screen.width+"x" +screen.height;
 
 	});	
 	
+	
 // Top menu drop down tracking
 	$(".states-names").each(function() 
 	{
@@ -915,8 +952,8 @@ var screenSize = screen.width+"x" +screen.height;
 
 	});
 	
-	//Tabs Custom Tracking tabbing-container :event, category-listing: storage  page tabs
-	$(".stickNav-container, .custom-nav-tabs .nav-tabs, .category-listing, .webcast-listing").each(function() {
+	//Tabs Custom Tracking tabbing-container :event (web cast on demand), storage, legal  page tabs
+	$(".stickNav-container, .custom-nav-tabs .nav-tabs, .category-listing, .webcast-listing, .leftsidelisting").each(function() {
 	 	var links = $(this).find("a");
 	  links.each(function() {
 		 	$(this).click(function(){
@@ -927,6 +964,20 @@ var screenSize = screen.width+"x" +screen.height;
             });
 	  	});
 	});
+	
+	//Tabs custom tracking for legal page radio buttons--
+	$('.leftsidelisting .checkbox .filters').click(function()
+	{
+		var pClass="";
+		var linktext=$(this).next().find("span").text();
+		pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
+		if (pClass.indexOf("leftsidelisting")>-1)
+		{
+			var tabTitle = "tab-terms-"+$.trim(linktext).toLowerCase().replace(/\s/g,"-")+" button";
+			tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick");
+		}
+	});
+	
 	
     $(window).on('scroll', function(){
         var tabs = $(".stickNav-container");
@@ -1370,6 +1421,15 @@ function getCurrentBreadcrumb()
 		else
 			return false;
 	}
+	
+	function isResourceSearchPage()
+	{
+		if($(".resourcelibrary").size()>0)
+			return true;
+		else
+			false;
+	}
+
 	function setVirtualCategoryEvent()
 	{
 		var cListing = $('.category-products-listing');
@@ -1386,22 +1446,6 @@ function getCurrentBreadcrumb()
 			 });                 
 		  }
 		});
-	}
-
-	function isResourceSearchPage()
-	{
-		var url=$(location).attr('href');
-		if(url.indexOf("/en-us/news-insights/resources.html")>-1)
-			return true;
-		else
-			false;
-	}
-	function isLeadFormPage()
-	{
-		if($(".mktoForm, .mktoContent").size()>0)
-			return true;
-		else
-			return false;
 	}
 
 	function getProductsSearchFilters()
@@ -1510,6 +1554,7 @@ function getCurrentBreadcrumb()
 		return trafilters.toLowerCase();
 	}
 
+	
 	function videoTracking(vId, pPageName)
 	{
 		digitalData.eventData= {
@@ -1519,3 +1564,4 @@ function getCurrentBreadcrumb()
 		_satellite.track('videotracking');
 
 	}
+	
