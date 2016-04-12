@@ -91,6 +91,7 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
     	
     	adminSession = repository.loginAdministrative(null);
     	int resultCnt=0;
+    	int unusedCnt=0;
         ResourceResolver resourceResolver = request.getResourceResolver();
 		
         
@@ -104,7 +105,7 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 		
 		String oddRow= "style='color:red;font-weight:600;'";
 		String evenRow= "style='color:green;font-weight:600;'";
-		
+		StringBuffer unusedImages = new StringBuffer("");
 		try {
 			QueryResult result = query.execute();
 			RowIterator rowIterator = result.getRows();
@@ -126,6 +127,8 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 			out.println("FILE TYPE");
 			out.println("</th>");
 
+			 
+			unusedImages = unusedImages.append("<table border=1><th></th><th>ASSET PATH</th><th></th>");
 			
 			while(rowIterator.hasNext()){
 				
@@ -177,11 +180,21 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 								out.flush();
 							out.println("</tr>");
 						}
+//						else{
+//							unusedCnt++;
+//							unusedImages = unusedImages.append("<tr").append(unusedCnt%2==0?oddRow:evenRow).append(">");
+//							unusedImages = unusedImages.append("<td>").append(unusedCnt).append("</td>");
+//							unusedImages = unusedImages.append("<td>").append(row.getPath()).append("</td>");
+//							unusedImages = unusedImages.append("<td>").append("</td>");
+//							unusedImages = unusedImages.append("<td>").append(fileType).append("</td>");
+//							unusedImages = unusedImages.append("</tr>");
+//						}
 					}
 				}
 			}
 			out.println("</table>");
-			
+			unusedImages = unusedImages.append("</table>");
+			out.println("<span style='color:red;font-size:1.5em;font-weight:600;'>TOTAL IMAGES "+size+" are "+"- "+rowIterator.getSize()+"</span><br>");	
 		} catch (Exception e) {
 			LOG.error(e.getMessage());
 		}finally{
@@ -189,7 +202,7 @@ public class DamImageReportServlet extends SlingAllMethodsServlet {
 		}
 		
 		out.println("<span style='color:red;font-size:1.5em;font-weight:600;'>TOTLE IMAGES GREATER THAN "+size+" KB are"+"- "+resultCnt+"</span><br>");
-		
+//		out.println(unusedImages.toString());
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
