@@ -20,6 +20,12 @@
                         fieldLabel="Top Logo URL"
                         name="./topimageurl"
                         xtype="pathfield"/>
+                    <topnewwin
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./topnewwin"
+                        type="checkbox"
+                        xtype="selection"/>
                     <imgurl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Logo URL"
