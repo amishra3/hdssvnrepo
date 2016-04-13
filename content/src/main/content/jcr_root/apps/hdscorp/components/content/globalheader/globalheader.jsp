@@ -27,7 +27,7 @@
 	   String shortseacrhUrl=PathResolver.getShortURLPath(seacrhpageUrl);
 	   pageContext.setAttribute("shortseacrhUrl", shortseacrhUrl);
 	}
-
+ 
 	String viewtype = "";
 	String[] selectorArray = slingRequest.getRequestPathInfo().getSelectors();
 	if (selectorArray != null && selectorArray.length > 0) {
@@ -55,10 +55,11 @@
 <div class="hds-global-header clearfix">
 	<c:if test="${selectorString!= 'excludetop'}">
 		<div class="header-container content-container">
-			<a target="${properties.topnewwin?'_blank':'_self'}" href="${properties.topimageurl}">
+			<a target="${properties.topnewwin?'_blank':'_self'}" href="${fn:contains(properties.topimageurl, 'http')?'':domain}${hdscorp:shortURL(properties.topimageurl)}">
+
 			<span class="hitachi-logo hidden-xs hidden-sm"></span>
 			</a>
-			 <a href="${properties.topimageurl}" target="_blank"><span
+			 <a href="${fn:contains(properties.topimageurl, 'http')?'':domain}${hdscorp:shortURL(properties.topimageurl)}" target="_blank"><span
 				class="hitachi-logo-mobile hidden-md hidden-lg"></span>
 			</a>
 
@@ -112,7 +113,7 @@
                         <label>Search within Hitachi</label>
                     </div>              
                     <div class="col-sm-12 col-no-pad">
-                        <input type="text" size="20" maxlength="40" data-href="${shortseacrhUrl}" id="gsaMobSearchBox" class="search-txt">
+                        <input type="text" size="20" maxlength="40" data-href="${fn:contains(shortseacrhUrl, 'http')?'':domain}${shortseacrhUrl}" id="gsaMobSearchBox" class="search-txt">
                         <input type="submit" value="Search" class="btn-search" id="gsaMobSearchBtn">
                     </div>
                 </div>
@@ -126,7 +127,7 @@
 	<div class="hds-main-navigation-container">
 		<div class="hds-main-navigation">
 			<div class="col-md-3">
-				<a href="${logoTargetURL}"> <span
+				<a href="${fn:contains(logoTargetURL, 'http')?'':domain}${hdscorp:shortURL(logoTargetURL)}"> <span
 					class="sprite hitachi-sublogo-mobile hidden-sm hidden-md hidden-lg">Hitachi
 						Data Systems</span><span class="sprite hitachi-sublogo hidden-xs">Hitachi
 						Data Systems</span>
