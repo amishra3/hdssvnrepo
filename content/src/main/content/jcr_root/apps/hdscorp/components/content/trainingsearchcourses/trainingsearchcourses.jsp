@@ -58,7 +58,8 @@
 									</div>
 								</div>
 								<div class="col-sm-12">
-									<div class="col-sm-6 select-left-loc">
+								  <div class="selectLocation_pick">
+									 <div class="col-sm-6 select-left-loc">
 										<div class="btn-group">
 										    <div class="select-training-style">
 												<select autocomplete="off" name="allRegion" id="allRegion">
@@ -67,12 +68,12 @@
 													<option value="${tabList.locationid}">${tabList.locationlabel}</option>
 												 </c:forEach>	
 												</select>
-											</div>
-										
-										
-											
+											</div>	
 										</div>
 									</div>
+									
+									<span class="visible-lg"></span>
+									<span class="hidden-lg"></span>
 
 									<div class="col-sm-6 select-right-btn">
 										<div class="src-btn">
@@ -81,6 +82,8 @@
 											</div>
 										</div>
 									</div>
+								  </div>	
+									
 								</div>
 							</div>
 
