@@ -19,7 +19,7 @@
 <c:if test="${fn:startsWith(logoTargetURL,'/content/')}">
 	<c:set var="logoTargetURL" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("logoTargetURL").toString())%>" />
 </c:if>
-<c:set var="hdslogotitle" value="${properties.hdslogotitle}" />
+
 <%
 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 	String seacrhpageUrl=properties.get("searchpathurl",String.class);
@@ -55,7 +55,7 @@
 <div class="hds-global-header clearfix">
 	<c:if test="${selectorString!= 'excludetop'}">
 		<div class="header-container content-container">
-			<a href="${properties.topimageurl}">
+			<a target="${properties.topnewwin?'_blank':'_self'}" href="${properties.topimageurl}">
 			<span class="hitachi-logo hidden-xs hidden-sm"></span>
 			</a>
 			 <a href="${properties.topimageurl}" target="_blank"><span
@@ -127,8 +127,9 @@
 		<div class="hds-main-navigation">
 			<div class="col-md-3">
 				<a href="${logoTargetURL}"> <span
-					class="sprite hitachi-sublogo-mobile hidden-sm hidden-md hidden-lg">${hdslogotitle}
-						</span><span class="sprite hitachi-sublogo hidden-xs">${hdslogotitle}</span>
+					class="sprite hitachi-sublogo-mobile hidden-sm hidden-md hidden-lg">Hitachi
+						Data Systems</span><span class="sprite hitachi-sublogo hidden-xs">Hitachi
+						Data Systems</span>
 				</a>
 			</div>
 
