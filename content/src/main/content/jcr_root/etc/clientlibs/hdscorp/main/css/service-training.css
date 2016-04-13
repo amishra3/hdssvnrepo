@@ -113,13 +113,32 @@ div.training {
 .serv-training-overview.last {
     border: none
 }
+
+.serv-training-overview .selectLocation_pick{
+	display: table;
+	float: none;
+	width: 100%;
+}
 .serv-training-overview .select-left-loc,
 .serv-training-overview .select-right-btn {
     padding: 0;
     width: 45%;
+	display: table-cell;
+	float: none;
+	margin: 0;
+	vertical-align: middle;	
 }
+
+.serv-training-overview .selectLocation_pick span{
+	display: table-cell;
+    float: none;
+    margin: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
 .serv-training-overview .select-right-btn {
-    margin-left: 54px;
+   /*  margin-left: 54px; */
 }
 .serv-training-overview .select-left-loc .btn-group {
     width: 100%;
@@ -408,9 +427,16 @@ div.training {
     .serv-training-overview .src-btn {
         text-align: center;
     }
+	
+  .serv-training-overview .selectLocation_pick{
+	  display: block;
+	  float: left;
+	  width: 100%;
+  }
     .serv-training-overview .select-left-loc,
     .serv-training-overview .select-right-btn {
         width: 100%;
+		display: block;
     }
     .serv-training-overview .select-right-btn {
         margin-left: 0;
@@ -507,13 +533,6 @@ div.training {
         width: 200px;
     }
 }
-
-@media screen and (max-width:1280px) and (-webkit-min-device-pixel-ratio:0){
-  .serv-training-overview .select-right-btn{
-	  margin-left: 52px;
-  }	
-}
-
 
 .accordion-level-last .accordion-menu-container:after {
     display: none;

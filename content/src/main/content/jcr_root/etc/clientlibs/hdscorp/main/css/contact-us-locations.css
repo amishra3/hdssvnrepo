@@ -33,6 +33,11 @@
 .hideme {
     display: none;
 }
+
+.select-boxes .select-style select > option {
+    border-right: 1px solid #666;
+}
+
 .posRelativeLocation {
     position: relative;
 }

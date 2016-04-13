@@ -55,7 +55,7 @@
   background-image: url("../images/leadership-insight-bg.jpg");
 }
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1280px){
   .leader-detail .container-fluid{
     padding-left: 0; 
     padding-right: 0;
@@ -124,11 +124,11 @@
   .view-all-executive a{font-size: 0.8125rem;}
 }
 
-@media screen and (max-width:1280px) and (-webkit-min-device-pixel-ratio:0){
+/* @media screen and (max-width:1280px) and (-webkit-min-device-pixel-ratio:0){
   .contentarea .leader-detail .col-sm-4{
 	  padding-left: 0;
   }	
 	
-}
+} */
 
 

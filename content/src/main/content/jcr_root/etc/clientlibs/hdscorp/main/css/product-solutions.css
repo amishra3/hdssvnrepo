@@ -1429,12 +1429,16 @@ h2.section-heading.fb-title{
   }
   
   .accordion-content .fb-section:last-child .fb-container .fb-category-container::after{
-   background: transparent;
+     background: transparent;
    }
-.fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{text-align:left!important;}
-
-
+  .fb-section .fb-container .fb-category-container .fb-category-box .fb-category-heading{text-align:left!important;}
+  
+  .accordion-level.hidebar > .accordion-menu-container:after{
+	 background: transparent; 
+  }
+  
 }
+
 @media (min-width: 992px){
 #overview{position:relative; margin-top:-49px; padding-top:49px; z-index:1;}
 #hdspsaccordion{position:relative; margin-top:-49px; z-index:11;}
