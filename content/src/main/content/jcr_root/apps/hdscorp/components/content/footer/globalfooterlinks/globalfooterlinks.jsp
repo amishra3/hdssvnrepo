@@ -9,6 +9,11 @@
 %><%@include file="/apps/foundation/global.jsp"%>
 <%
 %><%@page session="false"%>
+<c:set var="domain" value="" />
+<c:set var="port" value="<%= request.getServerPort() %>" />
+<c:if test="${empty port || port == 80}">
+	<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+</c:if>
 
 <c:set var="columns" value="<%=properties.get("columns")%>" />
 <c:set var="footerlinksmsg" value="<%= pageProperties.getInherited("footerlinksmsg", "Specify footer columns") %>" />
@@ -38,7 +43,7 @@
     						resourceType="hdscorp/components/content/footer/footersocialconnect" />
 
     				</div>
-        <a href="${properties.logolinkUrl}" class="footer-logo"><span class="sprite hitachi-footer-logo"></span></a>
+        <a href="${fn:contains(properties.logolinkUrl, 'http')?'':domain}${hdscorp:shortURL(properties.logolinkUrl)}" class="footer-logo"><span class="sprite hitachi-footer-logo"></span></a>
     			
     		
 </c:otherwise>
