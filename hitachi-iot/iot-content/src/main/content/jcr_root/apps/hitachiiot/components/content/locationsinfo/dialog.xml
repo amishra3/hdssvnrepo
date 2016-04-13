@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="General">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./multilinks"
+                        fieldLabel="Contact-Us/ Location Page Links"
+                        name="./multilinks"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <locationpage
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Location Page"
+                                name="./locationpage"
+                                xtype="ddpathfield"/>
+                        </fieldConfig>
+                    </multilinks>
+                    <directionstargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window?"
+                        name="./directionstargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <directionslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Directions Label"
+                        name="./directionslabel"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

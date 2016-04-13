@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="General">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <solutiontitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Solution Banner Title Content"
+                        name="./solutiontitlecontent"
+                        xtype="textfield"/>
+                    <solutionsubtitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Solution Banner Sub Title Content"
+                        name="./solutionsubtitlecontent"
+                        xtype="textfield"/>
+                    <bannerbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Banner Background Image"
+                        name="./bannerbackgroundimage"
+                        xtype="ddpathfield"/>
+                    <bannerbackgroundmobileimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./bannerbackgroundmobileimage"
+                        xtype="ddpathfield"/>
+                    <videoId
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video Id"
+                        name="./videoId"
+                        xtype="textfield"/>
+                    <videopathurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video Icon Path URL"
+                        name="./videopathurl"
+                        xtype="pathfield"/>
+                    
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
