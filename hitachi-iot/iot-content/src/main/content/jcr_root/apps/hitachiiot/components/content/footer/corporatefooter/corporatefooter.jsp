@@ -8,20 +8,20 @@
 
 <c:set var="footerLinks" value="<%=properties.get("footer")%>" />
 <c:set var="copyrighttext" value="<%=properties.get("copyrighttext")%>" />
-<c:set var="domain" value="" />
-<c:set var="port" value="<%= request.getServerPort() %>" />
-<c:if test="${empty port || port == 80}">
-<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
-</c:if>
+
+
 <c:choose>
 	<c:when test="${not empty footerLinks}">
-		<c:set var="corporateFooterLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urlLabel-pageUrl")%>" />
-		<li>
+	<c:set var="corporateFooterLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urlLabel-pageUrl")%>" />
+
+ <ul class="copyright-links col-md-12">
+ 
+         <li>
 			<a href="#">&copy; ${copyrighttext}</a>
         </li>
-		<c:forEach var="link" items="${corporateFooterLinks}" varStatus="loop">
-			<ul class="copyright-links">				
-				<c:set var="linkUrl" value="${link.pageUrl}" />
+       <c:forEach var="link" items="${corporateFooterLinks}" varStatus="loop">
+       
+       <c:set var="linkUrl" value="${link.pageUrl}" />
 				<c:choose>
 					<c:when test="${fn:startsWith(linkUrl,'/content/')}">
 						   <c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
@@ -29,13 +29,16 @@
 					<c:otherwise>
 						   <c:set var="linkUrl" value="${linkUrl}"/>
 					</c:otherwise>
-				</c:choose>
+				</c:choose>   
+				
 				<li>
-					<a href="${fn:contains(linkUrl, 'http')?'':domain}${linkUrl}">${link.urlLabel}</a>
+					<a href="${linkUrl}">${link.urlLabel}</a>
 				</li>
-			</ul>					
-		</c:forEach>
-	</c:when>
+         
+          </c:forEach>
+        </ul>
+        
+        </c:when>
 	<c:otherwise>
 		<wcmmode:edit>
 			<p>

@@ -10,32 +10,38 @@
 <%@ taglib prefix="wcm" uri="http://www.adobe.com/consulting/acs-aem-commons/wcm" %>
 
 <c:set var="footerTitle" value="<%=properties.get("footerTitle")%>" />
-<c:set var="domain" value="" />
-<c:set var="port" value="<%= request.getServerPort() %>" />
-<c:if test="${empty port || port == 80}">
-<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
-</c:if>
+
 <c:choose>
 	<c:when test="${not empty footerTitle}">
-		<h2>${footerTitle}</h2>
+		<h3 class="footer-title col-sm-8 col-md-8">${footerTitle}</h3>
 		<c:set var="footerInternalLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"internalLinkTitle-internalLinkurl")%>" />
-		<c:forEach var="internalLinks" items="${footerInternalLinks}">
-			<ul class="footer-links">
-				<c:set var="internalLinkUrl" value="${internalLinks.internalLinkurl}" />
-				<c:set var="internalUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("internalLinkUrl").toString())%>" />
-					<li><a href="${fn:contains(internalUrl, 'http')?'':domain}${internalUrl}"
-						title="${internalLinks.internalLinkTitle}">${internalLinks.internalLinkTitle}</a></li>
-			</ul>
-		</c:forEach>
-		<c:set var="footerExternalLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"externalLinkTitle-externalLinkurl-externallinktargettype")%>" />
+
+
+<ul class="footer-links col-md-12">
+<c:forEach var="internalLinks" items="${footerInternalLinks}">
+
+<c:set var="internalLinkUrl" value="${internalLinks.internalLinkurl}" />
+		<c:set var="internalUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("internalLinkUrl").toString())%>" />
+         
+         <li><a href="${internalUrl}"
+						title="${internalLinks.internalLinkTitle}">${internalLinks.internalLinkTitle}</a>
+         </li>
+          
+          </c:forEach>
+        </ul>
+        <c:set var="footerExternalLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"externalLinkTitle-externalLinkurl-externallinktargettype")%>" />
 		<c:forEach var="externalLinks" items="${footerExternalLinks}">
-			<ul class="footer-links">
+			<ul class="footer-links col-md-12">
 				<c:set var="externalUrl" value="${externalLinks.externalLinkurl}" />
-				<li><a href="${fn:contains(externalUrl, 'http')?'':domain}${externalUrl}" target="${externalLinks.externallinktargettype==true?'_blank':'_self'}" title="${externalLinks.externalLinkTitle}">${externalLinks.externalLinkTitle}${externalLinks.externallinktargettype==true?'<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+				<li>
+				<a href="${externalUrl}" class="innovation-link col-md-12" target="${externalLinks.externallinktargettype==true?'_blank':'_self'}">${externalLinks.externalLinkTitle} &nbsp;<span class="sprite icon-link-red"></span></a>
+				
 				</li>
 			</ul>
 		</c:forEach>		
-	</c:when>
+       
+
+</c:when>
 	<c:otherwise>
 		<wcmmode:edit>
 			<p>
@@ -44,3 +50,21 @@
 		</wcmmode:edit>
 	</c:otherwise>
 </c:choose>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

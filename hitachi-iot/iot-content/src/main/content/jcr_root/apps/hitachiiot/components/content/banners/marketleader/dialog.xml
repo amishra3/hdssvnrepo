@@ -28,7 +28,22 @@
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
                             xtype="cqinclude"/>
                     </description>
-                    <aboutusbuttonlabel
+                    <videoiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video Icon Path"
+                        name="./videoiconpath"
+                        xtype="pathfield"/>
+                     <videothumbnailimgpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video Thumbnail Image Path"
+                        name="./videothumbnailimgpath"
+                        xtype="pathfield"/>
+                     <videoid
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Bright Cove Video Id"
+                        name="./videoid"
+                        xtype="pathfield"/>   
+                     <aboutusbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
                         name="./aboutusbuttonlabel"
@@ -38,7 +53,8 @@
                         fieldLabel="Button Target URL"
                         name="./aboutusbuttonurl"
                         xtype="pathfield"/>
-                    <aboutusbuttonlabeltargettype
+                     
+                     <aboutusbuttonlabeltargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window ?"
                         name="./aboutusbuttonlabeltargettype"

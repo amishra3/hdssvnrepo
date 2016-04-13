@@ -1,0 +1,59 @@
+/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+html {
+  font-size: 16px !important;
+}
+
+/*bootstrap override start*/
+/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+.row-no-margin {
+  margin: 0 !important;
+}
+
+/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+.row-reduce-half {
+  margin-left: -7.5px !important;
+  margin-right: -7.5px !important;
+}
+
+/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+.col-no-pad {
+  padding: 0 !important;
+}
+
+/*bootstrap override end*/
+/* BOOTSTRAP OVERRIDES */
+/* line 5, stdin */
+.bus-unit-name {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* line 9, stdin */
+.hitachi-sublogo,
+.hitachi-sublogo-mobile {
+  background-image: none;
+}
+
+/* line 13, stdin */
+.hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a > span {
+  text-indent: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  /* line 18, stdin */
+  .icon-search-mobile {
+    background-image: url(../images/sprite.png);
+    background-position: -311px -157px;
+    width: 19px;
+    height: 20px;
+  }
+  /* line 25, stdin */
+  .header .breadcrumb-container {
+    top: 160px;
+    text-align: center;
+  }
+  /* line 30, stdin */
+  .header .sub-navigation-container {
+    display: block;
+  }
+}

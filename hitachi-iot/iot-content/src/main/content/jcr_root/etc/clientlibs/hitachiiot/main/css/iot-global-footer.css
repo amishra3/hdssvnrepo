@@ -1,21 +1,21 @@
-/* line 33, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 html {
   font-size: 16px !important;
 }
 
 /*bootstrap override start*/
-/* line 38, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 .row-no-margin {
   margin: 0 !important;
 }
 
-/* line 41, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 .row-reduce-half {
   margin-left: -7.5px !important;
   margin-right: -7.5px !important;
 }
 
-/* line 45, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 .col-no-pad {
   padding: 0 !important;
 }
@@ -46,19 +46,25 @@ The `sprites` mixin generates identical output to the CSS template
   but can be overridden inside of SCSS
 @include sprites($spritesheet-sprites);
 */
-/* line 8, stdin */
+/* line 7, stdin */
+.footer button.cta-scroll-top {
+  bottom: 180px;
+  right: 60px;
+}
+
+/* line 12, stdin */
 .footer .footer-container a:hover,
 .footer .footer-container a:active {
   text-decoration: none;
 }
 
-/* line 14, stdin */
+/* line 18, stdin */
 .footer .footer-white {
   margin: 4em 0;
   background: #ffffff !important;
 }
 
-/* line 19, stdin */
+/* line 23, stdin */
 .footer .footer-white .footer-container p {
   margin: 0;
   padding: 20px 0;
@@ -68,27 +74,27 @@ The `sprites` mixin generates identical output to the CSS template
   line-height: 1;
 }
 
-/* line 26, stdin */
+/* line 30, stdin */
 .footer .footer-white .footer-container p a {
   color: #000000;
 }
 
-/* line 31, stdin */
+/* line 35, stdin */
 .footer .footer-white .footer-container h3 {
   margin-bottom: 20px;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 1.875em;
   line-height: 1;
   color: #000000;
 }
 
-/* line 39, stdin */
+/* line 43, stdin */
 .footer .footer-white .footer-container .footer-title {
   margin-top: 0;
 }
 
-/* line 45, stdin */
+/* line 49, stdin */
 .footer .footer-white .footer-container .footer-links li,
 .footer .footer-white .footer-container .copyright-links li {
   display: inline-block;
@@ -96,95 +102,71 @@ The `sprites` mixin generates identical output to the CSS template
   list-style-type: none;
 }
 
-/* line 50, stdin */
+/* line 54, stdin */
 .footer .footer-white .footer-container .footer-links li a,
 .footer .footer-white .footer-container .copyright-links li a {
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 700;
+  font-size: 13px;
   text-transform: uppercase;
   color: #000000;
 }
 
-/* line 63, stdin */
+/* line 64, stdin */
 .footer .footer-white .footer-container .footer-links {
   margin-bottom: 2.5em;
 }
 
-/* line 65, stdin */
-.footer .footer-white .footer-container .footer-links li a {
-  font-size: 0.6875em;
-  line-height: 1;
-}
-
-/* line 71, stdin */
-.footer .footer-white .footer-container .social-links li {
-  display: inline-block;
-  margin-left: 30px;
-  list-style-type: none;
-}
-
-/* line 77, stdin */
-.footer .footer-white .footer-container .social-links .icon-linkedin-gray {
-  background-image: url(../images/sprite.png);
-  background-position: -322px -62px;
-  width: 30px;
-  height: 30px;
-}
-
-/* line 80, stdin */
-.footer .footer-white .footer-container .social-links .icon-twitter-gray {
-  background-image: url(../images/sprite.png);
-  background-position: -322px -92px;
-  width: 30px;
-  height: 30px;
-}
-
-/* line 83, stdin */
-.footer .footer-white .footer-container .social-links .icon-facebook-gray {
-  background-image: url(../images/sprite.png);
-  background-position: -322px -32px;
-  width: 30px;
-  height: 30px;
-}
-
-/* line 88, stdin */
-.footer .footer-white .footer-container .innovation-link {
+/* line 67, stdin */
+.footer .footer-white .footer-container .footer-links li .innovation-link {
   margin-bottom: 1em;
   color: #ce0000;
   text-transform: uppercase;
-  font-size: 0.6875em;
-  line-height: 1;
   font-weight: 700;
 }
 
-/* line 95, stdin */
-.footer .footer-white .footer-container .innovation-link .icon-link-red {
+/* line 72, stdin */
+.footer .footer-white .footer-container .footer-links li .innovation-link .icon-link-red {
   background-image: url(../images/sprite.png);
   background-position: -305px -177px;
   width: 13px;
   height: 13px;
 }
 
-/* line 100, stdin */
+/* line 76, stdin */
+.footer .footer-white .footer-container .footer-links li a {
+  font-size: 0.6875em;
+  line-height: 1;
+}
+
+/* line 83, stdin */
+.footer .footer-white .footer-container .social-links {
+  position: absolute;
+  right: -101px;
+  bottom: 163px;
+}
+
+/* line 87, stdin */
+.footer .footer-white .footer-container .social-links li {
+  display: inline-block;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+/* line 93, stdin */
 .footer .footer-white .footer-container .social-links-desktop {
   display: block;
 }
 
-/* line 104, stdin */
-.footer .footer-white .footer-container .social-links-mobile {
-  display: none;
-}
-
-/* line 109, stdin */
+/* line 98, stdin */
 .footer .footer-white .footer-container .copyright-links li a {
   font-size: 0.5625em;
   line-height: 1;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 121, stdin */
+  /* line 110, stdin */
   .footer .footer-white .footer-container .footer-title,
-  .footer .footer-white .footer-container .social-links,
   .footer .footer-white .footer-container .footer-links li,
   .footer .footer-white .footer-container .innovation-link,
   .footer .footer-white .footer-container .copyright-links li {
@@ -192,45 +174,57 @@ The `sprites` mixin generates identical output to the CSS template
     float: none;
     text-align: center;
   }
-  /* line 131, stdin */
-  .footer .footer-white .footer-container .social-links li {
-    margin: 0 30px 0;
+  /* line 118, stdin */
+  .footer .footer-white .footer-container .social-links {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: block;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto 20px auto;
   }
-  /* line 135, stdin */
+  /* line 128, stdin */
+  .footer .footer-white .footer-container .social-links li {
+    margin: 0 10px 0;
+  }
+  /* line 132, stdin */
   .footer .footer-white .footer-container .footer-links li {
     margin: 0;
   }
-  /* line 137, stdin */
+  /* line 134, stdin */
   .footer .footer-white .footer-container .footer-links li a {
     font-size: 0.875em;
     line-height: 1;
   }
-  /* line 142, stdin */
+  /* line 139, stdin */
   .footer .footer-white .footer-container .innovation-link {
     font-size: 0.875em;
     line-height: 1;
   }
-  /* line 146, stdin */
+  /* line 143, stdin */
   .footer .footer-white .footer-container .copyright-links li a {
     font-size: 0.625em;
     line-height: 1;
   }
-  /* line 150, stdin */
+  /* line 147, stdin */
   .footer .footer-white .footer-container .social-links-desktop {
+    position: relative;
+    right: auto;
+    bottom: auto;
+  }
+  /* line 153, stdin */
+  .footer .footer-white .footer-container .social-links-mobile {
     display: none;
   }
-  /* line 154, stdin */
-  .footer .footer-white .footer-container .social-links-mobile {
-    display: block;
-  }
-  /* line 157, stdin */
+  /* line 156, stdin */
   .footer .footer-white .footer-container .social-links-mobile hr {
     max-width: 140px;
     height: 2px;
     background-color: #c0c0c0;
     border: none;
   }
-  /* line 165, stdin */
+  /* line 164, stdin */
   .footer .footer-white .footer-container .copyright {
     padding-top: 0;
   }

@@ -44,7 +44,8 @@ training-detail.css
 geo-selector.css
 hds-video-overlay.css
 contact-us-locations.css
-/etc/clientlibs/hitachiiot/main/css/iot-global-footer.css
+/etc/clientlibs/hitachiiot/main/css/iot-global-header.css
 /etc/clientlibs/hitachiiot/main/css/iot-homepage-global-platform.css
 /etc/clientlibs/hitachiiot/main/css/iot-homepage-main-hero.css
 /etc/clientlibs/hitachiiot/main/css/iot-homepage-market-leader.css
+/etc/clientlibs/hitachiiot/main/css/iot-global-footer.css
