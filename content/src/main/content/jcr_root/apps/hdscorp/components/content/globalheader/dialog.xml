@@ -31,10 +31,10 @@
                         fieldLabel="Logo URL"
                         name="./imageurl"
                         xtype="pathfield"/>
-                    <topnanhdstext
+                    <hdslogotitle
                         jcr:primaryType="cq:Widget"
                         fieldLabel="HDS Top Nav Display Text"
-                        name="./topnanhdstext"
+                        name="./hdslogotitle"
                         value="HDS GLobal"
                         xtype="textfield"/>
                     <listeners
@@ -74,6 +74,7 @@
                                 name="./linkurltargettype"
                                 type="checkbox"
                                 xtype="selection"/>
+                             
                         </fieldConfig>
                     </externalmultilinks>
                 </items>
