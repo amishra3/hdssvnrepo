@@ -5,8 +5,10 @@
 <%@page session="false"%>
 
 <div class="footer">
+
+    <cq:include path="contactusipar" resourceType="foundation/components/iparsys" /> 
     <div class="footer-white">
-      <cq:include path="${currentDesign.path}/jcr:content/globalfooter/returntotop" resourceType="hdscorp/components/content/footer/returntotop" />
+   
       <div class="footer-container content-container container-fluid">
         
 
@@ -29,6 +31,8 @@
      <cq:include path="iotcorporatefooteripar" resourceType="foundation/components/iparsys" />
        
       </div>
+      
+      <cq:include path="${currentDesign.path}/jcr:content/globalfooter/returntotop" resourceType="hdscorp/components/content/footer/returntotop" />
     </div>
 </div>
 

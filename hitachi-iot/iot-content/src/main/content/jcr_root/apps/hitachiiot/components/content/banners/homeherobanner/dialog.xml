@@ -34,6 +34,11 @@
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
                             xtype="cqinclude"/>
                     </herosubtitlecontent>
+                    <videoid
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Bright Cove Video Id"
+                        name="./videoid"
+                        xtype="textfield"/>   
                     <multilinks
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./multilinks"
@@ -81,7 +86,7 @@
                         xtype="ddpathfield"/>                        
                     <ourplatformlinktext
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="View All Link Text"
+                        fieldLabel="Our Platform Label"
                         name="./ourplatformlinktext"
                         xtype="textfield"/>
                     <ourplatformurl

@@ -24,19 +24,24 @@ html {
 /* BOOTSTRAP OVERRIDES */
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
+
 .icon-home {
   width: $icon-home-width;
 }
+
 The large array-like variables contain all information about a single icon
 $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
 /*
 The provided mixins are intended to be used with the array-like variables
+
 .icon-home {
   @include sprite-width($icon-home);
 }
+
 .icon-email {
   @include sprite($icon-email);
 }
@@ -44,6 +49,7 @@ The provided mixins are intended to be used with the array-like variables
 /*
 The `sprites` mixin generates identical output to the CSS template
   but can be overridden inside of SCSS
+
 @include sprites($spritesheet-sprites);
 */
 /* line 1, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
@@ -253,20 +259,38 @@ button.cta-scroll-top .text-return {
 
 /* line 8, stdin */
 .iot-hero {
+  background: url(../images/HDS_IoT_Desktop_home_hero_bg.jpg) no-repeat;
+  position: relative;
+  z-index: -100;
   padding-top: 150px;
-  background: url(../images/HDS_IoT_Desktop_home_hero_bg.jpg) top center no-repeat;
+  background-size: cover;
+}
+
+/* line 12, stdin */
+.iot-hero #bgvid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 758px;
+  z-index: -99;
   background-size: cover;
 }
 
 @media only screen and (max-width: 992px) {
   /* line 8, stdin */
   .iot-hero {
+    background-image: url(../images/HDS_IoT_Desktop_home_hero_bg.jpg);
     background-position: top left;
     padding-top: 60px;
   }
+  /* line 24, stdin */
+  .iot-hero #bgvid {
+    display: none;
+  }
 }
 
-/* line 16, stdin */
+/* line 31, stdin */
 .iot-hero h1 {
   text-align: left;
   color: #ffffff;
@@ -278,14 +302,14 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 16, stdin */
+  /* line 31, stdin */
   .iot-hero h1 {
     width: 100%;
     font-size: 36px;
   }
 }
 
-/* line 29, stdin */
+/* line 44, stdin */
 .iot-hero h4.sub-headline {
   text-align: left;
   width: 73%;
@@ -297,21 +321,21 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 29, stdin */
+  /* line 44, stdin */
   .iot-hero h4.sub-headline {
     width: 100%;
     font-size: 16px;
   }
 }
 
-/* line 42, stdin */
+/* line 57, stdin */
 .iot-hero .features {
   width: 100%;
   display: block;
   margin-bottom: 20px;
 }
 
-/* line 46, stdin */
+/* line 61, stdin */
 .iot-hero .features .btn-square-features {
   width: 190px;
   margin: 0 20px 0 0;
@@ -323,14 +347,14 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 46, stdin */
+  /* line 61, stdin */
   .iot-hero .features .btn-square-features {
     float: none;
     margin: 0 auto;
   }
 }
 
-/* line 59, stdin */
+/* line 74, stdin */
 .iot-hero .features .platform {
   display: block;
   width: 610px;
@@ -341,7 +365,7 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 65, stdin */
+/* line 80, stdin */
 .iot-hero .features .platform:hover {
   text-decoration: none;
 }
@@ -358,27 +382,26 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 59, stdin */
+  /* line 74, stdin */
   .iot-hero .features .platform {
     width: 100%;
     margin-bottom: 50px;
   }
 }
 
-/* line 75, stdin */
+/* line 90, stdin */
 .iot-hero .features .button-wrapper {
   background: transparent;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 75, stdin */
+  /* line 90, stdin */
   .iot-hero .features .button-wrapper {
     text-align: center;
     background-color: #ffffff;
     width: 100%;
     display: block;
     float: none;
-    border: 1px solid green;
     margin-bottom: 20px;
     overflow: auto;
     padding: 8px;

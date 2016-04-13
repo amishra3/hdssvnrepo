@@ -10,6 +10,7 @@
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
 <c:set var="ourplatformurl" value="${properties.ourplatformurl}" />
+<c:set var="videoid" value="${properties.videoid}" />
 
 <c:if test="${fn:startsWith(ourplatformurl,'/content/')}">
 	<c:set var="ourplatformurl" value="${hdscorp:shortURL(ourplatformurl)}" />
@@ -22,7 +23,24 @@
 		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tablink-tabIconPath")%>" />
 	
 		
-	  <div class="iot-hero clearfix rsImg" ${hdscorp:bgImgAtrr(properties.heroimagePath,properties.heromobileimage)}>
+	  <div class="iot-hero clearfix">
+	  
+	   <object id="bgvid" class="BrightcoveExperience" style="width: 100%; height: 100%; border: 2px solid orange;" >
+                <param name="bgcolor" value="#FFFFFF">
+                <param name="width" value="920">
+                <param name="height" value="517">
+                <param name="playerID" value="${videoid}">
+                <param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot">
+                <param name="isVid" value="true">
+                <param name="isUI" value="true">
+                <param name="dynamicStreaming" value="true">
+                <param name="@videoPlayer" value="${videoid}">
+                <param name="secureConnections" value="true"> 
+                <param name="includeAPI" value="true">
+                <param name="templateLoadHandler" value="myTemplateLoaded">
+                <param name="autoStart" value="true">
+                <param name="wmode" value="transparent" />
+            </object>
        <div class="iot-hero-container content-container">
         <h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
         

@@ -42,7 +42,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Bright Cove Video Id"
                         name="./videoid"
-                        xtype="pathfield"/>   
+                        xtype="textfield"/>   
                      <aboutusbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"

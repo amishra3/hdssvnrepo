@@ -12,38 +12,42 @@
                 jcr:primaryType="cq:Panel"
                 title="Tab 1">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <title
+                    <contactbannercontent
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Title Content"
-                        name="./title"
-                        xtype="textfield"/>
-                    <description
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Description"
-                        height="125"
-                        name="./description"
-                        xtype="richtext">
+                        fieldLabel="Banner Content"
+                        name="./contactbannercontent"
+                        xtype="textfield">
                         <rtePlugins
                             jcr:primaryType="nt:unstructured"
                             path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
                             xtype="cqinclude"/>
-                    </description>
-                    <aboutusbuttonlabel
+                    </contactbannercontent>
+                   
+                    <contactusbannerbuttonlabel
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Label"
-                        name="./aboutusbuttonlabel"
+                        fieldLabel="Contact Us Button Label"
+                        name="./contactusbannerbuttonlabel"
                         xtype="textfield"/>
-                    <aboutusbuttonurl
+                    <contactusbannerbuttonurl
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Target URL"
-                        name="./aboutusbuttonurl"
+                        fieldLabel="Contact Us Button Target URL"
+                        name="./contactusbannerbuttonurl"
                         xtype="pathfield"/>
-                    <aboutusbuttonlabeltargettype
+                    <thirdpartybutton
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Open in New Window ?"
-                        name="./aboutusbuttonlabeltargettype"
+                        fieldLabel="Show third party icon?"
+                        key="thirdpartybutton"
+                        name="./thirdpartybutton"
                         type="checkbox"
                         xtype="selection"/>
+                    <overlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in marketo Form"
+                        key="mform"
+                        name="./mform"
+                        type="checkbox"
+                        xtype="selection"/>
+                    
                 </items>
             </tab1>
         </items>
