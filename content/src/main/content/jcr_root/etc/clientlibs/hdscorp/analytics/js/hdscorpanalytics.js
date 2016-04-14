@@ -584,7 +584,7 @@ function getPartnerIndFilters()
 		 }
     });	
 	//hero banners for all pages  .btn-square-white
-	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions, .bannerSectionImage").each(function() {
+	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions, .bannerSectionImage, .about-hds-csr-eco").each(function() {
      var listitem = $(this).find("a");
 	 var url=$(location).attr('href');
 	 var linktext = $(this).find('h1').text();
@@ -978,7 +978,8 @@ function getPartnerIndFilters()
 		pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
 		if (pClass.indexOf("leftsidelisting")>-1)
 		{
-			var tabTitle = "tab-terms-"+$.trim(linktext).toLowerCase().replace(/\s/g,"-")+" button";
+			var pTitle=$(this).parent().parent().parent().parent().find("a").text();
+			var tabTitle = "tab-"+ $.trim(pTitle).toLowerCase() +"-"+$.trim(linktext).toLowerCase().replace(/\s/g,"-")+" button";
 			tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick");
 		}
 	});
