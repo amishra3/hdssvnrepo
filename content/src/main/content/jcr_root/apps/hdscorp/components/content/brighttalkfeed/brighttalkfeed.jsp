@@ -67,7 +67,7 @@ pageContext.setAttribute("listMaps", listMaps);
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
-                                        <a href="javascript:void(0);" class="animateLink expandMe less ${listm.communicationId}"><span class="glyphicon glyphicon-plus-sign"></span>${properties.detailslabel} </a>
+                                        <div class="expandMe less ${listm.communicationId}"><span class="glyphicon glyphicon-plus-sign"></span>${properties.detailslabel} </div>
                             </div>
                         </c:forEach>
                     </div>

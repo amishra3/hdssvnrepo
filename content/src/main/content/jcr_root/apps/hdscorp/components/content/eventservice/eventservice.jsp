@@ -22,21 +22,20 @@
             <c:forEach items="${eventAlldata.value}" var="eventNodes">
                  <c:choose>
                     <c:when test="${eventNodes.isWebcast=='true'}">
-							<div class="col-md-9 newsWrapper">
-                                    <div class="noEventFilter">${webcastnotfound} </div>
-                                         <div data-events="hdscorp:events/webcasts" data-region="hdscorp:events/webcasts" class="newsEvents" style="display: block;" data-event-id="${eventNodes.communicationId}">
+
+                                         <div data-events="hdscorp:events/webcasts" data-region="hdscorp:events/webcasts" class="newsEvents event-webcast" style="display: block;">
                                             <h3>${eventNodes.eventTitle}</h3>
                                             <small>${eventNodes.duration}</small>
                                             <h4 class="author">${eventNodes.author}</h4>
                                             <p>${eventNodes.summary}<br><br><small>UPCOMING</small></p>
                                              <div class="WebcastDetails">
-                                                 <img src="${eventNodes.previewImagePath}" alt=""/>
-                                                <a rel="${not empty playermodal?'modal':'dummy'}" href="${eventNodes.herfLink}" target="_blank" title="Play">${registernow}</a>
+                                                 <img class="img-responsive" src="${eventNodes.previewImagePath}" alt=""/>
+                                                <a rel="${not empty playermodal?'modal':'dummy'}" href="${eventNodes.herfLink}" target="_blank" title="Play">${registernow} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
                                             </div>
-                                                <a href="javascript:void(0);" class="animateLink expandMe less"><span class="glyphicon glyphicon-plus-sign"></span>${detailslabel}</a>
+                                                <div class="expandMe less"><span class="glyphicon glyphicon-plus-sign"></span>${detailslabel}</div>
                                         </div>	
     
-                            </div>	
+
                     </c:when>
                     <c:otherwise>				
                 <div data-events="${eventNodes.eventTyptagId}" 
@@ -60,7 +59,7 @@
                             </div>                            
                         </div>
                     </div>
-                    <a class="animateLink expandMe less" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>${eventDataModel.detailsLabel} </a>
+                    <div class="expandMe less" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>${eventDataModel.detailsLabel} </div>
                 </div>
                     </c:otherwise>
                       </c:choose> 
