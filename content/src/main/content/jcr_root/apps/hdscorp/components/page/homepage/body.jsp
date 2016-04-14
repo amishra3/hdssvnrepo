@@ -21,4 +21,42 @@ if(pageTemplatePath!=null){
 	</div>
 	<!-- <cq:includeClientLib js="hdscorp.main" /> -->
 	   <cq:include script="footeranalytics.jsp" />
+
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.hds.com/",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.hds.com/search?site=hdsrevamp&client=hdsrevamp&proxystylesheet=hdsrevamp&q={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+</script>
+
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "Hitachi Data Systems",
+  "url" : "https://www.hds.com",
+  "sameAs" : [ "https://www.facebook.com/HitachiDataSystems",
+    "https://twitter.com/hdscorp",
+    "https://plus.google.com/u/0/+hitachidatasystems/posts",
+    "https://www.linkedin.com/company/hitachi-data-systems?trk=tyah",
+    "https://www.youtube.com/user/hdscorp",
+    "http://www.slideshare.net/hdscorp" ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "WebSite",
+  "name" : "HDS",
+  "alternateName" : "Hitachi Data Systems",
+  "url" : "https://www.hds.com/"
+}
+</script>
+
 </body>
