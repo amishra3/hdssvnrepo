@@ -557,6 +557,15 @@ function getPartnerIndFilters()
 		});                 
      }
     });	
+	
+	//header HDS logos
+	
+	jQuery(".hds-main-navigation .col-md-3 > a, .hds-global-header .header-container >a").each (function() {
+		var linktext="hds logo";
+		$(this).click(function(){globalMenuClick("linkclick","us>mm>"+linktext.toLowerCase(),pageTitle,"link","mega menu");});
+	});		
+	
+	
 	//hero banner for home page only	
 	$(".hero-homepage").each(function() 
 	{
@@ -668,11 +677,11 @@ function getPartnerIndFilters()
 		 //var linktext = jQuery(this).text();
           linktext = "hex-" + $.trim(linktext);
             $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
-			$(this).mousedown(function(e){
+/* 			$(this).mousedown(function(e){
 				if(e.which == 3){
 					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
 				} 			
-			});
+			}); */
 		});                 
      }
     });	
@@ -706,10 +715,15 @@ function getPartnerIndFilters()
           //if(linktext.indexOf("hex-")<0)
 		  //{linktext = "hex-" + $.trim(linktext);}
 				$(this).click(function(){
-					var linktext = "hex-" + $(this).parent().parent().find('h4').text();
+					var purl=$(location).attr('href');
+					if(purl.indexOf("/news-insights.html") >-1){var linktext = "hex-" + $(this).parent().parent().find('h4').text() + "-" + $(this).text();}
+					else{var linktext = "hex-" + $(this).parent().parent().find('h4').text();}
 					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
 				$(this).mousedown(function(e){
 					if(e.which == 3){
+						var purl=$(location).attr('href');
+						if(purl.indexOf("/news-insights.html") >-1){var linktext = "hex-" + $(this).parent().parent().find('h4').text() + "-" + $(this).text();}
+						else{var linktext = "hex-" + $(this).parent().parent().find('h4').text();}
 						globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
 					} 			
 				});
@@ -869,7 +883,7 @@ function getPartnerIndFilters()
 		var linktext = $('.footer-logo').text();
 		 if ($.trim(linktext)==0) {linktext="hds logo";}
 		$(this).click(function(){globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer"); });
-	
+
 		$(this).mousedown(function(e){
 			if(e.which == 3){
 				globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer");
