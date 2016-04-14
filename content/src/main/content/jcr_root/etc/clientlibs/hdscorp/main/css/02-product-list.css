@@ -337,6 +337,7 @@ color: #cccccc !important;
     background: #ffffff;
     font-family: "museo-sans", Helvetica, Arial, sans-serif;
     padding: 0 0 0 35px;
+	float: left;
 }
 
 .result-product .category-heading {
