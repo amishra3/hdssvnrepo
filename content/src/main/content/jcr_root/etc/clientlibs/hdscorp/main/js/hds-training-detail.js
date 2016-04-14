@@ -161,7 +161,7 @@ var hds = window.hds || {};
                     params[match[1]] = match[2];
                 }
 
-			var searchKey = params.searchKey; 
+			var searchKey = decodeURI(params.searchKey); 
 			var dateFrom = params.lowerBound; 
 			var dateTo = params.upperBound; 
 			var locations = params.locations; 
