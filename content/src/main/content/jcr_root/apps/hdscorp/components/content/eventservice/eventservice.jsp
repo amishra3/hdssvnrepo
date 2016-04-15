@@ -23,7 +23,7 @@
                  <c:choose>
                     <c:when test="${eventNodes.isWebcast=='true'}">
 
-                                         <div data-events="hdscorp:events/webcasts" data-region="hdscorp:events/webcasts" class="newsEvents event-webcast" style="display: block;">
+                                         <div data-events="hdscorp:events/webcasts"  data-startDate="" data-endDate="" data-region="hdscorp:events/webcasts" class="newsEvents event-webcast" style="display: block;">
                                             <h3>${eventNodes.eventTitle}</h3>
                                             <small>${eventNodes.duration}</small>
                                             <h4 class="author">${eventNodes.author}</h4>

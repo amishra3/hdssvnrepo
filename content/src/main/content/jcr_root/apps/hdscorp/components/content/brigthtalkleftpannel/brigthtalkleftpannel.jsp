@@ -14,7 +14,7 @@
 
 <ul>
     		<li class="active"><a data-catagory="All Webcast"
-				title="Featured" href="javascript:void(0);" class="active">${featuredfilterlabel}<span
+				title="Featured" href="javascript:void(0);" class="active webcast-cat">${featuredfilterlabel}<span
 					class="icon-accordion-closed hidden-md hidden-lg"></span><span
 					class="icon-accordion-opened hidden-md hidden-lg"></span></a>
 			<div class="MobileHolderWrapper"></div></li>
@@ -37,7 +37,7 @@
 				</c:choose>
 			</c:forEach>
 			<li><a data-catagory="<c:out value='${tagslist}' />"
-				title="${eventTag.key}" href="javascript:void(0);">${featureTag.key}<span
+				title="${eventTag.key}" href="javascript:void(0);" class="webcast-cat">${featureTag.key}<span
 					class="icon-accordion-closed hidden-md hidden-lg"></span><span
 					class="icon-accordion-opened hidden-md hidden-lg"></span></a>
 			<div class="MobileHolderWrapper"></div></li>
