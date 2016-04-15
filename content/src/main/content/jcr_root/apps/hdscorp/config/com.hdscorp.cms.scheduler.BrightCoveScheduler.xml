@@ -2,6 +2,6 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="sling:OsgiConfig"
     feed.url="http://api.brightcove.com/services/library?command=search_videos&amp;any=tag:hdscorp&amp;output=mrss&amp;token=J-KzSklqGjvSZ83MDVgB1Z3dYwbchmoH_8O2TX0j_JZflnvN9eqcNQ.."
-    scheduler.expression="0 15 10 * * ? 2025"
+    scheduler.expression="0 15 23 * * ?"
     brightcove.pagesize="100"
     storage.path="/content/dam/public/en_us/videos"/>
