@@ -6,7 +6,7 @@ var hds = window.hds || {};
         init: function(options) {
             var defaults = {
                 element: '#webcasts-demand .newsEvents',
-                elementListAnchor: '.webcast-listing li a',
+                elementListAnchor: '.webcast-listing li a.webcast-cat',
                 detailsBtn: '#webcasts-demand .newsWrapper .expandMe',
                 countParagraph: 270,
                 ellipsestext :'...',
