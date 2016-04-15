@@ -741,8 +741,9 @@ HDS Global Header and Navigation
         margin-bottom: 0px;
         font-weight: 300;
 		color: #d42727;
-    }
-	.spotlightNavigation .phone-no + p a{
+    }	 
+  	
+   .spotlightNavigation .phone-no + p a{
 		padding: 5px 0;
 		margin-left: 0;
 	}   
@@ -756,6 +757,11 @@ HDS Global Header and Navigation
         margin-left: -10px;
         margin-right: -10px;
    }
+   
+   .spotlightNavigation .phone-no a{
+	   color: #d42727;
+	   text-decoration: none;
+   } 
 }
 
 @media only screen and (max-width: 768px) {
