@@ -161,7 +161,7 @@ var hds = window.hds || {};
                     params[match[1]] = match[2];
                 }
 
-			var searchKey = decodeURI(params.searchKey); 
+			var searchKey = params.searchKey; 
 			var dateFrom = params.lowerBound; 
 			var dateTo = params.upperBound; 
 			var locations = params.locations; 
@@ -176,12 +176,12 @@ var hds = window.hds || {};
 				$('.to_date').val(dateTo)
 			}
 			if(searchKey && searchKey != ""){
-				$('.search').val(searchKey)
+				$('.search').val(decodeURI(searchKey))
 			}
 			getResults(true);
 			if(locations && locations != ""){
 				setTimeout(function(){
-					
+
 					$('input[countryid='+locations+']').click()
 					$('input[countryid='+locations+']').attr('checked','checked')
 				},4000);
