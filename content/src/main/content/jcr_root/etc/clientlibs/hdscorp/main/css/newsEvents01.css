@@ -196,6 +196,9 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 #webcasts-demand .pr-list .product-category-list {
     padding: 0 15px 80px;
 }
+.pr-list.no-padding {
+    padding: 0 !important;
+}
 
 .newsWrapper .newsEvents.firstChild{
     padding-top: 0;
@@ -260,14 +263,6 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 }
 #upcoming-events .WebcastDetails img{display:block; margin-bottom: 10px;}
 
-
-@media screen and (max-width:991px) {
-    #webcasts-demand .pr-list,
-    #webcasts-demand .pr-list .product-category-list {
-        padding: 0;
-    }
-}
-
 @media screen and (max-width:1024px) {
     .ios-alert {
         font-weight: bold;
@@ -276,6 +271,21 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
         font-size: 1.25rem;
         font-family: museo-sans;
         margin-top: -15px;
+    }
+    #webcasts-demand .pr-list,
+    #webcasts-demand .pr-list .product-category-list {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+@media screen and (max-width:991px) {
+    #webcasts-demand .pr-list,
+    #webcasts-demand .pr-list .product-category-list {
+        padding: 0;
+    }
+    .tabbing-container .content-container.container-fluid {
+        margin-right: -15px;
+        margin-left: -15px;
     }
 }
 @media screen and (max-width:991px) {
@@ -441,12 +451,12 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
         margin: 30px 0 20px;
     }
     .daterangepicker .calendar.left {
-        margin-right: 7px;
-        width: 47%;
+        margin-right: 0;
+        width: 49%;
     }
     .daterangepicker .calendar.right {
         float: right;
-        width: 50%;
+        width: 49%;
     }
     .red-boader-bttn {
         display: table;
@@ -772,12 +782,12 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
         margin: 30px 0 20px;
     }
     .daterangepicker .calendar.left {
-        margin-right: 7px;
-        width: 47%;
+        margin-right: 0px;
+        width: 49%;
     }
     .daterangepicker .calendar.right {
         float: right;
-        width: 50%;
+        width: 49%;
     }
     .red-boader-bttn {
         display: table;
@@ -790,13 +800,13 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
 
 @media screen and (min-width:992px) and (max-width:1190px) {
 #upcoming-events {
-    padding-left:15px; padding-right:15px;
+    padding-left:0px; padding-right:0px;
     }
 
  body.eventlanding .common-hero-banner .common-hero-banner-container .request {
    margin-bottom: 50px;
 }
-    body.eventlanding .custom-nav-tabs ul{padding-left:20px;}
+    body.eventlanding .custom-nav-tabs ul{padding-left:0px;}
 }
 
 .date-picker {
@@ -1331,6 +1341,29 @@ display:none;
 .eventlanding .common-hero-banner .common-hero-banner-container .headline{margin-top:20px;}
 .eventlanding .common-hero-banner-container h4.sub-headline{margin-top:20px;}
 
+.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .filter-option{
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #cc0000;
+    font-weight: 800;
+}
+
+.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret{
+    background: url("../images/select-down-arrow.png") no-repeat 0 6px;
+    width: 14px;
+    height: 18px;
+    display: inline-block;
+}
+.event-date-panel  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+    width: auto;
+}
+
+.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret .caret{
+    border: none;
+}
+#webcasts-demand .product-category-list{overflow-x:hidden}
+
 @media screen and (max-width:991px) {
     .res-search-main .pr-search {
         float: none;
@@ -1363,7 +1396,6 @@ display:none;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 145px;
     }
 }
 
@@ -1371,13 +1403,20 @@ display:none;
     .custom_selectBox_red .bootstrap-select.btn-group .dropdown-toggle .filter-option {
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 160px;
     }
     .custom_selectBox_red .bootstrap-select.btn-group .dropdown-toggle .caret {
         right: 32px;
     }
 }
-
+@media only screen and (max-width: 1024px){
+    .news-content-box{ padding:0 0 0 30px}
+    .event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret {
+        background-position: 0 0;
+    }
+    #contentWebCast .newsWrapper {
+        padding-right: 15px;  
+    }
+}
 @media screen and (max-width:991px) {
     .event-date-panel {
         padding-left: 11px;
@@ -1393,32 +1432,11 @@ display:none;
         padding-right: 15px;
         padding-top: 20px;
     }
-}
-.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .filter-option{
-    font-family: "museo-sans",Helvetica,Arial,sans-serif;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    color: #cc0000;
-    font-weight: 800;
+    .event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret {
+        background-position: 0 6px;
+    }
 }
 
-.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret{
-    background: url("../images/select-down-arrow.png") no-repeat 0 6px;
-    width: 20px;
-    height: 18px;
-    display: inline-block;
-}
-.event-date-panel  .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
-    width: auto;
-}
-
-.event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret .caret{
-    border: none;
-}
-#webcasts-demand .product-category-list{overflow-x:hidden}
-@media only screen and (max-width: 1024px){
-.news-content-box{ padding:0 0 0 30px}
-}
 @media only screen and (max-width: 767px){
 .eventlanding .common-hero-banner-container .sub-headline{margin-bottom:0px; margin-top:30px;}
 .eventlanding .common-hero-banner .common-hero-banner-container .headline{margin-top:20px;}
