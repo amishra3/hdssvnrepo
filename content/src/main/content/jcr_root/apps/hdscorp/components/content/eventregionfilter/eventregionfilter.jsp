@@ -17,7 +17,7 @@
 <c:set var="evemodval" value="${eventRegionFilterModel.seenextthreemonth}" scope="application" />
 
 <div class="tabbing-container">
-	<div class="content-container">
+	<div class="content-container container-fluid">
 		<div class="custom-nav-tabs">
 		<c:set var="tabEventList" value="<%=PageUtils.convertMultiWidgetToList(properties,"etptabname-etptabid")%>" />
 
