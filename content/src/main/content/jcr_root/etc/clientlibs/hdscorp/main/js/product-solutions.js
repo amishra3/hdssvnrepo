@@ -295,6 +295,7 @@ if($('.resources-category-box').length!==0){
 			equalColumns('.service-infra .news-resources-col');
 			equalColumns('.solution-section .solution-category-box');
 			equalColumns('.stay_touch_container .comment_box');
+			equalColumns('.product-list-section .panel-box');
         }, 500);
 	}, false);
 
@@ -316,6 +317,7 @@ if($('.resources-category-box').length!==0){
 		equalColumns('.service-infra .news-resources-col');
 		equalColumns('.solution-section .solution-category-box');
 		equalColumns('.stay_touch_container .comment_box');
+		equalColumns('.product-list-section .panel-box');
     }, 500);
 
 })(jQuery);

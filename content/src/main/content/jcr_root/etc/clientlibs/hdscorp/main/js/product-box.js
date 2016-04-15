@@ -14,5 +14,5 @@ var hds = window.hds || {};
 
 
 $(function() {
-    hds.equalColoumns.init();
+    //hds.equalColoumns.init();
 })
