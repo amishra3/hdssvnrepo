@@ -279,6 +279,10 @@ public final class ServiceConstants {
 	public static final String LML_CHILD_NODE= "childNode";
 	public static final String DATE_FORMAT_TO_DISPLAY_LML = "MM/dd/yyyy";
 	
+	public static final String DATE_FORMAT_TO_FEED_LML = "MM/dd/yyyy HH:mm:ss a";
+	
+	
+	
 	/**
 	 * Shorten URL
 	 */
