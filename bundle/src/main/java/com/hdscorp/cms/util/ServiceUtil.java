@@ -243,62 +243,18 @@ public class ServiceUtil {
 
 		Period p = new Period(beforeDST, afterDST);
 
-		if (p.getYears() >= 1) {
-			if (p.getYears() == 1)
-				feedPostedTime.append(p.getYears()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_ONE_YEAR_MESSAGE);
-			else
-				feedPostedTime.append(p.getYears()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_YEARS_MESSAGE);
-
-		} else if (p.getMonths() >= 1) {
-			if (p.getMonths() == 1)
-				feedPostedTime.append(p.getMonths()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_ONE_MONTH_MESSAGE);
-			else
-				feedPostedTime.append(p.getMonths()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_MONTHS_MESSAGE);
-
-		} else if (p.getWeeks() >= 1) {
-			if (p.getWeeks() == 1)
-				feedPostedTime.append(p.getWeeks()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_ONE_WEEK_MESSAGE);
-			else
-				feedPostedTime.append(p.getWeeks()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_WEEKS_MESSAGE);
-
-		}
-
-		else if (p.getDays() >= 1) {
-			if (p.getDays() == 1)
-				feedPostedTime.append(p.getDays()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
-			else
-				feedPostedTime.append(p.getDays()).append(ServiceConstants.EMPTY_SPACE)
-						.append(ServiceConstants.TW_FEED_POSTED_DAYS_MESSAGE);
-		} else {
-			if (p.getHours() >= 1 && p.getHours() < ServiceConstants.HOURS_IN_DAY) {
-				if (p.getHours() == 1)
-					feedPostedTime.append(p.getHours()).append(ServiceConstants.EMPTY_SPACE)
-							.append(ServiceConstants.TW_FEED_POSTED_ONE_HOUR_MESSAGE);
-				else
-					feedPostedTime.append(p.getHours()).append(ServiceConstants.EMPTY_SPACE)
-							.append(ServiceConstants.TW_FEED_POSTED_HOURS_MESSAGE);
-			} else {
-				if (p.getMinutes() == 1)
-					feedPostedTime.append(p.getMinutes()).append(ServiceConstants.EMPTY_SPACE)
-							.append(ServiceConstants.TW_FEED_POSTED_ONE_MIN_MESSAGE);
-				else
-					feedPostedTime.append(p.getMinutes()).append(ServiceConstants.EMPTY_SPACE)
-							.append(ServiceConstants.TW_FEED_POSTED_MINS_MESSAGE);
-			}
-
-		}
+		if(p.getDays()==0){
+			feedPostedTime.append(p.getDays()+1).append(ServiceConstants.EMPTY_SPACE)
+			.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
+		}else{
+			feedPostedTime.append(p.getDays()+1).append(ServiceConstants.EMPTY_SPACE)
+					.append(ServiceConstants.TW_FEED_POSTED_DAYS_MESSAGE);
+		}		
 		log.info("feed post time ::" + feedPostedTime);
 		return feedPostedTime.toString();
 
 	}
-
+	
 	public static String getMonth(int month) {
 		String[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
 				"October", "November", "December" };
