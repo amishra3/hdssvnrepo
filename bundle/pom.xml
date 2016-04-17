@@ -89,8 +89,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.adobe.acs</groupId>
-			<artifactId>acs-aem-commons-bundle</artifactId>
-			<scope>provided</scope>            
+			<artifactId>acs-aem-commons-bundle</artifactId>          
 		</dependency>
 		<dependency>
 			<groupId>javax.inject</groupId>
