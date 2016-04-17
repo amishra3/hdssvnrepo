@@ -134,7 +134,7 @@
                             <target>/apps/hdscorp/install</target>
                         </embedded>
                     </embeddeds>
-
+                    <!-- 
                     <subPackages>
                         <subPackage>
                             <groupId>com.adobe.acs</groupId>
@@ -142,6 +142,7 @@
                             <filter>true</filter>
                         </subPackage>
                     </subPackages>
+                    -->
 
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                 </configuration>
