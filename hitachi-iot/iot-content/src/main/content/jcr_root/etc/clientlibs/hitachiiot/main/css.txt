@@ -48,3 +48,6 @@ contact-us-locations.css
 /etc/clientlibs/hitachiiot/main/css/iot-homepage-main-hero.css
 /etc/clientlibs/hitachiiot/main/css/iot-homepage-market-leader.css
 /etc/clientlibs/hitachiiot/main/css/iot-global-footer.css
+/etc/clientlibs/hitachiiot/main/css/iot-solutions-hero.css
+/etc/clientlibs/hitachiiot/main/css/iot-solutions-market-leader.css
+

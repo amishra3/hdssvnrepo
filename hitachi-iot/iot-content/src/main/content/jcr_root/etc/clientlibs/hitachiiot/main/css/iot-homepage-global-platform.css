@@ -24,19 +24,24 @@ html {
 /* BOOTSTRAP OVERRIDES */
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
+
 .icon-home {
   width: $icon-home-width;
 }
+
 The large array-like variables contain all information about a single icon
 $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
 /*
 The provided mixins are intended to be used with the array-like variables
+
 .icon-home {
   @include sprite-width($icon-home);
 }
+
 .icon-email {
   @include sprite($icon-email);
 }
@@ -44,6 +49,7 @@ The provided mixins are intended to be used with the array-like variables
 /*
 The `sprites` mixin generates identical output to the CSS template
   but can be overridden inside of SCSS
+
 @include sprites($spritesheet-sprites);
 */
 /* line 1, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
@@ -175,7 +181,7 @@ button.cta-scroll-top span {
 /* line 103, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .icon-arrow-scroll-top {
   background-image: url(../images/sprite.png);
-  background-position: -283px -296px;
+  background-position: -225px -296px;
   width: 26px;
   height: 14px;
   margin-left: auto;
@@ -279,36 +285,439 @@ button.cta-scroll-top .text-return {
 .global-platform .global-platform-container .global-platform-content {
   text-align: right;
   margin: 12% 0;
+  float: right;
 }
 
-/* line 31, stdin */
+/* line 32, stdin */
 .global-platform .global-platform-container .global-platform-content h1 {
-  margin: 0;
+  margin: 0 0 20px 0;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 3em;
   line-height: 1;
   color: #ffffff;
 }
 
-/* line 39, stdin */
+/* line 40, stdin */
 .global-platform .global-platform-container .global-platform-content h4 {
   margin-bottom: 25px;
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.125em;
+  font-size: 1.5625em;
   line-height: 1;
   color: #ffffff;
   text-transform: uppercase;
 }
 
-/* line 48, stdin */
+/* line 47, stdin */
 .global-platform .global-platform-container .global-platform-content p {
   margin-bottom: 20px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'museo-sans', Arial, sans-serif;
   font-weight: 100;
-  font-size: 0.75em;
+  font-size: 1.125em;
   line-height: 1;
+  line-height: 28px;
+  color: #ffffff;
+  line-height: 175%;
+}
+
+/* line 57, stdin */
+.global-platform .global-platform-container .global-platform-content .btn-transparent-square {
+  display: inline-block;
+  height: auto;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 0.8125em;
+  line-height: 1;
+  letter-spacing: 3px;
+  background-color: transparent;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+/* line 168, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+.global-platform .global-platform-container .global-platform-content .btn-transparent-square:hover {
+  background-color: #ffffff;
+  color: #ce0000;
+}
+
+/* line 171, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+.global-platform .global-platform-container .global-platform-content .btn-transparent-square:hover a {
+  color: #ce0000;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 74, stdin */
+  .global-platform .global-platform-container {
+    text-align: center;
+  }
+  /* line 77, stdin */
+  .global-platform .global-platform-container .global-platform-content {
+    display: inline-block;
+    float: none;
+    margin: 10% auto;
+  }
+  /* line 82, stdin */
+  .global-platform .global-platform-container .global-platform-content h1 {
+    margin: 40px 0 20px;
+    font-size: 2em;
+    line-height: 1;
+  }
+  /* line 87, stdin */
+  .global-platform .global-platform-container .global-platform-content h4 {
+    font-size: 1.125em;
+    line-height: 1;
+    text-transform: uppercase;
+    line-height: 140%;
+  }
+  /* line 93, stdin */
+  .global-platform .global-platform-container .global-platform-content p {
+    margin-bottom: 40px;
+    font-size: .9em;
+  }
+  /* line 98, stdin */
+  .global-platform .global-platform-container .global-platform-content .learn-more {
+    font-size: 0.6875em;
+    line-height: 1;
+  }
+  /* line 102, stdin */
+  .global-platform .global-platform-container .global-platform-image {
+    float: none;
+    margin-bottom: 20px;
+  }
+  /* line 106, stdin */
+  .global-platform .global-platform-container .global-platform-image img {
+    margin: 10px 0 0 8%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 120, stdin */
+  .global-platform .global-platform-container .global-platform-content .global-platform-image img {
+    max-width: 75%;
+  }
+  /* line 124, stdin */
+  .global-platform .global-platform-container .global-platform-content .btn-transparent-square {
+    display: block;
+  }
+}/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+html {
+  font-size: 16px !important;
+}
+
+/*bootstrap override start*/
+/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+.row-no-margin {
+  margin: 0 !important;
+}
+
+/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+.row-reduce-half {
+  margin-left: -7.5px !important;
+  margin-right: -7.5px !important;
+}
+
+/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+.col-no-pad {
+  padding: 0 !important;
+}
+
+/*bootstrap override end*/
+/* BOOTSTRAP OVERRIDES */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+/* line 1, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square {
+  padding: 8px 35px;
+  border: 1px solid;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+/* line 8, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square.-white {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* line 12, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square.-red {
+  color: #ce0000;
+  border-color: #ce0000;
+}
+
+/* line 18, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+[class|="btn-square"] {
+  padding: 8px 35px;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+}
+
+/* line 28, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-white {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+/* line 31, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-white a {
+  color: #ffffff;
+}
+
+/* line 36, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-red {
+  border: 1px solid #ce0000;
+  color: #ce0000;
+}
+
+/* line 39, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-red a {
+  color: #ce0000;
+}
+
+/* line 44, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-features {
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #ce0000;
+}
+
+/* line 48, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-features:hover {
+  color: #ce0000;
+}
+
+/* line 53, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-clear {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+/* line 56, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-square-clear a {
+  color: #ffffff;
+}
+
+/* line 62, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+button.cta-scroll-top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  outline: 0;
+  border: 0;
+  display: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: .7rem;
+  line-height: .9rem;
+  cursor: pointer;
+  letter-spacing: .15em;
+  z-index: 1031;
+  width: 77px;
+  height: 77px;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  transition-property: background-color, box-shadow, transform;
+  background-color: #8f8f8f;
+  background-color: rgba(131, 131, 131, 0.9);
+  color: #ffffff;
+}
+
+/* line 92, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+button.cta-scroll-top:hover {
+  background-color: #757575;
+  background-color: rgba(102, 102, 102, 0.9);
+}
+
+/* line 96, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+button.cta-scroll-top.active {
+  display: inline-block;
+}
+
+/* line 100, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+button.cta-scroll-top span {
+  display: inline-block;
+}
+
+/* line 103, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+button.cta-scroll-top .icon-arrow-scroll-top {
+  background-image: url(../images/sprite.png);
+  background-position: -225px -296px;
+  width: 26px;
+  height: 14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 108, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+button.cta-scroll-top .text-return {
+  margin-top: 7px;
+}
+
+/* line 114, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-transparent-square {
+  position: relative;
+  height: 40px;
+  max-width: 375px;
+  margin: 0 auto;
+  border: 2px solid #FFFFFF;
+  font-size: 13px;
+  color: #FFFFFF;
+  letter-spacing: 2.75px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+/* line 132, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+.btn-transparent-square:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 135, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+.btn-transparent-square:hover a {
+  color: #ffffff;
+}
+
+/* line 127, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-transparent-square p {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* line 133, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+.btn-transparent-square a {
+  color: #FFFFFF;
+  outline: 0;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 142, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  button.cta-scroll-top {
+    position: absolute;
+    display: inline-block;
+    font-size: .5rem;
+    line-height: .7rem;
+    width: 68px;
+    height: 68px;
+  }
+  /* line 150, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  button.cta-scroll-top .text-return {
+    margin-top: 5px;
+  }
+  /* line 155, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  .btn-transparent-square {
+    max-width: 300px;
+    min-height: 36px;
+  }
+}
+
+/* line 7, stdin */
+.global-platform {
+  background: url("../images/global-platform-bg.jpg");
+  padding: 0 15px;
+}
+
+/* line 11, stdin */
+.global-platform .global-platform-container {
+  position: relative;
+  text-align: center;
+}
+
+/* line 15, stdin */
+.global-platform .global-platform-container a:hover,
+.global-platform .global-platform-container a:active {
+  text-decoration: none;
+}
+
+/* line 21, stdin */
+.global-platform .global-platform-container .global-platform-image img {
+  margin-top: 50%;
+  max-width: 100%;
+}
+
+/* line 27, stdin */
+.global-platform .global-platform-container .global-platform-content {
+  text-align: right;
+  margin: 12% 0;
+  float: right;
+}
+
+/* line 32, stdin */
+.global-platform .global-platform-container .global-platform-content h1 {
+  margin: 0 0 20px 0;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 3em;
+  line-height: 1;
+  color: #ffffff;
+}
+
+/* line 40, stdin */
+.global-platform .global-platform-container .global-platform-content h4 {
+  margin-bottom: 25px;
+  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+  font-size: 1.5625em;
+  line-height: 1;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* line 47, stdin */
+.global-platform .global-platform-container .global-platform-content p {
+  margin-bottom: 20px;
+  font-family: 'museo-sans', Arial, sans-serif;
+  font-weight: 100;
+  font-size: 1.125em;
+  line-height: 1;
+  line-height: 28px;
   color: #ffffff;
   line-height: 175%;
 }

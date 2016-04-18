@@ -181,7 +181,7 @@ button.cta-scroll-top span {
 /* line 103, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .icon-arrow-scroll-top {
   background-image: url(../images/sprite.png);
-  background-position: -283px -296px;
+  background-position: -225px -296px;
   width: 26px;
   height: 14px;
   margin-left: auto;
@@ -259,14 +259,12 @@ button.cta-scroll-top .text-return {
 
 /* line 8, stdin */
 .iot-hero {
-  background: url(../images/HDS_IoT_Desktop_home_hero_bg.jpg) no-repeat;
-  position: relative;
-  z-index: -100;
+  background: transparent;
   padding-top: 150px;
   background-size: cover;
 }
 
-/* line 12, stdin */
+/* line 10, stdin */
 .iot-hero #bgvid {
   position: absolute;
   top: 0;
@@ -284,13 +282,13 @@ button.cta-scroll-top .text-return {
     background-position: top left;
     padding-top: 60px;
   }
-  /* line 24, stdin */
+  /* line 22, stdin */
   .iot-hero #bgvid {
     display: none;
   }
 }
 
-/* line 31, stdin */
+/* line 29, stdin */
 .iot-hero h1 {
   text-align: left;
   color: #ffffff;
@@ -302,14 +300,14 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 31, stdin */
+  /* line 29, stdin */
   .iot-hero h1 {
     width: 100%;
     font-size: 36px;
   }
 }
 
-/* line 44, stdin */
+/* line 42, stdin */
 .iot-hero h4.sub-headline {
   text-align: left;
   width: 73%;
@@ -321,18 +319,20 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 44, stdin */
+  /* line 42, stdin */
   .iot-hero h4.sub-headline {
     width: 100%;
     font-size: 16px;
   }
 }
 
-/* line 57, stdin */
+/* line 55, stdin */
 .iot-hero .features {
   width: 100%;
   display: block;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 /* line 61, stdin */

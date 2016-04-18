@@ -4,32 +4,36 @@
 <%@ taglib prefix="wcmmode" uri="http://www.adobe.com/consulting/acs-aem-commons/wcmmode" %>
 <%@ taglib prefix="wcm" uri="http://www.adobe.com/consulting/acs-aem-commons/wcm" %>
 
-
+<c:set var="imageallignment" value="<%=properties.get("imageallignment")%>"/>
+<c:set var="textallignment" value="<%=properties.get("textallignment")%>" />
+<c:set var="greybackground" value="<%=properties.get("greybackground")%>" />
 
 <c:choose>
 <c:when test="${not empty properties.headlinecontent}">
-<div> 
-	<h2>${properties.headlinecontent}</h2>
-	<p>${properties.descriptioncontent}</p>
-	<img src="${backgroundstyle}" />
-	<c:if test="${not empty properties.infographicimage}">
-		<img src="${properties.infographicimage}" />
-	</c:if>
-	<c:set var="linkUrl" value="${properties.buttonurl}" />
-	<c:choose>
-		<c:when test="${fn:startsWith(linkUrl,'/content/')}">
-			<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
-		</c:when>
-		<c:otherwise>
-			<c:set var="linkUrl" value="${linkUrl}"/>
-		</c:otherwise>
-	</c:choose>
-	
-	<c:if test="${not empty properties.buttonlabel}">
-		<a href="${fn:contains(linkUrl, 'http')?'':domain}${linkUrl}" target="${properties.buttontargettype?'_blank':'_self'}" title="${properties.buttonlabel}">${properties.buttonlabel}</a>
-	</c:if>
-		
+
+<div class="solutions-page market-leader clearfix">
+	<div class="market-leader-container content-container">
+		<div class="market-leader-image col-lg-6  col-sm-12 ">
+			<a href="javascript:void(0);" class="btn-play-video">
+				<img src="${properties.infographicimage}" alt="">
+				<img src="${properties.infographiciconpath}" alt="expand image" class="expand-box ">
+			</a>
+		</div>
+		<div class="market-leader-content col-lg-6 col-sm-12 ">
+			<h1>${properties.headlinecontent}</h1>
+			 ${properties.descriptioncontent}
+			<a href="${properties.buttonurl}" class="btn-square-red">${properties.buttonlabel}</a>
+		</div>
+
+		<div class="common-hero-banner video clearfix col-md-12">
+			<div class="common-hero-banner-container">
+					<a class="close-hero" href="javascript:void(0);" ><span class="sprite icon-close-hero"></span></a>
+					 <img src="${properties.infographicimage}" alt="">
+			</div>
+		</div>
+	</div>
 </div>
+
 </c:when>
 <c:otherwise>
 	<wcmmode:edit>

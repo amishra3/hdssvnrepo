@@ -32,3 +32,4 @@ asset-gating.js
 hds-training-detail.js
 hds-office-loaction.js
 hds-service-training.js
+/etc/clientlibs/hitachiiot/main/js/iot-homepage-market-leader.js

@@ -52,25 +52,19 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
-/* line 7, stdin */
-.footer button.cta-scroll-top {
-  bottom: 30px;
-  right: 60px;
-}
-
-/* line 12, stdin */
+/* line 8, stdin */
 .footer .footer-container a:hover,
 .footer .footer-container a:active {
   text-decoration: none;
 }
 
-/* line 18, stdin */
+/* line 14, stdin */
 .footer .footer-white {
   margin: 4em 0;
   background: #ffffff !important;
 }
 
-/* line 23, stdin */
+/* line 19, stdin */
 .footer .footer-white .footer-container p {
   margin: 0;
   padding: 20px 0;
@@ -80,12 +74,12 @@ The `sprites` mixin generates identical output to the CSS template
   line-height: 1;
 }
 
-/* line 30, stdin */
+/* line 26, stdin */
 .footer .footer-white .footer-container p a {
   color: #000000;
 }
 
-/* line 35, stdin */
+/* line 31, stdin */
 .footer .footer-white .footer-container h3 {
   margin-bottom: 20px;
   font-family: Arial, sans-serif;
@@ -95,12 +89,12 @@ The `sprites` mixin generates identical output to the CSS template
   color: #000000;
 }
 
-/* line 43, stdin */
+/* line 39, stdin */
 .footer .footer-white .footer-container .footer-title {
   margin-top: 0;
 }
 
-/* line 49, stdin */
+/* line 45, stdin */
 .footer .footer-white .footer-container .footer-links li,
 .footer .footer-white .footer-container .copyright-links li {
   display: inline-block;
@@ -108,7 +102,7 @@ The `sprites` mixin generates identical output to the CSS template
   list-style-type: none;
 }
 
-/* line 54, stdin */
+/* line 50, stdin */
 .footer .footer-white .footer-container .footer-links li a,
 .footer .footer-white .footer-container .copyright-links li a {
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -118,17 +112,23 @@ The `sprites` mixin generates identical output to the CSS template
   color: #000000;
 }
 
-/* line 64, stdin */
+/* line 60, stdin */
 .footer .footer-white .footer-container .footer-links {
   margin-bottom: 2.5em;
 }
 
-/* line 67, stdin */
+/* line 62, stdin */
+.footer .footer-white .footer-container .footer-links:nth-of-type(2) {
+  margin-bottom: 0;
+}
+
+/* line 66, stdin */
 .footer .footer-white .footer-container .footer-links li .innovation-link {
-  margin-bottom: 1em;
+  margin-bottom: 0;
   color: #ce0000;
   text-transform: uppercase;
   font-weight: 700;
+  padding: 0;
 }
 
 /* line 72, stdin */

@@ -1,21 +1,21 @@
-/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 33, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
 html {
   font-size: 16px !important;
 }
 
 /*bootstrap override start*/
-/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 38, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
 .row-no-margin {
   margin: 0 !important;
 }
 
-/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 41, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
 .row-reduce-half {
   margin-left: -7.5px !important;
   margin-right: -7.5px !important;
 }
 
-/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 45, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
 .col-no-pad {
   padding: 0 !important;
 }
@@ -52,7 +52,7 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
-/* line 1, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 1, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square {
   padding: 8px 35px;
   border: 1px solid;
@@ -62,19 +62,19 @@ The `sprites` mixin generates identical output to the CSS template
   letter-spacing: .15em;
 }
 
-/* line 8, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 8, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-white {
   color: #ffffff;
   border-color: #ffffff;
 }
 
-/* line 12, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 12, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-red {
   color: #ce0000;
   border-color: #ce0000;
 }
 
-/* line 18, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 18, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 [class|="btn-square"] {
   padding: 8px 35px;
   font-size: .8em;
@@ -84,52 +84,52 @@ The `sprites` mixin generates identical output to the CSS template
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 
-/* line 28, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 28, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 31, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 31, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white a {
   color: #ffffff;
 }
 
-/* line 36, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 36, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red {
   border: 1px solid #ce0000;
   color: #ce0000;
 }
 
-/* line 39, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 39, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red a {
   color: #ce0000;
 }
 
-/* line 44, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 44, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features {
   border: 1px solid #ffffff;
   background-color: #ffffff;
   color: #ce0000;
 }
 
-/* line 48, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 48, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features:hover {
   color: #ce0000;
 }
 
-/* line 53, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 53, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 56, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 56, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear a {
   color: #ffffff;
 }
 
-/* line 62, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 62, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top {
   position: fixed;
   bottom: 10px;
@@ -162,38 +162,38 @@ button.cta-scroll-top {
   color: #ffffff;
 }
 
-/* line 92, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 92, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top:hover {
   background-color: #757575;
   background-color: rgba(102, 102, 102, 0.9);
 }
 
-/* line 96, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 96, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top.active {
   display: inline-block;
 }
 
-/* line 100, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 100, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top span {
   display: inline-block;
 }
 
-/* line 103, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 103, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .icon-arrow-scroll-top {
   background-image: url(../images/sprite.png);
-  background-position: -283px -296px;
+  background-position: -225px -296px;
   width: 26px;
   height: 14px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 108, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 108, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .text-return {
   margin-top: 7px;
 }
 
-/* line 114, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 114, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square {
   position: relative;
   height: 40px;
@@ -210,18 +210,18 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 132, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+/* line 132, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 135, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+/* line 135, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover a {
   color: #ffffff;
 }
 
-/* line 127, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 127, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square p {
   margin: 0;
   position: relative;
@@ -229,7 +229,7 @@ button.cta-scroll-top .text-return {
   transform: translateY(-50%);
 }
 
-/* line 133, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 133, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square a {
   color: #FFFFFF;
   outline: 0;
@@ -237,7 +237,7 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 142, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 142, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top {
     position: absolute;
     display: inline-block;
@@ -246,66 +246,77 @@ button.cta-scroll-top .text-return {
     width: 68px;
     height: 68px;
   }
-  /* line 150, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 150, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top .text-return {
     margin-top: 5px;
   }
-  /* line 155, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 155, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
   .btn-transparent-square {
     max-width: 300px;
     min-height: 36px;
   }
 }
 
-/* line 7, stdin */
-.market-leader {
+/* line 8, stdin */
+.solutions-page.market-leader {
   background: #ffffff;
   padding: 0 15px;
 }
 
-/* line 11, stdin */
-.market-leader .market-leader-container {
+/* line 12, stdin */
+.solutions-page.market-leader .market-leader-container {
   position: relative;
   text-align: center;
 }
 
 /* line 15, stdin */
-.market-leader .market-leader-container a:hover,
-.market-leader .market-leader-container a:active {
+.solutions-page.market-leader .market-leader-container a:hover,
+.solutions-page.market-leader .market-leader-container a:active {
   text-decoration: none;
 }
 
-/* line 20, stdin */
-.market-leader .market-leader-container .market-leader-image {
-  margin-top: 15%;
-  padding-top: 3.75em;
-  min-height: 275px;
+/* line 19, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-image {
+  margin: 10% 0;
+  padding-top: 2em;
 }
 
-/* line 24, stdin */
-.market-leader .market-leader-container .market-leader-image img {
-  margin: 10% auto 0;
-  max-width: 100%;
+/* line 22, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-image a {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 25, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-image a .expand-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /* line 30, stdin */
-.market-leader .market-leader-container .market-leader-content {
+.solutions-page.market-leader .market-leader-container .market-leader-image a img {
+  margin: 0;
+}
+
+/* line 36, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-content {
   margin: 10% 0;
   text-align: left;
 }
 
-/* line 34, stdin */
-.market-leader .market-leader-container .market-leader-content h1 {
+/* line 40, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-content h1 {
   margin-bottom: 30px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 3.75em;
   line-height: 1;
   color: #000000;
 }
 
-/* line 42, stdin */
-.market-leader .market-leader-container .market-leader-content h4 {
+/* line 48, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-content h4 {
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -314,20 +325,19 @@ button.cta-scroll-top .text-return {
   text-transform: uppercase;
 }
 
-/* line 50, stdin */
-.market-leader .market-leader-container .market-leader-content p {
+/* line 56, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-content p {
   margin-bottom: 20px;
-  font-family: 'museo-sans', Arial, sans-serif;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 100;
-  font-size: 1.125em;
+  font-size: 1em;
   line-height: 1;
   color: #000000;
   line-height: 175%;
-  padding-right: 10%;
 }
 
-/* line 60, stdin */
-.market-leader .market-leader-container .market-leader-content .btn-square-red {
+/* line 65, stdin */
+.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -340,51 +350,52 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 156, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
+/* line 156, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_mixins.scss */
+.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
   background-color: #ce0000;
   color: #ffffff;
 }
 
-/* line 159, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
+/* line 159, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_mixins.scss */
+.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
   color: #ffffff;
 }
 
-/* line 71, stdin */
-.market-leader .market-leader-container .common-hero-banner {
+/* line 76, stdin */
+.solutions-page.market-leader .market-leader-container .common-hero-banner {
   display: none;
   margin: 15% 0;
 }
 
-/* line 75, stdin */
-.market-leader .market-leader-container .common-hero-banner iframe {
+/* line 80, stdin */
+.solutions-page.market-leader .market-leader-container .common-hero-banner iframe {
   max-width: 100%;
   width: 70%;
   min-height: 500px;
 }
 
-/* line 81, stdin */
-.market-leader .market-leader-container .common-hero-banner .close-hero {
+/* line 86, stdin */
+.solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero {
   position: absolute;
   top: -25px;
   right: 0;
 }
 
-/* line 85, stdin */
-.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
+/* line 90, stdin */
+.solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
   background-image: url(../images/sprite.png);
   background-position: -248px -231px;
   width: 18px;
   height: 18px;
+  background-position: -239px -220px;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 97, stdin */
+  /* line 122, stdin */
   .market-leader .market-leader-container {
     text-align: center;
   }
-  /* line 100, stdin */
+  /* line 125, stdin */
   .market-leader .market-leader-container .market-leader-content {
     display: inline-block;
     float: none;
@@ -392,14 +403,14 @@ button.cta-scroll-top .text-return {
     padding: 0;
     text-align: left;
   }
-  /* line 107, stdin */
+  /* line 132, stdin */
   .market-leader .market-leader-container .market-leader-content h1 {
     margin: 40px 0 20px;
     font-size: 2em;
     line-height: 1;
     color: #000000;
   }
-  /* line 113, stdin */
+  /* line 138, stdin */
   .market-leader .market-leader-container .market-leader-content h4 {
     font-size: 1.125em;
     line-height: 1;
@@ -407,88 +418,42 @@ button.cta-scroll-top .text-return {
     text-transform: uppercase;
     line-height: 140%;
   }
-  /* line 120, stdin */
+  /* line 145, stdin */
   .market-leader .market-leader-container .market-leader-content p {
     margin-bottom: 40px;
     color: #000000;
     font-size: .9em;
   }
-  /* line 126, stdin */
+  /* line 151, stdin */
   .market-leader .market-leader-container .market-leader-content .learn-more {
     font-size: 0.6875em;
     line-height: 1;
   }
-  /* line 130, stdin */
+  /* line 155, stdin */
   .market-leader .market-leader-container .market-leader-image {
     float: none;
     margin: 15% 0 5%;
   }
-  /* line 134, stdin */
+  /* line 159, stdin */
   .market-leader .market-leader-container .market-leader-image img {
     margin: 10px 0 0 5%;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  /* line 165, stdin */
-  .market-leader .market-leader-container {
-    text-align: center;
+@media only screen and (max-width: 480px) {
+  /* line 171, stdin */
+  .market-leader .market-leader-container .market-leader-image {
+    margin: 0;
   }
-  /* line 168, stdin */
-  .market-leader .market-leader-container .market-leader-content {
-    display: inline-block;
-    float: none;
-    margin: 0 auto 10%;
-    padding: 0;
-    text-align: left;
+  /* line 173, stdin */
+  .market-leader .market-leader-container .market-leader-image .expand-box {
+    display: none;
   }
-  /* line 175, stdin */
-  .market-leader .market-leader-container .market-leader-content h1 {
-    margin: 40px 0 20px;
-    font-size: 2em;
-    line-height: 1;
-    color: #000000;
+  /* line 176, stdin */
+  .market-leader .market-leader-container .market-leader-image img {
+    max-width: 100%;
   }
   /* line 181, stdin */
-  .market-leader .market-leader-container .market-leader-content h4 {
-    font-size: 1.125em;
-    line-height: 1;
-    color: #848484;
-    text-transform: uppercase;
-    line-height: 140%;
-  }
-  /* line 188, stdin */
-  .market-leader .market-leader-container .market-leader-content p {
-    margin-bottom: 40px;
-    color: #000000;
-    font-size: .9em;
-  }
-  /* line 194, stdin */
-  .market-leader .market-leader-container .market-leader-content .learn-more {
-    font-size: 0.6875em;
-    line-height: 1;
-  }
-  /* line 198, stdin */
-  .market-leader .market-leader-container .market-leader-image {
-    float: none;
-    margin: 15% 0 5%;
-  }
-  /* line 202, stdin */
-  .market-leader .market-leader-container .market-leader-image img {
-    margin: 33px 0 0 5%;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  /* line 214, stdin */
-  .market-leader .market-leader-container .market-leader-image {
-    margin-top: 0;
-  }
-  /* line 216, stdin */
-  .market-leader .market-leader-container .market-leader-image img {
-    max-width: 50%;
-  }
-  /* line 221, stdin */
   .market-leader .market-leader-container .market-leader-content .btn-square-red {
     display: block;
     max-width: 300px;

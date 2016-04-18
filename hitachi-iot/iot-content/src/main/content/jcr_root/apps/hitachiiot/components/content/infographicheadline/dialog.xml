@@ -33,15 +33,11 @@
                         fieldLabel="Provide Infographic Image"
                         name="./infographicimage"
                         xtype="pathfield"/>
-                    <infographicmobileimage
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Infographic Mobile Image (Optional)"
-                        name="./infographicmobileimage"
-                        xtype="ddpathfield"/>
-                    <infographicpathurl
+                    
+                    <infographiciconpath
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Infographic Icon Path URL"
-                        name="./infographicpathurl"
+                        name="./infographiciconpath"
                         xtype="pathfield"/>
                     <buttonlabel
                         jcr:primaryType="cq:Widget"
@@ -59,6 +55,24 @@
                         fieldLabel="Button Path URL"
                         name="./buttonurl"
                         xtype="pathfield"/>
+                    <imageallignment
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Image on Right?"
+                        name="./imageallignment"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <textallignment
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Right Indentation?"
+                        name="./textallignment"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <greybackground
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Grey Background"
+                        name="./greybackground"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
