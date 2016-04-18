@@ -50,3 +50,27 @@ function onVideoComplete(e) {
 //	    // element has gone out of viewport
 //	  }
 //});
+
+function isScrolledIntoView(elem) {
+    var $window = $(window),
+        docViewTop = $window.scrollTop(),
+        docViewBottom = docViewTop + $window.height(),
+        elemTop = $(elem).offset().top,
+        elemBottom = elemTop + $(elem).outerHeight();
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+$(window).on("scroll", function() {
+	if(video){
+	    $('#bgvid').each(function() {
+	        if (isScrolledIntoView(this)) {
+	        	video.play();
+	            $(this).addClass('red');
+	        } else {
+	        	video.pause();
+	            $(this).removeClass('red');
+	        }
+	    });
+	}
+});
+
