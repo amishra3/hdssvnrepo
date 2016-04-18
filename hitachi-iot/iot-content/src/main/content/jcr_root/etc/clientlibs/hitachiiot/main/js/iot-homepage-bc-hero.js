@@ -51,14 +51,6 @@ function onVideoComplete(e) {
 //	  }
 //});
 
-function isScrolledIntoView(elem) {
-    var $window = $(window),
-        docViewTop = $window.scrollTop(),
-        docViewBottom = docViewTop + $window.height(),
-        elemTop = $(elem).offset().top,
-        elemBottom = elemTop + $(elem).outerHeight();
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
 
 $(window).on("scroll", function() {
 	if(video){

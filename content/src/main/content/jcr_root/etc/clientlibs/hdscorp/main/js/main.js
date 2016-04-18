@@ -193,3 +193,13 @@ function gatedPdfIframeHeight(id) {
     ifrm.style.visibility = 'visible';
     document.getElementById('gated-pdf-loader').style.display = 'none';
 }
+
+
+function isScrolledIntoView(elem) {
+    var $window = $(window),
+        docViewTop = $window.scrollTop(),
+        docViewBottom = docViewTop + $window.height(),
+        elemTop = $(elem).offset().top,
+        elemBottom = elemTop + $(elem).outerHeight();
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
