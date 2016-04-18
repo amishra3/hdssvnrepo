@@ -60,14 +60,12 @@ public class LMSImporterService {
 				if (parentNode != null) {
 					parentNode.remove();
 					session.save();
-					parentNode = session.getNode(storagePath.substring(0, storagePath.lastIndexOf(forwardSlash)));
-					log.info("parentNode value::::" + storagePath.substring(0, storagePath.lastIndexOf(forwardSlash)));					
+					parentNode = session.getNode(storagePath.substring(0, storagePath.lastIndexOf(forwardSlash)));			
 					if (storagePath.lastIndexOf(forwardSlash) != -1) {
 						nodeName = storagePath.substring(storagePath.lastIndexOf(forwardSlash) + 1);
 					}
 					if (parentNode != null) {
 						Page page = createPath(parentNode.getPath(), session, null, nodeName, "LMS Data");
-						log.info("page::" + page.getPath());
 
 					}
 
@@ -166,14 +164,16 @@ public class LMSImporterService {
 						prodPage = createPath(
 								parentNode.getPath().concat(forwardSlash) + LMSbean.getIltFacilityCountry().replaceAll(" ", "-"),
 								session, null, pageName.toString(), LMSbean.getIltFacilityCountry());
-						creatNode(prodPage.getPath(), LMSbean);
 						session.save();
+						creatNode(prodPage.getPath(), LMSbean);
+					
 					} else {
 						prodPage = createPath(
 								parentNode.getPath().concat(forwardSlash) + LMSbean.getIltFacilityCountry().replaceAll(" ", "-"),
 								session, null, pageName.toString(), LMSbean.getIltFacilityCountry());
-						creatNode(prodPage.getPath(), LMSbean);
 						session.save();
+						creatNode(prodPage.getPath(), LMSbean);
+						
 					}
 
 				}
@@ -274,6 +274,7 @@ public class LMSImporterService {
 			rootChildNode.setProperty(ServiceConstants.LML_TRANING_PRICE, LMSbean.getTrainingPrice());
 			rootChildNode.setProperty(ServiceConstants.LML_COURSE_DEEP_LINK, LMSbean.getCourseDeeplink());
 			rootChildNode.setProperty(ServiceConstants.LML_CHILD_NODE, "true");
+			rootChildNode.save();
 		} catch (Exception e) {
 			StringWriter stack = new StringWriter();
 			e.printStackTrace(new PrintWriter(stack));
