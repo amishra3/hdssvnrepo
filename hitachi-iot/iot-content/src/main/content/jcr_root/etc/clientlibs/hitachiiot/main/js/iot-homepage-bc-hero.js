@@ -42,27 +42,16 @@ function onVideoComplete(e) {
 	video.play();
 }
 
-//$("#bgvid").on('inview', function(event, isInView) {
-//	if (isInView) {
-//		alert("sds "+isInView);
-//	}else {
-//		alert("element has gone out of viewport");
-//	    // element has gone out of viewport
-//	  }
+
+//$(window).on("scroll", function() {
+//	if(video){
+//	    $('#bgvid').each(function() {
+//	        if (isScrolledIntoView(this)) {
+//	        	video.play();
+//	        } else {
+//	        	video.pause();
+//	        }
+//	    });
+//	}
 //});
-
-
-$(window).on("scroll", function() {
-	if(video){
-	    $('#bgvid').each(function() {
-	        if (isScrolledIntoView(this)) {
-	        	video.play();
-	            $(this).addClass('red');
-	        } else {
-	        	video.pause();
-	            $(this).removeClass('red');
-	        }
-	    });
-	}
-});
-
+//
