@@ -14,8 +14,10 @@
 <%@include file="/apps/foundation/global.jsp"%>
 
 <c:set var="childPages" value="<%=PageUtils.getChildPages(properties.get("rootPath", ""),resourceResolver)%>" />
+<c:set var="hideSearch" value="<%=properties.get("hidesearch", false)%>" />
 
 <c:set var="logoTargetURL" value="${properties.	imageurl}" />
+<c:set var="hdslogotitle" value="<%=properties.get("hdslogotitle", "Hitachi Data Systems")%>" />
 <c:if test="${fn:startsWith(logoTargetURL,'/content/')}">
 	<c:set var="logoTargetURL" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("logoTargetURL").toString())%>" />
 </c:if>
@@ -90,10 +92,11 @@
                           </c:otherwise>
                        </c:choose>
 				    </c:forEach>
-
+                 <c:if test="${!hideSearch}">
 					<li class="search"><input type="text"
 						placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}" id="gsaSearchBox"><span
 						class="icon nav-search"></span></li>
+				  </c:if>
 				</ul>
 			</div>
 
@@ -104,6 +107,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
+			<c:if test="${!hideSearch}">
 			<div class="search-mobile hidden-md hidden-lg">
 				<span class="sprite icon-search-mobile"></span>
 			</div>
@@ -118,6 +122,7 @@
                     </div>
                 </div>
             </div>
+            </c:if>
 	        <!--Geo OverLay-->
             <c:if test="${not empty linkoverlayURLPath}" >
                 <sling:include path="${linkoverlayURLPath}" />
@@ -128,9 +133,8 @@
 		<div class="hds-main-navigation">
 			<div class="col-md-3">
 				<a href="${fn:contains(logoTargetURL, 'http')?'':domain}${hdscorp:shortURL(logoTargetURL)}"> <span
-					class="sprite hitachi-sublogo-mobile hidden-sm hidden-md hidden-lg">Hitachi
-						Data Systems</span><span class="sprite hitachi-sublogo hidden-xs">Hitachi
-						Data Systems</span>
+					class="sprite hitachi-sublogo-mobile hidden-sm hidden-md hidden-lg">${hdslogotitle}</span>
+					<span class="sprite hitachi-sublogo hidden-xs">${hdslogotitle}</span>
 				</a>
 			</div>
 

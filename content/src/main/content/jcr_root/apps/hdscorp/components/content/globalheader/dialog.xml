@@ -26,6 +26,7 @@
                         name="./topnewwin"
                         type="checkbox"
                         xtype="selection"/>
+                    
                     <imgurl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Logo URL"
@@ -94,6 +95,12 @@
                         fieldLabel="Search Path URL"
                         name="./searchpathurl"
                         xtype="pathfield"/>
+                    <hidesearch
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Search"
+                        name="./hidesearch"
+                        type="checkbox"
+                        xtype="selection"/>    
                 </items>
             </tab2>
         </items>
