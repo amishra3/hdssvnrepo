@@ -3,9 +3,7 @@
 --%>
 
 <%@page session="false"%>
-
 <%@include file="/apps/foundation/global.jsp"%>
-
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 
@@ -19,58 +17,58 @@
 
 <c:choose>
 	<c:when test="${not empty properties.herotitlecontent}">
-		
+
 		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tablink-tabIconPath")%>" />
-	
-		
-	  <div class="iot-hero clearfix">
-	  
-	   <object id="bgvid" class="BrightcoveExperience" style="width: 100%; height: 100%; border: 2px solid orange;" >
-                <param name="bgcolor" value="#FFFFFF">
-                <param name="width" value="920">
-                <param name="height" value="517">
-                <param name="playerID" value="${videoid}">
-                <param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot">
-                <param name="isVid" value="true">
-                <param name="isUI" value="true">
-                <param name="dynamicStreaming" value="true">
-                <param name="@videoPlayer" value="${videoid}">
-                <param name="secureConnections" value="true"> 
-                <param name="includeAPI" value="true">
-                <param name="templateLoadHandler" value="myTemplateLoaded">
-                <param name="autoStart" value="true">
-                <param name="wmode" value="transparent" />
-            </object>
-       <div class="iot-hero-container content-container">
-        <h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
-        
-        <h4 class="sub-headline col-md-7">${properties.herosubtitlecontent}</h4>
 
-        <div class="features col-md-7">
-           <c:forEach var="tab" items="${tabList}">
-            <c:set var="tabTitle" value="${tab.tabTitle}" />
-			<c:set var="tablink" value="${tab.tablink}" />
-			<c:set var="tabIconPath" value="${tab.tabIconPath}" />
-            <div class="button-wrapper">
-                <a href="${tablink}" class="btn-square-features" style="background-image: url(${tabIconPath});">${tabTitle}</a>
-            </div>
-            </c:forEach>
-            
-        </div>
+		<div class="iot-hero clearfix">
 
-        <div class="features col-md-7">
-            <a href="${ourplatformurl}" class="btn-square-clear platform ">${properties.ourplatformlinktext}</a>
-        </div>
-    </div>
-</div>
+			<object id="bgvid" class="BrightcoveExperience"
+				style="width: 100%; height: 100%; border: 2px solid orange;">
+				<param name="bgcolor" value="#FFFFFF" />
+				<param name="width" value="100%" />
+				<param name="height" value="517" />
+				<param name="playerID" value="${videoid}" />
+				<param name="playerKey"
+					value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot">
+				<param name="@videoPlayer" value="${videoid}" />
+				<param name="isVid" value="true" />
+				<param name="autoStart" value="true" />
+				<param name="isVid" value="true" />
+				<param name="isUI" value="true" />
+				<param name="dynamicStreaming" value="true" />
+				<!--<param name="secureConnections" value="true"/>  -->
+			</object>
+			<div class="iot-hero-container content-container">
+				<h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
 
-</c:when>
+				<h4 class="sub-headline col-md-7">${properties.herosubtitlecontent}</h4>
+
+				<div class="features col-md-7">
+					<c:forEach var="tab" items="${tabList}">
+						<c:set var="tabTitle" value="${tab.tabTitle}" />
+						<c:set var="tablink" value="${tab.tablink}" />
+						<c:set var="tabIconPath" value="${tab.tabIconPath}" />
+						<div class="button-wrapper">
+							<a href="${tablink}" class="btn-square-features"
+								style="background-image: url(${tabIconPath});">${tabTitle}</a>
+						</div>
+					</c:forEach>
+
+				</div>
+
+				<div class="features col-md-7">
+					<a href="${ourplatformurl}" class="btn-square-clear platform ">${properties.ourplatformlinktext}</a>
+				</div>
+			</div>
+		</div>
+
+	</c:when>
 	<c:otherwise>
 		<wcmmode:edit>
 			<p>
-				<span class="cq-text-placeholder-ipe">Configure Homepage Hero Banner</span>
+				<span class="cq-text-placeholder-ipe">Configure Homepage Hero
+					Banner</span>
 			</p>
 		</wcmmode:edit>
 	</c:otherwise>
-</c:choose>   
-
+</c:choose>
