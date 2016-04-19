@@ -242,8 +242,23 @@ public class ServiceUtil {
 		DateTime afterDST = new DateTime(year1, month1, date1, hour1, min1);
 
 		Period p = new Period(beforeDST, afterDST);
+		
+		int day=0;
+		if(p.getWeeks()!=0){
+			day=p.getWeeks()*7;
+			if(p.getDays()!=0){
+				day=day+p.getDays();
+				feedPostedTime.append(day+1).append(ServiceConstants.EMPTY_SPACE)
+				.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
+				
+			}else{
+				feedPostedTime.append(day+1).append(ServiceConstants.EMPTY_SPACE)
+				.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
+			}
+			
+		}
 
-		if(p.getDays()==0){
+		else if(p.getDays()==0){
 			feedPostedTime.append(p.getDays()+1).append(ServiceConstants.EMPTY_SPACE)
 			.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
 		}else{
@@ -378,4 +393,5 @@ public class ServiceUtil {
 		return (cal1.get(Calendar.ERA) == cal2.get(Calendar.ERA) && cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR)
 				&& cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR));
 	}
+
 }
