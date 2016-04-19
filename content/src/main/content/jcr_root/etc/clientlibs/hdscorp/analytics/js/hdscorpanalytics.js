@@ -47,7 +47,60 @@ else if (pageTitle.indexOf("unified compute platform")>-1)
 		pageTitle=pageTitle.replace("unified compute platform", "ucp");
 	}
 
-//  error page tracking out of ready due to page load event challenges in DTM
+
+//$(document).ready(function() {
+	if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
+		{
+			desktopType="mobile";
+		}
+	else if(window.outerWidth < 992 && /Mobi/.test(navigator.userAgent))
+		{
+			desktopType="tablet";
+		}
+	else if(/Mobi/.test(navigator.userAgent))
+		{
+			desktopType="tablet";
+		}
+	else
+		{
+			desktopType="desktop";
+		}
+
+	if (screen.height < screen.width) {
+			orientation="landscape";
+		}
+	else{
+			orientation="portrait";
+		}
+
+var screenSize = screen.width+"x" +screen.height;
+
+	for(index=0;index<count;index++)
+		{
+		 if(index>0 && index<(count-1) )
+		  {
+			switch(index)
+			{
+				case 1:
+					primaryCategory=$.trim(items[index]);
+					break;
+				  case 2:
+					subSection=$.trim(items[index]);
+					break;
+				  case 3:
+					subSubSection=$.trim(items[index]);
+					break;
+				}
+		  }
+		}
+		
+	if(primaryCategory == "")
+		primaryCategory=pageTitle;
+
+	if(subSection == "" && items.length>=3)
+		subSection=$.trim(pageTitle);
+
+	//  error page tracking out of ready due to page load event challenges in DTM
 function isErrorPage()
 	{
 		var url=document.title; //$(location).attr('href');
@@ -96,55 +149,7 @@ if(isErrorPage())
 			}
 		}
 	}
-
-//$(document).ready(function() {
-	if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
-		{
-			desktopType="mobile";
-		}
-	else if(window.outerWidth < 992 && /Mobi/.test(navigator.userAgent))
-		{
-			desktopType="tablet";
-		}
-	else if(/Mobi/.test(navigator.userAgent))
-		{
-			desktopType="tablet";
-		}
-	else
-		{
-			desktopType="desktop";
-		}
-
-	if (screen.height < screen.width) {
-			orientation="landscape";
-		}
-	else{
-			orientation="portrait";
-		}
-
-var screenSize = screen.width+"x" +screen.height;
-
-	for(index=0;index<count;index++)
-		{
-		 if(index>0 && index<(count-1) )
-		  {
-			switch(index)
-			{
-				case 1:
-					primaryCategory=$.trim(items[index]);
-					break;
-				  case 2:
-					subSection=$.trim(items[index]);
-					break;
-				}
-		  }
-		}
-	if(primaryCategory == "")
-		primaryCategory=pageTitle;
-
-	if(subSection == "" && items.length>=3)
-		subSection=$.trim(pageTitle);
-
+	
 	if(isProductCategory())
 	{
 		setVirtualCategoryEvent();
@@ -223,7 +228,7 @@ var screenSize = screen.width+"x" +screen.height;
 						result=result.toString();
 						searchFilters =  getIndustryFilters() + "," + getContentFilters();// + "," + getCategoryFilters();
 						specificSearchClick(searchTerm, searchAction, result)
-						},8000);
+						},4000);
 					}
 				
 			});
@@ -237,7 +242,7 @@ var screenSize = screen.width+"x" +screen.height;
 				result=result.toString();
 				searchFilters =  getIndustryFilters() + "," + getContentFilters();// + "," + getCategoryFilters();
 				specificSearchClick(searchTerm, searchAction, result)
-				},5000);
+				},4000);
 			});
 
 		$('#showIndustry').click(function()
@@ -267,37 +272,38 @@ var screenSize = screen.width+"x" +screen.height;
 			});
 	
 	//$('div.resources-listing ul[id=asideLinks-product]').each(function() {
-	$('div.resources-listing ul[id=asideLinks-product]').click(function()
+	$('#asideLinks-product li a').click(function(){
+	if($(this).hasClass("filters")==false){
+		searchTerm = $('#resSearch').val();
+		result =$('#actualCount').text();
+		setTimeout(function()
 		{
-			searchTerm = $('#resSearch').val();
-			result =$('#actualCount').text();
-			setTimeout(function()
-			{
-				result=result.toString();		
-				searchAction = "category filter";
-				searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
-				if(searchFilters.indexOf("Category-Featured")>-1){result=$('.resourceLibraryfeatered').find('.resources-spotlight').size();}
-				specificSearchClick(searchTerm, searchAction, result);	
-			},7000);
-		});	
+			result=result.toString();		
+			searchAction = "category filter";
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			if(searchFilters.indexOf("Category-Featured")>-1){result=$('.resourceLibraryfeatered').find('.resources-spotlight').size();}
+			specificSearchClick(searchTerm, searchAction, result);	
+		},5000);
+	}
+});	
 	
-	$('.checkbox .filters').click(function()
+$('input[name="cbxFunction"]').click(function(){
+	var pClass="";
+	pClass=$(this).parents('.resources-listing').attr('class');
+	//pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
+	if (pClass.indexOf("resources-listing")>-1)
+	{
+		searchTerm = $('#resSearch').val();
+		result =$('#actualCount').text();
+		setTimeout(function()
 		{
-			var pClass="";
-			pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
-			if (pClass.indexOf("resources-listing")>-1)
-			{
-				searchTerm = $('#resSearch').val();
-				result =$('#actualCount').text();
-				setTimeout(function()
-				{
-					result=result.toString();		
-					searchAction = "category filter";
-					searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
-					specificSearchClick(searchTerm, searchAction, result);	
-				},5000);
-			}
-		});
+			result=result.toString();		
+			searchAction = "sub-category filter";
+			searchFilters =  getIndustryFilters() + "," + getContentFilters() + "," + getCategoryFilters();
+			specificSearchClick(searchTerm, searchAction, result);	
+		},5000);
+	}
+});
 	
 		var currentpagenumber = $('span.current').html();
 	$(document).on('click', '.page-link', function()
@@ -413,7 +419,7 @@ var screenSize = screen.width+"x" +screen.height;
 				return catfilters;	
 		}
 	
-	function getResourcesSearchFilters()
+	/* function getResourcesSearchFilters()
 		{
 			var filters="";
 			$('div.resources-listing ul[id=asideLinks-product] li.active').each(function() {
@@ -434,23 +440,26 @@ var screenSize = screen.width+"x" +screen.height;
 			});
 			
 			return filters.toLowerCase();
-		}
+		} */
 	}
 
 	function specificSearchClick(searchTerm, searchAction, result)
 	{ 
+		var stype="";
 		if(searchTerm == "" || !searchTerm){
 			searchTerm = 'no term searched'
 		}
 		if(result == 0){
 			result = 'zero'
 		}
+		if(searchAction == "Cloud Partner filter"){stype="cloud partner";}
+		else{stype="resource";}
 		digitalData.eventData= 
 		{ 
 			searchTerm:searchTerm,
 			searchAction:searchAction,
 			searchResult:result,
-			searchType:'resource',
+			searchType:stype,
 			searchPage:digitalData.page.pageInfo.pageName,
 			searchFilters:searchFilters
 		}    
@@ -510,6 +519,11 @@ function getPartnerIndFilters()
 			digitalData["page"]["category"]["subSection"]=subSection;
 			
 		}
+	if(subSubSection!="" && subSubSection.length>0)
+		{
+			digitalData["page"]["category"]["subSubSection"]=subSubSection;
+			
+		}
 
 //Header Links Custom Tracking
 	$(".globalNavWrapper").each(function() {
@@ -560,11 +574,12 @@ function getPartnerIndFilters()
 	
 	//header HDS logos
 	
-	jQuery(".hds-main-navigation .col-md-3 > a, .hds-global-header .header-container >a").each (function() {
-		var linktext="hds logo";
-		$(this).click(function(){globalMenuClick("linkclick","us>mm>"+linktext.toLowerCase(),pageTitle,"link","mega menu");});
+	$(".hitachi-logo").on("click", function() {
+		globalMenuClick("linkclick","us>mm>hitachi logo",pageTitle,"link","mega menu");
 	});		
-	
+	$(".hitachi-sublogo").on("click", function() {
+		globalMenuClick("linkclick","us>mm>hds logo",pageTitle,"link","mega menu");
+	});			
 	
 	//hero banner for home page only	
 	$(".hero-homepage").each(function() 
@@ -576,7 +591,7 @@ function getPartnerIndFilters()
 		 if( listitem.length>0)
 		 {
 			 listitem.each(function() {
-				var linktext = $.trim(jQuery(this).text());			
+				var linktext = $.trim($(this).text());			
 				linkposition="home-hero-banner";
 				if(linktext==""){linktext="chevron";}
 				$(this).click(function(){
@@ -594,58 +609,56 @@ function getPartnerIndFilters()
     });	
 	//hero banners for all pages  .btn-square-white
 	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions, .bannerSectionImage, .about-hds-csr-eco").each(function() {
-     var listitem = $(this).find("a");
-	 var url=$(location).attr('href');
-	 var linktext = $(this).find('h1').text();
-	 var linkposition="";
-	 var eType="link";
-	 var eClass="";
-     if( listitem.length>0)
-	 {
-		 listitem.each(function() {
-		 //var linktext = jQuery(this).text();
-/* 		 if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-		 if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-		 linktext = $.trim(linktext);
- */		  var url=$(location).attr('href');
-			if(url.indexOf("us/home")>-1)
-				linkposition="home-hero-banner";
-			else 
-				linkposition="PS-Hero";
-            $(this).click(function(){
-				if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-				if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-				if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text();}
-				linktext = $.trim(linktext);
-
-				var eClass=$(this).parent().attr("class");
-				if(eClass.indexOf("buy-through")!=-1)
-					{
-						linktext = "FIND AN HDS PARTNER";
-						eType = "link";
-					}
-					//else if(eClass.indexOf("video-play-desktop")!=1){eType = " video button";}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}
+     
+	 var url=document.title;
+	//if(url.indexOf("404")<0)
+	//{
+		 var listitem = $(this).find("a");
+		 var url=$(location).attr('href');
+		 var linktext = $(this).find('h1').text();
+		 var linkposition="";
+		 var eType="link";
+		 var eClass="";
+		 if( listitem.length>0)
+		 {
+			 listitem.each(function() {
+			var url=$(location).attr('href');
+				if(url.indexOf("us/home")>-1)
+					linkposition="home-hero-banner";
+				else 
+					linkposition="PS-Hero";
+				$(this).click(function(){
+					if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
+					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
+					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text();}
+					if($(this).parent().parent().attr("class")=="page-not-found")
+					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+					else {var eClass=$(this).parent().attr("class");}
+					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; var linktext = $(this).parents().find('h1').text();}
 					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon";}
 					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}
-					
-				globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
-			$(this).mousedown(function(e){
-				if(e.which == 3){
-					var eClass=$(this).parent().attr("class");
-					if(eClass.indexOf("buy-through")!=-1)
-					{
-						linktext = "FIND AN HDS PARTNER";
-						eType = "link";
-					}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}
-					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}
-					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon";}
-					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
-				} 			
-			});
-		});                 
-     }
+					linktext = $.trim(linktext);	
+					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
+				$(this).mousedown(function(e){
+					if(e.which == 3){
+						if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
+						if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
+						if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text();}
+						if($(this).parent().parent().attr("class")=="page-not-found")
+						{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+						else {var eClass=$(this).parent().attr("class");}
+						if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
+						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; var linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon";}
+						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}
+						linktext = $.trim(linktext);	
+						globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
+					} 			
+				});
+			});                 
+		 }
+	//}
     });
 	
 	//Hexagons CTAs div.hexContain, 
@@ -737,7 +750,7 @@ function getPartnerIndFilters()
 		var listitem = $(this).find("a");
 		if(listitem.length>0){
 			listitem.each(function(){
-				var linktext = jQuery(this).text();
+				var linktext = $(this).text();
 				linktext=linktext.toLowerCase();
 				linktext = $.trim(linktext);
 				if(linktext.indexOf("studies")>-1){panel="Case Study";}
@@ -753,12 +766,12 @@ function getPartnerIndFilters()
     });
 
 	// Alliance partners logo
-	jQuery("div.partner-list").each(function() 
+	$("div.partner-list").each(function() 
 	{
-		var links = jQuery(this).find("img");
+		var links = $(this).find("img");
 		var headingtext=$('.partner-program .heading').find("h2").text();
 	   links.each(function() {
-		 var linktext = jQuery(this).attr("title");
+		 var linktext = $(this).attr("title");
 		 linktext=$.trim(linktext);
          if(linktext!="" || linktext.length > 0)
 		 {
@@ -781,8 +794,8 @@ function getPartnerIndFilters()
 		 if( listitem.length>0)
 		 {
 			 listitem.each(function() {
-			 var linktext = jQuery(this).text();
-			 var linktext1=jQuery(this).parent().parent().parent().parent().find("h2").text();
+			 var linktext = $(this).text();
+			 var linktext1=$(this).parent().parent().parent().parent().find("h2").text();
 			  linktext = $.trim(linktext);
 				$(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext1+ ":" + linktext.toLowerCase(),pageTitle,"link","top menu"); });
 				//Added on 20160218
@@ -802,7 +815,7 @@ function getPartnerIndFilters()
 		 if( listitem.length>0)
 		 {
 			 listitem.each(function() {
-			 var linktext = jQuery(this).text();
+			 var linktext = $(this).text();
 			  linktext = $.trim(linktext);
 				$(this).click(function(){globalMenuClick("linkclick","us>tm>"+linktext.toLowerCase(),pageTitle,"link","top menu"); });
 				//Added on 20160218
@@ -838,10 +851,10 @@ function getPartnerIndFilters()
     });	
 
 	//Footer links tracking
-	jQuery("div.footer-gray,div.footer-white").each(function() {
-		var links = jQuery(this).find("a");
+	$("div.footer-gray,div.footer-white").each(function() {
+		var links = $(this).find("a");
 	   links.each(function() {
-		 var linktext = jQuery(this).text();
+		 var linktext = $(this).text();
 		 linktext=$.trim(linktext);
            if(linktext!="" || linktext.length > 0)
 		 {
@@ -859,10 +872,10 @@ function getPartnerIndFilters()
 
 	//footer social media links
 	
-	jQuery("div.social").each(function() {
-		var links = jQuery(this).find("img");
+	$("div.social").each(function() {
+		var links = $(this).find("img");
 	   links.each(function() {
-		 var linktext = jQuery(this).attr("title");
+		 var linktext = $(this).attr("title");
 		 linktext=$.trim(linktext);
          if(linktext!="" || linktext.length > 0)
 		 {
@@ -879,24 +892,25 @@ function getPartnerIndFilters()
 	
 	//footer HDS logo
 	
-	jQuery(".iparys_inherited .footer-logo").each(function() {
-		var linktext = $('.footer-logo').text();
+	$(".footer-logo").each(function() {
+		var linktext = $(this).text();
 		 if ($.trim(linktext)==0) {linktext="hds logo";}
 		$(this).click(function(){globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer"); });
-
 		$(this).mousedown(function(e){
 			if(e.which == 3){
 				globalMenuClick("linkclick","us>ft>"+linktext.toLowerCase(),pageTitle,"link","footer");
 			} 			
 			});
 	});	
+	
+
 	//footer CTAs
 	
-	jQuery("div.buttons").each(function() {
-		var links = jQuery(this).find("a");
+	$("div.buttons").each(function() {
+		var links = $(this).find("a");
 		var linktype="";
 	   links.each(function() {
-		 var linkhref = jQuery(this).attr('href');
+		 var linkhref = $(this).attr('href');
            if(linkhref.indexOf("/partnerlocator/en_us/partnerlocator.html") > -1)
 		 {
 		 	linkhref= "find an hds partner";
@@ -916,13 +930,23 @@ function getPartnerIndFilters()
 	  })
 
 	});		
+
+	//footer local phone numbers CTAs
 	
+	$(".view-phone .reseller").on("click", function() {
+		var links = $(this).find("a");
+		var linktype="link";	  
+		var linkhref= $(this).text(); 
+		linkhref = linkhref.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, '');
+		linkhref = $.trim(linkhref);
+		globalMenuClick("linkclick","us>ft>"+linkhref.toLowerCase(),pageTitle,linktype,"footer");
+	});		
 //read customer stories links	 
 
 	$("div.cs-section, .animateLink").each(function() {
      var listitem = $(this).find("a");
 	 var mtext= $(this).text();
-	 mtext = mtext.toLowerCase()
+	 mtext = mtext.toLowerCase();
 	 if(mtext != "view more case studies" && mtext != "read more case studies"){
      if( listitem.length>0)
 	 {
@@ -989,7 +1013,8 @@ function getPartnerIndFilters()
 	{
 		var pClass="";
 		var linktext=$(this).next().find("span").text();
-		pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
+		pClass=$(this).parents('.leftsidelisting').attr('class');
+		//pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
 		if (pClass.indexOf("leftsidelisting")>-1)
 		{
 			var pTitle=$(this).parent().parent().parent().parent().find("a").text();
@@ -1104,12 +1129,14 @@ function getPartnerIndFilters()
             $(this).click(function(){
                 var text = $(this).text();
 				var url=$(location).attr('href');
-				if(url.indexOf("/resources.html")>-1){sType='resources';dly="7000"}else{sType='products & solutions';}
                 setTimeout(function() {
-                var result=$('#actualCount').text();
+				if(url.indexOf("/training.html")>-1){sType='training';var result=$('#contentCatagory').find('.result-product .tab-content .category-products-listing .result-section').size();}
+				else{sType='products & solutions';var result=$('#actualCount').text();}
                  if(result==0)
                      result="zero";
-                	searchClick($('#searchFilter').val(), "category filter",result,getProductsSearchFilters(),sType,'specificSearchClick');
+                	if(url.indexOf("/training.html")>-1){searchClick($('#searchFilter').val(), "category filter",result,getTrainingSearchFilters(),sType,'specificSearchClick');}
+					else{searchClick($('#searchFilter').val(), "category filter",result,getProductsSearchFilters(),sType,'specificSearchClick');}
+					
     			 }, dly);
              });
         });
@@ -1376,7 +1403,7 @@ $(document).on('keypress', '#fulltext', function(event)
 
 	}
 
-function getCurrentBreadcrumb() 
+	function getCurrentBreadcrumb() 
 	{
 		var hierarchy="";
 		$( "a.breadcrumblink").each(function( index ) {
@@ -1458,7 +1485,7 @@ function getCurrentBreadcrumb()
 		 if( listitem.length>0)
 		 {
 			 listitem.each(function() {
-				 var linktext = jQuery(this).text();
+				 var linktext = $(this).text();
 				 $(this).click(function(){
 					   var activeCategory=$('li[class="linkLeft active"').find("a");
 					  $.cookie("vcategory",$.trim(activeCategory.text()),{ path: '/' });
@@ -1566,14 +1593,27 @@ function getCurrentBreadcrumb()
 			{
 				for(var i=0;i<selection.length;i++)
 				{
-					trafilters = trafilters + ",Training Search:Location-" + selection[i];
+					if(trafilters!=""){trafilters = trafilters + ",training search:location-" + selection[i];}
+					else{trafilters = trafilters + "training search:location-" + selection[i];}
 				}
 			}
-		else if(trafilters==""){trafilters = "Training Search:Location-all";}
+		else if(trafilters==""){trafilters = "training search:location-all";}
 		
 		return trafilters.toLowerCase();
 	}
 
+	function getTrainingSearchFilters()
+	{
+		var filters="";
+		$('ul[id=asideLinks-product] li.active').each(function() {
+			   if(filters.length>0)
+						filters=filters+",";
+				else
+						filters="training search:";
+				filters = filters+ $.trim($(this).find('a').text());   
+		});	
+		return filters.toLowerCase();
+	}
 	
 	function videoTracking(vId, pPageName)
 	{
