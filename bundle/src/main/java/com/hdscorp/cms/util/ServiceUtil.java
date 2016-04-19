@@ -249,11 +249,11 @@ public class ServiceUtil {
 			if(p.getDays()!=0){
 				day=day+p.getDays();
 				feedPostedTime.append(day+1).append(ServiceConstants.EMPTY_SPACE)
-				.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
+				.append(ServiceConstants.TW_FEED_POSTED_DAYS_MESSAGE);
 				
 			}else{
 				feedPostedTime.append(day+1).append(ServiceConstants.EMPTY_SPACE)
-				.append(ServiceConstants.TW_FEED_POSTED_ONE_DAY_MESSAGE);
+				.append(ServiceConstants.TW_FEED_POSTED_DAYS_MESSAGE);
 			}
 			
 		}
