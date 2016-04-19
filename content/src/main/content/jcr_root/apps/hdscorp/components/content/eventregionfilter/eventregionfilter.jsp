@@ -48,7 +48,7 @@
 										<strong>${eventRegionFilterModel.eshownfrom}</strong>
 										<div class="daterangepicker_input">
 											<input class="from_date" placeholder="" type="text"
-												id="date-range200"> <i
+												id="date-range200" readonly="readonly"> <i
 												class="fa fa-calendar glyphicon glyphicon-calendar"></i>
 										</div>
 									</div>
@@ -56,7 +56,7 @@
 										<strong>${eventRegionFilterModel.eshownto}</strong>
 										<div class="daterangepicker_input">
 											<input class="to_date" placeholder="" type="text"
-												id="date-range201"> <i
+												id="date-range201" readonly="readonly"> <i
 												class="fa fa-calendar glyphicon glyphicon-calendar"></i>
 										</div>
 									</div>

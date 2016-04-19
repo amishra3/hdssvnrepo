@@ -41,7 +41,7 @@
 										<div class="calendar left">
 											<div class="daterangepicker_input">
 												<input type="text" placeholder="" class="from_date"
-													id="date-range200"> <i
+													id="date-range200" readonly="readonly"> <i
 													class="fa fa-calendar glyphicon glyphicon-calendar"></i>
 											</div>
 										</div>
@@ -50,7 +50,7 @@
 										<div class="calendar right">
 											<div class="daterangepicker_input">
 												<input type="text" placeholder="" class="to_date"
-													id="date-range201"> <i
+													id="date-range201" readonly="readonly"> <i
 													class="fa fa-calendar glyphicon glyphicon-calendar"></i>
 											</div>
 
