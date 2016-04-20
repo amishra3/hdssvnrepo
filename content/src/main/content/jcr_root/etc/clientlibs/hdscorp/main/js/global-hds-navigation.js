@@ -14,16 +14,16 @@ var hds = window.hds || {};
             hds.buildShowNav.bindEvents();
             hds.buildShowNav.mobileMenu();            
         },
-        checkLocale:function(){        	
-        	var pageUrl = window.location.href;
-        	var locale = hds.buildShowNav.matchLocale(pageUrl);
+        checkLocale:function(){         
+            var pageUrl = window.location.href;
+            var locale = hds.buildShowNav.matchLocale(pageUrl);
         },
         matchLocale : function(pageUrl){
-        	if(pageUrl){
-        		if(/(en_us|en-us)/.test(pageUrl)){        			
-        			$('a#showGeo').find('span.labelText').after('U.S.A.');
-        		}
-        	}        	
+            if(pageUrl){
+                if(/(en_us|en-us)/.test(pageUrl)){                  
+                    $('a#showGeo').find('span.labelText').after('U.S.A.');
+                }
+            }           
         },
         openDropDown: function() {
             var $hdsMenu = $('.hds-MobileMenu');
@@ -75,44 +75,52 @@ var hds = window.hds || {};
                 $('.hds-megaMenuWrapper', this).stop(true, true).slideUp(200);
             });
         },
-        geoSelectorShow:function(arg){        	
+        geoSelectorEqualHeight:function(htmlElements){
+            $(htmlElements).removeAttr('style');
+            var heights = $(htmlElements).map(function() {
+                return $(this).height();
+            }).get(),
+                maxHeight = Math.max.apply(null, heights);
+            $(htmlElements).height(maxHeight);
+        },
+        geoSelectorShow:function(arg){          
                 var that=arg;
-        		var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
-        		if (slideOut.is(":hidden")) {
-        			slideOut.clearQueue().slideDown(300,function(){
-        			 $('a#showGeo').addClass("active");
-        			 $('a#showGeo').parent('li').addClass('open');
+                var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
+                if (slideOut.is(":hidden")) {
+                    slideOut.clearQueue().slideDown(300,function(){
+                     $('a#showGeo').addClass("active");
+                     $('a#showGeo').parent('li').addClass('open');
+                     hds.buildShowNav.geoSelectorEqualHeight('.hds_globalNav_geo-selc ul.hdsGeoLocator li a');
                      });
-        		 }    
-        	
+                 }            
         },
         closeGeoSelector:function(arg){
-        	var that=arg;
-        		 var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
-        		 if (slideOut.is(":visible")) {
-        			 slideOut.clearQueue().slideUp(200,function(){
-        				 $('a#showGeo').parent('li').removeClass('open');
-        				 $('a#showGeo').removeClass("active");
+            var that=arg;
+                 var slideOut =  $(that).parents('.header-container, .hds-mobile-navigation').find('.hds_globalNav_geo');
+                 if (slideOut.is(":visible")) {
+                     slideOut.clearQueue().slideUp(200,function(){
+                         $('a#showGeo').parent('li').removeClass('open');
+                         $('a#showGeo').removeClass("active");
                      });
-        		 }        	
+                 }          
         },
         linksExchange:function(){
-        	$('.hds-main-navigation > ul > li> a').each(function(){
-        		var href=$(this).attr('href');
-				$(this).attr('class', 'hds-default-nav-anchor');
-        		var dataHref= $(this).attr('data-href',href);
-        		$(this).parent('li').find('.megamenu-heading').find('h2 > a').attr('href',href);
-        		  if ($(window).width() <= 768) {        		
-        		$(this).attr('href','javascript:void(0);');        		
-        		  }else{
-        			  var getPageUrl= $(this).data('href');
-        			  $(this).attr('href',getPageUrl);
-        		  }
-        	});
+            $('.hds-main-navigation > ul > li> a').each(function(){
+                var href=$(this).attr('href');
+                $(this).attr('class', 'hds-default-nav-anchor');
+                var dataHref= $(this).attr('data-href',href);
+                $(this).parent('li').find('.megamenu-heading').find('h2 > a').attr('href',href);
+                  if ($(window).width() <= 768) {               
+                $(this).attr('href','javascript:void(0);');             
+                  }else{
+                      var getPageUrl= $(this).data('href');
+                      $(this).attr('href',getPageUrl);
+                  }
+            });
         },
         mobileMenu:function(){           
             if ($(window).width() <= 768) {
-            	$(document).on("click",'.hds-MobileMenu .globalNavWrapper > li', function() {
+                $(document).on("click",'.hds-MobileMenu .globalNavWrapper > li', function() {
                     var self=$(this);
                     var offsetFirst=$($('.hds-MobileMenu .globalNavWrapper > li:eq(0)')).offset().top;
                     var clickedIndexHeight= $(this).outerHeight();
@@ -152,25 +160,25 @@ var hds = window.hds || {};
                 }             
             });
             $(document).on('click', '#closeHDSMenu', function(event) {
-				$('#hdsMobileNaV').removeClass('navOpen');
+                $('#hdsMobileNaV').removeClass('navOpen');
                 hds.buildShowNav.closeDropDown();
                 event.preventDefault();
             });
-            window.addEventListener("orientationchange", function() {            	 
+            window.addEventListener("orientationchange", function() {                
                 hds.buildShowNav.checkOrientations(); 
             }, false);
             
             $(document).on('click','.geo_close_btn', function() {
-        		hds.buildShowNav.closeGeoSelector($(this));
-        	});			
-			
-			$(document).on('click','a#showGeo', function() { 
-				if ($(window).width() > 768) {
-				hds.buildShowNav.geoSelectorShow($(this));
-				}
-			});
-			
-			$(document).on('click','.hds-megaMenu a[rel=iframemodal]',function(){
+                hds.buildShowNav.closeGeoSelector($(this));
+            });         
+            
+            $(document).on('click','a#showGeo', function() { 
+                if ($(window).width() > 768) {
+                hds.buildShowNav.geoSelectorShow($(this));
+                }
+            });
+            
+            $(document).on('click','.hds-megaMenu a[rel=iframemodal]',function(){
                 hds.buildShowNav.closeDropDown();
             })
         }
@@ -187,21 +195,21 @@ var hds = window.hds || {};
             var curItem = false;
 
             $('.globalNavWrapper li.hds-default-nav > a.hds-default-nav-anchor').on('click', function(e) {
-				//$(this).on('click', function(e) {
-					if(!$(this).hasClass("oneclick")){
-						$(this).addClass('oneclick');
-						e.preventDefault();
-					}else{
-						return true
-					}
-					
-					/*var item = $(this);
-					if (item[0] != curItem[0]) {
-						
-						//if (item[0] != curItem[0] && $(this).hasClass("hds-default-nav-anchor")) {
-						e.preventDefault();
-						curItem = item;
-					}*/
+                //$(this).on('click', function(e) {
+                    if(!$(this).hasClass("oneclick")){
+                        $(this).addClass('oneclick');
+                        e.preventDefault();
+                    }else{
+                        return true
+                    }
+                    
+                    /*var item = $(this);
+                    if (item[0] != curItem[0]) {
+                        
+                        //if (item[0] != curItem[0] && $(this).hasClass("hds-default-nav-anchor")) {
+                        e.preventDefault();
+                        curItem = item;
+                    }*/
             });
 
             $(document).on('click touchstart MSPointerDown', function(e) {
