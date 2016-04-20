@@ -6,8 +6,12 @@
 
 <c:set var="locations" value="<%=PageUtils.convertMultiWidgetToList(properties,"locationtitle-locationaddress-phone")%>" />
 <c:set var="title" value="<%=properties.get("title")%>" />
+<c:if test = "${not empty properties.sectionbackground}">
+ <c:set var="imgval" value="background-image: url(${properties.sectionbackground})" />
+</c:if>
 <c:choose>
 <c:when test="${not empty locations}">
+    <div class="mes-section" style="${imgval}">
 	<h2>${title}</h2>	
 	<c:forEach var="location" items="${locations}">
 		<ul>
@@ -16,6 +20,7 @@
 			<li>${location.phone}</li>
 		</ul>
 	</c:forEach>
+    </div>
 </c:when>
 <c:otherwise>
 	<wcmmode:edit>

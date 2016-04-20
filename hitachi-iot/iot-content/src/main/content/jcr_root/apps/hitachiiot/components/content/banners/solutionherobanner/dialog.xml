@@ -22,15 +22,26 @@
                         fieldLabel="Solution Banner Sub Title Content"
                         name="./solutionsubtitlecontent"
                         xtype="textfield"/>
-                    <bannerbackgroundimage
+                     <imagePath
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="Provide Banner Background Image"
-                        name="./bannerbackgroundimage"
-                        xtype="ddpathfield"/>
-                    <bannerbackgroundmobileimage
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        cropParameter="./imagePath/imageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./imagePath/fileName2"
+                        fileReferenceParameter="./heroimagePath"
+                        height="{Long}200"
+                        name="./heroimage"
+                        rotateParameter="./imagePath/imageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                   <mobileimagePath
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Mobile Image (Optional)"
-                        name="./bannerbackgroundmobileimage"
+                        name="./heromobileimage"
                         xtype="ddpathfield"/>
                     <videoId
                         jcr:primaryType="cq:Widget"
@@ -42,6 +53,12 @@
                         fieldLabel="Video Icon Path URL"
                         name="./videopathurl"
                         xtype="pathfield"/>
+                    <hidevideo
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Video"
+                        name="./hidevideo"
+                        type="checkbox"
+                        xtype="selection"/>
                     
                 </items>
             </tab1>

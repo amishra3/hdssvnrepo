@@ -65,7 +65,6 @@
                     </multilinks>
                     <imagePath
                         jcr:primaryType="cq:Widget"
-                        allowBlank="{Boolean}false"
                         allowUpload="false"
                         cropParameter="./imagePath/imageCrop2"
                         ddGroups="[media]"

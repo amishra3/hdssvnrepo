@@ -1,21 +1,21 @@
-/* line 33, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
+/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 html {
   font-size: 16px !important;
 }
 
 /*bootstrap override start*/
-/* line 38, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
+/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 .row-no-margin {
   margin: 0 !important;
 }
 
-/* line 41, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
+/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 .row-reduce-half {
   margin-left: -7.5px !important;
   margin-right: -7.5px !important;
 }
 
-/* line 45, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_base.scss */
+/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
 .col-no-pad {
   padding: 0 !important;
 }
@@ -52,7 +52,7 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
-/* line 1, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 1, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square {
   padding: 8px 35px;
   border: 1px solid;
@@ -62,19 +62,19 @@ The `sprites` mixin generates identical output to the CSS template
   letter-spacing: .15em;
 }
 
-/* line 8, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 8, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-white {
   color: #ffffff;
   border-color: #ffffff;
 }
 
-/* line 12, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 12, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-red {
   color: #ce0000;
   border-color: #ce0000;
 }
 
-/* line 18, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 18, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 [class|="btn-square"] {
   padding: 8px 35px;
   font-size: .8em;
@@ -84,52 +84,52 @@ The `sprites` mixin generates identical output to the CSS template
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 
-/* line 28, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 28, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 31, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 31, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white a {
   color: #ffffff;
 }
 
-/* line 36, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 36, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red {
   border: 1px solid #ce0000;
   color: #ce0000;
 }
 
-/* line 39, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 39, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red a {
   color: #ce0000;
 }
 
-/* line 44, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 44, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features {
   border: 1px solid #ffffff;
   background-color: #ffffff;
   color: #ce0000;
 }
 
-/* line 48, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 48, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features:hover {
   color: #ce0000;
 }
 
-/* line 53, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 53, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 56, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 56, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear a {
   color: #ffffff;
 }
 
-/* line 62, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 62, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top {
   position: fixed;
   bottom: 10px;
@@ -162,38 +162,38 @@ button.cta-scroll-top {
   color: #ffffff;
 }
 
-/* line 92, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 92, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top:hover {
   background-color: #757575;
   background-color: rgba(102, 102, 102, 0.9);
 }
 
-/* line 96, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 96, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top.active {
   display: inline-block;
 }
 
-/* line 100, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 100, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top span {
   display: inline-block;
 }
 
-/* line 103, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 103, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .icon-arrow-scroll-top {
   background-image: url(../images/sprite.png);
-  background-position: -225px -296px;
+  background-position: -229px -296px;
   width: 26px;
   height: 14px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 108, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 108, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .text-return {
   margin-top: 7px;
 }
 
-/* line 114, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 114, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square {
   position: relative;
   height: 40px;
@@ -210,18 +210,18 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 132, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_mixins.scss */
+/* line 132, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 135, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_mixins.scss */
+/* line 135, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover a {
   color: #ffffff;
 }
 
-/* line 127, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 127, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square p {
   margin: 0;
   position: relative;
@@ -229,7 +229,7 @@ button.cta-scroll-top .text-return {
   transform: translateY(-50%);
 }
 
-/* line 133, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+/* line 133, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square a {
   color: #FFFFFF;
   outline: 0;
@@ -237,7 +237,7 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 142, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 142, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top {
     position: absolute;
     display: inline-block;
@@ -246,11 +246,11 @@ button.cta-scroll-top .text-return {
     width: 68px;
     height: 68px;
   }
-  /* line 150, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 150, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top .text-return {
     margin-top: 5px;
   }
-  /* line 155, /Users/Alejandro.Rubio/Sites/hiot-hitachi/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 155, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
   .btn-transparent-square {
     max-width: 300px;
     min-height: 36px;
@@ -261,7 +261,7 @@ button.cta-scroll-top .text-return {
 .hero-solutions {
   background: url(../images/iot-solutions-hero.jpg) no-repeat;
   position: relative;
-  z-index: -100;
+  z-index: 1;
   padding-top: 250px;
   background-size: cover;
 }
@@ -318,4 +318,38 @@ button.cta-scroll-top .text-return {
 /* line 47, stdin */
 .hero-solutions .video-play {
   text-align: center;
+}
+
+/* line 53, stdin */
+.solutions.hds-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0 5%;
+  z-index: 99;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* line 63, stdin */
+.solutions.hds-overlay .container {
+  margin: 10% auto;
+}
+
+/* line 66, stdin */
+.solutions.hds-overlay .container .close-overlay {
+  display: block;
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+/* line 71, stdin */
+.solutions.hds-overlay .container .close-overlay .icon-close-hero {
+  background-image: url(../images/sprite.png);
+  background-position: -248px -231px;
+  width: 18px;
+  height: 18px;
 }

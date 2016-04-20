@@ -43,6 +43,12 @@
                         fieldLabel="Bright Cove Video Id"
                         name="./videoid"
                         xtype="textfield"/>   
+                     <hidevideo
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Video"
+                        name="./hidevideo"
+                        type="checkbox"
+                        xtype="selection"/>
                      <aboutusbuttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"

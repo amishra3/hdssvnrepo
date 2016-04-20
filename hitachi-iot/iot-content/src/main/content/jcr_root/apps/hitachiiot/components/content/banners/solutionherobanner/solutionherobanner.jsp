@@ -4,19 +4,24 @@
 <%@ taglib prefix="wcmmode" uri="http://www.adobe.com/consulting/acs-aem-commons/wcmmode" %>
 <%@ taglib prefix="wcm" uri="http://www.adobe.com/consulting/acs-aem-commons/wcm" %>
 
-<c:set var="bannerbackgroundstyle" value="${hdscorp:bgImgAtrr(properties.bannerbackgroundimage,properties.bannerbackgroundmobileimage)}" />
+<c:set var="bannerbackgroundstyle" value="${hdscorp:bgImgAtrr(properties.heroimagePath,properties.heromobileimage)}" />
 <c:set var="videoid" value="${properties.videoId}" />
-<c:set var="vidurl" value="hds.resourceLib._openvideooverlayById(${videoid});"/>
+<c:set var="hideVideo" value="${properties.hidevideo}" />
+
+<c:set var="vidurl" value="openvideooverlayById(${videoid});"/>
 <c:choose>
 <c:when test="${not empty properties.solutiontitlecontent}">
-<div class="hero-solutions clearfix rsImg" style="background-color: purple;" ${bannerbackgroundstyle}>
+<div class="hero-solutions clearfix rsImg" ${bannerbackgroundstyle}>
     <div class="col-lg-8 col-md-8 col-xs-12 col-no-pad">
         <h1>${properties.solutiontitlecontent}</h1>
         <h4 class="sub-headline">${properties.solutionsubtitlecontent}</h4>
+        <c:if test="${!hideVideo}">
         <div class="video-play hidden-lg hidden-md">
-            <a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}"> <span class="sprite video-play-small"></span> <img src="${properties.videopathurl}"></a>
+            <a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}"> <span class="sprite video-play-small"></span> </a>
         </div>
+        </c:if>
     </div>
+    <c:if test="${!hideVideo}">
     <div class="col-lg-4 col-md-4 col-xs-12 hidden-xs hidden-sm">
         <div class="video-play-desktop">
             <a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}">
@@ -24,6 +29,7 @@
             </a>
         </div>
     </div>
+    </c:if>
 </div>
 </c:when>
 <c:otherwise>
@@ -34,3 +40,5 @@
 	</wcmmode:edit>
 </c:otherwise>
 </c:choose>
+
+
