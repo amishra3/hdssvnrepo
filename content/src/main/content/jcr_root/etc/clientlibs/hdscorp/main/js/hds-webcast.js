@@ -179,8 +179,10 @@ var hds = window.hds || {};
                 }else{
                     $('.noWebcastFilter').hide();
                 }
-                $('.newsEvents:visible').last().css({"border-bottom":"none"});
-                $(".newsEvents:visible").eq(0).css({"padding-top":"0px"});
+                $('.newsEvents').removeClass('border-last');
+                $('.newsEvents').removeClass('padding-first');
+                $('.newsEvents:visible').last().addClass('border-last');
+                $('.newsEvents:visible').eq(0).addClass('padding-first');
                 event.preventDefault();
             });
         }
