@@ -13,7 +13,6 @@ product-solutions.js
 tech-specs.js
 accordion.js
 product-catagory.js
-product-box.js
 global-hds-navigation.js
 hds-product-solutions.js
 social-innovation.js
