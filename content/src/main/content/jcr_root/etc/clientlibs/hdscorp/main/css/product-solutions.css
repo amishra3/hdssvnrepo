@@ -1406,6 +1406,9 @@ h2.section-heading.fb-title{
     width: 100%;
     background-color: #c5c5c5;
   }
+  .spec-section.accordion-level .accordion-menu-container:after {
+   display: none;
+  }
 
   .accordion-level:last-child .accordion-menu-container:after {
 	 content: "";
