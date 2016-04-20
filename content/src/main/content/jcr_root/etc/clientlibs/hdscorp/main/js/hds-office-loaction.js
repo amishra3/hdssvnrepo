@@ -69,9 +69,9 @@ var hds = window.hds || {};
              var accounting = [];
              $('#gmap').html('');
              if(arg3==null){
-            	 var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 +"&type="+typePage;
+                 var url = '/bin/acme/hdscorp/locationservlet/?selector=' + arg1 + '/' + arg2 +"&type="+typePage;
              }else{            	 
-            	 var url = '/bin/acme/hdscorp/locationservlet?selector=' + arg1 + '/' + arg2 + '/' + arg3+"&type="+typePage;
+            	 var url = '/bin/acme/hdscorp/locationservlet/?selector=' + arg1 + '/' + arg2 + '/' + arg3+"&type="+typePage;
              }  
 
             $.getJSON(url, function(data) {
