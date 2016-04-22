@@ -61,6 +61,10 @@
 	width:100%;
 	padding: 47px 0;
 }
+.result-section.border-last{
+	border-bottom: none !important;
+}
+
 .result-section h3 {padding:0 0 16px 0; margin:0;}
 .result-section h3 a{
 	color:#cc0000;
@@ -93,7 +97,7 @@
 	
 #trainingDetail .result-btn{
     display:inline-block;
-	margin: 47px 0 100px 35px;
+	margin: 25px 0 60px 35px;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -121,6 +125,7 @@
 	 }
 @media only screen and (max-width: 991px) {
 .training-result .result-btn{width:100%;}
+#trainingDetail .result-btn{margin-left:0;}
 .hds-training-cale .daterangepicker .calendar.left,
  .hds-training-cale .daterangepicker .calendar.right{width:49%;}
  .hds-training-cale label{color:#000;}
@@ -195,6 +200,16 @@
     color: #ac1f25;
 }
 
+#trainingDetail .result-product .category-products-listing{min-height:10px;}
+#trainingDetail .training-result.result-product {float: none;}
+#trainingDetail .result-section {display:none}
+#trainingDetail .errorSearchField{margin-top:60px} 
+#trainingDetail .result-section{display:none}
+#trainingDetail #contentCatagory{visibility:hidden}
+#trainingDetail{padding-bottom:40px;}
+div#contentCatagory .training-result .category-heading{padding-top:40px;}
+div#contentCatagory .training-result:first-child .category-heading{padding-top:0;}
+
 @media only screen and (max-width: 768px){
 	.hds-training-cale.training-date-pick .src-btn{
 		text-align: center;
@@ -208,13 +223,5 @@
 
 @media only screen and (max-width: 991px) {
 	 .hds-training-rsc-sec .training-boxes {margin: 0 0 20px;}
+	 div#contentCatagory .training-result:first-child .category-heading{padding-top:40px;}
 	} 
-	
-#trainingDetail .result-product .category-products-listing{min-height:10px;}
-#trainingDetail .result-section {display:none}
-#trainingDetail .errorSearchField{margin-top:60px} 
-#trainingDetail .result-section{display:none}
-#trainingDetail #contentCatagory{visibility:hidden}
-#trainingDetail{padding-bottom:40px;}
-div#contentCatagory .training-result .category-heading{padding-top:40px;}
-div#contentCatagory .training-result:first-child .category-heading{padding-top:0;}

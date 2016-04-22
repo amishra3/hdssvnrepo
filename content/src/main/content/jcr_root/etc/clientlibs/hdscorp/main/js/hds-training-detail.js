@@ -11,12 +11,7 @@ var hds = window.hds || {};
                 detailsBtn: '.expandMe'
             }
             this.options = $.extend(defaults, options);
-            hds.trainingDetail.loadCalender();
-            hds.trainingDetail.loadMoreMonths();
             hds.trainingDetail.bindFilters();
-            //hds.trainingDetail.sortFilter();
-            hds.trainingDetail.bindHTMLLoad();
-            hds.trainingDetail.bindEventsOnResize();
             hds.trainingDetail.displayBlockContent(); 
             hds.trainingDetail.bindEventsSelectors();           
         },
@@ -55,61 +50,13 @@ var hds = window.hds || {};
                     self.find('.glyphicon').removeClass('glyphicon-minus-sign').addClass('glyphicon-plus-sign');
                    setTimeout( function() { self.parents('.newsEvents').find('h3').focus() }, 500 );
                  }
-               //self.find('.glyphicon').toggleClass('glyphicon-minus-sign');
-               //self.parents('.newsEvents').find('.eventDetails').toggle().focus();
-
             });
-        },
-        loadMoreMonths: function() {
-            var x = 3;
-            var countMonths = $('.newsWrapper-listing').size();
-            $('.newsWrapper-listing:lt(' + x + ')').show();
-            if (countMonths > 3) {
-                $('#loadMoreMonth').show();
-            } else {
-                $('#loadMoreMonth').hide();
-            }
-            $(document).on('click','#loadMoreMonth',  function() {
-                x = (x + 3 <= countMonths) ? x + 3 : countMonths;
-                $('.newsWrapper-listing:lt(' + x + ')').show();
-                if (x == countMonths) {
-                    $('#loadMoreMonth').hide();
-                }
-            })
-        },
-        CheckLoadMoreMonths: function() {
-            var x = 3;
-            var countMonths = $('.newsWrapper-listing:visible').size();
-            $('.newsWrapper-listing:visible:lt(' + x + ')').show();
-            if (countMonths > 3) {
-                $('#loadMoreMonth').show();
-            } else {
-                $('#loadMoreMonth').hide();
-            }
-        },
-        bindHTMLLoad: function() {
-            if ($(window).width() < 991) {
-                $('.news-listing li').each(function() {
-                    if ($(this).hasClass('active')) {
-                        $(this).find('.MobileHolderWrapper').append($('#newsEventCatagory').html());
-                        $(this).find('.MobileHolderWrapper').show();
-                        $('#newsEventCatagory').empty();
-                    }
-                });
-            } else {
-                $('.news-listing li').each(function() {
-                    if ($(this).hasClass('active')) {
-                        $('#newsEventCatagory').append($(this).find('.MobileHolderWrapper').html());
-                        $('#newsEventCatagory').show();
-                        $('.MobileHolderWrapper').empty();
-                    }
-                })
-            }
-        },
-        bindEventsOnResize: function() {
-            $(window).resize(function() {
-                hds.trainingDetail.bindHTMLLoad();
-            });
+        },        
+        lastVisibleResult:function(){
+            $('.category-products-listing .result-section').removeClass('border-last');
+            $('.category-products-listing').each(function(){
+                $(this).find('.result-section:visible:last').addClass('border-last');
+            })            
         },
         searchFilterRange: function(startDate, endDate) {
             var startDate = startDate.split('/');
@@ -141,7 +88,6 @@ var hds = window.hds || {};
                     }
                     /* //hide months if no event */
 
-            //hds.newsEvents.CheckLoadMoreMonths();
         },
         bindFilters: function() {
             $(document).on('click', '#updateResults', function() {
@@ -150,10 +96,7 @@ var hds = window.hds || {};
             })
         },
         bindEventsSelectors: function() {
-			
-			
-
-				var regex = /[#&]([^=#]+)=([^&#]*)/g,
+                var regex = /[#&]([^=#]+)=([^&#]*)/g,
                     url = window.location.href,
                     params = {},
                     match;
@@ -161,240 +104,243 @@ var hds = window.hds || {};
                     params[match[1]] = match[2];
                 }
 
-			var searchKey = params.searchKey; 
-			var dateFrom = params.lowerBound; 
-			var dateTo = params.upperBound; 
-			var locations = params.locations; 
+            var searchKey = params.searchKey; 
+            var dateFrom = params.lowerBound; 
+            var dateTo = params.upperBound; 
+            var locations = params.locations; 
             $(document).on('click', '.search-course-btn', function(event) {
                 var self = $(this),
                     checkInputIfEmpty = $.trim($('#trainingSearch').val());
             })
-			if(dateFrom && dateFrom != ""){
-				$('.from_date').val(dateFrom)	
-			}
-			if(dateTo && dateTo != ""){
-				$('.to_date').val(dateTo)
-			}
-			if(searchKey && searchKey != ""){
-				$('.search').val(decodeURI(searchKey))
-			}
-			getResults(true);
-			if(locations && locations != ""){
-				setTimeout(function(){
+            if(dateFrom && dateFrom != ""){
+                $('.from_date').val(dateFrom)   
+            }
+            if(dateTo && dateTo != ""){
+                $('.to_date').val(dateTo)
+            }
+            if(searchKey && searchKey != ""){
+                $('.search').val(decodeURI(searchKey))
+            }
+            getResults(true);
+            if(locations && locations != ""){
+                setTimeout(function(){
 
-					$('input[countryid='+locations+']').click()
-					$('input[countryid='+locations+']').attr('checked','checked')
-				},4000);
-			}
-			
-			// filter the results based on the checkbox values selected // 
-		   //	**********************START****************************//
-			 $('input[name="cbxFunction"]').on('click', function () {
+                    $('input[countryid='+locations+']').click()
+                    $('input[countryid='+locations+']').attr('checked','checked')
+                },4000);
+            }
+            
+            // filter the results based on the checkbox values selected // 
+           //   **********************START****************************//
+             $('input[name="cbxFunction"]').on('click', function () {
 
-				var locations_list = [];
-				$('input[name="cbxFunction"]:checked').each(function(){
-				  var locations = $(this).attr("data-location");
-				  locations_list.push(locations);//Push each check item's value into an array
-				});
-				
-				$('.result-section').each(function(index){
-				  var item = $(this).attr('data-country');
+                var locations_list = [];
+                $('input[name="cbxFunction"]:checked').each(function(){
+                  var locations = $(this).attr("data-location");
+                  locations_list.push(locations);//Push each check item's value into an array
+                });
+                
+                $('.result-section').each(function(index){
+                  var item = $(this).attr('data-country');
                     if(jQuery.inArray(item,locations_list) > -1){//Check if data-tag's value exist in array
-						$(this).show();
-						$(this).parent().parent().parent().show();
-						$(this).parent().parent().prev().show();
-						$(this).attr('filter','show')
+                        $(this).show();
+                        $(this).parent().parent().parent().show();
+                        $(this).parent().parent().prev().show();
+                        $(this).attr('filter','show')
                       
                     }
                     else{
                         $(this).hide();
-						$(this).attr('filter','hide')
+                        $(this).attr('filter','hide')
                     }
-				});
-				if ($('input[name="cbxFunction"]:checkbox:checked').length > 0){
-						
-					}else{
-						
-						$('.result-section:lt('+max_items_page+')').show();
-						$('.result-product').show();
-						$('.result-product').each(function(){
-							if($(this).find('.result-section:visible').length == 0){
-								$(this).hide();
-							}
-							else{
-								$(this).show()
-							}
-						});
-						//$('.result-section').show();
-						$('.result-section').attr('filter','show');
-						//loadMoreResults();
-				}
-				$('.result-section[filter="show"]').hide();
-				$('.result-section[filter="show"]:lt('+max_items_page+')').show();
-				loadMoreResults();
-			});
-			// filter the results based on the checkbox values selected // 
-		   //	**********************END****************************//
+                });
+                if ($('input[name="cbxFunction"]:checkbox:checked').length > 0){
+                        
+                    }else{
+                        
+                        $('.result-section:lt('+max_items_page+')').show();
+                        $('.result-product').show();
+                        $('.result-product').each(function(){
+                            if($(this).find('.result-section:visible').length == 0){
+                                $(this).hide();
+                            }
+                            else{
+                                $(this).show()
+                            }
+                        });
+                        //$('.result-section').show();
+                        $('.result-section').attr('filter','show');
+                        //loadMoreResults();
+                }
+                $('.result-section[filter="show"]').hide();
+                $('.result-section[filter="show"]:lt('+max_items_page+')').show();                
+                loadMoreResults();
+            });
+            // filter the results based on the checkbox values selected // 
+           //   **********************END****************************//
 
             
-			$(document).on('change input paste focus','.from_date, .to_date, .search ', function(e){
-				$('.errorSearchField').html("").hide(200);
-			});
-			
-			var max_items_page = 10;
-			var shown = null;
-			var items = $(".result-section").length;
-			$('.result-section:lt('+max_items_page+')').show();
-			
-			
-			
-			// load results 10 at a time // 
-		   // ***********END***********//
-			
-			function loadMoreResults(){
-				max_items_page = 10;
-				shown = null;
-				items = $(".result-section").length;
+            $(document).on('change input paste focus','.from_date, .to_date, .search ', function(e){
+                $('.errorSearchField').html("").hide(200);
+            });
+            
+            var max_items_page = 10;
+            var shown = null;
+            var items = $(".result-section").length;
+            $('.result-section:lt('+max_items_page+')').show();
+            
+            
+            
+            // load results 10 at a time // 
+           // ***********END***********//
+            
+            function loadMoreResults(){
+                max_items_page = 10;
+                shown = null;
+                items = $(".result-section").length;
 
-				//$('.result-section:lt('+max_items_page+')').show();
-				$('#contentCatagory').css('visibility','visible');
-				$('.result-product').each(function(){
-						if($(this).find('.result-section:visible').length == 0){
-							$(this).hide();
-						}
-						else{
-							$(this).show()
-						}
-				});
-				if($('.result-section[filter="show"]').size() < 10 && $('.result-section[filter="show"]').size() != 0 ){
-					
-					$('.result-btn a').hide();
-					$('.noResults').remove();
-				}else if($('.result-section[filter="show"]').size() == 0){
-					
-					$('.result-btn a').hide();
-					$('.noResults').remove();
-					$('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
-				}else{
-					$('.noResults').remove();
-					$('.result-btn a').show();
-				}
-				
-				$('.result-btn a').unbind('click').click(function(e){
-					
-					$('.result-product').show();
-					shown = $('.result-section:visible').length+max_items_page;
-					
-					if(shown<items) {
-						$('.result-section[filter="show"]:lt('+shown+')').show();
-					}else {
-						$('.result-section[filter="show"]:lt('+items+')').show();
-						$('.result-btn a').hide();
-					}
-					$('.result-product').each(function(){
-						if($(this).find('.result-section:visible').length == 0){
-							$(this).hide();
-						}
-						else{
-							$(this).show()
-						}
-					});
-					return;
-				});
-			}
+                //$('.result-section:lt('+max_items_page+')').show();
+                $('#contentCatagory').css('visibility','visible');
+                $('.result-product').each(function(){
+                        if($(this).find('.result-section:visible').length == 0){
+                            $(this).hide();
+                        }
+                        else{
+                            $(this).show()
+                        }
+                });
+                if($('.result-section[filter="show"]').size() < 10 && $('.result-section[filter="show"]').size() != 0 ){
+                    
+                    $('.result-btn').hide();
+                    $('.noResults').remove();
+                }else if($('.result-section[filter="show"]').size() == 0){
+                    
+                    $('.result-btn').hide();
+                    $('.noResults').remove();
+                    $('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
+                }else{
+                    $('.noResults').remove();
+                    $('.result-btn').show();
+                }
+                
+                $('.result-btn').unbind('click').click(function(e){
+                    $('.result-product').show();
+                    shown = $('.result-section:visible').length+max_items_page;
+                    if(shown<items) {
+                        $('.result-section[filter="show"]:lt('+shown+')').show();
+                        if($('.result-section[filter="show"]').size() <= shown){
+                            $('.result-btn').hide();
+                        }
+                    }else {
+                        $('.result-section[filter="show"]:lt('+items+')').show();
+                        $('.result-btn').hide();
+                    }
+                    $('.result-product').each(function(){
+                        if($(this).find('.result-section:visible').length == 0){
+                            $(this).hide();
+                        }
+                        else{
+                            $(this).show()
+                        }
+                    });
+                    hds.trainingDetail.lastVisibleResult();
+                    return;
+                });
+            }
 
-			loadMoreResults();
-			var searchKey = $('.daterangepicker .search').val();
-			var dateFrom = $('.from_date').val();
-			var dateTo = $('.to_date').val();
-			var url ='';
-			function getResults(skipFilter){
-               	searchKey = $('.daterangepicker .search').val();
-				dateFrom = $('.from_date').val();
-				dateTo = $('.to_date').val();
-				url ='';
-					if(searchKey!='' && dateFrom!='' && dateTo!=''){
-						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey+"&lowerBound="+dateFrom+"&upperBound="+dateTo;
+            loadMoreResults();
+            var searchKey = $('.daterangepicker .search').val();
+            var dateFrom = $('.from_date').val();
+            var dateTo = $('.to_date').val();
+            var url ='';
+            function getResults(skipFilter){
+                searchKey = $('.daterangepicker .search').val();
+                dateFrom = $('.from_date').val();
+                dateTo = $('.to_date').val();
+                url ='';
+                    if(searchKey!='' && dateFrom!='' && dateTo!=''){
+                        url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey+"&lowerBound="+dateFrom+"&upperBound="+dateTo;
 
-					}else if(searchKey=='' && dateFrom!='' && dateTo!=''){
-						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?lowerBound="+dateFrom+"&upperBound="+dateTo;
-					}else if(searchKey=='' && dateFrom=='' && dateTo=='' ){
-						url = "/content/hdscorp/en_us/lookup/search-training-detail.html"
-					}else{
-						url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey;
-					}
-					if(searchKey != '' || (dateFrom != '' && dateTo != '') || skipFilter == true){
-						$.ajax({
-							method: "GET",
-							url: url
-						  }).done(function(response) {
-							
-							var html = $(response).find("#contentCatagory").html();
-							
-							$('#contentCatagory').html(html)
-							if($(".result-product").length == 0){
-								
-								$('.result-btn a').hide();
-								$('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
-								return false;
-							}
-							 $('#contentCatagory').html(html)
-							 $('.result-section:lt('+max_items_page+')').show();
-							 $('#asideLinks-product li').removeClass('active')
-							 $('#asideLinks-product li:first-child').addClass('active')
-							 $("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
-							 $("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
-							 $("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
-							 loadMoreResults();
-					   });
-					}else{
-						$('.errorSearchField').html("Please enter a search term or date").show();
-					}
-				}
+                    }else if(searchKey=='' && dateFrom!='' && dateTo!=''){
+                        url = "/content/hdscorp/en_us/lookup/search-training-detail.html?lowerBound="+dateFrom+"&upperBound="+dateTo;
+                    }else if(searchKey=='' && dateFrom=='' && dateTo=='' ){
+                        url = "/content/hdscorp/en_us/lookup/search-training-detail.html"
+                    }else{
+                        url = "/content/hdscorp/en_us/lookup/search-training-detail.html?searchKey="+searchKey;
+                    }
+                    if(searchKey != '' || (dateFrom != '' && dateTo != '') || skipFilter == true){
+                        $.ajax({
+                            method: "GET",
+                            url: url
+                          }).done(function(response) {
+                            
+                            var html = $(response).find("#contentCatagory").html();
+                            
+                            $('#contentCatagory').html(html)
+                            if($(".result-product").length == 0){
+                                
+                                $('.result-btn').hide();
+                                $('.searchnotfound').html("<div class='noResults' style='background-color: transparent; padding: 8px 35px; color: rgb(0, 0, 0); text-align: center;'>No records found</div>");
+                                return false;
+                            }
+                             $('#contentCatagory').html(html)
+                             $('.result-section:lt('+max_items_page+')').show();
+                             $('#asideLinks-product li').removeClass('active')
+                             $('#asideLinks-product li:first-child').addClass('active')
+                             $("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
+                             $("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
+                             $("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
+                             $('.category-products-listing .result-section').removeClass('border-last');
+                             $('.category-products-listing .result-section:visible').last().addClass('border-last');
+                             loadMoreResults();
+                       });
+                    }else{
+                        $('.errorSearchField').html("Please enter a search term or date").show();
+                    }
+                }
 
 
-			$(document).on('keypress','.search', function(e){
-				//e.preventDefault();
-				if(e.which == 13){
-					getResults(false);
-				}
+            $(document).on('keypress','.search', function(e){
+                //e.preventDefault();
+                if(e.which == 13){
+                    getResults(false);
+                }
 
-			});
-
-			$(document).on('click','.search-course-btn a', function(e){
-				e.preventDefault();
-				getResults(false);
             });
 
-			$('#asideLinks-product li').each(function(index){
-				var liIndex = index
-					if(liIndex == 0){
-						$('#asideLinks-product li').removeClass('active')
-						$(this).addClass('active')
-						$("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
-						$("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
-						$("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
-					}
-					$(this).click(function(){
-						$('#asideLinks-product li').removeClass('active')
-						$(this).addClass('active')
-						$(this).children('ul').show();
-						$("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
-						$("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
-						$(this).children('a').children('.icon-accordion-opened').show();
-						$(this).children('a').children('.icon-accordion-closed').hide();
-						if(liIndex == 0){
-							$('.daterangepicker .search').val('');
-							$('.from_date').val('');
-							$('.to_date').val('');
-							getResults(true);
-							$('.result-section').show();
-							$("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
-						}
-					});
-			});
+            $(document).on('click','.search-course-btn a', function(e){
+                e.preventDefault();
+                getResults(false);
+            });
 
-
+            $('#asideLinks-product li').each(function(index){
+                var liIndex = index
+                    if(liIndex == 0){
+                        $('#asideLinks-product li').removeClass('active')
+                        $(this).addClass('active')
+                        $("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
+                        $("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
+                        $("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
+                    }
+                    $(this).click(function(){
+                        $('#asideLinks-product li').removeClass('active')
+                        $(this).addClass('active')
+                        $(this).children('ul').show();
+                        $("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
+                        $("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
+                        $(this).children('a').children('.icon-accordion-opened').show();
+                        $(this).children('a').children('.icon-accordion-closed').hide();
+                        if(liIndex == 0){
+                            $('.daterangepicker .search').val('');
+                            $('.from_date').val('');
+                            $('.to_date').val('');
+                            getResults(true);
+                            $('.result-section').show();
+                            $("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
+                        }
+                        hds.trainingDetail.lastVisibleResult();
+                    });
+            });
         }
     }
 }(window, document, jQuery, hds));
@@ -402,10 +348,10 @@ var hds = window.hds || {};
 $(function() {
     if($('#trainingDetail').length>0){
     hds.trainingDetail.init();
-	$( document ).ready(function() {
-		if(window.location.hash) {
+    $( document ).ready(function() {
+        if(window.location.hash) {
             window.scrollTo(0, $("#trainingDetail").offset().top);
-		}
-	});	
+        }
+    }); 
 }
 })
