@@ -47,11 +47,16 @@ var hds = window.hds || {};
                 force_generate_controls: true
             });
         },
-        _fetchDetail: function() {
-            $('.scrollbar-inner > h2').html('').html($.trim($('#locationEventRegion').val()));
-            var defaultRegion = this.options.defaultRegion.toLowerCase();
+        _fetchDetail: function() { 
+        	var defaultRegion = this.options.defaultRegion.toLowerCase();
             var defaultCountry = this.options.defaultCountry.toLowerCase();
             var defaultcity = this.options.defaultcity.toLowerCase();
+            console.log(defaultRegion+'=========='+defaultCountry+'=========='+defaultcity);
+            $("#allRegion option").filter(function() {return this.text.toLowerCase() == defaultRegion;}).attr('selected', true);
+            $("#allCountries option").filter(function() {return this.text.toLowerCase() == defaultCountry;}).attr('selected', true);
+            $("#allLocations option").filter(function() {return this.text.toLowerCase() == defaultcity;}).attr('selected', true);
+            $('.scrollbar-inner > h2').html('').html($.trim($('#locationEventRegion').val()));
+            
             if(defaultcity===''){
             	defaultcity=null;
             }
