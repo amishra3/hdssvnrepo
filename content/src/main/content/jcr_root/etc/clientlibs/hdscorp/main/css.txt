@@ -12,7 +12,6 @@ hds-community.css
 product-category.css
 press-release.css
 product-lp-list.css
-02-product-list.css
 news-insight-news.css
 about-hds-leadership-detail.css
 about-hds-awards.css
