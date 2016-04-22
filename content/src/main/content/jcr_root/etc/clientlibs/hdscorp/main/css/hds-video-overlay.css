@@ -108,7 +108,7 @@
     .hds-overlay .innerContent embed, .hds-overlay .innerContent object, .hds-overlay .BrightcoveExperience {
         height: 100%;
         width: 98%;
-        min-height:300px;
+        min-height:240px;
     }
     .hds-overlay .innerContent{min-height:0 !important;}    
     .hds-overlay .container .close-overlay{
