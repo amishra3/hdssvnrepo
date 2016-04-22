@@ -17,6 +17,7 @@ var hds = window.hds || {};
             hds.loadDataFilters.manageAlphaSorting();
             hds.loadDataFilters.searchFilters();
             hds.loadDataFilters.updateTitleOnLoad();
+            hds.loadDataFilters.lastVisibleProductResult();
         },
         
        updateTitleOnLoad: function(url) {
@@ -39,7 +40,9 @@ var hds = window.hds || {};
             		var sizeCatagoryList = $(".category-products-listing .product").size();
             		  hds.loadDataFilters.bindHTMLLoad();               
                       hds.loadDataFilters.loadSubContent();
-                      hds.loadDataFilters.udatePageCount();  
+                      hds.loadDataFilters.udatePageCount();
+                      hds.loadDataFilters.lastVisibleProductResult();
+                      console.log(sizeCatagoryList)
                       if (sizeCatagoryList<=defSize) {
                           $('#loadMoreBtn').hide();
                       	}
@@ -112,6 +115,12 @@ var hds = window.hds || {};
 
             });
         },
+        lastVisibleProductResult:function(){
+        	 $('.category-products-listing .product').removeClass('border-last-product');
+        	 $('.product').each(function(){
+        	  $('.product:visible:last').addClass('border-last-product');
+        	 })            
+        },
         loadSubContent: function() {
             var sizeCatagoryList = $(".category-products-listing .product").size(),
             x = this.options.countToShow;
@@ -130,6 +139,7 @@ var hds = window.hds || {};
                 x = (x + 10 <= sizeCatagoryList) ? x + 10 : sizeCatagoryList;
                 $('.product:lt(' + x + ')').show('medium');
                 hds.loadDataFilters.udatePageCount();
+                hds.loadDataFilters.lastVisibleProductResult();
                 if (x == sizeCatagoryList) {
                     $('#loadMoreBtn').hide();
                 }           
@@ -204,33 +214,7 @@ var hds = window.hds || {};
                 return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
             };
 
-            $(document).on('keypress', '#searchFilter', function(event) {
-            	var keycode = (event.keyCode ? event.keyCode : event.which);
-            	var getSearchFilter = $(this).val();
-            	if(keycode == 13) {
-	            	event.preventDefault();	                
-	                if (getSearchFilter.length > 0) {
-	                    hds.loadDataFilters.checkSearchEmpty();
-	                } else {	                 
-	                	return false;
-	                }                
-            	}            	            	
-            });
             
-            $(document).on('keydown', '#searchFilter', function(event) {
-            	var key = event.keyCode || event.charCode;
-            	var getSearchFilter = $.trim($(this).val());
-            	if( key == 8 || key == 46 ){            		
-            		 if (getSearchFilter.length === 0) {
-            			 hds.loadDataFilters.checkSearchEmpty();            			 
-            		 }
-            	}
-            })
-            
-            $(document).on('click', '.glyphicon-search', function(event) {            	
-	                $('#searchFilter').trigger('keypress');
-	                event.preventDefault();
-            });
         },
         checkSearchEmpty: function() {
             var alphaSelected = null,
@@ -302,9 +286,6 @@ var hds = window.hds || {};
                     } else {
                         if (filters[filter]) {
                             if ((filters[filter] != 'inputsearc')) {
-                            	
-                            	
-                            	
 
                                 result = result && filters[filter] === self.data(filter);
                             } else {
@@ -317,7 +298,7 @@ var hds = window.hds || {};
 								self.find(".filterText:not(:Contains(" + getSearchFilter + "))").parent().parent().slideUp();
                                 self.find(".filterText:Contains(" + getSearchFilter + ")").parent().parent().slideDown();
                                 setTimeout(function() {
-                                    hds.loadDataFilters.udatePageCount();
+                                    hds.loadDataFilters.udatePageCount();                                   
                                 }, 500);
                                
                             }
@@ -370,6 +351,16 @@ var hds = window.hds || {};
                 return result;
             }).show();
            // hds.loadDataFilters.udatePageCount();
+            setTimeout(function() { 
+            	hds.loadDataFilters.lastVisibleProductResult();
+                var sizeCatagoryList = $(".category-products-listing .product:visible").size();
+                if (sizeCatagoryList<=10) {
+                	console.log("here in condition")
+                   $('#loadMoreBtn').hide();
+                }else{
+                	
+                }
+            }, 500);
         },
         bindEventsOnResize: function() {
             $(window).resize(function() {
@@ -379,6 +370,38 @@ var hds = window.hds || {};
         bindEventsOnLoad: function() {           
             $(document).on('click','#loadMoreBtn', function() {                
                 hds.loadDataFilters.loadSubContentProcess();                
+            });
+            $(document).on('keypress', '#searchFilter', function(event) {
+            	var keycode = (event.keyCode ? event.keyCode : event.which);
+            	var getSearchFilter = $(this).val();
+            	if(keycode == 13) {
+	            	event.preventDefault();	                
+	                if (getSearchFilter.length > 0) {
+	                    hds.loadDataFilters.checkSearchEmpty();
+	                } else {	                 
+	                	return false;
+	                }                
+            	}            	            	
+            });
+            
+            $(document).on('keydown', '#searchFilter', function(event) {
+            	var key = event.keyCode || event.charCode;
+            	var getSearchFilter = $.trim($(this).val());
+            	if( key == 8 || key == 46 ){            		
+            		 if (getSearchFilter.length === 0) {
+            			 hds.loadDataFilters.checkSearchEmpty();            			 
+            		 }
+            	}
+            })
+            
+            $(document).on('click', '.glyphicon-search', function(event) {            	
+            	var getSearchFilter = $('#searchFilter').val();
+            	if (getSearchFilter.length > 0) {
+                    hds.loadDataFilters.checkSearchEmpty();
+                } else {	                 
+                	return false;
+                }  
+	                event.preventDefault();
             });
         }
     }
