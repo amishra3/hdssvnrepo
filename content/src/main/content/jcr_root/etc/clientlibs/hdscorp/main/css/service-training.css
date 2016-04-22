@@ -68,11 +68,12 @@ div.training {
     margin: 0 0 35px;
 }
 .serv-training-overview .daterangepicker .daterangepicker_input {
-    width: 100%;
+    width: 100%; background:#fff;
 }
 .serv-training-overview .daterangepicker .daterangepicker_input input[type="text"] {
-    width: 100%;
+    width: 100%; position:relative; z-index:1;
 }
+.serv-training-overview .daterangepicker .daterangepicker_input i{z-index:0;}
 .serv-training-overview .daterangepicker .calendar.left,
 .serv-training-overview .daterangepicker .calendar.right {
     margin: 0;
