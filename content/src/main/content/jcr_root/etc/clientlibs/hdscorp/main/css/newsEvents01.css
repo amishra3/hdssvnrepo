@@ -507,6 +507,9 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     padding-bottom: 30px;
 }
 
+.border-last {
+    border-bottom: none !important;
+}
 .newsEvents.border-last {
     border-bottom: none !important;
 }
@@ -649,6 +652,7 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     left: 12px;
     position: absolute;
     top: 13px;
+	z-index: -1;
 }
 
 .daterangepicker input[type="text"] {
@@ -658,6 +662,7 @@ box-shadow: 4px 6px 5px 0px rgba(189,189,189,1);
     font-size: 16px;
     font-weight: bolder;
     padding: 12px 8px 12px 40px;
+	background: transparent;
 }
 
 .daterangepicker .calendar {
