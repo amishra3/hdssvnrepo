@@ -222,6 +222,10 @@ var hds = window.hds || {};
                     $('.noResults').remove();
                     $('.result-btn').show();
                 }
+
+                if(items == 10) {
+                    $('.result-btn').hide();
+                }
                 
                 $('.result-btn').unbind('click').click(function(e){
                     $('.result-product').show();
@@ -290,9 +294,8 @@ var hds = window.hds || {};
                              $("#asideLinks-product li").children('ul').hide().find('input:checkbox').removeAttr('checked');
                              $("#asideLinks-product li").children('a').children('.icon-accordion-closed').show();
                              $("#asideLinks-product li").children('a').children('.icon-accordion-opened').hide();
-                             $('.category-products-listing .result-section').removeClass('border-last');
-                             $('.category-products-listing .result-section:visible').last().addClass('border-last');
                              loadMoreResults();
+                             hds.trainingDetail.lastVisibleResult();
                        });
                     }else{
                         $('.errorSearchField').html("Please enter a search term or date").show();
