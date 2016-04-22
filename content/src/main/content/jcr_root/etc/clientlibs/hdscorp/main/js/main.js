@@ -94,6 +94,35 @@ $(document).ready(function () {
 		1000);
 	});
 	
+	/* calendar function */
+    $("#date-range200").datepicker({
+            dateFormat: "mm/dd/yy",
+            minDate: 0,
+            onSelect: function (date) {
+                var dt2 = $('#date-range201');
+                var startDate = $(this).datepicker('getDate');
+                var minDate = $(this).datepicker('getDate');
+				if($('#date-range201').val() != '' && $('#date-range201').val() > $('#date-range200').val()){
+					dt2.datepicker('option', 'minDate', minDate);
+				}else{
+					dt2.datepicker('setDate', minDate);
+					dt2.datepicker('option', 'minDate', minDate);
+				}
+            }
+        });
+		$('#date-range201').datepicker({
+            dateFormat: "mm/dd/yy",
+			minDate: 0,
+            onSelect: function (date) {
+                var dt1 = $('#date-range200');
+				var maxDate = $(this).datepicker('getDate');
+				if($('#date-range200').val() == '' || $('#date-range200').val() > $('#date-range201').val()){
+	                dt1.datepicker('setDate', $('#date-range201').val());
+				}
+
+            }
+     });
+	
 
 	/* function to open modal window start */
     $(document).on('click','a[rel=iframemodal]',function(evt){

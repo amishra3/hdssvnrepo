@@ -4,7 +4,7 @@ var hds = window.hds || {};
 
     hds.serviceTraining = {
         init: function(options) {
-            hds.serviceTraining.loadCalender();  
+            //hds.serviceTraining.loadCalender();  
             hds.serviceTraining.bindEventsSelectors();   
              $(document).on('keypress', '.training-search input', function(event) {                
                 var keycode = (event.keyCode ? event.keyCode : event.which);
