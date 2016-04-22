@@ -37,7 +37,6 @@ value="<%=PageUtils.convertMultiWidgetToList(properties,"tdlocationid-tdlocation
                                         </li>
                                         </c:forEach>
                                     </ul>
-                                    <div class="MobileHolderWrapper"></div>
                                 </li>
 
                             </ul>

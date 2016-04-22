@@ -22,7 +22,7 @@
 <div class="col-md-9" id="contentCatagory">
    <c:forEach items="${lmsDataModel.maplmsBeanList}" var="lmsmapList" varStatus="lmsStatus">
       <div class="result-product training-result">
-         <div class="category-heading hidden-xs hidden-sm">
+         <div class="category-heading">
             <h2>${lmsmapList.key} </h2>
          </div>
          <div class="tab-content current">
