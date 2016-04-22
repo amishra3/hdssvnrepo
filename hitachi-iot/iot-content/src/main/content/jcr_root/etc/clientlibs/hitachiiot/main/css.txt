@@ -50,4 +50,9 @@ contact-us-locations.css
 /etc/clientlibs/hitachiiot/main/css/iot-global-footer.css
 /etc/clientlibs/hitachiiot/main/css/iot-solutions-hero.css
 /etc/clientlibs/hitachiiot/main/css/iot-solutions-market-leader.css
-
+/etc/clientlibs/hitachiiot/main/css/iot-solutions-contactus.css
+/etc/clientlibs/hitachiiot/main/css/iot-solutions-related-products.css
+/etc/clientlibs/hitachiiot/main/css/iot-solutions-accordion.css
+/etc/clientlibs/hitachiiot/main/css/iot-aboutus-internal-business-units.css
+/etc/clientlibs/hitachiiot/main/css/iot-aboutus-partners.css
+/etc/clientlibs/hitachiiot/main/css/iot-aboutus-news.css

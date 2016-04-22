@@ -13,24 +13,30 @@
 
 <c:choose>
 <c:when test="${not empty title}">
-	<img src="${properties.iconurl}" />
-	<h2>
-		${title}
-	</h2>
-	<p>${properties.description}</p>
-	<c:set var="linkUrl" value="${properties.readmorelink}" />
-	<c:choose>
+	<div class="col-sm-4">
+      <div class="news-insight-explore-spotlight spotlight-normal">
+        <div class="spotlight-content" style="height: 220px;">
+          <div class="icon hidden-xs">
+            <img src="${properties.iconurl}" alt="" title="">
+          </div>
+          <div class="icon hidden-sm hidden-md hidden-lg">
+           <img src="${properties.iconurl}" alt="" title="">
+          </div>
+          <div class="type">${title}</div>
+          <div class="spotlight-title">${properties.description}</div>
+          <c:set var="linkUrl" value="${properties.readmorelink}" />
+	   <c:choose>
 		<c:when test="${fn:startsWith(linkUrl,'/content/')}">
 			<c:set var="linkUrl" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("linkUrl").toString())%>"/>
 		</c:when>
 		<c:otherwise>
 			<c:set var="linkUrl" value="${linkUrl}"/>
 		</c:otherwise>
-	</c:choose>
-	
-	<c:if test="${not empty properties.readmorelabel}">
-		<a href="${fn:contains(linkUrl, 'http')?'':domain}${linkUrl}" target="${properties.readmorelinktargettype?'_blank':'_self'}" title="${properties.readmorelabel}">${properties.readmorelabel}</a>
-	</c:if>	
+	   </c:choose>
+          <div class="read-more"> <a href="${linkUrl}" target="${properties.readmorelinktargettype?'_blank':'_self'}" class="animateLink">${properties.readmorelabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a> </div>
+        </div>
+      </div>
+    </div>
 </c:when>
 <c:otherwise>
 	<wcmmode:edit>
@@ -40,3 +46,5 @@
 	</wcmmode:edit>
 </c:otherwise>
 </c:choose>
+
+ 

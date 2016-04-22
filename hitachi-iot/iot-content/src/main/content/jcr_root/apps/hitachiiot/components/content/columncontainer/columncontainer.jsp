@@ -6,9 +6,18 @@
 <c:set var="title" value="<%=properties.get("title")%>" />
 <c:choose>
 <c:when test="${not empty title}">
-	<img src="${properties.iconurl}" />
-	<h2>${title}</h2>
-	<cq:include path="columncontrol" resourceType="hdscorp/components/content/column-control" />  
+	<div class="aboutus-news news-insight-explore">
+     <div class="content-container container-fluid">
+    <div class="heading clearfix">
+     <div class="icon">
+               <img alt="${properties.title}" src="${properties.iconurl}">
+         </div>
+      <h2>${title}</h2>
+    </div>
+    <cq:include path="columncontrol" resourceType="hdscorp/components/content/column-control" /> 
+   
+  </div>
+</div>
 </c:when>
 <c:otherwise>
 	<wcmmode:edit>
@@ -18,3 +27,4 @@
 	</wcmmode:edit>
 </c:otherwise>
 </c:choose>
+

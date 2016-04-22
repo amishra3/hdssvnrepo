@@ -1,0 +1,92 @@
+/* line 33, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+html {
+  font-size: 16px !important;
+}
+
+/*bootstrap override start*/
+/* line 38, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+.row-no-margin {
+  margin: 0 !important;
+}
+
+/* line 41, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+.row-reduce-half {
+  margin-left: -7.5px !important;
+  margin-right: -7.5px !important;
+}
+
+/* line 45, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+.col-no-pad {
+  padding: 0 !important;
+}
+
+/*bootstrap override end*/
+/* BOOTSTRAP OVERRIDES */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+/* line 8, stdin */
+.related-products .mes-container h1 {
+  margin-top: 0;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 3em;
+  line-height: 1;
+  text-align: center;
+}
+
+/* line 15, stdin */
+.related-products .mes-container h3 {
+  margin-bottom: 45px;
+  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+  font-size: 1.5625em;
+  line-height: 1;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* line 23, stdin */
+.related-products .mes-container h4 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* line 28, stdin */
+.related-products .mes-container .product-copy-main {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 37, stdin */
+  .related-products .mes-container .product-box .product-copy-sub {
+    white-space: normal;
+  }
+}

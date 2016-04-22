@@ -6,7 +6,6 @@
 	 */
 
 
-
 	var $marketLeaderImage = $('.solutions-page.market-leader ');
 	if ($marketLeaderImage.length) {
 		$('.solutions-overlay .close-hero').click(function() {
@@ -34,6 +33,8 @@
 	}
 
 
+
+ 
 	var stickyElement = function() {
 		// element to be sticky
 		var $stickyEl = $('.navContain');
@@ -44,7 +45,7 @@
 			element: $stickyEl,
 			wrapper: false,
 			stuckClass: 'sticky',
-			offset: 0
+			offset: 43
 		});
 
 		$stopEl.waypoint(function(direction) {
@@ -73,44 +74,6 @@
 	};
 
 	stickyElement();
-
-	function setActiveLi() {
-		var currentId = $(this.element).attr('id');
-		$('.list-inline').find('li').removeClass('active');
-		$('.list-inline').find('li.' + currentId).addClass('active');
-	}
-
-	var waypoint = new Waypoint({
-		element: document.getElementById('overview'),
-		handler: function(direction) {
-			setActiveLi.call(this);
-		},
-		offset: 1
-	});
-
-	var waypointb = new Waypoint({
-		element: document.getElementById('overview'),
-		handler: function(direction) {
-			setActiveLi.call(this);
-		},
-		offset: -136
-	});
-
-	var waypoint2 = new Waypoint({
-		element: document.getElementById('features-benefits'),
-		handler: function(direction) {
-			setActiveLi.call(this);
-		},
-		offset: 34
-	});
-
-	var waypoint2b = new Waypoint({
-		element: document.getElementById('features-benefits'),
-		handler: function(direction) {
-			setActiveLi.call(this);
-		},
-		offset: -136
-	});
 
 	// Get text values from Sticky Nav, apply to Accordion labels
 	$("ul.stickyNav li a").each(function(i) {
@@ -148,6 +111,8 @@
 
 	$('.stickyNav a').on('click', function(e){
 		e.preventDefault();
+		$('.stickyNav li').removeClass('active');
+		$(this).parent().addClass('active'); 
 
 		var
 		 	scrollOffset = 0,

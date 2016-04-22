@@ -4,7 +4,7 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false"%>
 
-<div class="footer">
+<div class="footer solutions">
 
     <cq:include path="contactusipar" resourceType="foundation/components/iparsys" /> 
     <div class="footer-white">

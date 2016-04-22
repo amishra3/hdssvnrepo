@@ -7,10 +7,10 @@
 
 
 <div class="stop"></div>
-<div id="more-enterprise-storage" class="mes-section" style="${imgval}">
+<div id="more-enterprise-storage" class="related-products mes-section" style="${imgval}">
  <div class="mes-container container-fluid">
-  <h3>${properties.sectiontitle}</h3>
-  <h5>${properties.sectionsubtitle}</h3>
+  <h1>${properties.sectiontitle}</h1>
+  <h3>${properties.sectionsubtitle}</h3>
 
   <div class="row row-reduce-half">
    <cq:include path="communitycontentpar" resourceType="hdscorp/components/content/column-control" />
@@ -19,3 +19,4 @@
 
  </div>
 </div>
+

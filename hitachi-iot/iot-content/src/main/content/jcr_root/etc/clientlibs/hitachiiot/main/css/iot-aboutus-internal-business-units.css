@@ -257,270 +257,85 @@ button.cta-scroll-top .text-return {
   }
 }
 
-/* line 8, stdin */
-.solutions-page.market-leader {
-  background: #ffffff;
-  padding: 0 15px;
-}
-
-/* line 12, stdin */
-.solutions-page.market-leader .market-leader-container {
-  position: relative;
-  text-align: center;
-}
-
-/* line 15, stdin */
-.solutions-page.market-leader .market-leader-container a:hover,
-.solutions-page.market-leader .market-leader-container a:active {
-  text-decoration: none;
-}
-
-/* line 19, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image {
-  margin: 10% 0;
-  padding-top: 2em;
-}
-
-/* line 22, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image a {
-  position: relative;
-  display: inline-block;
-}
-
-/* line 25, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image a .expand-box {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-/* line 30, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image a img {
-  margin: 0;
-}
-
-/* line 36, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content {
-  margin: 10% 0;
-  text-align: left;
-}
-
-/* line 40, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content h1 {
-  margin-bottom: 30px;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 3.75em;
-  line-height: 1;
-  color: #000000;
-}
-
-/* line 48, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content h4 {
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  line-height: 1;
-  color: #848484;
-  text-transform: uppercase;
-}
-
-/* line 56, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content p {
-  margin-bottom: 20px;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 1em;
-  line-height: 1;
-  color: #000000;
-  line-height: 175%;
-}
-
-/* line 65, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 900;
-  font-size: 0.8125em;
-  line-height: 1;
-  letter-spacing: 3px;
-  background-color: #ffffff;
-  transition: background-color 0.3s linear, color 0.3s linear;
-}
-
-/* line 160, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
-  background-color: #ce0000;
+/* line 7, stdin */
+.internal-business-units {
+  padding: 100px 10px 45px 180px;
   color: #ffffff;
-}
-
-/* line 163, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
-  color: #ffffff;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 65, stdin */
-  .solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
-    width: 100%;
-  }
-}
-
-/* line 79, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner {
-  display: none;
-  margin: 15% 0;
-}
-
-/* line 83, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner iframe {
-  max-width: 100%;
-  width: 70%;
-  min-height: 500px;
-}
-
-/* line 89, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero {
-  position: absolute;
-  top: -25px;
-  right: 0;
-}
-
-/* line 93, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
-  background-image: url(../images/sprite.png);
-  background-position: -248px -231px;
-  width: 18px;
-  height: 18px;
-  background-position: -239px -220px;
-}
-
-/* line 101, stdin */
-.solutions-overlay {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  padding: 5%;
-  z-index: 1000;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.75);
-}
-
-/* line 111, stdin */
-.solutions-overlay .common-hero-banner {
-  transform: translateY(-50%);
-  overflow: scroll;
-  top: 50%;
-  max-height: 100%;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 111, stdin */
-  .solutions-overlay .common-hero-banner {
-    margin: 0 auto;
-  }
-}
-
-/* line 121, stdin */
-.solutions-overlay img {
-  position: relative;
-}
-
-/* line 124, stdin */
-.solutions-overlay .close-hero {
-  display: block;
-  position: absolute;
-  top: 35px;
-  right: 35px;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 124, stdin */
-  .solutions-overlay .close-hero {
-    top: 10px;
-    right: 10px;
-  }
-}
-
-/* line 133, stdin */
-.solutions-overlay .close-hero .icon-close-hero {
-  background-image: url(../images/sprite.png);
-  background-position: -248px -231px;
-  width: 18px;
-  height: 18px;
+  background: url("../images/business-units-street-scene.jpg") center center no-repeat;
+  background-size: cover;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  height: 480px;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 143, stdin */
-  .market-leader .market-leader-container {
-    text-align: center;
+  /* line 7, stdin */
+  .internal-business-units {
+    background-image: none;
+    background-color: #008eaa;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 60px 15px 50px;
   }
-  /* line 146, stdin */
-  .market-leader .market-leader-container .market-leader-content {
-    display: inline-block;
-    float: none;
-    margin: 0 auto 10%;
-    padding: 0;
-    text-align: left;
-  }
-  /* line 153, stdin */
-  .market-leader .market-leader-container .market-leader-content h1 {
-    margin: 40px 0 20px;
-    font-size: 2em;
-    line-height: 1;
-    color: #000000;
-  }
-  /* line 159, stdin */
-  .market-leader .market-leader-container .market-leader-content h4 {
-    font-size: 1.125em;
-    line-height: 1;
-    color: #848484;
-    text-transform: uppercase;
-    line-height: 140%;
-  }
-  /* line 166, stdin */
-  .market-leader .market-leader-container .market-leader-content p {
-    margin-bottom: 40px;
-    color: #000000;
-    font-size: .9em;
-  }
-  /* line 172, stdin */
-  .market-leader .market-leader-container .market-leader-content .learn-more {
-    font-size: 0.6875em;
-    line-height: 1;
-  }
-  /* line 176, stdin */
-  .market-leader .market-leader-container .market-leader-image {
-    float: none;
-    margin: 15% 0 5%;
-  }
-  /* line 180, stdin */
-  .market-leader .market-leader-container .market-leader-image img {
-    margin: 10px 0 0 5%;
+  /* line 24, stdin */
+  .internal-business-units .content-container [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-@media only screen and (max-width: 480px) {
-  /* line 192, stdin */
-  .market-leader .market-leader-container .market-leader-image {
-    margin: 0;
+/* line 31, stdin */
+.internal-business-units h2 {
+  margin: 0 0 20px;
+  font-size: 3.75em;
+  line-height: 1;
+  font-weight: 100;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 31, stdin */
+  .internal-business-units h2 {
+    font-size: 1.875rem;
+    margin: 0 0 30px;
   }
-  /* line 194, stdin */
-  .market-leader .market-leader-container .market-leader-image .expand-box {
-    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 41, stdin */
+  .internal-business-units h4 {
+    font-size: 1.125rem;
   }
-  /* line 197, stdin */
-  .market-leader .market-leader-container .market-leader-image img {
-    max-width: 100%;
+}
+
+/* line 46, stdin */
+.internal-business-units p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+/* line 52, stdin */
+.internal-business-units ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 52, stdin */
+  .internal-business-units ul {
+    padding-left: 0;
   }
-  /* line 202, stdin */
-  .market-leader .market-leader-container .market-leader-content .btn-square-red {
-    display: block;
-    max-width: 300px;
-    margin: 0 auto;
-  }
+}
+
+/* line 60, stdin */
+.internal-business-units ul li {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* line 64, stdin */
+.internal-business-units ul li .internal-business-unit-icon {
+  padding-right: 10px;
 }

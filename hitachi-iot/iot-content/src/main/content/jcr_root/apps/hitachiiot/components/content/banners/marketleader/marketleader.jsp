@@ -19,7 +19,7 @@
 	<div class="market-leader-container content-container">
 		<div class="market-leader-image col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" style="background-image: url(${properties.videothumbnailimgpath}); background-position: 50% 50%; background-repeat: no-repeat;">
 			
-			<c:if test="${!hideVideo}">
+			<c:if test="${not empty properties.videoiconpath}">
 			<a href="javascript:void(0);"  class="btn-play-video" onclick="${vidurl}"><img src="${properties.videoiconpath}"></a>
 	        </c:if>	
 		</div>

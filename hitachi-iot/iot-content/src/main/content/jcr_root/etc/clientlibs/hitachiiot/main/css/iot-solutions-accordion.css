@@ -257,66 +257,104 @@ button.cta-scroll-top .text-return {
   }
 }
 
-/* line 8, stdin */
-.solutions-page.market-leader {
-  background: #ffffff;
-  padding: 0 15px;
+/* line 7, stdin */
+.navContain {
+  width: 100%;
 }
 
-/* line 12, stdin */
-.solutions-page.market-leader .market-leader-container {
+/* line 9, stdin */
+.navContain .stickNav-background {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* line 11, stdin */
+.navContain .stickNav-background .stickNav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* line 14, stdin */
+.navContain .stickNav-background .stickNav-container .smart-symbol {
+  color: #ffffff;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.125em;
+  line-height: 1;
+  line-height: 2.5em;
+  padding-left: 35px;
+  float: left;
+  width: 200px;
+  height: 43px;
+  background-repeat: no-repeat;
+  background-position: 0 7px;
+}
+
+/* line 33, stdin */
+.accordion-content .content-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* line 38, stdin */
+.accordion-section-hero {
+  background: #ffffff;
+  padding: 0;
+}
+
+/* line 42, stdin */
+.accordion-section-hero .accordion-section-hero.content-container {
   position: relative;
   text-align: center;
+  overflow: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
-/* line 15, stdin */
-.solutions-page.market-leader .market-leader-container a:hover,
-.solutions-page.market-leader .market-leader-container a:active {
+/* line 50, stdin */
+.accordion-section-hero .accordion-section-hero.content-container a:hover,
+.accordion-section-hero .accordion-section-hero.content-container a:active {
   text-decoration: none;
 }
 
-/* line 19, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image {
-  margin: 10% 0;
-  padding-top: 2em;
+/* line 55, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image {
+  min-height: 275px;
+  margin-top: 10%;
 }
 
-/* line 22, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image a {
-  position: relative;
-  display: inline-block;
+@media only screen and (max-width: 992px) {
+  /* line 55, stdin */
+  .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image {
+    display: none;
+  }
 }
 
-/* line 25, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image a .expand-box {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+/* line 61, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image img {
+  margin: 10% auto 0;
+  max-width: 100%;
 }
 
-/* line 30, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-image a img {
-  margin: 0;
-}
-
-/* line 36, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content {
-  margin: 10% 0;
+/* line 67, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content {
+  margin-top: 5%;
+  margin-bottom: 5%;
   text-align: left;
 }
 
-/* line 40, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content h1 {
-  margin-bottom: 30px;
+/* line 72, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content h1 {
+  margin-bottom: 25px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-size: 3.75em;
   line-height: 1;
-  color: #000000;
+  color: #ffffff;
 }
 
-/* line 48, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content h4 {
+/* line 80, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content h4 {
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -325,19 +363,35 @@ button.cta-scroll-top .text-return {
   text-transform: uppercase;
 }
 
-/* line 56, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content p {
+/* line 88, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content p {
   margin-bottom: 20px;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-family: 'museo-sans', Arial, sans-serif;
   font-weight: 100;
   font-size: 1em;
   line-height: 1;
-  color: #000000;
+  color: #ffffff;
+  line-height: 175%;
+  padding-right: 10%;
+}
+
+/* line 97, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content ul {
+  padding-left: 1em;
+}
+
+/* line 99, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content ul li {
+  font-family: 'museo-sans', Arial, sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+  line-height: 1;
+  color: #ffffff;
   line-height: 175%;
 }
 
-/* line 65, stdin */
-.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
+/* line 108, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -351,176 +405,146 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 160, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red:hover {
   background-color: #ce0000;
   color: #ffffff;
 }
 
 /* line 163, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
+.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red:hover a {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 992px) {
-  /* line 65, stdin */
-  .solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
-    width: 100%;
-  }
-}
-
-/* line 79, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner {
+/* line 119, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner {
   display: none;
   margin: 15% 0;
 }
 
-/* line 83, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner iframe {
+/* line 123, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner iframe {
   max-width: 100%;
   width: 70%;
   min-height: 500px;
 }
 
-/* line 89, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero {
+/* line 129, stdin */
+.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner .close-hero {
   position: absolute;
   top: -25px;
   right: 0;
 }
 
-/* line 93, stdin */
-.solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
-  background-image: url(../images/sprite.png);
-  background-position: -248px -231px;
-  width: 18px;
-  height: 18px;
-  background-position: -239px -220px;
-}
-
-/* line 101, stdin */
-.solutions-overlay {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  padding: 5%;
-  z-index: 1000;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.75);
-}
-
-/* line 111, stdin */
-.solutions-overlay .common-hero-banner {
-  transform: translateY(-50%);
-  overflow: scroll;
-  top: 50%;
-  max-height: 100%;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 111, stdin */
-  .solutions-overlay .common-hero-banner {
-    margin: 0 auto;
-  }
-}
-
-/* line 121, stdin */
-.solutions-overlay img {
-  position: relative;
-}
-
-/* line 124, stdin */
-.solutions-overlay .close-hero {
-  display: block;
-  position: absolute;
-  top: 35px;
-  right: 35px;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 124, stdin */
-  .solutions-overlay .close-hero {
-    top: 10px;
-    right: 10px;
-  }
-}
-
 /* line 133, stdin */
-.solutions-overlay .close-hero .icon-close-hero {
+.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner .close-hero .icon-close {
   background-image: url(../images/sprite.png);
   background-position: -248px -231px;
   width: 18px;
   height: 18px;
+}
+
+/* line 141, stdin */
+.resources-title.solutions {
+  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  text-align: center;
+  color: #008eaa;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 143, stdin */
-  .market-leader .market-leader-container {
-    text-align: center;
+  /* line 151, stdin */
+  .accordion-section-hero {
+    padding: 0;
   }
-  /* line 146, stdin */
-  .market-leader .market-leader-container .market-leader-content {
+  /* line 153, stdin */
+  .accordion-section-hero .accordion-section-hero-container {
+    text-align: center;
+    background-image: none !important;
+    background-color: #1790a8;
+  }
+  /* line 158, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content {
     display: inline-block;
     float: none;
     margin: 0 auto 10%;
-    padding: 0;
+    padding: 0 15px;
     text-align: left;
   }
-  /* line 153, stdin */
-  .market-leader .market-leader-container .market-leader-content h1 {
+  /* line 165, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content h1 {
     margin: 40px 0 20px;
     font-size: 2em;
     line-height: 1;
-    color: #000000;
   }
-  /* line 159, stdin */
-  .market-leader .market-leader-container .market-leader-content h4 {
+  /* line 170, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content h4 {
     font-size: 1.125em;
     line-height: 1;
-    color: #848484;
     text-transform: uppercase;
     line-height: 140%;
   }
-  /* line 166, stdin */
-  .market-leader .market-leader-container .market-leader-content p {
+  /* line 176, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content p {
     margin-bottom: 40px;
-    color: #000000;
     font-size: .9em;
   }
-  /* line 172, stdin */
-  .market-leader .market-leader-container .market-leader-content .learn-more {
+  /* line 181, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content .learn-more {
     font-size: 0.6875em;
     line-height: 1;
   }
-  /* line 176, stdin */
-  .market-leader .market-leader-container .market-leader-image {
+  /* line 185, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image {
     float: none;
     margin: 15% 0 5%;
   }
-  /* line 180, stdin */
-  .market-leader .market-leader-container .market-leader-image img {
-    margin: 10px 0 0 5%;
+  /* line 189, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image img {
+    margin: 33px 0 0 5%;
+  }
+  /* line 195, stdin */
+  .resources-section .resources-container .resources-category:after {
+    background: none;
+  }
+  /* line 198, stdin */
+  .accordion-level .accordion-menu-container {
+    border-bottom: 3px solid #c5c5c5;
+  }
+  /* line 200, stdin */
+  .accordion-level .accordion-menu-container.open {
+    border-bottom: none;
+  }
+  /* line 203, stdin */
+  .accordion-level .accordion-menu-container:last-of-type {
+    border: none;
+  }
+  /* line 206, stdin */
+  .accordion-level .accordion-menu-container .accordion-menu {
+    background-color: #f1f1f1;
+    margin: 0 -15px;
+    padding: 20px 15px;
+  }
+  /* line 212, stdin */
+  .accordion-menu-container:after {
+    height: 0;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  /* line 192, stdin */
-  .market-leader .market-leader-container .market-leader-image {
-    margin: 0;
+  /* line 221, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image {
+    margin-top: 0;
   }
-  /* line 194, stdin */
-  .market-leader .market-leader-container .market-leader-image .expand-box {
-    display: none;
+  /* line 223, stdin */
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image img {
+    max-width: 50%;
   }
-  /* line 197, stdin */
-  .market-leader .market-leader-container .market-leader-image img {
-    max-width: 100%;
-  }
-  /* line 202, stdin */
-  .market-leader .market-leader-container .market-leader-content .btn-square-red {
-    display: block;
-    max-width: 300px;
+  /* line 231, stdin */
+  .btn-square-red {
+    width: 100%;
+    max-width: 100% !important;
     margin: 0 auto;
+    background: green;
   }
 }

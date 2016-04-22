@@ -24,17 +24,18 @@
 			 ${properties.descriptioncontent}
 			<a href="${properties.buttonurl}" class="btn-square-red">${properties.buttonlabel}</a>
 		</div>
-
-		<div class="solutions-overlay" style="display: none;">
-			<div class="common-hero-banner  clearfix col-md-12">
-				<div class="common-hero-banner-container ">
-						<a class="close-hero" href="javascript:void(0);" ><span class="sprite icon-close-hero"></span></a>
-						 <img src="${properties.infographicimage}" alt="">
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
+<div class="solutions-overlay" style="display: none;">
+	<div class="common-hero-banner  clearfix col-md-12">
+		<div class="common-hero-banner-container ">
+		  <img src="${properties.infographicimage}" alt="">
+			
+		</div>
+	</div>
+	<a class="close-hero" href="javascript:void(0);" ><span class="sprite icon-close-hero"></span></a>
+</div>
+
 
 </c:when>
 <c:otherwise>
@@ -45,7 +46,5 @@
 	</wcmmode:edit>
 </c:otherwise>
 </c:choose>
-
-
 
 

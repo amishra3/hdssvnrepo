@@ -22,15 +22,15 @@
 <c:choose>
 	<c:when test="${not empty properties.contactbannercontent}">
 
-  		<div class="footer-blue col-xs-12 col-sm-12 col-md-12 col-lg-12">
-  			<div class="footer-container content-container col-md-12">
-                <div class="talk">
+  		 <div class="footer-blue col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  	       <div class="footer-container content-container col-lg-12">
+            <div class="talk">
                 	${properties.contactbannercontent}
                     
                 </div>
 
   				<div class="buttons">
-  					<a data-formtitle="${!properties.mform?'':ftitle}" href="${buttonUrl}" rel="${properties.mform?'iframemodal':''}" class="information btn-square -white hidden-md hidden-lg" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
+  					<a data-formtitle="${!properties.mform?'':ftitle}" href="${buttonUrl}" rel="${properties.mform?'iframemodal':''}" class="information btn-square -white" target="${properties.contactusbannerurltargettype?'_blank':'_self'}">${properties.contactusbannerbuttonlabel}</a>
                     
   				</div>
   			</div>
@@ -46,3 +46,5 @@
 		</wcmmode:edit>
 	</c:otherwise>
 </c:choose>
+
+
