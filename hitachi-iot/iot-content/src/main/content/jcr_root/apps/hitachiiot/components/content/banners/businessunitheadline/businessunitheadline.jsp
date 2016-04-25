@@ -17,13 +17,12 @@
 		<div class="col-lg-9">
 			<h2>${title}</h2>
 			<p>${properties.subtitle}</p>
+			<c:forEach var="iconinfo" items="${iconsinfo}">
 			<div class="col-sm-4">
-				<ul>
-				<c:forEach var="iconinfo" items="${iconsinfo}">
-					<li><span class="internal-business-unit-icon"><img src="${iconinfo.iconurl}" /></span>${iconinfo.icontitle}</li>
-					</c:forEach>
-							</ul>
+					<span class="internal-business-unit-icon"><img src="${iconinfo.iconurl}" /></span>${iconinfo.icontitle}
+				
 			</div>
+			</c:forEach>
 		</div>
 	</div>
 </div>
@@ -36,3 +35,5 @@
 	</wcmmode:edit>
 </c:otherwise>
 </c:choose>
+
+

@@ -11,16 +11,27 @@
 </c:if>
 <c:choose>
 <c:when test="${not empty locations}">
-    <div class="mes-section" style="${imgval}">
-	<h2>${title}</h2>	
-	<c:forEach var="location" items="${locations}">
-		<ul>
-			<li>${location.locationtitle}</li>
-			<li>${location.locationaddress}</li>
-			<li>${location.phone}</li>
-		</ul>
-	</c:forEach>
+  <div class="services-section clearfix" style="${imgval}">
+  <div class="content-container">
+    <div class="container-fluid">
+      <!--Row Starts-->
+      <h2>${title}</h2>
+      <div class="row-centered">
+      <c:forEach var="location" items="${locations}">
+        <div class="col-sm-4 col-centered">
+          <div class="section-service-col tile">
+            <h4 class="headline">${location.locationtitle}</h4>
+             ${location.locationaddress}
+            <p>${location.phone}</p>
+            
+          </div>
+        </div>
+        </c:forEach>
+      </div>
     </div>
+  </div>
+  <!--/.Row ends-->
+</div>
 </c:when>
 <c:otherwise>
 	<wcmmode:edit>
@@ -30,3 +41,5 @@
 	</wcmmode:edit>
 </c:otherwise>
 </c:choose>
+
+
