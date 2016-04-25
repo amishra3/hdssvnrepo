@@ -4,7 +4,7 @@
 <c:set var="wemeanbusiness" value="${widgets:getMultiFieldPanelValues(resource, 'wemeanbusiness')}"/>
 
 
-<div class="we-mean-business clearfix">
+<div class="numbers clearfix">
     <div class="content-container">
          <h2>${properties.wemeanbusinesstitle}</h2>
 
@@ -30,3 +30,4 @@
 
     </div>
 </div>
+

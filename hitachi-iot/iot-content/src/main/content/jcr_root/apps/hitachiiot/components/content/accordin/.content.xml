@@ -3,4 +3,4 @@
     jcr:description="Accordin Component"
     jcr:primaryType="cq:Component"
     jcr:title="Accordin Component"
-    componentGroup="HDS Corp Components"/>
+    componentGroup="Hitachi IOT Components"/>

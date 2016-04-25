@@ -2,5 +2,5 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:description="Hitachi IOT Internal Business Unit Headline Component"
     jcr:primaryType="cq:Component"
-    jcr:title="Business Unit Headline"
-    componentGroup="Hitachi IOT Components"/>
+    jcr:title="About Us Business Unit Banner"
+    componentGroup="Hitachi IOT Banner Components"/>

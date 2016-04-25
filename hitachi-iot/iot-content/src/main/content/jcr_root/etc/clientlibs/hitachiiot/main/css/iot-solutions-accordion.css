@@ -1,21 +1,21 @@
-/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 33, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 html {
   font-size: 16px !important;
 }
 
 /*bootstrap override start*/
-/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 38, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .row-no-margin {
   margin: 0 !important;
 }
 
-/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 41, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .row-reduce-half {
   margin-left: -7.5px !important;
   margin-right: -7.5px !important;
 }
 
-/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 45, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .col-no-pad {
   padding: 0 !important;
 }
@@ -52,7 +52,7 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
-/* line 1, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 1, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square {
   padding: 8px 35px;
   border: 1px solid;
@@ -62,19 +62,19 @@ The `sprites` mixin generates identical output to the CSS template
   letter-spacing: .15em;
 }
 
-/* line 8, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 8, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-white {
   color: #ffffff;
   border-color: #ffffff;
 }
 
-/* line 12, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 12, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-red {
   color: #ce0000;
   border-color: #ce0000;
 }
 
-/* line 18, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 18, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 [class|="btn-square"] {
   padding: 8px 35px;
   font-size: .8em;
@@ -84,52 +84,52 @@ The `sprites` mixin generates identical output to the CSS template
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 
-/* line 28, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 28, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 31, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 31, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white a {
   color: #ffffff;
 }
 
-/* line 36, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 36, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red {
   border: 1px solid #ce0000;
   color: #ce0000;
 }
 
-/* line 39, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 39, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red a {
   color: #ce0000;
 }
 
-/* line 44, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 44, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features {
   border: 1px solid #ffffff;
   background-color: #ffffff;
   color: #ce0000;
 }
 
-/* line 48, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 48, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features:hover {
   color: #ce0000;
 }
 
-/* line 53, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 53, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 56, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 56, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear a {
   color: #ffffff;
 }
 
-/* line 62, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 62, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top {
   position: fixed;
   bottom: 10px;
@@ -162,23 +162,23 @@ button.cta-scroll-top {
   color: #ffffff;
 }
 
-/* line 92, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 92, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top:hover {
   background-color: #757575;
   background-color: rgba(102, 102, 102, 0.9);
 }
 
-/* line 96, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 96, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top.active {
   display: inline-block;
 }
 
-/* line 100, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 100, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top span {
   display: inline-block;
 }
 
-/* line 103, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 103, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .icon-arrow-scroll-top {
   background-image: url(../images/sprite.png);
   background-position: -161px -145px;
@@ -188,12 +188,12 @@ button.cta-scroll-top .icon-arrow-scroll-top {
   margin-right: auto;
 }
 
-/* line 108, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 108, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .text-return {
   margin-top: 7px;
 }
 
-/* line 114, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 114, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square {
   position: relative;
   height: 40px;
@@ -210,18 +210,18 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 136, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+/* line 136, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 139, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+/* line 139, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover a {
   color: #ffffff;
 }
 
-/* line 127, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 127, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square p {
   margin: 0;
   position: relative;
@@ -229,7 +229,7 @@ button.cta-scroll-top .text-return {
   transform: translateY(-50%);
 }
 
-/* line 133, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+/* line 133, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square a {
   color: #FFFFFF;
   outline: 0;
@@ -237,7 +237,7 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 142, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 142, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top {
     position: absolute;
     display: inline-block;
@@ -246,34 +246,40 @@ button.cta-scroll-top .text-return {
     width: 68px;
     height: 68px;
   }
-  /* line 150, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 150, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top .text-return {
     margin-top: 5px;
   }
-  /* line 155, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
+  /* line 155, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
   .btn-transparent-square {
     max-width: 300px;
     min-height: 36px;
   }
 }
 
-/* line 7, stdin */
+/* line 8, stdin */
+#hdspsaccordion .content-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* line 13, stdin */
 .navContain {
   width: 100%;
 }
 
-/* line 9, stdin */
+/* line 15, stdin */
 .navContain .stickNav-background {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 11, stdin */
+/* line 17, stdin */
 .navContain .stickNav-background .stickNav-container {
   max-width: 1280px;
   margin: 0 auto;
 }
 
-/* line 14, stdin */
+/* line 20, stdin */
 .navContain .stickNav-background .stickNav-container .smart-symbol {
   color: #ffffff;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -289,19 +295,19 @@ button.cta-scroll-top .text-return {
   background-position: 0 7px;
 }
 
-/* line 33, stdin */
+/* line 39, stdin */
 .accordion-content .content-container {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 38, stdin */
+/* line 44, stdin */
 .accordion-section-hero {
   background: #ffffff;
   padding: 0;
 }
 
-/* line 42, stdin */
+/* line 48, stdin */
 .accordion-section-hero .accordion-section-hero.content-container {
   position: relative;
   text-align: center;
@@ -311,39 +317,39 @@ button.cta-scroll-top .text-return {
   background-position: center top;
 }
 
-/* line 50, stdin */
+/* line 56, stdin */
 .accordion-section-hero .accordion-section-hero.content-container a:hover,
 .accordion-section-hero .accordion-section-hero.content-container a:active {
   text-decoration: none;
 }
 
-/* line 55, stdin */
+/* line 61, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image {
   min-height: 275px;
   margin-top: 10%;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 55, stdin */
+  /* line 61, stdin */
   .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image {
     display: none;
   }
 }
 
-/* line 61, stdin */
+/* line 67, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image img {
   margin: 10% auto 0;
   max-width: 100%;
 }
 
-/* line 67, stdin */
+/* line 73, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content {
   margin-top: 5%;
   margin-bottom: 5%;
   text-align: left;
 }
 
-/* line 72, stdin */
+/* line 78, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content h1 {
   margin-bottom: 25px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -353,7 +359,7 @@ button.cta-scroll-top .text-return {
   color: #ffffff;
 }
 
-/* line 80, stdin */
+/* line 86, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content h4 {
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -363,7 +369,7 @@ button.cta-scroll-top .text-return {
   text-transform: uppercase;
 }
 
-/* line 88, stdin */
+/* line 94, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content p {
   margin-bottom: 20px;
   font-family: 'museo-sans', Arial, sans-serif;
@@ -375,12 +381,12 @@ button.cta-scroll-top .text-return {
   padding-right: 10%;
 }
 
-/* line 97, stdin */
+/* line 103, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content ul {
   padding-left: 1em;
 }
 
-/* line 99, stdin */
+/* line 105, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content ul li {
   font-family: 'museo-sans', Arial, sans-serif;
   font-weight: 100;
@@ -390,7 +396,7 @@ button.cta-scroll-top .text-return {
   line-height: 175%;
 }
 
-/* line 108, stdin */
+/* line 114, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red {
   display: inline-block;
   margin-top: 20px;
@@ -404,38 +410,38 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 160, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+/* line 160, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red:hover {
   background-color: #ce0000;
   color: #ffffff;
 }
 
-/* line 163, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
+/* line 163, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red:hover a {
   color: #ffffff;
 }
 
-/* line 119, stdin */
+/* line 125, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .common-hero-banner {
   display: none;
   margin: 15% 0;
 }
 
-/* line 123, stdin */
+/* line 129, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .common-hero-banner iframe {
   max-width: 100%;
   width: 70%;
   min-height: 500px;
 }
 
-/* line 129, stdin */
+/* line 135, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .common-hero-banner .close-hero {
   position: absolute;
   top: -25px;
   right: 0;
 }
 
-/* line 133, stdin */
+/* line 139, stdin */
 .accordion-section-hero .accordion-section-hero.content-container .common-hero-banner .close-hero .icon-close {
   background-image: url(../images/sprite.png);
   background-position: -248px -231px;
@@ -443,7 +449,7 @@ button.cta-scroll-top .text-return {
   height: 18px;
 }
 
-/* line 141, stdin */
+/* line 147, stdin */
 .resources-title.solutions {
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700 !important;
@@ -453,17 +459,17 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 151, stdin */
+  /* line 157, stdin */
   .accordion-section-hero {
     padding: 0;
   }
-  /* line 153, stdin */
+  /* line 159, stdin */
   .accordion-section-hero .accordion-section-hero-container {
     text-align: center;
     background-image: none !important;
     background-color: #1790a8;
   }
-  /* line 158, stdin */
+  /* line 164, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content {
     display: inline-block;
     float: none;
@@ -471,76 +477,76 @@ button.cta-scroll-top .text-return {
     padding: 0 15px;
     text-align: left;
   }
-  /* line 165, stdin */
+  /* line 171, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content h1 {
     margin: 40px 0 20px;
     font-size: 2em;
     line-height: 1;
   }
-  /* line 170, stdin */
+  /* line 176, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content h4 {
     font-size: 1.125em;
     line-height: 1;
     text-transform: uppercase;
     line-height: 140%;
   }
-  /* line 176, stdin */
+  /* line 182, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content p {
     margin-bottom: 40px;
     font-size: .9em;
   }
-  /* line 181, stdin */
+  /* line 187, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content .learn-more {
     font-size: 0.6875em;
     line-height: 1;
   }
-  /* line 185, stdin */
+  /* line 191, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image {
     float: none;
     margin: 15% 0 5%;
   }
-  /* line 189, stdin */
+  /* line 195, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image img {
     margin: 33px 0 0 5%;
   }
-  /* line 195, stdin */
+  /* line 201, stdin */
   .resources-section .resources-container .resources-category:after {
     background: none;
   }
-  /* line 198, stdin */
+  /* line 204, stdin */
   .accordion-level .accordion-menu-container {
     border-bottom: 3px solid #c5c5c5;
   }
-  /* line 200, stdin */
+  /* line 206, stdin */
   .accordion-level .accordion-menu-container.open {
     border-bottom: none;
   }
-  /* line 203, stdin */
+  /* line 209, stdin */
   .accordion-level .accordion-menu-container:last-of-type {
     border: none;
   }
-  /* line 206, stdin */
+  /* line 212, stdin */
   .accordion-level .accordion-menu-container .accordion-menu {
     background-color: #f1f1f1;
     margin: 0 -15px;
     padding: 20px 15px;
   }
-  /* line 212, stdin */
+  /* line 218, stdin */
   .accordion-menu-container:after {
     height: 0;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  /* line 221, stdin */
+  /* line 227, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image {
     margin-top: 0;
   }
-  /* line 223, stdin */
+  /* line 229, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image img {
     max-width: 50%;
   }
-  /* line 231, stdin */
+  /* line 237, stdin */
   .btn-square-red {
     width: 100%;
     max-width: 100% !important;

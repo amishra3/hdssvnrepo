@@ -56,3 +56,4 @@ contact-us-locations.css
 /etc/clientlibs/hitachiiot/main/css/iot-aboutus-internal-business-units.css
 /etc/clientlibs/hitachiiot/main/css/iot-aboutus-partners.css
 /etc/clientlibs/hitachiiot/main/css/iot-aboutus-news.css
+/etc/clientlibs/hitachiiot/main/css/iot-aboutus-numbers.css

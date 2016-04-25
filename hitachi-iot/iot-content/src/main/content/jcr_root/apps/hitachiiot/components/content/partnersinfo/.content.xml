@@ -2,5 +2,5 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:description="Hitachi IOT Partners Information component"
     jcr:primaryType="cq:Component"
-    jcr:title="IOT Partners Information"
+    jcr:title="Partners Information"
     componentGroup="Hitachi IOT Components"/>

@@ -111,9 +111,7 @@
 
 	$('.stickyNav a').on('click', function(e){
 		e.preventDefault();
-		$('.stickyNav li').removeClass('active');
-		$(this).parent().addClass('active'); 
-
+		
 		var
 		 	scrollOffset = 0,
 			el = $(this).attr('href').substring(1),

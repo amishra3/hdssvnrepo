@@ -28,16 +28,6 @@ html {
   font-size: 16px;
 }
 
-/* line 9, stdin */
-.hitachi-sublogo,
-.hitachi-sublogo-mobile {
-  background-image: none;
-}
-
-/* line 13, stdin */
-.hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a > span {
-  text-indent: 0;
-}
 
 @media only screen and (max-width: 992px) {
   /* line 18, stdin */
