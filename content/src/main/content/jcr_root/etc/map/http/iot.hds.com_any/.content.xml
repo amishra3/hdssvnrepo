@@ -6,6 +6,6 @@
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="sling:Mapping"
     sling:internalRedirect="[/content/hitachi-iot/en_us]"
-    sling:match=".*iot.*.(4502|4503|80)/en-us">
+    sling:match=".*iot.*.(4502|4503|80|8080|8089)/en-us">
     <iotdam/>
 </jcr:root>
