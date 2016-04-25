@@ -55,8 +55,11 @@ public final class PathResolver {
 			   	if(!shortURLPath.startsWith("/")){
 			   		shortURLPath="/"+shortURLPath;
 		   		}
-			   	if(shortURLPath.contains(EN_US)) {
-	//		   		shortURLPath = shortURLPath.replace(EN_US, EN);
+			   	if(shortURLPath.toLowerCase().contains(".com")) {
+			   		if(shortURLPath.startsWith("/")){
+			   			shortURLPath = shortURLPath.substring(1);
+			   		}
+			   		shortURLPath = shortURLPath.substring(shortURLPath.indexOf("/"));
 			   	}
 	            //LOG.info("Returning short path ::" + shortURLPath);
 			}catch(Exception e){
