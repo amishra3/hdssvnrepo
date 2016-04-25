@@ -9,7 +9,7 @@
 
 <c:set var="linkUrl" value="${properties.aboutusbuttonurl}" />
 <c:set var="videoid" value="${properties.videoid}" />
-<c:set var="hideVideo" value="${properties.hidevideo}" />
+
 
     <c:if test="${fn:startsWith(linkUrl,'/content')}">
         <c:set var="linkUrl" value="${hdscorp:shortURL(linkUrl)}" />
