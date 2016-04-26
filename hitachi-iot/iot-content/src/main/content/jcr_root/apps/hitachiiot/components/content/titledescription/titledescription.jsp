@@ -33,7 +33,9 @@
 			<c:set var="linkUrl" value="${linkUrl}"/>
 		</c:otherwise>
 	   </c:choose>
+	   <c:if test="${not empty linkUrl}">
           <div class="read-more"> <a href="${linkUrl}" target="${properties.readmorelinktargettype?'_blank':'_self'}" class="animateLink">${properties.readmorelabel}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a> </div>
+        </c:if>
         </div>
       </div>
     </div>
