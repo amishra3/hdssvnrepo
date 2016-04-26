@@ -72,7 +72,7 @@ public class TwitterFeedModel extends MultifieldUtil {
 
 	@Inject
 	@Named(value = "jcr:twminsmessage")
-	@Default(values = { "Minitues" })
+	@Default(values = { "Minutes" })
 	private String twMinsMessage;
 
 	@Inject
