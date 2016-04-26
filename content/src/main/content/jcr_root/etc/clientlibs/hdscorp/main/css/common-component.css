@@ -508,6 +508,11 @@ line-height: 1;
   .pr-archives-list .pr-archives-list-items .pr h3{
     font-size: 1.065rem;
   }
+  
+  .pr-list-archives .pr-archives-list .pr-load-more a{
+	  border-bottom: 1px solid #cc0000;	  
+  }  
+  
 }
 
 /* Common Explore Section */
