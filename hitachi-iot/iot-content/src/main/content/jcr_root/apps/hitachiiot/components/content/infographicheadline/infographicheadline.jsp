@@ -7,7 +7,10 @@
 <c:set var="imageallignment" value="<%=properties.get("imageallignment")%>"/>
 <c:set var="textallignment" value="<%=properties.get("textallignment")%>" />
 <c:set var="greybackground" value="<%=properties.get("greybackground")%>" />
-
+<c:set var="buttonurl" value="${properties.buttonurl}" />
+<c:if test="${fn:startsWith(buttonurl,'/content/')}">
+	<c:set var="buttonurl" value="${hdscorp:shortURL(buttonurl)}" />
+</c:if>
 <c:choose>
 <c:when test="${not empty properties.headlinecontent}">
 
@@ -22,7 +25,7 @@
 		<div class="market-leader-content col-lg-6 col-sm-12 ">
 			<h1>${properties.headlinecontent}</h1>
 			 ${properties.descriptioncontent}
-			<a href="${properties.buttonurl}" class="btn-square-red">${properties.buttonlabel}</a>
+			<a href="${buttonurl}" class="btn-square-red">${properties.buttonlabel}</a>
 		</div>
 	</div>
 </div>

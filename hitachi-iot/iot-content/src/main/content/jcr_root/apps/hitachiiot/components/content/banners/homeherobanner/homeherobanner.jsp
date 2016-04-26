@@ -49,7 +49,7 @@
 						<c:set var="tablink" value="${tab.tablink}" />
 						<c:set var="tabIconPath" value="${tab.tabIconPath}" />
 						<div class="button-wrapper">
-							<a href="${tablink}" class="btn-square-features"
+							<a href="${hdscorp:shortURL(tablink)}" class="btn-square-features"
 								style="background-image: url(${tabIconPath});">${tabTitle}</a>
 						</div>
 					</c:forEach>
