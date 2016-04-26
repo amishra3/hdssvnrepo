@@ -117,6 +117,7 @@ public class AssetGatingFilter implements Filter {
 			            	log.debug("Request path was -  "+slingRequest.getRequestURI());
 			            	log.debug("error page path=======**"+path);
 			                slingResponse.setStatus(404);
+			                slingResponse.setContentType("text/html");
 			                errorPageHandlerService.includeUsingGET(slingRequest, slingResponse, path);
 			                return;
 			            }
