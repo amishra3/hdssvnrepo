@@ -581,6 +581,11 @@ function getPartnerIndFilters()
 		globalMenuClick("linkclick","us>mm>hds logo",pageTitle,"link","mega menu");
 	});			
 	
+	// Return to top link
+	$(".cta-scroll-top").on("click", function() {
+		globalMenuClick("linkclick","return to top",pageTitle,"button","return to top");
+	});		
+	
 	//hero banner for home page only	
 	$(".hero-homepage").each(function() 
 	{
@@ -607,8 +612,68 @@ function getPartnerIndFilters()
 			});                 
 		 }
     });	
+	
 	//hero banners for all pages  .btn-square-white
-	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions, .bannerSectionImage, .about-hds-csr-eco").each(function() {
+	$(".common-hero-short-banner, .partnerHeroBanner, .common-hero-banner, .hero-product-solutions").each(function() {
+     
+	 var url=document.title;
+	//if(url.indexOf("404")<0)
+	//{
+		 var listitem = $(this).find("a");
+		 var url=$(location).attr('href');
+		 //var linktext = $(this).find('h1').text();
+		 var linkposition="";
+		 var eType="link";
+		 var eClass="";
+		 if( listitem.length>0)
+		 {
+			console.log("list Items:" + listitem.length);
+			listitem.each(function() {
+				var linktext = $(this).parents().find('h1').text();
+				var url=$(location).attr('href');
+				if(url.indexOf("us/home")>-1)
+					linkposition="home-hero-banner";
+				else 
+					linkposition="PS-Hero";
+				$(this).click(function(){
+					if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
+					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
+					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
+					if($(this).parent().parent().attr("class")=="page-not-found")
+					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+					else {var eClass=$(this).parent().attr("class");}
+					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}// linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; }//linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}// linktext = $(this).parents().find('h1').text();}
+					if(linktext == "" || !linktext){linktext=$(this).text();}
+					linktext = $.trim(linktext);	
+					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
+				$(this).mousedown(function(e){
+					if(e.which == 3){
+						if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
+					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
+					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
+					if($(this).parent().parent().attr("class")=="page-not-found")
+					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+					else {var eClass=$(this).parent().attr("class");}
+					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
+					if(linktext == "" || !linktext){linktext=$(this).text();}
+					linktext = $.trim(linktext);	
+						globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
+					} 			
+				});
+			});                 
+		 }
+	//}
+    });
+	
+	//Banner section image in middle of pages
+	
+	$(".bannerSectionImage, .about-hds-csr-eco").each(function() {
      
 	 var url=document.title;
 	//if(url.indexOf("404")<0)
@@ -619,10 +684,13 @@ function getPartnerIndFilters()
 		 var linkposition="";
 		 var eType="link";
 		 var eClass="";
+		 if(linktext==""){linktext=$(this).find('h2').text();}
 		 if( listitem.length>0)
 		 {
-			 listitem.each(function() {
-			var url=$(location).attr('href');
+			console.log("list Items:" + listitem.length);
+			listitem.each(function() {
+				//var linktext = $(this).parents().find('h1').text();
+				var url=$(location).attr('href');
 				if(url.indexOf("us/home")>-1)
 					linkposition="home-hero-banner";
 				else 
@@ -630,29 +698,31 @@ function getPartnerIndFilters()
 				$(this).click(function(){
 					if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
 					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text();}
+					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
 					if($(this).parent().parent().attr("class")=="page-not-found")
 					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
 					else {var eClass=$(this).parent().attr("class");}
 					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; var linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon";}
-					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}// linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; }//linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}// linktext = $(this).parents().find('h1').text();}
+					if(linktext == "" || !linktext){linktext=$(this).text();}
 					linktext = $.trim(linktext);	
 					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
 				$(this).mousedown(function(e){
 					if(e.which == 3){
 						if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-						if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-						if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text();}
-						if($(this).parent().parent().attr("class")=="page-not-found")
-						{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
-						else {var eClass=$(this).parent().attr("class");}
-						if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
-						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; var linktext = $(this).parents().find('h1').text();}
-						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon";}
-						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}
-						linktext = $.trim(linktext);	
+					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
+					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
+					if($(this).parent().parent().attr("class")=="page-not-found")
+					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+					else {var eClass=$(this).parent().attr("class");}
+					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
+					if(linktext == "" || !linktext){linktext=$(this).text();}
+					linktext = $.trim(linktext);	
 						globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 					} 			
 				});
@@ -729,7 +799,7 @@ function getPartnerIndFilters()
 		  //{linktext = "hex-" + $.trim(linktext);}
 				$(this).click(function(){
 					var purl=$(location).attr('href');
-					if(purl.indexOf("/news-insights.html") >-1){var linktext = "hex-" + $(this).parent().parent().find('h4').text() + "-" + $(this).text();}
+					if(purl.indexOf("/news-insights.html") >-1 || purl.indexOf("/partners.html") >-1){var linktext = "hex-" + $(this).parent().parent().find('h4').text() + "-" + $(this).text();}
 					else{var linktext = "hex-" + $(this).parent().parent().find('h4').text();}
 					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
 				$(this).mousedown(function(e){
@@ -996,7 +1066,7 @@ function getPartnerIndFilters()
 	});
 	
 	//Tabs Custom Tracking tabbing-container :event (web cast on demand), storage, legal  page tabs
-	$(".stickNav-container, .custom-nav-tabs .nav-tabs, .category-listing, .webcast-listing, .leftsidelisting").each(function() {
+	$(".stickNav-container, .custom-nav-tabs .nav-tabs, .webcast-listing").each(function() {
 	 	var links = $(this).find("a");
 	  links.each(function() {
 		 	$(this).click(function(){
@@ -1007,19 +1077,31 @@ function getPartnerIndFilters()
             });
 	  	});
 	});
+
+	//Tabs Custom Tracking on all sub section pages like cloud, servers, big data analytics etc
+	$(".category-listing, .leftsidelisting").each(function() {
+	 	var links = $(this).find("a");
+	  links.each(function() {
+		 	$(this).click(function(){
+                isTabClicked=true;
+				var tabTitle = "left-tabclick-"+$.trim($(this).text()).toLowerCase().replace(/\s/g," ");
+                tabClick(primaryCategory,tabTitle,pageTitle,"Left-Tabclick"); 
+            });
+	  	});
+	});
 	
 	//Tabs custom tracking for legal page radio buttons--
-	$('.leftsidelisting .checkbox .filters').click(function()
+	$('.leftsidelisting .filters').click(function()
 	{
 		var pClass="";
 		var linktext=$(this).next().find("span").text();
 		pClass=$(this).parents('.leftsidelisting').attr('class');
-		//pClass=$(this).parent().parent().parent().parent().parent().parent().attr('class');
 		if (pClass.indexOf("leftsidelisting")>-1)
 		{
-			var pTitle=$(this).parent().parent().parent().parent().find("a").text();
-			var tabTitle = "tab-"+ $.trim(pTitle).toLowerCase() +"-"+$.trim(linktext).toLowerCase().replace(/\s/g,"-")+" button";
-			tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick");
+			//var pTitle=$(this).parent().parent().parent().parent().find("a").text();
+			var pTitle=$(this).parents('#asideLinks-product').find('li.active >a').text();
+			var tabTitle = "left-tabclick-"+ $.trim(pTitle).toLowerCase() +"-"+$.trim(linktext).toLowerCase().replace(/\s/g," ");
+			if(pTitle!=""){tabClick(primaryCategory,tabTitle,pageTitle,"Left-Tabclick");}
 		}
 	});
 	
@@ -1348,7 +1430,7 @@ $(document).on('keypress', '#fulltext', function(event)
      		searchClick(searchTerm, "location filter",result,trainingFilters(),'training','specificSearchClick');
          }, 1000); 
     });
-
+	
 //globalMenuClick(eventname,triggername,page)
 	function globalMenuClick(eventName,triggerName,page,triggerType,Position)
 	{
@@ -1614,7 +1696,12 @@ $(document).on('keypress', '#fulltext', function(event)
 		});	
 		return filters.toLowerCase();
 	}
-	
+	//cookie session storage variable created on click on gated assets
+	$(".isGatedLock").on("click", function(){
+			//$.cookie("gatedPP",$.trim(window.location.href),{ path: '/' });
+			sessionStorage.parentReffererURL = $.trim(window.location.href);
+	}); 
+		
 	function videoTracking(vId, pPageName)
 	{
 		digitalData.eventData= {
@@ -1625,3 +1712,9 @@ $(document).on('keypress', '#fulltext', function(event)
 
 	}
 	
+	// email links clicks
+	$('a[href^="mailto:"]').on("click",function() {
+			var linktxt=$(this).text();
+			var linkhref=$(this).attr('href');
+			//if(linktxt.indexOf('@')>-1 || linkhref.indexOf('@')>-1){console.log("linktxt: " + linktxt + "linkhref: " + linkhref);}
+	});
