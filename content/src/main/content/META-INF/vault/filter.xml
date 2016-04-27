@@ -18,6 +18,12 @@
 	<filter root="/etc/workflow/launcher/config/hdscorp_lmsdata"/>
 	<filter root="/etc/workflow/launcher/config/hdscorp_videos_activate"/>
     <filter root="/etc/map/"/>
+    <filter root="/etc/map.dev/"/>
+	<filter root="/etc/map.qa/"/>
+	<filter root="/etc/map.stg/"/>
+	<filter root="/etc/map.stg.author/"/>
+	<filter root="/etc/map.prod/"/>
+	<filter root="/etc/map.prod.author/"/>
 
 
     <filter root="/etc/designs/hdscorp">
