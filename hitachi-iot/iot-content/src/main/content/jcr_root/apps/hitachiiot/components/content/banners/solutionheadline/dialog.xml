@@ -60,12 +60,7 @@
                         fieldLabel="Video Icon Path URL"
                         name="./videopathurl"
                         xtype="pathfield"/>
-                    <videourltargettype
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Open in New Window?"
-                        name="./videourltargettype"
-                        type="checkbox"
-                        xtype="selection"/>
+                    
                 </items>
             </tab1>
         </items>

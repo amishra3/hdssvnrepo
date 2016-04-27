@@ -25,7 +25,7 @@
                     <multilinks
                         jcr:primaryType="cq:Widget"
                         customMultiFieldName="./multilinks"
-                        fieldLabel="Location Details"
+                        fieldLabel="Partner Details"
                         name="./multilinks"
                         xtype="custommultifield">
                         <fieldConfig jcr:primaryType="cq:WidgetCollection">

@@ -44,17 +44,18 @@
                         fieldLabel="Button Label"
                         name="./buttonlabel"
                         xtype="textfield"/>
+              
+                    <buttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Path URL"
+                        name="./buttonurl"
+                        xtype="pathfield"/>
                     <buttontargettype
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Open in New Window?"
                         name="./buttontargettype"
                         type="checkbox"
                         xtype="selection"/>
-                    <buttonurl
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Button Path URL"
-                        name="./buttonurl"
-                        xtype="pathfield"/>
   
                 </items>
             </tab1>
