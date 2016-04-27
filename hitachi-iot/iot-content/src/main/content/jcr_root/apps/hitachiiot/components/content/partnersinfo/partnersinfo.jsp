@@ -19,7 +19,7 @@
          <div class="icon">
                <img alt="${properties.title}" src="${properties.titleiconurl}">
          </div>
-        <h2><span class="sprite partners-icon"></span>${properties.title}</h2>
+        <h2>${properties.title}</h2>
       </div>
       <div class="partner-list clearfix" id="partner-list">
        <c:forEach var="partner" items="${partners}">
