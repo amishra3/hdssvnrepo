@@ -294,6 +294,11 @@ color: #cccccc !important;
 
 }
 
+@media screen and (max-width: 1280px){
+	.pr-list .pr-list-container{
+		padding: 0;
+	}	
+}
 
 /* Press Release  Detail Page */
 

@@ -471,8 +471,9 @@
     .hitachi-spirit-hexagon-list .hex-contain .hexagon320:last-child {
         margin-right: 0;
     }
-     .new-abouthds-banner .common-hero-banner-container{
-    margin-left:0!important; margin-right:0!important;
+    .common-hero-banner.new-abouthds-banner .common-hero-banner-container{
+        margin-left:0; 
+	    margin-right:0;
 }
 
 }
@@ -854,9 +855,10 @@
 }
 }
 
-@media screen and (max-width:1280px) and (-webkit-min-device-pixel-ratio:0){
+@media only screen and (min-width: 991px) and (max-width: 1280px){
   .common-hero-banner.about-hds-career .common-hero-banner-container{
-	  padding-left: 15px;
+	  padding-left: 0;
+	  margin-left: 0;
   }	
 	
 }

@@ -244,7 +244,8 @@
     border-top: 3px solid #f1f1f1;
     z-index: 9;
 }
-.no-touch .product-listing ul > li.active > a:after {
+.no-touch .product-listing ul > li.active > a:after, 
+.touch .product-listing ul > li.active > a:after {
     content: '';
     display: block;
     position: absolute;

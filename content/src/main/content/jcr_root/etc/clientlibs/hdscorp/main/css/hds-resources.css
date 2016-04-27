@@ -438,7 +438,8 @@ color: #cccccc !important;
   z-index: 9;
 }
 
-.no-touch .resources-listing ul > li.active > a:after {
+.no-touch .resources-listing ul > li.active > a:after,
+.touch .resources-listing ul > li.active > a:after {
   content: '';
   display: block;
   position: absolute;
@@ -495,6 +496,15 @@ color: #cccccc !important;
 .resources-listing ul > li.active > ul {
     display: block;
 }
+
+@media only screen and (max-width:1280px) {
+.touch .resources-listing ul > li.active > a:after{  
+  margin-left: 15px;
+}
+
+}
+
+
 @media only screen and (max-width:1024px) {
   .resources-listing ul > li > ul {
     margin-right: -15px;
