@@ -53,12 +53,7 @@
                         fieldLabel="Video Icon Path URL"
                         name="./videopathurl"
                         xtype="pathfield"/>
-                    <hidevideo
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Hide Video"
-                        name="./hidevideo"
-                        type="checkbox"
-                        xtype="selection"/>
+                    
                     
                 </items>
             </tab1>
