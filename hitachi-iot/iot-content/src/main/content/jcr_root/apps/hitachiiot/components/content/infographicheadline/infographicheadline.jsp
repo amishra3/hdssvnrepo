@@ -4,9 +4,7 @@
 <%@ taglib prefix="wcmmode" uri="http://www.adobe.com/consulting/acs-aem-commons/wcmmode" %>
 <%@ taglib prefix="wcm" uri="http://www.adobe.com/consulting/acs-aem-commons/wcm" %>
 
-<c:set var="imageallignment" value="<%=properties.get("imageallignment")%>"/>
-<c:set var="textallignment" value="<%=properties.get("textallignment")%>" />
-<c:set var="greybackground" value="<%=properties.get("greybackground")%>" />
+
 <c:set var="buttonurl" value="${properties.buttonurl}" />
 <c:if test="${fn:startsWith(buttonurl,'/content/')}">
 	<c:set var="buttonurl" value="${hdscorp:shortURL(buttonurl)}" />

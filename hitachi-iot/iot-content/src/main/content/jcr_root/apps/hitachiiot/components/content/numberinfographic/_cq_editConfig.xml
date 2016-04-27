@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    cq:actions="[text:Social Innovation We Mean Business Component,edit,delete,delete]"
+    cq:actions="[text:Numbers Infographic Component,edit,delete,delete]"
     cq:dialogMode="floating"
     cq:layout="editbar"
     jcr:primaryType="cq:EditConfig">
