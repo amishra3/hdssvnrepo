@@ -63,26 +63,12 @@
                                 xtype="pathfield"/>
                         </fieldConfig>
                     </multilinks>
-                    <imagePath
-                        jcr:primaryType="cq:Widget"
-                        allowUpload="false"
-                        cropParameter="./imagePath/imageCrop2"
-                        ddGroups="[media]"
-                        fieldLabel="Banner Image"
-                        fileNameParameter="./imagePath/fileName2"
-                        fileReferenceParameter="./heroimagePath"
-                        height="{Long}200"
-                        name="./heroimage"
-                        rotateParameter="./imagePath/imageRotate2"
-                        sizeLimit="100"
-                        title="Image"
-                        width="{Long}200"
-                        xtype="html5smartimage"/>
+                    
                     <mobileimagePath
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Banner Mobile Image (Optional)"
                         name="./heromobileimage"
-                        xtype="ddpathfield"/>                        
+                        xtype="pathfield"/>                        
                     <ourplatformlinktext
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Our Platform Label"

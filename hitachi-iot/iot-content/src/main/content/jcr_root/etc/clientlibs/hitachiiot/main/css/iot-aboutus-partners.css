@@ -1,21 +1,21 @@
-/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 33, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 html {
   font-size: 16px !important;
 }
 
 /*bootstrap override start*/
-/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 38, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .row-no-margin {
   margin: 0 !important;
 }
 
-/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 41, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .row-reduce-half {
   margin-left: -7.5px !important;
   margin-right: -7.5px !important;
 }
 
-/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
+/* line 45, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .col-no-pad {
   padding: 0 !important;
 }
@@ -60,6 +60,11 @@ The `sprites` mixin generates identical output to the CSS template
 }
 
 /* line 13, stdin */
+.aboutus-partners .content-container .heading .icon {
+  margin-right: 10px;
+}
+
+/* line 17, stdin */
 .aboutus-partners .content-container .heading h2 {
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -67,25 +72,25 @@ The `sprites` mixin generates identical output to the CSS template
   line-height: 1;
 }
 
-/* line 19, stdin */
+/* line 23, stdin */
 .aboutus-partners .content-container .logo {
   margin-bottom: 40px;
   height: 88px;
   text-align: center;
 }
 
-/* line 24, stdin */
+/* line 28, stdin */
 .aboutus-partners .content-container .logo a {
   display: block;
 }
 
-/* line 28, stdin */
+/* line 32, stdin */
 .aboutus-partners .content-container .logo a:hover {
   padding-bottom: 20px;
   border-bottom: 6px solid #ce0000;
 }
 
-/* line 34, stdin */
+/* line 38, stdin */
 .aboutus-partners .content-container .partners-icon {
   background-image: url(../images/sprite.png);
   background-position: -322px 0px;

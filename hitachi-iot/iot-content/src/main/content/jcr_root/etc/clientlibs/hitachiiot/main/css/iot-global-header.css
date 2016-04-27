@@ -53,6 +53,7 @@ The `sprites` mixin generates identical output to the CSS template
 @include sprites($spritesheet-sprites);
 */
 /* line 6, stdin */
+.hitachi-sublogo,
 .hitachi-ig-logo {
   background-image: url(../images/sprite.png);
   background-position: 0px -251px;
@@ -60,7 +61,8 @@ The `sprites` mixin generates identical output to the CSS template
   height: 18px;
 }
 
-/* line 10, stdin */
+/* line 11, stdin */
+.hitachi-sublogo-mobile,
 .hitachi-ig-mobile-logo {
   background-image: url(../images/sprite.png);
   background-position: -184px -286px;
@@ -68,37 +70,31 @@ The `sprites` mixin generates identical output to the CSS template
   height: 12px;
 }
 
-/* line 14, stdin */
+/* line 16, stdin */
 .bus-unit-name {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
 
-/* line 18, stdin */
-.hitachi-sublogo,
-.hitachi-sublogo-mobile {
-  background-image: none;
-}
-
-/* line 22, stdin */
+/* line 21, stdin */
 .hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a > span {
   text-indent: 0;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 27, stdin */
+  /* line 26, stdin */
   .icon-search-mobile {
     background-image: url(../images/sprite.png);
     background-position: -311px -157px;
     width: 19px;
     height: 20px;
   }
-  /* line 34, stdin */
+  /* line 33, stdin */
   .header .breadcrumb-container {
     top: 160px;
     text-align: center;
   }
-  /* line 39, stdin */
+  /* line 38, stdin */
   .header .sub-navigation-container {
     display: block;
   }
