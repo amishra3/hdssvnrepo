@@ -17,7 +17,7 @@
 <c:set var="hideSearch" value="<%=properties.get("hidesearch", false)%>" />
 
 <c:set var="logoTargetURL" value="${properties.	imageurl}" />
-<c:set var="hdslogotitle" value="<%=properties.get("hdslogotitle", "Hitachi Data Systems")%>" />
+<c:set var="hdslogotitle" value="<%=properties.get("hdslogotitle", "")%>" />
 <c:if test="${fn:startsWith(logoTargetURL,'/content/')}">
 	<c:set var="logoTargetURL" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("logoTargetURL").toString())%>" />
 </c:if>
