@@ -354,11 +354,14 @@ div.training {
 }
 @media only screen and (max-width: 1024px) {
     .serv-training-overview .select-right-btn {
-        margin-left: 40px;
+        /* margin-left: 40px; */
     }
     .serv-training-overview .src-btn .search-course-btn {
         min-width: 190px;
     }
+	.serv-training-overview .selectLocation_pick span{
+		border: 1px solid transparent;
+	}
 }
 @media only screen and (max-width: 991px) {
     .serv-training-overview .service-btn {
