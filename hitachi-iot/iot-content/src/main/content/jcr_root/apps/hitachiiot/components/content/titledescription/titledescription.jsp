@@ -4,11 +4,7 @@
 <%@ taglib prefix="wcmmode" uri="http://www.adobe.com/consulting/acs-aem-commons/wcmmode" %>
 <%@ taglib prefix="wcm" uri="http://www.adobe.com/consulting/acs-aem-commons/wcm" %>
 
-<c:set var="domain" value="" />
-<c:set var="port" value="<%= request.getServerPort() %>" />
-<c:if test="${empty port || port == 80}">
-	<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
-</c:if>
+
 <c:set var="title" value="<%=properties.get("title")%>" />
 
 <c:choose>

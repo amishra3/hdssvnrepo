@@ -4,11 +4,7 @@
 <%@ taglib prefix="wcm" uri="http://www.adobe.com/consulting/acs-aem-commons/wcm" %>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
-<c:set var="domain" value="" />
-<c:set var="port" value="<%= request.getServerPort() %>" />
-<c:if test="${empty port || port == 80}">
-<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
-</c:if>
+
 <c:set var="partners" value="<%=PageUtils.convertMultiWidgetToList(properties,"partnericonimgpath-partnericonalttext-partnericonurl-icontargettype")%>" />
 <c:choose>
 <c:when test="${not empty partners}">
