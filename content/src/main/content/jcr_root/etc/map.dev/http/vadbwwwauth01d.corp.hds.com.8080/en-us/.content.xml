@@ -5,5 +5,5 @@
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="sling:Mapping"
-    sling:internalRedirect="[/content/hdscorp,/content/hdscorp/en_us,/content/hdscorp/en_us/lookup]"
+    sling:internalRedirect="[/content/hitachi-iot/en_us]"
     sling:match="en-us"/>
