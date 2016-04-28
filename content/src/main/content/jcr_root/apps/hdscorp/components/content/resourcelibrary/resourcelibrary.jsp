@@ -3,9 +3,9 @@
 <%@page session="false"%>
 <%@ taglib prefix="xss"
 	uri="http://www.adobe.com/consulting/acs-aem-commons/xss"%>
-
 <c:set var="contentrenderingpagepath" value="${properties.contentrenderingpagepath}" scope="request"/>
 <c:set var="featuredlabel" value="${properties.featuredlabel}" scope="request"/>
+<c:set var="hidefeaturedLabel" value="${properties.hidefeaturedLabel}" scope="request"/>
 <c:set var="featuredoverlaypath" value="${properties.featuredoverlaypath}" scope="request"/>
 <c:set var="isResourceLibraryPage" value="true" scope="request"/>
 
@@ -14,7 +14,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
 </script>
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.ResourceLibraryModel" var="model" />
     
-           <div class="" id="sectionResourceLib">
+           <div class="" id="sectionResourceLib"> 
             <div class="res-filters-search clearfix">
                 <div class="content-container clearfix">
                     <div class="col-sm-7 hidden-xs hidden-sm" id="resource-search">
@@ -24,7 +24,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         <span class="glyphicon glyphicon-search searchResource" aria-hidden="true"></span>
                         </div>
                         <div class="errorSearchField alert alert-danger fade in">Please enter search query</div>
-                    </div>
+                     </div>
                     <div class="hidden-md hidden-lg col-xs-12 search-overlay">
                         <div class="launchLink"> 
                             <a href="javascript:void(0);">${properties.searchboxmessagetext} <span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>

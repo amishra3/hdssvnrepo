@@ -28,7 +28,6 @@
                         fieldLabel="All Categories ID"
                         name="./allCategoriesid"
                         xtype="textfield"/>
-                    
                     <contents
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Categories"
@@ -61,14 +60,14 @@
                                     layout="anchor"
                                     name="./display-title"
                                     xtype="textfield"/>
-                                 <featuredoverlaypath
-			                        jcr:primaryType="cq:Widget"
-			                        anchor="100%"
-			                        dname="header"
-			                        fieldLabel="Featured Overlay Path"
-			                        key="featuredoverlaypath"
-			                        name="./featuredoverlaypath"
-			                        xtype="pathfield"/>     
+                                <featuredoverlaypath
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Featured Overlay Path"
+                                    key="featuredoverlaypath"
+                                    name="./featuredoverlaypath"
+                                    xtype="pathfield"/>
                                 <cftags
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"
@@ -114,9 +113,8 @@
                                                 jcr:primaryType="cq:Widget"
                                                 allowBlank="{Boolean}false"
                                                 anchor="100%"
+                                                fieldDescription="&lt;b style=color:red;font-size:15px>Use Only One Tag Per Sub-Category&lt;/b>"
                                                 fieldLabel="Tag Id"
-                                                fieldDescription="&lt;b style=color:red;font-size:15px&gt;Use Only One Tag Per Sub-Category&lt;/b&gt;"
-                                                                                               
                                                 key="sub-category-tag"
                                                 layout="anchor"
                                                 name="cq:tags"

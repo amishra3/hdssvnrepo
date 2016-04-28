@@ -34,7 +34,7 @@
                         fieldLabel="Search Label"
                         name="./searchlabel"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./searchlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="textfield"/>    
+                        xtype="textfield"/>
                     <searchbylabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -42,14 +42,14 @@
                         name="./searchbylabel"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./searchbylabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
-                     <filterbylabel
+                    <filterbylabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Filter By Label"
                         name="./filterbylabel"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./filterbylabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
-                     <showresultslabel
+                    <showresultslabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Show Results"
@@ -62,15 +62,15 @@
                         fieldLabel="Content Rendering Page Path"
                         name="./contentrenderingpagepath"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./contentrenderingpagepath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
-                        xtype="pathfield"/>    
-                     <pagesize
+                        xtype="pathfield"/>
+                    <pagesize
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="No of Result Items Shown Per Page "
                         name="./pagesize"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./pagesize')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="numberfield"/>
-                 </items>
+                </items>
             </searchbox>
             <featured
                 jcr:primaryType="cq:Panel"
@@ -90,13 +90,18 @@
                         name="./featuredoverlaypath"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredoverlaypath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
-                    
                     <clearAllFiltersLabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
                         fieldLabel="Clear All filters Label"
                         name="./clearallfilterslabel"
                         xtype="textfield"/>
+                    <hidefeaturedLabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Featured Label"
+                        name="./hidefeaturedLabel"
+                        type="checkbox"
+                        xtype="selection"/>
                 </items>
             </featured>
             <filterbyindustry
@@ -180,7 +185,7 @@
                                     fieldLabel="Content Id"
                                     key="contentid"
                                     name="./contentid"
-                                    xtype="textfield"/>    
+                                    xtype="textfield"/>
                                 <contenttag
                                     jcr:primaryType="cq:Widget"
                                     allowBlank="{Boolean}false"

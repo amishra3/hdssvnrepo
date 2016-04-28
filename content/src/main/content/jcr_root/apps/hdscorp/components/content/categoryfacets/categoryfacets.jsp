@@ -2,7 +2,6 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page import="com.hdscorp.cms.slingmodels.CategoryFacetsModel"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
-
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.CategoryFacetsModel" var="model" />
 
 <%
@@ -18,7 +17,6 @@
 	
 	
 %>
-
 <c:set var="contentrenderingpagepath" value="${requestScope['contentrenderingpagepath']}" />
 
 <c:set var="allfilteractiveclass" value="" />
@@ -27,19 +25,18 @@
 	<c:set var="allfilteractiveclass" value="active" />
 	<c:set var="includetargetURL" value="${contentrenderingpagepath}.html" scope="request"/>
 </c:if>
-
 		<c:choose>
 		    <c:when test="${isResourceLibraryPage}">
 		    <c:set var="includetargetURL" value="${featuredoverlaypath}.html" scope="request"/>
 		    <div class="resources-listing">
-			<ul id="asideLinks-product">
-		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" featured-href="${featuredoverlaypath}.html" data-href=""> ${featuredlabel} </a></li>
+			<ul id="asideLinks-product"> 
+		   <li class="${allfilteractiveclass} ${hidefeaturedLabel?'hidden':''}"><a href="${currentPageShortUrl}" featured-href="${featuredoverlaypath}.html" data-href=""> ${featuredlabel} </a></li>
 		       </c:when>
 		    
 		    <c:otherwise>
 		    <div class="col-md-3 product-listing">
 			<ul id="asideLinks-product">
-		       <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${contentrenderingpagepath}.html"> ${properties.allCategoriesLabel} </a></li>
+		  <li class="${allfilteractiveclass}"><a href="${currentPageShortUrl}" data-href="${contentrenderingpagepath}.html"> ${properties.allCategoriesLabel} </a></li>
 		    </c:otherwise>
 		</c:choose>
 
