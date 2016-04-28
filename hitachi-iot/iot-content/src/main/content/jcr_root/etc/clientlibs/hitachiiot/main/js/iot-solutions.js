@@ -34,7 +34,7 @@
 
 
 
- 
+
 	var stickyElement = function() {
 		// element to be sticky
 		var $stickyEl = $('.navContain');
@@ -45,7 +45,7 @@
 			element: $stickyEl,
 			wrapper: false,
 			stuckClass: 'sticky',
-			offset: 43
+			offset: 43,
 		});
 
 		$stopEl.waypoint(function(direction) {
@@ -57,8 +57,8 @@
 				// var footerOffset = $stopEl.offset();
 				$stickyEl.css({
 					position: 'absolute',
-					top: 0
-						//top: footerOffset.top - $stickyEl.outerHeight()
+					// top: 0
+					top: footerOffset.top - $stickyEl.outerHeight()
 				});
 			} else if (direction === 'up') {
 				// remove the inline styles so sticky styles apply again
@@ -80,6 +80,23 @@
 		var stickyLabel = $(this).text();
 		$("#stickyNav-"+i).text(stickyLabel);
 	});
+
+	var solutionsWaypoints = [];
+	$('.waypointItem').each(function(key, item){
+		var waypoint = new Waypoint({
+		  element: item,
+			offset: 43,
+		  handler: function(direction) {
+				$('.stickyNav li')
+					.eq(key)
+					.addClass('active')
+					.siblings()
+					.removeClass('active');
+		  }
+		});
+		solutionsWaypoints.push( waypoint );
+	});
+
 
 	var allMenus = $('.accordion-menu-container');
 	var allContents = $('.accordion-content');
@@ -111,18 +128,19 @@
 
 	$('.stickyNav a').on('click', function(e){
 		e.preventDefault();
-		
+
 		var
 		 	scrollOffset = 0,
 			el = $(this).attr('href').substring(1),
 			stickyNavHeight = $('.navContain .stickyNav').outerHeight(),
 			stickyNavPosition = $( '.navContain .stickyNav' ).offset().top,
 			element = document.getElementById( el ),
-			elementPosition = element.getBoundingClientRect()
+			elementPosition = Math.round( $(element).offset().top )
 		;
 
-		if ( stickyNavPosition < elementPosition ) { scrollOffset = stickyNavHeight; }
-		else { scrollOffset = 0; }
+		if ( stickyNavPosition > elementPosition ) { scrollOffset = { left: 0, top: -46 } }
+		else if ( stickyNavPosition < elementPosition ) { scrollOffset = { left: 0, top: stickyNavHeight }; }
+		else { scrollOffset = { left: 0, top: 0 }; }
 
 		$(window).scrollTo( element, 1000, { offset: scrollOffset } );
 	});
