@@ -154,7 +154,7 @@ var hds = window.hds || {};
                 if ($('#asideLinks-product li').eq(0).hasClass('active')) {
                     $('.category-resources-listing').find('.no-matched-result').remove();
                 }else{     
-                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
+                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 15px; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                 }
             } else {
                 $('.category-resources-listing').find('.no-matched-result').remove();
@@ -176,20 +176,18 @@ var hds = window.hds || {};
                     'display': 'inline'
                 });
                 if ($(window).width() < 991) {
-                    $('.topFilter').find('div.disable-filter').remove();
+                    $('.topFilter').show();
                 }else{
-                    $('.resource-filters').find('div.disable-filter').remove();
+                    $('.resource-filters').show();
                 }
             }else{
                 $('#filterTag .label').css({
                     'display': 'none'
                 });
                 if ($(window).width() < 991) {
-                    $('.topFilter').find('div.disable-filter').remove();
-                    $('.topFilter').prepend('<div class="disable-filter"/>');
+                    $('.topFilter').hide();
                 }else{
-                    $('.resource-filters').find('div.disable-filter').remove();
-                    $('.resource-filters').append('<div class="disable-filter"/>');
+                    $('.resource-filters').hide();
                 }                
             }
             var self = $(activeCat),
@@ -257,9 +255,9 @@ var hds = window.hds || {};
                     hds.resourceLib._processSlingIncludedContent();
                     $('#showIndustry, #showContentType').trigger('click');
                     if ($(window).width() < 991) {
-                        $('.topFilter').find('div.disable-filter').remove();
+                        $('.topFilter').show();
                     }else{
-                        $('.resource-filters').find('div.disable-filter').remove();
+                        $('.resource-filters').show();
                     }
                     $('.resource.visible:visible').last().css({"border-bottom":"none"});
                     localStorage.setItem('resStatus', 'false');
@@ -286,7 +284,7 @@ var hds = window.hds || {};
                 }
                 if ($.trim($(".resourceLibraryfeatered").html()) === '') {
                     $("#featuredCards").hide();
-                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
+                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 15px; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                 } else {
                     $("#featuredCards").show();
                     $('#featuredCards a.isGatedLock').each(function(index, el) {
@@ -377,7 +375,7 @@ var hds = window.hds || {};
             if ($(".resource:visible").length === 0) {                
                 if(!$('#featuredCards').is(":visible")){
                     $('.category-resources-listing').find('.no-matched-result').remove();
-                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
+                    $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 15px; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                 }
             }else{
                 $('.category-resources-listing').find('.no-matched-result').remove();
@@ -438,7 +436,7 @@ var hds = window.hds || {};
                 if ($(".resource:visible").length === 0) {
                     if(!$('#featuredCards').is(":visible")){
                         $('.category-resources-listing').find('.no-matched-result').remove();
-                        $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 0; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
+                        $('.category-resources-listing').append('<div class="no-matched-result" style="padding: 50px 15px; text-align: center;"><strong>Can’t Find What You’re Looking For?</strong><br>Please change your search criteria and try again.</div>');
                     }
                 }
                 $('.resource.visible:visible').last().css({"border-bottom":"none"});
@@ -835,11 +833,9 @@ var hds = window.hds || {};
                 $('#asideLinks-product li').eq(0).find("a").trigger('click');
                 $('.closeKeyword').trigger('click');
                 if ($(window).width() < 991) {
-                    $('.topFilter').find('div.disable-filter').remove();
-                    $('.topFilter').prepend('<div class="disable-filter"/>');
+                    $('.topFilter').hide();
                 }else{
-                    $('.resource-filters').find('div.disable-filter').remove();
-                    $('.resource-filters').append('<div class="disable-filter"/>');
+                    $('.resource-filters').hide();
                 }
                 $('#filterTag .label').css({
                     'display': 'none'

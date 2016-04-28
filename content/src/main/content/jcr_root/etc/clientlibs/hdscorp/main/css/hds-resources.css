@@ -514,7 +514,7 @@ color: #cccccc !important;
 
 @media only screen and (max-width:991px) {
   .resources-listing ul > li:last-child a {
-    border-bottom: 3px solid #c5c5c5;
+    border-bottom: none;
   }
 
   .resources-results {
