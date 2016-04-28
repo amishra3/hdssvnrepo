@@ -223,8 +223,9 @@ var hds = window.hds || {};
                     $('.result-btn').show();
                 }
 
-                if(items == 10) {
+                if($('.result-section[filter="show"]').size() == 10) {
                     $('.result-btn').hide();
+                    $('.noResults').remove();
                 }
                 
                 $('.result-btn').unbind('click').click(function(e){

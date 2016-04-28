@@ -10,8 +10,8 @@ var hds = window.hds || {};
                 detailsBtn: '.expandMe'
             }
             this.options = $.extend(defaults, options);
-            hds.newsEvents.loadCalender();
-          //  hds.newsEvents.loadMoreMonths();
+            // hds.newsEvents.loadCalender();
+            // hds.newsEvents.loadMoreMonths();
             hds.newsEvents.bindFilters();
             hds.newsEvents.sortFilter();
             hds.newsEvents.regionFilter();
@@ -127,7 +127,7 @@ var hds = window.hds || {};
                 var endFilter = $(this).attr('data-enddate').split('/');
                 startFilter = new Date(startFilter[2], startFilter[0] - 1, startFilter[1]);
                 endFilter = new Date(endFilter[2], endFilter[0] - 1, endFilter[1]);
-                return ((startFilter >= startDate) && (endFilter <= endDate)) || (startFilter <= endDate)
+                return ((startFilter >= startDate) && (endFilter <= endDate)) || ((startFilter <= endDate) && (endFilter >= startDate))
             }).show();
             
             /* hide months if no event */
@@ -189,12 +189,13 @@ var hds = window.hds || {};
                     }
                     /* //hide months if no event */
                         
+					$('#date-range200, #date-range201').val("");
                         
                 } else {
                     $(target).show();
                     $('.newsWrapper-listing').show();
                     $('.noEventFilter').hide();
-                    $('#date-range200, #date-range201').val(" ");
+                    $('#date-range200, #date-range201').val("");
                 }
                 hds.newsEvents.bindHTMLLoad();
                 $('.newsEvents:visible').last().css({"border-bottom":"none"});
