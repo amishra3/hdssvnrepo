@@ -7,13 +7,16 @@
 
 
 <c:set var="tabinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabName-tabAnchor-defaultActiveTab")%>" />
-
+<c:set var="bannerbackgroundstyle" value="" />
+<c:if test="${not empty properties.titleiconurl}">
+<c:set var="bannerbackgroundstyle" value="style='background-image:url(${properties.titleiconurl})'" />
+</c:if>
 
 <div class="hidden-xs hidden-sm content-container" id="hdspsaccordion" style="position: relative; min-height:49px;">
 	<div class="navContain">
 		<div class="stickNav-background">
 			<div class="stickNav-container">
-			<div class="smart-symbol" style="background-image:url(${properties.titleiconurl})">${properties.title}</div>
+			<div class="smart-symbol" ${bannerbackgroundstyle} >${properties.title}</div>
 				<ul class="list-inline stickyNav">
 					<c:forEach var="tabinks" items="${tabinks}" varStatus="loopcnt">
 						<c:set var="tabName" value="${tabinks.tabName}" />
