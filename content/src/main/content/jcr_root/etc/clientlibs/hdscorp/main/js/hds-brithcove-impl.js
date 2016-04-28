@@ -124,8 +124,7 @@ $(document).on('click', 'a.l-overlay', function(e) {
     gblPlayingVideo = object.html();
     object.html('');    
     videobox.setContent('')
-    vidObjMkup = '<object id="myExperience'+videoID+'" class="BrightcoveExperience">  <param name="bgcolor" value="#FFFFFF" />  <param name="width" value="920" />  <param name="height" value="517" />  <param name="playerID" value="'+videoID+'" /><param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot" />  <param name="isVid" value="true" />  <param name="isUI" value="true" />  <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="'+videoID+'" />  <param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="myTemplateLoaded" /></object>';
-
+    vidObjMkup = '<object id="myExperience'+videoID+'" class="BrightcoveExperience"> <param name="linkBaseURL" value="https://www.hds.com/en-us/news-insights/resources.html#vid='+videoID+'"/> <param name="bgcolor" value="#FFFFFF" />  <param name="width" value="920" />  <param name="height" value="517" />  <param name="playerID" value="'+videoID+'" /><param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot" />  <param name="isVid" value="true" />  <param name="isUI" value="true" />  <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="'+videoID+'" />  <param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="myTemplateLoaded" /></object>';                                
     videobox.setContent(vidObjMkup);    
     videobox.show();
     initiateVideo();
