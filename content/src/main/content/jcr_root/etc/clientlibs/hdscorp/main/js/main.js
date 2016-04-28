@@ -95,14 +95,23 @@ $(document).ready(function () {
 	});
 	
 	/* calendar function */
-    $("#date-range200").datepicker({
+     $("#date-range200").datepicker({
             dateFormat: "mm/dd/yy",
             minDate: 0,
             onSelect: function (date) {
                 var dt2 = $('#date-range201');
-                var startDate = $(this).datepicker('getDate');
+                var hdsstartDate = $(this).datepicker('getDate');
                 var minDate = $(this).datepicker('getDate');
-				if($('#date-range201').val() != '' && $('#date-range201').val() > $('#date-range200').val()){
+
+                /* function to compare dates */
+				var date_a = $('#date-range200').val().split('/');
+				var date_b = $('#date-range201').val().split('/');
+				var firstDate = new Date(date_a[2],(date_a[0] - 1 ),date_a[1]);
+				var secondDate = new Date(date_b[2],(date_b[0] - 1 ),date_b[1]);
+				/* function to compare dates */
+
+
+				if($('#date-range201').val() != '' && firstDate <= secondDate){
 					dt2.datepicker('option', 'minDate', minDate);
 				}else{
 					dt2.datepicker('setDate', minDate);
@@ -116,12 +125,13 @@ $(document).ready(function () {
             onSelect: function (date) {
                 var dt1 = $('#date-range200');
 				var maxDate = $(this).datepicker('getDate');
-				if($('#date-range200').val() == '' || $('#date-range200').val() > $('#date-range201').val()){
+				if($('#date-range200').val() == ''){
 	                dt1.datepicker('setDate', $('#date-range201').val());
 				}
 
             }
      });
+
 	
 
 	/* function to open modal window start */
