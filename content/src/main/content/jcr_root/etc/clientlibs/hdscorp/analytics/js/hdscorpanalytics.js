@@ -35,12 +35,8 @@ if(url.indexOf("/unified-compute-platform-director.html") < 0 && url.indexOf("/m
 }
 if(url.indexOf("/press-releases/")>-1 || url.indexOf("/industry-solutions/")>-1)
 	{
-		var strngTitle = url;
-		var n=strngTitle.lastIndexOf("/");
-		strngTitle=strngTitle.substring(n+1, 1000);
-		n=strngTitle.lastIndexOf(".");
-		if(n>0){strngTitle=strngTitle.substring(0, n);}
-		pageTitle=strngTitle;
+		pageTitle=getPageNameFromURL();
+		
 	}
 else if (pageTitle.indexOf("unified compute platform")>-1)
 	{
@@ -112,15 +108,9 @@ function isErrorPage()
 
 if(isErrorPage())
 	{
-		var fileName = window.location.pathname;
-		var n=fileName.lastIndexOf("/");
-		fileName=fileName.substring(n+1, 1000);
-		n=fileName.lastIndexOf(".");
-		if(n>0){fileName=fileName.substring(0, n);}
-		
 		digitalData.page={
 				pageInfo:{
-				pageName: $.trim(fileName),
+				pageName: $.trim(getPageNameFromURL()),
 				pageType: "errorPage",
 				pageLoadEvent: "404 error",
 				errorMessage: "page not found",
@@ -525,7 +515,7 @@ function getPartnerIndFilters()
 			
 		}
 
-//Header Links Custom Tracking
+//Header Links Custom Tracking Mega Menu
 	$(".globalNavWrapper").each(function() {
      var listitem = $(this).find("a");
       if( listitem.length>0)
@@ -575,10 +565,10 @@ function getPartnerIndFilters()
 	//header HDS logos
 	
 	$(".hitachi-logo").on("click", function() {
-		globalMenuClick("linkclick","us>mm>hitachi logo",pageTitle,"link","mega menu");
+		globalMenuClick("linkclick","hitachi logo",pageTitle,"link","mega menu");
 	});		
 	$(".hitachi-sublogo").on("click", function() {
-		globalMenuClick("linkclick","us>mm>hds logo",pageTitle,"link","mega menu");
+		globalMenuClick("linkclick","hds logo",pageTitle,"link","mega menu");
 	});			
 	
 	// Return to top link
@@ -597,16 +587,16 @@ function getPartnerIndFilters()
 		 {
 			 listitem.each(function() {
 				var linktext = $.trim($(this).text());			
-				linkposition="home-hero-banner";
+				linkposition="hero-" + getPageNameFromURL();
 				if(linktext==""){linktext="chevron";}
 				$(this).click(function(){
 					if ($(this).parent().attr("class") != "view-all")
 					{eType = "button";}
-					globalMenuClick("linkclick","hero-"+ linktext.toLowerCase(),pageTitle,eType,linkposition); });
+					globalMenuClick("linkclick","hero-digital transformation-"+ linktext.toLowerCase(),pageTitle,eType,linkposition); });
 				$(this).mousedown(function(e){
 					if ($(this).parent().attr("class") != "view-all")
 					{eType = "button";}
-					if(e.which == 3){globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
+					if(e.which == 3){globalMenuClick("linkclick","hero-digital transformation-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 					} 			
 				});
 			});                 
@@ -627,43 +617,39 @@ function getPartnerIndFilters()
 		 var eClass="";
 		 if( listitem.length>0)
 		 {
-			console.log("list Items:" + listitem.length);
+			//console.log("list Items:" + listitem.length);
 			listitem.each(function() {
-				var linktext = $(this).parents().find('h1').text();
-				var url=$(location).attr('href');
-				if(url.indexOf("us/home")>-1)
-					linkposition="home-hero-banner";
-				else 
-					linkposition="PS-Hero";
+				var linktext = "hero-" + $(this).parents().find('h1').text();// extracting offer title
+				linkposition="hero-" + getPageNameFromURL();
 				$(this).click(function(){
-					if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
+					if(linktext==""){linktext="hero-" + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
+					if(linktext==""){linktext="hero-" + $(this).parent().parent().find("h3").text() + "-" + $.trim($(this).text());}
+					if(url.indexOf("/contact.html")>-1){linktext="hero-" + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
 					if($(this).parent().parent().attr("class")=="page-not-found")
-					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+					{var eClass=$(this).parent().parent().attr("class");linktext=$.trim($(this).text());linkposition="panel-main-" + getPageNameFromURL();}
 					else {var eClass=$(this).parent().attr("class");}
-					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}// linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; }//linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}// linktext = $(this).parents().find('h1').text();}
-					if(linktext == "" || !linktext){linktext=$(this).text();}
+					if(eClass.indexOf("buy-through")!=-1){linktext=linktext + "-" + $.trim($(this).text());eType = "link";}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext=linktext + "-" + $.trim($(this).text());}// linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext=linktext + "-play icon";}//linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";linktext=linktext + "-play icon";}// linktext = $(this).parents().find('h1').text();}
+					if(linktext == "" || !linktext){linktext="hero-" + $.trim($(this).text());}
 					linktext = $.trim(linktext);	
-					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,eType,linkposition); });
 				$(this).mousedown(function(e){
 					if(e.which == 3){
-						if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
-					if($(this).parent().parent().attr("class")=="page-not-found")
-					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
-					else {var eClass=$(this).parent().attr("class");}
-					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
-					if(linktext == "" || !linktext){linktext=$(this).text();}
-					linktext = $.trim(linktext);	
-						globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
+						if(linktext==""){linktext="hero-" + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
+						if(linktext==""){linktext="hero-" + $(this).parent().parent().find("h3").text() + "-" + $.trim($(this).text());}
+						if(url.indexOf("/contact.html")>-1){linktext="hero-" + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
+						if($(this).parent().parent().attr("class")=="page-not-found")
+						{var eClass=$(this).parent().parent().attr("class");linktext=$.trim($(this).text());}
+						else {var eClass=$(this).parent().attr("class");}
+						if(eClass.indexOf("buy-through")!=-1){linktext=linktext + "-" + $.trim($(this).text());eType = "link";}
+						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext=linktext + "-" + $.trim($(this).text());}// linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext=linktext + "-play icon";}//linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";linktext=linktext + "-play icon";}// linktext = $(this).parents().find('h1').text();}
+						if(linktext == "" || !linktext){linktext="hero-" + $.trim($(this).text());}
+						linktext = $.trim(linktext);		
+						globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,eType,linkposition);
 					} 			
 				});
 			});                 
@@ -687,7 +673,7 @@ function getPartnerIndFilters()
 		 if(linktext==""){linktext=$(this).find('h2').text();}
 		 if( listitem.length>0)
 		 {
-			console.log("list Items:" + listitem.length);
+			//console.log("list Items:" + listitem.length);
 			listitem.each(function() {
 				//var linktext = $(this).parents().find('h1').text();
 				var url=$(location).attr('href');
@@ -712,17 +698,17 @@ function getPartnerIndFilters()
 				$(this).mousedown(function(e){
 					if(e.which == 3){
 						if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
-					if($(this).parent().parent().attr("class")=="page-not-found")
-					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
-					else {var eClass=$(this).parent().attr("class");}
-					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon"; linktext = $(this).parents().find('h1').text();}
-					if(linktext == "" || !linktext){linktext=$(this).text();}
-					linktext = $.trim(linktext);	
+						if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
+						if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
+						if($(this).parent().parent().attr("class")=="page-not-found")
+						{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+						else {var eClass=$(this).parent().attr("class");}
+						if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
+						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}// linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; }//linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}// linktext = $(this).parents().find('h1').text();}
+						if(linktext == "" || !linktext){linktext=$(this).text();}
+						linktext = $.trim(linktext);	
 						globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
 					} 			
 				});
@@ -731,90 +717,57 @@ function getPartnerIndFilters()
 	//}
     });
 	
-	//Hexagons CTAs div.hexContain, 
+	//Hexagons CTAs div.hexContain, -- product details pages
 	$("li.hexagon-transformative").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).find('h4').text();
+	 var hexpanel = $(this).parents('.accordion-level').attr('id');
+	 var pName=getPageNameFromURL();
+	 if(!hexpanel){hexpanel="panel";}
      if( listitem.length>0)
 	 {
-		 //listitem.each(function() {
-		 //var linktext = jQuery(this).text();
-          linktext = "hex-" + $.trim(linktext);
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
-			$(this).mousedown(function(e){
+		linktext = "hex-" + $.trim(linktext) + "-" + $.trim($(this).find("a").text());
+		
+            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hex-" + hexpanel + "-" + pName); });
+ /* 			$(this).mousedown(function(e){
 				if(e.which == 3){
 					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
 				} 			
-			});
-		//});                 
+			});  */        
      }
     });
 	
-//Hexagons home page page CTAs .calculating-list 
+//Hexagons home page page CTAs -- updated for link text on 27/04
 	$(".calculating-list .hexagon270").each(function() {
      var listitem = $(this).find("a");
 	 var linktext = $(this).find('h4').text();
+	 var hexpanel = "panel";
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
-		 //var linktext = jQuery(this).text();
-          linktext = "hex-" + $.trim(linktext);
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
-/* 			$(this).mousedown(function(e){
-				if(e.which == 3){
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
-				} 			
-			}); */
+          linktext = "hex-" + $.trim(linktext) + "-" + $.trim($(this).text());
+            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hex-" + hexpanel + "-home"); });
 		});                 
      }
     });	
 	
-	//Hexagons Home page popup CTAs
-	$("ul.healthcare-list, li.hexagon-connect").each(function() {
-     var listitem = $(this).find("a");
-	 var linktext = $(this).find('h4').text();
-     if( listitem.length>0)
-	 {
-		 listitem.each(function() {
-		 //var linktext = jQuery(this).text();
-          linktext = "hex-" + $.trim(linktext);
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
-			$(this).mousedown(function(e){
-				if(e.which == 3){
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
-				} 			
-			});
-		});                 
-     }
-    });
-	
-	//Hexagons about us page CTAs
+	//3 Hexagons about us, new-insights, social innovation and partners home pages CTAs -- updated for link text on 27/04
 	$(".hexagon320").each(function() {
      var listitem = $(this).find("a");
+	 var pName=getPageNameFromURL();
+	 var hexpanel = "panel";
      if( listitem.length>0)
 	 {
 		 listitem.each(function() {
-		 //var linktext = jQuery(this).text();
-          //if(linktext.indexOf("hex-")<0)
-		  //{linktext = "hex-" + $.trim(linktext);}
-				$(this).click(function(){
-					var purl=$(location).attr('href');
-					if(purl.indexOf("/news-insights.html") >-1 || purl.indexOf("/partners.html") >-1){var linktext = "hex-" + $(this).parent().parent().find('h4').text() + "-" + $(this).text();}
-					else{var linktext = "hex-" + $(this).parent().parent().find('h4').text();}
-					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon"); });
-				$(this).mousedown(function(e){
-					if(e.which == 3){
-						var purl=$(location).attr('href');
-						if(purl.indexOf("/news-insights.html") >-1){var linktext = "hex-" + $(this).parent().parent().find('h4').text() + "-" + $(this).text();}
-						else{var linktext = "hex-" + $(this).parent().parent().find('h4').text();}
-						globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hexagon");
-					} 			
-				});
+ 				$(this).click(function(){
+					var linktext = "hex-" + $.trim($(this).parent().parent().find('h4').text())+ "-" + $.trim($(this).text());
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","hex-" + hexpanel + "-" + pName); });
 		});                 
      }
     });
 
-	
+	 
+	//case study link buttons
 	$(".tbd-dl, .cs-all").each(function(){
 		var panel="";
 		var listitem = $(this).find("a");
@@ -823,17 +776,45 @@ function getPartnerIndFilters()
 				var linktext = $(this).text();
 				linktext=linktext.toLowerCase();
 				linktext = $.trim(linktext);
-				if(linktext.indexOf("studies")>-1){panel="Case Study";}
-				else if(linktext.indexOf("specifications")>-1){panel="Specifications-Panel";}
-				$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"button",panel); });
+				if(linktext.indexOf("studies")>-1){panel="panel-case study";}
+				else if(linktext.indexOf("specifications")>-1){panel="panel-specifications";}
+				$(this).click(function(){globalMenuClick("linkclick","panel-case study-" + linktext.toLowerCase(),pageTitle,"button",panel); });
 				$(this).mousedown(function(e){
 				if(e.which == 3){
-					$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"button",panel); });
+					$(this).click(function(){globalMenuClick("linkclick","panel-case study-" + linktext.toLowerCase(),pageTitle,"button",panel); });
 					} 			
 				});
 			});                 
 		}
     });
+	
+	//read customer stories case study links	
+	$("div.cs-section, .animateLink").each(function() {
+     var listitem = $(this).find("a");
+	 var mtext= $(this).text();
+	 var linkposition="button";
+	 mtext = mtext.toLowerCase();
+	 if(mtext != "view more case studies" && mtext != "read more case studies"){
+     if( listitem.length>0)
+	 {
+		 listitem.each(function() {
+			 var linktext = $(this).text();
+			 linktext=$.trim(linktext.toLowerCase());
+			 if(linktext.indexOf("read the case study")>-1 || linktext.indexOf("watch the video")>-1){linktext = $(".cs-highlight-box-logo").find("img").attr("alt"); linkposition="link";}
+			 linktext = "panel-case study-" + $.trim(linktext);
+            $(this).click(function(){
+				globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,linkposition,"panel-case study"); });
+			$(this).mousedown(function(e){
+				if(e.which == 3){
+					var mtext= $(this).text();mtext = mtext.toLowerCase();
+					if(mtext != "view more case studies" && mtext != "read more case studies"){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,linkposition,"panel-case study");}
+				} 			
+			});
+		});                 
+     }
+	 }
+    });	
+	
 
 	// Alliance partners logo
 	$("div.partner-list").each(function() 
@@ -845,10 +826,10 @@ function getPartnerIndFilters()
 		 linktext=$.trim(linktext);
          if(linktext!="" || linktext.length > 0)
 		 {
-			$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",headingtext); });
+			$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","panel-" + headingtext); });
 			$(this).mousedown(function(e){
 			if(e.which == 3){
-				globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link",headingtext);
+				globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","panel-" + headingtext);
 				} 			
 			});
 		 }
@@ -1011,32 +992,7 @@ function getPartnerIndFilters()
 		linkhref = $.trim(linkhref);
 		globalMenuClick("linkclick","us>ft>"+linkhref.toLowerCase(),pageTitle,linktype,"footer");
 	});		
-//read customer stories links	 
 
-	$("div.cs-section, .animateLink").each(function() {
-     var listitem = $(this).find("a");
-	 var mtext= $(this).text();
-	 mtext = mtext.toLowerCase();
-	 if(mtext != "view more case studies" && mtext != "read more case studies"){
-     if( listitem.length>0)
-	 {
-		 listitem.each(function() {
-			 var linktext = $(this).text();
-			 linktext=$.trim(linktext.toLowerCase());
-			 if(linktext.indexOf("read the case study")>-1 || linktext.indexOf("watch the video")>-1){linktext = $(".cs-highlight-box-logo").find("img").attr("alt");}
-			 linktext = "case-study-panel-link-" + $.trim(linktext);
-            $(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel"); });
-			$(this).mousedown(function(e){
-				if(e.which == 3){
-					var mtext= $(this).text();mtext = mtext.toLowerCase();
-					if(mtext != "view more case studies" && mtext != "read more case studies"){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","Case-Study-Panel");}
-				} 			
-			});
-		});                 
-     }
-	 }
-    });	
-	
 //Featured P&S tracking 
 
 	$(".acs-commons-resp-colctrl-row .acs-commons-resp-colctrl-col .product-box .product-link").each(function() {
@@ -1058,7 +1014,7 @@ function getPartnerIndFilters()
        links.each(function() {
 		 	$(this).click(function(){
                 isTabClicked=true;
-                var tabTitle = "tab-"+$.trim($(this).text()).toLowerCase().replace(/\s/g,"-")+" button";
+                var tabTitle = "tab-"+$.trim($(this).text()).toLowerCase().replace(/\s/g," ")+"-button";
                 tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick"); 
             });
 	  	});
@@ -1066,25 +1022,39 @@ function getPartnerIndFilters()
 	});
 	
 	//Tabs Custom Tracking tabbing-container :event (web cast on demand), storage, legal  page tabs
-	$(".stickNav-container, .custom-nav-tabs .nav-tabs, .webcast-listing").each(function() {
+	//$(".stickNav-container, .custom-nav-tabs .nav-tabs, .webcast-listing").each(function() {
+	// Detail page tabs (overview, resources, specifications etc) and event page on demand and events tabs
+	$(".stickNav-container, .custom-nav-tabs .nav-tabs").each(function() {
 	 	var links = $(this).find("a");
 	  links.each(function() {
 		 	$(this).click(function(){
                 isTabClicked=true;
 				
-                var tabTitle = "tab-"+$.trim($(this).text()).toLowerCase().replace(/\s/g,"-")+" button";
+                var tabTitle = "tab-"+$.trim($(this).text()).toLowerCase().replace(/\s/g," ")+"-button";
                 tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick"); 
             });
 	  	});
 	});
 
-	//Tabs Custom Tracking on all sub section pages like cloud, servers, big data analytics etc
+	//Tabs Custom Tracking for inner tabs on event page webcast tab
+	$(".webcast-listing").each(function() {
+	 	var links = $(this).find("a");
+	  links.each(function() {
+		 	$(this).click(function(){
+                isTabClicked=true;
+				var tabTitle = "left tab-webcast-"+$.trim($(this).text()).toLowerCase().replace(/\s/g," ");
+                tabClick(primaryCategory,tabTitle,pageTitle,"Left-Tabclick"); 
+            });
+	  	});
+	});
+	
+	//Tabs Custom Tracking on all sub section pages like cloud, servers, big data analytics, storage, legal etc
 	$(".category-listing, .leftsidelisting").each(function() {
 	 	var links = $(this).find("a");
 	  links.each(function() {
 		 	$(this).click(function(){
                 isTabClicked=true;
-				var tabTitle = "left-tabclick-"+$.trim($(this).text()).toLowerCase().replace(/\s/g," ");
+				var tabTitle = "left tab-"+$.trim($(this).text()).toLowerCase().replace(/\s/g," ");
                 tabClick(primaryCategory,tabTitle,pageTitle,"Left-Tabclick"); 
             });
 	  	});
@@ -1100,7 +1070,7 @@ function getPartnerIndFilters()
 		{
 			//var pTitle=$(this).parent().parent().parent().parent().find("a").text();
 			var pTitle=$(this).parents('#asideLinks-product').find('li.active >a').text();
-			var tabTitle = "left-tabclick-"+ $.trim(pTitle).toLowerCase() +"-"+$.trim(linktext).toLowerCase().replace(/\s/g," ");
+			var tabTitle = "left tab-"+ $.trim(pTitle).toLowerCase() +"-"+$.trim(linktext).toLowerCase().replace(/\s/g," ");
 			if(pTitle!=""){tabClick(primaryCategory,tabTitle,pageTitle,"Left-Tabclick");}
 		}
 	});
@@ -1119,7 +1089,7 @@ function getPartnerIndFilters()
                     {
                     	if(!isTabClicked)
                         {
-    					var tabTitle = "tab-"+activeLink.text().toLowerCase().replace(/\s/g,"-")+" scroll";
+    					var tabTitle = "tab-"+activeLink.text().toLowerCase().replace(/\s/g,"-")+"-scroll";
                         tabClick(primaryCategory,tabTitle,pageTitle,"Tabscroll");
                         }
                         	else
@@ -1132,29 +1102,39 @@ function getPartnerIndFilters()
        });
 	   
 	   
-	// tabs on location page
-	$("#allCountries").on("change", function()
-		{
-			var links = $(this).val();
-			if (!links.indexOf("Select Country")>-1){
-                var tabTitle = "tab-region-" + $("#allRegion option:selected").text() + "-country-" + links;
-                tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick"); }
-        });
+	// Region, country and location selections on location page
 
-	$("#allLocations").on("change", function() 
+	$("#allLocations, #allRegion, #allCountries").on("change", function() 
 		{
 			var links = $(this).val();
-			if (!links.indexOf("Select Location")>-1){
-                var tabTitle = "tab-region-" + $("#allRegion option:selected").text() + "-country-" + $("#allCountries option:selected").text() + "-location-" + links;
-                tabClick(primaryCategory,tabTitle,pageTitle,"Tabclick"); }
-            });
-		
+			var selectId= $(this).attr("id");
+			var searchTerm="no term searched";
+            var result="zero";
+			var searchType="worldwide location search";
+			var searchAction="";
+			var sFilters="";
+			if(selectId == "allRegion")
+			{
+				if (!links.indexOf("Select Region")>-1){searchAction="region filter";sFilters=$("#allRegion option:selected").text();}
+				
+			}else if(selectId == "allCountries")
+			{
+				if (!links.indexOf("Select Country")>-1){searchAction="country filter";sFilters=$("#allRegion option:selected").text() + "," + $("#allCountries option:selected").text();}
+			}else if(selectId == "allLocations")
+			{
+				if (!links.indexOf("Select Location")>-1){searchAction="country filter";sFilters=$("#allRegion option:selected").text() + "," + $("#allCountries option:selected").text() + "," + $("#allLocations option:selected").text();}
+			}
+			//var tabTitle = "tab-region-" + $("#allRegion option:selected").text() + "-country-" + $("#allCountries option:selected").text() + "-location-" + links;
+			searchClick(searchTerm,searchAction,result,sFilters,searchType,"specificSearchClick");
+		});
+	
+
 	//Click to call tracking
 	$('.talk .call').click(function(){
-		if(window.outerWidth < 992){
+		//if(window.outerWidth < 992){
 			var pNumber="ph no - " + $('.call').text();
 			clicktocall(pNumber,pageTitle);
-		}
+		//}
 	})
 	
 	function clicktocall(pNumber,pageTitle){
@@ -1559,6 +1539,17 @@ $(document).on('keypress', '#fulltext', function(event)
 			false;
 	}
 
+	// Get page name from URL for primary part
+	function getPageNameFromURL()
+	{
+		var fileName = window.location.pathname;
+		var n=fileName.lastIndexOf("/");
+		fileName=fileName.substring(n+1, fileName.length);
+		n=fileName.lastIndexOf(".");
+		if(n>0){fileName=fileName.substring(0, n);}
+		return fileName;
+	}
+	
 	function setVirtualCategoryEvent()
 	{
 		var cListing = $('.category-products-listing');
@@ -1712,9 +1703,14 @@ $(document).on('keypress', '#fulltext', function(event)
 
 	}
 	
-	// email links clicks
-	$('a[href^="mailto:"]').on("click",function() {
+	// email links clicks---------mailto should not be implemented on the site------so disabled this tracking
+	/*$('a[href^="mailto:"]').click(function() {
 			var linktxt=$(this).text();
-			var linkhref=$(this).attr('href');
-			//if(linktxt.indexOf('@')>-1 || linkhref.indexOf('@')>-1){console.log("linktxt: " + linktxt + "linkhref: " + linkhref);}
+			if(linktxt.indexOf('@')>0){globalMenuClick("linkclick","em-"+linktxt,pageTitle,"email","main panel"); }
+	});*/
+
+	// email links clicks
+	$('a[rel="emailHome"]').click(function() {
+			var linktxt=$(this).text();
+			if(linktxt.indexOf('@')>0){globalMenuClick("linkclick","em-"+linktxt,pageTitle,"email","panel-main"); }
 	});
