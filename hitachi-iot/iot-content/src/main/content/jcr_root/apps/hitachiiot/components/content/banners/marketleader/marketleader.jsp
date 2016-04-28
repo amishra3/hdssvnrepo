@@ -17,13 +17,12 @@
 <c:set var="vidurl" value="openvideooverlayById(${videoid});"/>
 <div class="market-leader clearfix">
 	<div class="market-leader-container content-container">
-		<div class="market-leader-image col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" style="background-image: url(${properties.videothumbnailimgpath}); background-position: 50% 50%; background-repeat: no-repeat;">
-			
+		<div class="market-leader-image col-lg-4 col-sm-12 col-md-4 col-md-push-8" style="background-image: url(${properties.videothumbnailimgpath}); background-position: 50% 50%; background-repeat: no-repeat;">
 			<c:if test="${not empty properties.videoiconpath}">
-			<a href="javascript:void(0);"  class="btn-play-video" onclick="${vidurl}"><img src="${properties.videoiconpath}"></a>
-	        </c:if>	
+			<a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}"><img src="${properties.videoiconpath}"></a>
+		    </c:if>	
 		</div>
-		<div class="market-leader-content col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5">
+		<div class="market-leader-content col-lg-8 col-sm-12 col-md-8 col-md-pull-4">
 			<h1>${properties.title}</h1>
 			${properties.description}
 			<c:if test="${not empty properties.aboutusbuttonlabel}">
@@ -35,6 +34,7 @@
 </div>
 
 
+ 
 
 
 
