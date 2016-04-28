@@ -34,7 +34,7 @@
 			<ul class="footer-links col-md-12">
 				<c:set var="externalUrl" value="${externalLinks.externalLinkurl}" />
 				<li>
-				<a href="${externalUrl}" class="innovation-link col-md-12" target="${externalLinks.externallinktargettype==true?'_blank':'_self'}">${externalLinks.externalLinkTitle} &nbsp;<span class="sprite icon-link-red"></span></a>
+				<a href="${externalUrl}" class="innovation-link col-md-12" target="${externalLinks.externallinktargettype==true?'_blank':'_self'}">${externalLinks.externalLinkTitle} &nbsp;<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
 				
 				</li>
 			</ul>

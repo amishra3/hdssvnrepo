@@ -23,7 +23,7 @@
 		<div class="market-leader-content col-lg-6 col-sm-12 ">
 			<h1>${properties.headlinecontent}</h1>
 			 ${properties.descriptioncontent}
-			<a href="${buttonurl}" class="btn-square-red" target="${properties.buttontargettype==true?'_blank':'_self'}">${properties.buttonlabel}</a>
+			<a href="${buttonurl}" class="btn-square-red" target="${properties.buttontargettype==true?'_blank':'_self'}">${properties.buttonlabel}${properties.buttontargettype?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 		</div>
 	</div>
 </div>
