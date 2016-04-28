@@ -44,12 +44,7 @@
                                 fieldLabel="Partner Icon Image Alt Text"
                                 name="./partnericonalttext"
                                 xtype="textfield"/>
-                            <icontargettype
-                                jcr:primaryType="cq:Widget"
-                                fieldLabel="Open in New Window?"
-                                name="./icontargettype"
-                                type="checkbox"
-                                xtype="selection"/>
+                            
                         </fieldConfig>
                     </multilinks>
                 </items>

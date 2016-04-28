@@ -21,7 +21,10 @@
 		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tablink-tabIconPath")%>" />
 
 		<div class="iot-hero clearfix">
-
+			<div class="hero-banner hidden-md hidden-lg">
+			    <img src="${properties.heromobileimage}" />
+			  </div>
+		<div class="hidden-xs hidden-sm">
 			<object id="bgvid" class="BrightcoveExperience"
 				style="width: 100%; height: 100%; border: 2px solid orange;">
 				<param name="bgcolor" value="#FFFFFF" />
@@ -38,6 +41,7 @@
 				<param name="dynamicStreaming" value="true" />
 				<!--<param name="secureConnections" value="true"/>  -->
 			</object>
+			</div>
 			<div class="iot-hero-container content-container">
 				<h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
 
@@ -72,3 +76,4 @@
 		</wcmmode:edit>
 	</c:otherwise>
 </c:choose>
+

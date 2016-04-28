@@ -27,7 +27,7 @@
 			<h1>${properties.title}</h1>
 			${properties.description}
 			<c:if test="${not empty properties.aboutusbuttonlabel}">
-			<a href="${linkUrl}" class="btn-square-red">${properties.aboutusbuttonlabel}</a>
+			<a href="${linkUrl}" class="btn-square-red" target="${properties.aboutusbuttonlabeltargettype==true?'_blank':'_self'}">${properties.aboutusbuttonlabel}</a>
 			</c:if>
 		</div>
 		

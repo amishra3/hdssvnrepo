@@ -34,7 +34,7 @@
 							<c:set var="linkUrl" value="${linkUrl}"/>
 						</c:otherwise>
 					</c:choose>
-            <a href="${linkUrl}" target="${partner.icontargettype?'_blank':'_self'}" title="${partner.partnericonalttext}"><img src="${partner.partnericonimgpath}" alt="${partner.partnericonalttext}"></a>
+            <a href="${linkUrl}" target="_blank" title="${partner.partnericonalttext}"><img src="${partner.partnericonimgpath}" alt="${partner.partnericonalttext}"></a>
           </div>
         </div>
         </c:forEach>
