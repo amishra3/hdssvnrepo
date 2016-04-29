@@ -261,13 +261,13 @@ button.cta-scroll-top .text-return {
 .solutions.footer {
   overflow: auto;
   background: transparent;
-  padding: 50px 0 40px 0;
+  padding: 0 0 40px 0;
 }
 
 /* line 12, stdin */
 .solutions.footer .footer-blue {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 /* line 15, stdin */

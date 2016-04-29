@@ -25,16 +25,12 @@
 		<div class="market-leader-content col-lg-8 col-sm-12 col-md-8 col-md-pull-4">
 			<h1>${properties.title}</h1>
 			${properties.description}
-			<c:if test="${not empty properties.aboutusbuttonlabel}">
+			<c:if test="${not empty linkUrl}">
 			<a href="${linkUrl}" class="btn-square-red" target="${properties.aboutusbuttonlabeltargettype==true?'_blank':'_self'}">${properties.aboutusbuttonlabel}${properties.aboutusbuttonlabeltargettype?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 			</c:if>
 		</div>
 		
+		
 	</div>
 </div>
-
-
- 
-
-
 

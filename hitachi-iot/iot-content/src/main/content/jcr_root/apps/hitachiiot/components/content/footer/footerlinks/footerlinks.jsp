@@ -13,7 +13,7 @@
 
 <c:choose>
 	<c:when test="${not empty footerTitle}">
-		<h3 class="footer-title col-sm-8 col-md-8">${footerTitle}</h3>
+		<h3 class="footer-title col-sm-12 col-md-12">${footerTitle}</h3>
 		<c:set var="footerInternalLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"internalLinkTitle-internalLinkurl")%>" />
 
 

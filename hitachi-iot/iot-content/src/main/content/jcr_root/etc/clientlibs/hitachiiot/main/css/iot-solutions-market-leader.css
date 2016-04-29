@@ -1,21 +1,17 @@
-/* line 33, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 html {
   font-size: 16px !important;
 }
 
 /*bootstrap override start*/
-/* line 38, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .row-no-margin {
   margin: 0 !important;
 }
 
-/* line 41, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .row-reduce-half {
   margin-left: -7.5px !important;
   margin-right: -7.5px !important;
 }
 
-/* line 45, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .col-no-pad {
   padding: 0 !important;
 }
@@ -52,7 +48,6 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
-/* line 1, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square {
   padding: 8px 35px;
   border: 1px solid;
@@ -62,19 +57,16 @@ The `sprites` mixin generates identical output to the CSS template
   letter-spacing: .15em;
 }
 
-/* line 8, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-white {
   color: #ffffff;
   border-color: #ffffff;
 }
 
-/* line 12, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square.-red {
   color: #ce0000;
   border-color: #ce0000;
 }
 
-/* line 18, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 [class|="btn-square"] {
   padding: 8px 35px;
   font-size: .8em;
@@ -84,52 +76,43 @@ The `sprites` mixin generates identical output to the CSS template
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
 }
 
-/* line 28, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 31, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-white a {
   color: #ffffff;
 }
 
-/* line 36, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red {
   border: 1px solid #ce0000;
   color: #ce0000;
 }
 
-/* line 39, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-red a {
   color: #ce0000;
 }
 
-/* line 44, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features {
   border: 1px solid #ffffff;
   background-color: #ffffff;
   color: #ce0000;
 }
 
-/* line 48, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-features:hover {
   color: #ce0000;
 }
 
-/* line 53, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear {
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* line 56, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-square-clear a {
   color: #ffffff;
 }
 
-/* line 62, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top {
   position: fixed;
   bottom: 10px;
@@ -162,23 +145,19 @@ button.cta-scroll-top {
   color: #ffffff;
 }
 
-/* line 92, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top:hover {
   background-color: #757575;
   background-color: rgba(102, 102, 102, 0.9);
 }
 
-/* line 96, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top.active {
   display: inline-block;
 }
 
-/* line 100, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top span {
   display: inline-block;
 }
 
-/* line 103, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .icon-arrow-scroll-top {
   background-image: url(../images/sprite.png);
   background-position: -161px -145px;
@@ -188,12 +167,10 @@ button.cta-scroll-top .icon-arrow-scroll-top {
   margin-right: auto;
 }
 
-/* line 108, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 button.cta-scroll-top .text-return {
   margin-top: 7px;
 }
 
-/* line 114, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square {
   position: relative;
   height: 40px;
@@ -210,18 +187,15 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 136, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 139, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .btn-transparent-square:hover a {
   color: #ffffff;
 }
 
-/* line 127, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square p {
   margin: 0;
   position: relative;
@@ -229,7 +203,6 @@ button.cta-scroll-top .text-return {
   transform: translateY(-50%);
 }
 
-/* line 133, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
 .btn-transparent-square a {
   color: #FFFFFF;
   outline: 0;
@@ -237,7 +210,6 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 142, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top {
     position: absolute;
     display: inline-block;
@@ -246,66 +218,55 @@ button.cta-scroll-top .text-return {
     width: 68px;
     height: 68px;
   }
-  /* line 150, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
   button.cta-scroll-top .text-return {
     margin-top: 5px;
   }
-  /* line 155, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_buttons.scss */
   .btn-transparent-square {
     max-width: 300px;
     min-height: 36px;
   }
 }
 
-/* line 8, stdin */
 .solutions-page.market-leader {
   background: #ffffff;
   padding: 0 15px;
 }
 
-/* line 12, stdin */
 .solutions-page.market-leader .market-leader-container {
   position: relative;
   text-align: center;
 }
 
-/* line 15, stdin */
 .solutions-page.market-leader .market-leader-container a:hover,
 .solutions-page.market-leader .market-leader-container a:active {
   text-decoration: none;
 }
 
-/* line 19, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-image {
   margin: 10% 0;
   padding-top: 2em;
 }
 
-/* line 22, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-image a {
   position: relative;
   display: inline-block;
 }
 
-/* line 25, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-image a .expand-box {
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
-/* line 30, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-image a img {
   margin: 0;
 }
 
-/* line 36, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-content {
   margin: 10% 0;
   text-align: left;
 }
 
-/* line 40, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-content h1 {
   margin-bottom: 30px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -315,7 +276,6 @@ button.cta-scroll-top .text-return {
   color: #000000;
 }
 
-/* line 48, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-content h4 {
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -325,7 +285,6 @@ button.cta-scroll-top .text-return {
   text-transform: uppercase;
 }
 
-/* line 56, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-content p {
   margin-bottom: 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
@@ -336,7 +295,6 @@ button.cta-scroll-top .text-return {
   line-height: 175%;
 }
 
-/* line 65, stdin */
 .solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
   display: inline-block;
   margin-top: 20px;
@@ -350,54 +308,46 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-/* line 160, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
   background-color: #ce0000;
   color: #ffffff;
 }
 
-/* line 163, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
 .solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
   color: #ffffff;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 65, stdin */
   .solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
     width: 100%;
   }
 }
 
-/* line 79, stdin */
 .solutions-page.market-leader .market-leader-container .common-hero-banner {
   display: none;
   margin: 15% 0;
 }
 
-/* line 83, stdin */
 .solutions-page.market-leader .market-leader-container .common-hero-banner iframe {
   max-width: 100%;
   width: 70%;
   min-height: 500px;
 }
 
-/* line 89, stdin */
 .solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero {
   position: absolute;
   top: -25px;
   right: 0;
 }
 
-/* line 93, stdin */
 .solutions-page.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
   background-image: url(../images/sprite.png);
-  background-position: -248px -231px;
+  background-position: -358px -194px;
   width: 18px;
   height: 18px;
   background-position: -239px -220px;
 }
 
-/* line 101, stdin */
 .solutions-overlay {
   position: fixed;
   left: 0;
@@ -410,7 +360,6 @@ button.cta-scroll-top .text-return {
   background: rgba(0, 0, 0, 0.75);
 }
 
-/* line 111, stdin */
 .solutions-overlay .common-hero-banner {
   transform: translateY(-50%);
   overflow: auto;
@@ -420,18 +369,15 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 111, stdin */
   .solutions-overlay .common-hero-banner {
     margin: 0 auto;
   }
 }
 
-/* line 121, stdin */
 .solutions-overlay img {
   position: relative;
 }
 
-/* line 124, stdin */
 .solutions-overlay .close-hero {
   display: block;
   position: absolute;
@@ -440,27 +386,23 @@ button.cta-scroll-top .text-return {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 124, stdin */
   .solutions-overlay .close-hero {
     top: 10px;
     right: 10px;
   }
 }
 
-/* line 133, stdin */
 .solutions-overlay .close-hero .icon-close-hero {
   background-image: url(../images/sprite.png);
-  background-position: -248px -231px;
+  background-position: -358px -194px;
   width: 18px;
   height: 18px;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 143, stdin */
   .market-leader .market-leader-container {
     text-align: center;
   }
-  /* line 146, stdin */
   .market-leader .market-leader-container .market-leader-content {
     display: inline-block;
     float: none;
@@ -468,14 +410,12 @@ button.cta-scroll-top .text-return {
     padding: 0;
     text-align: left;
   }
-  /* line 153, stdin */
   .market-leader .market-leader-container .market-leader-content h1 {
     margin: 40px 0 20px;
     font-size: 2em;
     line-height: 1;
     color: #000000;
   }
-  /* line 159, stdin */
   .market-leader .market-leader-container .market-leader-content h4 {
     font-size: 1.125em;
     line-height: 1;
@@ -483,42 +423,34 @@ button.cta-scroll-top .text-return {
     text-transform: uppercase;
     line-height: 140%;
   }
-  /* line 166, stdin */
   .market-leader .market-leader-container .market-leader-content p {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     color: #000000;
     font-size: .9em;
   }
-  /* line 172, stdin */
   .market-leader .market-leader-container .market-leader-content .learn-more {
     font-size: 0.6875em;
     line-height: 1;
   }
-  /* line 176, stdin */
   .market-leader .market-leader-container .market-leader-image {
     float: none;
     margin: 15% 0 5%;
   }
-  /* line 180, stdin */
   .market-leader .market-leader-container .market-leader-image img {
     margin: 10px 0 0 5%;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  /* line 192, stdin */
   .market-leader .market-leader-container .market-leader-image {
     margin: 0;
   }
-  /* line 194, stdin */
   .market-leader .market-leader-container .market-leader-image .expand-box {
     display: none;
   }
-  /* line 197, stdin */
   .market-leader .market-leader-container .market-leader-image img {
     max-width: 100%;
   }
-  /* line 202, stdin */
   .market-leader .market-leader-container .market-leader-content .btn-square-red {
     display: block;
     max-width: 300px;

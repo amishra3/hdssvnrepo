@@ -25,7 +25,7 @@ hds-partner-detail.js
 legal.js
 hds-office-loaction.js
 hds-service-training.js
-
+/etc/clientlibs/hitachiiot/main/js/iot-global-header.js
 /etc/clientlibs/hitachiiot/main/js/iot-homepage-bc-hero.js
 /etc/clientlibs/hitachiiot/main/js/iot-homepage-market-leader.js
 /etc/clientlibs/hitachiiot/main/js/iot-solutions.js

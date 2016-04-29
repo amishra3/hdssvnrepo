@@ -803,3 +803,10 @@ button.cta-scroll-top .text-return {
     display: block;
   }
 }
+
+/* line 130, stdin */                    
+.about-hds-career-leader .blurb-container p {
+	font-weight: 100;
+	line-height: 175%;
+    margin-bottom: 20px;
+}
