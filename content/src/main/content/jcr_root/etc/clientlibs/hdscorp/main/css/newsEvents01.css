@@ -1423,7 +1423,7 @@ display:none;
 @media only screen and (max-width: 1024px){
     .news-content-box{ padding:0 0 0 30px}
     .event-date-panel .bootstrap-select.btn-group .dropdown-toggle .bs-caret {
-        background-position: 0 0;
+        background-position: 0 6px;
     }
     #contentWebCast .newsWrapper {
         padding-right: 15px;  
