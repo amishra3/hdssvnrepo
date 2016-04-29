@@ -75,7 +75,7 @@
 						<h3>${properties.sisearchpartnerlabel}</h3>
 						<div class="close-search">
 							<a class="closeOverlay" title="Close" href="javascript:void(0);">
-								<img alt="Close" src="images/sprites/close.png"></a>
+								<img alt="Close" src=""></a>
 						</div>
 
 					</div>
