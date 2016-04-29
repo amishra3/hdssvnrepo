@@ -30,7 +30,7 @@
                                             <p>${eventNodes.summary}<br><br><small>UPCOMING</small></p>
                                              <div class="WebcastDetails">
                                                  <img class="img-responsive" src="${eventNodes.previewImagePath}" alt=""/>
-                                                <a rel="${not empty playermodal?'modal':'dummy'}" href="${eventNodes.herfLink}" target="_blank" title="Play">${registernow} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+                                                <a rel="${not empty playermodal?'modal':'dummy'}" href="${eventNodes.herfLink}" target="_blank" title="Play" comid="${eventNodes.communicationId}" class="playvideo">${registernow} <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
                                             </div>
                                                 <div class="expandMe less"><span class="glyphicon glyphicon-plus-sign"></span>${detailslabel}</div>
                                         </div>	
