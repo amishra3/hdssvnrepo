@@ -292,6 +292,10 @@ public class ServiceUtil {
 				listMap.add(map);
 				return listMap;
 			}
+			if(jsonArrayObject.contains("\\u2022")){
+				jsonArrayObject=jsonArrayObject.replaceAll("\\\\u2022", "</br>\\\\u2022");
+			}
+			
 			JSONArray jsonArray = new JSONArray(jsonArrayObject);
 			for (int i = 0; i < jsonArray.length(); i++) {
 				Map<String, String> map = new HashMap<String, String>();
