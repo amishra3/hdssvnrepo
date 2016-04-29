@@ -293,6 +293,7 @@ public class ServiceUtil {
 				return listMap;
 			}
 			if(jsonArrayObject.contains("\\u2022")){
+				jsonArrayObject=jsonArrayObject.replaceFirst("\\\\u2022", "</br>\\\\u2022");
 				jsonArrayObject=jsonArrayObject.replaceAll("\\\\u2022", "</br>\\\\u2022");
 			}
 			
