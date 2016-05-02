@@ -18,62 +18,77 @@
 			$marketLeaderImage.siblings('.inner-content').hide();
 		});
 	}
+	
+	/**
+	 * Functionality for hero banner area
+	 */
 
-	var $heroSolutions = $('.hero-solutions');
-	if ($heroSolutions.length) {
-		$('.close-overlay').click(function() {
-			$heroSolutions.siblings('.hds-overlay').hide();
-			$heroSolutions.siblings('.inner-content').hide();
+	var $heroProducts = $('.hero-product-solutions');
+	if ($heroProducts.length) {
+		$('.close-hero').click(function() {
+			$heroProducts.siblings('.server-rack').show();
+			$heroProducts.siblings('.overview, .video').hide();
 		});
 
-		$('.hero-solutions .btn-play-video').click(function() {
-			$heroSolutions.siblings('.hds-overlay').show();
-			$heroSolutions.siblings('.inner-content').show();
+		$('.btn-play-video').click(function() {
+			$heroProducts.siblings('.video').show();
+			$heroProducts.siblings('.overview, .server-rack').hide();
 		});
 	}
+	
+	
+	jQuery(document).ready(function($){
+	if($('.navContain').length!==0){
+		var heroBannerClass;
+        if($('.hero-product-solutions').length!==0){
+			heroBannerClass=".hero-product-solutions";
+        }else{
+			heroBannerClass=".common-hero-banner";
+        }
 
 
+	var secondaryNav = $('.navContain'),
+		secondaryNavTopPosition = secondaryNav.offset().top,
+		taglineOffesetTop = $(heroBannerClass).offset().top + $(heroBannerClass).height() + parseInt($(heroBannerClass).css('paddingTop').replace('px', '')),
+		contentSections = $('.accordion-level'),
+		endScroll = $('.stop'),
+		endScrollPos = endScroll.offset().top;
 
+	$(window).on('scroll', function(){
+		if($(window).scrollTop() > secondaryNavTopPosition && $(window).scrollTop() < endScrollPos) {
+			secondaryNav.addClass('is-fixed sticky fadeInDown animated');
+		}else if($(window).scrollTop() > endScrollPos ) {
+			secondaryNav.removeClass('is-fixed sticky fadeInDown animated');
+		} else {
+			secondaryNav.removeClass('is-fixed sticky fadeInDown animated');
+		}
+		updateSecondaryNavigation();
+	});
 
-	var stickyElement = function() {
-		// element to be sticky
-		var $stickyEl = $('.navContain');
-		// element that will stop the sticky element
-		var $stopEl = $('.stop');
-
-		var sticky = new Waypoint.Sticky({
-			element: $stickyEl,
-			wrapper: false,
-			stuckClass: 'sticky',
-			offset: 43,
+	function updateSecondaryNavigation() {
+		contentSections.each(function(){
+			var actual = $(this),
+				actualHeight = actual.height() + parseInt(actual.css('paddingTop').replace('px', '')) + parseInt(actual.css('paddingBottom').replace('px', '')),
+				actualAnchor = secondaryNav.find('a[href="#'+actual.attr('id')+'"]');
+			if ( ( actual.offset().top - secondaryNav.height() <= $(window).scrollTop() ) && ( actual.offset().top +  actualHeight - secondaryNav.height() > $(window).scrollTop() ) ) {
+				actualAnchor.addClass('active');
+			}else {
+				actualAnchor.removeClass('active');
+			}			
 		});
+	}
+	secondaryNav.find('ul a').on('click', function(event){
+		event.preventDefault();
+        var target= $(this.hash);
+        $('body,html').animate({
+			'scrollTop': target.offset().top + 4
+        	}, 1000
+        );
+    });
+	}
+});
 
-		$stopEl.waypoint(function(direction) {
-			if (direction === 'down') {
-				// when scrolling down
-				// replace pos:fixed with absolute and set top value to
-				// the distance from $stopEl to viewport top minus the
-				// height of the stickyElement
-				// var footerOffset = $stopEl.offset();
-				$stickyEl.css({
-					position: 'absolute',
-					// top: 0
-					top: footerOffset.top - $stickyEl.outerHeight()
-				});
-			} else if (direction === 'up') {
-				// remove the inline styles so sticky styles apply again
-				$stickyEl.attr('style', '');
-			}
 
-		}, {
-			// trigger the waypoint when the bottom of stickyEl touches top of stopEl
-			offset: function() {
-				return $stickyEl.outerHeight();
-			}
-		});
-	};
-
-	stickyElement();
 
 	// Get text values from Sticky Nav, apply to Accordion labels
 	$("ul.stickyNav li a").each(function(i) {
@@ -81,68 +96,154 @@
 		$("#stickyNav-"+i).text(stickyLabel);
 	});
 
-	var solutionsWaypoints = [];
-	$('.waypointItem').each(function(key, item){
-		var waypoint = new Waypoint({
-		  element: item,
-			offset: 43,
-		  handler: function(direction) {
-				$('.stickyNav li')
-					.eq(key)
-					.addClass('active')
-					.siblings()
-					.removeClass('active');
-		  }
-		});
-		solutionsWaypoints.push( waypoint );
-	});
-
-
 	var allMenus = $('.accordion-menu-container');
 	var allContents = $('.accordion-content');
 
-	$('.accordion-content').on('click', function(event){
-		event.stopPropagation();
-		return false;
-	});
+	$(document).on('click','.accordion-level > .accordion-menu-container' , function(event) {
+        var $currentContent = $(this).closest('div').next('div.accordion-content',this);
+        if ($(this).hasClass("open") && $(this).next().queue().length === 0) {
+            $currentContent.removeClass('open');
+            $(this).removeClass("open");
+        } else if (!$(this).hasClass("open") && $(this).next().queue().length === 0) {
+            $currentContent.addClass('open');
+            $(this).addClass("open");
+        }
+        return false;
+    });
 
-	$('.accordion-level').on('click', function(event) {
-		var $currentMenu = $(this).find('.accordion-menu-container');
-		var $currentContent = $(this).find('.accordion-content');
+	
 
-		if ($currentMenu.hasClass('open')) {
-			$currentMenu.removeClass('open');
-			$currentContent.removeClass('open');
-			return false;
-		}
-		// allMenus.removeClass('open');
-		// allContents.removeClass('open');
-		$currentMenu.toggleClass('open');
-		$currentContent.toggleClass('open');
-		return false;
-	});
+	/* Read More Less Code Start */
+	var deviceAgent = navigator.userAgent.toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipad|android)/);      
+	if (agentID) {
+		$(".product-desc").each(function( index ) {
+			pCount = $(this).children("p").length
+			if(pCount > 1){
+				$(this).find('p:not(:first-child)').hide();
+				$(this).find('p:first-child').css({'margin-bottom':'0'}).append('..<a href="javascript:void(0);" class="read-more">read more</a>');
+				$(this).find('p:last-child').append('..<a href="javascript:void(0);" class="read-less">read less</a>');
+			}	
+		})
 
-	/**
-	 * stickyNav scrolling functionality
-	 */
+		$('.read-more').click(function(){
+			$(this).parent().siblings().show();
+			$(this).parent().parent().find('p:first-child').css({'margin-bottom':'30px'}).show();
+			$(this).hide();
+		})
 
-	$('.stickyNav a').on('click', function(e){
-		e.preventDefault();
+		$('.read-less').click(function(){
+			$(this).parent().parent().find('p').hide();
+			$(this).parent().parent().find('p:first-child, a.read-more').css({'margin-bottom':'0'}).show();
+		})
+	}
+	/* Read More Less Code End */
 
-		var
-		 	scrollOffset = 0,
-			el = $(this).attr('href').substring(1),
-			stickyNavHeight = $('.navContain .stickyNav').outerHeight(),
-			stickyNavPosition = $( '.navContain .stickyNav' ).offset().top,
-			element = document.getElementById( el ),
-			elementPosition = Math.round( $(element).offset().top )
-		;
+	/* Product & Solution Active Tab */
+	if(window.location.href.indexOf("products-solutions") > -1) {
+       $('.sub-navigation ul li:first-child a').addClass('active');
+    }
 
-		if ( stickyNavPosition > elementPosition ) { scrollOffset = { left: 0, top: -46 } }
-		else if ( stickyNavPosition < elementPosition ) { scrollOffset = { left: 0, top: stickyNavHeight }; }
-		else { scrollOffset = { left: 0, top: 0 }; }
+})(jQuery);
+if($('.accordion-level').length!==0){
+	$( ".contentarea .accordion-level" ).last().addClass("accordion-level-last");
+}
+/* equal column height start */
+if( $(window).width() > 1209){
+if($('.fb-category-container').length!==0){
 
-		$(window).scrollTo( element, 1000, { offset: scrollOffset } );
-	});
+			$('div[class="fb-category-container "]').each(function(index,item){
+
+				this.id = 'fixedRate' + index;
+
+				var callheightinner = 0;
+				for(var i=0;i<$("#fixedRate"+index+" .fb-category-points-box").size();i++){
+					if($("#fixedRate"+index+" .fb-category-points-box:eq("+i+")").height()>=callheightinner){
+							callheightinner=$("#fixedRate"+index+" .fb-category-points-box:eq("+i+")").height();
+						}
+				}
+				$("#fixedRate"+index+" .fb-category-points-box").height(callheightinner);
+				
+				/*var callheightinnerhead=0;
+				for(var i=0;i<$("#fixedRate"+index+" .fb-category-points-box-heading").size();i++){
+					if($("#fixedRate"+index+" .fb-category-points-box-heading:eq("+i+")").height()>=callheightinnerhead){
+							callheightinnerhead=$("#fixedRate"+index+" .fb-category-points-box-heading:eq("+i+")").height();
+						}
+				}
+				$("#fixedRate"+index+" .fb-category-points-box-heading").height(callheightinnerhead);*/
+			});
+
+}
+}
+
+
+
+
+
+
+if($('.resources-category-box').length!==0){
+	$('.resources-category .resources-category-box').each(function(index,item){
+		this.id = 'fixedRes' + index;
+	})
+}
+
+/* equal column height end */
+
+/* Equal Columns Height */
+(function($) {	
+    function equalColumns(htmlElements){
+		$(htmlElements).removeAttr('style');
+		var heights = $(htmlElements).map(function() {
+	        return $(this).height();
+	    }).get(),
+	    maxHeight = Math.max.apply(null, heights);
+	    $(htmlElements).height(maxHeight);
+	}
+
+	window.addEventListener("resize", function() {
+    	// Get screen size (inner/outerWidth, inner/outerHeight)
+        setTimeout(function(){
+			equalColumns('.cs-selections .cs-selection-box');
+        	equalColumns('.mes-section .product-box');
+			equalColumns('.community-common-box');
+            equalColumns('.pr-explore-container .pr-common-box');
+			equalColumns('.news-insight-explore .spotlight-content');
+			equalColumns('.news-insight-explore .spotlight-normal .spotlight-content');
+        	equalColumns('.about-hds-latest .about-hds-events-content');
+            equalColumns('.services-list-section .section-service-col');
+            equalColumns('.service-support-main .section-service-col');
+            equalColumns('.explore-insight .insight-common-box');
+			equalColumns('.detail-container .details-box');
+			equalColumns('.train-resrcprdct-bx .prdct-inner');
+			equalColumns('.resources-spotlight .spotlight-content');
+			equalColumns('.service-infra .news-resources-col');
+			equalColumns('.solution-section .solution-category-box');
+			equalColumns('.stay_touch_container .comment_box');
+			equalColumns('.product-list-section .panel-box');
+        }, 500);
+	}, false);
+
+
+    setTimeout(function(){
+    	equalColumns('.cs-selections .cs-selection-box');
+        equalColumns('.mes-section .product-box');
+		equalColumns('.community-common-box');
+        equalColumns('.pr-explore-container .pr-common-box');
+		equalColumns('.news-insight-explore .spotlight-content');
+		equalColumns('.news-insight-explore .spotlight-normal .spotlight-content');
+        equalColumns('.about-hds-latest .about-hds-events-content');
+        equalColumns('.services-list-section .section-service-col');
+        equalColumns('.service-support-main .section-service-col');
+        equalColumns('.explore-insight .insight-common-box');
+        equalColumns('.detail-container .details-box');
+        equalColumns('.train-resrcprdct-bx .prdct-inner');
+		equalColumns('.resources-spotlight .spotlight-content');
+		equalColumns('.service-infra .news-resources-col');
+		equalColumns('.solution-section .solution-category-box');
+		equalColumns('.stay_touch_container .comment_box');
+		equalColumns('.product-list-section .panel-box');
+    }, 500);
+
+
 
 })(jQuery);

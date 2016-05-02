@@ -9,7 +9,7 @@ hds-brithcove-impl.js
 jquery.cookie.js
 reponsive-images.js
 banner.js
-product-solutions.js
+#product-solutions.js
 accordion.js
 product-catagory.js
 product-box.js
@@ -29,3 +29,4 @@ hds-service-training.js
 /etc/clientlibs/hitachiiot/main/js/iot-homepage-bc-hero.js
 /etc/clientlibs/hitachiiot/main/js/iot-homepage-market-leader.js
 /etc/clientlibs/hitachiiot/main/js/iot-solutions.js
+
