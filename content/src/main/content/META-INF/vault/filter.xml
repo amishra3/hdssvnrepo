@@ -8,7 +8,6 @@
 	<filter root="/apps/cq/core"/>
 	<filter root="/apps/cq/xssprotection"/>
     <filter root="/etc/clientlibs/hdscorp"/>
-    <filter root="/etc/workflow/models/dam/update_asset"/>
     <filter root="/etc/workflow/models/hdscorpmodel"/>
     <filter root="/etc/workflow/launcher/config/hdscorp_overwrite_title"/>
 	<filter root="/etc/workflow/launcher/config/hdscorp_blog_feed"/>
