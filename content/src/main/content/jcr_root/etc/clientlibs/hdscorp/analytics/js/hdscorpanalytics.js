@@ -622,16 +622,17 @@ function getPartnerIndFilters()
 				var linktext = "hero-" + $(this).parents().find('h1').text();// extracting offer title
 				linkposition="hero-" + getPageNameFromURL();
 				$(this).click(function(){
-					if(linktext==""){linktext="hero-" + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
-					if(linktext==""){linktext="hero-" + $(this).parent().parent().find("h3").text() + "-" + $.trim($(this).text());}
+					if(linktext=="hero-" && !($(this).parent().parent().find("h2").text()=="")){linktext="hero-" + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
+					if(linktext=="hero-" && !($(this).parent().parent().find("h3").text()=="")){linktext="hero-" + $(this).parent().parent().find("h3").text() + "-" + $.trim($(this).text());}
 					if(url.indexOf("/contact.html")>-1){linktext="hero-" + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
 					if($(this).parent().parent().attr("class")=="page-not-found")
 					{var eClass=$(this).parent().parent().attr("class");linktext=$.trim($(this).text());linkposition="panel-main-" + getPageNameFromURL();}
 					else {var eClass=$(this).parent().attr("class");}
-					if(eClass.indexOf("buy-through")!=-1){linktext=linktext + "-" + $.trim($(this).text());eType = "link";}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext=linktext + "-" + $.trim($(this).text());}// linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext=linktext + "-play icon";}//linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";linktext=linktext + "-play icon";}// linktext = $(this).parents().find('h1').text();}
+					if(eClass.indexOf("buy-through")!=-1){eType = "link";if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}// linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("second-link")!= -1){eType = "link"; if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}// linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}//linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}// linktext = $(this).parents().find('h1').text();}
 					if(linktext == "" || !linktext){linktext="hero-" + $.trim($(this).text());}
 					linktext = $.trim(linktext);	
 					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,eType,linkposition); });
@@ -643,10 +644,10 @@ function getPartnerIndFilters()
 						if($(this).parent().parent().attr("class")=="page-not-found")
 						{var eClass=$(this).parent().parent().attr("class");linktext=$.trim($(this).text());}
 						else {var eClass=$(this).parent().attr("class");}
-						if(eClass.indexOf("buy-through")!=-1){linktext=linktext + "-" + $.trim($(this).text());eType = "link";}
-						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; linktext=linktext + "-" + $.trim($(this).text());}// linktext = $(this).parents().find('h1').text();}
-						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; linktext=linktext + "-play icon";}//linktext = $(this).parents().find('h1').text();}
-						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";linktext=linktext + "-play icon";}// linktext = $(this).parents().find('h1').text();}
+						if(eClass.indexOf("buy-through")!=-1){eType = "link";if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}
+						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}// linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}//linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}// linktext = $(this).parents().find('h1').text();}
 						if(linktext == "" || !linktext){linktext="hero-" + $.trim($(this).text());}
 						linktext = $.trim(linktext);		
 						globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,eType,linkposition);
@@ -670,46 +671,44 @@ function getPartnerIndFilters()
 		 var linkposition="";
 		 var eType="link";
 		 var eClass="";
+		 var linkType="panel-";
+		 if($(this).parents(".bannerCarsoul").attr("id") == "partnerCarsoul"){ linkType="hero-";}
 		 if(linktext==""){linktext=$(this).find('h2').text();}
 		 if( listitem.length>0)
 		 {
 			//console.log("list Items:" + listitem.length);
 			listitem.each(function() {
-				//var linktext = $(this).parents().find('h1').text();
-				var url=$(location).attr('href');
-				if(url.indexOf("us/home")>-1)
-					linkposition="home-hero-banner";
-				else 
-					linkposition="PS-Hero";
+				var linktext = linkType + $(this).parent().parent().parent().find('h2').text();// extracting offer title
+				linkposition=linkType + getPageNameFromURL();
 				$(this).click(function(){
-					if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-					if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-					if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
+					if(linktext==""){linktext=linkType + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
+					if(linktext==""){linktext=linkType + $(this).parent().parent().find("h3").text() + "-" + $.trim($(this).text());}
+					if(url.indexOf("/contact.html")>-1){linktext=linkType + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
 					if($(this).parent().parent().attr("class")=="page-not-found")
-					{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+					{var eClass=$(this).parent().parent().attr("class");linktext=$.trim($(this).text());linkposition="panel-main-" + getPageNameFromURL();}
 					else {var eClass=$(this).parent().attr("class");}
-					if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
-					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}// linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; }//linktext = $(this).parents().find('h1').text();}
-					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}// linktext = $(this).parents().find('h1').text();}
-					if(linktext == "" || !linktext){linktext=$(this).text();}
+					if(eClass.indexOf("buy-through")!=-1){eType = "link";if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}
+					else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}// linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}//linktext = $(this).parents().find('h1').text();}
+					else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}// linktext = $(this).parents().find('h1').text();}
+					if(linktext == "" || !linktext){linktext=linkType + $.trim($(this).text());}
 					linktext = $.trim(linktext);	
-					globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition); });
+					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,eType,linkposition); });
 				$(this).mousedown(function(e){
 					if(e.which == 3){
-						if(linktext==""){linktext=$(this).parent().parent().find("h2").text();}
-						if(linktext==""){linktext=$(this).parent().parent().find("h3").text();}
-						if(url.indexOf("/contact.html")>-1){linktext=$(this).parent().parent().find("h2").text() + "-" + $(this).text();}
+						if(linktext==""){linktext=linkType + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
+						if(linktext==""){linktext=linkType + $(this).parent().parent().find("h3").text() + "-" + $.trim($(this).text());}
+						if(url.indexOf("/contact.html")>-1){linktext=linkType + $(this).parent().parent().find("h2").text() + "-" + $.trim($(this).text());}
 						if($(this).parent().parent().attr("class")=="page-not-found")
-						{var eClass=$(this).parent().parent().attr("class");linktext=$(this).text();}
+						{var eClass=$(this).parent().parent().attr("class");linktext=$.trim($(this).text());linkposition="panel-main-" + getPageNameFromURL();}
 						else {var eClass=$(this).parent().attr("class");}
-						if(eClass.indexOf("buy-through")!=-1){linktext = "FIND AN HDS PARTNER";eType = "link";}
-						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button";}// linktext = $(this).parents().find('h1').text();}
-						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; }//linktext = $(this).parents().find('h1').text();}
-						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";}// linktext = $(this).parents().find('h1').text();}
-						if(linktext == "" || !linktext){linktext=$(this).text();}
-						linktext = $.trim(linktext);	
-						globalMenuClick("linkclick","hero-" + linktext.toLowerCase(),pageTitle,eType,linkposition);
+						if(eClass.indexOf("buy-through")!=-1){eType = "link";if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}
+						else if ( eClass.indexOf("btn-square-white")!= -1){eType = "button"; if(!(linktext.indexOf($.trim($(this).text()))>-1)){linktext=linktext + "-" + $.trim($(this).text());}}// linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("playVideoBox")!= -1){eType = "play icon"; if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}//linktext = $(this).parents().find('h1').text();}
+						else if ( eClass.indexOf("video-play-desktop")!= -1){eType = "play icon";if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}}// linktext = $(this).parents().find('h1').text();}
+						if(linktext == "" || !linktext){linktext=linkType + $.trim($(this).text());}
+						linktext = $.trim(linktext);		
+						globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,eType,linkposition);
 					} 			
 				});
 			});                 
@@ -961,7 +960,9 @@ function getPartnerIndFilters()
 		var links = $(this).find("a");
 		var linktype="";
 	   links.each(function() {
-		 var linkhref = $(this).attr('href');
+		 
+		$(this).click(function(){
+			var linkhref = $(this).attr('href');
            if(linkhref.indexOf("/partnerlocator/en_us/partnerlocator.html") > -1)
 		 {
 		 	linkhref= "find an hds partner";
@@ -972,7 +973,8 @@ function getPartnerIndFilters()
 			linkhref= "contact sales"; 
 			linktype="button";
 		 }
-		$(this).click(function(){globalMenuClick("linkclick","us>ft>"+linkhref.toLowerCase(),pageTitle,linktype,"footer"); });
+			globalMenuClick("linkclick","us>ft>"+linkhref.toLowerCase(),pageTitle,linktype,"footer"); 
+			});
 		$(this).mousedown(function(e){
 			if(e.which == 3){
 				globalMenuClick("linkclick","us>ft>"+linkhref.toLowerCase(),pageTitle,linktype,"footer");
@@ -1688,10 +1690,10 @@ $(document).on('keypress', '#fulltext', function(event)
 		return filters.toLowerCase();
 	}
 	//cookie session storage variable created on click on gated assets
-	$(".isGatedLock").on("click", function(){
+	/* $(".isGatedLock").on("click", function(){
 			//$.cookie("gatedPP",$.trim(window.location.href),{ path: '/' });
 			sessionStorage.parentReffererURL = $.trim(window.location.href);
-	}); 
+	});  */
 		
 	function videoTracking(vId, pPageName)
 	{
@@ -1704,13 +1706,13 @@ $(document).on('keypress', '#fulltext', function(event)
 	}
 	
 	// email links clicks---------mailto should not be implemented on the site------so disabled this tracking
-	/*$('a[href^="mailto:"]').click(function() {
+	$('a[href^="mailto:"]').click(function() {
 			var linktxt=$(this).text();
-			if(linktxt.indexOf('@')>0){globalMenuClick("linkclick","em-"+linktxt,pageTitle,"email","main panel"); }
-	});*/
+			if(linktxt.indexOf('@')>0){globalMenuClick("linkclick","em-"+linktxt.toLowerCase(),pageTitle,"email","panel-main"); }
+	});
 
 	// email links clicks
 	$('a[rel="emailHome"]').click(function() {
 			var linktxt=$(this).text();
-			if(linktxt.indexOf('@')>0){globalMenuClick("linkclick","em-"+linktxt,pageTitle,"email","panel-main"); }
+			if(linktxt.indexOf('@')>0){globalMenuClick("linkclick","em-"+linktxt.toLowerCase(),pageTitle,"email","panel-main"); }
 	});
