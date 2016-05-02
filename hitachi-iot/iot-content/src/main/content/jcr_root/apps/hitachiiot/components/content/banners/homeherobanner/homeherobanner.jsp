@@ -35,7 +35,8 @@
 				<param name="isVid" value="true" />
 				<param name="isUI" value="true" />
 				<param name="dynamicStreaming" value="true" />
-				<!--<param name="secureConnections" value="true"/>  -->
+                <param name="wmode" value="transparent" />                      
+                <!--<param name="secureConnections" value="true"/>  -->
 			</object>
 			<div class="iot-hero-container content-container">
 				<h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
