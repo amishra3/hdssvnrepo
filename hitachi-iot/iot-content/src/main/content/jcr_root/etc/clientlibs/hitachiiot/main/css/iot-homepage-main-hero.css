@@ -231,6 +231,7 @@ button.cta-scroll-top .text-return {
   background: transparent;
   padding-top: 150px;
   background-size: cover;
+  position: relative;
 }
 
 .iot-hero #bgvid {
