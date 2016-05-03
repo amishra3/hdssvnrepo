@@ -63,6 +63,12 @@
             fieldDescription="Ex - &lt;object class=BrightcoveExperience id=#videoGuid&gt;..&lt;/object&gt;"
             name="./videooverlaymarkup"
             xtype="textarea"/> 
+         <homeherovideomarkup
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Home Hero Video Mark Up"
+            fieldDescription="Ex - &lt;object class=BrightcoveExperience id=#videoGuid&gt;..&lt;/object&gt;"
+            name="./homeherovideomarkup"
+            xtype="textarea"/>    
 		<btitle
             jcr:primaryType="cq:Widget"
             fieldLabel="Product Banner Marketo Form Label"
