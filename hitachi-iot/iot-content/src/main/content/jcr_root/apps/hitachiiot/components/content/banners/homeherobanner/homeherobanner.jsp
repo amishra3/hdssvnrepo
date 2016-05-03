@@ -13,7 +13,15 @@
 <c:if test="${fn:startsWith(ourplatformurl,'/content/')}">
 	<c:set var="ourplatformurl" value="${hdscorp:shortURL(ourplatformurl)}" />
 </c:if>
+<% 
+	String homeHeroVideoMarkup ="<object class='BrightcoveExperience' id='bgvid' style='width: 100%; height: 100%; border: 2px solid orange;'><param name='bgcolor' value='#FFFFFF' /><param name='width' value='100%' /><param name='height' value='517' /><param name='playerID' value='#videoTitleId'><param name='playerKey' value='AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot'><param name='@videoPlayer' value='#videoTitleId'><param name='isVid' value='true'><param name='autoStart' value='true' /><param name='isUI' value='true'><param name='dynamicStreaming' value='true'><param name='wmode' value='transparent' /> </object>";
+%>
+<c:set var="homeHeroVideoMarkup" value="<%=pageProperties.getInherited("homeherovideomarkup", homeHeroVideoMarkup) %>"/>
 
+<c:set var="homeHeroVideoMarkup" value="${fn:trim(homeHeroVideoMarkup)}"/>
+
+<c:set var="homeHeroVideoMarkup" value="${fn:replace(homeHeroVideoMarkup,'#videoTitleId',videoid)}"/>                          
+	                    
 
 <c:choose>
 	<c:when test="${not empty properties.herotitlecontent}">
@@ -21,23 +29,7 @@
 		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tablink-tabIconPath")%>" />
 
 		<div class="iot-hero clearfix hidden-xs hidden-sm">
-			<object id="bgvid" class="BrightcoveExperience"
-				style="width: 100%; height: 100%; border: 2px solid orange;">
-				<param name="bgcolor" value="#FFFFFF" />
-				<param name="width" value="100%" />
-				<param name="height" value="517" />
-				<param name="playerID" value="${videoid}" />
-				<param name="playerKey"
-					value="AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot">
-				<param name="@videoPlayer" value="${videoid}" />
-				<param name="isVid" value="true" />
-				<param name="autoStart" value="true" />
-				<param name="isVid" value="true" />
-				<param name="isUI" value="true" />
-				<param name="dynamicStreaming" value="true" />
-                <param name="wmode" value="transparent" />                      
-                <!--<param name="secureConnections" value="true"/>  -->
-			</object>
+			 ${homeHeroVideoMarkup}
 			<div class="iot-hero-container content-container">
 				<h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
 
