@@ -278,6 +278,7 @@ button.cta-scroll-top .text-return {
 /* line 17, stdin */
 .solutions.footer .footer-blue .buttons .information {
   font-size: .75em;
+  margin-left: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -292,11 +293,16 @@ button.cta-scroll-top .text-return {
   color: #ffffff;
 }
 
+.solutions.footer .footer-blue .talk {
+  text-transform: none;
+}
+
 @media only screen and (max-width: 768px) {
   /* line 29, stdin */
   .solutions.footer .footer-blue .talk,
   .solutions.footer .footer-blue .call {
     text-transform: none;
     display: block;
+    margin-bottom: 1.5em;
   }
 }
