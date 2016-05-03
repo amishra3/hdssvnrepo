@@ -92,7 +92,9 @@
 	  <c:set var="servername" value="${pageContext.request.serverName}" />
 	  <c:if test="${fn:contains(servername,'hds.com')}">
 		  <script language="JavaScript">
+		  if(location.hostname.match('hds.com')){
 			document.domain = "hds.com";
+		  }
 		  </script>
 	  </c:if>
       
