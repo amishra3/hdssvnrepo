@@ -227,56 +227,53 @@ button.cta-scroll-top .text-return {
   }
 }
 
-.market-leader {
+.home-page.market-leader {
   background: #ffffff;
   padding: 0 15px;
 }
 
-.market-leader .market-leader-container {
+.home-page.market-leader .market-leader-container {
   position: relative;
   text-align: center;
 }
 
-.market-leader .market-leader-container a:hover,
-.market-leader .market-leader-container a:active {
+.home-page.market-leader .market-leader-container a:hover,
+.home-page.market-leader .market-leader-container a:active {
   text-decoration: none;
 }
 
-.market-leader .market-leader-container .market-leader-image {
-  margin-top: 15%;
-  padding-top: 3.75em;
-  min-height: 275px;
+.home-page.market-leader .market-leader-container .market-leader-image {
+  margin-top: 17.5%;
+  height: 225px;
 }
 
-.market-leader .market-leader-container .market-leader-image img {
-  margin: 10% auto 0;
-  max-width: 100%;
+.home-page.market-leader .market-leader-container .market-leader-image-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;                
 }
 
-.market-leader .market-leader-container .market-leader-content {
+.home-page.market-leader .market-leader-container .market-leader-image img {
+  vertical-align: middle;
+  max-height: 75px;
+  max-width: 75px;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content {
   margin: 10% 0;
   text-align: left;
 }
 
-.market-leader .market-leader-container .market-leader-content h1 {
+.home-page.market-leader .market-leader-container .market-leader-content h2 {
   margin-bottom: 30px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 3em;
   line-height: 1;
   color: #000000;
 }
 
-.market-leader .market-leader-container .market-leader-content h4 {
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  line-height: 1;
-  color: #848484;
-  text-transform: uppercase;
-}
-
-.market-leader .market-leader-container .market-leader-content p {
+.home-page.market-leader .market-leader-container .market-leader-content p {
   margin-bottom: 20px;
   font-family: 'museo-sans', Arial, sans-serif;
   font-weight: 100;
@@ -287,7 +284,7 @@ button.cta-scroll-top .text-return {
   padding-right: 10%;
 }
 
-.market-leader .market-leader-container .market-leader-content .btn-square-red {
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -300,91 +297,473 @@ button.cta-scroll-top .text-return {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
   background-color: #ce0000;
   color: #ffffff;
 }
 
-.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
   color: #ffffff;
 }
 
-.market-leader .market-leader-container .common-hero-banner {
+.home-page.market-leader .market-leader-container .common-hero-banner {
   display: none;
   margin: 15% 0;
 }
 
-.market-leader .market-leader-container .common-hero-banner iframe {
+.home-page.market-leader .market-leader-container .common-hero-banner iframe {
   max-width: 100%;
   width: 70%;
   min-height: 500px;
 }
 
-.market-leader .market-leader-container .common-hero-banner .close-hero {
+.home-page.market-leader .market-leader-container .common-hero-banner .close-hero {
   position: absolute;
   top: -25px;
   right: 0;
 }
 
-.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
+.home-page.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
   background-image: url(../images/sprite.png);
   background-position: -358px -194px;
   width: 18px;
   height: 18px;
 }
 
+@media only screen and (max-width: 992px) {
+  .home-page.market-leader .market-leader-container .market-leader-content {
+    margin: 0 0 10%;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content h2 {
+    font-size: 1.875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content p {
+    font-size: 0.875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-image {
+    margin: 10% 0 5%;
+  }
+}            
+
 @media only screen and (max-width: 768px) {
-  .market-leader .market-leader-container {
+  .home-page.market-leader .market-leader-container {
     text-align: center;
   }
-  .market-leader .market-leader-container .market-leader-content {
+  .home-page.market-leader .market-leader-container .market-leader-content {
     display: inline-block;
     float: none;
-    margin: 0 auto 10%;
+    margin: 0 0 10%;
     padding: 0;
     text-align: left;
   }
-  .market-leader .market-leader-container .market-leader-content h1 {
-    margin: 40px 0 20px;
-    font-size: 2em;
+  .home-page.market-leader .market-leader-container .market-leader-content h2 {
+    font-size: 1.875em;
     line-height: 1;
     color: #000000;
   }
-  .market-leader .market-leader-container .market-leader-content h4 {
-    font-size: 1.125em;
-    line-height: 1;
-    color: #848484;
-    text-transform: uppercase;
-    line-height: 140%;
-  }
-  .market-leader .market-leader-container .market-leader-content p {
-    margin-bottom: 25px;
+  .home-page.market-leader .market-leader-container .market-leader-content p {
     color: #000000;
-    font-size: .9em;
+    font-size: .875em;
   }
-  .market-leader .market-leader-container .market-leader-content .learn-more {
+  .home-page.market-leader .market-leader-container .market-leader-content .learn-more {
     font-size: 0.6875em;
     line-height: 1;
   }
-  .market-leader .market-leader-container .market-leader-image {
+  .home-page.market-leader .market-leader-container .market-leader-image {
     float: none;
-    margin: 15% 0 5%;
-  }
-  .market-leader .market-leader-container .market-leader-image img {
-    margin: 45px 0 0 0;
+    margin: 10% 0 5%;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .market-leader .market-leader-container .market-leader-image {
-    margin-top: 0;
-  }
-  .market-leader .market-leader-container .market-leader-image img {
-    max-width: 50%;
-  }
-  .market-leader .market-leader-container .market-leader-content .btn-square-red {
+  .home-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
     display: block;
     max-width: 300px;
     margin: 0 auto;
+    text-align: center;
+  }
+}html {
+  font-size: 16px !important;
+}
+
+/*bootstrap override start*/
+.row-no-margin {
+  margin: 0 !important;
+}
+
+.row-reduce-half {
+  margin-left: -7.5px !important;
+  margin-right: -7.5px !important;
+}
+
+.col-no-pad {
+  padding: 0 !important;
+}
+
+/*bootstrap override end*/
+/* BOOTSTRAP OVERRIDES */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+.btn-square {
+  padding: 8px 35px;
+  border: 1px solid;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.btn-square.-white {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-square.-red {
+  color: #ce0000;
+  border-color: #ce0000;
+}
+
+[class|="btn-square"] {
+  padding: 8px 35px;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+}
+
+.btn-square-white {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-square-white a {
+  color: #ffffff;
+}
+
+.btn-square-red {
+  border: 1px solid #ce0000;
+  color: #ce0000;
+}
+
+.btn-square-red a {
+  color: #ce0000;
+}
+
+.btn-square-features {
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #ce0000;
+}
+
+.btn-square-features:hover {
+  color: #ce0000;
+}
+
+.btn-square-clear {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-square-clear a {
+  color: #ffffff;
+}
+
+button.cta-scroll-top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  outline: 0;
+  border: 0;
+  display: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: .7rem;
+  line-height: .9rem;
+  cursor: pointer;
+  letter-spacing: .15em;
+  z-index: 1031;
+  width: 77px;
+  height: 77px;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  transition-property: background-color, box-shadow, transform;
+  background-color: #8f8f8f;
+  background-color: rgba(131, 131, 131, 0.9);
+  color: #ffffff;
+}
+
+button.cta-scroll-top:hover {
+  background-color: #757575;
+  background-color: rgba(102, 102, 102, 0.9);
+}
+
+button.cta-scroll-top.active {
+  display: inline-block;
+}
+
+button.cta-scroll-top span {
+  display: inline-block;
+}
+
+button.cta-scroll-top .icon-arrow-scroll-top {
+  background-image: url(../images/sprite.png);
+  background-position: -161px -145px;
+  width: 26px;
+  height: 14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button.cta-scroll-top .text-return {
+  margin-top: 7px;
+}
+
+.btn-transparent-square {
+  position: relative;
+  height: 40px;
+  max-width: 375px;
+  margin: 0 auto;
+  border: 2px solid #FFFFFF;
+  font-size: 13px;
+  color: #FFFFFF;
+  letter-spacing: 2.75px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.btn-transparent-square:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-transparent-square:hover a {
+  color: #ffffff;
+}
+
+.btn-transparent-square p {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-transparent-square a {
+  color: #FFFFFF;
+  outline: 0;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  button.cta-scroll-top {
+    position: absolute;
+    display: inline-block;
+    font-size: .5rem;
+    line-height: .7rem;
+    width: 68px;
+    height: 68px;
+  }
+  button.cta-scroll-top .text-return {
+    margin-top: 5px;
+  }
+  .btn-transparent-square {
+    max-width: 300px;
+    min-height: 36px;
+  }
+}
+
+.home-page.market-leader {
+  background: #ffffff;
+  padding: 0 15px;
+}
+
+.home-page.market-leader .market-leader-container {
+  position: relative;
+  text-align: center;
+}
+
+.home-page.market-leader .market-leader-container a:hover,
+.home-page.market-leader .market-leader-container a:active {
+  text-decoration: none;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-image {
+  margin-top: 17.5%;
+  height: 225px;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-image-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;                
+}
+
+.home-page.market-leader .market-leader-container .market-leader-image img {
+  vertical-align: middle;
+  max-height: 75px;
+  max-width: 75px;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content {
+  margin: 10% 0;
+  text-align: left;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content h2 {
+  margin-bottom: 30px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 3em;
+  line-height: 1;
+  color: #000000;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content p {
+  margin-bottom: 20px;
+  font-family: 'museo-sans', Arial, sans-serif;
+  font-weight: 100;
+  font-size: 1.125em;
+  line-height: 1;
+  color: #000000;
+  line-height: 175%;
+  padding-right: 10%;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 0.8125em;
+  line-height: 1;
+  letter-spacing: 3px;
+  background-color: #ffffff;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
+  background-color: #ce0000;
+  color: #ffffff;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover a {
+  color: #ffffff;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner {
+  display: none;
+  margin: 15% 0;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner iframe {
+  max-width: 100%;
+  width: 70%;
+  min-height: 500px;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner .close-hero {
+  position: absolute;
+  top: -25px;
+  right: 0;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
+  background-image: url(../images/sprite.png);
+  background-position: -358px -194px;
+  width: 18px;
+  height: 18px;
+}
+
+@media only screen and (max-width: 992px) {
+  .home-page.market-leader .market-leader-container .market-leader-content {
+    margin: 0 0 10%;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content h2 {
+    font-size: 1.875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content p {
+    font-size: 0.875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-image {
+    margin: 10% 0 5%;
+  }
+}            
+
+@media only screen and (max-width: 768px) {
+  .home-page.market-leader .market-leader-container {
+    text-align: center;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content {
+    display: inline-block;
+    float: none;
+    margin: 0 0 10%;
+    padding: 0;
+    text-align: left;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content h2 {
+    font-size: 1.875em;
+    line-height: 1;
+    color: #000000;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content p {
+    color: #000000;
+    font-size: .875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content .learn-more {
+    font-size: 0.6875em;
+    line-height: 1;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-image {
+    float: none;
+    margin: 10% 0 5%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
   }
 }

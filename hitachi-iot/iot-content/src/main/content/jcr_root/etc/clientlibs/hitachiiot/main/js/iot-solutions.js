@@ -82,7 +82,7 @@
         var target= $(this.hash);
         $('body,html').animate({
 			'scrollTop': target.offset().top + 4
-        	}, 700
+        	}, 400
         );
     });
 	}

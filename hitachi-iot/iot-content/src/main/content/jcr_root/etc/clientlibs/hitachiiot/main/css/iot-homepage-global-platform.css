@@ -810,3 +810,17 @@ button.cta-scroll-top .text-return {
 	line-height: 175%;
     margin-bottom: 20px;
 }
+
+@media only screen and (max-width: 480px) {
+  /* line 137, stdin */                    
+  .about-hds-career-leader .learn-about-hds-career-leader {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }                      	
+  /* line 144, stdin */                    
+  .about-hds-career-leader .about-hds-career-content {
+    text-align: right;
+  }
+}

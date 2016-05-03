@@ -260,6 +260,7 @@ button.cta-scroll-top .text-return {
 
 .solutions-page.market-leader .market-leader-container .market-leader-image a img {
   margin: 0;
+  max-width: 100%;
 }
 
 .solutions-page.market-leader .market-leader-container .market-leader-content {
@@ -403,55 +404,55 @@ button.cta-scroll-top .text-return {
   .market-leader .market-leader-container {
     text-align: center;
   }
-  .market-leader .market-leader-container .market-leader-content {
+  .solutions-page.market-leader .market-leader-container .market-leader-content {
     display: inline-block;
     float: none;
     margin: 0 auto 10%;
     padding: 0;
     text-align: left;
   }
-  .market-leader .market-leader-container .market-leader-content h1 {
+  .solutions-page.market-leader .market-leader-container .market-leader-content h1 {
     margin: 40px 0 20px;
     font-size: 2em;
     line-height: 1;
     color: #000000;
   }
-  .market-leader .market-leader-container .market-leader-content h4 {
+  .solutions-page.market-leader .market-leader-container .market-leader-content h4 {
     font-size: 1.125em;
     line-height: 1;
     color: #848484;
     text-transform: uppercase;
     line-height: 140%;
   }
-  .market-leader .market-leader-container .market-leader-content p {
+  .solutions-page.market-leader .market-leader-container .market-leader-content p {
     margin-bottom: 25px;
     color: #000000;
     font-size: .9em;
   }
-  .market-leader .market-leader-container .market-leader-content .learn-more {
+  .solutions-page.market-leader .market-leader-container .market-leader-content .learn-more {
     font-size: 0.6875em;
     line-height: 1;
   }
-  .market-leader .market-leader-container .market-leader-image {
+  .solutions-page.market-leader .market-leader-container .market-leader-image {
     float: none;
     margin: 15% 0 5%;
   }
-  .market-leader .market-leader-container .market-leader-image img {
+  .solutions-page.market-leader .market-leader-container .market-leader-image img {
     margin: 10px 0 0 5%;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .market-leader .market-leader-container .market-leader-image {
+  .solutions-page.market-leader .market-leader-container .market-leader-image {
     margin: 0;
   }
-  .market-leader .market-leader-container .market-leader-image .expand-box {
+  .solutions-page.market-leader .market-leader-container .market-leader-image .expand-box {
     display: none;
   }
-  .market-leader .market-leader-container .market-leader-image img {
+  .solutions-page.market-leader .market-leader-container .market-leader-image img {
     max-width: 100%;
   }
-  .market-leader .market-leader-container .market-leader-content .btn-square-red {
+  .solutions-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
     display: block;
     max-width: 300px;
     margin: 0 auto;
