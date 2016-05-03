@@ -14,21 +14,21 @@
 
 <div class="solutions-page market-leader clearfix">
 	<div class="market-leader-container content-container">
-		<div class="market-leader-image col-lg-6  col-sm-12 ">
+		<div class="market-leader-image col-lg-6 col-md-6 col-sm-12 ">
 			<a href="javascript:void(0);" class="btn-play-video">
 				<img src="${properties.infographicimage}" alt="">
 				<img src="${properties.infographiciconpath}" alt="expand image" class="expand-box ">
 			</a>
 		</div>
-		<div class="market-leader-content col-lg-6 col-sm-12 ">
-			<h1>${properties.headlinecontent}</h1>
+		<div class="market-leader-content col-lg-6 col-md-6 col-sm-12 ">
+			<h2>${properties.headlinecontent}</h2>
 			 ${properties.descriptioncontent}
 			<a href="${buttonurl}" class="btn-square-red" target="${properties.buttontargettype==true?'_blank':'_self'}">${properties.buttonlabel}${properties.buttontargettype?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 		</div>
 	</div>
 </div>
 <div class="solutions-overlay" style="display: none;">
-	<div class="common-hero-banner  clearfix col-md-12">
+	<div class="common-hero-banner clearfix col-md-12">
 		<div class="common-hero-banner-container ">
 		  <img src="${properties.infographicimage}" alt="">
 			
