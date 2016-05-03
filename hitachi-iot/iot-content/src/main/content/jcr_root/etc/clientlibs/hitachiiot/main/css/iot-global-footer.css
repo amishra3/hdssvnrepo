@@ -55,7 +55,7 @@ The `sprites` mixin generates identical output to the CSS template
 /* line 8, stdin */
 .footer .footer-container a:hover,
 .footer .footer-container a:active {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* line 14, stdin */
