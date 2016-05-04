@@ -15,10 +15,17 @@
 <div class="solutions-page market-leader clearfix">
 	<div class="market-leader-container content-container">
 		<div class="market-leader-image col-lg-6 col-md-6 col-sm-12 ">
+		<c:choose>
+         <c:when test="${properties.displayinfographic}">
 			<a href="javascript:void(0);" class="btn-play-video">
 				<img src="${properties.infographicimage}" alt="">
 				<img src="${properties.infographiciconpath}" alt="expand image" class="expand-box ">
 			</a>
+		 </c:when>
+         <c:otherwise>
+         <img src="${properties.infographicimage}" alt="">
+         </c:otherwise>
+        </c:choose>
 		</div>
 		<div class="market-leader-content col-lg-6 col-md-6 col-sm-12 ">
 			<h2>${properties.headlinecontent}</h2>
@@ -27,6 +34,7 @@
 		</div>
 	</div>
 </div>
+ <c:if test="${properties.displayinfographic}">
 <div class="solutions-overlay" style="display: none;">
 	<div class="common-hero-banner clearfix col-md-12">
 		<div class="common-hero-banner-container ">
@@ -36,6 +44,7 @@
 	</div>
 	<a class="close-hero" href="javascript:void(0);" ><span class="sprite icon-close-hero"></span></a>
 </div>
+</c:if>
 
 
 </c:when>

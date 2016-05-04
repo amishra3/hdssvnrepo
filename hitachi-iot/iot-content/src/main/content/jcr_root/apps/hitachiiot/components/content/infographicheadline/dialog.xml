@@ -39,6 +39,12 @@
                         fieldLabel="Infographic Icon Path URL"
                         name="./infographiciconpath"
                         xtype="pathfield"/>
+                    <displayinfographic
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Display Infographic Overlay"
+                        name="./displayinfographic"
+                        type="checkbox"
+                        xtype="selection"/>
                     <buttonlabel
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Button Label"
