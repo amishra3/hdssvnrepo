@@ -172,6 +172,10 @@ The `sprites` mixin generates identical output to the CSS template
   text-transform: none;
 }
 
+.footer .footer-white .footer-container .copyright-links li a.copyright:hover {
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 768px) {
   /* line 110, stdin */
   .footer .footer-white .footer-container .footer-title,

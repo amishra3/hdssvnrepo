@@ -17,7 +17,9 @@
  <ul class="copyright-links col-md-12">
  
          <li>
-			<a href="#">&copy; ${copyrighttext}</a>
+         <a class="copyright">
+			&copy; ${copyrighttext}
+		 </a>
         </li>
        <c:forEach var="link" items="${corporateFooterLinks}" varStatus="loop">
        
