@@ -72,10 +72,10 @@
 								<c:when test="${not empty subnavlinks.mgmahsubnavlabel}">
 									<c:set var="pageUrlVal"
 										value="${fn:contains(subnavlinks.mgmahsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmahsubnavlink)}" />
-									<li><a
+									<li><a itemprop="url"
 										target="${subnavlinks.mgmahopeninnewwindow==1?'_blank':'_self'}"
 										href="${subnavlinks.mgmahsubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										class="animateLink">${subnavlinks.mgmahsubnavlabel}<span
+										class="animateLink"><span itemprop="name">${subnavlinks.mgmahsubnavlabel}</span><span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmahopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>

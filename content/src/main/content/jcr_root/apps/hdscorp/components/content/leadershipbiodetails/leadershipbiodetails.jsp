@@ -5,7 +5,8 @@ Leadership BIO details component
 <%@page session="false" %>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
-
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+<c:set var="requestURL" value="${pageContext.request.requestURI}" />
 <sling:adaptTo adaptable="${resource}" adaptTo="com.hdscorp.cms.slingmodels.LeaderShipBIODetailsModel" var="leaderShipBIODetailsModel" />
 
 
@@ -67,6 +68,18 @@ Leadership BIO details component
                     </div>
                 </div>
             </div>
+
+
+       						 <script type="application/ld+json">
+							{
+							  "@context": "http://schema.org", 
+							  "@type": "Person",
+                              "name": "${leaderShipBIODetailsModel.lbdTitle}",
+                              "image": "${domain}${leaderShipBIODetailsModel.lbdimage}",
+							  "jobTitle": "${leaderShipBIODetailsModel.lbdJobTitle}",
+							  "url": "${domain}${requestURL}"
+							}
+							</script>
         </c:when>
 
 	<c:otherwise>

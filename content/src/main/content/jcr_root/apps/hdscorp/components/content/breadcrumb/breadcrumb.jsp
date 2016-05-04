@@ -22,33 +22,35 @@
 		if (rootTargetUrl != null) {
 			rootTargetUrl = PathResolver.getShortURLPath(rootTargetUrl);
 		}
-		breadcrumbContent.append("<a class='breadcrumblink' href='" + rootTargetUrl + "'>"
-				+ rootLabel + "</a>");
+		breadcrumbContent.append("<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'><a itemprop='item' class='breadcrumblink' href='" + rootTargetUrl + "'><span itemprop='name'>" + rootLabel + "</span></a><meta itemprop='position' content='1' /></li>");
 	
 		Page parentPageHandle = null;
 		String parentTitle = "";
 		String parentPath = "";
+		int count = 2 ;
 		for (int i = 3; i < currentPageDepth; i++) {
 			parentPageHandle = currentPage.getAbsoluteParent(i);
 			if (parentPageHandle != null) {
 				breadcrumbContent.append(" > ");
 				parentPath = PathResolver.getShortURLPath(parentPageHandle.getPath());
-				breadcrumbContent.append("<a class='breadcrumblink' href='" + parentPath + "'>"+ parentPageHandle.getTitle() + "</a>");
+				breadcrumbContent.append("<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'><a itemprop='item'class='breadcrumblink' href='" + parentPath + "'><span itemprop='name'>"+ parentPageHandle.getTitle() + "</span></a><meta itemprop='position' content="+count+" /</li>");
 			}
+             count =count+1; 
 		}
-		
+
 		String[] selectorArray = slingRequest.getRequestPathInfo().getSelectors();
 		String productBookMarkLink = "" ;
 		if (selectorArray != null && selectorArray.length > 0 && selectorArray[0].equalsIgnoreCase(GlobalConstants.PRODUCT_TECH_SPEC_SELECTOR)) {
-			productBookMarkLink = " > <a class='breadcrumblink' href='" + PathResolver.getShortURLPath(currentPage.getPath()) + "'>"+ currentPage.getTitle() + "</a>" ;
+			productBookMarkLink = " > <a class='breadcrumblink' href='" + PathResolver.getShortURLPath(currentPage.getPath()) + "'><span itemprop='name'>"+ currentPage.getTitle() + "</span></a>" ;
 		}
 
-		
-	%>
+	%> 
 
 	<div class="breadcrumb-container">
-		<div class="breadcrumb">
+		<div class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <ul>
 			<%=breadcrumbContent%><%=productBookMarkLink%>
+            </ul>
 		</div>
 	</div>
 </c:if>

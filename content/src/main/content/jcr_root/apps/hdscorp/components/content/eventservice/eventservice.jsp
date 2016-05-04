@@ -48,7 +48,7 @@
                     
                     <h3>${eventNodes.eventTitle} </h3>
                     <p>${eventNodes.eventStartDate}&ndash;${eventNodes.eventEndDate}: ${eventNodes.eventLocation}</p>
-                    <div class="eventDetails" style="background-image: url('${eventNodes.eventImageBackground}')">
+					<div class="eventDetails" style="background-image: url('${eventNodes.eventImageBackground}')">
                         <div class="row">
                             <div class="col-md-12">
                                 ${eventNodes.eventDescription}
@@ -61,6 +61,20 @@
                     </div>
                     <div class="expandMe less" href="javascript:void(0);"><span class="glyphicon glyphicon-plus-sign"></span>${eventDataModel.detailsLabel} </div>
                 </div>
+                        <script type="application/ld+json">
+                {
+                  "@context": "http://schema.org",
+                  "@type": "Event",
+                  "name": "${eventNodes.eventTitle}",
+                  "startDate" : "${eventNodes.eventStartDate}",
+                  "endDate" : "${eventNodes.eventEndDate}",
+                  "location" : {
+                     	 "@type" : "Place",
+                       	 "name" : "${eventNodes.eventLocation}",
+                   		 "address" : "${eventNodes.eventLocation}"
+                  }
+                }
+                </script>
                     </c:otherwise>
                       </c:choose> 
 

@@ -51,7 +51,7 @@
 							<h2><a href="javascript:void(0)" class="animateLink">${properties.mgmservtitle}
 							<span aria-hidden="true"
 								class="glyphicon glyphicon-menu-right animateIcon"></span></a></h2>
-							
+
 						</div>
 					</div>
 				</div>
@@ -62,9 +62,9 @@
 								<c:when test="${not empty subnavlinks.mgmservsubnavlabel}">
 									<c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmservsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmservsubnavlink)}" />
 									<li>
-                                    	<a
+                                    	<a itemprop="url"
 										target="${subnavlinks.mgmservopeninnewwindow==1?'_blank':'_self'}"
-                                         href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}" class="animateLink">${subnavlinks.mgmservsubnavlabel}<span
+                                         href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}" class="animateLink"><span itemprop="name">${subnavlinks.mgmservsubnavlabel}</span><span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmservopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
                                     </li>

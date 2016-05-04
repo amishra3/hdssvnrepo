@@ -62,10 +62,10 @@
 								<c:when test="${not empty subnavlinks.mgmnewsinsightssubnavlabel}">
                                     <c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmnewsinsightssubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmnewsinsightssubnavlink)}" />
 									 <li>
-                                   	<a
+                                   	<a itemprop="url"
 										target="${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmpssubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										class="animateLink">${subnavlinks.mgmnewsinsightssubnavlabel}<span
+										class="animateLink"><span itemprop="name">${subnavlinks.mgmnewsinsightssubnavlabel}</span><span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmnewsinsightsopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>

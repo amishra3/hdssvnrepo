@@ -53,7 +53,7 @@
 							
 						</div>
 					</div>
-				</div>
+				</div> 
 				<div class="col-md-6 col-xs-12 megamenu-list">
 
 					<ul>
@@ -62,10 +62,10 @@
 								<c:when test="${not empty subnavlinks.mgmptsubnavlabel}">
                                     <c:set var="pageUrlVal" value="${fn:contains(subnavlinks.mgmptsubnavlink, 'http')?'':domain}${hdscorp:shortURL(subnavlinks.mgmptsubnavlink)}" />
 									 <li>
-                                    	<a
+                                    	<a itemprop="url"
 										target="${subnavlinks.mgmptopeninnewwindow==1?'_blank':'_self'}"
                                          href="${subnavlinks.mgmptsubnavlink=='#'?'javascript:void(0)':pageUrlVal}"
-										class="animateLink">${subnavlinks.mgmptsubnavlabel}<span
+										class="animateLink"><span itemprop="name">${subnavlinks.mgmptsubnavlabel}</span><span
 											aria-hidden="true"
 											class="glyphicon ${subnavlinks.mgmptopeninnewwindow==1?'glyphicon-new-window':'glyphicon-menu-right'} animateIcon"></span></a>
 									</li>

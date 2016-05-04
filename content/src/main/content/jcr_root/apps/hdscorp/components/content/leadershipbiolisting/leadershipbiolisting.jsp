@@ -6,8 +6,7 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page import="com.hdscorp.cms.util.PageUtils"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
-
-
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
 <div class="about-hds-leaders" style="background-image:url('${properties.biotilesbackgroundimage}');">
 	<div class="content-container">					
     <h2>${properties.biotilestitle}</h2>
@@ -43,6 +42,21 @@
 </div>
 </div>
                  </div>
+										<c:set var="jobtitleseo" value="${fn:replace(column.leaderdesgniation, '<p>', '')}" />
+                						<c:set var="jobtitleseo" value="${fn:replace(jobtitleseo, '</p>', '')}" />
+                                        <c:set var="jobtitleseo" value="${fn:replace(jobtitleseo, '<br>', '')}" />
+                						<c:set var="jobtitleseo" value="${fn:replace(jobtitleseo, '&nbsp;', '')}" />
+               			 <script type="application/ld+json">
+							{
+							  "@context": "http://schema.org", 
+							  "@type": "Person",
+                              "name": "${column.leadername}",
+                                  "image": "${domain}${column.leaderimagepath}",
+							  "jobTitle": "${jobtitleseo}",
+							  "url": "${domain}${linkUrl}"
+							}
+							</script>
+
 </c:forEach>
 </div>
 </div>
