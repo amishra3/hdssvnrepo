@@ -34,7 +34,7 @@
                                 <div class="description">${model.featuredawarddesc}</div>
                                 <div class="learn-more">
                                     <div class="btn-square-red">
-                                        <a href="#">${properties.readmorelabel}</a>
+                                        <a href="${properties.featuredawardlink}" target="${properties.newtab?'_blank':'_self'}">${properties.readmorelabel}</a>
                                     </div>
                                 </div>
                             </div>
@@ -65,19 +65,3 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
