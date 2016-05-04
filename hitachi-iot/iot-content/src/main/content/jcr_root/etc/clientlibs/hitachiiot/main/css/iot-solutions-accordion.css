@@ -303,7 +303,7 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 48, stdin */
-.accordion-section-hero .accordion-section-hero.content-container {
+.accordion-section-hero {
   position: relative;
   text-align: center;
   overflow: auto;
@@ -313,39 +313,37 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 56, stdin */
-.accordion-section-hero .accordion-section-hero.content-container a:hover,
-.accordion-section-hero .accordion-section-hero.content-container a:active {
+.accordion-section-hero a:hover,
+.accordion-section-hero a:active {
   text-decoration: none;
 }
 
+.accordion-section-hero .accordion-section-hero-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
 /* line 61, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image {
   min-height: 275px;
   margin-top: 10%;
 }
 
-@media only screen and (max-width: 992px) {
-  /* line 61, stdin */
-  .accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image {
-   /* display: none; */
-  }
-}
-
 /* line 67, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-image img {
-  margin: 10% auto 0;
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image img {
   max-width: 100%;
 }
 
 /* line 73, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content {
   margin-top: 5%;
   margin-bottom: 5%;
   text-align: left;
 }
 
 /* line 78, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content h1 {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content h1 {
   margin-bottom: 25px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 100;
@@ -355,7 +353,7 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 86, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content h4 {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content h4 {
   font-family: 'museo-slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -365,7 +363,7 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 94, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content p {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content p {
   margin-bottom: 20px;
   font-family: 'museo-sans', Arial, sans-serif;
   font-weight: 100;
@@ -377,12 +375,12 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 103, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content ul {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content ul {
   padding-left: 1em;
 }
 
 /* line 105, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content ul li {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content ul li {
   font-family: 'museo-sans', Arial, sans-serif;
   font-weight: 100;
   font-size: 1em;
@@ -392,7 +390,7 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 114, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content .btn-square-red {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -406,38 +404,38 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 160, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red:hover {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content .btn-square-red:hover {
   background-color: #ce0000;
   color: #ffffff;
 }
 
 /* line 163, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_mixins.scss */
-.accordion-section-hero .accordion-section-hero.content-container .accordion-section-hero-content .btn-square-red:hover a {
+.accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content .btn-square-red:hover a {
   color: #ffffff;
 }
 
 /* line 125, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner {
+.accordion-section-hero .common-hero-banner {
   display: none;
   margin: 15% 0;
 }
 
 /* line 129, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner iframe {
+.accordion-section-hero .common-hero-banner iframe {
   max-width: 100%;
   width: 70%;
   min-height: 500px;
 }
 
 /* line 135, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner .close-hero {
+.accordion-section-hero .common-hero-banner .close-hero {
   position: absolute;
   top: -25px;
   right: 0;
 }
 
 /* line 139, stdin */
-.accordion-section-hero .accordion-section-hero.content-container .common-hero-banner .close-hero .icon-close {
+.accordion-section-hero .common-hero-banner .close-hero .icon-close {
   background-image: url(../images/sprite.png);
   background-position: -248px -231px;
   width: 18px;
@@ -453,6 +451,12 @@ button.cta-scroll-top .text-return {
   color: #008eaa;
 }
 
+@media only screen and (max-width: 992px) {
+  .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image {
+    margin-top: 5%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   /* line 157, stdin */
   .accordion-section-hero {
@@ -461,14 +465,14 @@ button.cta-scroll-top .text-return {
   /* line 159, stdin */
   .accordion-section-hero .accordion-section-hero-container {
     text-align: center;
-    background-image: none !important;
-    background-color: #1790a8;
+    /*background-image: none !important;
+    background-color: #1790a8;*/
   }
   /* line 164, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-content {
     display: inline-block;
     float: none;
-    margin: 0 auto 10%;
+    margin: 0 auto;
     padding: 0 15px;
     text-align: left;
   }
@@ -498,7 +502,7 @@ button.cta-scroll-top .text-return {
   /* line 191, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image {
     float: none;
-    margin: 15% 0 5%;
+    margin: 5% 0 5%;
   }
   /* line 195, stdin */
   .accordion-section-hero .accordion-section-hero-container .accordion-section-hero-image img {

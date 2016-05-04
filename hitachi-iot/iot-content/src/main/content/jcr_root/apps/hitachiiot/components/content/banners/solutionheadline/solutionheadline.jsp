@@ -11,19 +11,18 @@
 <c:choose>
 <c:when test="${not empty properties.solutiontitlecontent}">
 <div class="accordion-section-hero content-container rsImg" ${bannerbackgroundstyle}>
-		<div class="accordion-section-hero-image col-lg-4 col-sm-12 col-md-4 col-md-push-8" >
-		<c:if test="${not empty properties.videopathurl}">
-			<a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}"><img src="${properties.videopathurl}" /></a>
-		</c:if>
-			
-		</div>
-		<div class="accordion-section-hero-content col-lg-7 col-lg-offset-1 col-sm-12 col-md-7 col-md-offset-1 col-md-pull-4">
+	<div class="accordion-section-hero-container">
+    	<div class="accordion-section-hero-content col-lg-7 col-sm-12 col-md-7">
 			<h1>${properties.solutiontitlecontent}</h1>
 			${properties.solutionsubtitlecontent}
 		</div>
-		
-	
-	</div>
+		<div class="accordion-section-hero-image col-lg-4 col-lg-offset-1 col-sm-12 col-md-4 col-md-offset-1" >
+		<c:if test="${not empty properties.videopathurl}">
+			<a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}"><img src="${properties.videopathurl}" /></a>
+		</c:if>
+		</div>
+    </div>
+</div>
 </c:when>
 <c:otherwise>
 	<wcmmode:edit>

@@ -259,10 +259,11 @@ button.cta-scroll-top .text-return {
 
 /* line 7, stdin */
 .internal-business-units {
-  padding: 100px 10px 45px 180px;
+  padding: 120px 15px 50px;
   color: #ffffff;
-  background: url("../images/business-units-street-scene.jpg") center center no-repeat;
   background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   height: 480px;
 }

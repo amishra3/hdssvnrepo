@@ -17,13 +17,12 @@
 		<div class="col-lg-9">
 			<h2>${title}</h2>
 			<p>${properties.subtitle}</p>
-			<c:forEach var="iconinfo" items="${iconsinfo}">
-			<div class="col-sm-4">
-					<span class="internal-business-unit-icon"><img src="${iconinfo.iconurl}" /></span>${iconinfo.icontitle}
-				
-			</div>
-			</c:forEach>
+        </div>
+		<c:forEach var="iconinfo" items="${iconsinfo}">
+		<div class="col-sm-4">
+				<span class="internal-business-unit-icon"><img src="${iconinfo.iconurl}" /></span>${iconinfo.icontitle}
 		</div>
+		</c:forEach>
 	</div>
 </div>
 </c:when>
