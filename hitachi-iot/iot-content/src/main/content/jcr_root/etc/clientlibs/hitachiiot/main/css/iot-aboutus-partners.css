@@ -86,6 +86,9 @@ The `sprites` mixin generates identical output to the CSS template
 
 .aboutus-partners .content-container .logo img {
   -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  filter: none;
 }
 
 .aboutus-partners .content-container .partners-icon {
