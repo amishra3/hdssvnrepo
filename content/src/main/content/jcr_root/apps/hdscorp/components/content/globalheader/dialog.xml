@@ -26,7 +26,16 @@
                         name="./topnewwin"
                         type="checkbox"
                         xtype="selection"/>
-                    
+                    <logoimgurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Logo Image"
+                        name="./logoimgurl"
+                        xtype="pathfield"/>
+                    <devicelogoimgurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Logo Image Device"
+                        name="./devicelogoimgurl"
+                        xtype="pathfield"/>
                     <imgurl
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Logo URL"
@@ -34,10 +43,16 @@
                         xtype="pathfield"/>
                     <hdslogotitle
                         jcr:primaryType="cq:Widget"
-                        fieldLabel="HDS Top Nav Display Text"
+                        fieldLabel="HDS Logo Title"
                         name="./hdslogotitle"
                         value="HDS GLobal"
                         xtype="textfield"/>
+                    <midnewwin
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./midnewwin"
+                        type="checkbox"
+                        xtype="selection"/>
                     <listeners
                         jcr:primaryType="nt:unstructured"
                         loadcontent="function(){&#xa;if(this.getValue()==&quot;true&quot;){&#xa;CQ.Ext.getCmp('refreshtime').show();&#xa;}&#xa;else{&#xa;CQ.Ext.getCmp('refreshtime').hide();}&#xa;}"
@@ -75,7 +90,6 @@
                                 name="./linkurltargettype"
                                 type="checkbox"
                                 xtype="selection"/>
-                             
                         </fieldConfig>
                     </externalmultilinks>
                 </items>
@@ -100,7 +114,7 @@
                         fieldLabel="Hide Search"
                         name="./hidesearch"
                         type="checkbox"
-                        xtype="selection"/>    
+                        xtype="selection"/>
                 </items>
             </tab2>
         </items>

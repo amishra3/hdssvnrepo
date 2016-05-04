@@ -132,15 +132,16 @@
 	<div class="hds-main-navigation-container">
 		<div class="hds-main-navigation">
 			<div class="col-md-3">
-				<a href="${fn:contains(logoTargetURL, 'http')?'':domain}${hdscorp:shortURL(logoTargetURL)}"> <span
-					class="sprite hitachi-sublogo-mobile hidden-sm hidden-md hidden-lg">${hdslogotitle}</span>
-					<span class="sprite hitachi-sublogo hidden-xs">${hdslogotitle}</span>
+				<a href="${fn:contains(logoTargetURL, 'http')?'':domain}${hdscorp:shortURL(logoTargetURL)}" target="${properties.midnewwin?'_blank':'_self'}">
+					<span
+					class="hidden-sm hidden-md hidden-lg"><img alt="${hdslogotitle}" title="${hdslogotitle}" src="${properties.devicelogoimgurl}"></span>
+                    <span class="hidden-xs"><img alt="${hdslogotitle}" title="${hdslogotitle}" src="${properties.logoimgurl}"></span>
 				</a>
 			</div>
 
              <c:set var="requestURL" value="${pageContext.request.requestURI}" />
 
-			<ul class="col-md-9 col-xs-12 removePosRelative globalNavWrapper  hidden-xs hidden-sm">
+			<ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="col-md-9 col-xs-12 removePosRelative globalNavWrapper  hidden-xs hidden-sm">
 				<c:forEach var="childPage" items="${childPages}" varStatus="count">
 					<c:if test="${childPage.hideInNav != true}">
 						<c:set var="pagepath" value="${childPage.path}/jcr:content" />
@@ -158,8 +159,8 @@
 
 						<li class="${fn:contains(requestURL, childPagePathWithoutHTML)?'active':''} hds-default-nav">
 						    <a 
-						    	href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"
-						    	>${navTitle}
+						    	itemprop="url" href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"
+						    	><span itemprop="name">${navTitle}</span>
 						    	<span class="icon-accordion-closed"></span>
 						    	<span class="icon-accordion-opened"></span>
 							</a>
@@ -178,5 +179,12 @@
 		<cq:include path="${currentDesign.path}/jcr:content/breadcrumbpar" resourceType="hdscorp/components/content/breadcrumb" />
 	</c:if>
 </div>
-
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "<%= pageProperties.getInherited("domain", "") %>", 
+              "logo": "<%= pageProperties.getInherited("domain", "") %>${properties.logoimgurl}"
+    }
+</script>
 <!-- HEADER ENDS HERE -->
