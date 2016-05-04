@@ -161,8 +161,10 @@
 						    <a 
 						    	itemprop="url" href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"
 						    	><span itemprop="name">${navTitle}</span>
+						    	<c:if test="${not empty pageprops.navpath}">
 						    	<span class="icon-accordion-closed"></span>
 						    	<span class="icon-accordion-opened"></span>
+						    	</c:if>
 							</a>
 							<c:if test="${not empty pageprops.navpath}">
 								<%WCMMode prevMode = WCMMode.DISABLED.toRequest(request);%>
