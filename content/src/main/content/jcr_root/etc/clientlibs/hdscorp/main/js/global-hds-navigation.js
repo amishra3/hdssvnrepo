@@ -109,13 +109,17 @@ var hds = window.hds || {};
                 var href=$(this).attr('href');
                 $(this).attr('class', 'hds-default-nav-anchor');
                 var dataHref= $(this).attr('data-href',href);
-                $(this).parent('li').find('.megamenu-heading').find('h2 > a').attr('href',href);
-                  if ($(window).width() <= 768) {               
-                $(this).attr('href','javascript:void(0);');             
-                  }else{
-                      var getPageUrl= $(this).data('href');
-                      $(this).attr('href',getPageUrl);
-                  }
+                var megamenuHeading = $(this).parent('li').find('.megamenu-heading');
+//                alert(megamenuHeading.length);
+                if(megamenuHeading.length > 0){
+	                $(this).parent('li').find('.megamenu-heading').find('h2 > a').attr('href',href);
+		            if ($(window).width() <= 768) {               
+		            	$(this).attr('href','javascript:void(0);');             
+		            }else{
+		            	var getPageUrl= $(this).data('href');
+		                $(this).attr('href',getPageUrl);
+		            }
+	            }
             });
         },
         mobileMenu:function(){           
