@@ -17,7 +17,7 @@
 <c:set var="vidurl" value="openvideooverlayById(${videoid});"/>
 <div class="home-page market-leader clearfix">
 	<div class="market-leader-container content-container">
-        <div class="market-leader-image col-lg-4 col-sm-12 col-md-4 col-md-push-8" style="background-image: url(${properties.videothumbnailimgpath}); background-position: 50% 50%; background-repeat: no-repeat">
+        <div class="market-leader-image col-lg-4 col-sm-12 col-md-4 col-md-push-8" style="background-image: url(${properties.videothumbnailimgpath}); background-position: 50% 50%; background-repeat: no-repeat; background-size: contain;">
 			<c:if test="${not empty properties.videoiconpath}">
 				<a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}">
                     <span class="market-leader-image-helper"></span>
