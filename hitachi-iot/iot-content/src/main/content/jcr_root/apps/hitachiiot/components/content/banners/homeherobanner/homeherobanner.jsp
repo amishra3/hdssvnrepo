@@ -28,7 +28,7 @@
 
 		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tablink-tabIconPath")%>" />
 
-		<div class="iot-hero clearfix hidden-xs hidden-sm">
+		<div class="iot-hero clearfix hidden-xs hidden-sm hidden-md">
 			 ${homeHeroVideoMarkup}
 			<div class="iot-hero-container content-container">
 				<h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
@@ -53,8 +53,8 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="iot-hero clearfix hidden-md hidden-lg" style="background-image:url(${properties.heromobileimage})">
+
+		<div class="iot-hero clearfix hidden-lg" style="background-image:url(${properties.heromobileimage})">
 			<div class="iot-hero-container content-container">
 				<h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
 

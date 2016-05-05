@@ -311,7 +311,7 @@ button.cta-scroll-top .text-return {
   padding: 8px 11px 8px 46px;
   font-size: .7em;
   float: left;
-  background-position: 0 0;
+  background-position: 0 center;
   background-repeat: no-repeat;
 }
 
