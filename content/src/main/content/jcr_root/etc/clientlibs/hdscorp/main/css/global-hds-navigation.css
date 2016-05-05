@@ -679,6 +679,9 @@ HDS Global Header and Navigation
     transform: translateY(-50%);
 }
 
+.hds-mobile-navigation ul > li > a > span[itemprop="name"] {
+    position: relative;
+}
 .hds-mobile-navigation ul > li.quick-nav a > span {
     color: #888888;
     position: static;
