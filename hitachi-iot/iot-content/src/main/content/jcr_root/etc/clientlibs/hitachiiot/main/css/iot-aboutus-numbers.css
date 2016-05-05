@@ -66,7 +66,7 @@ The `sprites` mixin generates identical output to the CSS template
   font-size: 3em;
   font-weight: 100;
   line-height: 1;
-  margin: 0 0 55px;
+  margin: 0 0 55px 0;
   line-height: 1;
   text-align: center;
   color: #008eaa;

@@ -53,13 +53,64 @@ The `sprites` mixin generates identical output to the CSS template
 @include sprites($spritesheet-sprites);
 */
 /* News & Insight - LP section */
-/* line 7, stdin */
+
 .aboutus-news.news-insight-explore {
-  background-color: #f1f1f1;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  color: #333333;
-  padding-bottom: 25px;
-  padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.aboutus-news.news-insight-explore .heading {
+    border-bottom: 5px solid #f78e1e;
+    padding: 15px 0 15px 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.aboutus-news.news-insight-explore .heading .icon {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.aboutus-news.news-insight-explore .heading h2 {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.875rem;
+    color: #000000;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 22px;
+    margin-bottom: 11px;
+    font-weight: 700;
+}
+.aboutus-news.news-insight-explore .acs-commons-resp-colctrl-row .col-sm-4 {
+	padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+  .aboutus-news.news-insight-explore {
+      padding-bottom: 25px;
+  }
+  .aboutus-news.news-insight-explore .heading {
+      margin-bottom: 15px;
+  }
+  .aboutus-news.news-insight-explore .heading h2 {
+      font-size: 1.125rem;
+      font-weight: 800;
+      display: inline-block;
+      padding: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .aboutus-news.news-insight-explore .content-container {
+     padding-left: 15px;
+     padding-right: 15px;
+  }
+
 }
 
 /* line 14, stdin */
@@ -74,7 +125,7 @@ The `sprites` mixin generates identical output to the CSS template
   display: inline-block;
   margin-right: 10px;
   position: relative;
-  top: -5px;
+  top: 0px;
 }
 
 /* line 26, stdin */
@@ -108,7 +159,8 @@ The `sprites` mixin generates identical output to the CSS template
 
 /* line 51, stdin */
 .news-insight-explore .news-insight-explore-spotlight.spotlight-normal {
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;                                    
   min-height: 175px;
   background: #ffffff;
 }
@@ -393,6 +445,16 @@ The `sprites` mixin generates identical output to the CSS template
   .news-insight-explore .news-insight-explore-spotlight.spotlight-normal .spotlight-content .spotlight-title {
     font-size: 0.875rem;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .news-insight-explore .news-insight-explore-spotlight.spotlight-normal {
+    margin-top: 20px;
+  }
+  .aboutus-news.news-insight-explore .acs-commons-resp-colctrl-row .col-sm-4 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }                                    
 }
 
 @media only screen and (max-width: 480px) {

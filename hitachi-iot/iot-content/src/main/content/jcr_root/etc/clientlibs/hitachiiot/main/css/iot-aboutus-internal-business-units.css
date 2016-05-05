@@ -259,13 +259,13 @@ button.cta-scroll-top .text-return {
 
 /* line 7, stdin */
 .internal-business-units {
-  padding: 120px 15px 50px;
+  padding: 120px 15px 100px;
   color: #ffffff;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  height: 480px;
+/*  height: 480px; */
 }
 
 @media only screen and (max-width: 768px) {

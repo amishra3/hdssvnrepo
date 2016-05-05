@@ -291,7 +291,7 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 39, stdin */
-.accordion-content .content-container {
+.accordion-section-hero.content-container {
   width: 100%;
   max-width: 100%;
 }
