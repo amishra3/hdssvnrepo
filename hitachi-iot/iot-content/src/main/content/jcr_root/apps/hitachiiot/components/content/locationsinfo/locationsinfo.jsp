@@ -11,7 +11,7 @@
 </c:if>
 <c:choose>
 <c:when test="${not empty locations}">
-  <div class="services-section clearfix" style="${imgval}">
+  <div class="services-list-section services-section clearfix" style="${imgval}">
   <div class="content-container">
     <div class="container-fluid">
       <!--Row Starts-->

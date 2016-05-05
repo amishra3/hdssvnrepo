@@ -373,4 +373,7 @@ button.cta-scroll-top .text-return {
   .common-hero-banner .common-hero-banner-container {
     text-align: left;
   }
+  .common-hero-banner .common-hero-banner-container .video-play {
+    text-align: center;
+  }
 }

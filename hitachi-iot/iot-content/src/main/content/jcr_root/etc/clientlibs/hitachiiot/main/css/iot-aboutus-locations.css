@@ -54,69 +54,43 @@ The `sprites` mixin generates identical output to the CSS template
 */
 /* line 6, stdin */
 .services-section {
-  background: url("../images/HDS_IoT_Desktop_aboutus_locations_bg.png") no-repeat;
-  background-size: cover;
-  padding: 50px 180px 80px;
+  background-repeat: no-repeat;
   font-family: 'museo-sans',Helvetica,Arial,sans-serif;
 }
 
-/* line 12, stdin */
-.services-section h2 {
-  color: #ffffff;
-  font-family: 'museo-slab',Helvetica,Arial,sans-serif;
-  font-size: 24px;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
 /* line 19, stdin */
-.services-section .section-service-col {
-  display: block;
-  background: #fff;
-  color: #000;
+.services-list-section .section-service-col {
   padding: 38px 30px 25px 30px;
-  height: 215px;
-}
-
-/* line 26, stdin */
-.services-section .col-sm-4 {
-  padding-left: 0;
-}
-
-/* line 29, stdin */
-.services-section .section-service-col:last-child {
-  margin-bottom: 20px;
+  min-height: 215px;
 }
 
 /* line 32, stdin */
-.services-section .section-service-col .headline {
-  font-size: 28px;
+.services-list-section .section-service-col .headline {
+  font-size: 1.875em;
   font-weight: 500;
-  margin-top: 0;
-  margin-bottom: 15px;
-  line-height: 32px;
-  text-transform: none;
+  text-align: left;
 }
 
 /* line 40, stdin */
-.services-section .section-service-col p {
-  margin-bottom: 5px;
-  font-weight: 300;
-  font-size: 16px;
-  color: #000;
-  line-height: 20px;
-}
-
-/* line 47, stdin */
-.services-section .row-centered {
-  text-align: center;
-}
-
-/* line 50, stdin */
-.services-section .col-centered {
-  display: inline-block;
-  float: none;
+.services-list-section .section-service-col p {
+  font-size: 1.1em;
+  line-height: 150%;
   text-align: left;
-  margin-right: -4px;
-  vertical-align: top;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .services-list-section .section-service-col {
+    padding: 38px 15px 25px 15px;
+    min-height: auto;
+  }
+  .services-list-section .section-service-col .headline {
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: left;
+  }
+  .services-list-section .col-centered {
+    display: block;
+  }
 }

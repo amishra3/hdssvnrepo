@@ -14,7 +14,7 @@
 	<c:set var="ourplatformurl" value="${hdscorp:shortURL(ourplatformurl)}" />
 </c:if>
 <% 
-	String homeHeroVideoMarkup ="<object class='BrightcoveExperience' id='bgvid' style='width: 100%; height: 100%; border: 2px solid orange;'><param name='bgcolor' value='#FFFFFF' /><param name='width' value='100%' /><param name='height' value='517' /><param name='playerID' value='#videoTitleId'><param name='playerKey' value='AQ~~,AAADnJnNnnk~,ltuihYvDjRKL7D7fwmzXgyXNR-vMq9ot'><param name='@videoPlayer' value='#videoTitleId'><param name='isVid' value='true'><param name='autoStart' value='true' /><param name='isUI' value='true'><param name='dynamicStreaming' value='true'><param name='wmode' value='transparent' /> </object>";
+	String homeHeroVideoMarkup ="<object class='BrightcoveExperience' id='bgvid' style='width: 100%; height: 100%; border: 2px solid orange;'><param name='bgcolor' value='#FFFFFF' /><param name='width' value='100%' /><param name='height' value='517' /><param name='playerID' value='#videoTitleId'><param name='playerKey' value='AQ~~,AAADnJnNnnk~,ltuihYvDjRIOlM3eAv1n6tj_paXrEum1'><param name='@videoPlayer' value='#videoTitleId'><param name='isVid' value='true'><param name='autoStart' value='true' /><param name='isUI' value='true'><param name='dynamicStreaming' value='true'><param name='wmode' value='transparent' /> </object>";
 %>
 <c:set var="homeHeroVideoMarkup" value="<%=pageProperties.getInherited("homeherovideomarkup", homeHeroVideoMarkup) %>"/>
 
