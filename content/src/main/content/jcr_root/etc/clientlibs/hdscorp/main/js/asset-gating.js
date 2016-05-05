@@ -4,7 +4,7 @@ var parenRef="";
 (function(window, document, $, hds) {
     hds.assetGating = {
         init: function() {
-			$('title').text('HDS: ' + $('h4').text());
+			//$('title').text('HDS: ' + $('h4').text());
 			parenRef=document.referrer;
          },
          downloadPdf:function(){
