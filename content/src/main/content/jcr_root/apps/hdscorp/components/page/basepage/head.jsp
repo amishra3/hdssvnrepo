@@ -73,8 +73,9 @@
 		<link rel="icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
 		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<%= favIcon %>"<%=xs%>>
       <% } %>
-      <title>${titleprefix}<%= (StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")) == null || StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")).equals("")) ? StringEscapeUtils.escapeHtml4(currentPage.getTitle()):StringEscapeUtils.escapeHtml4(properties.get("pageTitle", ""))%></title>
-      
+      <c:if test="${empty pageProperties.hidetitlemetatag}">
+      	<title>${titleprefix}<%= (StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")) == null || StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")).equals("")) ? StringEscapeUtils.escapeHtml4(currentPage.getTitle()):StringEscapeUtils.escapeHtml4(properties.get("pageTitle", ""))%></title>
+      </c:if>
 	  <c:if test="${not empty pageProperties.insertnocacheheaders}">
 		  <% 
 			  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.

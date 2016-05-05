@@ -20,7 +20,13 @@
             fieldLabel="Include analytics scripts in footer (instead of header) ?"
             name="./analyticsinfooter"
             type="checkbox"
-            xtype="selection"/>           
+            xtype="selection"/>
+        <hidetitlemetatag
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Do not write title meta tag ?"
+            name="./hidetitlemetatag"
+            type="checkbox"
+            xtype="selection"/>                       
         <domain
             jcr:primaryType="cq:Widget"
             fieldLabel="Link Domain Value"
