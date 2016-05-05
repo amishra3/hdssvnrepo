@@ -23,7 +23,9 @@
 			</a>
 		 </c:when>
          <c:otherwise>
-         <img src="${properties.infographicimage}" alt="">
+         	<a class="btn-play-video">
+         		<img src="${properties.infographicimage}" alt="">
+             </a>
          </c:otherwise>
         </c:choose>
 		</div>

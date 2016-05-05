@@ -285,7 +285,8 @@ button.cta-scroll-top .text-return {
   text-transform: uppercase;
 }
 
-.solutions-page.market-leader .market-leader-container .market-leader-content p {
+.solutions-page.market-leader .market-leader-container .market-leader-content p, 
+.solutions-page.market-leader .market-leader-container .market-leader-content ul {
   margin-bottom: 20px;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
   font-weight: 100;
@@ -436,8 +437,9 @@ button.cta-scroll-top .text-return {
     text-transform: uppercase;
     line-height: 140%;
   }
-  .solutions-page.market-leader .market-leader-container .market-leader-content p {
-    margin-bottom: 25px;
+  .solutions-page.market-leader .market-leader-container .market-leader-content p,
+  .solutions-page.market-leader .market-leader-container .market-leader-content ul {
+    margin-bottom: 15px;
     color: #000000;
     font-size: .9em;
   }
@@ -454,9 +456,6 @@ button.cta-scroll-top .text-return {
 @media only screen and (max-width: 480px) {
   .solutions-page.market-leader .market-leader-container .market-leader-image {
     margin: 0;
-  }
-  .solutions-page.market-leader .market-leader-container .market-leader-image .expand-box {
-    display: none;
   }
   .solutions-page.market-leader .market-leader-container .market-leader-image img {
     max-width: 100%;

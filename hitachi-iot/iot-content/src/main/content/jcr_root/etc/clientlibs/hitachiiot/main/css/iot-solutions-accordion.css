@@ -512,14 +512,6 @@ button.cta-scroll-top .text-return {
   .resources-section .resources-container .resources-category:after {
     background: none;
   }
-  /* line 204, stdin */
-  .accordion-level .accordion-menu-container {
-    border-bottom: 3px solid #c5c5c5;
-  }
-  /* line 206, stdin */
-  .accordion-level .accordion-menu-container.open {
-    border-bottom: none;
-  }
   /* line 209, stdin */
   .accordion-level .accordion-menu-container:last-of-type {
     border: none;
