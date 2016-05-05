@@ -15,7 +15,7 @@
 <!-- <script type="text/javascript" src="/etc/clientlibs/hdscorp/main.js"></script> -->
 
 <cq:include script="dtmsetup.jsp"/>
-<cq:includeClientLib js="hdscorp.analytics"/>
+<cq:includeClientLib js="iot.analytics"/>
 
 <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="plan-info" aria-hidden="true">
     <div class="modal-vertical-align-section">
