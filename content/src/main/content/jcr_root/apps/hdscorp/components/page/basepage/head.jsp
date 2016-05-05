@@ -58,7 +58,7 @@
       <meta name="keywords" content="<%= StringEscapeUtils.escapeHtml4(pageProperties.get("keywords", "")) %>"<%=xs%>>
       <meta name="description" content="<%= StringEscapeUtils.escapeHtml4(properties.get("jcr:description", "")) %>"<%=xs%>>
 	  <meta name="google" value="notranslate" />
-	  <meta name="referrer" content="origin"/>
+	  <meta name="referrer" content="origin-when-crossorigin"/>
 	  <cq:include script="metatags.jsp"/>
       <script src="https://use.typekit.net/ypb6hdo.js"></script>
       <script>try{Typekit.load({ async: true });}catch(e){}</script>
