@@ -110,7 +110,6 @@ var hds = window.hds || {};
                 $(this).attr('class', 'hds-default-nav-anchor');
                 var dataHref= $(this).attr('data-href',href);
                 var megamenuHeading = $(this).parent('li').find('.megamenu-heading');
-//                alert(megamenuHeading.length);
                 if(megamenuHeading.length > 0){
 	                $(this).parent('li').find('.megamenu-heading').find('h2 > a').attr('href',href);
 		            if ($(window).width() <= 768) {               
