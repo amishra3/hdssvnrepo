@@ -9,6 +9,8 @@
 
 <c:set var="socialmultilinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"linktargeturl-linkIconPath-linkicontext")%>" />
 
+<div class="social-links-separator hidden-lg hidden-md"></div>
+
 <ul class="social-links col-sm-4 col-md-4">
 	<c:forEach var="externalLink" items="${socialmultilinks}">
 		<c:set var="linktargeturl" value="${externalLink.linktargeturl}" />
@@ -19,7 +21,8 @@
             <img alt="${imageAltText}" title="${imageAltText}" src="${linkIconPath}"/>
 		</a>
 		</li>
-		
+
 	</c:forEach>
 </ul>
 
+<div class="social-links-separator hidden-lg hidden-md"></div>
