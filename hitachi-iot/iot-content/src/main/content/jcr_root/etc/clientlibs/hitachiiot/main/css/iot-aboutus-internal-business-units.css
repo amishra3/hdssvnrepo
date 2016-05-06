@@ -265,7 +265,36 @@ button.cta-scroll-top .text-return {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-/*  height: 480px; */
+}
+
+/* line 31, stdin */
+.internal-business-units h2 {
+    margin-bottom: 30px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 3em;
+    line-height: 1;
+}
+
+.internal-business-units p,
+.internal-business-units ul {
+	margin-bottom: 20px;
+    font-family: 'museo-sans', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 1.125em;
+    line-height: 1;
+    line-height: 175%;
+    padding-right: 10%;
+}
+
+.internal-business-units .col-sm-4 {
+	padding-bottom: 10px;
+    font-size: 1.125em;
+    font-weight: 100;
+}
+
+.internal-business-units .internal-business-unit-icon {
+	padding-right: 5%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -283,60 +312,19 @@ button.cta-scroll-top .text-return {
     padding-left: 0;
     padding-right: 0;
   }
-}
 
-/* line 31, stdin */
-.internal-business-units h2 {
-  margin: 0 0 20px;
-  font-size: 3.75em;
-  line-height: 1;
-  font-weight: 100;
-  line-height: 1;
-}
-
-@media only screen and (max-width: 768px) {
   /* line 31, stdin */
   .internal-business-units h2 {
     font-size: 1.875rem;
-    margin: 0 0 30px;
   }
-}
 
-@media only screen and (max-width: 768px) {
-  /* line 41, stdin */
-  .internal-business-units h4 {
-    font-size: 1.125rem;
-  }
-}
-
-/* line 46, stdin */
-.internal-business-units p {
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 20px;
-}
-
-/* line 52, stdin */
-.internal-business-units ul {
-  list-style-type: none;
-  padding-left: 20px;
-}
-
-@media only screen and (max-width: 768px) {
   /* line 52, stdin */
+  .internal-business-units p,
   .internal-business-units ul {
-    padding-left: 0;
+    font-size: 0.875em;
   }
-}
 
-/* line 60, stdin */
-.internal-business-units ul li {
-  font-size: 16px;
-  margin: 0;
-}
-
-/* line 64, stdin */
-.internal-business-units ul li .internal-business-unit-icon {
-  padding-right: 10px;
+  .internal-business-units .col-sm-4 {
+    font-size: 1em;
+  }
 }

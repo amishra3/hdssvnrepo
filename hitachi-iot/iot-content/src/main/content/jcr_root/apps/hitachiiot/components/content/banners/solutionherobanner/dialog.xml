@@ -22,6 +22,17 @@
                         fieldLabel="Solution Banner Sub Title Content"
                         name="./solutionsubtitlecontent"
                         xtype="textfield"/>
+                    <description
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Description"
+                        height="125"
+                        name="./description"
+                        xtype="richtext">
+                        <rtePlugins
+                            jcr:primaryType="nt:unstructured"
+                            path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
+                            xtype="cqinclude"/>
+                    </description>
                      <imagePath
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"

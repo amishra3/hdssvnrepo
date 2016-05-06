@@ -257,79 +257,6 @@ button.cta-scroll-top .text-return {
   }
 }
 
-/* line 8, stdin */
-.hero-solutions {
-  background: url(../images/iot-solutions-hero.jpg) no-repeat;
-  position: relative;
-  z-index: 1;
-  padding-top: 250px;
-  background-size: cover;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 8, stdin */
-  .hero-solutions {
-    background-image: url(../images/iot-solutions-hero.jpg);
-    background-position: top left;
-    padding: 60px 20px 20px 20px;
-  }
-}
-
-/* line 19, stdin */
-.hero-solutions h1 {
-  text-align: left;
-  color: #ffffff;
-  width: 73%;
-  margin: 0 auto 20px auto;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 55px;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 19, stdin */
-  .hero-solutions h1 {
-    width: 100%;
-    font-size: 36px;
-  }
-}
-
-/* line 32, stdin */
-.hero-solutions h4.sub-headline {
-  text-align: left;
-  width: 73%;
-  margin: 0 auto 17vw auto;
-  color: #ffffff;
-  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.6em;
-  text-transform: uppercase;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 32, stdin */
-  .hero-solutions h4.sub-headline {
-    margin-bottom: 20px;
-    width: 100%;
-    font-size: 16px;
-  }
-}
-
-/* line 48, stdin */
-.hero-solutions .video-play {
-  text-align: center;
-  padding-top: 25%;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 48, stdin */
-  .hero-solutions .video-play {
-    height: 50vw;
-    margin-top: -10%;
-  }
-}
-
 /* line 59, stdin */
 .solutions.hds-overlay {
   position: fixed;
@@ -365,15 +292,39 @@ button.cta-scroll-top .text-return {
 }
 
 /* line 77, stdin */
-.common-hero-banner .common-hero-banner-container h3 {
-    margin-bottom: 50px;
+.iot-solutions-hero.common-hero-banner .common-hero-banner-container h3 {
+    margin-bottom: 30px;
+}
+
+.iot-solutions-hero.common-hero-banner .common-hero-banner-container p,
+.iot-solutions-hero.common-hero-banner .common-hero-banner-container ul { 
+    margin-bottom: 20px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+    line-height: 1;
+    color: #ffffff;
+    line-height: 175%;
+}
+
+.iot-solutions-hero.common-hero-banner .common-hero-banner-container .video-section {
+	min-height: 480px;
 }
 
 @media only screen and (max-width: 992px) {
-  .common-hero-banner .common-hero-banner-container {
+  .iot-solutions-hero.common-hero-banner .common-hero-banner-container {
     text-align: left;
   }
-  .common-hero-banner .common-hero-banner-container .video-play {
+  .iot-solutions-hero.common-hero-banner .common-hero-banner-container .video-play {
     text-align: center;
+	margin-top: 50px;                                            
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .iot-solutions-hero.common-hero-banner .common-hero-banner-container p,
+  .iot-solutions-hero.common-hero-banner .common-hero-banner-container ul { 
+	  margin-bottom: 15px;
+      font-size: .9em;                                                    
   }
 }

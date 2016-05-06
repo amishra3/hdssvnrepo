@@ -11,11 +11,12 @@
 <c:set var="vidurl" value="openvideooverlayById(${videoid});"/>
 <c:choose>
 <c:when test="${not empty properties.solutiontitlecontent}">
-<div class="common-hero-banner clearfix rsImg" ${bannerbackgroundstyle} >
+<div class="iot-solutions-hero common-hero-banner clearfix rsImg" ${bannerbackgroundstyle} >
 	<div class="common-hero-banner-container">
 	    <div class="col-lg-7 col-md-7 col-xs-12">
     	    <h1 class="headline">${properties.solutiontitlecontent}</h1>
 	        <h3>${properties.solutionsubtitlecontent}</h3>
+	        ${properties.description}
 	        <c:if test="${not empty properties.videopathurl}">
         <div class="video-play hidden-lg hidden-md">
             <a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}"> <img src="${properties.videopathurl}"></a>
