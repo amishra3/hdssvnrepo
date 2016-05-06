@@ -29,7 +29,7 @@
 			<h2>${properties.title}</h2>
 			${properties.description}
 			<c:if test="${not empty linkUrl}">
-			<a href="${linkUrl}" class="btn-square-red" target="${properties.aboutusbuttonlabeltargettype==true?'_blank':'_self'}">${properties.aboutusbuttonlabel}${properties.aboutusbuttonlabeltargettype?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
+			<a href="${linkUrl}" class="btn-square-red" target="${properties.aboutusbuttonlabeltargettype==true?'_blank':'_self'}">${properties.aboutusbuttonlabel}${properties.showthirdpartyicon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 			</c:if>
 		</div>
 		

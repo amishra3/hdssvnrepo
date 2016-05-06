@@ -62,6 +62,12 @@
                         name="./buttontargettype"
                         type="checkbox"
                         xtype="selection"/>
+                    <showthirdpartyicon
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show Third Party Link Icon?"
+                        name="./showthirdpartyicon"
+                        type="checkbox"
+                        xtype="selection"/>    
   
                 </items>
             </tab1>
