@@ -295,6 +295,8 @@ button.cta-scroll-top .text-return {
 
 .solutions.footer .footer-blue .talk {
   text-transform: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 @media only screen and (max-width: 768px) {
