@@ -54,28 +54,32 @@ The `sprites` mixin generates identical output to the CSS template
 */
 /* line 6, stdin */
 .services-section {
-  background-repeat: no-repeat;
-  font-family: 'museo-sans',Helvetica,Arial,sans-serif;
+	background-repeat: no-repeat;
+	font-family: 'museo-sans',Helvetica,Arial,sans-serif;
 }
 
 /* line 19, stdin */
 .services-list-section .section-service-col {
-  padding: 38px 30px 25px 30px;
-  min-height: 215px;
+	padding: 38px 30px 25px 30px;
+	min-height: 215px;
+}
+
+.services-list-section .section-service-col:last-child {
+	margin-bottom: 30px;
 }
 
 /* line 32, stdin */
 .services-list-section .section-service-col .headline {
-  font-size: 1.875em;
-  font-weight: 500;
-  text-align: left;
+	font-size: 1.875em;
+	font-weight: 500;
+	text-align: left;
 }
 
 /* line 40, stdin */
 .services-list-section .section-service-col p {
-  font-size: 1.1em;
-  line-height: 150%;
-  text-align: left;
+	font-size: 1.1em;
+	line-height: 150%;
+	text-align: left;
 }
 
 

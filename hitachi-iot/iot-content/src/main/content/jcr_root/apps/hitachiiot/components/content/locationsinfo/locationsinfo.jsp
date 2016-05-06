@@ -18,7 +18,7 @@
       <h2>${title}</h2>
       <div class="row-centered">
       <c:forEach var="location" items="${locations}">
-        <div class="col-sm-4 col-centered">
+        <div class="col-sm-5 col-centered">
           <div class="section-service-col tile">
             <h4 class="headline">${location.locationtitle}</h4>
              ${location.locationaddress}
@@ -41,5 +41,3 @@
 	</wcmmode:edit>
 </c:otherwise>
 </c:choose>
-
-
