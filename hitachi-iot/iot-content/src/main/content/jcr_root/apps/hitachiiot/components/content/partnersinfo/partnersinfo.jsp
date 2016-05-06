@@ -19,7 +19,7 @@
       </div>
       <div class="partner-list clearfix" id="partner-list">
        <c:forEach var="partner" items="${partners}">
-        <div class="partner col-xs-6 col-sm-6 col-md-2 col-lg-2">
+        <div class="partner col-xs-6 col-sm-6 col-md-3 col-lg-3">
           <div class="logo">
            <c:set var="linkUrl" value="${partner.partnericonurl}" />
 					<c:choose>
