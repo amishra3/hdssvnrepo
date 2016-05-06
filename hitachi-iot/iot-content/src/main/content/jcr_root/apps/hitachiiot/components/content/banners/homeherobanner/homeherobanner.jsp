@@ -2,6 +2,12 @@
   Homepage Hero Banner component.
 --%>
 
+<%@page import="org.jsoup.nodes.Attribute"%>
+<%@page import="org.jsoup.nodes.Attributes"%>
+<%@page import="org.jsoup.nodes.Element"%>
+<%@page import="org.jsoup.select.Elements"%>
+<%@page import="org.jsoup.Jsoup"%>
+<%@page import="org.jsoup.nodes.Document"%>
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page import="com.hdscorp.cms.util.PathResolver"%>
@@ -22,6 +28,15 @@
 
 <c:set var="homeHeroVideoMarkup" value="${fn:replace(homeHeroVideoMarkup,'#videoTitleId',videoid)}"/>                          
 	                    
+<% 
+String scheme = request.getScheme();
+
+if(scheme.toLowerCase().equals("http")){
+	String homeHeroVideoMarkupProp = (String)pageContext.getAttribute("homeHeroVideoMarkup");
+	homeHeroVideoMarkupProp = homeHeroVideoMarkupProp.replace("secureConnections", "isUI").replace("secureHTMLConnections", "isVid") ;
+	pageContext.setAttribute("homeHeroVideoMarkup",homeHeroVideoMarkupProp);
+}
+%>	                    
 
 <c:choose>
 	<c:when test="${not empty properties.herotitlecontent}">
