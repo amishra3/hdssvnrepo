@@ -52,6 +52,12 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
+
+.solutions.footer {
+  background-color: #f2f2f2 !important;
+  border-top: 1px solid #d7d7d7;
+}
+
 /* line 8, stdin */
 .footer .footer-container a:hover,
 .footer .footer-container a:active {
@@ -61,7 +67,7 @@ The `sprites` mixin generates identical output to the CSS template
 /* line 14, stdin */
 .footer .footer-white {
   margin: 50px 0 0 0;
-  background: #ffffff !important;
+  background: #f2f2f2 !important;
 }
 
 /* line 19, stdin */
@@ -181,7 +187,7 @@ The `sprites` mixin generates identical output to the CSS template
   text-transform: none;
 }
 
-.footer .footer-white .footer-container .copyright-links li a.copyright:hover {
+.footer .footer-white .footer-container .copyright-links li a.copyright-iot:hover {
   text-decoration: none;
 }
 
@@ -256,7 +262,7 @@ The `sprites` mixin generates identical output to the CSS template
   }
   /* line 164, stdin */
   .footer .footer-white .footer-container .copyright {
-    padding-top: 0;
+/*    padding-top: 0; */
   }
   /* line 168, stdin */
   .footer .footer-white .footer-container .footer-links:nth-of-type(2) {

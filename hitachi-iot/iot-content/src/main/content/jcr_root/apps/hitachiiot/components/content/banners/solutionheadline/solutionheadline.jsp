@@ -16,11 +16,11 @@
 			<h1>${properties.solutiontitlecontent}</h1>
 			${properties.solutionsubtitlecontent}
 		</div>
-		<div class="accordion-section-hero-image col-lg-4 col-lg-offset-1 col-sm-12 col-md-4 col-md-offset-1" >
 		<c:if test="${not empty properties.videopathurl}">
+        <div class="accordion-section-hero-image col-lg-4 col-lg-offset-1 col-sm-12 col-md-4 col-md-offset-1" >
 			<a href="javascript:void(0);" class="btn-play-video" onclick="${vidurl}"><img src="${properties.videopathurl}" /></a>
-		</c:if>
 		</div>
+   		</c:if>    
     </div>
 </div>
 </c:when>

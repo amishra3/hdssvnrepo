@@ -301,10 +301,10 @@ button.cta-scroll-top .text-return {
     margin-bottom: 20px;
     font-family: 'museo-sans', Helvetica, Arial, sans-serif;
     font-weight: 100;
-    font-size: 1em;
+    font-size: 1.25em;
     line-height: 1;
     color: #ffffff;
-    line-height: 175%;
+    line-height: 1.6em;
 }
 
 .iot-solutions-hero.common-hero-banner .common-hero-banner-container .video-section {
@@ -325,6 +325,6 @@ button.cta-scroll-top .text-return {
   .iot-solutions-hero.common-hero-banner .common-hero-banner-container p,
   .iot-solutions-hero.common-hero-banner .common-hero-banner-container ul { 
 	  margin-bottom: 15px;
-      font-size: .9em;                                                    
+      font-size: 16px;                                                    
   }
 }
