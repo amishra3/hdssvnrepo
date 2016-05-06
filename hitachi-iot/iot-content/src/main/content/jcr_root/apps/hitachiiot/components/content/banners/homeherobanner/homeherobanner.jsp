@@ -24,12 +24,17 @@
 	                    
 <% 
 String scheme = request.getScheme();
+String hostName = request.getServerName();
+int serverPort = request.getServerPort();
 
-if(scheme.toLowerCase().equals("http")){
+if(scheme.toLowerCase().equals("http") && !hostName.contains("hitachiinsightgroup")&& serverPort!=80){
 	String homeHeroVideoMarkupProp = (String)pageContext.getAttribute("homeHeroVideoMarkup");
 	homeHeroVideoMarkupProp = homeHeroVideoMarkupProp.replace("secureConnections", "isUI").replace("secureHTMLConnections", "isVid") ;
 	pageContext.setAttribute("homeHeroVideoMarkup",homeHeroVideoMarkupProp);
+	System.out.println(homeHeroVideoMarkupProp);
 }
+
+
 %>	                    
 
 <c:choose>
