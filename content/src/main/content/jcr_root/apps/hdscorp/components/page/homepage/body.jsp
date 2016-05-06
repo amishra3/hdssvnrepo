@@ -58,5 +58,13 @@ if(pageTemplatePath!=null){
   "url" : "https://www.hds.com/"
 }
 </script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "<%= pageProperties.getInherited("domain", "") %>", 
+              "logo": "<%= pageProperties.getInherited("domain", "") %>${scemaLogo}"
+    }
+</script>
 
 </body>

@@ -24,16 +24,17 @@
 				<img src="${properties.contactlocationimagePath}" alt="${properties.contactimagealtlabel}" class="img-responsive"/>
 			</div>
 			<div class="col-md-3">
-				<div class="right_address_panel">
-					<h4>${properties.contactlocationlabel}</h4>
-					<p>${properties.contactlocationaddressline1}</p>
-					<p>${properties.contactlocationaddressline2}</p>
+				<div class="right_address_panel" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<h4 itemprop="name">${properties.contactlocationlabel}</h4>
+					<p itemprop="streetAddress">${properties.contactlocationaddressline1}</p>
+					<p itemprop="addressLocality">${properties.contactlocationaddressline2}</p>
                     <div class="driving-direction clearfix">
     					<a class="animateLink" href="${properties.contactdrivingdirectionsurl}" target="${properties.openinnew?'_blank':'_self'}">${properties.contactdrivingdirectionslabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                     </div>
 					<div class="address-contacts">
 						<c:forEach var="placardList" items="${placardList}" varStatus="loop">
 							<c:set var="phonenumbertext" value="${placardList.phonenumbertext}" />
+                            <meta itemprop="telephone" content="${fn:substringAfter(phonenumbertext, ': ')}">
 	                        <div class="contact">
 	                            ${phonenumbertext}
 	                        </div>

@@ -21,7 +21,7 @@
 <c:if test="${fn:startsWith(logoTargetURL,'/content/')}">
 	<c:set var="logoTargetURL" value="<%=PathResolver.getShortURLPath(pageContext.getAttribute("logoTargetURL").toString())%>" />
 </c:if>
-
+<c:set var="scemaLogo" value="${properties.logoimgurl}" scope="application" />
 <%
 	JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 	String seacrhpageUrl=properties.get("searchpathurl",String.class);
@@ -181,12 +181,5 @@
 		<cq:include path="${currentDesign.path}/jcr:content/breadcrumbpar" resourceType="hdscorp/components/content/breadcrumb" />
 	</c:if>
 </div>
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "<%= pageProperties.getInherited("domain", "") %>", 
-              "logo": "<%= pageProperties.getInherited("domain", "") %>${properties.logoimgurl}"
-    }
-</script>
+
 <!-- HEADER ENDS HERE -->

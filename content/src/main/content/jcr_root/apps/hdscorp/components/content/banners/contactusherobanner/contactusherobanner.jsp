@@ -16,7 +16,7 @@
                 <div class="content-container">
                     <h1 class="headline">${properties.contactustitlecontent}</h1>
 					<div class="row detail-container">
-					
+
 					
 						<c:forEach var="placardList" items="${placardList}" varStatus="loop">
 							<c:set var="placardTitle" value="${placardList.placardTitle}" />
@@ -37,8 +37,8 @@
 							<c:if test="${fn:startsWith(contacttargeturl2,'/content/')}">
 								<c:set var="contacttargeturl2" value="${hdscorp:shortURL(contacttargeturl2)}" />
 							</c:if>
-			
-			
+
+
 							<div class="col-sm-4">
 								<div class="details-box">
 									<h2>${placardTitle}</h2>
@@ -62,8 +62,32 @@
                                         <a data-formtitle="${mformtitle2}" rel="${placardList.mform1==1?'iframemodal':''}" class="animateLink" href="${contacttargeturl2}" target="${placardList.seemorenewwin2==1?'_blank':'_self'}">${contacturllabel2}${placardList.thirdparty2==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
 									</c:if>									
 								</div>
-							</div>			
+							</div>	
+											<c:set var="phonenumbertext1seo" value="+${phonenumbertext1}" />
+                                        <c:if test="${fn:contains(phonenumbertext1,':')}">
+                                            <c:set var="phonenumbertext1seo" value="+${fn:substringAfter(phonenumbertext1, ': ')}" />
+										</c:if>
+                                            <c:set var="phonenumbertext2seo" value="${phonenumbertext2}" />
+											<c:if test="${not empty phonenumbertext2}">
+
+                                                    <c:if test="${fn:contains(phonenumbertext2,':')}">
+                                                        <c:set var="phonenumbertext2seo" value="+${fn:substringAfter(phonenumbertext2, ': ')}" />
+                                                    </c:if>
+                                            </c:if>
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "url" : "https://www.hds.com",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+     "telephone" : "${phonenumbertext1seo}",
+     "contactOption" : "${phonenumbertext2seo}",
+      "contactType" : "${placardTitle}"
+    } ] }
+</script>
+
 						</c:forEach>
+
                     </div>
                 </div>
             </div>
@@ -75,4 +99,4 @@
 			</p>
 		</wcmmode:edit>
 	</c:otherwise>
-</c:choose>    	
+</c:choose>   
