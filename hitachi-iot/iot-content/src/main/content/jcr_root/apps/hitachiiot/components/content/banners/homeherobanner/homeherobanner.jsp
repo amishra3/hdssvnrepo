@@ -49,7 +49,7 @@ if(scheme.toLowerCase().equals("http") && serverPort!=80){
 					${homeHeroVideoMarkup}
 				</c:when>
 				<c:otherwise>
-							<video autoplay loop class="fillWidth" id='bgvid'>
+							<video autoplay loop controls class="fillWidth" id='bgvid'>
 								<source src="${html5videourl}" type="video/mp4" />
 							</video>
 				</c:otherwise>
