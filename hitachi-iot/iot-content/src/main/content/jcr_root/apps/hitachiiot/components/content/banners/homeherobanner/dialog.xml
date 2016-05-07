@@ -81,6 +81,25 @@
                         xtype="pathfield"/>
                 </items>
             </tab1>
+			<tab2
+                jcr:primaryType="cq:Panel"
+                title="HTML 5 Video Player">
+                <items jcr:primaryType="cq:WidgetCollection">
+	                <usehtml5player
+	                        jcr:primaryType="cq:Widget"
+	                        fieldLabel="Use HTML 5 Native player ?"
+	                        key="isotargeturltype"
+	                        name="./usehtml5player"
+	                        type="checkbox"
+	                        xtype="selection"/>
+	                <html5videourl
+	                        jcr:primaryType="cq:Widget"
+	                        fieldLabel="Video URL for HTML 5 Player"
+	                        fieldDescription="Video URL for HTML 5 Player"
+	                        name="./html5videourl"
+	                        xtype="pathfield"/>
+				</items>
+            </tab2>
         </items>
     </items>
 </jcr:root>

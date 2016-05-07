@@ -22,6 +22,8 @@
 
 <c:set var="homeHeroVideoMarkup" value="${fn:replace(homeHeroVideoMarkup,'#videoTitleId',videoid)}"/>                          
 	                    
+<c:set var="html5videourl" value="<%=properties.get("html5videourl", "https://brightcove.hs.llnwd.net/v1/unsecured/media/3971130171001/201605/3207/3971130171001_4879870722001_4879800877001.mp4") %>"/>
+	                    
 <% 
 String scheme = request.getScheme();
 String hostName = request.getServerName();
@@ -42,7 +44,17 @@ if(scheme.toLowerCase().equals("http") && serverPort!=80){
 		<c:set var="tabList" value="<%=PageUtils.convertMultiWidgetToList(properties,"tabTitle-tablink-tabIconPath")%>" />
 
 		<div class="iot-hero clearfix hidden-xs hidden-sm hidden-md">
-			 ${homeHeroVideoMarkup}
+			<c:choose>
+				<c:when test="${empty properties.usehtml5player}">
+					${homeHeroVideoMarkup}
+				</c:when>
+				<c:otherwise>
+							<video autoplay loop class="fillWidth" id='bgvid'>
+								<source src="${html5videourl}" type="video/mp4" />
+							</video>
+				</c:otherwise>
+			</c:choose>
+
 			<div class="iot-hero-container content-container">
 				<h1 class="headline col-md-7">${properties.herotitlecontent}</h1>
 
