@@ -133,9 +133,13 @@
 		<div class="hds-main-navigation">
 			<div class="col-md-3">
 				<a href="${fn:contains(logoTargetURL, 'http')?'':domain}${hdscorp:shortURL(logoTargetURL)}" target="${properties.midnewwin?'_blank':'_self'}">
-					<span
-					class="hidden-sm hidden-md hidden-lg"><img alt="${hdslogotitle}" title="${hdslogotitle}" src="${properties.devicelogoimgurl}"></span>
-                    <span class="hidden-xs"><img alt="${hdslogotitle}" title="${hdslogotitle}" src="${properties.logoimgurl}"></span>
+					<span class="hidden-sm hidden-md hidden-lg">
+					<img
+						alt="${hdslogotitle}" title="${hdslogotitle}"
+						src="${fn:contains(properties.devicelogoimgurl, 'http')?'':domain}${properties.devicelogoimgurl}"></span>
+					
+					<span class="hidden-xs"><img alt="${hdslogotitle}"
+						title="${hdslogotitle}" src="${fn:contains(properties.logoimgurl, 'http')?'':domain}${properties.logoimgurl}"></span>
 				</a>
 			</div>
 
