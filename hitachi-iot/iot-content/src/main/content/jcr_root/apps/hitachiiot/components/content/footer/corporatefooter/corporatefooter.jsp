@@ -17,7 +17,7 @@
  <ul class="copyright-links col-md-12">
  
          <li>
-         <a class="copyright">
+         <a class="copyright-iot">
 			&copy; ${copyrighttext}
 		 </a>
         </li>
