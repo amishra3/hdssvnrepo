@@ -10,7 +10,6 @@ if ($marketLeader.length) {
 
 
 function openvideooverlayById(videoID) {
-	
     var videoID = videoID;
     var pPageName = window.location.href;
     var videoGUID = "video"+videoID;
@@ -18,7 +17,11 @@ function openvideooverlayById(videoID) {
     if($.trim(videoID).length > 0){
         //var vidObjMkup = $(".bcobjmarkup").html();
        // vidObjMkup = vidObjMkup.replace(/#videoTitleId/g,videoID).replace("#videoGuid",videoGUID);
-        vidObjMkup = '<object id="myExperience'+videoID+'" class="BrightcoveExperience"><param name="linkBaseURL" value="'+pageUrl+'#vid='+videoID+'"/><param name="bgcolor" value="#FFFFFF" />  <param name="width" value="920" />  <param name="height" value="517" />  <param name="playerID" value="'+videoID+'" /><param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRIOlM3eAv1n6tj_paXrEum1" />  <param name="isVid" value="true" />  <param name="isUI" value="true" />  <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="'+videoID+'" />  <param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="myTemplateLoaded" /></object>';
+    	var secureBCParams = "" ;
+    	if (window.location.protocol === 'https:') {
+    		secureBCParams = '<param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" />';
+    	}
+        vidObjMkup = '<object id="myExperience'+videoID+'" class="BrightcoveExperience"><param name="linkBaseURL" value="'+pageUrl+'#vid='+videoID+'"/><param name="bgcolor" value="#FFFFFF" />  <param name="width" value="920" />  <param name="height" value="517" />  <param name="playerID" value="'+videoID+'" /><param name="playerKey" value="AQ~~,AAADnJnNnnk~,ltuihYvDjRIOlM3eAv1n6tj_paXrEum1" />  <param name="isVid" value="true" />  <param name="isUI" value="true" />  <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="'+videoID+'" />  <param name="secureConnections" value="true" /><param name="secureHTMLConnections" value="true" /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="myTemplateLoaded" />'+secureBCParams+'</object>';
         videobox = new HDS.Lightbox();
         gblPlayingVideo = undefined ; 
         videobox.setContent('');
