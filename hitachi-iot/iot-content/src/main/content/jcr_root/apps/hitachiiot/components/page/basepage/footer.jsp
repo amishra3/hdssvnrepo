@@ -10,6 +10,14 @@
 <cq:include path="globalfooter" resourceType="hitachiiot/components/content/footer/footerwrapper"/>
 <cq:include path="cloudservices" resourceType="cq/cloudserviceconfigs/components/servicecomponents"/> 
 
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+
+<c:set var ="pageUrl" value="<%= currentPage.getPath()%>"/>
+<c:set var ="pageUrl" value="${domain}/en-us/home.html"/>
+<script>
+var pageUrl = '<c:out value="${pageUrl}"/>';
+
+</script>
 <cq:includeClientLib js="hdsiot.main"/> 
 <!-- includeClientLib is not loading the JS lib and that is why doing it conventionally-->
 <!-- <script type="text/javascript" src="/etc/clientlibs/hdscorp/main.js"></script> -->
