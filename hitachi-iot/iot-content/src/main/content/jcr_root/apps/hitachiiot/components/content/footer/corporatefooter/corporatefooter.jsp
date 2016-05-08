@@ -12,7 +12,7 @@
 
 <c:choose>
 	<c:when test="${not empty footerLinks}">
-	<c:set var="corporateFooterLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urlLabel-pageUrl")%>" />
+	<c:set var="corporateFooterLinks" value="<%=PageUtils.convertMultiWidgetToList(properties,"urlLabel-pageUrl-openininewwindow-thirdparty")%>" />
 
  <ul class="copyright-links col-md-12">
  
@@ -34,7 +34,7 @@
 				</c:choose>   
 				
 				<li>
-					<a href="${linkUrl}">${link.urlLabel}</a>
+					<a href="${linkUrl}" target="${link.openininewwindow==1?'_blank':'_self'}" >${link.urlLabel}${link.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':''}</a>
 				</li>
          
           </c:forEach>
