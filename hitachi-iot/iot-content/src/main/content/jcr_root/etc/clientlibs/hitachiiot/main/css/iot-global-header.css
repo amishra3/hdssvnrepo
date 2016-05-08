@@ -1,58 +1,26 @@
-/* line 33, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 html {
   font-size: 16px !important;
 }
 
 /*bootstrap override start*/
-/* line 38, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
+
 .row-no-margin {
   margin: 0 !important;
 }
 
-/* line 41, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .row-reduce-half {
   margin-left: -7.5px !important;
   margin-right: -7.5px !important;
 }
 
-/* line 45, /Users/kentaro.fischer/dev/projects/hds/clone/aem-fed/app/styles/partials/_base.scss */
 .col-no-pad {
   padding: 0 !important;
 }
 
 /*bootstrap override end*/
-/* BOOTSTRAP OVERRIDES */
-/*
-SCSS variables are information about icon's compiled state, stored under its original file name
 
-.icon-home {
-  width: $icon-home-width;
-}
 
-The large array-like variables contain all information about a single icon
-$icon-home: x y offset_x offset_y width height total_width total_height image_path;
 
-At the bottom of this section, we provide information about the spritesheet itself
-$spritesheet: width height image $spritesheet-sprites;
-*/
-/*
-The provided mixins are intended to be used with the array-like variables
-
-.icon-home {
-  @include sprite-width($icon-home);
-}
-
-.icon-email {
-  @include sprite($icon-email);
-}
-*/
-/*
-The `sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of SCSS
-
-@include sprites($spritesheet-sprites);
-*/
-/* line 6, stdin */
 .hitachi-sublogo,
 .hitachi-ig-logo {
   background-image: url(../images/sprite.png);
@@ -61,7 +29,6 @@ The `sprites` mixin generates identical output to the CSS template
   height: 18px;
 }
 
-/* line 11, stdin */
 .hitachi-sublogo-mobile,
 .hitachi-ig-mobile-logo {
   background-image: url(../images/sprite.png);
@@ -70,32 +37,33 @@ The `sprites` mixin generates identical output to the CSS template
   height: 12px;
 }
 
-/* line 16, stdin */
 .bus-unit-name {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
 
-/* line 21, stdin */
 .hds-global-header .hds-main-navigation-container .hds-main-navigation > div > a > span {
   text-indent: 0;
 }
 
+
+
 @media only screen and (max-width: 992px) {
-  /* line 26, stdin */
+
   .icon-search-mobile {
     background-image: url(../images/sprite.png);
     background-position: -311px -157px;
     width: 19px;
     height: 20px;
   }
-  /* line 33, stdin */
+
   .header .breadcrumb-container {
     top: 160px;
     text-align: center;
   }
-  /* line 38, stdin */
+
   .header .sub-navigation-container {
     display: block;
   }
+
 }

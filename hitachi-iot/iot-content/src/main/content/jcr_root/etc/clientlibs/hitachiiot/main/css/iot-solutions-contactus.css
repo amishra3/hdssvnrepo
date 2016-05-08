@@ -1,296 +1,12 @@
-/* line 33, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
-html {
-  font-size: 16px !important;
-}
-
-/*bootstrap override start*/
-/* line 38, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
-.row-no-margin {
-  margin: 0 !important;
-}
-
-/* line 41, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
-.row-reduce-half {
-  margin-left: -7.5px !important;
-  margin-right: -7.5px !important;
-}
-
-/* line 45, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_base.scss */
-.col-no-pad {
-  padding: 0 !important;
-}
-
-/*bootstrap override end*/
-/* BOOTSTRAP OVERRIDES */
-/*
-SCSS variables are information about icon's compiled state, stored under its original file name
-
-.icon-home {
-  width: $icon-home-width;
-}
-
-The large array-like variables contain all information about a single icon
-$icon-home: x y offset_x offset_y width height total_width total_height image_path;
-
-At the bottom of this section, we provide information about the spritesheet itself
-$spritesheet: width height image $spritesheet-sprites;
-*/
-/*
-The provided mixins are intended to be used with the array-like variables
-
-.icon-home {
-  @include sprite-width($icon-home);
-}
-
-.icon-email {
-  @include sprite($icon-email);
-}
-*/
-/*
-The `sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of SCSS
-
-@include sprites($spritesheet-sprites);
-*/
-/* line 1, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square {
-  padding: 8px 35px;
-  border: 1px solid;
-  font-size: .8em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-}
-
-/* line 8, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square.-white {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-
-/* line 12, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square.-red {
-  color: #ce0000;
-  border-color: #ce0000;
-}
-
-/* line 18, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-[class|="btn-square"] {
-  padding: 8px 35px;
-  font-size: .8em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-}
-
-/* line 28, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-white {
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-/* line 31, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-white a {
-  color: #ffffff;
-}
-
-/* line 36, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-red {
-  border: 1px solid #ce0000;
-  color: #ce0000;
-}
-
-/* line 39, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-red a {
-  color: #ce0000;
-}
-
-/* line 44, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-features {
-  border: 1px solid #ffffff;
-  background-color: #ffffff;
-  color: #ce0000;
-}
-
-/* line 48, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-features:hover {
-  color: #ce0000;
-}
-
-/* line 53, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-clear {
-  border: 1px solid #ffffff;
-  color: #ffffff;
-}
-
-/* line 56, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-square-clear a {
-  color: #ffffff;
-}
-
-/* line 62, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-button.cta-scroll-top {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  outline: 0;
-  border: 0;
-  display: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: .7rem;
-  line-height: .9rem;
-  cursor: pointer;
-  letter-spacing: .15em;
-  z-index: 1031;
-  width: 77px;
-  height: 77px;
-  vertical-align: middle;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  border-radius: 50%;
-  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  transition-property: background-color, box-shadow, transform;
-  background-color: #8f8f8f;
-  background-color: rgba(131, 131, 131, 0.9);
-  color: #ffffff;
-}
-
-/* line 92, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-button.cta-scroll-top:hover {
-  background-color: #757575;
-  background-color: rgba(102, 102, 102, 0.9);
-}
-
-/* line 96, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-button.cta-scroll-top.active {
-  display: inline-block;
-}
-
-/* line 100, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-button.cta-scroll-top span {
-  display: inline-block;
-}
-
-/* line 103, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-button.cta-scroll-top .icon-arrow-scroll-top {
-  background-image: url(../images/sprite.png);
-  background-position: -161px -145px;
-  width: 26px;
-  height: 14px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 108, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-button.cta-scroll-top .text-return {
-  margin-top: 7px;
-}
-
-/* line 114, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-transparent-square {
-  position: relative;
-  height: 40px;
-  max-width: 375px;
-  margin: 0 auto;
-  border: 2px solid #FFFFFF;
-  font-size: 13px;
-  color: #FFFFFF;
-  letter-spacing: 2.75px;
-  text-transform: uppercase;
-  text-align: center;
-  cursor: pointer;
-  background-color: transparent;
-  transition: background-color 0.3s linear, color 0.3s linear;
-}
-
-/* line 136, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.btn-transparent-square:hover {
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* line 139, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_mixins.scss */
-.btn-transparent-square:hover a {
-  color: #ffffff;
-}
-
-/* line 127, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-transparent-square p {
-  margin: 0;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* line 133, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-.btn-transparent-square a {
-  color: #FFFFFF;
-  outline: 0;
-  text-decoration: none;
-}
-
-@media only screen and (max-width: 768px) {
-  /* line 142, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-  button.cta-scroll-top {
-    position: absolute;
-    display: inline-block;
-    font-size: .5rem;
-    line-height: .7rem;
-    width: 68px;
-    height: 68px;
-  }
-  /* line 150, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-  button.cta-scroll-top .text-return {
-    margin-top: 5px;
-  }
-  /* line 155, /Users/lala.hulse/Documents/sites/hitachi-iot/aem-fed/app/styles/partials/_buttons.scss */
-  .btn-transparent-square {
-    max-width: 300px;
-    min-height: 36px;
-  }
-}
-
-/* line 8, stdin */
 .solutions.footer {
   overflow: auto;
   background: transparent;
   padding: 0 0 40px 0;
 }
 
-/* line 12, stdin */
 .solutions.footer .footer-blue {
   display: block;
   margin-bottom: 50px;
-}
-
-/* line 15, stdin */
-.solutions.footer .footer-blue .buttons {
-  top: 0px;
-}
-
-/* line 17, stdin */
-.solutions.footer .footer-blue .buttons .information {
-  font-size: .75em;
-  margin-left: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  /* line 17, stdin */
-  .solutions.footer .footer-blue .buttons .information {
-    width: 100%;
-  }
-}
-
-/* line 24, stdin */
-.solutions.footer .footer-blue a {
-  color: #ffffff;
 }
 
 .solutions.footer .footer-blue .talk {
@@ -299,12 +15,31 @@ button.cta-scroll-top .text-return {
   padding-bottom: 5px;
 }
 
+.solutions.footer .footer-blue .buttons {
+  top: 0px;
+}
+
+.solutions.footer .footer-blue .buttons .information:hover,
+.solutions.footer .footer-blue .buttons .information:focus, 
+.solutions.footer .footer-blue .buttons .information:active {
+  text-decoration: none;
+}
+
+
+
+
 @media only screen and (max-width: 768px) {
-  /* line 29, stdin */
+
+  .solutions.footer .footer-blue .buttons .information {
+    width: 100%;
+	margin-bottom: 30px;                            
+  }
+
   .solutions.footer .footer-blue .talk,
   .solutions.footer .footer-blue .call {
     text-transform: none;
     display: block;
     margin-bottom: 1.5em;
   }
+
 }
