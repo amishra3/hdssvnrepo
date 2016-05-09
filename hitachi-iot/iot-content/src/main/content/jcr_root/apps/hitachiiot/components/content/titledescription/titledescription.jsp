@@ -30,7 +30,7 @@
 		</c:otherwise>
 	   </c:choose>
 	   <c:if test="${not empty linkUrl}">
-          <div class="read-more"> <a href="${linkUrl}" target="${properties.readmorelinktargettype?'_blank':'_self'}" class="animateLink">${properties.readmorelabel}${properties.readmorelinktargettype?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}</a> </div>
+          <div class="read-more"> <a href="${linkUrl}" target="${properties.readmorelinktargettype?'_blank':'_self'}" class="animateLink">${properties.readmorelabel}${properties.showthirdpartyicon?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span>'}</a> </div>
         </c:if>
         </div>
       </div>
