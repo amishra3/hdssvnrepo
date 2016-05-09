@@ -1,7 +1,7 @@
 var digitalData = digitalData || {};
 var data=getCurrentBreadcrumb();
 var url=$(location).attr('href');
-data = data.replace(/[`-~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
+data = data.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 data = data.replace(/\s{2,}/g,' ');
 data = data.toLowerCase();
 items = data.split(":");
@@ -17,7 +17,7 @@ var leadFormName="";
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
 // URL shorten for UCP and Press Release 
-pageTitle = pageTitle.replace(/[`-~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
+pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 
 	if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
 		{
@@ -486,7 +486,7 @@ if(isErrorPage())
 		_satellite.track('videotracking');
 
 	}
-	
+
 	// email links clicks---------mailto should not be implemented on the site------so disabled this tracking
 	$('a[href^="mailto:"]').click(function() {
 			var linktxt=$(this).text();
