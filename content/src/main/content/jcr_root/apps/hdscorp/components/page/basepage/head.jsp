@@ -23,6 +23,10 @@
   ==============================================================================
 --%>
 
+<%@page import="javax.jcr.Node"%>
+<%@page import="com.day.cq.dam.api.Asset"%>
+<%@page import="com.hdscorp.cms.util.PathResolver"%>
+<%@page import="org.apache.sling.api.resource.Resource"%>
 <%@include file="/apps/foundation/global.jsp" %>
 <%@page import="com.day.cq.wcm.api.components.IncludeOptions"%>
 <%@page import="com.day.cq.wcm.api.WCMMode"%>
@@ -48,6 +52,7 @@
 <c:set var="titleprefix" value="<%= pageProperties.getInherited("titleprefix", "") %>" />
 <c:set var="analyticsinfooter" value="<%= pageProperties.getInherited("analyticsinfooter", "") %>" />
 <head>
+	  
       <meta charset="utf-8"/>
       <meta name="format-detection" content="telephone=yes" />
       <meta http-equiv="cleartype" content="on" />
@@ -76,6 +81,23 @@
       <c:if test="${empty pageProperties.hidetitlemetatag}">
       	<title>${titleprefix}<%= (StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")) == null || StringEscapeUtils.escapeHtml4(properties.get("pageTitle", "")).equals("")) ? StringEscapeUtils.escapeHtml4(currentPage.getTitle()):StringEscapeUtils.escapeHtml4(properties.get("pageTitle", ""))%></title>
       </c:if>
+      
+      <c:if test="${not empty pageProperties.hidetitlemetatag}">
+      
+      	<%
+			String pdfPath = (String)request.getAttribute("pdfPath") ;
+			if(pdfPath!=null){
+				Resource res = PathResolver.getResourceFromShortURL(slingRequest, pdfPath);
+				Asset asset = res.adaptTo(Asset.class);
+				Node resourceNode = res.adaptTo(Node.class) ;
+				Node metaDataNode= resourceNode.getNode("jcr:content/metadata");
+				String resourceTitle = asset.getMetadataValue("dc:title");
+				out.write("<title>"+resourceTitle+"</title>");
+			}
+		%>
+      
+      </c:if>
+      
 	  <c:if test="${not empty pageProperties.insertnocacheheaders}">
 		  <% 
 			  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.

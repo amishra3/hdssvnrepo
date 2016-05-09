@@ -32,8 +32,6 @@
 	<c:set var="formIframeURL" value="https://pages.hds.com/hds-gated-form.html"/>
 </c:if>
 
-<title>${pdfNode.title}</title>
-
 <c:if test="${null!=pdfNode}">
   <div class="gatted-asset-pg">                    
                 <div class="row content-container">
