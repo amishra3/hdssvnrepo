@@ -39,7 +39,7 @@
                         allowBlank="{Boolean}false"
                         fieldLabel="Event End Date"
                         name="./jcr:eventenddate"
-                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./jcr:eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa;  &#xa;  var enddate = dialog.getField('./jcr:eventenddate');&#xa;  var enddateValue = enddate.getValue();&#xa;  &#xa; if (enddateValue &lt;=eventstartdatevalue)&#xa; {&#xa; alert(&quot;End date should be greater that start date&quot;);&#xa;return false;&#xa; }&#xa; }"
+                        validator="function(value) {&#xa;var dialog = this.findParentByType('dialog');&#xa; var eventstartdate1 = dialog.getField('./jcr:eventstartdate');&#xa;  var eventstartdatevalue = eventstartdate1.getValue();&#xa;  &#xa;  var enddate = dialog.getField('./jcr:eventenddate');&#xa;  var enddateValue = enddate.getValue();&#xa;  &#xa; if (enddateValue &lt;eventstartdatevalue)&#xa; {&#xa; alert(&quot;End date should be greater that start date&quot;);&#xa;return false;&#xa; }&#xa; }"
                         xtype="datefield"/>
                     <eventlocation
                         jcr:primaryType="cq:Widget"
