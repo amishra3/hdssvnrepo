@@ -7,6 +7,7 @@
 .solutions.footer .footer-blue {
   display: block;
   margin-bottom: 50px;
+  z-index: 1;
 }
 
 .solutions.footer .footer-blue .talk {
