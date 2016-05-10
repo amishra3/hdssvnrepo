@@ -250,7 +250,7 @@ if(isErrorPage())
 	
 	//Video and link buttons (Red) on middle banners on different pages
 	
-	$(".accordion-section-hero, .common-hero-banner, .market-leader-container").each(function() {
+	$(".iot-hero, .accordion-section-hero, .common-hero-banner, .market-leader-container, .about-hds-career-leader").each(function() {
      
 		 var listitem = $(this).find("a");
 		 var url=$(location).attr('href');
@@ -274,18 +274,36 @@ if(isErrorPage())
 					else if($(this).parent().parent().attr('class').indexOf('accordion-section-hero-container')>-1)
 						{linktext = "iot>panel-" + $('.accordion-section-hero-container').find('h1').text();
 						linkposition="iot>panel-" + $('.accordion-section-hero-container').find('h1').text()+ "-" + getPageNameFromURL();}
+					else if($(this).parent().parent().attr('class').indexOf('iot-hero-container')>-1)
+						{linktext = "iot>hero-" + $.trim($('.hidden-xs').find('h1').text());
+						linkposition="iot>hero-" + $.trim($('.hidden-xs').find('h1').text())+ "-" + getPageNameFromURL();}
+					else if($(this).parent().parent().parent().attr('class').indexOf('iot-hero-container')>-1)
+						{linktext = "iot>hero-" + $.trim($('.hidden-xs').find('h1').text());
+						linkposition="iot>hero-" + $.trim($('.hidden-xs').find('h1').text())+ "-" + getPageNameFromURL();}
+					else if($(this).parent().parent().attr('class').indexOf('about-hds-career-content')>-1)
+						{linktext = "iot>panel-" + $('.about-hds-career-content').find('h2').text();
+						linkposition="iot>panel-" + $('.about-hds-career-content').find('h2').text()+ "-" + getPageNameFromURL();}
 					else 
 						{linktext = "iot>hero-" + $(this).parents('.common-hero-banner').find('h1').text();
 						linkposition="iot>hero-" + getPageNameFromURL();}
 					
 					if($(this).parent().parent().attr("class")=="page-not-found")
 					{var eClass=$(this).parent().parent().attr("class");linktext=$.trim($(this).text());linkposition="iot>panel-main-" + getPageNameFromURL();}
+					else if($(this).attr("href").indexOf("/en-us/lumada-by-hitachi.html")>-1){var eClass=$(this).parent().attr("class");}
 					else {var eClass=$(this).attr("class");}
 					if ( eClass.indexOf("btn-play-video")!= -1){eType = "play icon";if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}} 
 					else if ( eClass.indexOf("btn-square-red")!= -1)
 					{
 						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>panel-" + $('.market-leader-content').find('h2').text() + "-" + getPageNameFromURL();}
 					} 
+					else if ( eClass.indexOf("btn-square-white")!= -1)
+					{
+						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>panel-" + $('.about-hds-career-content').find('h2').text() + "-" + getPageNameFromURL();}
+					} 
+					else if ( eClass.indexOf("btn-square-features")!= -1)
+					{
+						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>hero-" + $.trim($('.hidden-xs').find('h1').text())+ "-" + getPageNameFromURL();}
+					}
 					if(linktext == "" || !linktext){linktext="iot>panel-" + $.trim($(this).text());}
 					linktext = $.trim(linktext);	
 					globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,eType,linkposition); });
@@ -293,6 +311,11 @@ if(isErrorPage())
 		 }
 	//}
     });
+	
+	$(".mktoForm .mktoButton").on("click", function(){	
+		globalMenuClick("linkclick","submit now",pageTitle,"button","iot>submit button");
+	});
+	
 	
 	// About us page partners logo
 	$("div.partner-list").each(function() 
@@ -358,10 +381,10 @@ if(isErrorPage())
 
 	//footer social media links
 	
- 	$("social-links").each(function() {
+ 	$(".social-links li").each(function() {
 		var links = $(this).find("img");
 	   links.each(function() {
-		 var linktext = $(this).attr("title");
+		 var linktext = $(this).attr("alt");
 		 linktext=$.trim(linktext);
          if(linktext!="" || linktext.length > 0)
 		 {
