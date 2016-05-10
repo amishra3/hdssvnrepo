@@ -29,6 +29,10 @@ function openvideooverlayById(videoID) {
         videobox.show();
         initiateVideo();
         brightcove.createExperiences();
+		/* WA Video Tracking Code */
+		
+        var vidId = 'iot>Video Id: ' + videoID;
+        videoTracking(vidId, pPageName);
 
     }
 }
