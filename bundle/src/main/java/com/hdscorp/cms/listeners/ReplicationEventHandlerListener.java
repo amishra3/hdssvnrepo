@@ -56,65 +56,61 @@ public class ReplicationEventHandlerListener implements EventHandler {
 					LOG.info("Replication action {} occured on {} ",replicationAction.getType().getName(),replicationAction.getPath());
 					
 					if (replicationAction.getType() == ReplicationActionType.ACTIVATE) {
-						
-						
 
 						if(pagePath.startsWith("/en-us/pdf") || pagePath.startsWith("/content/dam/public/en_us")){
 					    
-					    String[] RLPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.RESOURCE_lIBRARY_PATHS));
-						
-						
-						for(String path:RLPaths){
-							final String shortUrl = PathResolver.getShortURLPath(path);
-							CacheInvalidator.invalidateCache(shortUrl, true);
-							CacheInvalidator.invalidateCache(path, false);
-						}
+						    String[] RLPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.RESOURCE_lIBRARY_PATHS));
+							
+							for(String path:RLPaths){
+								final String shortUrl = PathResolver.getShortURLPath(path);
+								CacheInvalidator.invalidateCache(shortUrl, true);
+								CacheInvalidator.invalidateCache(path, false);
+							}
 						
 						} else if(pagePath.contains("news-insights/press-releases")){
 							    
-							    String[] PRPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.PRESS_RELEASES_PATHS));
+						    String[] PRPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.PRESS_RELEASES_PATHS));
+							
+							
+							for(String path:PRPaths){
 								
+								final String shortUrl = PathResolver.getShortURLPath(path);
+								CacheInvalidator.invalidateCache(shortUrl, true);
+								CacheInvalidator.invalidateCache(path, false);
+							}
 								
-								for(String path:PRPaths){
+						}else if(pagePath.contains("about-hds/awards")){
+								    
+						    String[] awardPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.AWARDS_PATHS));
+							
+							for(String path:awardPaths){
+								
+								final String shortUrl = PathResolver.getShortURLPath(path);
+								CacheInvalidator.invalidateCache(shortUrl, true);
+								CacheInvalidator.invalidateCache(path, false);
+							}
 									
+						}else if(pagePath.contains("news-insights/news")){
+									    
+							    String[] NewsPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.NEWS_PATHS));
+								
+								for(String path:NewsPaths){
 									final String shortUrl = PathResolver.getShortURLPath(path);
 									CacheInvalidator.invalidateCache(shortUrl, true);
 									CacheInvalidator.invalidateCache(path, false);
 								}
-								
-								}else if(pagePath.contains("about-hds/awards")){
-								    
-								    String[] awardPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.AWARDS_PATHS));
-									
-									
-									for(String path:awardPaths){
-										
-										final String shortUrl = PathResolver.getShortURLPath(path);
-										CacheInvalidator.invalidateCache(shortUrl, true);
-										CacheInvalidator.invalidateCache(path, false);
-									}
-									
-									}else if(pagePath.contains("news-insights/news")){
-									    
-									    String[] NewsPaths =	getPropertyAsArray(HdsCorpGlobalConfiguration.getPropertyValue(HdsCorpGlobalConfiguration.NEWS_PATHS));
-										
-										
-										for(String path:NewsPaths){
-											
-											final String shortUrl = PathResolver.getShortURLPath(path);
-											CacheInvalidator.invalidateCache(shortUrl, true);
-											CacheInvalidator.invalidateCache(path, false);
-										}
-										
-										}
-						
+						}
 						
 						
 						if (StringUtils.isNotEmpty(pagePath)) {
 							if(pagePath.startsWith("/etc/segmentation/hdscorp/")){
 								CacheInvalidator.invalidateCache("/etc/segmentation.segment.js", false);
 							}
-							final String shortUrl = PathResolver.getShortURLPath(pagePath);
+							String shortUrl = PathResolver.getShortURLPath(pagePath);
+							
+							if(shortUrl.contains(".pdf.html")){
+								shortUrl = shortUrl.replace(".html", "");
+							}
 							
 							if (StringUtils.isNotBlank(shortUrl)) {
 								// Invalidate Cache for Activated Page
@@ -131,6 +127,9 @@ public class ReplicationEventHandlerListener implements EventHandler {
 					}else if(replicationAction.getType() == ReplicationActionType.DEACTIVATE){
 					
 					}
+					
+
+					
 				} // end if
 			} // end if
 		}catch (Exception ex){
