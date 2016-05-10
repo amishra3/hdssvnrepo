@@ -98,19 +98,16 @@ public class ReplicationEventHandlerListener implements EventHandler {
 					}
 					
 					if (StringUtils.isNotEmpty(pagePath)) {
-						if(pagePath.startsWith("/etc/segmentation/hdscorp/")){
+						if(pagePath.startsWith("/etc/segmentation/")){
 							CacheInvalidator.invalidateCache("/etc/segmentation.segment.js", false);
 						}
 						
 						String shortUrl = PathResolver.getShortURLPath(pagePath);
 						
 						if (StringUtils.isNotBlank(shortUrl)) {
-							if(shortUrl.contains(".pdf.html")){
-								shortUrl = shortUrl.replace(".html", "");
-							}
 							// Invalidate Cache for Activated Page
 							LOG.info("Page Modified .. invalidating cache...."+ shortUrl);
-							if (CacheInvalidator.invalidateCache(shortUrl,true)) {
+							if (CacheInvalidator.invalidateCache(shortUrl,false)) {
 								LOG.info("Cache Invalidated successfully for page ::"+ shortUrl);
 							} else {
 								LOG.info("Error while invalidating Cache, check error log ");
