@@ -100,35 +100,32 @@ public class ReplicationEventHandlerListener implements EventHandler {
 									CacheInvalidator.invalidateCache(path, false);
 								}
 						}
-						
-						
-						if (StringUtils.isNotEmpty(pagePath)) {
-							if(pagePath.startsWith("/etc/segmentation/hdscorp/")){
-								CacheInvalidator.invalidateCache("/etc/segmentation.segment.js", false);
-							}
-							String shortUrl = PathResolver.getShortURLPath(pagePath);
-							
-							if(shortUrl.contains(".pdf.html")){
-								shortUrl = shortUrl.replace(".html", "");
-							}
-							
-							if (StringUtils.isNotBlank(shortUrl)) {
-								// Invalidate Cache for Activated Page
-								LOG.info("Page Modified .. invalidating cache...."+ shortUrl);
-								if (CacheInvalidator.invalidateCache(shortUrl,true)) {
-									LOG.info("Cache Invalidated successfully for page ::"+ shortUrl);
-								} else {
-									LOG.info("Error while invalidating Cache, check error log ");
-								} // end if
-							} // end if
-						} // end if
-						
 
 					}else if(replicationAction.getType() == ReplicationActionType.DEACTIVATE){
 					
 					}
 					
-
+					if (StringUtils.isNotEmpty(pagePath)) {
+						if(pagePath.startsWith("/etc/segmentation/hdscorp/")){
+							CacheInvalidator.invalidateCache("/etc/segmentation.segment.js", false);
+						}
+						String shortUrl = PathResolver.getShortURLPath(pagePath);
+						
+						if(shortUrl.contains(".pdf.html")){
+							shortUrl = shortUrl.replace(".html", "");
+						}
+						
+						if (StringUtils.isNotBlank(shortUrl)) {
+							// Invalidate Cache for Activated Page
+							LOG.info("Page Modified .. invalidating cache...."+ shortUrl);
+							if (CacheInvalidator.invalidateCache(shortUrl,true)) {
+								LOG.info("Cache Invalidated successfully for page ::"+ shortUrl);
+							} else {
+								LOG.info("Error while invalidating Cache, check error log ");
+							} // end if
+						} // end if
+					} // end if
+					
 					
 				} // end if
 			} // end if
