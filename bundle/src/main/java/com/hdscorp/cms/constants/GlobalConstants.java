@@ -50,10 +50,6 @@ public final class GlobalConstants {
 
 	public static Object GRID_VIEW_COMPONENT_RESOURCE_TYPE;
 	public static final String GLOBAL_CONFIG_NODE_PATH = "/content/hdscorp/en_us/lookups/config/globalconfig/jcr:content/overlay/globalconfig";
-
-	public static final String LOCATIONS = "locations";
-	public static final String LOCATIONS_PATH = "/jcr:content/storeinfo";
-	public static final String CUSTOM_LOCATIONS_PATH = "/customstoreinfo/storeinfo.json/jcr:content";
 	
 	public static final String EMPTY_SPACE = " ";
 

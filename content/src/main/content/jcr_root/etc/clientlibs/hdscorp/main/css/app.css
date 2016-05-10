@@ -224,6 +224,7 @@
 
 .rsImg{
 	background-size: contain !important;
+/* 	transition: background 1s linear; */
 }
 
 .rsImg p{
