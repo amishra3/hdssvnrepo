@@ -16,7 +16,7 @@ var gInternalSearchFilter="";
 var leadFormName="";
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
-// URL shorten for UCP and Press Release 
+//pageTitle = pageTitle.replace(/[^a-zA-Z0-9&-_ ]/g, '');
 pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 
 	if (window.outerWidth < 768 && /Mobi/.test(navigator.userAgent)) 
@@ -268,9 +268,12 @@ if(isErrorPage())
 					if($(this).parents('.accordion-level').find('h1').text()!="")
 						{linktext = "iot>panel-" + $(this).parents('.accordion-level').find('h1').text();
 						linkposition="iot>panel-" + linkpanel + "-" + getPageNameFromURL();}
-					else if($(this).parents('.market-leader-container').attr('class').indexOf('market-leader-container')>-1)
+					else if($(this).parent().parent().attr('class').indexOf('market-leader-container')>-1)
 						{linktext = "iot>panel-" + $('.market-leader-container').find('h2').text();
 						linkposition="iot>panel-" + $('.market-leader-container').find('h2').text()+ "-" + getPageNameFromURL();}
+					else if($(this).parent().parent().attr('class').indexOf('accordion-section-hero-container')>-1)
+						{linktext = "iot>panel-" + $('.accordion-section-hero-container').find('h1').text();
+						linkposition="iot>panel-" + $('.accordion-section-hero-container').find('h1').text()+ "-" + getPageNameFromURL();}
 					else 
 						{linktext = "iot>hero-" + $(this).parents('.common-hero-banner').find('h1').text();
 						linkposition="iot>hero-" + getPageNameFromURL();}
@@ -486,7 +489,7 @@ if(isErrorPage())
 		_satellite.track('videotracking');
 
 	}
-
+	
 	// email links clicks---------mailto should not be implemented on the site------so disabled this tracking
 	$('a[href^="mailto:"]').click(function() {
 			var linktxt=$(this).text();
