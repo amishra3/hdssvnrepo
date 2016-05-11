@@ -27,6 +27,31 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
+	<!-- ====================================================================== -->
+	<!-- D E P E N D E N C I E S                                                -->
+	<!-- ====================================================================== -->
+
+	 <dependencies>
+	    <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-bundle</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-content</artifactId>
+            <version>2.2.0</version>
+            <type>content-package</type>
+        </dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>adobe</id>
+			<name>Adobe Public Repository</name>
+			<url>https://repo.adobe.com/nexus/content/groups/public/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 
 	<pluginRepositories>
 		<pluginRepository>
@@ -60,7 +85,13 @@
                 <configuration>
                     <group>hdscorp-packages</group>
                     <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
-
+                    <subPackages>
+                        <subPackage>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-content</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                    </subPackages>
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                 </configuration>
             </plugin>
@@ -90,12 +121,5 @@
         </profile>
         </profiles>
 
-	<!-- ====================================================================== -->
-	<!-- D E P E N D E N C I E S                                                -->
-	<!-- ====================================================================== -->
-
-	 <dependencies>
-
-	</dependencies> 
-
+ 
 </project>
