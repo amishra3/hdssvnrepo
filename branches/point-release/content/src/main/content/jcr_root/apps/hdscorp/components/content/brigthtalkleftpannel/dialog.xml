@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="BrightTalk Left Pannel"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <eventfilter
+                jcr:primaryType="cq:Panel"
+                title="Tab">
+                <items
+                    jcr:primaryType="cq:WidgetCollection"
+                    xtype="multifieldpanel">
+					<featuredfilterlabel
+			            jcr:primaryType="cq:Widget"
+			            fieldLabel="Label For Featured Filter"
+			            name="./featuredfilterlabel"
+			            xtype="textfield"/>                    
+                    <btlpfeaturedtypes
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Feature Types"
+                        name="./btlpfeaturedtypes"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <btlplabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Feature Label"
+                                    key="btlplabel"
+                                    name="./btlplabel"
+                                    xtype="textfield"/>
+                                <btlptag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Feature Tag"
+                                    key="btlptag"
+                                    name="./btlptag"
+                                    xtype="tags"/>
+                            </items>
+                        </fieldConfig>
+                    </btlpfeaturedtypes>
+                </items>
+            </eventfilter>
+        </items>
+    </items>
+</jcr:root>

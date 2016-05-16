@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Twitter Feed"
+    width="600"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <twtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title"
+                        name="./twtitle"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./twtitle')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <twtwitterhandlelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Twitter Handle Label"
+                        name="./twtwitterhandlelabel"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var twtwitterhandlelabel = dialog.getField('./twtwitterhandlelabel')&#xa; var twtwitterhandlelabelvalue = twtwitterhandlelabel.getValue();&#xa; if($.trim(twtwitterhandlelabelvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <twbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="./imagePath3/imageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Background Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:imagePath3"
+                        height="{Long}200"
+                        name="./twbackgroundimage"
+                        rotateParameter="./imagePath3/imageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <twtwittericonpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Twitter Icon path"
+                        name="./jcr:twtwittericonpath"
+                        validator="&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./jcr:twtwittericonpath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <twdefaulttwitterhandlemessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Default Twitter Handle Message"
+                        name="./jcr:twdefaulttwitterhandlemessage"
+                        xtype="textfield"/>
+                    <twfeedlookuppath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="TwitterFeed LookUp Path"
+                        name="./twfeedlookuppath"
+                        xtype="pathfield"/>
+                    <twyearsmessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Years Message"
+                        name="./jcr:twyearsmessage"
+                        xtype="textfield"/>
+                    <twmonthsmessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Months Message"
+                        name="./jcr:twmonthsmessage"
+                        xtype="textfield"/>
+                    <twweeksmessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Weeks Message"
+                        name="./jcr:twweeksmessage"
+                        xtype="textfield"/>
+                    <twdaysmessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Days Message"
+                        name="./jcr:twdaysmessage"
+                        xtype="textfield"/>
+                    <twhoursmessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hours Message"
+                        name="./jcr:twhoursmessage"
+                        xtype="textfield"/>
+                    <twminsmessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Minitues Message"
+                        name="./jcr:twminsmessage"
+                        xtype="textfield"/>
+                    <twagomessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Ago Message"
+                        name="./jcr:twagomessage"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

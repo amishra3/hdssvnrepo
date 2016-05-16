@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+ jcr:primaryType="cq:Dialog"
+    title="Press Release/News Container"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="News/Press Container">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <pressreleasestext
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="headerText"
+                        name="./headerText"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./headerText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <searchpressreleasestext
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Search Text"
+                        name="./searchText"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <archivelabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Archive Label"
+                        name="./archiveLabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./archiveLabel')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <noofyears
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="No of Years Shown in Navigation"
+                        name="./noOfYears"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./noOfYears')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="numberfield"/>
+                    <searchpagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Search Page Path"
+                        name="./searchPagePath"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchPagePath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                     <landingpagetype
+                         jcr:primaryType="cq:Widget"
+                         fieldLabel="Select the Landing page type?"
+                         fieldDescription="This information will be used for analytics tracking."
+                         key="landingpagetype"
+                         name="./landingpagetype"
+                         type="select"
+                         xtype="selection">
+                         <options jcr:primaryType="cq:WidgetCollection">
+                             <pressrelease
+                                 jcr:primaryType="nt:unstructured"
+                                 text="Press Release"
+                                 value="pressrelease"/>
+                             <news
+                                 jcr:primaryType="nt:unstructured"
+                                 text="News"
+                                 value="news"/>
+                             <awards
+                                 jcr:primaryType="nt:unstructured"
+                                 text="Awards"
+                                 value="awards"/>                                            
+                         </options>
+                     </landingpagetype>     
+                    <prlinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Label"
+                        name="./prlinktext"
+                        xtype="textfield"/>
+                    <prlinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Target URL"
+                        name="./prllinkurl"
+                        xtype="pathfield"/>
+                    <prtargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./prtargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <prthirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./prthirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

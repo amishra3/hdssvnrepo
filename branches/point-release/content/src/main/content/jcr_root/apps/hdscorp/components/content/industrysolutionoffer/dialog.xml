@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Industry Solution Offer"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <isotitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Title"
+                        name="./isotitle"
+                        xtype="textfield"/>
+                    <isosubtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Sub Title"
+                        name="./isosubtitle"
+                        xtype="textfield"/>
+                    <isobgimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BackGround Image"
+                        name="./isobgimage"
+                        xtype="pathfield"/>
+                    <isodescription
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Description"
+                        name="./isodescription"
+                        xtype="richtext"/>
+                    <isoctalabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Contact US Label"
+                        name="./isoctalabel"
+                        xtype="textfield"/>
+                    <isoctatargeturl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Contact US Target URL"
+                        name="./isoctatargeturl"
+                        xtype="pathfield"/>
+                    <isotargeturltype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window"
+                        key="isotargeturltype"
+                        name="./isotargeturltype"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <isoshowblog
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Blog"
+                        key="isoshowblog"
+                        name="./isoshowblog"
+                        type="select"
+                        width="300"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <opt3
+                                jcr:primaryType="nt:unstructured"
+                                text="No"
+                                value="3"/>
+                            <opt1
+                                jcr:primaryType="nt:unstructured"
+                                text="1"
+                                value="1"/>
+                            <opt2
+                                jcr:primaryType="nt:unstructured"
+                                text="2"
+                                value="2"/>
+                        </options>
+                    </isoshowblog>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

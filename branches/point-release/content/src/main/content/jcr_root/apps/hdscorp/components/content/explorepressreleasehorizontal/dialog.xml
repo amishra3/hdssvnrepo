@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Explore Press Release Component"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <newsinsights
+                jcr:primaryType="cq:Panel"
+                title="News Insights">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contentTypeLabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content Type Label (Ex - Press Release)"
+                        name="./contentTypeLabel"                        
+                        xtype="textfield"/>
+                    <contentTypeIcon
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content Type Icon Path"
+                        name="./contentTypeIcon"              
+                        xtype="ddpathfield"/>                        
+                    <presreleaseurllabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Label for the Content Link (Ex- Read more)"
+                        name="./presreleaseurllabel"                        
+                        xtype="textfield"/>
+                    <urltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open Links in New Window ?"
+                        name="./urltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </newsinsights>
+        </items>
+    </items>
+</jcr:root>

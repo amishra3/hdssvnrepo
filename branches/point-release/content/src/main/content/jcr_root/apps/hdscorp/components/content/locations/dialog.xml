@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Locations"
+    width="600"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <locations
+                jcr:primaryType="cq:Panel"
+                title="Locations">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <loctitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Title"
+                        name="./loctitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var loctitle = dialog.getField('./loctitle')&#xa; var loctitlevalue = loctitle.getValue();&#xa; if($.trim(loctitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <locationimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Image (Optional)"
+                        name="./jcr:locationimage"
+                        xtype="pathfield"/>
+                    <locimagealttext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Image ALT Text(optional)"
+                        name="./jcr:locimagealttext"
+                        xtype="textfield"/>
+                    <locationdetail
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Detail"
+                        name="./jcr:locationdetail"
+                        xtype="richtext"/>
+                    <loclink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Link"
+                        name="./jcr:locationlink"
+                        xtype="textfield"/>
+                    <loclinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location Link Text"
+                        name="./jcr:loclinktext"
+                        xtype="textfield"/>
+                    <loclinktargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window"
+                        key="jcr:loclinktargettype"
+                        name="./jcr:loclinktargettype"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                    <directiondetail
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Direction Detail(optional)"
+                        name="./jcr:directiondetail"
+                        xtype="textfield"/>
+                    <locationlatitude
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Latitude"
+                        name="./jcr:locationlatitude"
+                        xtype="textfield"/>
+                    <locationlongitude
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Longitude"
+                        name="./jcr:locationlongitude"
+                        xtype="textfield"/>
+                    <locphonenumber
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Phone Number"
+                        name="./jcr:locphonenumber"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="nt:unstructured"
+                            xtype="richtext"/>
+                    </locphonenumber>
+                    <locregion
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Region"
+                        name="./jcr:locregion"
+                        xtype="tags"/>
+                    <loccountry
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Country"
+                        name="./jcr:loccountry"
+                        xtype="tags"/>
+                    <loclocations
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Location"
+                        name="./jcr:loclocations"
+                        xtype="tags"/>
+                </items>
+            </locations>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="dialog"
+    width="900"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                   <contenttype
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Content Type Tag Name Space"
+                        fieldDescription="Add only one Tag"
+                        name="./contenttype"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./contenttype')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="tags"/>
+                    <featuredresources
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Featured Resources"
+                        name="./featuredresources"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="true"
+                            layout="form"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                            <featureditem
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="featureditem"
+                                fieldLabel="Select Featured Resource"
+                                key="featureditem"
+                                name="./featureditem"
+                                xtype="pathfield"/>
+                            <featureditembgimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="featureditembgimage"
+                                fieldLabel="Featured Item Back Ground Image"
+                                key="featureditembgimage"
+                                name="./featureditembgimage"
+                                xtype="pathfield"/>
+                            <featurediconimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="featurediconimage"
+                                fieldLabel="Featured Icon Image"
+                                key="featurediconimage"
+                                name="./featurediconimage"
+                                xtype="pathfield"/>    
+                                <devicefeaturediconimage
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    dname="devicefeaturediconimage"
+                                    fieldLabel="Featured Icon Image For Device"
+                                    key="devicefeaturediconimage"
+                                    name="./devicefeaturediconimage"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </featuredresources>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <type
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Type"
+                        name="./type"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <cyan
+                                jcr:primaryType="nt:unstructured"
+                                text="Cyan"
+                                value="cyan"/>
+                            <dark
+                                jcr:primaryType="nt:unstructured"
+                                text="Dark (Black)"
+                                value="dark"/>
+                            <customdamimage
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom (DAM Image)"
+                                value="customdamimage"/>
+                            <custombkgcolor
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom (Background Color)"
+                                value="custombkgcolor"/>
+                            <red
+                                jcr:primaryType="nt:unstructured"
+                                text="Red"
+                                value="red"/>
+                            <darkyellow
+                                jcr:primaryType="nt:unstructured"
+                                text="Dark Yellow"
+                                value="dyellow"/>
+                            <black
+                                jcr:primaryType="nt:unstructured"
+                                text="Black"
+                                value="black"/>
+                        </options>
+                    </type>
+                    <bannerbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Background Image (If Custom Image selected above.)"
+                        name="./bannerbackgroundimage"
+                        xtype="ddpathfield"/>
+                    <bannerbackgroundmobileimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./bannerbackgroundmobileimage"
+                        xtype="ddpathfield"/>
+                    <colorbackgroundpicker
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Provide Background Image (If Custom Color selected above.)"
+                        name="./colorbackgroundpicker"
+                        xtype="colorfield"/>
+                    <secondaryherotitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hero Title"
+                        name="./secondaryherotitlecontent"
+                        xtype="textfield"/>
+                    <secondaryherosubtitlecontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hero Sub Title"
+                        name="./secondaryherosubtitlecontent"
+                        xtype="textfield"/>
+                    <bannerlinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Link Label"
+                        name="./bannerlinklabel"
+                        xtype="textfield"/>
+                    <bannerlinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Link Target URL"
+                        name="./bannerlinkurl"
+                        xtype="pathfield"/>
+                    <bannertargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./bannertargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <bannerthirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./bannerthirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <secondaryherocontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hero Content"
+                        height="125"
+                        name="./secondaryherocontent"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </secondaryherocontent>
+                    <hexagoniconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hexagon Icon Path"
+                        name="./hexagoniconpath"
+                        xtype="ddpathfield"/>
+                    <hexagoniconpathalt
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hexagon Icon Alt"
+                        name="./hexagoniconpathalt"
+                        xtype="textfield"/>
+                    <hexagontitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hexagon Content Title"
+                        name="./hexagontitle"
+                        xtype="textfield"/>
+                    <hexagoncontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hexagon Content"
+                        name="./hexagoncontent"
+                        xtype="textarea"/>
+                    <secondarylinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hexagon Download Link Target URL"
+                        name="./secondarylinkurl"
+                        xtype="pathfield"/>
+                    <secondarylinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hexagon Download Link Label"
+                        name="./secondarylinklabel"
+                        xtype="textfield"/>
+                    <videoid
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Video ID"
+                        name="./vid"
+                        xtype="textfield"/>
+                    <openoverlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay ?"
+                        name="./voverlay"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <secondaryurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./secondaryurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <secondarycontentalign
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Align Hexagon left and Content on Right ?"
+                        name="./secondarycontentalign"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

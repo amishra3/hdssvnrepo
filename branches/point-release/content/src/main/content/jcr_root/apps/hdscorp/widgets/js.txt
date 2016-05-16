@@ -1,0 +1,17 @@
+#base=source/js
+
+add_multifield_limit.js
+create_namespace.js
+predicates/AuthorizablePredicate.js
+predicates/PathPropertyPredicate.js
+predicates/SelectionPredicate.js
+DDPathField.js
+polyfill_composite_field_processParentRecord.js
+multipanel.js
+check_vanity_path.js
+genericlist.js
+CustomMenuMultiField.js
+CustomCompositeField.js
+CustomMultiField.js
+nestedmultifield.js
+hdscorpvalidations.js

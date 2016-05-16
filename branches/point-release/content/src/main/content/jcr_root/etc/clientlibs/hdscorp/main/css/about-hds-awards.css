@@ -1,0 +1,89 @@
+ .about-hds-awards{
+ 	background: #ffffff none repeat scroll 0 0;
+  padding: 120px 15px 50px;
+  position: relative;
+}
+.about-hds-awards .content-container{
+  padding-left:15px;
+  padding-right:15px;
+}
+.about-hds-awards h2{
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 0;
+}
+
+.award-logo {
+  display:table-cell;
+  margin-right: 25px; padding-right:20px;
+}
+
+@media screen and (max-width: 1024px){
+  .about-hds-awards .content-container{
+    padding: 0;
+  }
+  .pr-explore .pr-explore-container .pr-common-box{
+    min-height: 190px;
+  }
+}
+
+@media screen and (max-width: 991px){
+  .about-hds-awards{
+    padding:220px 0 0;
+  }
+
+  .about-hds-awards .content-container{
+    padding: 0;
+  }
+
+  .about-hds-awards .content-container .pr-search{
+    width:90%;
+    border:2px solid #e6e6e6;
+    min-height: 35px;
+    margin: 32px auto 45px;
+  }
+  .about-hds-awards .pr-search span.glyphicon.glyphicon-search{
+    font-size: 1.5em;
+    top: 6px; right: 6px;
+  }
+
+  .about-hds-awards .pr-search > input {
+      min-height: 35px;
+      font-size: 1rem;
+      padding-right: 40px;
+  }
+
+  .about-hds-awards h2{
+    font-size: 1.375rem;
+    padding: 0 15px;
+  }
+  .award-logo {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .pr-list .pr-list-container.isawardspage .pr-search{
+	 border: 2px solid #e6e6e6; 
+  }	
+  .pr-list .pr-list-container.isawardspage .pr-search > input{
+	  background: transparent;	  
+  }
+  .pr-list .pr-list-container.isawardspage .pr-search span.glyphicon.glyphicon-search{
+	  top: 5px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .award-logo {
+    /*width: 100%;*/
+	padding-right:20px;
+  }
+
+  .about-hds-awards h2{
+    font-size: 1.125rem;
+    padding: 0 15px;
+  }
+}

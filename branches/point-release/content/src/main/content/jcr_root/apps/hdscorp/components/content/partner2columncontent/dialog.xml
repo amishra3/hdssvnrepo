@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Partner 3 Column Content"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Column 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <partnerhelpfulllinkstitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Helpfull Links Title"
+                        name="./partnerhelpfulllinkstitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var partnerhelpfulllinkstitle = dialog.getField('./partnerhelpfulllinkstitle')&#xa; var partnerhelpfulllinkstitlevalue = partnerhelpfulllinkstitle.getValue();&#xa; if($.trim(partnerhelpfulllinkstitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <findpartnericonpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Icon Path"
+                        name="./findpartnericonpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var findpartnericonpath = dialog.getField('./findpartnericonpath')&#xa; var findpartnericonpathvalue = findpartnericonpath.getValue();&#xa; if($.trim(findpartnericonpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <findpartnertitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Column Title"
+                        name="./findpartnertitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var findpartnertitle = dialog.getField('./findpartnertitle')&#xa; var findpartnertitlevalue = findpartnertitle.getValue();&#xa; if($.trim(findpartnertitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <findpartnerurltarget
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Tiltle Target Path"
+                        name="./findpartnerurltarget"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var findpartnerurltarget = dialog.getField('./findpartnerurltarget')&#xa; var findpartnerurltargetvalue = findpartnerurltarget.getValue();&#xa; if($.trim(findpartnerurltargetvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <findpartnerurltype
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Open in New Window"
+                        name="./findpartnerurltype"
+                        type="checkbox"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var findpartnerurltype = dialog.getField('./findpartnerurltype')&#xa; var findpartnerurltypevalue = findpartnerurltype.getValue();&#xa; if($.trim(findpartnerurltypevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="selection"/>
+                    <findpartnercontent
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Column Content"
+                        name="./findpartnercontent"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var findpartnercontent = dialog.getField('./findpartnercontent')&#xa; var findpartnercontentvalue = findpartnercontent.getValue();&#xa; if($.trim(findpartnercontentvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textarea"/>
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./multilinks1"
+                        fieldLabel="Links"
+                        name="./multilinks1"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <findpartnerphonenumber
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Phone Number"
+                                name="./findpartnerphonenumber"
+                                xtype="richtext"/>
+                            <urllabeltab1
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="URL Link Label"
+                                name="./urllabeltab1"
+                                width="{Long}200"
+                                xtype="textfield"/>
+                            <urlltargettab1
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Target URL"
+                                name="./urlltargettab1"
+                                width="{Long}200"
+                                xtype="ddpathfield"/>
+                            <urltype
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Is External Link ?"
+                                name="./urltypetab1"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <no
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="no"/>
+                                    <yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="yes"/>
+                                </options>
+                            </urltype>
+                        </fieldConfig>
+                    </multilinks>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Column 2 ">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <alredypartnericonpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Icon Path"
+                        name="./alredypartnericonpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var alredypartnericonpath = dialog.getField('./alredypartnericonpath')&#xa; var alredypartnericonpathvalue = alredypartnericonpath.getValue();&#xa; if($.trim(alredypartnericonpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <alredypartnerrtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Column Title"
+                        name="./alredypartnerrtitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var alredypartnerrtitle = dialog.getField('./alredypartnerrtitle')&#xa; var alredypartnerrtitlevalue = alredypartnerrtitle.getValue();&#xa; if($.trim(alredypartnerrtitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <alredypartnerurltarget
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title Target Path"
+                        name="./alredypartnerurltarget"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var alredypartnerurltarget = dialog.getField('./alredypartnerurltarget')&#xa; var alredypartnerurltargetvalue = alredypartnerurltarget.getValue();&#xa; if($.trim(alredypartnerurltargetvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <alredypartnerrurltype
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Open in New Window"
+                        name="./alredypartnerrurltype"
+                        type="checkbox"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var alredypartnerrurltype = dialog.getField('./alredypartnerrurltype')&#xa; var alredypartnerrurltypevalue = alredypartnerrurltype.getValue();&#xa; if($.trim(alredypartnerrurltypevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="selection"/>
+                    <alredypartnercontent
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Banner Content"
+                        name="./alredypartnercontent"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var alredypartnercontent = dialog.getField('./alredypartnercontent')&#xa; var alredypartnercontentvalue = alredypartnercontent.getValue();&#xa; if($.trim(alredypartnercontentvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textarea"/>
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./multilinks2"
+                        fieldLabel="Links"
+                        name="./multilinks2"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <alredypartnerphonenumber
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Phone Number"
+                                name="./alredypartnerphonenumber"
+                                xtype="richtext"/>
+                            <urllabeltab2
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="URL Link Label"
+                                name="./urllabeltab2"
+                                width="{Long}200"
+                                xtype="textfield"/>
+                            <urlltargettab2
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Target URL"
+                                name="./urlltargettab2"
+                                width="{Long}200"
+                                xtype="ddpathfield"/>
+                            <urltypetab2
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Is External Link ?"
+                                name="./urltypetab2"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <no
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="no"/>
+                                    <yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="yes"/>
+                                </options>
+                            </urltypetab2>
+                        </fieldConfig>
+                    </multilinks>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>

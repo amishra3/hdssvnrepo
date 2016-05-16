@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Panel"
+    title="Manual ID">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <id
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Manual ID:"
+            name="./id"
+            xtype="textfield"/>
+        <class
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Manual css class:"
+            name="./class"
+            xtype="textfield"/>
+        <isaccordincontainer
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Is this tabbed accordin content container ?"
+            name="./isaccordincontainer"
+            type="checkbox"
+            xtype="selection"/>
+        <mobileaccordinsectiontitle
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Mobile Accordin Section Title"
+            name="./mobileaccordinsectiontitle"
+            xtype="textfield"/>
+        <accordincontentsectionnumber
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Accordin Content Section Number"
+            name="./accordincontentsectionnumber"
+            xtype="textfield"/>
+    </items>
+</jcr:root>

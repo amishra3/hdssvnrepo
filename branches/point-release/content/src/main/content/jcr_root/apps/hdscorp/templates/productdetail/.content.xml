@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="This is the template for creating Product Detail pages."
+    jcr:primaryType="cq:Template"
+    jcr:title="Product Detail Template"
+    ranking="{Long}4">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="hdscorp/components/page/productdetail">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <productdetailbanner
+                jcr:created="{Date}2015-12-09T00:03:02.640-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-16T19:30:33.883-08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/banners/productdetailbanner"
+                simplebannerbuttonurl="#"
+                simplebannercontent="&lt;p>Hero&amp;nbsp;&lt;b>SUB-HEADLINE&amp;nbsp;-&lt;/b>Short and compelling subhead about storage&lt;br>&#xa;product or solution goes here. Short and compelling subhead.&lt;/p>&#xa;"
+                simplebannerimageoverlaypath="/content/dam/hdscorp/en_us/productdetail/servers.png"
+                simplebannerimageoverlayRotate2="0"
+                simplebannerlinkurl="#"
+                simplebannerlinkurltargettype="true"
+                simplebannermagePath="/content/dam/hdscorp/en_us/productdetail/hero-product-solutions.jpg"
+                simplebannermageRotate2="0"
+                simplebannersubtitle="INTRODUCTORY VALUE PROP HEADLINE (H3)"
+                simplebannertitle="Product / solution name&lt;br/> \u0003goes here (hero H1)"
+                simplebannerusevideomodal="true"
+                simplebannervideoembedcode="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ZTLAx3VDX7g&quot; frameborder=&quot;0&quot; allowfullscreen>&lt;/iframe>"
+                simpllebannerbuttonlabel="Request Info"
+                simpllebannerlinklabel=" BUY THROUGH A PARTNER"/>
+            <accordin
+                jcr:created="{Date}2015-12-10T00:15:42.958-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-13T17:49:03.402-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/accordin"
+                defaultactivetab="true"
+                multilinks="4"
+                tabAnchor="[overview,features-benefits,resources,tech-specifications]"
+                tabName="[Overview,Advantages,Resources,Specifications]"/>
+            <manual_id_wrapper
+                jcr:created="{Date}2015-12-13T11:24:00.009-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-13T11:32:09.966-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/manual-id-wrapper"
+                id="overview">
+                <wrapper-parsys
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/parsys">
+                    <productdetailhexagon
+                        jcr:created="{Date}2015-12-13T13:11:34.936-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-16T16:51:35.237-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/banners/productdetailhexagonbanner"
+                        hexagoncontent="Subhead. Text about featured related content will go here and be very compelling to the user."
+                        hexagontitle="Featured related content headline goes here"
+                        secondaryherocontent="&lt;ul>&#xa;&lt;li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium&lt;/li>&#xa;&lt;li>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit&lt;/li>&#xa;&lt;li>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur&lt;/li>&#xa;&lt;/ul>&#xa;"
+                        secondaryherosubtitlecontent="SHORT COMPELLING SUBHEAD ABOUT BUSINESS"
+                        secondaryherotitlecontent="Business specific benefittt"
+                        secondarylinklabel="Downloaddd"
+                        secondarylinkurl="#"
+                        type="cyan">
+                        <secondaryimagePath jcr:primaryType="nt:unstructured"/>
+                        <secondimage
+                            jcr:primaryType="nt:unstructured"
+                            imageRotate="0"/>
+                    </productdetailhexagon>
+                    <quotebanner
+                        jcr:created="{Date}2015-12-13T17:09:06.795-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-13T17:16:52.789-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/banners/quotebanner"
+                        quoteauthor="- Jean-Luc Picard, USS Enterprise, Starfleet Command"
+                        quotecontent="We could not be happier with HDS. They've been responsive, rock-solid, and they have proven to live up to their stellar reputation. A compelling customer quote can go here and will be a couple lines long."
+                        quoteheroimage="/content/dam/hdscorp/en_us/productdetail/hero-specific-quote.jpg">
+                        <quoteheroimagePath jcr:primaryType="nt:unstructured"/>
+                        <quoteheroimage
+                            jcr:primaryType="nt:unstructured"
+                            imageRotate="0"/>
+                    </quotebanner>
+                    <productdetailhexagon_1403630432
+                        jcr:created="{Date}2015-12-13T17:26:15.493-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-13T17:29:07.880-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/banners/productdetailhexagonbanner"
+                        hexagoncontent="Subhead. Text about featured related content will go here and be very compelling to the user."
+                        hexagontitle="Featured related content headline goes here"
+                        secondarycontentalign="true"
+                        secondaryherocontent="&lt;ul>&#xa;&lt;li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium&lt;/li>&#xa;&lt;li>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit&lt;/li>&#xa;&lt;li>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur&lt;/li>&#xa;&lt;/ul>&#xa;"
+                        secondaryherosubtitlecontent="SHORT COMPELLING SUBHEAD ABOUT BUSINESS"
+                        secondaryherotitlecontent="Technology specific benefit"
+                        secondarylinklabel="Download"
+                        secondarylinkurl="/content/hdscorp/en_us/home"
+                        type="dark"/>
+                </wrapper-parsys>
+            </manual_id_wrapper>
+            <manual_id_wrapper_431501962
+                jcr:created="{Date}2015-12-13T17:46:58.754-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-13T17:47:25.685-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/manual-id-wrapper"
+                class="fb-section"
+                id="features-benefits">
+                <wrapper-parsys
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/parsys">
+                    <productdetailcontent
+                        jcr:created="{Date}2015-12-14T19:34:02.329-08:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-14T19:43:43.370-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/productdetailcontent"
+                        contensubttitle="Benefit Headline. Sleep soundly at night knowing that your network is protected by an army of T-1000’s controlled."
+                        contenttitle="migration &amp; scalability"
+                        sectiontitle="Advantages">
+                        <columncontentpar
+                            jcr:lastModified="{Date}2015-12-14T19:53:05.206-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/column-control"
+                            columns="[33,34,33]">
+                            <par1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T19:55:14.167-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T19:55:44.909-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Extends the useful life of existing assets. The and reduces migration pains, costs, and risk when moving from legacy Hitachi or 3rd party Klingon disruptor devices."
+                                    columntitle="External SAN storage virtualization capability"/>
+                            </par1>
+                            <par2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T19:56:11.003-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T19:56:43.435-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Proven scalability that outperforms other to an and enterprise-class systems and risk when moving from legacy Hitachi or 3rd party the an lightsaber devices."
+                                    columntitle="896 GB/sec aggregate internal things bandwidth 7th generation Hi-Star crossbar switch-based architectures"/>
+                            </par2>
+                            <par3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T19:56:18.115-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T19:57:02.801-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Extreme scalability for large database things processing and the highest virtual machine an technology density words, words, and words"
+                                    columntitle="Up to 8 virtual storage director pairs"/>
+                            </par3>
+                        </columncontentpar>
+                    </productdetailcontent>
+                    <productdetailcontent_547436408
+                        jcr:created="{Date}2015-12-14T21:33:35.298-08:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-14T21:34:04.362-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/productdetailcontent"
+                        contensubttitle="Benefit Headline. The Force is strong with this product."
+                        contenttitle="PERFORMANCE">
+                        <columncontentpar
+                            jcr:lastModified="{Date}2015-12-14T21:34:36.246-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/column-control"
+                            columns="[25,25,25,25]">
+                            <par1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T21:34:46.101-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T21:35:01.235-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Leading performance with 2GB/sec and throughout per node for sequential and of workloads and up to 1.2 million NFS for operations per second."
+                                    columntitle="Hitachi NAS hardware-accelerated network protocols and things and such"/>
+                            </par1>
+                            <par2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T21:35:22.264-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T21:35:43.010-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Workload acceleration and improved quality of service."
+                                    columntitle="Up to 2TB global cache of some dynamically accessible by all connected hosts and Hitachi"/>
+                            </par2>
+                            <par3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T21:35:27.510-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T21:36:01.697-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Up to 90% capacity savings while at their maintaining high-performance."
+                                    columntitle="Hitachi NAS Platform nodes provide primary data duplication using hardware-based SHA-256 calculation engines"/>
+                            </par3>
+                            <par4
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T21:35:33.224-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T21:36:15.700-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Improved capacity utilization efficiency of with writeable snapshots."
+                                    columntitle="Unlimited file clones"/>
+                            </par4>
+                        </columncontentpar>
+                    </productdetailcontent_547436408>
+                    <productdetailcontent_1759505459
+                        jcr:created="{Date}2015-12-14T22:20:58.659-08:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-14T22:21:17.647-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/productdetailcontent"
+                        contensubttitle="Benefit Headline. The Autobots thank HDS for this technology which allows them to communicate with each other with ease."
+                        contenttitle="CONNECTIVITY">
+                        <columncontentpar
+                            jcr:lastModified="{Date}2015-12-14T22:21:34.300-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/column-control"
+                            columns="[50,50]">
+                            <par1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T22:21:43.131-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T22:22:03.791-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Unmatched multiplatform connectivity.&#xa;"
+                                    columntitle="Up to 192 Fibre Channel 8GB/sec or 96 Fibre Channel 16GB/sec host ports or 176 IBM FICON 8GB/sec host ports of 192 Fibre Channel over Ethernet (FCoE) host ports and 4x10GB ethernet per file module"/>
+                            </par1>
+                            <par2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailcolumco
+                                    jcr:created="{Date}2015-12-14T22:21:49.438-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-14T22:22:20.042-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailcolumcontent"
+                                    columncontent="Expanded connectivity by way of Vulcan mindmeld with Mr. Spock.&#xa;"
+                                    columntitle="Another headline. Virtual SAN ports (host groups) management"/>
+                            </par2>
+                        </columncontentpar>
+                    </productdetailcontent_1759505459>
+                </wrapper-parsys>
+            </manual_id_wrapper_431501962>
+            <manual_id_wrapper_501541815
+                jcr:created="{Date}2015-12-15T11:14:48.442-08:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-15T11:21:17.447-08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/manual-id-wrapper"
+                class="resources-section"
+                id="resources">
+                <wrapper-parsys
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/parsys">
+                    <productdetailresourc
+                        jcr:created="{Date}2015-12-15T11:20:28.978-08:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-15T11:23:12.761-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/productdetailresourcescontent"
+                        sectiontitle="Resources">
+                        <columnresourcecontentpar
+                            jcr:lastModified="{Date}2015-12-15T11:33:28.734-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/column-control"
+                            columns="[33,34,33]">
+                            <par1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailvertica
+                                    jcr:created="{Date}2015-12-15T11:33:42.495-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-15T14:44:22.438-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailverticalcolums"
+                                    columncontent="[Extends the useful life of existing assets. Reduces migration pains\, costs\, and risk when moving from legacy Hitachi or 3rd...,Extends the useful life of existing assets. Reduces migration pains\, costs\, and risk when moving from legacy Hitachi or 3rd...]"
+                                    columntitle="SUBSPACE HARMONICS"
+                                    contenticonpath="[/content/dam/hdscorp/en_us/icons/icon-content-type.png,/content/dam/hdscorp/en_us/icons/icon-video-play.png]"
+                                    contenttitle="[Content type,Video]"
+                                    multilinks="2"
+                                    seemorelabel="[See More,See More 2]"
+                                    seemoreopeninnew="[true,true]"
+                                    seemoretargeturl="[/content/hdscorp/en_us/home,/content/hdscorp/en_us/home]"/>
+                            </par1>
+                            <par2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailvertica
+                                    jcr:created="{Date}2015-12-15T11:33:49.802-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-15T21:59:34.358-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailverticalcolums"
+                                    columncontent="[Extends the useful life of existing assets. Reduces migration pains\, costs\, and risk when moving from legacy Hitachi or 3rd...,Extends the useful life of existing assets. Reduces migration pains\, costs\, and risk when moving from legacy Hitachi or 3rd...]"
+                                    columntitle="LIGHTSABER DESIGN"
+                                    contenticonpath="[/content/dam/hdscorp/en_us/icons/icon-white-paper.png,/content/dam/hdscorp/en_us/icons/icon-white-paper.png]"
+                                    contenttitle="[White paper,Video]"
+                                    multilinks="2"
+                                    seemorelabel="[See More,See More]"
+                                    seemoretargeturl="[/content/hdscorp/en_us/home,/content/hdscorp/en_us/home]"/>
+                            </par2>
+                            <par3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <productdetailvertica
+                                    jcr:created="{Date}2015-12-15T11:33:54.420-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-15T22:05:13.839-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/productdetailverticalcolums"
+                                    columncontent="[Extends the useful life of existing assets. Reduces migration pains\, costs\, and risk when moving from legacy Hitachi or 3rd...,Extends the useful life of existing assets. Reduces migration pains\, costs\, and risk when moving from legacy Hitachi or 3rd...]"
+                                    columntitle="POSITRONIC DATA STORAGE"
+                                    contenticonpath="[http://localhost:4502/content/dam/hdscorp/en_us/icons/icon-content-type.png,http://localhost:4502/content/dam/hdscorp/en_us/icons/icon-content-type.png]"
+                                    contenttitle="[Blog post,Video]"
+                                    multilinks="2"
+                                    seemorelabel="[See more,See More]"
+                                    seemoretargeturl="[/content/hdscorp/en_us/home,/content/hdscorp/en_us/home]"/>
+                            </par3>
+                        </columnresourcecontentpar>
+                        <resourctatpar
+                            jcr:lastModified="{Date}2015-12-15T22:15:40.364-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/column-control"
+                            columns="[50,50]">
+                            <par1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <ctabutton
+                                    jcr:created="{Date}2015-12-15T22:15:58.941-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-15T22:38:53.148-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="See all related resources"
+                                    ctatargeturl="/content/hdscorp/en_us/contactus"/>
+                            </par1>
+                            <par2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <ctabutton
+                                    jcr:created="{Date}2015-12-15T22:16:05.880-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-15T22:39:19.536-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="Customer &amp; login for support resources"
+                                    ctatargeturl="/content/hdscorp/en_us/newsandinsights"/>
+                            </par2>
+                        </resourctatpar>
+                    </productdetailresourc>
+                    <customerstoriesbanne
+                        jcr:created="{Date}2015-12-16T08:09:25.409-08:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-16T22:54:22.789-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/banners/customerstoriesbanner"
+                        contentsectioniconimagepath="/content/dam/hdscorp/en_us/productdetail/prod-sol-cs-highlight-logo.png"
+                        customerinfotext="HARDWARE: Dell Servers  |  SOFTWARE: Hitachi Content Archive Platform (Hitachi Content Archiver software only)"
+                        customerstatementauthortext="– Buzz Lightyear, Star Command, NASA"
+                        customerstatementtext="We could not be happier with HDS. They’ve been responsive, rock-solid, and they have proven to live up to their stellar reputation. A compelling customer quote can go here and will be a couple lines long."
+                        customerstoriessectiontitle="READ CUSTOMER STORIES FOR THIS AWESOME PRODUCT"
+                        readasestudylinktargeturl="#"
+                        readcasestudylinktext="READ CASE STUDY"
+                        storiesbannerimageRotate2="0"
+                        storiesbannermagePath="/content/dam/hdscorp/en_us/productdetail/prod-sol-bg-cs.jpg"
+                        storiesbannermagePathReference="/content/dam/hdscorp/en_us/productdetail/prod-sol-bg-cs.png"
+                        viewallctaopeninnew="true"
+                        viewallctatargeturl="#"
+                        viewallctatext="view all case studies">
+                        <columncontentpar
+                            jcr:lastModified="{Date}2015-12-16T15:34:44.995-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/column-control"
+                            columns="[33,34,33]">
+                            <par1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <ctabutton
+                                    jcr:created="{Date}2015-12-16T15:34:54.737-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-16T16:16:32.417-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="Case Study 01"
+                                    ctatargeturl="#"
+                                    hidectaarrow="on"/>
+                                <ctabutton_1630765780
+                                    jcr:created="{Date}2015-12-16T15:36:10.218-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-16T16:16:23.309-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="Case Study 04"
+                                    ctatargeturl="/content/hdscorp/en_us/services"
+                                    hidectaarrow="on"/>
+                            </par1>
+                            <par2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <ctabutton
+                                    jcr:created="{Date}2015-12-16T15:35:00.579-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-16T16:16:48.384-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="Case Study 02"
+                                    ctatargeturl="/content/hdscorp/en_us/services"
+                                    hidectaarrow="on"/>
+                                <ctabutton_355708193
+                                    jcr:created="{Date}2015-12-16T15:36:49.745-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-16T16:16:39.755-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="Case Study 05"
+                                    ctatargeturl="/content/hdscorp/en_us/abouthds"
+                                    hidectaarrow="on"/>
+                            </par2>
+                            <par3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="foundation/components/parsys">
+                                <ctabutton
+                                    jcr:created="{Date}2015-12-16T15:35:05.952-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-16T16:17:05.307-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="Case Study 03"
+                                    ctatargeturl="#"
+                                    hidectaarrow="on"/>
+                                <ctabutton_1254417138
+                                    jcr:created="{Date}2015-12-16T15:36:57.550-08:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2015-12-16T16:16:57.294-08:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="hdscorp/components/content/ctabutton"
+                                    ctalabel="Case Study 06"
+                                    ctatargeturl="/content/hdscorp/en_us/abouthds"
+                                    hidectaarrow="on"/>
+                            </par3>
+                        </columncontentpar>
+                    </customerstoriesbanne>
+                </wrapper-parsys>
+            </manual_id_wrapper_501541815>
+            <manual_id_wrapper_813859474
+                jcr:created="{Date}2015-12-16T19:49:38.343-08:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-16T19:49:51.650-08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/manual-id-wrapper"
+                class="spec-section"
+                id="tech-specifications">
+                <wrapper-parsys
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/parsys">
+                    <productdetailspecifi
+                        jcr:created="{Date}2015-12-16T19:51:06.232-08:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2015-12-16T20:08:59.133-08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="hdscorp/components/content/productdetailspecification"
+                        downloadspecctalabel="download specs pdf "
+                        downloadspecctaopeninnew="true"
+                        downloadspecctatargeturl="#"
+                        downloadspeclinklabel="download specs pdf "
+                        downloadspectargeturl="#"
+                        sectiontitle="Specifications">
+                        <techspecpar
+                            jcr:lastModified="{Date}2015-12-17T16:50:49.459-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailtechspecs"
+                            techspecdata="[Maximum Number of Hard Drives\, including Spares|| G200 ~! 264 SFF &lt;br/> 252 LFF\, G200 ~! 264 SFF &lt;br/> 252 LFF\, G200 ~! 264 SFF &lt;br/> 252 LFF,Maximum Number of Hard Drives\, including Spares|| G200 ~! 264 SFF &lt;br/> 252 LFF\, G200 ~! 264 SFF &lt;br/> 252 LFF\, G200 ~! 264 SFF &lt;br/> 252 LFF]"/>
+                        <techspeccontentpar
+                            jcr:lastModified="{Date}2015-12-18T15:11:18.564-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailtechspecaccordincontent"
+                            accordinsectiontitle="VIRTUAL STORAGE PLATFORM SERIES AVAILABLE MAINFRAME SOFTWARE PRODUCTS"
+                            linkName="[Storage and Data Management: Operating System Products,Storage and Data Management: Data Mobility]"
+                            multilinks="4">
+                            <accordincontentpar_0
+                                jcr:lastModified="{Date}2015-12-18T22:35:55.957-05:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="hdscorp/components/content/productdetailtechspecaccordininnercontent"
+                                definitions="[{&quot;contenttitle&quot;:&quot;Hitachi Storage Virtualization Operating System(SVOS)&quot;\,&quot;downloadlinklabel&quot;:&quot;DOWNLOAD SOFTWARE&quot;\,&quot;downloadtargeturl&quot;:&quot;/content/hdscorp/en_us/contactus&quot;\,&quot;emailinformationlabel&quot;:&quot;EMAIL SOFTWARE INFORMATION&quot;\,&quot;sectioncontent&quot;:&quot;&lt;p>SVOS offers system management and advanced storage system functions such as storage virtualization\, thin provisioning\, storage service-level controls and performance instrumentation across multiple storage platforms.&lt;/p>\\n&lt;p>For mainframe storage\, SVOS includes Hitachi Device Manager\, Hitachi Storage Navigator\, Hitachi Dynamic Provisioning for Mainframe\, Hitachi Universal Voume Manager\, Hitachi Virtual Partition Manager\, Hitachi Resource Partition Manager\, Hitachi Data Retention Utility\, performance monitor feature\, volume shredder feature\, LUN manager\, Hitachi Volume Retention\, cache residency manager for mainframe feature\, RAIDCOMN\, Java API\, CCI\, SMI=-S provider and SNMP agent.&lt;/p>\\n&quot;},{&quot;contenttitle&quot;:&quot;Hitachi Storage Virtualization Operating System(SVOS)&quot;\,&quot;downloadlinklabel&quot;:&quot;DOWNLOAD SOFTWARE&quot;\,&quot;downloadtargeturl&quot;:&quot;/content/hdscorp/en_us/contactus&quot;\,&quot;emailinformationlabel&quot;:&quot;EMAIL SOFTWARE INFORMATION&quot;\,&quot;sectioncontent&quot;:&quot;&lt;p>SVOS offers system management and advanced storage system functions such as storage virtualization\, thin provisioning\, storage service-level controls and performance instrumentation across multiple storage platforms.&lt;/p>\\n&lt;p>For mainframe storage\, SVOS includes Hitachi Device Manager\, Hitachi Storage Navigator\, Hitachi Dynamic Provisioning for Mainframe\, Hitachi Universal Voume Manager\, Hitachi Virtual Partition Manager\, Hitachi Resource Partition Manager\, Hitachi Data Retention Utility\, performance monitor feature\, volume shredder feature\, LUN manager\, Hitachi Volume Retention\, cache residency manager for mainframe feature\, RAIDCOMN\, Java API\, CCI\, SMI=-S provider and SNMP agent.&lt;/p>\\n&quot;}]"/>
+                            <accordincontentpar_1
+                                jcr:lastModified="{Date}2015-12-18T15:10:53.838-05:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="hdscorp/components/content/productdetailtechspecaccordininnercontent"
+                                definitions="\{&quot;contenttitle&quot;:&quot;Hitachi Storage Virtualization Operating System(SVOS)&quot;,&quot;downloadlinklabel&quot;:&quot;DOWNLOAD SOFTWARE&quot;,&quot;downloadtargeturl&quot;:&quot;&quot;,&quot;emailinformationlabel&quot;:&quot;EMAIL SOFTWARE INFORMATION&quot;,&quot;sectioncontent&quot;:&quot;&lt;p>SVOS offers system management and advanced storage system functions such as storage virtualization, thin provisioning, storage service-level controls and performance instrumentation across multiple storage platforms.&lt;/p>\\n&lt;p>For mainframe storage, SVOS includes Hitachi Device Manager, Hitachi Storage Navigator, Hitachi Dynamic Provisioning for Mainframe, Hitachi Universal Voume Manager, Hitachi Virtual Partition Manager, Hitachi Resource Partition Manager, Hitachi Data Retention Utility, performance monitor feature, volume shredder feature, LUN manager, Hitachi Volume Retention, cache residency manager for mainframe feature, RAIDCOMN, Java API, CCI, SMI=-S provider and SNMP agent.&lt;/p>\\n&quot;}"/>
+                        </techspeccontentpar>
+                    </productdetailspecifi>
+                </wrapper-parsys>
+            </manual_id_wrapper_813859474>
+            <productdetailcommuni
+                jcr:created="{Date}2015-12-16T21:49:58.865-08:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-16T21:54:36.957-08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/productdetailcommunitycontainer"
+                sectiontitle="HDS Community">
+                <communitycontentpar
+                    jcr:lastModified="{Date}2015-12-16T21:54:53.812-08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="hdscorp/components/content/column-control"
+                    columns="[50,50]">
+                    <par1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <productdetailcommuni
+                            jcr:created="{Date}2015-12-16T22:08:59.160-08:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2015-12-16T22:12:26.790-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailcommunitytile"
+                            articleurl="#"
+                            articleurllabel="READ THE BLOG"
+                            columncontent="Big data analytics involves the processing of large amounts of heterogeneous data derived from multiple sources and across multiple knowledge domains."
+                            columntitle="Can a Machine Really Think?"
+                            communitybannermagePath="/content/dam/hdscorp/en_us/productdetail/hds-community-train.jpg"
+                            communitybannermageRotate2="0"/>
+                    </par1>
+                    <par2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <productdetailcommuni
+                            jcr:created="{Date}2015-12-16T22:09:28.619-08:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2015-12-16T22:14:31.338-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailcommunitytile"
+                            articleurl="#"
+                            articleurllabel="Read the blog"
+                            articleurlopeninnew="true"
+                            columncontent="Make cities smarter and safer with actionable insights \u0003and predictions. Enable this by bringing together data sources in their original state which can then be analyzed by applications."
+                            columntitle="IT Trends That Matter for 2016"
+                            communitybannermagePath="/content/dam/hdscorp/en_us/productdetail/hds-community-city.jpg"
+                            communitybannermageRotate2="0"/>
+                    </par2>
+                </communitycontentpar>
+            </productdetailcommuni>
+            <productdetailmorepro
+                jcr:created="{Date}2015-12-16T22:23:46.858-08:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-16T22:25:55.164-08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/productdetailmoreproductcontainer"
+                sectiontitle="MORE ENTERPRISE STORAGE">
+                <communitycontentpar
+                    jcr:lastModified="{Date}2015-12-16T22:27:28.940-08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="hdscorp/components/content/column-control"
+                    columns="[50,50]">
+                    <par1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <productdetailmorepro
+                            jcr:created="{Date}2015-12-16T22:32:28.194-08:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2015-12-16T22:33:17.442-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailmoreproducttile"
+                            articleurl="#"
+                            articleurllabel="SEE MORE "
+                            articleurlopeninnew="true"
+                            columncontent="At vero eos et accusamus et iusto odio dignissimos ducimus blandit praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias."
+                            columntitle="Suggested Product / Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque"/>
+                        <productdetailmorepro_1437895680
+                            jcr:created="{Date}2015-12-16T22:34:01.114-08:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2015-12-16T22:34:45.636-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailmoreproducttile"
+                            articleurl="#"
+                            articleurllabel="SEE MORE"
+                            columncontent="At vero eos et accusamus et iusto odio dignissimos ducimus blandit praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias."
+                            columntitle="Suggested Product / Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque"/>
+                    </par1>
+                    <par2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <productdetailmorepro
+                            jcr:created="{Date}2015-12-16T22:32:45.099-08:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2015-12-16T22:33:46.173-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailmoreproducttile"
+                            articleurl="#"
+                            articleurllabel="SEE MORE "
+                            columncontent="At vero eos et accusamus et iusto odio dignissimos ducimus blandit praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias"
+                            columntitle="Suggested Product / Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque"/>
+                        <productdetailmorepro_314399278
+                            jcr:created="{Date}2015-12-16T22:34:11.898-08:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2015-12-16T22:35:12.442-08:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailmoreproducttile"
+                            articleurl="#"
+                            articleurllabel="SEE MORE"
+                            columncontent="At vero eos et accusamus et iusto odio dignissimos ducimus blandit praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias."
+                            columntitle="Suggested Product / Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque"/>
+                    </par2>
+                </communitycontentpar>
+            </productdetailmorepro>
+        </par>
+    </jcr:content>
+</jcr:root>

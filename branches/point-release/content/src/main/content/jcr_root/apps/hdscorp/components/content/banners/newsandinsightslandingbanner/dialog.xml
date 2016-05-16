@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <newsandinsightsbannertitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="News and insights Title"
+                        name="./newsandinsightsbannertitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsandinsightsbannertitle = dialog.getField('./newsandinsightsbannertitle')&#xa; var newsandinsightsbannertitlevalue = newsandinsightsbannertitle.getValue();&#xa; if($.trim(newsandinsightsbannertitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <newsandinsightsbannersubtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="News and insights Sub Title Content"
+                        name="./newsandinsightsbannersubtitle"
+                        xtype="textfield"/>
+                    <newsinsigthsbannerimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="./imagePath3/imageCrop2"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:imagePath3"
+                        height="{Long}200"
+                        name="./newsinsigthsbannerimage"
+                        rotateParameter="./imagePath3/imageRotate2"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./newsandinsightsbannermobileimage"
+                        xtype="ddpathfield"/>
+                    <newsandinsightsbannercontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Content"
+                        name="./newsandinsightsbannercontent"
+                        xtype="richtext">
+                        <rtePlugins
+                            jcr:primaryType="nt:unstructured"
+                            path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
+                            xtype="cqinclude"/>
+                    </newsandinsightsbannercontent>
+                    <newsandinsightsbannerbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./newsandinsightsbannerbuttonlabel"
+                        xtype="textfield"/>
+                    <newsandinsightsbannerbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./newsandinsightsbannerbuttonurl"
+                        xtype="pathfield"/>
+                    <newsandinsightsbannerurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./newsandinsightsbannerurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                                            <newsandinsightsbannerlinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Label"
+                        name="./newsandinsightsbannerlinklabel"
+                        xtype="textfield"/>
+                    <newsandinsightsbannerlinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Target URL"
+                        name="./newsandinsightsbannerlinkurl"
+                        xtype="pathfield"/>
+                    <newsandinsightslinkurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open link in New Window ?"
+                        name="./newsandinsightslinkurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

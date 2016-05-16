@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Title Section">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the Subcategory title."
+                        fieldLabel="Subcategory Title"
+                        name="./subcategorytitle"
+                        xtype="textfield"/>
+                    <subcategorytitlesubtext
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the title sub-text."
+                        fieldLabel="Subcategory Title Sub Text"
+                        name="./subcategorytitlesubtext"
+                        xtype="textarea"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Banner Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the Banner title."
+                        fieldLabel="Subcategory Title"
+                        name="./subcategorybannertitle"
+                        xtype="textfield"/>
+                    <subcategorytitlesubtext
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the title sub-text."
+                        fieldLabel="Subcategory Banner Sub Text"
+                        name="./subcategorybanneresubtext"
+                        xtype="textarea"/>
+                    <imagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Image Path"
+                        name="./subcatimagePath"
+                        xtype="pathfield"/>
+                    <subcatbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./subcatbuttonurl"
+                        xtype="pathfield"/>
+                    <subcatbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./subcatbuttonlabel"
+                        xtype="textfield"/>
+                    <subcatbuttonurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./subcatbuttonurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <overlay
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open video overlay?"
+                        name="./voverlay"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <subcatcontentalign
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Align Content on Left and Image on Right ?"
+                        name="./subcatcontentalign"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab2>
+            <tab3
+                jcr:primaryType="cq:Panel"
+                title="Product Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <subcattags
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Please select tags applicable to this sub-category."
+                        name="./subcattags"
+                        xtype="tags"/>
+                    <subcatproductviewlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Product View Link Label"
+                        name="./subcatproductviewlabel"
+                        xtype="textfield"/>
+                    <desctags
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Please select only one tag for the product description"
+                        fieldLabel="Please select tag for the product description"
+                        name="./desctags"
+                        xtype="tags"/>
+                    <lookuTemplates
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Default - /apps/hdscorp/templates/productdetail,/apps/hdscorp/templates/servicedetail"
+                        fieldLabel="Comma Delimited Value of LookupTemplates "
+                        name="./lookuTemplates"
+                        xtype="textfield"/>
+                    <lookupPathFields
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Defaults are - /content/hdscorp/en_us/products-solutions,/content/hdscorp/en_us/services"
+                        fieldLabel="These are the Search Lookup Paths"
+                        name="./lookupPathFields"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <elabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Search Lookup Path"
+                                    key="lookupPaths"
+                                    name="./lookupPaths"
+                                    width="300"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </lookupPathFields>
+                </items>
+            </tab3>
+        </items>
+    </items>
+</jcr:root>

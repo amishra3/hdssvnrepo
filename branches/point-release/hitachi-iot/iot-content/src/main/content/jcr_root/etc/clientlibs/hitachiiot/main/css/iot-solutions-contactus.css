@@ -1,0 +1,46 @@
+.solutions.footer {
+  overflow: auto;
+  background: transparent;
+  padding: 0 0 40px 0;
+}
+
+.solutions.footer .footer-blue {
+  display: block;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+
+.solutions.footer .footer-blue .talk {
+  text-transform: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.solutions.footer .footer-blue .buttons {
+  top: 0px;
+}
+
+.solutions.footer .footer-blue .buttons .information:hover,
+.solutions.footer .footer-blue .buttons .information:focus, 
+.solutions.footer .footer-blue .buttons .information:active {
+  text-decoration: none;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+  .solutions.footer .footer-blue .buttons .information {
+    width: 100%;
+	margin-bottom: 30px;                            
+  }
+
+  .solutions.footer .footer-blue .talk,
+  .solutions.footer .footer-blue .call {
+    text-transform: none;
+    display: block;
+    margin-bottom: 1.5em;
+  }
+
+}

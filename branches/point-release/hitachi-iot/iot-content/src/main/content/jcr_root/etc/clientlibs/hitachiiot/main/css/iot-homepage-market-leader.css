@@ -1,0 +1,151 @@
+.home-page.market-leader {
+  background: #ffffff;
+  padding: 0 15px;
+}
+
+.home-page.market-leader .market-leader-container {
+  position: relative;
+  text-align: center;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-image {
+  margin-top: 17.5%;
+  height: 275px;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-image-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;                
+}
+
+.home-page.market-leader .market-leader-container .market-leader-image img {
+  vertical-align: middle;
+  max-height: 75px;
+  max-width: 75px;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content {
+  margin: 10% 0;
+  text-align: left;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content h2 {
+  margin-bottom: 30px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 3em;
+  line-height: 1;
+  color: #000000;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content p {
+  margin-bottom: 20px;
+  font-family: 'museo-sans', Arial, sans-serif;
+  font-weight: 100;
+  font-size: 1.125em;
+  line-height: 1;
+  color: #000000;
+  line-height: 175%;
+  padding-right: 10%;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red,
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red:focus,
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red:active {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  color: #ce0000;
+  text-decoration: none;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.home-page.market-leader .market-leader-container .market-leader-content .btn-square-red:hover {
+  background-color: #ce0000;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner {
+  display: none;
+  margin: 15% 0;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner iframe {
+  max-width: 100%;
+  width: 70%;
+  min-height: 500px;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner .close-hero {
+  position: absolute;
+  top: -25px;
+  right: 0;
+}
+
+.home-page.market-leader .market-leader-container .common-hero-banner .close-hero .icon-close {
+  background-image: url(../images/sprite.png);
+  background-position: -358px -194px;
+  width: 18px;
+  height: 18px;
+}
+
+
+
+@media only screen and (max-width: 992px) {
+  .home-page.market-leader .market-leader-container .market-leader-content {
+    margin: 0 0 10%;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content h2 {
+    font-size: 1.875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content p {
+    font-size: 0.875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-image {
+    margin: 10% 0 5%;
+  }
+}            
+
+
+
+@media only screen and (max-width: 768px) {
+  .home-page.market-leader .market-leader-container {
+    text-align: center;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content {
+    display: inline-block;
+    float: none;
+    margin: 0 0 10%;
+    padding: 0;
+    text-align: left;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content h2 {
+    font-size: 1.875em;
+    line-height: 1;
+    color: #000000;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content p {
+    color: #000000;
+    font-size: .875em;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-content .learn-more {
+    font-size: 0.6875em;
+    line-height: 1;
+  }
+  .home-page.market-leader .market-leader-container .market-leader-image {
+    float: none;
+    margin: 10% 0 5%;
+  }
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  .home-page.market-leader .market-leader-container .market-leader-content .btn-square-red {
+	width: 100%;
+	text-align: center;
+  }
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="dialog"
+    width="900"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <strbackgroundimage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Background Image"
+                        name="./strbackgroundimage"
+                        xtype="pathfield"/>
+                    <strsectiontitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Section Title"
+                        name="./strsectiontitle"
+                        xtype="textfield"/>
+                    <strmultifield
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./strmultifield"
+                        fieldLabel="Resource"
+                        name="./strmultifield"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <strmbackgroundimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="strmbackgroundimage"
+                                fieldLabel="Resource Background Image"
+                                key="strmbackgroundimage"
+                                name="./strmbackgroundimage"
+                                xtype="pathfield"/>
+                            <strmsectiontitle
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="strmsectiontitle"
+                                fieldLabel="Resource Title"
+                                key="strmsectiontitle"
+                                name="./strmsectiontitle"
+                                xtype="textfield"/>
+                            <strconent
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="strconent"
+                                fieldLabel="Resource Content"
+                                key="strconent"
+                                name="./strconent"
+                                xtype="richtext"/>
+                            <strlinklabel
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="strlinklabel"
+                                fieldLabel="Resource Link Label"
+                                key="strlinklabel"
+                                name="./strlinklabel"
+                                xtype="textfield"/>
+                            <strlink
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="strlink"
+                                fieldLabel="Resource Link"
+                                key="strlink"
+                                name="./strlink"
+                                xtype="pathfield"/>
+                            <stropeninnewwindow
+                                jcr:primaryType="cq:Widget"
+                                dname="stropeninnewwindow"
+                                fieldLabel="Open in New Window"
+                                key="stropeninnewwindow"
+                                name="./stropeninnewwindow"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </stropeninnewwindow>
+                            <thirdparty
+                                jcr:primaryType="cq:Widget"
+                                dname="thirdparty"
+                                fieldLabel="Show Third Party Icon"
+                                key="thirdparty"
+                                name="./thirdparty"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </thirdparty>
+                        </fieldConfig>
+                    </strmultifield>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

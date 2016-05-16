@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Category Facets"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <products
+                jcr:primaryType="cq:Panel"
+                title="Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <cfallcategorieslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        anchor="100%"
+                        dname="header"
+                        fieldLabel="All Categories Label"
+                        key="allCategoriesLabel"
+                        layout="anchor"
+                        name="./allCategoriesLabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./allCategoriesLabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <allCategoriesid
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="All Categories ID"
+                        name="./allCategoriesid"
+                        xtype="textfield"/>
+                    <contents
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Categories"
+                        name="./categories"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="true"
+                            layout="form"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <cfid
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Category Id"
+                                    key="category-id"
+                                    layout="anchor"
+                                    name="./categoryid"
+                                    xtype="textfield"/>
+                                <cfdisplaytitle
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Category Title"
+                                    key="display-title"
+                                    layout="anchor"
+                                    name="./display-title"
+                                    xtype="textfield"/>
+                                <featuredoverlaypath
+                                    jcr:primaryType="cq:Widget"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Featured Overlay Path"
+                                    key="featuredoverlaypath"
+                                    name="./featuredoverlaypath"
+                                    xtype="pathfield"/>
+                                <cftags
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    fieldLabel="Tag Id"
+                                    key="category-tag"
+                                    layout="anchor"
+                                    name="cq:tags"
+                                    xtype="tags"/>
+                                <subcategories
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Sub Categories"
+                                    key="sub-category"
+                                    xtype="multifield">
+                                    <fieldConfig
+                                        jcr:primaryType="cq:Widget"
+                                        border="true"
+                                        hideLabel="true"
+                                        layout="form"
+                                        xtype="multifieldpanel">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <cfscid
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                dname="header"
+                                                fieldLabel="Sub Category ID"
+                                                key="sub-category-ID"
+                                                layout="anchor"
+                                                name="./sub-category-id"
+                                                xtype="textfield"/>
+                                            <cfscdisplaytitle
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                dname="header"
+                                                fieldLabel="Sub Category Title"
+                                                key="sub-category-title"
+                                                layout="anchor"
+                                                name="./sub-category-title"
+                                                xtype="textfield"/>
+                                            <cftags
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                fieldDescription="&lt;b style=color:red;font-size:15px>Use Only One Tag Per Sub-Category&lt;/b>"
+                                                fieldLabel="Tag Id"
+                                                key="sub-category-tag"
+                                                layout="anchor"
+                                                name="cq:tags"
+                                                xtype="tags"/>
+                                        </items>
+                                    </fieldConfig>
+                                </subcategories>
+                            </items>
+                        </fieldConfig>
+                    </contents>
+                </items>
+            </products>
+        </items>
+    </items>
+</jcr:root>

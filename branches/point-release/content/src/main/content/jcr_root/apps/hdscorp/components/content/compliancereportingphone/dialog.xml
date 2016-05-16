@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <sectiontitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content Section Title"
+                        name="./sectiontitle"
+                        xtype="textfield"/>
+                    <sectionsubtext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content Section Sub Text"
+                        name="./sectionsubtext"
+                        xtype="richtext">
+                        <rtePlugins
+                            jcr:primaryType="nt:unstructured"
+                            path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
+                            xtype="cqinclude"/>
+                    </sectionsubtext>
+                    <country
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Table Heading for Country "
+                        name="./country"
+                        xtype="textfield"/>
+                    <acode
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Table Heading for Access code"
+                        name="./acode"
+                        xtype="textfield"/>
+                    <accessnumber
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Table Heading for Toll-free Number"
+                        name="./accessnumber"
+                        xtype="textfield"/>
+                    <notes
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Table Heading for Notes"
+                        name="./notes"
+                        xtype="textfield"/>
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./multilinks"
+                        fieldLabel="Content Cells"
+                        name="./contentcells"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <country
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Table content for Country "
+                                name="./contentcountry"
+                                xtype="textfield"/>
+                            <acode
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Table content for Access code"
+                                name="./contentacode"
+                                xtype="textfield"/>
+                            <accessnumber
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Table content for Toll-free Number"
+                                name="./contentaccessnumber"
+                                xtype="textfield"/>
+                            <notes
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Table content for Notes"
+                                name="./contentnotes"
+                                xtype="textfield"/>
+                        </fieldConfig>
+                    </multilinks>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
