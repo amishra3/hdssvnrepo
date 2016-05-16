@@ -1,4 +1,0 @@
-#base=/etc/designs/panerabread/clientLibs/js
-vendor/modernizr.custom.75542.js
-vendor/jquery-1.9.1.min.js
-vendor/json2.js

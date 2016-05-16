@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OsgiConfig"
-    feed.limit="2"
-    feed.url="https://community.hds.com/view-browse-feed.jspa?userID=-1&amp;browseSite=content&amp;filterID=all~objecttype~objecttype%5bblogpost%5d&amp;browseViewID=content"
-    scheduler.expression="0 15 10 * * ?"
-    storage.path="/content/hdscorp/en_us/lookup/blogfeeddata/jcr:content"/>
