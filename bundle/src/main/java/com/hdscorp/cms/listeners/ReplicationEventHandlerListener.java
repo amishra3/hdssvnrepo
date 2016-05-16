@@ -53,7 +53,7 @@ public class ReplicationEventHandlerListener implements EventHandler {
 					
 					ResourceResolver resourceResolver = null;
 					final String pagePath = replicationAction.getPath();
-					LOG.info("Replication action {} occured on {} ",replicationAction.getType().getName(),replicationAction.getPath());
+					LOG.debug("Replication action {} occured on {} ",replicationAction.getType().getName(),replicationAction.getPath());
 					
 					if (replicationAction.getType() == ReplicationActionType.ACTIVATE || replicationAction.getType() == ReplicationActionType.DEACTIVATE) {
 
@@ -106,11 +106,11 @@ public class ReplicationEventHandlerListener implements EventHandler {
 						
 						if (StringUtils.isNotBlank(shortUrl)) {
 							// Invalidate Cache for Activated Page
-							LOG.info("Page Modified .. invalidating cache...."+ shortUrl);
+							LOG.debug("Page Modified .. invalidating cache...."+ shortUrl);
 							if (CacheInvalidator.invalidateCache(shortUrl,false)) {
-								LOG.info("Cache Invalidated successfully for page ::"+ shortUrl);
+								LOG.debug("Cache Invalidated successfully for page ::"+ shortUrl);
 							} else {
-								LOG.info("Error while invalidating Cache, check error log ");
+								LOG.debug("Error while invalidating Cache, check error log ");
 							} // end if
 						} // end if
 					} // end if
