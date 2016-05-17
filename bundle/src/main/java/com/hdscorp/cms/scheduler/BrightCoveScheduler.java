@@ -69,7 +69,7 @@ public class BrightCoveScheduler {
 		final Runnable job = new Runnable() {
 			public void run() {
 				log.info("started brightcove scheduler");
-				brightCoveImporterService.getBrightCoveResponse(feedURL,storagePath,false,0,Integer.parseInt(page_size));
+				brightCoveImporterService.getBrightCoveResponse(feedURL,storagePath,true,0,Integer.parseInt(page_size));
 			}
 		};
 		try {

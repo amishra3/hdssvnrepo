@@ -39,7 +39,7 @@ import com.hdscorp.cms.util.ViewHelperUtil;
 public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 	static final Logger log = LoggerFactory.getLogger(BrightTalkWebService.class);
 	
-	
+	HashMap<String, String[]> tagsMap = new HashMap<>();
 	
 	public String getBrightCoveResponse(String feedURL,String storagePath,boolean deleteParent,int page_number,int page_size) {
 		
@@ -79,29 +79,35 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 			Session session = JcrUtilService.getSession();
 			
 			
+			if(page_number==0){
+				tagsMap.clear();
+			}
 			
-
-			SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil
-					.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
-			String[] paths = { storagePath };
-			String[] types = { "dam:Asset" };
-			SearchResult result = searchServiceHelper.getFullTextBasedResuts(
-					paths, null, null, types, null, false, null, null,
-					JcrUtilService.getResourceResolver(), null, null);
-			List<Hit> hits = result.getHits();
-			HashMap<String, String[]> tagsMap = new HashMap<>();
-			log.info("video list size in Repository before bright cove Page_"+page_number+" Response Saved"+hits.size());
-			for (Hit hit : hits) {
-				Resource metadataResource = hit.getResource().getChild(
-						"jcr:content/metadata");
-				if (metadataResource != null) {
-					ValueMap properties = ResourceUtil
-							.getValueMap(metadataResource);
-
-					if (properties.containsKey("cq:tags")) {
-						String[] assetTags = (String[]) properties
-								.get("cq:tags");
-						tagsMap.put(properties.get("titleId").toString(), assetTags);
+			
+			if(tagsMap==null || tagsMap.size() < 1){
+				SearchServiceHelper searchServiceHelper = (SearchServiceHelper) ViewHelperUtil.getService(com.hdscorp.cms.search.SearchServiceHelper.class);
+				String[] paths = { storagePath };
+				String[] types = { "dam:Asset" };
+				SearchResult result = searchServiceHelper.getFullTextBasedResuts(
+						paths, null, null, types, null, false, null, null,
+						JcrUtilService.getResourceResolver(), null, null);
+				List<Hit> hits = result.getHits();
+				
+				log.info("video list size in Repository before bright cove Page_"+page_number+" Response Saved"+hits.size());
+				for (Hit hit : hits) {
+					Resource metadataResource = hit.getResource().getChild("jcr:content/metadata");
+					if (metadataResource != null) {
+						ValueMap properties = ResourceUtil.getValueMap(metadataResource);
+	
+						if (properties.containsKey("cq:tags")) {
+							String[] assetTags = (String[]) properties.get("cq:tags");
+							try {
+								tagsMap.put(properties.get("titleId").toString(), assetTags);
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
 					}
 				}
 			}
@@ -125,12 +131,9 @@ public class BrightCoveImporterService extends GenericRestfulServiceInvokers {
 			}
 			
 			for (BrightCoveVideoNode brightCoveVideoNode : brightCoveSaxHandler.videoList) {
-				
-				
 				createVideoNode(session,storagePath,brightCoveVideoNode,tagsMap);
-		
-		
-}
+			}
+			
 			if(!(noOfVideos<page_size)) {
 				page_number++;
 				if(deleteParent){
@@ -179,6 +182,8 @@ private void createVideoNode (Session session,String storagePath, BrightCoveVide
 		metaDataNode.setProperty("keywords",brightCoveVideoNode.getKeywords());
 		if(tagsMap.containsKey(brightCoveVideoNode.getTitleId())){
 			metaDataNode.setProperty("cq:tags",tagsMap.get(brightCoveVideoNode.getTitleId()));
+		}else{
+			log.debug(" No tag found for -- "+brightCoveVideoNode.getTitleId());
 		}
 		
 		metaDataNode.setProperty("titleId",brightCoveVideoNode.getTitleId());
