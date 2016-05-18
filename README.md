@@ -1,4 +1,4 @@
-# HDS CORP Project
+# HDS CORP & IOT Project
 
 This a content package project generated using the AEM Multimodule Lazybones template.
 
