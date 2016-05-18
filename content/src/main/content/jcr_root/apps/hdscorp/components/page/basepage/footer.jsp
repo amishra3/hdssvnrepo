@@ -9,7 +9,8 @@
     	
 <cq:include path="globalfooter" resourceType="hdscorp/components/content/footer/footerwrapper"/>
 <cq:include path="cloudservices" resourceType="cq/cloudserviceconfigs/components/servicecomponents"/>
-<c:set var="analyticsinfooter" value="<%= pageProperties.getInherited("analyticsinfooter", "") %>" /> 
+<c:set var="analyticsinfooter" value="<%= pageProperties.getInherited("analyticsinfooter", "") %>" />
+<c:set var="clientlibanalytics" value="<%= pageProperties.getInherited("clientlibanalytics", "hdscorp.analytics") %>" /> 
 
 <cq:includeClientLib js="hdscorp.main"/> 
 <!-- includeClientLib is not loading the JS lib and that is why doing it conventionally-->
@@ -20,7 +21,7 @@
 </c:if>
 
 <cq:include script="dtmsetup.jsp"/>
-<cq:includeClientLib js="hdscorp.analytics"/>
+<cq:includeClientLib js="${clientlibanalytics}"/>
 
 <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="plan-info" aria-hidden="true">
     <div class="modal-vertical-align-section">

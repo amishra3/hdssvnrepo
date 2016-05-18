@@ -21,6 +21,12 @@
             name="./analyticsinfooter"
             type="checkbox"
             xtype="selection"/>
+         <clientlibanalytics
+           jcr:primaryType="cq:Widget"
+           fieldLabel="Analytics Clientlib Category"
+           fieldDescription="Please provide the clientlib category for the project. Defaults to 'hdscorp.analytics'"
+           name="./clientlibanalytics"
+           xtype="textfield"/>            
         <hidetitlemetatag
             jcr:primaryType="cq:Widget"
             fieldLabel="Do not write title meta tag ?"
