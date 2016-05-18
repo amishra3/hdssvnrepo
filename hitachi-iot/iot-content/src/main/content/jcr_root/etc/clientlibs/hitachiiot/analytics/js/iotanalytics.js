@@ -16,7 +16,6 @@ var gInternalSearchFilter="";
 var leadFormName="";
 pageTitle=pageTitle.toLowerCase();
 pageTitle=$.trim(pageTitle);
-var lID = "";
 //pageTitle = pageTitle.replace(/[^a-zA-Z0-9&-_ ]/g, '');
 pageTitle = pageTitle.replace(/[`‐~!@#$®™%^*()_|+"\-=?;–'“”’,.<>\{\}\[\]\\\/]/gi, ' ');
 
@@ -80,15 +79,6 @@ function isErrorPage()
 		else
 			false;
 	}
-	
-	function isContactUsPage()
-	{
-		var url=document.title.toLowerCase();
-		if(url.indexOf("contact us")>-1)
-			return true;
-		else
-			false;
-	}
 
 if(isErrorPage())
 	{
@@ -123,107 +113,10 @@ if(isErrorPage())
 			}
 		}
 	}
-	// contact us form
-	if(isContactUsPage())
-	{
-		digitalData.page={
-            pageInfo:{
-                        pageName: "contact sales form",
-                        pageType: "contactSalesForm",
-                        pageLoadEvent: "lead form initiated",
-                        leadFormName: "contact sales",
-						leadFormParentPage: document.referrer
-					},
-            category:{
-                        primaryCategory: "",
-					}
-		}
-		digitalData.site={
-					siteInfo:{
-							language:"en",
-							server:"iot-mkt",
-							country:"US"
-					},
-					dimensions:{
-							deviceType:desktopType,
-							screensize:screenSize,
-							Orientation:orientation
-					}
-		}
-		digitalData.user={
-				userInfo:{
-					authStatus:"guest"
-				}
-		}	
-	}
 	
-	/* $(document).ready(function () {
-     //$('#mktoForm_4387').on("submit", function () {
-	$('#mktoForm_4387').submit(function( event )  {
-          ContactUsThnkPage();
-      });
-	}); */
 	
-	function ContactUsThnkPage()
-	{
-		//if(!__aem_id){lID =__aem_id;}
-
-		digitalData.page={
-            pageInfo:{
-                        pageName: "contact sales thank you",
-                        pageType: "contactSalesForm",
-                        pageLoadEvent: "lead form completed",
-                        leadFormName: "contact sales",
-						leadFormParentPage: document.referrer,
-                        leadID: lID,
-                        leadCountry: $("#Country option:selected").text(),
-						leadCompany: $('#Company').val()
-					},
-            category:{
-                        primaryCategory: "",
-					}
-	}
-	digitalData.site={
-				siteInfo:{
-							language:"en",
-							server:"iot-mkt",
-							country:"US"
-				},
-				dimensions:{
-							deviceType:desktopType,
-							screensize:screenSize,
-							Orientation:orientation
-				}
-	}
-	digitalData.user={
-			userInfo:{
-				authStatus:"guest"
-			}
-		}
-		_satellite.track('iotleadformsuccess');
-	}
-	
-	var murl=document.title.toLowerCase();
-	if(murl.indexOf("contact us")>-1 ){
-	setTimeout(function() {
-		$('input,select,textarea').on( "blur", function(){
-				formProgress("contact sales",$(this).attr('name'));
-		});
-		}, 3000);	
-		
-		}
-
-	function formProgress(formName,fieldName){ 
-		digitalData.eventData=    { 
-			leadFromName:formName,
-			fieldname:fieldName,
-			
-		}    
-		_satellite.track('formProgress');
-	}
-	
-	var url=document.title.toLowerCase(); //$(location).attr('href');
-	if(!(url.indexOf("404")>-1 || url.indexOf("error")>-1 || url.indexOf("contact us")>-1))
+	var url=document.title; //$(location).attr('href');
+	if(!(url.indexOf("404")>-1 || url.indexOf("error")>-1))
 	{	
 		primaryCategory = $.trim(primaryCategory.toLowerCase());
 		if(primaryCategory != "smart cities" && primaryCategory != "smart industry" && primaryCategory != "home" && primaryCategory != "about us" && primaryCategory != "lumada by hitachi" && primaryCategory != "smart energy"){primaryCategory="";}
@@ -343,15 +236,15 @@ if(isErrorPage())
 	//header HDS logos
 	
 	$(".hitachi-logo").on("click", function() {
-		globalMenuClick("linkclick","iot>hitachi logo",pageTitle,"link","iot>main menu");
+		globalMenuClick("linkclick","hitachi logo",pageTitle,"link","iot>main menu");
 	});		
 	$(".hitachi-sublogo").on("click", function() {
-		globalMenuClick("linkclick","iot>hds logo",pageTitle,"link","iot>main menu");
+		globalMenuClick("linkclick","hds logo",pageTitle,"link","iot>main menu");
 	});			
 	
 	// Return to top link
 	$(".cta-scroll-top").on("click", function() {
-		globalMenuClick("linkclick","iot>return to top",pageTitle,"button","iot>return to top");
+		globalMenuClick("linkclick","return to top",pageTitle,"button","iot>return to top");
 	});		
 	
 	
@@ -377,19 +270,19 @@ if(isErrorPage())
 						linkposition="iot>panel-" + linkpanel + "-" + getPageNameFromURL();}
 					else if($(this).parent().parent().attr('class').indexOf('market-leader-container')>-1)
 						{linktext = "iot>panel-" + $('.market-leader-container').find('h2').text();
-						linkposition="iot>panel-" + getPageNameFromURL();}
+						linkposition="iot>panel-" + $('.market-leader-container').find('h2').text()+ "-" + getPageNameFromURL();}
 					else if($(this).parent().parent().attr('class').indexOf('accordion-section-hero-container')>-1)
 						{linktext = "iot>panel-" + $('.accordion-section-hero-container').find('h1').text();
-						linkposition="iot>panel-" + getPageNameFromURL();}
+						linkposition="iot>panel-" + $('.accordion-section-hero-container').find('h1').text()+ "-" + getPageNameFromURL();}
 					else if($(this).parent().parent().attr('class').indexOf('iot-hero-container')>-1)
 						{linktext = "iot>hero-" + $.trim($('.hidden-xs').find('h1').text());
-						linkposition="iot>hero-" + getPageNameFromURL();}
+						linkposition="iot>hero-" + $.trim($('.hidden-xs').find('h1').text())+ "-" + getPageNameFromURL();}
 					else if($(this).parent().parent().parent().attr('class').indexOf('iot-hero-container')>-1)
 						{linktext = "iot>hero-" + $.trim($('.hidden-xs').find('h1').text());
-						linkposition="iot>hero-" + getPageNameFromURL();}
+						linkposition="iot>hero-" + $.trim($('.hidden-xs').find('h1').text())+ "-" + getPageNameFromURL();}
 					else if($(this).parent().parent().attr('class').indexOf('about-hds-career-content')>-1)
 						{linktext = "iot>panel-" + $('.about-hds-career-content').find('h2').text();
-						linkposition="iot>panel-"  + getPageNameFromURL();}
+						linkposition="iot>panel-" + $('.about-hds-career-content').find('h2').text()+ "-" + getPageNameFromURL();}
 					else 
 						{linktext = "iot>hero-" + $(this).parents('.common-hero-banner').find('h1').text();
 						linkposition="iot>hero-" + getPageNameFromURL();}
@@ -401,19 +294,15 @@ if(isErrorPage())
 					if ( eClass.indexOf("btn-play-video")!= -1){eType = "play icon";if(!(linktext.indexOf("-play icon")>-1)){linktext=linktext + "-play icon";}} 
 					else if ( eClass.indexOf("btn-square-red")!= -1)
 					{
-						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>panel-"  + getPageNameFromURL();}
+						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>panel-" + $('.market-leader-content').find('h2').text() + "-" + getPageNameFromURL();}
 					} 
 					else if ( eClass.indexOf("btn-square-white")!= -1)
 					{
-						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>panel-"  + getPageNameFromURL();}
+						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>panel-" + $('.about-hds-career-content').find('h2').text() + "-" + getPageNameFromURL();}
 					} 
 					else if ( eClass.indexOf("btn-square-features")!= -1)
 					{
-						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>hero-"  + getPageNameFromURL();}
-					}
-					else if ( eClass.indexOf("btn-square-clear")!= -1)
-					{
-						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>hero-" + getPageNameFromURL();}
+						eType = "button";if(!($(this).text()>-1)){linktext=linktext + "-" + $.trim($(this).text());linkposition="iot>hero-" + $.trim($('.hidden-xs').find('h1').text())+ "-" + getPageNameFromURL();}
 					}
 					if(linktext == "" || !linktext){linktext="iot>panel-" + $.trim($(this).text());}
 					linktext = $.trim(linktext);	
@@ -423,37 +312,10 @@ if(isErrorPage())
 	//}
     });
 	
-	//Click to call tracking
-	$('.call').click(function(){
-		//if(window.outerWidth < 992){
-			var pNumber="iot>ph no - " + $(this).text();
-			clicktocall(pNumber,pageTitle);
-		//}
-	})
+	$(".mktoForm .mktoButton").on("click", function(){	
+		globalMenuClick("linkclick","submit now",pageTitle,"button","iot>submit button");
+	});
 	
-	function clicktocall(pNumber,pageTitle){
-    digitalData.eventData= {
-    	eventName:'click to call',
-		eventAction:pNumber,
-		eventPage:pageTitle
-    }
-    _satellite.track('clicktocall');
-	}
-
-	// View our privacy policy link on contact us form
-	
-	$(".formrightfooter").each(function() 
-	{
-		var links = $(this).find("a");
-		var linktext=$(this).text();
-	   links.each(function() {
-		 linktext=$.trim(linktext);
-         if(linktext!="" || linktext.length > 0)
-		 {
-			$(this).click(function(){globalMenuClick("linkclick","iot>" + linktext.toLowerCase(),pageTitle,"link","iot>panel-right footer"); });
-		 }
-	  })
-	});	
 	
 	// About us page partners logo
 	$("div.partner-list").each(function() 
@@ -466,10 +328,10 @@ if(isErrorPage())
 		 linktext=$.trim(linktext);
          if(linktext!="" || linktext.length > 0)
 		 {
-			$(this).click(function(){globalMenuClick("linkclick","iot>" + linktext.toLowerCase(),pageTitle,"link","iot>panel-" + headingtext); });
+			$(this).click(function(){globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","iot>panel-" + headingtext); });
 			$(this).mousedown(function(e){
 			if(e.which == 3){
-				globalMenuClick("linkclick","iot>" + linktext.toLowerCase(),pageTitle,"link","iot>panel-" + headingtext);
+				globalMenuClick("linkclick",linktext.toLowerCase(),pageTitle,"link","iot>panel-" + headingtext);
 				} 			
 			});
 		 }
@@ -627,7 +489,6 @@ if(isErrorPage())
 					hierarchy=hierarchy+":";
 			hierarchy=hierarchy+pageTitle;
 		}
-		else{hierarchy=pageTitle;}
 		return hierarchy;
 	}
 

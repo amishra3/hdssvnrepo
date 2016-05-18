@@ -1,4 +1,3 @@
-<%@page import="org.apache.commons.lang.StringUtils"%>
 <%@include file="/apps/foundation/global.jsp"%>
 
 <%
@@ -6,20 +5,9 @@ String pageTemplatePath=(String)currentPage.getProperties().get("cq:template");
 if(pageTemplatePath!=null){
 	pageTemplatePath=pageTemplatePath.substring(pageTemplatePath.lastIndexOf('/')+1);
 }
-
-String userAgent =  request.getHeader("user-agent");
-String rsvis = "rsvis" ;
-
-if(!StringUtils.isEmpty(userAgent) ){
-	userAgent = userAgent.toLowerCase();
-	if(StringUtils.indexOfAny(userAgent, new String[]{"googlebot", "bingbot","slurp"}) != -1 ){
-		rsvis = "norsvis" ;
-	}
-}
-
 %>
 
-<body class="<%=pageTemplatePath %> home-page hds-megaMenu-push <%=rsvis%>">
+<body class="<%=pageTemplatePath %> home-page hds-megaMenu-push rsvis">
     <div class="hds-MobileMenu hds-megaMenu-right">
         <div class="closeHDSMenu">
             <a href="javascript:void(0);" title="Close" id="closeHDSMenu">Close</a>
