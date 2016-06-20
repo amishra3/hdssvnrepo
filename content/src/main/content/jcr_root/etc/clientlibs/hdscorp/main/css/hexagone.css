@@ -35,12 +35,12 @@
 
 /* home page overlay hexagon */
 .homepage .hexagon:before, .homepage .hexagon:after{
-	border: none;
+  border: none;
 }
 
 .homepage .hexagon{
-	width: 390px;
-	background: none;	
+  width: 390px;
+  background: none; 
 }
 
 @media only screen and (min-width: 1024px) {
@@ -104,7 +104,15 @@
   margin-top:-75px;
   padding: 0;
 }
+.hexagon320.hex-col-centered {
+  margin-right: 52px;
+  display:inline-block;
+  float:none;
+  text-align:left;
+  vertical-align:top;
+}
 .hexagon320:last-child{margin-right: 0;}
+.hexagon320.hex-col-centered:last-child{margin-right: 0;}
 
 .hexagon320 .icon{
   line-height: 56px;
@@ -135,7 +143,7 @@
     letter-spacing: 0.1px;
     margin: 10px 0 10px;
     text-align: center;
-	position:relative;
+  position:relative;
 }
 
 .hexagon320 p {
@@ -144,7 +152,7 @@
     font-size: 1.28571em;
     line-height: 1.4em;
     margin:0;
-	font-weight:300;
+  font-weight:300;
 }
 
 .hexagon320 .read-more {
@@ -192,12 +200,43 @@
   z-index: -1;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1368px) {   
     .hexagon320 {
-    	background: #ffffff;
+      margin-bottom: 0;     
+    } 
+    .hexagon320.hex-col-centered {
+      margin-right: 52px;
+      float:none;
     }
 }
-	
+
+@media only screen and (max-width: 1367px) {
+    .hexagon320 {
+      background: #ffffff; 
+      margin-bottom: 109px;     
+    }
+    .hexagon320.hex-col-centered {
+      margin-right: 16px;
+      float:none;
+    }
+}
+@media only screen and (min-width: 1023px) and (max-width: 1030px) {
+  .hexagon320.hex-col-centered {
+      margin-right: 10px;      
+    }
+    .hexagon320.hex-col-centered:last-child{
+      margin-right: 0 !important;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1022px) {
+  .hexagon320 {
+      margin-bottom: 109px;
+    }
+  .hexagon320.hex-col-centered {
+      margin-right: 16px !important;
+      float:none;
+    }
+}  
 @media only screen and (max-width: 991px) {
   .hexagon320{
     margin-bottom: 176px;
@@ -225,12 +264,9 @@
   }
 
   .hexagon320:after {
-    bottom: -75px;
+    bottom: -76px;
     border-left: 135px solid transparent;
     border-right: 135px solid transparent;
     border-top: 76px solid #ffffff;
   }
 }
-
-.mac-os .hexagon320 { margin-right:26px;}
-

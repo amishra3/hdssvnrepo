@@ -60,8 +60,10 @@
    			<div class="content-container clearfix">
    				<div class="col-xs-12 col-md-8 ${properties.secondarycontentalign?'floatright':''}">
    					<h2>${properties.secondaryherotitlecontent}</h2>
-   					<h3>${properties.secondaryherosubtitlecontent}</h3>
-   						${properties.secondaryherocontent}
+                    <c:if test="${not empty properties.secondaryherosubtitlecontent}">
+                    <h3>${properties.secondaryherosubtitlecontent}</h3>
+                    </c:if>
+                     ${properties.secondaryherocontent}
 
                     	<c:if test="${not empty properties.bannerlinklabel}">
                             <div class="prt-button">
@@ -70,7 +72,7 @@
 							</div>
                             </div>
 						</c:if>
-
+ 
    				</div>
    				<div class="col-xs-12 col-md-4 hexContain">
    					<ul class="calculating-list">
@@ -82,8 +84,13 @@
                             </span>
    							<h4>${properties.hexagontitle}</h4>
    							<p>${properties.hexagoncontent}</p>
+   							<c:set var="isgatedclass" value=""/>
+							<c:if test = "${properties.isgatedcontent == '1'}">
+								<c:set var="isgatedclass" value=" isGatedLock"/>
+							</c:if>
+   							
                             <c:if test="${not empty properties.secondarylinklabel}">
-                          <a class="animateAnchor bottomPos text-center" href="${properties.voverlay?'javascript:void(0);':linkUrl}" onclick="${!properties.voverlay?'':vidurl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">${properties.secondarylinklabel} ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                          <a class="animateAnchor bottomPos text-center ${isgatedclass}" href="${properties.voverlay?'javascript:void(0);':linkUrl}" onclick="${!properties.voverlay?'':vidurl}" target="${properties.secondaryurltargettype?'_blank':'_self'}">${properties.secondarylinklabel} ${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':'<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                             </c:if> 
                          </li>
    					</ul>

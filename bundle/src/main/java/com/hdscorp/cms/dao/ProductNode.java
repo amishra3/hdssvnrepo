@@ -15,6 +15,8 @@ public class ProductNode {
 	
 	private ArrayList<ProductDescription> descriptionList;
 	
+	private String productAltTitle;
+	
 	public ArrayList<ProductDescription> getDescriptionList() {
 		return descriptionList;
 	}
@@ -53,6 +55,14 @@ public class ProductNode {
 
 	public void setProductDescription(String productDescription) {
 		this.productDescription = productDescription;
+	}
+
+	public String getProductAltTitle() {
+		return productAltTitle;
+	}
+
+	public void setProductAltTitle(String productAltTitle) {
+		this.productAltTitle = productAltTitle;
 	}
 
 }

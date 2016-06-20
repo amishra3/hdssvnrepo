@@ -6,8 +6,8 @@
 
 <c:set var="sociallinkconfig" value="${widgets:getMultiFieldPanelValues(resource, 'sociallinksconfig')}"/>
 
+<div class="content-container clearfix">
 <div class="social-links">
-
 <span>${properties.socialfollowuslabel}</span>
 <c:choose>
 	<c:when test="${empty sociallinkconfig}">
@@ -23,4 +23,5 @@
 		</ul>
 	</c:otherwise>
 </c:choose>
+        </div>
 </div>

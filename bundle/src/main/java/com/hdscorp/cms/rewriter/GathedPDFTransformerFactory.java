@@ -35,7 +35,7 @@ import com.hdscorp.cms.util.HdsCorpCommonUtils;
  * Re-writes markup to indicate that the PDF URL is gated"
  * by adding a css class
  */
-@Component(metatype = true, label = "Gated PDF Indicator Transformer Factory",
+@Component(metatype = true, label = "Gated Content Indicator Transformer Factory",
     description = "Sling Rewriter Transformer Factory to add class to gated pdf anchors")
 @Properties({
     @Property(name = "pipeline.type",
@@ -53,6 +53,8 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
     private static final String ATTR_ANCHOR_CSS = "class";
 
     private static final String PDF_TYPE_EXTENSION = ".pdf";
+    
+    private static final String GATED_EXTERNAL_PATH = "/ext/";
     
     private static final String GATED_CSS_NAME= " isGatedLock";
 
@@ -96,7 +98,6 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
     	
 		final String gatedCSSClass = GATED_CSS_NAME;
 		boolean isGated = false;
-		Asset asset = null ;
     	try {
     		isGated = HdsCorpCommonUtils.isGated(pdfPath, slingRequest);
 		} catch (Exception ex) {
@@ -119,9 +120,7 @@ public final class GathedPDFTransformerFactory implements TransformerFactory, Ev
         final String type = attrs.getValue("", "type");
         final String href = attrs.getValue("", "href");
 
-        if (StringUtils.equals("a", elementName)
-                && StringUtils.startsWith(href, "/")
-                && StringUtils.endsWith(href, ".pdf")) {
+        if (StringUtils.equals("a", elementName) && StringUtils.startsWith(href, "/") && (StringUtils.endsWith(href, PDF_TYPE_EXTENSION) || StringUtils.contains(href, GATED_EXTERNAL_PATH))) {
             return true;
         }
 

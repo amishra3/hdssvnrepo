@@ -33,18 +33,13 @@ import org.slf4j.LoggerFactory;
 
 import com.day.cq.commons.inherit.HierarchyNodeInheritanceValueMap;
 import com.day.cq.commons.inherit.InheritanceValueMap;
-import com.day.cq.dam.api.Asset;
 import com.day.cq.mailer.MailService;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.tagging.Tag;
 import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
-import com.hdscorp.cms.constants.GlobalConstants;
 import com.hdscorp.cms.search.SearchServiceHelper;
-import com.hdscorp.cms.util.JcrUtilService;
-import com.hdscorp.cms.util.PathResolver;
-import com.hdscorp.cms.util.ViewHelperUtil;
 /**
  * {@link PropertyResolver} class used to resolve the JCR Properties
  * @author abhinav
@@ -217,7 +212,7 @@ public final class PropertyResolver {
 	                	 priority = (String)iProperties.getInherited("sitemappagepriority", "1.0");
 	                 }
 	                 
-	                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
+	                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'");
 	                 
 	                 if(child.getLastModified()!=null){
 	                	 lastmod = fmt.format(child.getLastModified().getTime());
@@ -277,7 +272,7 @@ public final class PropertyResolver {
          changefreq = "monthly";
          priority = ".5";
          
-         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
+         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'");
          
          if(properties.containsKey("jcr:lastModified")){
         	 

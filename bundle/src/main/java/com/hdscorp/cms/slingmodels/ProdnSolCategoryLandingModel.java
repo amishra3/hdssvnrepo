@@ -1,7 +1,10 @@
 package com.hdscorp.cms.slingmodels;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -86,7 +89,17 @@ public class ProdnSolCategoryLandingModel {
 			String type[] = {"cq:Page"};
 			
 			
-			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,null,doPagination,null,null,resourceResolver,null,null);
+			String fullText=request.getParameter("fulltext");
+			try {
+				if(fullText!=null) {
+					fullText = URLDecoder.decode(request.getParameter("fulltext"),"UTF-8");
+				}
+			} catch (Exception e) {	
+				LOG.info("Exception while decoding the url::" +e.getMessage());
+			}
+			
+			
+			SearchResult result = searchServiceHelper.getFullTextBasedResuts(paths,tags,template,type,fullText,doPagination,null,null,resourceResolver,null,null);
 			List<Hit> hits = result.getHits();
 			
 			LOG.debug("-------------SEARCH CALL COMPLETED-----"+result.getTotalMatches());
@@ -97,7 +110,16 @@ public class ProdnSolCategoryLandingModel {
 			for (Hit hit : hits) {
 				ProductNode productNode = new ProductNode();
 				Page reourcePage = hit.getResource().adaptTo(Page.class);
-			    String pageTitle = reourcePage.getTitle();
+				String pageTitle;
+				if (null != reourcePage.getProperties().get("productSearchAltTitle")) {
+					pageTitle = (String)reourcePage.getProperties().get("productSearchAltTitle");	
+				} else {		
+					pageTitle = reourcePage.getTitle();
+				}
+				String productAltTitle = "";
+				if (null != reourcePage.getProperties().get("productSearchKeyword")) {
+					productAltTitle = (String)reourcePage.getProperties().get("productSearchKeyword");
+				}
 			    String pagePath = reourcePage.getPath();
 			    String pageProductDescription = (String)reourcePage.getProperties().get("subtext");
 			    String[] pageTags= (String[])reourcePage.getProperties().get("cq:tags");
@@ -131,7 +153,7 @@ public class ProdnSolCategoryLandingModel {
 			    productNode.setProductPath(pagePath);
 			    productNode.setProductTags(pageTags);
 			    productNode.setDescriptionList(descriptionList);
-			    
+			    productNode.setProductAltTitle(productAltTitle);
 			    products.add(productNode);
 			}
 			
@@ -139,6 +161,16 @@ public class ProdnSolCategoryLandingModel {
 			LOG.error("----IN EXCEPTION BLOCK----"+e.getCause());
 			LOG.error(e.getMessage());
 		}
+		
+		if (products.size() > 0) {
+			Collections.sort(products, new Comparator<ProductNode>() {
+				@Override
+				public int compare(final ProductNode object1, final ProductNode object2) {
+					return object1.getProductTitle().compareTo(object2.getProductTitle());
+				}
+			});
+		}
+		
 		return products;
 	}
 }

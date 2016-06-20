@@ -89,10 +89,12 @@
 			if(pdfPath!=null){
 				Resource res = PathResolver.getResourceFromShortURL(slingRequest, pdfPath);
 				Asset asset = res.adaptTo(Asset.class);
-				Node resourceNode = res.adaptTo(Node.class) ;
-				Node metaDataNode= resourceNode.getNode("jcr:content/metadata");
-				String resourceTitle = asset.getMetadataValue("dc:title");
-				out.write("<title>"+resourceTitle+"</title>");
+				if(asset!=null){
+					Node resourceNode = res.adaptTo(Node.class) ;
+					Node metaDataNode= resourceNode.getNode("jcr:content/metadata");
+					String resourceTitle = asset.getMetadataValue("dc:title");
+					out.write("<title>"+resourceTitle+"</title>");					
+				}
 			}
 		%>
       
@@ -120,5 +122,7 @@
 		  }
 		  </script>
 	  </c:if>
-      
+<c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
+		<c:set var="cPath" value="${pageContext.request.requestURI}" />
+    <link rel="canonical" href ="${domain}${hdscorp:shortURL(cPath)}" />
 </head>

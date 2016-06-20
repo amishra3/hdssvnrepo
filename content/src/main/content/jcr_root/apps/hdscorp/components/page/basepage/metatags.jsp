@@ -139,3 +139,14 @@
 
 <meta name="language" content="<%=pageProperties.getInherited("websitelangtext", "")%>" />
 <meta name="country" content="<%=pageProperties.getInherited("websitecountrytext", "")%>" />
+<c:if test="${empty properties.disablerobotmetatag}">
+<c:set var="robmeta" value="<%=pageProperties.getInherited("robotmetatag", "")%>" />
+<c:choose>
+    <c:when test="${empty robmeta}">
+        <meta name="robots" content="INDEX, FOLLOW" />
+    </c:when>
+    <c:otherwise>
+		 <meta name="robots" content="<%=pageProperties.getInherited("robotmetatag", "")%>" />
+    </c:otherwise>
+</c:choose>
+</c:if>

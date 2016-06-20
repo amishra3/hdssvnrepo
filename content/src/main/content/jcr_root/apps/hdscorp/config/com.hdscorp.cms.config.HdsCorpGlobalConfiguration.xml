@@ -4,6 +4,7 @@
     hdscorp.web.servers.address="[http://vadbwwwpubwbqa01t,http://vadbwwwpubwbqa02t]"
     hdscorp.dispatcher.uri="/dispatcher/invalidate.cache"
     hdscorp.assetgating.formapath ="/content/hdscorp/en_us/news-insights/resources/gated-detail.html"
+    hdscorp.assetgating.externalformapath ="/content/hdscorp/en_us/news-insights/resources/gated-detail-external.html"
     hdscorp.assetgating.queryparam = "q"
     hdscorp.assetgating.image.rendition.path = "/_jcr_content/renditions/cq5dam.thumbnail.319.319.png"
     hdscorp.resourcelibrarypaths="[/content/hdscorp/en_us/news-insights/resources,/content/hdscorp/en_us/lookup/resourcelibraryrenderer,/content/hdscorp/en_us/lookup/featuredcontent]"

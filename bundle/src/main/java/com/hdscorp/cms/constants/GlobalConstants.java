@@ -58,6 +58,12 @@ public final class GlobalConstants {
 	public static final String JCR_CONTENT_DATA = "jcr:content/jcr:data";
 	
 	public static final String PRODUCT_TECH_SPEC_SELECTOR = "specifications";
+	
+	public static final String RESOURCE_TYPE_EXTERNAL_CONTENT = "externalcontent";
+	
+	public static final String RESOURCE_TYPE_VIDEO = "Video";
+	
+	public static final String RESOURCE_TYPE_PDF = "pdf";
 
 	private GlobalConstants() {
 	}

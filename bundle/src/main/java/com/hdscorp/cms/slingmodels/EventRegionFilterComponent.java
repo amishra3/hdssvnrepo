@@ -2,8 +2,10 @@ package com.hdscorp.cms.slingmodels;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -161,7 +163,7 @@ public class EventRegionFilterComponent extends MultifieldUtil {
 	
 	public List<Map<String, List<TagResults>>> getRegionTag() {
 		regionTag = new ArrayList<Map<String, List<TagResults>>>();
-		Map<String, List<TagResults>> resultMap = new HashMap<>();
+		Map<String, List<TagResults>> resultMap = new LinkedHashMap<>();
 		TagManager tm = resourceResolver.adaptTo(TagManager.class);
 		List<Map<String, Object>> list = getRegions();
 		if(list!=null && list.size()>0){
@@ -206,6 +208,7 @@ public class EventRegionFilterComponent extends MultifieldUtil {
 
 		}
 	}
+		//resultMap = new TreeMap<String, List<TagResults>>(resultMap);
 		regionTag.add(resultMap);
 		return regionTag;
 	}

@@ -117,6 +117,17 @@
                         xtype="selection"/>
                 </items>
             </tab2>
+            <tab3
+                jcr:primaryType="cq:Panel"
+                title="Custom Component">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <customcomponentpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Custom Design Component Path"
+                        name="./customcomponentpath"
+                        xtype="textfield"/>
+                </items>
+            </tab3>
         </items>
     </items>
 </jcr:root>

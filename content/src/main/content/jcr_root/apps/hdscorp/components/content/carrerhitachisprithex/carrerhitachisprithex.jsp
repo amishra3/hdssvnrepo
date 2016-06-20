@@ -21,13 +21,13 @@
                 </div>
                 <div class="hitachi-spirit-hexagon-list">
                     <div class="content-container">
-                        <div class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
+                        <div class="col-sm-12 col-no-pad hex-contain row-centered clearfix">
 
                             <c:forEach items="${carrerHitachiSpiritHexagonModel.chsHexagonList}" var="chsHexagonList" varStatus="multfieldStatus">
 
     				<c:forEach items="${chsHexagonList}" var="chsHexagonObject" varStatus="multiStatus">
 
-                            <div class="hexagon320">
+                            <div class="hexagon320 hex-col-centered">
                                 <h4>${chsHexagonObject.key}</h4>
                                     ${chsHexagonObject.value}
                             </div>

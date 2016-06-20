@@ -23,6 +23,11 @@ var hds = window.hds || {};
                               scrollTop: $($('.linkLeft.active')).offset().top                                
                           }, 600);
                      }
+                        if($('.subcategorycontent').length > 0){
+                            $('a.isGatedLock').each(function(index, el) {
+                                $(this).prepend("<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>");
+                            });
+                        }
 	            	}
 	            });        	
         },
@@ -76,7 +81,7 @@ var hds = window.hds || {};
                         var clickedIndexHeight= $(this).outerHeight();                       
                         var clickedIndex= $(this).parent().index();                     
                         var finalIndex=offsetFirst+(clickedIndexHeight*clickedIndex);
-                        hds.productCatagory.processHTML(loadUrl, loadIndec);                        
+                        hds.productCatagory.processHTML(loadUrl, loadIndec);
                         $('.linkLeft').find('.icon-accordion-closed').removeAttr('style').css('display', 'inline-block');
                         $('.linkLeft').find('.icon-accordion-opened').removeAttr('style').css('display', 'none');
                         if($(window).width() < 991){                    	

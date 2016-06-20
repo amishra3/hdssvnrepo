@@ -1,0 +1,60 @@
+.hds-global-header .share-mobile-section{
+   float: right
+ }
+
+.hds-global-header .share-mobile{
+   background-color: #dadada;
+   padding: 10px 10px 5px 9px;
+   position: relative;
+   cursor: pointer;
+ }
+
+ .share-mobile.active:after {
+    border-color: transparent transparent #f1f1f1;
+    border-style: solid;
+    border-width: 8px;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 0;
+    left: 13px;
+    position: absolute;
+    width: 0;
+    z-index: 9;
+}
+
+ .icon-share-mobile{
+    background-image: url("/content/dam/public/en_us/images/digital-transformation/common/icons/share-ico-mb.png");
+	background-repeat: no-repeat;
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+ }
+ .share-mobile-container{
+   background: #f1f1f1;
+   display: none;
+   height: auto;
+   padding: 25px 0 20px;
+   position: absolute;
+   border-bottom: 1px solid #9f9f9f;
+   left: 0;
+   width: 100%;
+   z-index: 99999;   
+ }
+ .share-mobile-container .share-section{
+    margin: auto;
+	max-width: 290px;
+    text-align: center;
+ } 
+ .share-mobile-container .share-section label{
+    font-size: 0.875em;
+	color: #1c1c29;
+    font-weight: normal;
+    margin-bottom: 5px;
+ }
+ .share-mobile-container .share-section .share-ico-box a{
+    padding-right: 10px;
+ }
+.share-mobile-container .share-section .share-ico-box a:hover{
+   text-decoration: none;
+ }

@@ -154,14 +154,33 @@ public class EventDataModel {
 													.getMonth(Integer
 															.parseInt(startDate.substring(0,
 																	startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))
-											- 1).toUpperCase() + ServiceConstants.EMPTY_SPACE
-									+ startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1));
+															- 1)
+													.toUpperCase()
+													+ ServiceConstants.EMPTY_SPACE
+													+ startDate.substring(
+															startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR)
+																	+ 1));
 
 							eventNode.setYear(Integer.parseInt(
 									startDate.substring(startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
 
 							eventNode.setMonthInt((Integer.parseInt(
 									startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
+
+
+							eventNode
+									.setDateInt(
+											Integer.parseInt(
+													startDate
+															.substring(0,
+																	startDate.lastIndexOf(
+																			ServiceConstants.SLASH_SEPRATOR))
+															.substring(startDate
+																	.substring(0,
+																			startDate.lastIndexOf(
+																					ServiceConstants.SLASH_SEPRATOR))
+																	.lastIndexOf(ServiceConstants.SLASH_SEPRATOR)
+																	+ 1)));
 
 							eventNode.setEventStartDate(ServiceUtil.getDisplayDateFormat(
 									properties.get(ServiceConstants.EVENT_JCR_START_DATE, (String) null),
@@ -243,8 +262,17 @@ public class EventDataModel {
 
 				eventNode.setMonthInt(
 						(Integer.parseInt(startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
-				eventNode.setMonthInt(
-						(Integer.parseInt(startDate.substring(0, startDate.indexOf(ServiceConstants.SLASH_SEPRATOR)))));
+
+				eventNode
+						.setDateInt(
+								Integer.parseInt(
+										startDate.substring(0, startDate.lastIndexOf(ServiceConstants.SLASH_SEPRATOR))
+												.substring(
+														startDate
+																.substring(0,
+																		startDate.lastIndexOf(
+																				ServiceConstants.SLASH_SEPRATOR))
+																.lastIndexOf(ServiceConstants.SLASH_SEPRATOR) + 1)));
 
 				eventNode.setIsWebcast("true");
 				eventNode.setEventTitle(hsmap.get(ServiceConstants.JSON_TITLE));
@@ -271,6 +299,7 @@ public class EventDataModel {
 		}
 
 		if (listOfNodes != null && listOfNodes.size() > 0) {
+			Collections.sort(listOfNodes, EventObject.new CompareByDate());
 			Collections.sort(listOfNodes, EventObject.new CompareByMonth());
 			Collections.sort(listOfNodes, EventObject.new CompareByYear());
 

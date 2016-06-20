@@ -198,6 +198,51 @@
                     </filterByContentType>
                 </items>
             </filterbycontent>
+            <sortbyconfig
+                jcr:primaryType="cq:Panel"
+                title="Sort By Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <sortByLabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Character after '|' will be value Default label &lt;br>  Example:- Sort by:|Default"
+                        fieldLabel="Sort By Label "
+                        name="./sortByLabel"
+                        xtype="textfield"/>
+                    <sortByType
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Sort By Criteria"
+                        name="./sortByType"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <sortCriterialabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Sort By Criteria Label"
+                                    key="sortCriterialabel"
+                                    name="./sortCriterialabel"
+                                    xtype="textfield"/>
+                                <sortCriteriavalue
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Sort By Criteria Value"
+                                    key="sortCriteriavalue"
+                                    name="./sortCriteriavalue"
+                                    xtype="textfield"/>
+                            </items>
+                        </fieldConfig>
+                    </sortByType>
+                    <hidesortbyfunct
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Sort By"
+                        name="./hidesortbyfunct"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </sortbyconfig>
         </items>
     </items>
 </jcr:root>

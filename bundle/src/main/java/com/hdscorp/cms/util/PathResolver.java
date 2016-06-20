@@ -152,7 +152,7 @@ public final class PathResolver {
 			if((StringUtils.isNotEmpty(pageUrl) && pageUrl.startsWith(PageUtils.HTTP_PREFIX)) || pageUrl.startsWith(PageUtils.HTTPS_PREFIX)){
 				final String[] url=pageUrl.split(GlobalConstants.PATH_SEPERATOR);
 				if((null != url) && (3 < url.length)){
-					pageUrlPath=pageUrl.substring(pageUrl.lastIndexOf(url[3]),pageUrl.length());
+					pageUrlPath=pageUrl.substring(pageUrl.indexOf(url[3]),pageUrl.length());
 					return pageUrlPath;
 				}
 			}else{

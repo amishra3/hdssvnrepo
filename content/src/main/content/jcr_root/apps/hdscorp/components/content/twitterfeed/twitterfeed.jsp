@@ -14,12 +14,11 @@
 	style="background-image: url('${twitterFeedModel.bGImagePath}');">
 	<div class="content-container">
 		<h3>${properties.twtitle}</h3>
-		
+
 	</div>
-	<div class="stay-touch-hexagon-list twitter-feed">
+	<div class="stay-touch-hexagon-list twitter-feed clearfix">
 		<div class="content-container">
-			<div
-				class="col-sm-10 col-sm-offset-1 col-no-pad hex-contain clearfix">
+			<div class="col-sm-12 col-no-pad hex-contain row-centered clearfix">
 
 				<c:forEach var="innerList"
 					items="${twitterFeedModel.twitterFeedData}">
@@ -124,7 +123,7 @@
 
 					</c:if>
 
-					<div class="hexagon320">
+					<div class="hexagon320 hex-col-centered">
 						<div class="tweet-content">
 							<div class="icon">
 								<img src="${twitterFeedModel.iconPath}" alt="" title="">

@@ -44,6 +44,8 @@ public class EventNode {
 
 	private int monthInt;
 	
+	private int DateInt;
+	
 	private String thirdpartyicon;
 	
 	private String newwindow;
@@ -369,6 +371,24 @@ public class EventNode {
 		this.monthInt = monthInt;
 	}
 
+	
+	public int getDateInt() {
+		return DateInt;
+	}
+
+	public void setDateInt(int dateInt) {
+		DateInt = dateInt;
+	}
+
+
+	public class CompareByDate implements Comparator<EventNode> {
+		public int compare(EventNode p1, EventNode p2) {
+			return p1.getDateInt() - p2.getDateInt();
+		}
+
+	}
+
+	
 	public class CompareByMonth implements Comparator<EventNode> {
 		public int compare(EventNode p1, EventNode p2) {
 			return p1.getMonthInt() - p2.getMonthInt();
@@ -383,4 +403,7 @@ public class EventNode {
 
 	}
 
+
+	
+	
 }

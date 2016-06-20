@@ -358,7 +358,7 @@ public class SearchServiceHelper {
 				searchKeyword);
 		searchParams.put("group." + groupCnt
 				+ "_group.2_group.2_fulltext.relPath",
-				"jcr:content/metadata/@jcr:title");
+				"jcr:content/metadata/@dc:title");
 
 		searchParams.put("group." + groupCnt + "_group.2_group.3_fulltext",
 				searchKeyword);
@@ -380,7 +380,12 @@ public class SearchServiceHelper {
 				searchKeyword);
 		searchParams.put("group." + groupCnt
 				+ "_group.2_group.6_fulltext.relPath",
-				"jcr:content/metadata/@jcr:description");
+				"jcr:content/metadata/@dc:description");
+		searchParams.put("group." + groupCnt + "_group.2_group.7_fulltext",
+				searchKeyword);
+		searchParams.put("group." + groupCnt
+				+ "_group.2_group.7_fulltext.relPath",
+				"jcr:content/metadata/@dc:keywords");
 	}
 
 	public SearchResult getFullTextBasedResuts(String[] paths, String[] tags,

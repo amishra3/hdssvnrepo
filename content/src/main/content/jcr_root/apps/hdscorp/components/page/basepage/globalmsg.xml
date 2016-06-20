@@ -24,7 +24,7 @@
          <clientlibanalytics
            jcr:primaryType="cq:Widget"
            fieldLabel="Analytics Clientlib Category"
-           fieldDescription="Please provide the clientlib category for the project. Defaults to 'hdscorp.analytics'"
+           fieldDescription="Please provide the ANALYTICS clientlib category for the project. Defaults to 'hdscorp.analytics'"
            name="./clientlibanalytics"
            xtype="textfield"/>            
         <hidetitlemetatag

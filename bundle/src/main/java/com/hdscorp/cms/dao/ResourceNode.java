@@ -1,6 +1,9 @@
 package com.hdscorp.cms.dao;
 
-public class ResourceNode {
+import java.util.Date;
+
+
+public class ResourceNode{
 
     private String resourceTitle;
 	
@@ -17,7 +20,60 @@ public class ResourceNode {
 	private String resourceType;
 	
 	private String contentType;
+	
 	private String contentTypeTag;
+	
+	private String externalContentTargetURL;
+	
+	private String videoPubDate;
+	
+	private long externalLastModInMilliSec ;
+	
+	private long pdfDcModInMilliSec ;
+	
+	private long comparisonDateInMilliSec ;
+	
+	private Date comparisonDate ;
+	
+	public Date getComparisonDate() {
+		return comparisonDate;
+	}
+
+	public void setComparisonDate(Date comparisonDate) {
+		this.comparisonDate = comparisonDate;
+	}
+
+	public long getComparisonDateInMilliSec() {
+		return comparisonDateInMilliSec;
+	}
+
+	public void setComparisonDateInMilliSec(long comparisonDateInMilliSec) {
+		this.comparisonDateInMilliSec = comparisonDateInMilliSec;
+	}
+
+	public long getExternalLastModInMilliSec() {
+		return externalLastModInMilliSec;
+	}
+
+	public void setExternalLastModInMilliSec(long externalLastModInMilliSec) {
+		this.externalLastModInMilliSec = externalLastModInMilliSec;
+	}
+
+	public long getPdfDcModInMilliSec() {
+		return pdfDcModInMilliSec;
+	}
+
+	public void setPdfDcModInMilliSec(long pdfDcModInMilliSec) {
+		this.pdfDcModInMilliSec = pdfDcModInMilliSec;
+	}
+
+	public String getExternalContentTargetURL() {
+		return externalContentTargetURL;
+	}
+
+	public void setExternalContentTargetURL(String externalContentTargetURL) {
+		this.externalContentTargetURL = externalContentTargetURL;
+	}
 	
 	public String getVideoGuid() {
 		return videoGuid;
@@ -62,10 +118,6 @@ public class ResourceNode {
 	public void setContentTypeTag(String contentTypeTag) {
 		this.contentTypeTag = contentTypeTag;
 	}
-
-	
-
-	
 	
 	public String getFeaturedIconImage() {
 		return featuredIconImage;
@@ -139,7 +191,12 @@ public class ResourceNode {
 		this.deviceFeautedIconImage = deviceFeautedIconImage;
 	}
 
-	
-	
+	public String getVideoPubDate() {
+		return videoPubDate;
+	}
+
+	public void setVideoPubDate(String videoPubDate) {
+		this.videoPubDate = videoPubDate;
+	}
 	
 }

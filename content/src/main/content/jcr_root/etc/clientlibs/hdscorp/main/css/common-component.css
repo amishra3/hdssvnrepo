@@ -919,6 +919,7 @@ font-weight: 500;
 }
 .checkbox input[type=checkbox] {
     margin: 3px 4px 4px!important;
+	opacity: 0;
 }
 input[type="checkbox"]+label.hds-icon {
     background-image: none;

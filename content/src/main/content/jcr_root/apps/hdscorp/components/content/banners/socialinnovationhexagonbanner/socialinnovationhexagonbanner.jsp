@@ -19,7 +19,7 @@
             
             <div class="advance-tech-hexagon-list clearfix">
             	<div class="content-container">
-                	<div class="col-sm-12 col-sm-offset-1 col-no-pad hex-contain clearfix">
+                	<div class="col-sm-12 col-no-pad hex-contain row-centered clearfix">
 
 						<c:forEach var="placardList" items="${placardList}" varStatus="loop">
 							<c:set var="placardTitle" value="${placardList.placardTitle}" />
@@ -34,7 +34,7 @@
 							</c:if>
 	
 	
-							<div class="hexagon320">
+							<div class="hexagon320 hex-col-centered">
                                 <div class="hexagon-content">
                                     <div class="icon">
                                         <img src="${placardIconPath}" alt="${placardIconalt}" title="${placardIconalt}">

@@ -115,4 +115,14 @@ if(scheme.toLowerCase().equals("http") && serverPort!=80){
 		</wcmmode:edit>
 	</c:otherwise>
 </c:choose>
-
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "Hitachi Insight Group",
+  "url" : "https://www.hitachiinsightgroup.com",
+  "sameAs" : [ "https://www.linkedin.com/company/3843",
+    "https://twitter.com/Hitachi_SocInn",
+    "https://www.facebook.com/hitachi.global/"
+ ]
+}
+</script>

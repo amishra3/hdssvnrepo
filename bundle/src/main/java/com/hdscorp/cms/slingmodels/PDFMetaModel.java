@@ -1,20 +1,21 @@
 package com.hdscorp.cms.slingmodels;
 
 import javax.inject.Inject;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
+import javax.jcr.Node;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adobe.acs.commons.util.CookieUtil;
 import com.day.cq.dam.api.Asset;
+import com.hdscorp.cms.constants.GlobalConstants;
 import com.hdscorp.cms.dao.PDFNode;
 import com.hdscorp.cms.util.HdsCorpCommonUtils;
+import com.hdscorp.cms.util.PathResolver;
 import com.hdscorp.cms.util.ServiceUtil;
 
 /**This sling model is used for get all meta data of PDF nodes.
@@ -50,10 +51,17 @@ public class PDFMetaModel {
 		
 		log.info("Start Execution of getPdfNode() PdfPath::" + pdfPath);
 		try {
-			if (pdfPath != null && !pdfPath.isEmpty() && pdfPath.toLowerCase().contains(".pdf")) {
-				pdfPath = HdsCorpCommonUtils.pdfJCRPath(pdfPath);
+			if (pdfPath != null && !pdfPath.isEmpty() && (pdfPath.toLowerCase().contains(".pdf") || pdfPath.contains("/ext/"))) {
+				if(!pdfPath.startsWith("/content/")){
+					pdfPath = HdsCorpCommonUtils.pdfJCRPath(pdfPath);	
+				}
+				
 				pdfNode = new PDFNode();
 				Resource resource = resourceResolver.resolve(pdfPath);
+				
+				if(resource==null || resource.getResourceType().equals("sling:nonexisting")){
+					resource = PathResolver.getResourceFromShortURL(request, pdfPath);	
+				}
 
 				if (!resource.isResourceType(Resource.RESOURCE_TYPE_NON_EXISTING)) {
 
@@ -74,6 +82,15 @@ public class PDFMetaModel {
 							pdfNode.setCreatedDate("");
 						}
 
+					}else{
+						Resource metaDataResource= resource.getChild("jcr:content/metadata");
+						ValueMap resVMap = metaDataResource.adaptTo(ValueMap.class);
+
+						pdfNode.setTitle(resVMap.get("dc:title",""));
+						pdfNode.setDescription(resVMap.get("dc:description",""));
+						pdfNode.setLongDescription(resVMap.get("dc:longdescription",""));
+						pdfNode.setCreatedDate(resVMap.get("dc:creationdate",""));
+						pdfNode.setExternalContentURL(resVMap.get("contentpath",""));
 					}
 				}
 

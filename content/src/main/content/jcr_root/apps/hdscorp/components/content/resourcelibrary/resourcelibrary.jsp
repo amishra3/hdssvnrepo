@@ -2,13 +2,17 @@
 <%@include file="/apps/foundation/global.jsp"%>
 <%@page session="false"%>
 <%@ taglib prefix="xss"
-	uri="http://www.adobe.com/consulting/acs-aem-commons/xss"%>
+    uri="http://www.adobe.com/consulting/acs-aem-commons/xss"%>
 <c:set var="contentrenderingpagepath" value="${properties.contentrenderingpagepath}" scope="request"/>
 <c:set var="featuredlabel" value="${properties.featuredlabel}" scope="request"/>
 <c:set var="hidefeaturedLabel" value="${properties.hidefeaturedLabel}" scope="request"/>
 <c:set var="featuredoverlaypath" value="${properties.featuredoverlaypath}" scope="request"/>
 <c:set var="isResourceLibraryPage" value="true" scope="request"/>
 
+<c:set var="defaultitle" value="${properties.sortByLabel}" />
+<c:set var="defaulval" value="${properties.sortByLabel}" />
+<c:set var="defaultitle" value="${fn:substringBefore(defaultitle, '|')}" />
+<c:set var="defaulval" value="${fn:substringAfter(defaulval, '|')}" />
 <script>
 var pageSize = <%=properties.get("pagesize","10")%>;
 </script>
@@ -18,10 +22,10 @@ var pageSize = <%=properties.get("pagesize","10")%>;
             <div class="res-filters-search clearfix">
                 <div class="content-container clearfix">
                     <div class="col-sm-7 hidden-xs hidden-sm" id="resource-search">
-<div class="resource-search">
-                        <input type="text" name="resSearch" id="resSearch" placeholder="Search All Resources">
-                        <span class="remove glyphicon glyphicon-remove glyphicon-white clearSearchIcon"></span>
-                        <span class="glyphicon glyphicon-search searchResource" aria-hidden="true"></span>
+                        <div class="resource-search">
+                            <input type="text" name="resSearch" id="resSearch" placeholder="Search All Resources">
+                            <span class="remove glyphicon glyphicon-remove glyphicon-white clearSearchIcon"></span>
+                            <span class="glyphicon glyphicon-search searchResource" aria-hidden="true"></span>
                         </div>
                         <div class="errorSearchField alert alert-danger fade in">Please enter search query</div>
                      </div>
@@ -38,7 +42,7 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         <a class="filterby" href="javascript:void(0);" data-refilter="FilteyContentType">
                             <span class="title">${properties.filterbycontentlabel}</span>
                             <span class="caret-arrow"></span>
-                        </a>
+                        </a>  
                     </div>
                 </div>
                 <div class="content-container clearfix filters-section less" id="FilterByIndustry">
@@ -64,41 +68,41 @@ var pageSize = <%=properties.get("pagesize","10")%>;
                         </div>
                     </div>
                 </div>
-				<!-- Mobile Placeholders -->
+                <!-- Mobile Placeholders -->
                 <!-- The dark background -->
             <div class="bgCover">
-				<div class="overlayBox hidden-md hidden-lg">
-					<div class="heading">
-						<h3>${properties.searchlabel}</h3>
-						<div class="close-search">
-							<a href="javascript:void(0);" title="Close" class="closeOverlay">close</a>
-						</div>
+                <div class="overlayBox hidden-md hidden-lg">
+                    <div class="heading">
+                        <h3>${properties.searchlabel}</h3>
+                        <div class="close-search">
+                            <a href="javascript:void(0);" title="Close" class="closeOverlay">close</a>
+                        </div>
 
-					</div>
-					<div class="searchArea"></div>
-					<div class="filtrSideBar"></div>
-					<div class="topFilter">
-						<h4>${properties.filterbyindustrylabel}</h4>
-						<div class="FilterAreaIndustry"></div>
-						<h4 class="last">${properties.filterbycontentlabel}</h4>
-						<div class="FilterAreaContent"></div>
-					</div>
-					<div class="FilterAreaBtnPop">
-					<div class="clearfix"></div>
-							<div class="show-results">
-								<div class="btn-square-red">
-									<a href="javascript:void(0);" target="_self" id="mobShowFilters">${properties.showresultslabel}</a>
-								</div>
-							</div>
-						<div class="clearfix"></div>
-					<div class="clear-results">
-						<div class="btn-square-red">
-							<a href="#" target="_self">${properties.clearallfilterslabel}</a>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div>
+                    </div>
+                    <div class="searchArea"></div>
+                    <div class="filtrSideBar"></div>
+                    <div class="topFilter">
+                        <h4>${properties.filterbyindustrylabel}</h4>
+                        <div class="FilterAreaIndustry"></div>
+                        <h4 class="last">${properties.filterbycontentlabel}</h4>
+                        <div class="FilterAreaContent"></div>
+                    </div>
+                    <div class="FilterAreaBtnPop">
+                    <div class="clearfix"></div>
+                            <div class="show-results">
+                                <div class="btn-square-red">
+                                    <a href="javascript:void(0);" target="_self" id="mobShowFilters">${properties.showresultslabel}</a>
+                                </div>
+                            </div>
+                        <div class="clearfix"></div>
+                    <div class="clear-results">
+                        <div class="btn-square-red">
+                            <a href="#" target="_self">${properties.clearallfilterslabel}</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
             
              <!-- Mobile Placeholders -->
                  <div class="content-container clearfix filters-section less" id="FilteyContentType">
@@ -140,12 +144,12 @@ var pageSize = <%=properties.get("pagesize","10")%>;
             <div class="resources-results content-container container-fluid clearfix">
                 <div class="col-md-3 asideWrapper hidden-xs hidden-sm" id="mobilerightMenu">
                    <c:if test="${empty properties.contentrenderingpagepath}">
-                    		<c:set var="contentrenderingpagepath" value="/content/hdscorp/en_us/lookup/resourcelibraryrenderer" scope="request"/>
-                    	</c:if>
+                            <c:set var="contentrenderingpagepath" value="/content/hdscorp/en_us/lookup/resourcelibraryrenderer" scope="request"/>
+                        </c:if>
                         <c:if test="${empty properties.featuredoverlaypath}">
-                    		<c:set var="featuredoverlaypath" value="/content/hdscorp/en_us/lookup/resourcelibraryrenderer" scope="request"/>
-                    	</c:if>
-                    	<cq:include path="subcategoryfilterpar" resourceType="hdscorp/components/content/categoryfacets" />
+                            <c:set var="featuredoverlaypath" value="/content/hdscorp/en_us/lookup/resourcelibraryrenderer" scope="request"/>
+                        </c:if>
+                        <cq:include path="subcategoryfilterpar" resourceType="hdscorp/components/content/categoryfacets" />
                 <div class="clearfix"></div>
                 <div class="clear-results hidden-sm hidden-xs">
                     <div class="btn-square-red">
@@ -156,25 +160,47 @@ var pageSize = <%=properties.get("pagesize","10")%>;
             <div class="col-md-9 col-xs-12" id="contentResourceLibrary">
                 <div class="result-resources">
                     <div id="loading" style="display: none;"></div>
-                    <div class="resource-heading">
-                        <h2>${properties.featuredlabel}</h2>
+                    <div class="resource-heading clearfix">
+                        <h2 style="float:left;">${properties.featuredlabel}</h2>
+                            <c:if test="${empty properties.hidesortbyfunct}">
+
+                                <div class="sortResources" id="sortResources">
+                                    <div class="sort-by-button">
+                                        <div class="slabel">${defaultitle}</div>
+                                        <div class="stitle" data-dtitle="${defaulval}">${defaulval}</div>
+                                        <div class="caret-arrow"></div>
+                                    </div>
+                                    <div class="sort-by-list">
+                                        <ul>
+                                            <c:forEach items="${model.sortByType}" var="data" varStatus="status">
+                                                <c:set var="sortCriterialabel" value="${xss:encodeForHTML(xssAPI, data['sortCriterialabel'])}"/>
+                                                <c:set var="sortCriterialabel" value="${hdscorp:removeDoubleQuotes(sortCriterialabel)}"/>
+                                                <c:set var="sortCriteriavalue" value="${xss:filterHTML(xssAPI,data['sortCriteriavalue'])}"/>
+                                                <li id="${fn:toLowerCase(sortCriteriavalue)}" value="${fn:replace(fn:replace(sortCriterialabel,'[', ''),']', '')}"><a href="javascript:void(0);">${sortCriterialabel}</a></li>
+                                            </c:forEach>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </c:if>
                     </div>
                     <div class="spolightresults" style="position:relative">
-                        <div class="res-spotlight-group clearfix" id="featuredCards">
-                        	<c:set var="includeFeaturedtargetURL" value="${requestScope['includeFeaturedtargetURL']}" />
+
+                        <div class="res-spotlight-group clearfix" id="featuredCards" ${empty includeFeaturedtargetURL ? "style=display:none;" : ""} >
+                            <c:set var="includeFeaturedtargetURL" value="${requestScope['includeFeaturedtargetURL']}" />
                             <c:if test="${not empty includeFeaturedtargetURL}">
-                            	<sling:include path="${includeFeaturedtargetURL}" />
-							</c:if>                                                                                   
+                                <sling:include path="${includeFeaturedtargetURL}" />
+                            </c:if>                                                                                   
                         </div>
                         <div class="category-resources-listing">
                         
                             <div class="section prodnsolcategorycontent" id="prodnsolcategorycontent">
-                            	<c:set var="includetargetURL" value="${requestScope['includetargetURL']}" />
-                            	<c:if test="${not empty includetargetURL}">
-                            		<div class="slingcontent">
-                                		<sling:include path="${includetargetURL}" />
-                                	</div>
-                                 </c:if>                            
+                                <c:set var="includetargetURL" value="${requestScope['includetargetURL']}" />
+                                <c:if test="${not empty includetargetURL}">
+                                    <div class="slingcontent">
+                                        <sling:include path="${includetargetURL}" />
+                                    </div>
+                                 </c:if>                      
                                                             
                             </div>
                             <div id="loadResourceContent">

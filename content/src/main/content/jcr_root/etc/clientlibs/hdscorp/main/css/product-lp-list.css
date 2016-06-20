@@ -8,8 +8,9 @@
 }
 
 #contentCatagory{
-	position:relative;
+    position:relative;
 }
+#contentCatagory #loading{background-position: 50% 70%;}
 
 .overRidePadding {
     padding-right: 0!important;
@@ -63,7 +64,7 @@
 }
 
 .section-product-col a:hover{
-	color: #ac1f25;	
+    color: #ac1f25; 
 }
 
 
@@ -88,7 +89,7 @@
     margin-left: -23px;
     border-style: solid;
     border-width: 19px 23px 0 23px;
-    border-color: #d97f20 transparent transparent transparent;
+    border-color: #F68D24 transparent transparent transparent;
     z-index: 9;
 }
 .product-search-area h2.sectionheading {
@@ -112,6 +113,13 @@
     margin: 0 auto;
     position: relative;
 }
+#custom-search-input .pr-search .clearProSearch{
+    position: absolute;
+    right: 71px;
+    top: 27px;
+    cursor: pointer;
+    display: none;
+}
 #custom-search-input .pr-search span.glyphicon.glyphicon-search {
     -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
@@ -130,8 +138,11 @@
     text-align: left;
     font-size: 1.125rem;
     font-family: Arial, sans-serif;
-    padding-right: 62px;
+    padding-right: 100px;
     padding-left: 15px;
+}
+#custom-search-input .pr-search > input[type=text]::-ms-clear {
+    display: none;
 }
 #custom-search-input .pr-search::-webkit-input-placeholder {
     color: #414141;
@@ -327,23 +338,26 @@
 }
 .result-product .navLinks .countProducts {
     float: left;
+    margin-top: 5px;
 }
 .result-product .navLinks .countProducts p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8125rem;
     line-height: 1.8em;
+	margin-bottom: 0;
 }
 .result-product .navLinks .toggleLinks {
     float: right;
 }
 .result-product .navLinks .toggleLinks a {
-    margin-left: 13px;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 35px;
     color: #7d7d7d;
     font-size: 0.75rem;
     font-weight: 900;
+    border: 1px solid #ffffff;
+    padding: 10px 21px 10px 25px;
 }
 .result-product .navLinks .toggleLinks a.current {
     text-transform: uppercase;
@@ -392,6 +406,9 @@
     padding: 35px 0 30px 0;
     display: none;
 }
+.result-product .category-products-listing .product.visible {
+    display: block;
+}
 .result-product .category-products-listing .product:last-child {
     border-bottom: none;
     padding-bottom: 0;
@@ -406,17 +423,17 @@
 .result-product .category-products-listing .product p {
     font-family: "museo-sans",Helvetica,Arial,sans-serif;
     font-size: 1.125em;
-	font-weight: 300;
-	line-height: 120%;
+    font-weight: 300;
+    line-height: 120%;
 }
 .result-product .category-products-listing .product ul {
-	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
     margin: 0 0 12px 0;
     padding: 0 0 0 18px;
     list-style-type: square;
     list-style-position: outside;
     font-size: 1.125em;
-    font-weight: 300;	
+    font-weight: 300;   
 }
 .result-product .category-products-listing .product ul li {
     margin-bottom: 8px;
@@ -463,6 +480,7 @@
     display: none;
     position: relative;
     padding-bottom: 30px;
+    padding-top: 5px;
     float: left;
 }
 
@@ -598,15 +616,15 @@
 }
 
 .product-search-area .load-more-link{
-	border-color: #ce0000;    	
+    border-color: #ce0000;      
 }
 .product-search-area .load-more-link a{
-  color: #cc0000;	
+  color: #cc0000;   
 }
 
 .product-search-area .load-more-link a:hover{
   background: #cc0000;
-  color: #ffffff;	
+  color: #ffffff;   
 }
 
 @media (max-width: 768px) {
@@ -622,7 +640,7 @@
         padding-right: 0;
         padding-left: 0;
         padding-top: 40px;
-    	padding-bottom:40px;
+        padding-bottom:40px;
     }
     .product-search-area h2.sectionheading {
         margin-bottom: 20px;
@@ -674,7 +692,12 @@
         min-height: 35px;
         font-size: 1rem;
         text-align: left;
-        padding-left: 15px;
+        padding-left: 10px;
+        padding-right: 65px
+    }
+    #custom-search-input .pr-search .clearProSearch{
+        right: 40px;
+        top: 11px;
     }
     .Container-Results {
         padding-top: 34px;
@@ -696,17 +719,17 @@
     .product-list-section {
         padding: 22px 0 16px;
     }
-    #custom-search-input .pr-search::-webkit-input-placeholder {
+    #custom-search-input .pr-search input::-webkit-input-placeholder {
         color: #414141;
         font-size: 0.8125rem;
     }
-    #custom-search-input .pr-search::-moz-placeholder {
+    #custom-search-input .pr-search input::-moz-placeholder {
         color: #414141;
         font-size: 0.8125rem;
     }
     /* firefox 19+ */
     
-    #custom-search-input .pr-search:-ms-input-placeholder {
+    #custom-search-input .pr-search input:-ms-input-placeholder {
         color: #414141;
         font-size: 0.8125rem;
     }

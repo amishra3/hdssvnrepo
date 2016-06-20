@@ -1,3 +1,11 @@
+<%@page import="org.apache.sling.api.resource.ResourceUtil"%>
+<%@page import="org.apache.jackrabbit.commons.JcrUtils"%>
+<%@page import="com.hdscorp.cms.util.JcrUtilService"%>
+<%@page import="com.day.cq.commons.jcr.JcrUtil"%>
+<%@page import="org.apache.sling.api.resource.Resource"%>
+<%@page import="org.apache.sling.api.resource.ValueMap"%>
+<%@page import="javax.jcr.Node"%>
+<%@page import="com.hdscorp.cms.dao.JCRDataAccessor"%>
 <%@page import="com.hdscorp.cms.constants.GlobalConstants"%>
 <%@page session="false"%>
 <%@include file="/apps/foundation/global.jsp"%>
@@ -13,6 +21,7 @@
 	<%
 		//Current Node should not be included in the breadcrumb
 		int currentPageDepth = currentPage.getDepth()-1;
+		JCRDataAccessor dataAccessor = new JCRDataAccessor(pageContext);
 
 		StringBuffer breadcrumbContent = new StringBuffer("");
 		String rootLabel = (String) properties.get("rootLabel",
@@ -31,9 +40,13 @@
 		for (int i = 3; i < currentPageDepth; i++) {
 			parentPageHandle = currentPage.getAbsoluteParent(i);
 			if (parentPageHandle != null) {
-				breadcrumbContent.append(" > ");
-				parentPath = PathResolver.getShortURLPath(parentPageHandle.getPath());
-				breadcrumbContent.append("<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'><a itemprop='item'class='breadcrumblink' href='" + parentPath + "'><span itemprop='name'>"+ parentPageHandle.getTitle() + "</span></a><meta itemprop='position' content="+count+" /</li>");
+				String parentResourcePath =  parentPageHandle.getPath();
+				String hidecurrentpageinbreadcrumb = parentPageHandle.getProperties().get("hidecurrentpageinbreadcrumb", "false");
+				if(hidecurrentpageinbreadcrumb == null || "false".equalsIgnoreCase(hidecurrentpageinbreadcrumb) ){
+					breadcrumbContent.append(" > ");
+					parentPath = PathResolver.getShortURLPath(parentResourcePath);
+					breadcrumbContent.append("<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'><a itemprop='item'class='breadcrumblink' href='" + parentPath + "'><span itemprop='name'>"+ parentPageHandle.getTitle() + "</span></a><meta itemprop='position' content="+count+" /</li>");
+				}
 			}
              count =count+1; 
 		}

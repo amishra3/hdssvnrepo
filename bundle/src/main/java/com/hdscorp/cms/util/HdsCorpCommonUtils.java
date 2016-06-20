@@ -1,6 +1,6 @@
 package com.hdscorp.cms.util;
 
-import java.io.IOException;
+import java.net.URLDecoder;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -18,12 +18,10 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.ValueFormatException;
-import javax.servlet.ServletException;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -192,51 +190,68 @@ public class HdsCorpCommonUtils {
 			referer="";
 		}
 		skipForm = (referer.indexOf(".hds.com")!=-1  && gatingParamVal!=null && gatingParamVal.equalsIgnoreCase("1"));
+		if(referer.contains("/cf") || referer.contains("/editor") || referer.contains("/siteadmin")){
+			skipForm = true ;
+		}
 		return skipForm;
 	}
 	
 	public static boolean isGated(String pdfPath,SlingHttpServletRequest request) throws Exception {
 
 		boolean isGatedReturnFlag = false ;
-				
+		
+		pdfPath = URLDecoder.decode(pdfPath, "UTF-8");
 		Resource res = PathResolver.getResourceFromShortURL(request, pdfPath);
-		Asset asset = res.adaptTo(Asset.class);
-		if(asset!=null){
-			try {
-				Node resourceNode = res.adaptTo(Node.class) ;
-				Node metaDataNode= resourceNode.getNode("jcr:content/metadata");
-				String resourceTitle = asset.getMetadataValue("dc:title");
-				String isGated = asset.getMetadataValue("dc:gated");
-				String gatedStartedDate = asset.getMetadataValue("dc:startdate");
-				String gatedEndDate = asset.getMetadataValue("dc:enddate");
-				logger.debug("PDF Attributes are - "+isGated+" gatedStartedDate - "+gatedStartedDate+" gatedEndDate "+gatedEndDate);
-				if(isGated!=null && isGated.equalsIgnoreCase("Yes") && gatedStartedDate!=null && gatedEndDate!=null){
-					Calendar currDate =  Calendar.getInstance();
-					Calendar startDate = metaDataNode.getProperty("dc:startdate").getValue().getDate();
-					Calendar endDate = metaDataNode.getProperty("dc:enddate").getValue().getDate();
+		if(res!=null){
+			Node resourceNode = res.adaptTo(Node.class) ;
+			Node metaDataNode= resourceNode.getNode("jcr:content/metadata");
+			String resourceTitle = "" ;
+			String isGated = "";
+			String gatedStartedDate = "";
+			String gatedEndDate = "";
+			
+			Asset asset = res.adaptTo(Asset.class);
+			if(asset!=null || metaDataNode!=null){
+				try {
+					if(asset!=null){
+						resourceTitle = asset.getMetadataValue("dc:title");
+						isGated = asset.getMetadataValue("dc:gated");
+						gatedStartedDate = asset.getMetadataValue("dc:startdate");
+						gatedEndDate = asset.getMetadataValue("dc:enddate");						
+					}else if(metaDataNode!=null){
+						isGated = metaDataNode.getProperty("dc:gated").getString();
+						gatedStartedDate = metaDataNode.getProperty("dc:startdate").getString();
+						gatedEndDate = metaDataNode.getProperty("dc:enddate").getString();
+					}
+					logger.debug("PDF Attributes are - "+isGated+" gatedStartedDate - "+gatedStartedDate+" gatedEndDate "+gatedEndDate);
+					if(isGated!=null && isGated.equalsIgnoreCase("Yes") && gatedStartedDate!=null && gatedEndDate!=null){
+						Calendar currDate =  Calendar.getInstance();
+						Calendar startDate = metaDataNode.getProperty("dc:startdate").getValue().getDate();
+						Calendar endDate = metaDataNode.getProperty("dc:enddate").getValue().getDate();
+						
+						long startTime = startDate.getTimeInMillis();
+						long endTime = endDate.getTimeInMillis();
+						long currTime = currDate.getTimeInMillis();
+						
+						if(currTime >= startTime && currTime < endTime){
+							isGatedReturnFlag=true;
+						}	
+					}
 					
-					long startTime = startDate.getTimeInMillis();
-					long endTime = endDate.getTimeInMillis();
-					long currTime = currDate.getTimeInMillis();
-					
-					if(currTime >= startTime && currTime < endTime){
-						isGatedReturnFlag=true;
-					}	
+				} catch (ValueFormatException e) {
+					// TODO Auto-generated catch block
+					logger.error("ValueFormatException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
+				} catch (PathNotFoundException e) {
+					// TODO Auto-generated catch block
+					logger.error("PathNotFoundException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
+				} catch (RepositoryException e) {
+					// TODO Auto-generated catch block
+					logger.error("PathNotFoundException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
 				}
-				
-			} catch (ValueFormatException e) {
-				// TODO Auto-generated catch block
-				logger.error("ValueFormatException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
-			} catch (PathNotFoundException e) {
-				// TODO Auto-generated catch block
-				logger.error("PathNotFoundException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
-			} catch (RepositoryException e) {
-				// TODO Auto-generated catch block
-				logger.error("PathNotFoundException  in isGated- " + e.getMessage()+" for the following path --- "+pdfPath);
+	
+			}else{
+				isGatedReturnFlag =false;
 			}
-
-		}else{
-			isGatedReturnFlag =false;
 		}
 		logger.debug("IS PDF GATED - "+isGatedReturnFlag);
 		return isGatedReturnFlag;

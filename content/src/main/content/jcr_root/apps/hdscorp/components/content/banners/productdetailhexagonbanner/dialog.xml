@@ -138,6 +138,23 @@
                         fieldLabel="Hexagon Download Link Label"
                         name="./secondarylinklabel"
                         xtype="textfield"/>
+                     <isgatedcontent
+                         jcr:primaryType="cq:Widget"
+                         fieldLabel="Is Hexagon Download Content Gated?"
+                         name="./isgatedcontent"
+                         type="select"
+                         xtype="selection">
+                         <options jcr:primaryType="cq:WidgetCollection">
+                             <Yes
+                                 jcr:primaryType="nt:unstructured"
+                                 text="Yes"
+                                 value="1"/>
+                             <No
+                                 jcr:primaryType="nt:unstructured"
+                                 text="No"
+                                 value="2"/>
+                         </options>
+                     </isgatedcontent>                        
                     <videoid
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Video ID"

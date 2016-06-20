@@ -9,6 +9,9 @@
 	<filter root="/apps/cq/xssprotection"/>
     <filter root="/etc/clientlibs/hdscorp"/>
     <filter root="/etc/workflow/models/hdscorpmodel"/>
+    <filter root="/etc/workflow/models/content-approval-workflow"/>
+    <filter root="/etc/workflow/models/custom-content-approval-workflow"/>
+    <filter root="/etc/workflow/models/dam/update_asset_retaining_metadata"/>
     <filter root="/etc/workflow/launcher/config/hdscorp_overwrite_title"/>
 	<filter root="/etc/workflow/launcher/config/hdscorp_blog_feed"/>
 	<filter root="/etc/workflow/launcher/config/hdscorp_brighttalk_feed"/>
@@ -16,6 +19,10 @@
 	<filter root="/etc/workflow/launcher/config/hdscorp_twitter_feed"/>
 	<filter root="/etc/workflow/launcher/config/hdscorp_lmsdata"/>
 	<filter root="/etc/workflow/launcher/config/hdscorp_videos_activate"/>
+	<filter root="/etc/workflow/launcher/config/created_custom_content_approval"/>
+	<filter root="/etc/workflow/launcher/config/deletion_of_pdfs"/>
+	<filter root="/etc/workflow/launcher/config/modified_custom_content_approval"/>
+	<filter root="/etc/workflow/launcher/config/dam_update_asset_metadata"/>
     <filter root="/etc/map/"/>
     <filter root="/etc/map.dev/"/>
 	<filter root="/etc/map.qa/"/>

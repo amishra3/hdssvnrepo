@@ -15,7 +15,8 @@
 	<cq:includeClientLib categories ="hdscorp.widgets"/>
 </wcmmode:edit>
 
+<c:set var="cssmainclientlib" value="<%= pageProperties.getInherited("cssmainclientlib", "hdscorp.main") %>" />
 
-<cq:includeClientLib css="hdscorp.main"/>
+<cq:includeClientLib css="${cssmainclientlib}"/>
 <cq:includeClientLib categories="hdscorp.dependencies"/>
 

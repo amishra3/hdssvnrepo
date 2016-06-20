@@ -7,6 +7,7 @@
 
 	<c:forEach var="product" items="${model.products}" varStatus="loopcnt">
 		<c:set var="productTitle" value="${product.productTitle}" />
+		<c:set var="productAltTitle" value="${product.productAltTitle}" />
 		<c:set var="productInitialChar" value="${fn:substring(productTitle, 0,1)}" />
 		<c:set var="productTags" value="${product.productTags}" />
 		<c:if test="${not empty  productTags}">
@@ -14,13 +15,13 @@
 		</c:if>
 		
 		
-		<div class="product" data-sort="${productInitialChar}" data-alpha="${productInitialChar}"
+		<div class="product" data-sort="${productInitialChar}" data-alpha="${productInitialChar}" data-keywords="${productAltTitle}" 
 		data-category="${productTags}">
-			<h3><a href="${product.productPath}" class="filterText">${product.productTitle}</a></h3>
+            <h3><a href="${product.productPath}" class="filterText">${product.productTitle}</a></h3>
 		    
 		    <%// IF there is no selector, dont include this as the defaul one would be showed %>
 		    <%// Mark the description which belongs to parent category, if available %>
-		    
+
 <%-- 		    <c:if test="${model.noTags ne true && fn:length(slingRequest.requestPathInfo.selectors) < 2}"> --%>
 			<c:if test="${model.noTags ne true && fn:length(slingRequest.requestPathInfo.selectors) < 2}">
 			    <c:forEach var="descriptionObj" items="${product.descriptionList}" varStatus="descloopcnt">
@@ -40,7 +41,7 @@
 		    	${product.productDescription}
 		    </div>
 		    <c:set var="defaultDescClass" value=""/>
-		    
+
 		    <a href="${product.productPath}" class="animateLink">${properties.viewproductlabel} <span aria-hidden="true" class="glyphicon glyphicon-menu-right animateIcon"></span></a>
 		 </div>
 	</c:forEach>

@@ -110,6 +110,23 @@
                                         value="2"/>
                                 </options>
                             </thirdparty>
+                         <isgatedcontent
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Is Gated Content?"
+                                name="./isgatedcontent"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="yes"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="no"/>
+                                </options>
+                            </isgatedcontent>                            
                         </fieldConfig>
                     </multilinks>
                 </items>

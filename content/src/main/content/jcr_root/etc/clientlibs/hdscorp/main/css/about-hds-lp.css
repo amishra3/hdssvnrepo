@@ -1,7 +1,7 @@
 /* About HDS - Behind the Scene - Pentagon Section CSS*/
 .behind-scene-hexagon{
   position: relative;
-  padding: 55px 15px 200px;
+  padding: 55px 15px 100px;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,25 +38,25 @@
    }
 
 @media only screen and (max-width: 1280px) {
-   .behind-scene-hexagon-list .hex-contain .hexagon320{
+  /*.behind-scene-hexagon-list .hex-contain .hexagon320{
     margin-right:22px;
-  }
-}	
+  }*/
+} 
    
 @media only screen and (max-width: 1024px) {
   .behind-scene-hexagon{
-     padding-bottom:200px;
+     padding-bottom:100px;
   }
   .behind-scene-hexagon-list .hex-contain{
     width:100%;
     margin:0;
   }
-  .behind-scene-hexagon-list .hex-contain .hexagon320{
+  /*.behind-scene-hexagon-list .hex-contain .hexagon320{
     margin-right:16px;
   }
   .behind-scene-hexagon-list .hex-contain .hexagon320:last-child{
     margin-right:0;
-  }
+  }*/
 .behind-scene-hexagon-list .hexagon320 .read-more {
     margin-top: 14px;
    }
@@ -182,17 +182,17 @@
 }
 
 @media only screen and (min-width: 992px) {   
-	.about-hds-csr-eco.server-rack h3{
-		padding-left:4px;
-	}
+  .about-hds-csr-eco.server-rack h3{
+    padding-left:4px;
+  }
 }
 
 
 @media only screen and (max-width: 1024px) {
     .about-hds-career-leader .content-container{
-		margin-left:-15px;
+    margin-left:-15px;
         margin-right:-15px;
-	}
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -223,7 +223,7 @@
     }
 
     .about-hds-career-leader .about-hds-career-content {
-    	text-align: right;
+      text-align: right;
     }
 
     .about-hds-career-leader .about-hds-leader-content {

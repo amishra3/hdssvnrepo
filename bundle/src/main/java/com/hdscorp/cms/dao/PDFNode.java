@@ -11,9 +11,30 @@ public class PDFNode {
 	
 	private String description;
 	
+	private String longDescription;
+	
+
 	private String imagePath;
 	
 	private String createdDate;
+	
+	private String externalContentURL;
+
+	public String getLongDescription() {
+		return longDescription;
+	}
+
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
+	}
+
+	public String getExternalContentURL() {
+		return externalContentURL;
+	}
+
+	public void setExternalContentURL(String externalContentURL) {
+		this.externalContentURL = externalContentURL;
+	}
 
 	public String getTitle() {
 		return title;

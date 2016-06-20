@@ -12,6 +12,7 @@
                             <div id="custom-search-input">
                                 <div class="pr-search">
                                     <input type="text" id="searchFilter" name="searchFilter" placeholder="${properties.searchboxdeafulttext}">
+                                    <span class="remove glyphicon glyphicon-remove glyphicon-white clearProSearch"></span>
                                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                 </div>
                             </div>

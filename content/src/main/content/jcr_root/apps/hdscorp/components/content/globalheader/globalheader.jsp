@@ -15,7 +15,7 @@
 
 <c:set var="childPages" value="<%=PageUtils.getChildPages(properties.get("rootPath", ""),resourceResolver)%>" />
 <c:set var="hideSearch" value="<%=properties.get("hidesearch", false)%>" />
-
+<c:set var="customcomponentpath" value="<%=properties.get("customcomponentpath", "")%>" />
 <c:set var="logoTargetURL" value="${properties.	imageurl}" />
 <c:set var="hdslogotitle" value="<%=properties.get("hdslogotitle", "")%>" />
 <c:if test="${fn:startsWith(logoTargetURL,'/content/')}">
@@ -29,8 +29,10 @@
 	   String shortseacrhUrl=PathResolver.getShortURLPath(seacrhpageUrl);
 	   pageContext.setAttribute("shortseacrhUrl", shortseacrhUrl);
 	}
- 
+
 	String viewtype = "";
+
+
 	String[] selectorArray = slingRequest.getRequestPathInfo().getSelectors();
 	if (selectorArray != null && selectorArray.length > 0) {
 		viewtype = selectorArray[0];
@@ -85,10 +87,12 @@
 				 	             </a></li>
                             </c:when>
                            <c:otherwise>
- 					             <li><a  href="${linktargeturl}" x-cq-linkchecker="skip"
-							     target="${linkurltargettype?'_blank':'_self'}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
+ 					             <li>
+ 					             	<a  href="${linktargeturl}" x-cq-linkchecker="valid"
+							      		target="${linkurltargettype?'_blank':'_self'}"> <span class="icon nav-globe" style="background-image: url(${linkIconPath});background-position: 0 0;"></span>
 							          ${linkTitle}
-				 		         </a></li>
+				 		        	 </a>
+				 		        </li>
                           </c:otherwise>
                        </c:choose>
 				    </c:forEach>
@@ -96,6 +100,13 @@
 					<li class="search"><input type="text"
 						placeholder="${properties.searchboxtext}" data-href="${shortseacrhUrl}" id="gsaSearchBox"><span
 						class="icon nav-search"></span></li>
+				  </c:if>
+                    <c:if test="${not empty customcomponentpath}">
+					<li class="search">
+					<cq:include path="customcontent" resourceType="${customcomponentpath}" />
+
+
+                        </li>
 				  </c:if>
 				</ul>
 			</div>
@@ -123,6 +134,16 @@
                 </div>
             </div>
             </c:if>
+
+
+                <c:if test="${not empty customcomponentpath}">
+
+				    <div class="share-mobile-section hidden-md hidden-lg">
+					<cq:include path="customcontent" resourceType="${customcomponentpath}" />
+                    </div>
+
+				  </c:if>    
+
 	        <!--Geo OverLay-->
             <c:if test="${not empty linkoverlayURLPath}" >
                 <sling:include path="${linkoverlayURLPath}" />
@@ -162,12 +183,11 @@
                         <c:set var="childPagePathWithoutHTML" value="${fn:substringBefore(childPagePath,'.html')}" />
 
 						<li class="${fn:contains(requestURL, childPagePathWithoutHTML)?'active':''} hds-default-nav">
-						    <a 
-						    	itemprop="url" href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"
-						    	><span itemprop="name">${navTitle}</span>
-						    	<c:if test="${not empty pageprops.navpath}">
-						    	<span class="icon-accordion-closed"></span>
-						    	<span class="icon-accordion-opened"></span>
+						    <a itemprop="url" href="${fn:contains(childPage.path, 'http')?'':domain}${hdscorp:shortURL(childPage.path)}"  x-cq-linkchecker="skip">
+						    	<span itemprop="name">${navTitle}</span>
+							    	<c:if test="${not empty pageprops.navpath}">
+							    	<span class="icon-accordion-closed"></span>
+							    	<span class="icon-accordion-opened"></span>
 						    	</c:if>
 							</a>
 							<c:if test="${not empty pageprops.navpath}">

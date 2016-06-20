@@ -223,7 +223,9 @@
    line-height: 1.4em;
    margin-bottom: 20px;
 }
-
+.category-promo-desc a.isGatedLock span.glyphicon.glyphicon-lock {
+    margin-right: 5px;
+}
 .category-products .category-promotion .category-promo-desc ul{
   margin: 0 0 12px 0; 
   padding: 0 0 0 15px;

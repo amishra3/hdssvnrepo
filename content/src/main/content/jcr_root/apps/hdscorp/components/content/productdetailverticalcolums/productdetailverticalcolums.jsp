@@ -7,10 +7,17 @@
 <div class="row">
 	<div class="col-sm-4">
 		<div class="resources-category">
-			<h3 class="resources-category-heading">${properties.columntitle}</h3>
+            <c:if test="${not empty properties.columntitle}">
 
-			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1-thirdparty-voverlay-videoid")%>" />
+            <h3 class="resources-category-heading">${properties.columntitle}</h3>
+            </c:if>
+
+			<c:set var="contentColumns" value="<%=PageUtils.convertMultiWidgetToList(properties,"contenticonpath-contenttitle-columncontent-seemorelabel-seemoretargeturl-contenticonpathalttext-seemorenewwin-seemorenewwin1-thirdparty-voverlay-videoid-isgatedcontent")%>" />
 					<c:forEach var="column" items="${contentColumns}" varStatus="loop">
+						<c:set var="isgatedclass" value=""/>
+						<c:if test = "${column.isgatedcontent == 'yes'}">
+							<c:set var="isgatedclass" value=" isGatedLock"/>
+						</c:if>
 						<c:set var="linkUrl" value="${column.seemoretargeturl}"/>
                             <c:if test="${not empty column.videoid}">
                               <c:set var="vid" value="${column.videoid}" />
@@ -29,7 +36,7 @@
                             <c:choose>
                             	<c:when test="${not empty column.seemorelabel}">
                                       <div class="resources-category-more">
-                                         <a class="animateLink" href="${column.voverlay==1?'javascript:void(0);':linkUrl}" onclick="${column.voverlay==2?'':vidurl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
+                                         <a class="animateLink ${isgatedclass}" href="${column.voverlay==1?'javascript:void(0);':linkUrl}" onclick="${column.voverlay==2?'':vidurl}" target="${column.seemorenewwin==1?'_blank':'_self'}">${column.seemorelabel}${column.thirdparty==1?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' <span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span>'}</a>
                                       </div>
                                 </c:when>
                                 <c:otherwise>

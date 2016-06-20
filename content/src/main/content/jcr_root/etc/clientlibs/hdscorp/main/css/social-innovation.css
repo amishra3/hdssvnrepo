@@ -1,7 +1,7 @@
 /* SI - Advanced Technology - Hexagon Section CSS*/
 .advance-tech-hexagon{
   position: relative;
-  padding: 70px 15px 50px;
+  padding: 70px 15px 100px;
   background-image: url("../images/si-advance-tech-bg.jpg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -41,13 +41,14 @@
 @media only screen and (max-width: 1024px) {
   .advance-tech-hexagon{
     min-height: 750px;
+    padding-bottom: 100px;
   }
   .advance-tech-hexagon-list .hex-contain{
     width:100%;
     margin:0;
   }
   .advance-tech-hexagon-list .hex-contain .hexagon320{
-    margin-right:16px;
+    margin-right:10px;
   }
   .advance-tech-hexagon-list .hex-contain .hexagon320:last-child{
     margin-right:0;
@@ -55,6 +56,9 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .advance-tech-hexagon{
+    padding-bottom:50px;
+  }
   .advance-tech-hexagon h2{
    font-size: 1.875rem;
   }
@@ -125,11 +129,11 @@
 }
 
 .we-mean-business .si-comm-box .description span a{
-	color: #333333;
+  color: #333333;
 }
 
 .we-mean-business .si-comm-box .description span a:hover{
-	text-decoration: none;	
+  text-decoration: none;  
 }
 
 @media only screen and (max-width: 991px) {

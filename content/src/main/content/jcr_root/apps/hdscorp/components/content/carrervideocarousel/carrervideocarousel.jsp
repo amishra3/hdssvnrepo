@@ -46,7 +46,7 @@
                 <div class="PagerBar" id="pageBar">
                     <div class="content-container">
 
-
+      <c:if test="${fn:length(carrerCarosuelTitles)>1}">
 <c:forEach var="carrerCarosuelTitle" items="${carrerCarosuelTitles}">
 <div class="col-md-2 smMobile">
       <a href="javascript:void(0);" class="name">${carrerCarosuelTitle.carrerpagebartitle}</a>
@@ -54,7 +54,7 @@
 
 </c:forEach>
 
-
+      </c:if>
 
                         </div>
 

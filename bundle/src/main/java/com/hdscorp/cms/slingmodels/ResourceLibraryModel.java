@@ -24,6 +24,11 @@ public class ResourceLibraryModel extends MultifieldUtil {
 	@Named("filterbycontenttype")
 	@Default(values = { "" })
 	private String[] filterByContentType;
+	
+	@Inject
+	@Named("sortByType")
+	@Default(values = { "" })
+	private String[] sortByType;
 
 	public List<Map<String, Object>> getFilterByIndustry() {
 		return super.getMultiFieldPanelValues(filterByIndustry);
@@ -32,5 +37,8 @@ public class ResourceLibraryModel extends MultifieldUtil {
 	public List<Map<String, Object>> getFilterByContentType() {
 		return super.getMultiFieldPanelValues(filterByContentType);
 	}
-
+	
+	public List<Map<String, Object>> getSortByType() {
+		return super.getMultiFieldPanelValues(sortByType);
+	}
 }

@@ -21,7 +21,6 @@
             <img alt="${imageAltText}" title="${imageAltText}" src="${linkIconPath}"/>
 		</a>
 		</li>
-
 	</c:forEach>
 </ul>
 

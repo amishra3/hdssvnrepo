@@ -47,22 +47,18 @@
                                         <img src="${pdfNode.imagePath}" alt="" class="img-responsive">
                                     </div>
                                 </div>
-                          </c:if> 
-                      	<p>${pdfNode.description}</p>
+                          </c:if>
+                          <c:if test="${not empty  pdfNode.longDescription}">
+                        		<p>${pdfNode.longDescription}</p>
+                          </c:if>
+                          <c:if test="${empty  pdfNode.longDescription}">
+                        		<p>${pdfNode.description}</p>
+                          </c:if>
+                      	  
+                      	  <c:if test="${not empty  pdfNode.externalContentURL}">
+                      	  		<div class="hidden externalurl" data-external-url="${pdfNode.externalContentURL}"></div>
+                      	  </c:if>
                         <div class="share"><cq:include path="sharethismobile" resourceType="hdscorp/components/content/pdfsharethispage" /></div>
-                        <!--<div class="resources">
-                             <c:if test="${not empty assetGettingModel.resourceLabel}">
-                               <c:choose>
-                                <c:when test="${assetGettingModel.urlTargetType}">
-								<a href="${assetGettingModel.resourceLink}" class="animateLink" target="_blank"><span class="glyphicon glyphicon-menu-left animateIcon" aria-hidden="true"> </span>${assetGettingModel.resourceLabel}</a>
-                                </c:when>
-                                <c:otherwise>
-                                     <a href="${assetGettingModel.resourceLink}" class="animateLink"><span class="glyphicon glyphicon-menu-left animateIcon" aria-hidden="true"> </span>${assetGettingModel.resourceLabel}</a>
-                                </c:otherwise>
-                            </c:choose>
-
-                            </c:if>
-                        </div>-->
                     </div>
 
                     <noindex><div id="thanksmessage">${assetGettingModel.thanksyouMessage}</div></noindex>

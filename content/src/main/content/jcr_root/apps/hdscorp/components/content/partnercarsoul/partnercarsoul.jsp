@@ -57,7 +57,7 @@
 			</div>
 		</c:forEach>
 	</div>
-
+<c:if test="${fn:length(contentColumn) gt 1}">
 	<div class="PagerBar" id="partnerpageBar">
 		<div class="content-container">
 			<c:forEach var="column" items="${contentColumn}" varStatus="loop">
@@ -67,5 +67,6 @@
 			</c:forEach>
 		</div>
 	</div>
+</c:if>
 	<!--Banner Carsoul ends here-->
 </div>

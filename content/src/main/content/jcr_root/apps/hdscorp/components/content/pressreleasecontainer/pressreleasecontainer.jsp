@@ -23,10 +23,12 @@
 	
 	<div class="row pr-list-container ${pageClass}">
 		<h1>${model.headerText}</h1>
-		<div class="pr-search">
-			<input type="text" name ="fulltext" id="fulltext" placeholder="${model.searchText}">
-			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-		</div>
+		<c:if test="${empty properties.showhidesearch}">
+            <div class="pr-search">
+                <input type="text" name ="fulltext" id="fulltext" placeholder="${model.searchText}">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </div>
+		</c:if>
 		<div class="col-md-3 pr-list-archives">
 			<ul id="archivesLinks">
 				<c:forEach var="filterUrl" items="${model.filterUrls}" varStatus="loopcnt">
@@ -34,7 +36,7 @@
 				<c:set var="activeFilter" value="${true}"/>
 				<c:set var="includetargetURL" value="${filterUrl.fullFilterUrl}.html"/>
 				</c:if>
-				
+
 				<c:if test="${empty selectorString and loopcnt.index==0}">
 				<c:set var="activeFilter" value="${true}"/>
 				<c:set var="includetargetURL" value="${filterUrl.fullFilterUrl}.html"/>

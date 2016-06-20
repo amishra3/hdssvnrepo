@@ -45,7 +45,10 @@ public class HdsCorpGlobalConfiguration {
 	public static final String DISPACHER_URI = "hdscorp.dispatcher.uri";	
 		
 	@Property(label = "Asset Gating Landing Form Page URI", value = "/content/hdscorp/en_us/newsandinsights/resources/gated-detail.html", description = "Asset Gating Landing Form Page URI")
-	public static final String ASSET_GATING_FORM_PATH = "hdscorp.assetgating.formapath";		
+	public static final String ASSET_GATING_FORM_PATH = "hdscorp.assetgating.formapath";
+	
+	@Property(label = "Asset Gating Landing Form Page URI", value = "/content/hdscorp/en_us/newsandinsights/resources/gated-detail-external.html", description = "Asset Gating Landing Form Page URI For External Gated Content")
+	public static final String ASSET_GATING_EXTERNAL_FORM_PATH = "hdscorp.assetgating.externalformapath";		
 
 	@Property(label = "Asset Gating Success Query Parameter", value = "q", description = "Asset Gating Success Query Parameter")
 	public static final String ASSET_GATING_SUCCESS_QUERY_PARAMETER = "hdscorp.assetgating.queryparam";		

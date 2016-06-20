@@ -56,7 +56,7 @@
 	         <p>${properties.subcategorybanneresubtext}</p>
              <c:if test="${not empty properties.subcatbuttonlabel}">
 	         <div class="btn-square-red learn-more-promo">
-	            <a href="${properties.voverlay?'javascript:void(0);':linkUrl}" onclick="${!properties.voverlay?'':vidurl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' '}</a>
+	            <a class="animateLink" href="${properties.voverlay?'javascript:void(0);':linkUrl}" onclick="${!properties.voverlay?'':vidurl}" target="${not empty properties.subcatbuttonurltargettype?'_blank':'_self'}">${properties.subcatbuttonlabel}${properties.thirdparty?' <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>':' '}</a>
 	          </div>
               </c:if>
 	     </div>

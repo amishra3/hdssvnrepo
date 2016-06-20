@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
- jcr:primaryType="cq:Dialog"
+    jcr:primaryType="cq:Dialog"
     title="Press Release/News Container"
     xtype="dialog">
     <items
@@ -25,6 +25,13 @@
                         name="./searchText"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchText')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="textfield"/>
+                    <showhidesearch
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Search?"
+                        key="showhidesearch"
+                        name="./showhidesearch"
+                        type="checkbox"
+                        xtype="selection"/>
                     <archivelabel
                         jcr:primaryType="cq:Widget"
                         allowBlank="{Boolean}false"
@@ -46,29 +53,29 @@
                         name="./searchPagePath"
                         validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./searchPagePath')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
                         xtype="pathfield"/>
-                     <landingpagetype
-                         jcr:primaryType="cq:Widget"
-                         fieldLabel="Select the Landing page type?"
-                         fieldDescription="This information will be used for analytics tracking."
-                         key="landingpagetype"
-                         name="./landingpagetype"
-                         type="select"
-                         xtype="selection">
-                         <options jcr:primaryType="cq:WidgetCollection">
-                             <pressrelease
-                                 jcr:primaryType="nt:unstructured"
-                                 text="Press Release"
-                                 value="pressrelease"/>
-                             <news
-                                 jcr:primaryType="nt:unstructured"
-                                 text="News"
-                                 value="news"/>
-                             <awards
-                                 jcr:primaryType="nt:unstructured"
-                                 text="Awards"
-                                 value="awards"/>                                            
-                         </options>
-                     </landingpagetype>     
+                    <landingpagetype
+                        jcr:primaryType="cq:Widget"
+                       	fieldLabel="Select the Landing page type?"
+                        fieldDescription="This information will be used for analytics tracking."
+                        key="landingpagetype"
+                        name="./landingpagetype"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <pressrelease
+                                jcr:primaryType="nt:unstructured"
+                                text="Press Release"
+                                value="pressrelease"/>
+                            <news
+                                jcr:primaryType="nt:unstructured"
+                                text="News"
+                                value="news"/>
+                            <awards
+                                jcr:primaryType="nt:unstructured"
+                                text="Awards"
+                                value="awards"/>
+                        </options>
+                    </landingpagetype>
                     <prlinktext
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Link Label"

@@ -7,6 +7,9 @@ import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.jcr.PathNotFoundException;
+import javax.jcr.RepositoryException;
+import javax.jcr.ValueFormatException;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -42,7 +45,7 @@ public class FeaturedResourcesModel  {
 
 	private List<ResourceNode> featuredResouceList;
 
-	public List<ResourceNode> getFeaturedResouceList() {
+	public List<ResourceNode> getFeaturedResouceList() throws ValueFormatException, PathNotFoundException, RepositoryException {
 
 		TagManager tagManager = JcrUtilService.getResourceResolver().adaptTo(
 				TagManager.class);

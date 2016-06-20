@@ -175,10 +175,20 @@ $(document).ready(function () {
 	    	$(this).closest('.spotlight-content').find('.spotlight-image-icon').attr('src','/etc/clientlibs/hdscorp/main/images/gated-icon-white.png');
 	    });
     }
+//    $('a.externalcontent:not(.isGatedLock)').each(function(index, el) {
+//    	var extrnalLink = $(this).attr("data-target-url");
+//    	$(this).attr("href",extrnalLink);
+//    });
+    
+    externalGatedContHref();
     
 	$(document).on('click','.isGatedLock',function(evt){
 		//localStorage.setItem('parentPageRef', window.location.href);
-		document.cookie="hdsGatedParentPageRef="+window.location.href+";path='/';domain=.hds.com";
+        if(window.location.href.indexOf("digital-transformation") > -1) {
+            document.cookie="dtGatedParentPageRef="+window.location.href+";domain=.hds.com;path=/";
+        }else{
+            document.cookie="hdsGatedParentPageRef="+window.location.href+";domain=.hds.com;path=/";
+        }
     })
 	
     if ($(".stickyNav")[0]){
@@ -189,6 +199,17 @@ $(document).ready(function () {
     } 
     
 });
+
+$( document ).ajaxComplete(function() {
+	externalGatedContHref();
+});
+
+function externalGatedContHref(){
+    $('a.externalcontent:not(.isGatedLock)').each(function(index, el) {
+    	var extrnalLink = $(this).attr("data-target-url");
+    	$(this).attr("href",extrnalLink);
+    });
+}
 
 
 /**

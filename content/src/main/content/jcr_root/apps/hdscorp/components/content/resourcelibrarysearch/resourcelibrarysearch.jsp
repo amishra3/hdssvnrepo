@@ -6,6 +6,7 @@
 <c:set var="readMoreText" value="${properties.readMoreText}" scope="request"/>
 <c:set var="pdfspath" value="${properties.pdfspath}" scope="request"/>
 <c:set var="videospath" value="${properties.videospath}" scope="request"/>
+<c:set var="externalassetpath" value="${properties.externalassetpath}" scope="request"/>
 
 <c:set var="contenttype" value="${properties.contenttype}" scope="request"/>
 <c:set var="industrytag" value="${properties.industrytag}" scope="request"/>
@@ -33,7 +34,7 @@ String videooverlaymarkup ="<object class='BrightcoveExperience' id='#videoGuid'
                
             <c:choose>
 	    		<c:when test="${resource.resourceType == 'video'}">
-	    		<c:set var="videooverlaymarkup" value="${overlaymarkup}"/>
+	    			<c:set var="videooverlaymarkup" value="${overlaymarkup}"/>
 	        		<h3>
 	        			<a href="javascript:void(0)" class="l-overlay animateLink" data-is-video="true" data-target-content="rl${resource.videoTitleId}" 
 	                               target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
@@ -49,6 +50,12 @@ String videooverlaymarkup ="<object class='BrightcoveExperience' id='#videoGuid'
 	                          </div>
 						</div>
 					</h3>
+		    </c:when>
+		    
+		    <c:when test="${resource.resourceType == 'externalcontent'}">
+		    	<h3>
+		    		<a href="${hdscorp:shortURL(resource.resourcePath)}" data-target-url="${resource.externalContentTargetURL}" data-content-path="${hdscorp:shortURL(resource.resourcePath)}" target="_blank" class="animateLink externalcontent" target="_blank">${resource.resourceTitle}<span class="glyphicon glyphicon-menu-right animateIcon" aria-hidden="true"></span></a>
+		    	</h3>
 		    </c:when>
 	    
 		    <c:otherwise>

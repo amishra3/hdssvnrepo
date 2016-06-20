@@ -110,7 +110,7 @@ if(isErrorPage())
 	{
 		digitalData.page={
 				pageInfo:{
-				pageName: $.trim(getPageNameFromURL()),
+				pageName: $.trim(window.location.pathname),
 				pageType: "errorPage",
 				pageLoadEvent: "404 error",
 				errorMessage: "page not found",
@@ -284,7 +284,8 @@ $('input[name="cbxFunction"]').click(function(){
 	if (pClass.indexOf("resources-listing")>-1)
 	{
 		searchTerm = $('#resSearch').val();
-		result =$('#actualCount').text();
+		//result =$('#actualCount').text();
+		result =$('.resource.visible').length;
 		setTimeout(function()
 		{
 			result=result.toString();		
@@ -324,15 +325,24 @@ $('input[name="cbxFunction"]').click(function(){
 
 	$('.clear-results a').click(function()
 		{
-			searchTerm = $('#resSearch').val();
+			/* searchTerm = $('#resSearch').val();
 			searchAction = "Clear all filters";
 			searchTerm = "Clear All Filters";
 			result = $('.resourceLibraryfeatered').find('.resources-spotlight').size();
 			//if(searchTerm == ""){searchTerm = "Clear All Filters";}
-			specificSearchClick(searchTerm, searchAction, result)
+			specificSearchClick(searchTerm, searchAction, result) */
+			globalMenuClick("linkclick","Clear All Filters",pageTitle,"button","resource");
 		});
 		
-	function resourcePagination(searchTerm,pagination, searchResultType)
+	$('.sort-by-list').click(function()
+		{
+			setTimeout(function()
+					{
+					globalMenuClick("linkclick","sort by:" + $('.sort-by-list').find('.selected').text(),pageTitle,"link","resource");
+			},2000);
+		});
+
+    function resourcePagination(searchTerm,pagination, searchResultType)
 		{ 
 			if(searchTerm == "" || !searchTerm){
 					searchTerm = 'no term searched'
@@ -408,29 +418,6 @@ $('input[name="cbxFunction"]').click(function(){
 					else if(catfilters==""){catfilters = "RL Search:Category-Featured";}
 				return catfilters;	
 		}
-	
-	/* function getResourcesSearchFilters()
-		{
-			var filters="";
-			$('div.resources-listing ul[id=asideLinks-product] li.active').each(function() {
-				   if(filters.length>0)
-							filters=filters+",";
-					else
-							filters="RL Search:";
-					filters = filters+ $.trim($(this).find('a').text());
-				   
-			});	
-			$('.resources-listing input.filters').each(function() {
-					if ($(this).is(':checked')) {
-						if(filters.length>0)
-							filters=filters+",";
-						filters = filters+$.trim($(this).parent().find("span").text());
-						
-					}
-			});
-			
-			return filters.toLowerCase();
-		} */
 	}
 
 	function specificSearchClick(searchTerm, searchAction, result)
@@ -1111,7 +1098,6 @@ function getPartnerIndFilters()
 			var links = $(this).val();
 			var selectId= $(this).attr("id");
 			var searchTerm="no term searched";
-            var result="zero";
 			var searchType="worldwide location search";
 			var searchAction="";
 			var sFilters="";
@@ -1127,7 +1113,11 @@ function getPartnerIndFilters()
 				if (!links.indexOf("Select Location")>-1){searchAction="country filter";sFilters=$("#allRegion option:selected").text() + "," + $("#allCountries option:selected").text() + "," + $("#allLocations option:selected").text();}
 			}
 			//var tabTitle = "tab-region-" + $("#allRegion option:selected").text() + "-country-" + $("#allCountries option:selected").text() + "-location-" + links;
+			setTimeout(function() {
+			var result =$(".side-block").size();
+			if (result==0 || searchAction=="region filter") result="zero";
 			searchClick(searchTerm,searchAction,result,sFilters,searchType,"specificSearchClick");
+			 }, 2000); 
 		});
 	
 

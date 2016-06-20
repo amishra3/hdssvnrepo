@@ -234,6 +234,11 @@
 .rsvis {
 	visibility: hidden;
 }
+
+.par.parsys .resource{
+	display:block;
+}
+
 @media only screen and (min-width: 768px) {
 
 	.pr-list-container{
