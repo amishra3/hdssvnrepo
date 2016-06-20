@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/default"
+        cq:lastModified="{Date}2016-06-02T17:02:30.491+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2016-05-10T06:25:27.229-04:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Custom Content Approval workflow for PDF Assets"
+        jcr:uuid="1fffa4d6-981c-4696-adb1-57e6ec0ce70b"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <lockpayloadprocess
+                jcr:created="{Date}2016-04-28T17:19:32.040+05:30"
+                jcr:createdBy="admin"
+                jcr:description="A process to lock the payload."
+                jcr:lastModified="{Date}2016-04-28T17:19:36.643+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Lock Payload Process"
+                sling:resourceType="cq/workflow/components/workflow/lockpayloadprocess"
+                PROCESS="com.day.cq.workflow.impl.process.LockProcess"
+                PROCESS_AUTO_ADVANCE="true">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.day.cq.workflow.impl.process.LockProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </lockpayloadprocess>
+            <participant
+                jcr:created="{Date}2010-09-21T14:47:57.672+02:00"
+                jcr:createdBy="admin"
+                jcr:description="Content apporver to review the content and take action accordingly."
+                jcr:lastModified="{Date}2016-05-09T05:47:11.341-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Review Content"
+                sling:resourceType="cq/workflow/components/model/participant">
+                <metaData
+                    jcr:lastModified="{Date}2010-09-21T14:48:07.024+02:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    DO_NOTIFY="true"
+                    PARTICIPANT="contentapprovers"/>
+            </participant>
+            <or
+                jcr:created="{Date}2016-04-28T17:01:42.686+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-04-28T17:01:42.686+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="2"
+                orSplit="true">
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <lockpayloadprocess
+                        jcr:created="{Date}2016-06-02T14:29:28.561+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="A process to lock the payload."
+                        jcr:lastModified="{Date}2016-06-02T14:29:45.033+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Approve"
+                        sling:resourceType="cq/workflow/components/workflow/lockpayloadprocess"
+                        PROCESS="com.day.cq.workflow.impl.process.LockProcess"
+                        PROCESS_AUTO_ADVANCE="true">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.day.cq.workflow.impl.process.LockProcess"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </lockpayloadprocess>
+                    <participant
+                        jcr:created="{Date}2016-05-10T04:19:41.544-04:00"
+                        jcr:createdBy="admin"
+                        jcr:description="Admin approval for publishing the page."
+                        jcr:lastModified="{Date}2016-05-10T04:20:28.092-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Admin Approval"
+                        sling:resourceType="cq/workflow/components/model/participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DO_NOTIFY="true"
+                            PARTICIPANT="administrators"/>
+                    </participant>
+                    <or
+                        jcr:created="{Date}2016-05-10T04:33:16.571-04:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2016-05-10T04:33:16.571-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/workflow/components/model/or"
+                        branches="2"
+                        orSplit="true">
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <unlockpayloadprocess
+                                jcr:created="{Date}2016-05-10T04:33:28.602-04:00"
+                                jcr:createdBy="admin"
+                                jcr:description="A process to unlock the payload."
+                                jcr:lastModified="{Date}2016-05-10T04:35:03.829-04:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Approve Page Activation"
+                                sling:resourceType="cq/workflow/components/workflow/unlockpayloadprocess"
+                                PROCESS="com.day.cq.workflow.impl.process.UnlockProcess"
+                                PROCESS_AUTO_ADVANCE="true">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.day.cq.workflow.impl.process.UnlockProcess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </unlockpayloadprocess>
+                            <activateresourceproc
+                                jcr:created="{Date}2016-05-10T04:33:54.877-04:00"
+                                jcr:createdBy="admin"
+                                jcr:description="A process to activate a page or asset"
+                                jcr:lastModified="{Date}2016-05-10T04:33:54.877-04:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Activate Page/Asset"
+                                sling:resourceType="wcm/workflow/components/workflow/activateresourceprocess"
+                                PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                                PROCESS_AUTO_ADVANCE="true">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </activateresourceproc>
+                            <container
+                                jcr:created="{Date}2016-06-02T17:00:47.723+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Triggering the PXP and myHDS Workflow for Asset Activation workflow"
+                                jcr:lastModified="{Date}2016-06-02T17:01:53.803+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="PXP and myHDS Workflow for Asset Activation"
+                                sling:resourceType="cq/workflow/components/model/container">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    CONTAINER="/etc/workflow/models/pxpworkflowasset/jcr:content/model"/>
+                            </container>
+                            <container_189376159
+                                jcr:created="{Date}2016-06-02T17:00:52.750+05:30"
+                                jcr:createdBy="admin"
+                                jcr:description="Triggering the Copy Asset Metadata to DB and UCM workflow"
+                                jcr:lastModified="{Date}2016-06-02T17:02:30.371+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Copy Asset Metadata to DB and UCM"
+                                sling:resourceType="cq/workflow/components/model/container">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    CONTAINER="/etc/workflow/models/copy-asset-metadata-to-db-and-ucm/jcr:content/model"/>
+                            </container_189376159>
+                        </_x0032_>
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <dynamic_participant
+                                jcr:created="{Date}2016-05-10T04:34:05.567-04:00"
+                                jcr:createdBy="admin"
+                                jcr:description="Goes to initiator to notify rejection for page activation"
+                                jcr:lastModified="{Date}2016-05-10T04:34:56.345-04:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Reject Page Activation"
+                                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    DO_NOTIFY="true"
+                                    DYNAMIC_PARTICIPANT="/etc/workflow/scripts/initiator-participant-chooser.ecma"/>
+                            </dynamic_participant>
+                            <unlockpayloadprocess
+                                jcr:created="{Date}2016-05-10T04:34:06.512-04:00"
+                                jcr:createdBy="admin"
+                                jcr:description="A process to unlock the payload."
+                                jcr:lastModified="{Date}2016-05-10T04:35:18.404-04:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Terminate Workflow"
+                                sling:resourceType="cq/workflow/components/workflow/unlockpayloadprocess"
+                                PROCESS="com.day.cq.workflow.impl.process.UnlockProcess"
+                                PROCESS_AUTO_ADVANCE="true">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.day.cq.workflow.impl.process.UnlockProcess"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </unlockpayloadprocess>
+                        </_x0031_>
+                    </or>
+                </_x0032_>
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <dynamic_participant
+                        jcr:created="{Date}2016-04-28T17:03:13.627+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Goes to initiator to alter the content"
+                        jcr:lastModified="{Date}2016-04-28T17:03:55.699+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Reject"
+                        sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            DO_NOTIFY="true"
+                            DYNAMIC_PARTICIPANT="/etc/workflow/scripts/initiator-participant-chooser.ecma"/>
+                    </dynamic_participant>
+                    <unlockpayloadprocess
+                        jcr:created="{Date}2016-04-28T17:19:55.326+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="A process to unlock the payload."
+                        jcr:lastModified="{Date}2016-04-28T17:23:27.478+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Terminate Workflow"
+                        sling:resourceType="cq/workflow/components/workflow/unlockpayloadprocess"
+                        PROCESS="com.day.cq.workflow.impl.process.UnlockProcess"
+                        PROCESS_AUTO_ADVANCE="true">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.day.cq.workflow.impl.process.UnlockProcess"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </unlockpayloadprocess>
+                </_x0031_>
+            </or>
+        </flow>
+        <model/>
+    </jcr:content>
+    <rep:policy/>
+</jcr:root>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="System Integrators Category Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <sittitle
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the Section title."
+                        fieldLabel="Section title"
+                        name="./sittitle"
+                        xtype="textfield"/>
+                    <siiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the System Integrators Section Icon."
+                        fieldLabel="System Integrators Icon Path"
+                        name="./siiconpath"
+                        xtype="ddpathfield"/>
+                    <sitags
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Please select System Integrators applicable."
+                        name="./sitags"
+                        xtype="tags"/>
+                    <sidesctags
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Please select only one tag for the product description"
+                        fieldLabel="Please select tag for the product description"
+                        name="./sidesctags"
+                        xtype="tags"/>
+                    <sisearchlookuppath
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the  lookup search path "
+                        fieldLabel="Search Lookup Path"
+                        name="./sisearchlookuppath"
+                        xtype="pathfield"/>
+                    <learnmorelinkpath
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the lear more link target URL."
+                        fieldLabel="Learn More Link URL"
+                        name="./learnmorelinkpath"
+                        xtype="ddpathfield"/>
+                    <learnmorelinklabel
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the lear more label."
+                        fieldLabel="Learn More Link Label"
+                        name="./learnmorelinklabel"
+                        xtype="textfield"/>
+                    <openinnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./openinnewwindow"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <sishowresultslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show Reults Label"
+                        name="./sishowresultslabel"
+                        xtype="textfield"/>
+                    <sifilterbylabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Filter By"
+                        name="./sifilterbylabel"
+                        xtype="textfield"/>
+                    <siclearallfilterslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Clear All Filters Label"
+                        name="./siclearallfilterslabel"
+                        xtype="textfield"/>
+                    <sisearchpartnerlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Seatch Partner Label"
+                        name="./sisearchpartnerlabel"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="System Integrators Industry Filter Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <industryfilterlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This is the Filter label."
+                        fieldLabel="Filter Title"
+                        name="./industryfilterlabel"
+                        xtype="textfield"/>
+                    <hideindustryfilter
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide this fiilter ?"
+                        name="./hideindustryfilter"
+                        type="checkbox"
+                        xtype="selection"/>                        
+                    <contents
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Filters"
+                        name="./industryfilterlist"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="true"
+                            layout="form"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <industryfiltertitle
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Filter Title"
+                                    key="industryfiltertitle"
+                                    layout="anchor"
+                                    name="./industryfiltertitle"
+                                    xtype="textfield"/>
+                                <industryfilterid
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    dname="header"
+                                    fieldLabel="Filter ID"
+                                    key="industryfilterid"
+                                    layout="anchor"
+                                    name="./industryfilterid"
+                                    xtype="textfield"/>
+                                <cftags
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    anchor="100%"
+                                    fieldLabel="Tag Id"
+                                    key="industryTag"
+                                    layout="anchor"
+                                    name="./industryTag"
+                                    xtype="tags"/>
+                            </items>
+                        </fieldConfig>
+                    </contents>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>

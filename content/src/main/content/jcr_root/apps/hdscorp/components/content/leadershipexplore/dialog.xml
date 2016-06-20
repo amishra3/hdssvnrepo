@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="dialog"
+    width="900"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <lesectionbgimage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Background Image"
+                        name="./lesectionbgimage"
+                        xtype="pathfield"/>
+                    <lesectionlabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Label"
+                        name="./lesectionlabel"
+                        xtype="textfield"/>
+                    <lesectionlink
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Label Link"
+                        name="./lesectionlink"
+                        xtype="pathfield"/>
+                    <lesectionopeninnewwindow
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window?"
+                        key="lesectionopeninnewwindow"
+                        name="./lesectionopeninnewwindow"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                    <lemultifield
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./lemultifield"
+                        fieldLabel="Section"
+                        name="./lemultifield"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <leiconimage
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="leiconimage"
+                                fieldLabel="Icon Image"
+                                key="leiconimage"
+                                name="./leiconimage"
+                                xtype="pathfield"/>
+                            <leiconimagealt
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="leiconimagealt"
+                                fieldLabel="Icon Alt Text"
+                                key="leiconimagealt"
+                                name="./leiconimagealt"
+                                xtype="textfield"/>
+                            <leiconimagelabel
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="leiconimagelabel"
+                                fieldLabel="Icon Label"
+                                key="leiconimagelabel"
+                                name="./leiconimagelabel"
+                                xtype="textfield"/>
+                            <leicondate
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="leicondate"
+                                fieldLabel="Date"
+                                key="leicondate"
+                                name="./leicondate"
+                                xtype="textfield"/>
+                            <lecontent
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="lecontent"
+                                fieldLabel="Content"
+                                key="lecontent"
+                                name="./lecontent"
+                                xtype="richtext"/>
+                            <lereadmorelabel
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="lereadmorelabel"
+                                fieldLabel="Read More Label"
+                                key="lereadmorelabel"
+                                name="./lereadmorelabel"
+                                xtype="textfield"/>
+                            <lereadmorelabellink
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                dname="lereadmorelabellink"
+                                fieldLabel="Read More Label Link"
+                                key="lereadmorelabellink"
+                                name="./lereadmorelabellink"
+                                xtype="pathfield"/>
+                            <leopeninnewwindow
+                                jcr:primaryType="cq:Widget"
+                                dname="leopeninnewwindow"
+                                fieldLabel="Open in New Window"
+                                key="leopeninnewwindow"
+                                name="./leopeninnewwindow"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </leopeninnewwindow>
+                        </fieldConfig>
+                    </lemultifield>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

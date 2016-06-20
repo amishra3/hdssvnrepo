@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="This is the template for creating Product Category pages."
+    jcr:primaryType="cq:Template"
+    jcr:title="Product Category Template"
+    ranking="{Long}8">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="hdscorp/components/page/productcateogry">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <productcategorybanne
+                jcr:created="{Date}2015-12-30T11:19:56.469-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-30T13:22:52.293-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/banners/productcategorybanner"
+                categoryiconpath="/content/dam/hdscorp/en_us/icons/storage-icon.png"
+                categorytitle="Storage"
+                simplebannerbuttonurl="/content/hdscorp/en_us/productsandsolutions/storage/AllFlashStorage"
+                simplebannercontent="Storage-promo statement text goes here and will be compelling"
+                simplebannermageimageRotate2="0"
+                simplebannermagePath="/content/dam/hdscorp/en_us/productcategory/hero-product-solutions-category.jpg"
+                simplebannersubtitle="STORAGE PROMO ENGAGING STORYTELLING HEADLINET"
+                simplebannertitle="Featured Storage headline"
+                simpllebannerbuttonlabel="Request Info"/>
+            <hexagonbanner
+                jcr:created="{Date}2015-12-30T12:00:34.873-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-30T13:10:02.277-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/banners/hexagonbanner"
+                hexcontent="This is body text. Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian&#xa;&lt;br>of the stolen plans that can save her people and restore freedom and peace to the galaxy. This is body text.&#xa;"
+                heximagePath="/content/dam/hdscorp/en_us/productcategory/product-category-bg.jpg"
+                heximagePathimageRotate2="0"
+                hexmultilinks="3"
+                hexshowadditionsymbol="true"
+                hexsubtitlecontent="STORAGE PROMO ENGAGING STORYTELLING HEADLINET"
+                hextitlecontent="Storage headline here"
+                placardcontent="[&lt;p>Lorem ipsum dolor sit consecte tur adipisicing elit\, sed do eiusmod tempor.&lt;/p>&#xa;,&lt;p>Lorem ipsum dolor sit consecte tur adipisicing elit\, sed do eiusmod tempor.&lt;/p>&#xa;,&lt;p>Lorem ipsum dolor sit consecte tur adipisicing elit\, sed do eiusmod tempor.&lt;br>&#xa;&lt;/p>&#xa;]"
+                placardIconPath="[/content/dam/hdscorp/en_us/icons/good-ideas-icon.png,/content/dam/hdscorp/en_us/icons/right-tool-icon.png,/content/dam/hdscorp/en_us/icons/transform-business-icon.png]"
+                placardTitle="[Good ideas,Right tools,Transformative Business]"/>
+            <cateogryproductlisti
+                jcr:created="{Date}2015-12-30T22:21:42.097-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-12-30T22:21:42.097-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/cateogryproductlisting">
+                <categoryproductlistingtitle
+                    jcr:lastModified="{Date}2015-12-31T00:29:35.375-05:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Storage products &amp; solutions"
+                    sling:resourceType="hdscorp/components/content/cateogryproductlisting/sectiontitle"
+                    sectiontitle="Storage products &amp; solutions"/>
+                <subcategoryfilterpar
+                    jcr:lastModified="{Date}2016-01-03T23:13:01.154-05:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="hdscorp/components/content/cateogryproductlisting/subcategoryfilter"
+                    numberofitems="2"
+                    subcatcontenturl="[/content/hdscorp/en_us/lookup/productsubcateogry/storagemanagement,/content/hdscorp/en_us/lookup/productsubcateogry/storagemanagement]"
+                    subcatdisplaylabel="[Storage Management,Enterprise Storage]"
+                    subcatid="[storagemanagement,enterprisestorage]"/>
+            </cateogryproductlisti>
+            <productdetailmorepro
+                jcr:created="{Date}2016-01-04T16:50:47.121-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-01-04T16:52:02.767-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="hdscorp/components/content/productdetailmoreproductcontainer"
+                sectiontitle="MORE ENTERPRISE STORAGE">
+                <communitycontentpar
+                    jcr:lastModified="{Date}2016-01-04T16:51:04.911-05:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="hdscorp/components/content/column-control"
+                    columns="[50,50]">
+                    <par1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <productdetailmorepro
+                            jcr:created="{Date}2016-01-04T16:52:20.025-05:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2016-01-04T16:52:53.536-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailmoreproducttile"
+                            articleurl="#"
+                            articleurllabel="SEE MORE"
+                            columncontent="At vero eos et accusamus et iusto odio dignissimos ducimus blandit praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias."
+                            columntitle="Suggested Product / Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque"/>
+                    </par1>
+                    <par2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <productdetailmorepro
+                            jcr:created="{Date}2016-01-04T16:52:28.257-05:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2016-01-04T16:53:18.214-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="hdscorp/components/content/productdetailmoreproducttile"
+                            articleurl="#"
+                            articleurllabel="SEE MORE"
+                            columncontent="At vero eos et accusamus et iusto odio dignissimos ducimus blandit praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias."
+                            columntitle="Suggested Product / Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque"/>
+                    </par2>
+                </communitycontentpar>
+            </productdetailmorepro>
+        </par>
+    </jcr:content>
+</jcr:root>

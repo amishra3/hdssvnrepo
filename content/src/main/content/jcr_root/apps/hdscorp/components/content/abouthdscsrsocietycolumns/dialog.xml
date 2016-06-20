@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Columns Detail">
+                <items
+                    jcr:primaryType="cq:WidgetCollection"
+                    xtype="multifieldpanel">
+                    <columnsheading
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="HeadLine"
+                        name="./columnsheading"
+                        xtype="textfield"/>
+                    <multilinks
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./multilinks"
+                        fieldLabel="Column Content"
+                        name="./multilinks"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <columntitle
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Title"
+                                name="./columntitle"
+                                xtype="textfield"/>
+                            <columndescription
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Description"
+                                name="./columndescription"
+                                xtype="textarea"/>
+                            <columnmagepath
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldLabel="Image Path"
+                                name="./columnmagepath"
+                                xtype="pathfield"/>
+                            <ctalabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="CTA Label"
+                                name="./ctalabel"
+                                xtype="textfield"/>
+                            <ctalabelurl
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="CTA Label URL"
+                                name="./ctalabelurl"
+                                xtype="textfield"/>
+                            <openininewwindow
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window ?"
+                                name="./openininewwindow"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </openininewwindow>
+                            <videoembededcode
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Video ID / URL"
+                                name="./videoembededcode"
+                                xtype="textarea"/>
+                            <csropenoverlay
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open video overlay ?"
+                                name="./csropenoverlay"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </csropenoverlay>
+                            <isvideo
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Is Video? "
+                                name="./isvideo"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </isvideo>
+                            <thirdparty
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Show third party icon?"
+                                name="./thirdparty"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="1"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="2"/>
+                                </options>
+                            </thirdparty>
+							<isgatedcontent
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Is Gated Content?"
+                                name="./isgatedcontent"
+                                type="select"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <Yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="yes"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="no"/>
+                                </options>
+                            </isgatedcontent>
+                        </fieldConfig>
+                    </multilinks>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

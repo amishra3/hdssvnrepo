@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/hitachiiot"/>
+    	
+         
+	<filter root="/etc/clientlibs/hitachiiot"/>
+
+	<filter root="/etc/designs/hitachiiot">
+        <include pattern="/etc/designs/hitachiiot/jcr:content"/>
+        <include pattern="/etc/designs/hitachiiot/jcr:content/clientlibs"/>
+		<include pattern="/etc/designs/hitachiiot/clientLibs"/>
+        <include pattern="/etc/designs/hitachiiot/jcr:content/clientlibs/.*"/>
+    </filter>
+
+</workspaceFilter>

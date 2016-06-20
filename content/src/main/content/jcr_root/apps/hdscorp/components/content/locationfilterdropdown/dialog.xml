@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    width="1000"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <locregionfilter
+                jcr:primaryType="cq:Panel"
+                title="Region Filter">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <locworldwidelocationslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="World Wide Locations Label"
+                        name="./locworldwidelocationslabel"
+                        xtype="textfield"/>
+                    <locallregionslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="ALL Regions Label"
+                        name="./locallregionslabel"
+                        xtype="textfield"/>
+                    <locallcountrieslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="ALL Countries Label"
+                        name="./locallcountrieslabel"
+                        xtype="textfield"/>
+                    <localllocationslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="ALL LocationsLabel"
+                        name="./localllocationslabel"
+                        xtype="textfield"/>
+                    <regions
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Regions"
+                        name="./jcr:locregions"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <locregionlabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region Label"
+                                    key="locregionlabel"
+                                    name="./locregionlabel"
+                                    xtype="textfield"/>
+                                <locregiontag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Region Tag"
+                                    key="locregiontag"
+                                    name="./locregiontag"
+                                    xtype="tags"/>
+                                <loccountries
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Countries"
+                                    key="countries"
+                                    xtype="multifield">
+                                    <fieldConfig
+                                        jcr:primaryType="cq:Widget"
+                                        border="true"
+                                        hideLabel="true"
+                                        layout="form"
+                                        xtype="multifieldpanel">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <loccountrylabel
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                dname="header"
+                                                fieldLabel="Country Label"
+                                                key="countrylabel"
+                                                layout="anchor"
+                                                xtype="textfield"/>
+                                            <loccountrytag
+                                                jcr:primaryType="cq:Widget"
+                                                allowBlank="{Boolean}false"
+                                                anchor="100%"
+                                                fieldLabel="Country Tag"
+                                                key="countrytag"
+                                                layout="anchor"
+                                                xtype="tags"/>
+                                            <loclocations
+                                                jcr:primaryType="cq:Widget"
+                                                fieldLabel="Locations"
+                                                key="locations"
+                                                xtype="multifield">
+                                                <fieldConfig
+                                                    jcr:primaryType="cq:Widget"
+                                                    border="true"
+                                                    hideLabel="true"
+                                                    layout="form"
+                                                    xtype="multifieldpanel">
+                                                    <items jcr:primaryType="cq:WidgetCollection">
+                                                        <loclocationlabel
+                                                            jcr:primaryType="cq:Widget"
+                                                            allowBlank="{Boolean}false"
+                                                            anchor="100%"
+                                                            dname="header"
+                                                            fieldLabel="Location Label"
+                                                            key="locationlabel"
+                                                            layout="anchor"
+                                                            xtype="textfield"/>
+                                                        <locationtags
+                                                            jcr:primaryType="cq:Widget"
+                                                            allowBlank="{Boolean}false"
+                                                            anchor="100%"
+                                                            fieldLabel="Location Tag"
+                                                            key="locationtag"
+                                                            layout="anchor"
+                                                            xtype="tags"/>
+                                                    </items>
+                                                </fieldConfig>
+                                            </loclocations>
+                                        </items>
+                                    </fieldConfig>
+                                </loccountries>
+                            </items>
+                        </fieldConfig>
+                    </regions>
+                    <loclocationtype
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Location Type"
+                        name="./loclocationtype"
+                        type="select"
+                        width="300"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <opt1
+                                jcr:primaryType="nt:unstructured"
+                                text="Training Location"
+                                value="traininglocation"/>
+                            <opt2
+                                jcr:primaryType="nt:unstructured"
+                                text="Office Location"
+                                value="officelocation"/>
+                        </options>
+                    </loclocationtype>
+                    <locshowphonenumberslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Show Phone Numbers Label"
+                        name="./locshowphonenumberslabel"
+                        xtype="textfield"/>
+                    <locdrivingdirectionslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Driving Directions Label"
+                        name="./locdrivingdirectionslabel"
+                        xtype="textfield"/>
+                    <locdefaultregion
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Default Region"
+                        name="./locdefaultregion"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locdefaultregion = dialog.getField('./locdefaultregion')&#xa; var locdefaultregionvalue = locdefaultregion.getValue();&#xa; if($.trim(locdefaultregionvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <locdefaultcountry
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Default Country"
+                        name="./locdefaultcountry"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var locdefaultcountry = dialog.getField('./locdefaultcountry')&#xa; var locdefaultcountryvalue = locdefaultcountry.getValue();&#xa; if($.trim(locdefaultcountryvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <locdefaultlocation
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Default Location"
+                        name="./locdefaultlocation"
+                        xtype="textfield"/>
+                    <locmapviewlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Map View Label"
+                        name="./locmapviewlabel"
+                        xtype="textfield"/>
+                    <loclistviewlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="List View Label"
+                        name="./loclistviewlabel"
+                        xtype="textfield"/>
+                </items>
+            </locregionfilter>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,112 @@
+.numbers {
+  z-index: 2;
+  position: relative;
+  padding: 65px 0 60px;
+  background: #f2f2f2;
+}
+
+.numbers h2 {
+  font-size: 3em;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0 0 55px 0;
+  line-height: 1;
+  text-align: center;
+  color: #008eaa;
+}
+
+.numbers .si-comm-box {
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  border-right: 1px solid #d7d7d7;
+  padding: 0 30px;
+  min-height: 55px;
+}
+
+.numbers .si-comm-box .title {
+  font-size: 1em;
+  color: #000000;
+  text-transform: uppercase;
+  display: table-cell;
+  min-width: 20%;
+  line-height: 1;
+}
+
+.numbers .si-comm-box .title span {
+  font-family: "museo-slab",Helvetica,Arial,sans-serif;
+  font-size: 1.5em;
+  color: #cc0000;
+  font-weight: 600;
+}
+
+.numbers .si-comm-box .title span:after {
+  content: " ";
+}
+
+.numbers .si-comm-box .description {
+  display: table-cell;
+  padding-left: 20px;
+  font-size: 1.125rem;
+}
+
+.numbers .si-comm-box .description span a {
+  color: #333333;
+}
+
+.numbers .si-comm-box .description span a:hover {
+  text-decoration: none;
+}
+
+.numbers .si-comm-box:first-child {
+  padding-left: 0 !important;
+}
+
+.numbers .si-comm-box:last-child {
+  border-right: none;
+  padding-right: 0 !important;
+}
+
+
+
+
+@media only screen and (max-width: 991px) {
+
+  .numbers {
+    padding: 45px 0;
+  }
+
+  .numbers h2 {
+    font-size: 1.875rem;
+    margin-bottom: 15px;
+  }
+
+  .numbers .si-comm-box {
+    padding: 25px 0;
+    margin: 0 40px;
+    border-bottom: 1px solid #d7d7d7;
+    border-right: none;
+  }
+
+  .numbers .si-comm-box .title {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .numbers .si-comm-box .title span {
+    display: block;
+  }
+
+  .numbers .si-comm-box .description {
+    display: block;
+    text-align: center;
+    border: none;
+    font-size: 0.75rem;
+    padding-left: 0;
+  }
+
+  .numbers .si-comm-box:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+}

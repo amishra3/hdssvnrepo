@@ -1,0 +1,518 @@
+/* Home Page Componets */
+
+.cloud-storage {
+    background: #ffffff;
+    padding: 0 15px;
+}
+
+.cloud-storage .cloud-storage-container {
+    position: relative;
+    text-align: center;
+}
+
+.cloud-storage .cloud-storage-container a:hover,
+.cloud-storage .cloud-storage-container a:active {
+    text-decoration: none;
+}
+
+.cloud-storage .cloud-storage-container .cloud-content {
+    /* padding-left: 10%; */
+    text-align: left;
+}
+
+.cloud-storage .cloud-storage-container .cloud-content h1 {
+    margin: 20% 0 20px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 3em;
+    line-height: 1;
+    color: #000000;
+}
+
+.cloud-storage .cloud-storage-container .cloud-content h4 {
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1;
+    color: #848484;
+    text-transform: uppercase;
+}
+
+.cloud-storage .cloud-storage-container .cloud-content p {
+    margin-bottom: 40px;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.125em;
+    line-height: 1.4em;
+    color: #000000;
+}
+
+
+.cloud-storage .cloud-storage-container .cloud-content .learn-cloud-storage {
+     background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+}
+
+.cloud-storage .cloud-storage-container .cloud-content .learn-cloud-storage:hover {
+    background-color: #cc0000;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.cloud-storage .cloud-storage-container .cloud-content .learn-cloud-storage a:focus, 
+.cloud-storage .cloud-storage-container .cloud-content .learn-cloud-storage a:hover {
+    text-decoration: none;
+}
+.cloud-storage .cloud-storage-container .cloud-content .learn-cloud-storage:hover a {
+    color: #ffffff;
+}
+
+.cloud-storage .cloud-storage-container .cloud-image {
+    text-align: right;
+}
+
+.cloud-storage .cloud-storage-container .cloud-image img {
+    margin-top: 150px;
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 1280px) {
+    .cloud-storage {
+       /*  min-height: 625px; */
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .cloud-storage .cloud-storage-container .cloud-content,
+    .cloud-storage .cloud-storage-container .cloud-image {
+        margin-bottom: 130px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .cloud-storage .cloud-storage-container {
+        text-align: center;
+    }
+    .cloud-storage .cloud-storage-container .cloud-content {
+        display: inline-block;
+        float: none;
+        margin: 0 auto;
+        padding: 0;
+        text-align: left;
+    }
+    .cloud-storage .cloud-storage-container .cloud-content h1 {
+        margin: 40px 0 20px;
+        font-size: 2em;
+        line-height: 1;
+        color: #000000;
+    }
+    .cloud-storage .cloud-storage-container .cloud-content h4 {
+        font-size: 1.125em;
+        line-height: 1;
+        color: #848484;
+        text-transform: uppercase;
+        line-height: 140%;
+    }
+    .cloud-storage .cloud-storage-container .cloud-content p {
+        margin-bottom: 40px;
+        color: #000000;
+        font-size: 1em;
+		line-height:120%;
+    }
+    .cloud-storage .cloud-storage-container .cloud-content .learn-more {
+        font-size: 0.6875em;
+        line-height: 1;
+    }
+    .cloud-storage .cloud-storage-container .cloud-image {
+        margin-bottom: 20px;
+    }
+    .cloud-storage .cloud-storage-container .cloud-image img {
+        margin-top: 10px;
+        max-width: 40%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+	.cloud-storage .cloud-storage-container .cloud-image{
+		text-align: center;
+		margin: 20px 0;
+		padding: 0;		
+	}
+    .cloud-storage .cloud-storage-container .cloud-image img {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .cloud-storage .cloud-storage-container .cloud-image img {
+        max-width: 100%;
+    }
+}
+
+.calculating-success {
+    min-height: 695px;
+    padding: 40px 15px;
+    background: #c51717 url("../images/hero-calculating-success.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.calculating-success .calculating-success-container {
+    position: relative;
+    text-align: center;
+}
+
+.calculating-success .calculating-success-container > h1,
+.calculating-success .calculating-success-container > h2,
+.calculating-success .calculating-success-container > h4,
+.calculating-success .calculating-success-container > .blurb-container,
+.calculating-success .calculating-success-container > p {
+    color: #ffffff;
+}
+
+.calculating-success .calculating-success-container a:hover,
+.calculating-success .calculating-success-container a:active {
+    text-decoration: none;
+}
+
+.calculating-success .calculating-success-container > h2 {
+    margin: 50px 0 20px;
+    line-height: 1;
+	font-weight: 100;
+}
+
+.calculating-success .calculating-success-container > h4 {
+    margin-bottom: 20px;
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.calculating-success .calculating-success-container > p {
+    line-height: 1;
+	font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+    font-weight: 300;
+    line-height: 160%;
+}
+
+.calculating-success .calculating-success-container .icon-healthcare {
+    margin: 15px auto 0;
+}
+
+.calculating-success .calculating-success-container .icon-light,
+.calculating-success .calculating-success-container .icon-gear,
+.calculating-success .calculating-success-container .icon-layers {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.calculating-success .calculating-success-container .calculating-list {
+    display: table;
+    margin: 35px auto 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.calculating-success .calculating-success-container .calculating-list > li {
+    display: table-cell;
+    position: relative;
+    margin: 0 5px;
+    padding-top: 40px;
+    overflow: visible;
+}
+
+.calculating-success .calculating-success-container .calculating-list > li.separator {
+    padding: 105px 15px 0;
+    vertical-align: middle;
+}
+
+.calculating-success .calculating-success-container .calculating-list > li h4 {
+    color: #000000;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.125em;
+    line-height: 1;
+     margin: 8px 0;
+}
+
+.calculating-success .calculating-success-container .calculating-list > li p {
+    margin: 0 10px;
+   font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1;
+    line-height: 110%;
+    color: #414141;
+}
+
+.calculating-success .calculating-success-container .calculating-list > li .icon-plus,
+.calculating-success .calculating-success-container .calculating-list > li .icon-minus {
+    position: relative;
+}
+
+.calculating-success .calculating-success-container .calculating-list > li .icon-plus {
+    top: 7px;
+}
+
+.calculating-success .calculating-success-container .calculating-list > li .icon-minus {
+    top: 6px;
+}
+
+.calculating-success .calculating-success-container .blurb-container > p {
+    float: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.calculating-success .calculating-success-container .explore {
+    display: inline-block;
+    margin: 190px auto 40px;
+    background-color: transparent;
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.calculating-success .calculating-success-container .explore:hover {
+    background-color: #ffffff;
+    color: #ce0000;
+}
+
+.calculating-success .calculating-success-container .explore:hover a {
+    color: #ce0000;
+}
+
+.calculating-success .calculating-success-container .explore a {
+    font-weight: 900;
+    letter-spacing: 3px;
+	text-decoration:none;
+}
+
+/* for home page hexagons */
+.homepage .calculating-success .calculating-success-container .calculating-list>li.hexagon270 img{top:-50px !important; max-height:64px;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li img{max-height:64px;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li.hexagon270{padding-top:15px;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li .animateAnchor{margin:8px auto 0 auto;}
+.homepage .calculating-success .calculating-success-container .calculating-list>li h4{margin:8px 0 3px 0}
+/* //for home page hexagons */
+
+@media only screen and (max-width: 1280px) {
+    .calculating-success .calculating-success-container .calculating-list > li {
+        margin-bottom: 170px;
+    }
+    .calculating-success .calculating-success-container .explore {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .calculating-success .calculating-success-container > h1 {
+        font-size: 2em;
+        line-height: 1;
+    }
+    .calculating-success .calculating-success-container > h4 {
+        font-size: 1.125em;
+        line-height: 1;
+        line-height: 140%;
+    }
+    .calculating-success .calculating-success-container > p {
+        font-size: 1em;
+        line-height: 1;
+        font-weight: 200;
+        line-height: 120%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .calculating-success {
+        background-image: url("../images/hero-calculating-success_mobile.jpg");
+        background-position: top center;
+    }
+    .calculating-success .calculating-success-container .calculating-list > li {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+    }
+    .calculating-success .calculating-success-container .calculating-list > li.separator {
+        display: none !important;
+    }
+    .calculating-success .calculating-success-container .explore.top {
+        display: inline-block !important;
+    }
+    .calculating-success .calculating-success-container .explore.bottom {
+        display: none !important;
+    }
+	.calculating-success .calculating-success-container > h2{
+		font-size:1.875rem;
+	}
+}
+
+.millennials {
+    padding: 0 15px 115px;
+    background: url("") top center no-repeat;
+    background-size: cover;
+}
+
+.millennials .millennials-container {
+    position: relative;
+}
+
+.millennials .millennials-container a:hover,
+.millennials .millennials-container a:active {
+    text-decoration: none;
+}
+
+.millennials .millennials-container .millennials-content {
+    text-align: right;
+}
+
+.millennials .millennials-container .millennials-content > h1,
+.millennials .millennials-container .millennials-content > h2,
+.millennials .millennials-container .millennials-content > h4,
+.millennials .millennials-container .millennials-content > .blurb-container,
+.millennials .millennials-container .millennials-content > p,
+.millennials .millennials-container .millennials-content > h3{
+    color: #ffffff;
+}
+
+.millennials .millennials-container .millennials-content h1 {
+    margin: 3.5em 0 20px;
+    font-weight: 100;
+    line-height: 1;
+}
+
+.millennials .millennials-container .millennials-content h4 {
+    font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1;
+	margin-bottom:20px;
+    text-transform: uppercase;
+}
+
+.millennials .millennials-container .millennials-content > h3 {
+    font-weight: 600;
+}
+
+.millennials .millennials-container .millennials-content p {
+    margin-bottom: 40px;
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1.125em;
+    line-height: 1;
+    line-height: 120%;
+}
+
+.millennials .millennials-container .millennials-content .blurb-container p {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 1.125em;
+    line-height: 1.4em;                    
+    font-weight: 300;                    
+    padding: 0;
+    float: right;
+}
+
+.millennials .millennials-container .millennials-content .learn-millennials {
+     background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+}
+
+.millennials .millennials-container .millennials-content .learn-millennials:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.millennials .millennials-container .millennials-content .learn-millennials a:focus, 
+.millennials .millennials-container .millennials-content .learn-millennials a:hover {
+    text-decoration: none;
+}
+.millennials .millennials-container .millennials-content .learn-millennials:hover a {
+    color: #000000;
+}
+
+.millennials .millennials-container .millennials-content .return {
+    margin-top: 2em;
+    line-height: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.millennials .millennials-container .millennials-content .return a {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: .7em;
+    letter-spacing: .15em;
+}
+
+@media only screen and (min-width: 1280px) {
+    .millennials {
+        min-height: 0;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .millennials {
+        background-position: top left;
+    }
+    .millennials .millennials-container .millennials-content {
+        text-align: left;
+    }
+    .millennials .millennials-container .millennials-content h1 {
+        margin: 320px 0 10px;
+        font-size: 2em;
+        line-height: 1;
+    }
+    .millennials .millennials-container .millennials-content h4 {
+        font-size: 1.25em;
+        line-height: 1;
+        line-height: 140%;
+    }
+    .millennials .millennials-container .millennials-content p {
+        line-height: 150%;
+        margin-bottom: 20px;
+    }
+    .millennials .millennials-container .millennials-content .blurb-container p {
+        float: left;
+    font-size: 1em;
+    line-height: 1.2em;    
+    }
+    .millennials .millennials-container .millennials-content .learn {
+        font-size: 0.8125em;
+        /*line-height: 1;*/
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .millennials {
+        background: url("../images/hero-millennials_mobile.jpg") top center no-repeat;
+        background-size: cover;
+        padding: 0 15px 60px;
+    }
+	.millennials .millennials-container .millennials-content h1{
+		margin-top: 300px;		
+	}
+	.millennials .millennials-container .millennials-content > h3{
+    	font-weight: 700; font-size:1.125em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+    .millennials .millennials-container .millennials-content {
+        text-align: left;
+    }
+    .millennials .millennials-container .millennials-content .learn {
+        margin-bottom: 2em;
+    }
+}
+
+.calculating-success .calculating-success-container .calculating-list.hidehexicons li.separator{visibility:hidden}

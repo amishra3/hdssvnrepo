@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Widget"
+    defaultValue="na"
+	fieldLabel="Buyers Journey"
+    name="./dc:buyersjourney"
+    type="select"
+    xtype="selection">
+    <options jcr:primaryType="cq:WidgetCollection">
+        <na
+            jcr:primaryType="nt:unstructured"
+            text="NA"
+            value="na"/>
+        <Discover
+            jcr:primaryType="nt:unstructured"
+            text="Discover"
+            value="Discover"/>
+        <Consider
+            jcr:primaryType="nt:unstructured"
+            text="Consider"
+            value="Consider"/>
+        <Decide
+            jcr:primaryType="nt:unstructured"
+            text="Decide"
+            value="Decide"/>
+        <SalesEnablement
+            jcr:primaryType="nt:unstructured"
+            text="Sales Enablement"
+            value="Sales Enablement"/>
+    </options>
+</jcr:root>

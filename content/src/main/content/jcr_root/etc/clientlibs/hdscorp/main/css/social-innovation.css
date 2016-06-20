@@ -1,0 +1,352 @@
+/* SI - Advanced Technology - Hexagon Section CSS*/
+.advance-tech-hexagon{
+  position: relative;
+  padding: 70px 15px 100px;
+  background-image: url("../images/si-advance-tech-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  min-height: 670px;
+}
+
+.advance-tech-hexagon h2 {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 3em;
+    font-weight: 100;
+    line-height: 1;
+    margin: 0 0 35px 0;
+    text-align: center;
+}
+.advance-tech-hexagon p{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.28571em;
+  font-weight: 300;
+  line-height: 1.4em;  
+  text-align: center;
+}
+
+.advance-tech-hexagon .advance-tech-hexagon-list{
+    display: inline-block;
+    list-style-type: none;
+    margin: 55px 0 0;
+    padding: 0;
+    width: 100%;
+}
+
+.mac-os .advance-tech-hexagon{min-height: 720px;}
+
+.advance-tech-hexagon .hexagon320 .hexagon-content{margin-top:-60px;}
+
+@media only screen and (max-width: 1024px) {
+  .advance-tech-hexagon{
+    min-height: 750px;
+    padding-bottom: 100px;
+  }
+  .advance-tech-hexagon-list .hex-contain{
+    width:100%;
+    margin:0;
+  }
+  .advance-tech-hexagon-list .hex-contain .hexagon320{
+    margin-right:10px;
+  }
+  .advance-tech-hexagon-list .hex-contain .hexagon320:last-child{
+    margin-right:0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .advance-tech-hexagon{
+    padding-bottom:50px;
+  }
+  .advance-tech-hexagon h2{
+   font-size: 1.875rem;
+  }
+
+  .advance-tech-hexagon .advance-tech-hexagon-list {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 270px;
+  }
+}
+
+/* SI - We Mean Business CSS*/
+.we-mean-business {
+  z-index: 2;
+  position: relative;
+  padding: 65px 0 60px;
+  background: #ffffff
+}
+
+.we-mean-business h2 {
+  font-size: 3em;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0 0 55px 0;
+  line-height: 1;
+  text-align: center;
+  color: #008eaa;
+}
+.we-mean-business .si-comm-box{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  border-right: 1px solid #d7d7d7;
+  padding: 0 30px;
+  min-height:85px;
+}
+.we-mean-business .si-comm-box:first-child{
+  padding-left: 0 !important;
+}
+.we-mean-business .si-comm-box:last-child{
+  border-right:none;
+  padding-right: 0 !important;
+}
+
+.we-mean-business .si-comm-box .title{
+  font-size: 1em;
+  color: #000000;
+  text-transform: uppercase;
+  display:table-cell;
+  min-width: 20%;
+  line-height: 1;
+
+}
+.we-mean-business .si-comm-box .title span{  
+  font-family: "museo-slab",Helvetica,Arial,sans-serif;
+  font-size: 1.5em;
+  color: #cc0000;
+  font-weight: 600;
+}
+
+.we-mean-business .si-comm-box .title span:after {
+  content: " ";
+}
+
+.we-mean-business .si-comm-box .description{
+   display: table-cell;
+   padding-left: 20px;
+   font-size: 1.125rem;
+}
+
+.we-mean-business .si-comm-box .description span a{
+  color: #333333;
+}
+
+.we-mean-business .si-comm-box .description span a:hover{
+  text-decoration: none;  
+}
+
+@media only screen and (max-width: 991px) {
+  .we-mean-business{
+    padding: 45px 0;
+  }
+  .we-mean-business h2 {
+    font-size: 1.875rem;
+    margin-bottom: 15px; 
+  }
+  .we-mean-business .si-comm-box{
+    padding: 25px 0;
+    margin: 0 40px;
+    border-bottom: 1px solid #d7d7d7;
+    border-right: none;
+  }
+  .we-mean-business .si-comm-box:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .we-mean-business .si-comm-box .title{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .we-mean-business .si-comm-box .title span{
+    display: block;
+  }
+  .we-mean-business .si-comm-box .description{
+    display: block;
+    text-align: center;
+    border: none;
+    font-size: 0.75rem;
+    padding-left: 0px;
+  }
+.advance-tech-hexagon p{font-size:1em;}
+
+}
+
+/* SI - Article Section CSS */
+.social-innovation-article{
+  position: relative;
+  padding: 60px 15px;
+  background-image: url("../images/si-article-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.social-innovation-article h3 {
+    font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.social-innovation-article .si-article-content{
+  margin-bottom: 40px;
+  font-size: 1.125em;
+}
+.social-innovation-article .si-article-content .icon{
+  display: inline-block;
+  text-align: right;
+}
+.social-innovation-article .si-article-content .desc{
+  display: inline-block;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.social-innovation-article .si-article-more {
+    margin-left: auto;
+    margin-right: auto;
+   /* max-width: 300px;*/
+    text-align: center;
+}
+
+.social-innovation-article .si-article-more:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.social-innovation-article .si-article-more:hover a {
+    color: #000000;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .social-innovation-article .si-article-content{
+    text-align: center;
+  }
+  .social-innovation-article .si-article-content .icon{
+    margin-bottom: 20px;
+  }
+  .social-innovation-article h3{
+    margin-top:0;
+    margin-bottom: 25px;
+  }
+}
+
+
+/* SI - Work Today Section CSS */
+.si-work-today{margin:0; padding: 60px 0;}
+.si-work-today h3{
+  font-family: "museo-slab",Helvetica,Arial,sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+  margin: 0 0 60px 0;
+}
+.si-work-today .si-work-today-box{
+  padding: 0 15px 0 0;
+}
+.si-work-today .si-comm-box{
+  box-shadow: 0 2px 3px #999;
+  color: #ffffff;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  margin-bottom: 15px;
+  min-height: 375px;
+  position: relative;
+}
+.si-work-today .si-comm-box.si-box1{
+  background: url("../images/si-telecom-analytics.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.si-work-today .si-comm-box.si-box2{
+  background: url("../images/si-public-safety.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.si-work-today .si-comm-box.si-box3{
+  background: url("../images/si-connected-health.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.si-work-today .si-comm-box.si-box4{
+  background: url("../images/si-it-analytics.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.si-work-today .col-sm-6 {
+    padding-right: 0;
+}
+
+.si-work-today .si-comm-box .si-comm-box-content {
+    bottom: 30px;
+    padding: 0 20px 0 30px;
+    position: absolute;
+}
+
+.si-work-today .si-comm-box .si-comm-box-content .title {
+    font-size: 1.313rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.si-work-today .si-comm-box .si-comm-box-content .description {
+    font-family: Arial,sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.4em;
+}
+
+.si-work-today .si-comm-box .si-comm-box-content .read-more {
+    font-weight: 800;
+    margin-top: 10px;
+    font-size: 0.8125rem;
+}
+
+.si-work-today .si-comm-box .si-comm-box-content .read-more a {
+    color: #ffffff;
+    outline: 0 none;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 767px) {
+  .si-work-today{
+    padding: 50px 0 30px;
+  }
+  .si-work-today h3{
+    font-size: 1rem;
+    margin: 0 0 40px;
+  }
+  .si-work-today .si-comm-box{
+    min-height: 200px;
+  }
+
+  .si-work-today .si-comm-box {min-height: 200px; }
+  .si-work-today .si-comm-box .si-comm-box-content{
+    bottom: 15px;
+    padding: 0 15px 0 15px;
+  }
+  .si-work-today .si-comm-box .si-comm-box-content .title{
+    font-size: 1.125rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .si-work-today .si-comm-box .si-comm-box-content .description{  
+    font-size: 0.8rem;
+  }
+  .si-work-today .si-comm-box .si-comm-box-content .read-more{
+      font-size:0.7rem;
+  }
+  .si-work-today .si-comm-box .si-comm-box-content .read-more a{
+    color: #ffffff;
+    outline: 0 none;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+
+
+}

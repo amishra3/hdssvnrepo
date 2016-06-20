@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <eventbannertitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Event Title"
+                        name="./eventbannertitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var eventbannertitle = dialog.getField('./eventbannertitle')&#xa; var eventbannertitlevalue = eventbannertitle.getValue();&#xa; if($.trim(eventbannertitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <eventmaintitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Main Title"
+                        name="./eventmaintitle"
+                        xtype="textfield"/>
+                    <eventbannersubtitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Sub Title Content"
+                        name="./eventbannersubtitle"
+                        xtype="textfield"/>
+                    <eventbannercontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Content"
+                        name="./eventbannercontent"
+                        xtype="richtext">
+                        <rtePlugins
+                            jcr:primaryType="nt:unstructured"
+                            path="/apps/hdscorp/components/content/richtext/tab_editor/items/editor/rtePlugins.infinity.json"
+                            xtype="cqinclude"/>
+                    </eventbannercontent>
+                    <eventbannerimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        cropParameter="0"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./eventbannerimage"
+                        height="{Long}200"
+                        name="./newsinsigthsbannerimage"
+                        rotateParameter="0"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <eventbannerbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./eventbannerbuttonlabel"
+                        xtype="textfield"/>
+                    <eventbannerbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./eventbannerbuttonurl"
+                        xtype="pathfield"/>
+                    <eventbannerurltargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./eventbannerurltargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        key="thirdparty"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

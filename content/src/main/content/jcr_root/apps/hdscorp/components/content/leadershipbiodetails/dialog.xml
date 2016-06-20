@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="dialog"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <lbdimage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="BIO Image"
+                        name="./jcr:lbdimage"
+                        xtype="pathfield"/>
+                    <lbdimagealt
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="BIO Image Alt"
+                        name="./jcr:lbdimagealt"
+                        xtype="textfield"/>
+                    <lbdtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="BIO Title"
+                        name="./jcr:lbdtitle"
+                        xtype="textfield"/>
+                    <lbdfallowname
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BIO Follow Name"
+                        name="./jcr:lbdfallowname"
+                        xtype="textfield"/>
+                    <lbdjobtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="BIO Job Title"
+                        name="./jcr:lbdjobtitle"
+                        xtype="textfield"/>
+                    <lbdtwittericonpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Twitter Icon Path"
+                        name="./jcr:lbdtwittericonpath"
+                        xtype="pathfield"/>
+                    <lbdtwitterfollowurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Twitter Follow URL"
+                        name="./jcr:lbdtwitterfollowurl"
+                        xtype="textfield"/>
+                    <lbdtwitteralt
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Twitter Alt"
+                        name="./jcr:lbdtwitteralt"
+                        xtype="textfield"/>
+                    <lbdfacebookiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Facebook Icon Path"
+                        name="./jcr:lbdfacebookiconpath"
+                        xtype="pathfield"/>
+                    <lbdfacebookfollowurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Facebook Follow URL"
+                        name="./jcr:lbdfacebookfollowurl"
+                        xtype="textfield"/>
+                    <lbdfacebookalt
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Facebook Alt"
+                        name="./jcr:lbdfacebookalt"
+                        xtype="textfield"/>
+                    <lbdlinkediniconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Linkedin Icon Path"
+                        name="./jcr:lbdlinkediniconpath"
+                        xtype="pathfield"/>
+                    <lbdlinkedinfollowurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Linkedin Follow URL"
+                        name="./jcr:lbdlinkedinfollowurl"
+                        xtype="textfield"/>
+                    <lbdlinkedinalt
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Linkedin Alt"
+                        name="./jcr:lbdlinkedinalt"
+                        xtype="textfield"/>
+                    <lbdcontent
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="BIO Content"
+                        name="./jcr:lbdcontent"
+                        xtype="richtext"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

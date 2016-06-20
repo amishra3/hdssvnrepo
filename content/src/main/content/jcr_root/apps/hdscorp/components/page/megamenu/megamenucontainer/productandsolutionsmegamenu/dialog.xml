@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <mgmpsnavtitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Navegation Title"
+                        name="./mgmpsnavtitle"
+                        xtype="textfield"/>
+                    <mgmpsnavpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Navigation Path"
+                        name="./mgmpsnavpath"
+                        xtype="pathfield"/>
+                    <mgmpstitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title"
+                        name="./mgmpstitle"
+                        xtype="textfield"/>
+                    <mgmpstitleiconpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title Icon path"
+                        name="./mgmpstitleiconpath"
+                        xtype="pathfield"/>
+                    <subnav
+                        jcr:primaryType="cq:Widget"
+                        customMultiFieldName="./subnav"
+                        fieldLabel="&#xa;Sub Navigation Path"
+                        name="./subnav"
+                        xtype="custommultifield">
+                        <fieldConfig jcr:primaryType="cq:WidgetCollection">
+                            <mgmpssubnavlabel
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Sub Navgation Label"
+                                name="./mgmpssubnavlabel"
+                                xtype="textfield"/>
+                            <mgmpssubnavlink
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Sub Navigation Path"
+                                name="./mgmpssubnavlink"
+                                xtype="pathfield"/>
+                            <mgmpsalttext
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Link  Alt Text"
+                                name="./mgmpsalttext"
+                                xtype="textfield"/>
+                            <mgmpsopeninnewwindow
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Open in New Window"
+                                key="mgmpsopeninnewwindow"
+                                name="./mgmpsopeninnewwindow"
+                                type="select"
+                                width="300"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <opt1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YES"
+                                        value="1"/>
+                                    <opt2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="NO"
+                                        value="2"/>
+                                </options>
+                            </mgmpsopeninnewwindow>
+                        </fieldConfig>
+                    </subnav>
+                    <mgmpsbackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="BackGround Image Path"
+                        name="./mgmpsbackgroundimagepath"
+                        xtype="pathfield"/>
+                    <mgmobilebackgroundimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Mobile BackGround Image Path"
+                        name="./mgmobilebackgroundimagepath"
+                        xtype="pathfield"/>
+                    <mgmpsheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="HeadLine"
+                        name="./mgmpsheadline"
+                        xtype="textarea"/>
+                    <mgmpsdescription
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Description"
+                        name="./mgmpsdescription"
+                        xtype="richtext"/>
+                    <mgmpsviewfeaturedproductslabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="View Featured Products Label"
+                        name="./mgmpsviewfeaturedproductslabel"
+                        xtype="textfield"/>
+                    <mgmpsviewfeaturedproductslink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="View Featured Products Path"
+                        name="./mgmpsviewfeaturedproductslink"
+                        xtype="pathfield"/>
+                    <mgmpsopeninnewwindowouter
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window"
+                        key="mgmpsopeninnewwindowouter"
+                        name="./mgmpsopeninnewwindowouter"
+                        type="checkbox"
+                        width="300"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

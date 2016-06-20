@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="DT Data management Banner"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Data management Banner">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <dtdmbannertitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Title"
+                        name="./dtdmbannertitle"
+                        xtype="textfield"/>
+                    <dtdmbgimage
+                        jcr:primaryType="cq:Widget"
+                        allowblank="false"
+                        fieldLabel="Banner Desktop Background Image"
+                        name="./dtdmbgimage"
+                        xtype="pathfield"/>
+                    <dtdmmbbgimage
+                        jcr:primaryType="cq:Widget"
+                        allowblank="false"
+                        fieldLabel="Banner Mobile Background Image"
+                        name="./dtdmmbbgimage"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

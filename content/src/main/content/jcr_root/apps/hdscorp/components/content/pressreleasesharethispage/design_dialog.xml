@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Share This Page Component"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <prstptitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title"
+                        name="./prstptitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstptitle = dialog.getField('./prstptitle')&#xa; var prstptitlevalue = prstptitle.getValue();&#xa; if($.trim(prstptitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <prstpfacebookiconpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Facebook Icon Path"
+                        name="./prstpfacebookiconpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstpfacebookiconpath = dialog.getField('./prstpfacebookiconpath')&#xa; var prstpfacebookiconpathvalue = prstpfacebookiconpath.getValue();&#xa; if($.trim(prstpfacebookiconpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <prstptwittericonpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Twitter Icon Path"
+                        name="./prstptwittericonpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstptwittericonpath = dialog.getField('./prstptwittericonpath')&#xa; var prstptwittericonpathvalue = prstptwittericonpath.getValue();&#xa; if($.trim(prstptwittericonpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <prstplinkediniconpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="LinkedIn Icon Path"
+                        name="./prstplinkediniconpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstplinkediniconpath = dialog.getField('./prstplinkediniconpath')&#xa; var prstplinkediniconpathvalue = prstplinkediniconpath.getValue();&#xa; if($.trim(prstplinkediniconpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <prstpemailiconpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Mail Icon Path"
+                        name="./prstpemailiconpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstpemailiconpath = dialog.getField('./prstpemailiconpath')&#xa; var prstpemailiconpathvalue = prstpemailiconpath.getValue();&#xa; if($.trim(prstpemailiconpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <prstppresscontactlabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Press Contact Label"
+                        name="./prstppresscontactlabel"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstppresscontactlabel = dialog.getField('./prstppresscontactlabel')&#xa; var prstppresscontactlabelvalue = prstppresscontactlabel.getValue();&#xa; if($.trim(prstppresscontactlabelvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <prstppresscontactdetails
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Press Contact Details"
+                        name="./prstppresscontactdetails"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstppresscontactdetails = dialog.getField('./prstppresscontactdetails')&#xa; var prstppresscontactdetailsvalue = prstppresscontactdetails.getValue();&#xa; if($.trim(prstppresscontactdetailsvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="richtext"/>
+                    <prstpresscontactmailid
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Contact  US Mail ID"
+                        name="./prstpresscontactmailid"
+                        regex="/^[A-za-z0-9]+[\\._]*[A-za-z0-9]*@[A-za-z.-]+[\\.]+[A-Za-z]{2,4}$/"
+                        regexText="Please enter a valid email address"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var prstpresscontactmailid = dialog.getField('./prstpresscontactmailid')&#xa; var prstpresscontactmailidvalue = prstpresscontactmailid.getValue();&#xa; if($.trim(prstpresscontactmailidvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

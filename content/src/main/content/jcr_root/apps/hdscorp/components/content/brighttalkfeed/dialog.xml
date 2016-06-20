@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Brighttalk Webcast Component"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <playerpagepath
+            jcr:primaryType="cq:Widget"
+            fieldDescription="Please select the path for the page which renders the BrightTalk player."
+            fieldLabel="BrightTalk player page path"
+            name="./playerpagepath"
+            xtype="ddpathfield"/>
+        <ctatargeturlopeninnew
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Open in Modal ?"
+            name="./playeropeninmodal"
+            type="checkbox"
+            xtype="selection"/>
+        <nowebcastfoundmessage
+            jcr:primaryType="cq:Widget"
+            fieldLabel="NO Webcast Found Message"
+            name="./nowebcastfoundmessage"
+            xtype="textfield"/>
+        <playlabel
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Play Label"
+            name="./playlabel"
+            xtype="textfield"/>
+        <registerlabel
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Register Label"
+            name="./registerlabel"
+            xtype="textfield"/>
+        <detailslabel
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Details Label"
+            name="./detailslabel"
+            xtype="textfield"/>
+        <html5embedcode
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Brighttalk HTML5 Embed Code"
+            name="./html5embedcode"
+            height="200"
+            width="400"
+            xtype="textarea"/>
+        <usemebedcode
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Use Brighttalk embed code ?"
+            name="./usemebedcode"
+            type="checkbox"
+            xtype="selection"/>            
+    </items>
+</jcr:root>

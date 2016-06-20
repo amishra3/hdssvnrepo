@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="400"
+    title="Social Links Config "
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <socialfollowuslabel
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Social Follow US Label"
+                        name="./socialfollowuslabel"
+                        xtype="textfield"/>
+                    <sociallinksconfig
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Social Links Config "
+                        name="./sociallinksconfig"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <socialchannelicon
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Social channel Icon"
+                                    key="scicon"
+                                    name="./jcr:scicon"
+                                    xtype="pathfield"/>
+                                <socialchanneltargeturl
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Socail Chanel Target URL"
+                                    key="scturl"
+                                    name="./jcr:scturl"
+                                    xtype="pathfield"/>
+                                <socialtargettype
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Open in New Window"
+                                    key="socialtargettype"
+                                    name="./jcr:socialurltargettype"
+                                    type="select"
+                                    width="300"
+                                    xtype="selection">
+                                    <options jcr:primaryType="cq:WidgetCollection">
+                                        <opt1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="YES"
+                                            value="1"/>
+                                        <opt2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="NO"
+                                            value="2"/>
+                                    </options>
+                                </socialtargettype>
+                            </items>
+                        </fieldConfig>
+                    </sociallinksconfig>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

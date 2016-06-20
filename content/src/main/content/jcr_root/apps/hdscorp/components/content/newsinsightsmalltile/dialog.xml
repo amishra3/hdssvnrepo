@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="News and Insight Small Tile"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <nisticonimagepath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Icon Image Path"
+                        name="./jcr:nisticonimagepath"
+                        xtype="pathfield"/>
+                    <nisticonimagetitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Icon Image Title"
+                        name="./jcr:nisticonimagetitle"
+                        xtype="textfield"/>
+                    <nistcontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLable="Content"
+                        name="./jcr:nistcontent"
+                        xtype="richtext"/>
+                    <nistreadmorelabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Read More Label"
+                        name="./jcr:nistreadmorelabel"
+                        xtype="textfield"/>
+                    <nistreadmorelink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Read More Link"
+                        name="./jcr:nistreadmorelink"
+                        xtype="textfield"/>
+                    <nistopennewtab
+                        jcr:primaryType="cq:Widget"
+                        sling:resourceType="/libs/granite/ui/components/foundation/form/checkbox"
+                        fieldLabel="Open in new tab?"
+                        name="./jcr:nistopennewtab"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

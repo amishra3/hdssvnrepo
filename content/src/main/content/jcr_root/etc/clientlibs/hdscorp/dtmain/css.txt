@@ -1,0 +1,2 @@
+#base=/etc/clientlibs/hdscorp/main/css
+digital-transformation.css

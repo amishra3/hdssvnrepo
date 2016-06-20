@@ -1,0 +1,199 @@
+.solutions.footer {
+  background-color: #f2f2f2 !important;
+  border-top: 1px solid #d7d7d7;
+}
+
+.footer .footer-container a:hover,
+.footer .footer-container a:active {
+  text-decoration: underline;
+}
+
+.footer .footer-white {
+  margin: 50px 0 0 0;
+  background: #f2f2f2 !important;
+}
+
+.footer .footer-white .footer-container p {
+  margin: 0;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  font-weight: 100;
+  font-size: 0.75em;
+  line-height: 1;
+}
+
+.footer .footer-white .footer-container p a {
+  color: #000000;
+}
+
+.footer .footer-white .footer-container h3 {
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.875em;
+  line-height: 1;
+  color: #000000;
+}
+
+.footer .footer-white .footer-container .footer-title {
+  margin-top: 0;
+  text-transform: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer .footer-white .footer-container .footer-links li,
+.footer .footer-white .footer-container .copyright-links li {
+  display: inline-block;
+  margin-right: 1.8em;
+  list-style-type: none;
+}
+
+.footer .footer-white .footer-container .footer-links li a,
+.footer .footer-white .footer-container .copyright-links li a {
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.footer .footer-white .footer-container .footer-links {
+  margin-bottom: 2em;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer .footer-white .footer-container .footer-links:nth-of-type(2) {
+  margin-bottom: 0.5em;
+}
+
+.footer .footer-white .footer-container .footer-links li .innovation-link {
+  margin-bottom: 0;
+  color: #ce0000;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0;
+}
+
+.footer .footer-white .footer-container .footer-links li .innovation-link .icon-link-red {
+  background-image: url(../images/sprite.png);
+  background-position: -305px -177px;
+  width: 13px;
+  height: 13px;
+}
+
+.footer .footer-white .footer-container .footer-links li a {
+  font-size: 0.6875em;
+  line-height: 1;
+}
+
+.footer .footer-white .footer-container .social-links {
+  position: absolute;
+  right: -5%;
+  bottom: 163px;
+}
+
+.footer .footer-white .footer-container .social-links li {
+  display: inline-block;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+.footer .footer-white .footer-container .social-links-desktop {
+  display: block;
+}
+
+.footer .footer-white .footer-container .copyright-links {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer .footer-white .footer-container .copyright-links li a {
+  font-size: 0.625em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.footer .footer-white .footer-container .copyright-links li a.copyright-iot:hover {
+  text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+  .footer .footer-white .footer-container .footer-title,
+  .footer .footer-white .footer-container .footer-links li,
+  .footer .footer-white .footer-container .innovation-link,
+  .footer .footer-white .footer-container .copyright-links li {
+    display: block;
+    float: none;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .footer .footer-white .footer-container .social-links {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 2em auto;
+    float: none;
+  }
+
+  .footer .footer-white .footer-container .social-links li {
+    margin: 0 10px 0;
+  }
+
+  .footer .footer-white .footer-container .social-links-separator {
+	border-bottom: 3px solid #c5c5c5;
+    width: 120px;
+    height: 0px;
+    margin: 0 auto 2em auto;
+  }
+
+
+  .footer .footer-white .footer-container .footer-links li {
+    margin: 0 0 0.5em;
+  }
+
+  .footer .footer-white .footer-container .footer-links li a {
+    font-size: 0.875em;
+    line-height: 1;
+  }
+
+  .footer .footer-white .footer-container .innovation-link {
+    font-size: 0.875em;
+    line-height: 1;
+  }
+
+  .footer .footer-white .footer-container .copyright-links li a {
+    font-size: 0.625em;
+    line-height: 1;
+  }
+
+  .footer .footer-white .footer-container .social-links-desktop {
+    position: relative;
+    right: auto;
+    bottom: auto;
+  }
+
+  .footer .footer-white .footer-container .social-links-mobile {
+    display: none;
+  }
+
+  .footer .footer-white .footer-container .social-links-mobile hr {
+    max-width: 140px;
+    height: 2px;
+    background-color: #c0c0c0;
+    border: none;
+  }
+
+  .footer .footer-white .footer-container .footer-links:nth-of-type(2) {
+    margin-bottom: 2em;
+  }
+
+}

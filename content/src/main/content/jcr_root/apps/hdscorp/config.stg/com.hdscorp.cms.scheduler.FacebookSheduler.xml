@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    facebook.accesstoken="CAADWpHWlQlsBAIiRt2qKzZAZAW3uyIwr5GMcPw0QFYrsZA9LAxxMqOikZAoRBPFa26bAzccYhjv9ZAHpyQaqvYoS0i8ffLE05QBFhvJhhDXs1e5OgXugImHH4VMHNLglH3RPzhU2W6nBHVoiEfOmlrl7UuZAlcWLSeLnN7CrxHKLcWrAjZBYv86ZCvuZA2I3WnvkZD"
+    facebook.appid="236001836745307"
+    facebook.appsecret="6a29d7d82595a3884bd2f28882638d89"
+    facebook.postlimit="3"
+    facebook.scheduler.expression="0 15 10 * * ?"
+    facebook.searchpost="94005676787"
+    facebook.storage.path="/content/hdscorp/en_us/lookup/facebookpostdata/jcr:content/"/>

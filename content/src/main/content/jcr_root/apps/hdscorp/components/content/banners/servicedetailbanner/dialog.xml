@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <servicedetailbannertitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Service Detail Banner Title"
+                        name="./servicedetailbanner"
+                        xtype="textfield"/>
+                    <servicedetailbannerheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Service Detail Banner Headline"
+                        name="./servicedetailbannerheadline"
+                        xtype="textfield"/>
+                    <servicedetailbannersubheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Service Detail Banner Sub Headline"
+                        name="./servicedetailbannersubheadline"
+                        xtype="textfield"/>
+                    <servicedetailbannercontent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Service Detail Banner Content"
+                        name="./servicedetailbannercontent"
+                        xtype="textfield"/>
+                    <servicedetailbannerimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:imageFileRef"
+                        height="{Long}200"
+                        name="./servicedetailbannerimage"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <servicedetailbannermobileimage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./servicedetailbannermobileimage"
+                        xtype="ddpathfield"/>
+                    <servicedetaibuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./servicedetaibuttonlabel"
+                        xtype="textfield"/>
+                    <simplebannerbuttonurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./servicedetaibuttonurl"
+                        xtype="pathfield"/>
+                    <servicedetaitargettype
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window ?"
+                        name="./servicedetaitargettype"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="sharethispage"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <dtstptitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title"
+                        name="./dtstptitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var dtstptitle = dialog.getField('./dtstptitle')&#xa; var dtstptitlevalue = dtstptitle.getValue();&#xa; if($.trim(dtstptitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <dtstpfacebookiconpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Facebook Icon Path"
+                        name="./dtstpfacebookiconpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var dtstpfacebookiconpath = dialog.getField('./dtstpfacebookiconpath')&#xa; var dtstpfacebookiconpathvalue = dtstpfacebookiconpath.getValue();&#xa; if($.trim(dtstpfacebookiconpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <dtstptwittericonpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Twitter Icon Path"
+                        name="./dtstptwittericonpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var dtstptwittericonpath = dialog.getField('./dtstptwittericonpath')&#xa; var dtstptwittericonpathvalue = dtstptwittericonpath.getValue();&#xa; if($.trim(dtstptwittericonpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <dtstplinkediniconpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="LinkedIn Icon Path"
+                        name="./dtstplinkediniconpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var dtstplinkediniconpath = dialog.getField('./dtstplinkediniconpath')&#xa; var dtstplinkediniconpathvalue = dtstplinkediniconpath.getValue();&#xa; if($.trim(dtstplinkediniconpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <mbdtstptitle
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Title(mobile)"
+                        name="./mbdtstptitle"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var mbdtstptitle = dialog.getField('./mbdtstptitle')&#xa; var dtstptitlevalue = mbdtstptitle.getValue();&#xa; if($.trim(dtstptitlevalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <mbdtstpfacebookiconpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Facebook Icon Path(mobile)"
+                        name="./mbdtstpfacebookiconpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var dtstpfacebookiconpath = dialog.getField('./mbdtstpfacebookiconpath')&#xa; var dtstpfacebookiconpathvalue = dtstpfacebookiconpath.getValue();&#xa; if($.trim(dtstpfacebookiconpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <mbdtstptwittericonpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Twitter Icon Path(mobile)"
+                        name="./mbdtstptwittericonpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var dtstptwittericonpath = dialog.getField('./mbdtstptwittericonpath')&#xa; var dtstptwittericonpathvalue = dtstptwittericonpath.getValue();&#xa; if($.trim(dtstptwittericonpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <mbdtstplinkediniconpath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="LinkedIn Icon Path(mobile)"
+                        name="./mbdtstplinkediniconpath"
+                        validator="function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var dtstplinkediniconpath = dialog.getField('./mbdtstplinkediniconpath')&#xa; var dtstplinkediniconpathvalue = dtstplinkediniconpath.getValue();&#xa; if($.trim(dtstplinkediniconpathvalue)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,719 @@
+.common-hero-banner.about-hds-csr{
+  z-index: 2;
+}
+
+.about-hds-csr-quote{
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 0 70px;
+  position: relative;
+  z-index: 9;
+}
+
+.about-hds-csr-quote.csr-quote-1{
+  background: #ffffff;
+  color: #000000;
+}
+.about-hds-csr-quote.csr-quote-2{
+  background: #333333;
+  color: #ffffff;
+}
+
+.about-hds-csr-quote.csr-quote-3{
+  background: #AC1F25;
+  color: #ffffff;
+}
+
+.about-hds-csr-quote.csr-quote-4{
+  background: #1890A8;
+  color: #ffffff;
+}
+.about-hds-csr-quote.csr-quote-5{
+  color: #ffffff;
+  text-align: left;
+  padding-top: 160px;
+  padding-bottom: 80px;
+}
+.about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics{
+  margin-bottom: 55px;
+}
+.about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .col-sm-6{
+  padding-left:0;
+  padding-right:0;
+}
+.about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container p{
+  font-size: 1.125rem;
+}
+
+.about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .resources-all a, 
+.about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .resources-support a{
+  font-size: 1.3rem;
+}
+
+.about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .glyphicon.glyphicon-menu-right.animateIcon {
+    top: 5px;
+}
+
+.about-hds-csr-quote .about-hds-csr-quote-container .learn-more{
+  text-align: center;
+}
+
+
+.resources-all, .resources-support {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;    
+    background-color: #008eaa;
+    margin: 7.5px;
+    min-height: 50px;
+    padding: 13px 15px;
+}
+.resources-all a, .resources-support a{
+  color: #ffffff;
+}
+
+.about-hds-csr-quote .learn-more-csr-quote {
+    background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "museo-sans",Arial,sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    margin-top: 35px;
+}
+
+.about-hds-csr-quote .about-hds-csr-quote-container{
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+}
+.about-hds-csr-quote .about-hds-csr-quote-container h2 {
+    font-family: "museo-sans",Helvetica,Arial,sans-serif;
+    font-size: 3em;
+    font-weight: 100;
+    line-height: 1;
+    margin: 0 0 35px 0;
+}
+.about-hds-csr-quote .about-hds-csr-quote-container h4 {
+    font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.7em;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 22px;
+    margin-top:18px;
+    text-transform: uppercase;
+} 
+.about-hds-csr-quote .about-hds-csr-quote-container p{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125em;
+  font-weight: 300;
+  margin: 0;
+}
+
+.hitachi-honor{
+  background: #f1f1f1;
+  padding: 40px 0 35px;
+}
+.hitachi-honor h2{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 110%;
+  margin: 0 0 35px 0;
+  text-align: center;
+}
+.hitachi-honor .col-sm-4 {
+  
+}
+
+.hitachi-honor .hitachi-honor-box{
+  border-right:1px solid #a8a8a8;
+  padding: 20px 20px 20px 35px;
+}
+
+.hitachi-honor .hitachi-honor-box .col-sm-4:last-child div.hitachi-honor-box{
+  border-right:none;
+}
+
+.hitachi-honor .hitachi-honor-box p{
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125rem;
+  font-weight: 100;
+  color: #000000;
+}
+
+.hitachi-honor .tagline{
+  text-align: center;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-top: 25px;
+}
+
+.hitachi-honor-box.no-border-container{
+	border-right:none;
+}
+
+/* About HDS CSR Hexagon */
+.behind-scene-hexagon.about-hds-csr-hexagon{
+    padding: 45px auto 30px;
+    min-height: 545px;
+}
+
+.behind-scene-hexagon.about-hds-csr-hexagon h2 {
+    color: #ffffff;
+    font-family: "museo-slab",Helvetica,Arial,sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+/* About HDS CSR governance Resources */
+.resources-section.csr-governance-resource .resources-title{
+ 
+ font-family: 'museo-sans',Helvetica,Arial,sans-serif;
+  font-size: 3.125em;
+  font-weight:100;
+  margin-bottom: 50px;
+  width: 100%;
+  display:block;
+}
+.about-hds-csr-hexagon .behind-scene-hexagon-list .hexagon320 .hexagon-content {
+    margin-top:-50px;
+}
+
+.about-hds-csr-hexagon .behind-scene-hexagon-list .hexagon320 .icon { margin: 0 0 35px 0;}
+
+@media only screen and (max-width: 768px) {
+.csr-governance-resource .resources-section .acs-commons-resp-colctrl-col:last-child .resources-category:after, .resources-section .acs-commons-resp-colctrl-col:last-child .resources-category:after {
+        background:transparent;
+    }
+}
+
+
+/* About HDS CSR Articles Section */
+.about-hds-articles {
+  background-color: #f1f1f1;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  color: #333333;
+  padding-bottom: 60px; padding-top: 50px;
+}
+
+.about-hds-articles .spotlight-title {
+  font-size: 3.75rem;
+  font-weight: 100;
+  margin-bottom: 40px; 
+  text-transform: none; 
+  color: #333333;
+}
+.about-hds-articles .tbd {
+  height: 800px;
+  position: relative;
+}
+
+.about-hds-articles .tbd p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.25rem;
+}
+.about-hds-articles .hds-community-join{text-align: center; font-size: 0.8125rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-top: 25px;}
+.about-hds-articles .hds-community-blog{margin-bottom: 15px; box-shadow: 0 2px 3px #999; min-height: 375px; color: #ffffff; position: relative; font-family: 'museo-sans', Helvetica, Arial, sans-serif;}
+
+.about-hds-articles .about-hds-articles-spotlight{
+    margin-bottom: 15px; 
+    box-shadow: 0 2px 3px #999; 
+    min-height: 375px; color: #ffffff;
+    position: relative;
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    min-height: 450px;
+}
+
+.about-hds-articles .spotlight1{
+    background: url("../images/about-hds-csr-spotlight1.jpg") no-repeat 50% 0;
+    background-size: cover;
+}
+.about-hds-articles .spotlight2{
+    background: url("../images/about-hds-csr-spotlight2.jpg") no-repeat 50% 0;
+    background-size: cover;
+}
+.about-hds-articles .spotlight3{
+    background: url("../images/about-hds-csr-spotlight3.jpg") no-repeat 50% 0;
+    background-size: cover;
+}
+
+.about-hds-articles .about-hds-articles-spotlight .spotlight-mobile{
+  min-height: 230px;
+}
+
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content{
+  position: absolute;
+  bottom: 30px;
+  padding: 0 20px 0 30px;
+}
+
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight-title{
+  font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #ffffff;
+}
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight-description{  
+  font-size: 1.125em;
+  line-height: 1.3em;
+  font-weight: 300;
+  font-family: "museo-sans",Helvetica,Arial,sans-serif;
+}
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight-more{
+    font-weight:800;
+    margin-top:10px; 
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight a{
+  color: #ffffff;
+  outline: 0 none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content a{color:#ffffff; outline: 0 none; text-decoration: none; font-size: 0.8125em;}
+.about-hds-articles .about-hds-articles-spotlight .spotlight-content a:hover {color: #ffffff;}
+
+@media only screen and (max-width: 991px) {
+  .about-hds-articles  {
+    padding-top: 22px;
+    padding-bottom: 35px;
+  }
+  .about-hds-articles  .spotlight-title {
+    font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #848484;
+    text-transform: none;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+  
+  .about-hds-articles h2 {
+    font-size:  1.25rem;
+    min-height: 35px;
+  }
+
+  .about-hds-articles h2 .glyphicon.glyphicon-menu-right.animateIcon{
+    font-size: 1rem;
+    top: 2px;
+  }
+
+  .about-hds-articles  .about-hds-articles-spotlight .spotlight-content{
+    bottom: 15px;
+    padding: 0 15px 0 15px;
+  }
+  .about-hds-articles  .about-hds-articles-spotlight .spotlight-content .spotlight-title{
+    font-size: 0.875rem; font-weight: 600; margin-bottom: 10px;
+  }
+
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-mobile{
+    min-height: 350px;
+  }
+
+.about-hds-csr-hexagon .behind-scene-hexagon-list .hexagon320 .hexagon-content {
+    margin-top: -26px;
+}
+
+
+}
+
+@media only screen and (max-width: 991px) {
+  .about-hds-articles .about-hds-articles-spotlight{
+    min-height: 0;
+  }
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-content{
+    position: static;
+    color: #414141;
+    padding-top:20px;
+    padding-bottom:20px;
+    background: #ffffff;
+  }
+  .spotlight-content .date-stamp.hidden-sm.hidden-md.hidden-lg > span {
+      display: table-cell;
+      vertical-align: top;
+      padding-left: 5px;
+  }
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight-title{
+    font-size: 0.9375rem;
+    color: #000000;
+    font-weight: 400;
+  }
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight-description{
+    font-size: 0.875rem;
+  }
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-content .spotlight a{
+    color: #cc0000;
+    outline: 0 none;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-mobile{
+    min-height: 350px;
+  }
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-content a{color:#cc0000; outline: 0 none; text-decoration: none; font-size: 0.8125rem;}
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-content a:hover {color:#AC1F25;}
+}
+
+@media only screen and (max-width: 480px) {
+  .about-hds-articles .about-hds-articles-spotlight .spotlight-mobile{
+    min-height: 230px;
+  }
+}
+
+
+/* About HDS CSR - Video Ecofriendly */
+.about-hds-csr-eco {
+  z-index: 9;
+  position: relative;
+  min-height: 480px;
+  padding: 75px 0 55px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-hds-csr-eco  h1,
+.about-hds-csr-eco  h2,
+.about-hds-csr-eco  h4,
+.about-hds-csr-eco  p {
+  color: #ffffff;
+}
+
+.about-hds-csr-eco a:hover,
+.about-hds-csr-eco a:focus,
+.about-hds-csr-eco a:active {
+  text-decoration: none;
+}
+
+.about-hds-csr-eco .close-hero {
+  display: inline-block;
+  position: absolute;
+  top: -15px;
+  right: 145px;
+}
+
+.about-hds-csr-eco .headline {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 3em;
+  line-height: 1;
+  line-height: 100%;
+}
+
+.about-hds-csr-eco .headline strong {
+  font-weight: 700;
+}
+
+.about-hds-csr-eco h3 {
+  margin-bottom: 5px;
+  font-family: 'museo-slab', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 1;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 992px){
+	.about-hds-csr-eco.server-rack h3{padding-left:6px;}
+}
+
+.about-hds-csr-eco .sub-headline {
+  margin-bottom: 65px;
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.125em;
+  line-height: 1;
+  line-height: 120%;
+}
+
+.about-hds-csr-eco .sub-headline strong {
+  font-weight: 500;
+}
+
+.about-hds-csr-eco .request {
+  margin-right: 35px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.about-hds-csr-eco .request:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.about-hds-csr-eco .request:hover a {
+  color: #000000;
+}
+
+.about-hds-csr-eco .buy-through {
+  display: inline-block;
+}
+
+.about-hds-csr-eco .buy-through:hover .glyphicon.glyphicon-chevron-right {
+  left: 8px;
+}
+
+.about-hds-csr-eco .buy-through .glyphicon.glyphicon-chevron-right {
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease-out;
+}
+
+.about-hds-csr-eco .buy-through a {
+  font-family: 'museo-sans', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 0.8125em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.about-hds-csr-eco .buy-through a > .sprite {
+  margin-left: 2px;
+  position: relative;
+  top: 2px;
+}
+
+.about-hds-csr-eco.overview {
+  display: none;
+}
+
+.about-hds-csr-eco.server-rack {
+  position: relative;
+}
+
+.about-hds-csr-eco.server-rack {
+  position: static;
+}
+
+.about-hds-csr-eco.server-rack .servers {
+  position: absolute;
+  top: 120px;
+  margin-left: 720px;
+}
+
+.about-hds-csr-eco .buy-through a > .sprite {
+
+}
+
+.about-hds-csr-eco .video-play-desktop{
+  text-align: center;
+  margin-top: 80px;
+}
+
+.about-hds-csr-eco.video {
+  display: none;
+}
+
+.about-hds-csr-eco.video {
+  text-align: center;
+  position:relative;
+}
+
+.about-hds-csr-eco.video .video-player{
+	width:600px;
+    height:320px;
+    background:#000000;
+    padding:5px;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -110px;
+    position: absolute;
+    top: 50%;
+}
+
+.about-hds-csr-eco.video .video-player .close-hero{
+    display: inline-block;
+    position: absolute;
+	top: -33px;
+    right: -35px;
+}
+
+.about-hds-csr-eco.video iframe {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+	.about-hds-csr-eco.video .video-player{
+        margin-left: -200px;
+        margin-top: -125px;
+		height: 250px;
+    	width: 400px;
+    }
+	.about-hds-csr-eco.video .video-player .close-hero {
+        top: -40px;
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+	.about-hds-csr-eco.video .video-player{
+        margin-left: -135px;
+        margin-top: -85px;
+		height: 172px;
+    	width: 270px;
+    }
+	.about-hds-csr-eco.video .video-player .close-hero {
+        top: -40px;
+        right: 0;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .about-hds-csr-quote{
+    text-align: left;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  .about-hds-csr-quote .about-hds-csr-quote-container h2{
+    font-size: 1.875rem;
+    margin-bottom: 25px;
+  }
+  .about-hds-csr-quote .about-hds-csr-quote-container p{
+    font-size: 0.875rem;
+  }
+
+  .about-hds-csr-quote.csr-quote-5{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container p{
+    font-size: 0.875rem;
+  }
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics{
+    margin-bottom: 25px;
+  }
+
+  .behind-scene-hexagon.about-hds-csr-hexagon{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .behind-scene-hexagon.about-hds-csr-hexagon h2{
+    font-size: 1.125rem;
+  }
+
+  .hitachi-honor h2{
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 1.25rem;
+  }
+  .hitachi-honor .hitachi-honor-box{
+    padding: 15px;
+  }
+  .hitachi-honor .hitachi-honor-box p{
+    margin-bottom: 0;
+  }
+  .hitachi-honor .tagline {
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+  .about-hds-csr-eco .headline{
+    font-size: 1.5rem;
+  }
+  .about-hds-csr-eco h3{
+    font-size: 1rem;
+  }
+  .about-hds-csr-eco .sub-headline{
+    font-size: 0.875rem;
+  } 
+
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .resources-all a, 
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .resources-support a{
+    font-size: 1rem;
+  }
+  .about-hds-csr-eco .video-play {
+      text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about-hds-csr-quote{
+    text-align: left;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  .about-hds-csr-quote .about-hds-csr-quote-container h2{
+    font-size: 1.875rem;
+    margin-bottom: 25px;
+  }
+  .about-hds-csr-quote .about-hds-csr-quote-container p{
+    font-size: 0.875rem;
+  }
+
+  .about-hds-csr-quote.csr-quote-5{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container p{
+    font-size: 0.875rem;
+  }
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics{
+    margin-bottom: 25px;
+  }
+
+  .behind-scene-hexagon.about-hds-csr-hexagon{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .behind-scene-hexagon.about-hds-csr-hexagon h2{
+    font-size: 1.125rem;
+  }
+
+  .hitachi-honor h2{
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+  }
+  .hitachi-honor .hitachi-honor-box{
+    padding: 15px;
+  }
+  .hitachi-honor .hitachi-honor-box p{
+    margin-bottom: 0;
+  }
+  .hitachi-honor .tagline {
+    margin-top: 20px;
+    padding: 0 15px;
+    text-align: left;
+  }
+
+  .about-hds-csr-eco .headline{
+    font-size: 1.5rem;
+  }
+  .about-hds-csr-eco h3{
+    font-size: 1rem;
+  }
+  .about-hds-csr-eco .sub-headline{
+    font-size: 0.875rem;
+  } 
+  .about-hds-csr-eco .video-play {
+      text-align: center;
+  }
+
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .resources-all a, 
+  .about-hds-csr-quote.csr-quote-5 .about-hds-csr-quote-container .about-hds-ethics-cta .resources-support a{
+    font-size: 1rem;
+  }
+}
+.about-hds-csr-quote .icon-quote{display:none;}

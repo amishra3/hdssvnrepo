@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="News Insights Explore Container"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <newsinsights
+                jcr:primaryType="cq:Panel"
+                title="News Insights">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <firstsectiontitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title for first Section (Column)"
+                        name="./firstsectiontitle"                        
+                        xtype="textfield"/>
+                    <secondsectiontitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title for Second Section (Column)"
+                        name="./secondsectiontitle"                        
+                        xtype="textfield"/>
+                    <thirdsectiontitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title for third Section (Column)"
+                        name="./thirdsectiontitle"                        
+                        xtype="textfield"/>
+                </items>
+            </newsinsights>
+        </items>
+    </items>
+</jcr:root>

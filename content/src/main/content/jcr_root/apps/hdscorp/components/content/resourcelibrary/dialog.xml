@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="Resource Library"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <searchbox
+                jcr:primaryType="cq:Panel"
+                title="Search Box">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <restultsMessage
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Results Message"
+                        key="resultsmessage"
+                        name="./resultsmessage"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./resultsmessage')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <searchboxMessageText
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Search Textbox message text"
+                        name="./searchboxmessagetext"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./searchboxmessagetext')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <searchlabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Search Label"
+                        name="./searchlabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./searchlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <searchbylabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Search By Label"
+                        name="./searchbylabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./searchbylabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <filterbylabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Filter By Label"
+                        name="./filterbylabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./filterbylabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <showresultslabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Show Results"
+                        name="./showresultslabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./showresultslabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <contentrenderingpagepath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Content Rendering Page Path"
+                        name="./contentrenderingpagepath"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./contentrenderingpagepath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <pagesize
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="No of Result Items Shown Per Page "
+                        name="./pagesize"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var newsPathField = dialog.getField('./pagesize')&#xa; var newsPath = newsPathField.getValue();&#xa; if($.trim(newsPath)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="numberfield"/>
+                </items>
+            </searchbox>
+            <featured
+                jcr:primaryType="cq:Panel"
+                title="Featured">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <featuredLabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Featured Label"
+                        name="./featuredlabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <featuredOverlayPath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Featured Overlay Path"
+                        name="./featuredoverlaypath"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./featuredoverlaypath')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="pathfield"/>
+                    <clearAllFiltersLabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Clear All filters Label"
+                        name="./clearallfilterslabel"
+                        xtype="textfield"/>
+                    <hidefeaturedLabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Featured Label"
+                        name="./hidefeaturedLabel"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </featured>
+            <filterbyindustry
+                jcr:primaryType="cq:Panel"
+                title="Filter By Industry">
+                <items
+                    jcr:primaryType="cq:WidgetCollection"
+                    xtype="multifieldpanel">
+                    <filterByIndustryLabelText
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="&#xa;Filter by Industry Label&#xa;"
+                        name="./filterbyindustrylabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./filterbyindustrylabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <labelandtags
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="IndustryLabel And Tag"
+                        name="./filterbyindustry"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <industrylabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Industry Label"
+                                    key="industrylabel"
+                                    name="./industrylabel"
+                                    xtype="textfield"/>
+                                <industryid
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Industry Id"
+                                    key="industryid"
+                                    name="./industryid"
+                                    xtype="textfield"/>
+                                <industrytag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Industry Tag"
+                                    key="industrytag"
+                                    name="./industrytag"
+                                    xtype="tags"/>
+                            </items>
+                        </fieldConfig>
+                    </labelandtags>
+                </items>
+            </filterbyindustry>
+            <filterbycontent
+                jcr:primaryType="cq:Panel"
+                title="Filter By Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <resourceRegionByLabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Filter By Content Label "
+                        name="./filterbycontentlabel"
+                        validator="&#x9;&#x9;&#x9; function(value) {&#xa;    var dialog = this.findParentByType('dialog');&#xa; var bannerimage1 = dialog.getField('./filterbycontentlabel')&#xa; var bannerimage1value = bannerimage1.getValue();&#xa; if($.trim(bannerimage1value)==&quot;&quot;){&#xa;  return false;&#xa; }else{&#xa;  return true;&#xa; }&#xa;}"
+                        xtype="textfield"/>
+                    <filterByContentType
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Filter By Content Type"
+                        name="./filterbycontenttype"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <contentlabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Content Label"
+                                    key="contentlabel"
+                                    name="./contentlabel"
+                                    xtype="textfield"/>
+                                <contentid
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Content Id"
+                                    key="contentid"
+                                    name="./contentid"
+                                    xtype="textfield"/>
+                                <contenttag
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="ContentTag"
+                                    key="contenttag"
+                                    name="./contenttag"
+                                    xtype="tags"/>
+                            </items>
+                        </fieldConfig>
+                    </filterByContentType>
+                </items>
+            </filterbycontent>
+            <sortbyconfig
+                jcr:primaryType="cq:Panel"
+                title="Sort By Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <sortByLabel
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Character after '|' will be value Default label &lt;br>  Example:- Sort by:|Default"
+                        fieldLabel="Sort By Label "
+                        name="./sortByLabel"
+                        xtype="textfield"/>
+                    <sortByType
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Sort By Criteria"
+                        name="./sortByType"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="multifieldpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <sortCriterialabel
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Sort By Criteria Label"
+                                    key="sortCriterialabel"
+                                    name="./sortCriterialabel"
+                                    xtype="textfield"/>
+                                <sortCriteriavalue
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}false"
+                                    fieldLabel="Sort By Criteria Value"
+                                    key="sortCriteriavalue"
+                                    name="./sortCriteriavalue"
+                                    xtype="textfield"/>
+                            </items>
+                        </fieldConfig>
+                    </sortByType>
+                    <hidesortbyfunct
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Sort By"
+                        name="./hidesortbyfunct"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </sortbyconfig>
+        </items>
+    </items>
+</jcr:root>

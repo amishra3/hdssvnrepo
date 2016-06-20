@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    width="800"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <abouthdsleadershipbannerheading
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldLabel="Leadership Banner Heading"
+                        name="./abouthdsleadershipbannerheading"
+                        xtype="textfield"/>
+                    <abouthdsleadershipbannerheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Leadership Banner Headline"
+                        name="./abouthdsleadershipbannerheadline"
+                        xtype="textfield"/>
+                    <abouthdsleadershipbannersubheadline
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Sub Headline"
+                        name="./abouthdsleadershipbannersubheadline"
+                        xtype="textfield"/>
+                    <abouthdsleadershipbannerimage
+                        jcr:primaryType="cq:Widget"
+                        allowUpload="false"
+                        ddGroups="[media]"
+                        fieldLabel="Banner Image"
+                        fileNameParameter="./imagePath3/fileName2"
+                        fileReferenceParameter="./jcr:imageFileRef"
+                        height="{Long}200"
+                        name="./abouthdsleadershipbannerimage"
+                        sizeLimit="100"
+                        title="Image"
+                        width="{Long}200"
+                        xtype="html5smartimage"/>
+                    <mobileimagePath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Banner Mobile Image (Optional)"
+                        name="./abouthdsleadershipbannermobileimage"
+                        xtype="ddpathfield"/>
+                    <abouthdsleadershipbannerbuttonlabel
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./leaderbuttonlabel"
+                        xtype="textfield"/>
+                    <abouthdsleadershipbanneurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./leaderbuttonurl"
+                        xtype="pathfield"/>
+                    <thirdparty
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in New Window?"
+                        name="./thirdparty"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <abouthdsleadershipbannerlinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Label"
+                        name="./leaderlinktext"
+                        xtype="textfield"/>
+                    <abouthdsleadershipbannelinkurl
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Target URL"
+                        name="./leaderlinkurl"
+                        xtype="pathfield"/>
+                    <thirdpartylink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show third party icon?"
+                        name="./thirdpartylink"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

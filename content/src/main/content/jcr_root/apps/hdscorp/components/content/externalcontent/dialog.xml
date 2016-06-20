@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="600"
+    title="External Content Definition"
+    width="600"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <externalcontent
+                jcr:primaryType="cq:Panel"
+                title="External Content Definition">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <contenttitle
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content Title"
+                        name="./dc:title"
+                        xtype="textfield"/>
+                    <contentpath
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="External Content URL"
+                        name="./contentpath"
+                        xtype="pathfield"/>
+                    <contentdescription
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="External Content Description(Short)"
+                        name="./dc:description"
+                        xtype="textarea"/>
+                    <longcontentdescription
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="External Content Description(Long)"
+                        name="./dc:longdescription"
+                        xtype="textarea"/>                        
+					<cftags
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        anchor="100%"
+                        fieldLabel="Tag Id"
+                        key="categoryTag"
+                        layout="anchor"
+                        name="./cq:tags"
+                        xtype="tags"/>                        
+                     <contentgated
+                         jcr:primaryType="cq:Widget"
+                         type="select"
+                         fieldLabel="Gated"
+                         metaType="dropdown"
+                         name="./dc:gated"
+                         ordered="true"
+                         xtype="selection">
+                         <options jcr:primaryType="cq:WidgetCollection">
+                             <_x0031_452113789395
+                                 jcr:primaryType="nt:unstructured"
+                                 text="Yes"
+                                 value="Yes"/>
+                             <_x0031_452113796517
+                                 jcr:primaryType="nt:unstructured"
+                                 text="No"
+                                 value="No"/>
+                             <_x0031_452113802439 jcr:primaryType="nt:unstructured"/>
+                         </options>
+                     </contentgated>
+                     <_x0031_450742118271
+                         jcr:primaryType="cq:Widget"
+                         xtype="datetime"
+                         displayedFormat="YYYY-MM-DD HH:mm"
+                         fieldLabel="Gating Start Date"
+                         metaType="datepicker"
+                         name="./dc:startdate"
+                         renderReadOnly="true"
+                         type="datetime"
+                         typeHint="Date"/>
+                     <_x0031_450742143924
+                         jcr:primaryType="cq:Widget"
+                         xtype="datetime"
+                         displayedFormat="YYYY-MM-DD HH:mm"
+                         fieldLabel="Gating End Date"
+                         metaType="datepicker"
+                         name="./dc:enddate"
+                         renderReadOnly="true"
+                         type="datetime"
+                         typeHint="Date"/>                     
+                </items>
+            </externalcontent>
+        </items>
+    </items>
+</jcr:root>
