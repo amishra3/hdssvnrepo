@@ -36,7 +36,7 @@ CQ.html5.UploadDialog = CQ.Ext.extend(CQ.Dialog, {
     useHTML5: true,
 
     createVersion: false,
- 
+
     canceled: false,
 
     constructor: function(config) {
@@ -347,6 +347,12 @@ CQ.html5.UploadDialog = CQ.Ext.extend(CQ.Dialog, {
             "icon":CQ.Ext.MessageBox.QUESTION,
             "fn":function (btnId) {
                 if (btnId == "yes") {
+					for (var i = 0; i < conflicts.length; i++) {
+						getMetadataProperties(dialog.getParentPath() + "/" + CQ.shared.HTTP.encodePath(conflicts[i]));					
+						CQ.HTTP.post(dialog.getParentPath() + "/" + CQ.shared.HTTP.encodePath(conflicts[i]), null, {
+							":operation":"delete"
+						});
+					}
                     this.createVersion = true;
                     dialog.ok();
                 } else if (btnId == "no") {
