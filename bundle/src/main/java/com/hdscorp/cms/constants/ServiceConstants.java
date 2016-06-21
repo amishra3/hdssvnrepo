@@ -105,11 +105,12 @@ public final class ServiceConstants {
 	/*
 	 * Twitter constraints
 	 */
-	public static final String TWITTER_CONSUMER_KEY = "twitter.consumerkey";
-	public static final String TWITTER_CONSUMER_SECRET = "twitter.consumerSecret";
-	public static final String TWITTER_ACCESSTOKEN_KEY = "twitter.accessTokenKey";
-	public static final String TWITTER_ACCESSTOKEN_SECRET = "twitter.accessTokenSecret";
-	public static final String TWITTER_STORAGE_PATH = "twitter.storagePath";
+	public static final String TWITTER_ACCESS_DETAILS = "twitter.access.details";
+	public static final String TWITTER_CONSUMER_KEY = "consumerkey";
+	public static final String TWITTER_CONSUMER_SECRET = "consumerSecret";
+	public static final String TWITTER_ACCESSTOKEN_KEY = "accessTokenKey";
+	public static final String TWITTER_ACCESSTOKEN_SECRET = "accessTokenSecret";
+	public static final String TWITTER_STORAGE_PATH = "storagePath";
 	public static final String TWITTER_SCHEDULER_EXPRESSION = "scheduler.expression";
 	public static final String TW_FEED_POSTED_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	public static final String FEED_RESPONSE_TIME_FORMAT = "EEE MMM d HH:mm:ss z yyyy";
@@ -129,7 +130,7 @@ public final class ServiceConstants {
 	public static final String TW_FEED_HOURS_SEPERATOR = "-h";
 	public static final String TW_FEED_MINS_SEPERATOR = "-m";
 	public static final Integer HOURS_IN_DAY = 24;
-	public static final String TW_POST_LIMIT = "twitter.postlimit";
+	public static final String TW_POST_LIMIT = "postlimit";
 	public static final String TIME_DIFF_POSTDATE_CURRENTDATE = "timeDifference";
 	public static final String TWITTER_ID = "twitterID";
 	public static final String TWITTER_POSTED_DATE = "twitterPostedDate";

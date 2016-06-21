@@ -1,13 +1,16 @@
 package com.hdscorp.cms.scheduler;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.PropertyUnbounded;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.ResourceResolverFactory;
@@ -33,13 +36,8 @@ import com.hdscorp.cms.util.ServiceUtil;
 @Properties(
 
 {
-		@Property(name = ServiceConstants.TWITTER_CONSUMER_KEY, description = "twitter consumerkey", value = "Q7yBVmniWA2TBWCgO8sl9SOXl"),
-		@Property(name = ServiceConstants.TWITTER_CONSUMER_SECRET, description = "consumersecret", value = "hvlVrHr8DbXYOtddhRL4kTUeqc4eborPDeJ4Im8ctiy2DV1wy1"),
-		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_KEY, description = "accessTokenKey", value = "15354310-bevOoaxSL9TWCfzHAgHSTBwYxRfoFpvBmuSBgrKWY"),
-		@Property(name = ServiceConstants.TWITTER_ACCESSTOKEN_SECRET, description = "accessTokenSecret", value = "NrnePhQ39PGprGZxW54s9SEAvbkm5cGoeY0Kk4OswHy5p"),
-		@Property(name = ServiceConstants.TWITTER_STORAGE_PATH, description = "Default storage path", value = "/content/hdscorp/en_us/lookup/twitterfeeddata/jcr:content/"),
-		@Property(name = ServiceConstants.TWITTER_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 16 13 * * ?"),
-		@Property(name = ServiceConstants.TW_POST_LIMIT , description = "number of posts", value = "3") })
+		@Property(name = ServiceConstants.TWITTER_ACCESS_DETAILS, description = "Provide Twitter Handle Detail EX:- consumerkey=Q7yBVmniWA2TBWCgO8sl9SOXl,consumerSecret=hvlVrHr8DbXYOtddhRL4kTUeqc4eborPDeJ4Im8ctiy2DV1wy1,accessTokenKey=15354310-bevOoaxSL9TWCfzHAgHSTBwYxRfoFpvBmuSBgrKWY,accessTokenSecret=NrnePhQ39PGprGZxW54s9SEAvbkm5cGoeY0Kk4OswHy5p,storagePath=/content/hdscorp/en_us/lookup/twitterfeeddata/jcr:content/,postlimit=3", value = "",unbounded = PropertyUnbounded.ARRAY),		
+		@Property(name = ServiceConstants.TWITTER_SCHEDULER_EXPRESSION, description = "Default Cron Job", value = "0 * * * * ? ")})
 public class TwitterScheduler {
 	private static final Logger log = LoggerFactory.getLogger(TwitterScheduler.class);
 
@@ -58,13 +56,13 @@ public class TwitterScheduler {
 
 	private String schedulerExpression;
 
-	private String consumerkey;
-	private String consumerSecret;
-	private String accessTokenKey;
-	private String accessTokenSecret;
+	private String[] twitterAccessDetails;
+		
 
-	private String storagePath;
-	private String numberOfPosts;
+	
+	
+	
+	
 	
 	/**
 	 * Useful to running scheduler based on OSGI config properties.
@@ -74,20 +72,40 @@ public class TwitterScheduler {
 	protected void activate(ComponentContext ctx) {
 		log.info("[TwitterScheduler]: Activated method called");
 		this.schedulerExpression = ctx.getProperties().get(ServiceConstants.TWITTER_SCHEDULER_EXPRESSION).toString();
-		this.consumerkey = ctx.getProperties().get(ServiceConstants.TWITTER_CONSUMER_KEY).toString();
-		this.consumerSecret = ctx.getProperties().get(ServiceConstants.TWITTER_CONSUMER_SECRET).toString();
-		this.accessTokenKey = ctx.getProperties().get(ServiceConstants.TWITTER_ACCESSTOKEN_KEY).toString();
-		this.accessTokenSecret = ctx.getProperties().get(ServiceConstants.TWITTER_ACCESSTOKEN_SECRET).toString();
-		this.storagePath = ctx.getProperties().get(ServiceConstants.TWITTER_STORAGE_PATH).toString();
-		this.numberOfPosts = ctx.getProperties().get(ServiceConstants.TW_POST_LIMIT).toString();
+		this.twitterAccessDetails = getPropertyAsArray(ctx.getProperties().get(ServiceConstants.TWITTER_ACCESS_DETAILS));
+		
+
 		Map<String, Serializable> configOne = new HashMap<>();
 
 		final Runnable job = new Runnable() {
 			public void run() {
 				try {
-				ServiceUtil.saveWSResponse(twitterService.getTwitterResponse(consumerkey, consumerSecret,
-						accessTokenKey, accessTokenSecret, numberOfPosts), storagePath,
-						ServiceConstants.TWITTER_SAVE_FEED_DATA_PROPERTY_NAME);
+					
+					
+				if (twitterAccessDetails!=null && twitterAccessDetails.length >1) 	{
+					
+				for (int i = 0; i <twitterAccessDetails.length ; i++) {
+					Map<String,String> map = new HashMap<String,String>();
+					String[] accountDeatails = twitterAccessDetails[i].split(",");
+					for (String keyValuePair : accountDeatails) {
+						String[] keyValue = keyValuePair.split("=");
+						
+
+						if (keyValue!=null && keyValue.length>1) {
+							
+						map.put(keyValue[0], keyValue[1]);
+						
+						}
+						
+					}
+					
+					ServiceUtil.saveWSResponse(twitterService.getTwitterResponse(map.get(ServiceConstants.TWITTER_CONSUMER_KEY), map.get(ServiceConstants.TWITTER_CONSUMER_SECRET),
+							map.get(ServiceConstants.TWITTER_ACCESSTOKEN_KEY), map.get(ServiceConstants.TWITTER_ACCESSTOKEN_SECRET), map.get(ServiceConstants.TW_POST_LIMIT)), map.get(ServiceConstants.TWITTER_STORAGE_PATH),
+							ServiceConstants.TWITTER_SAVE_FEED_DATA_PROPERTY_NAME);
+					
+				}
+				
+				}
 				}
 				catch (Exception e) {
 					log.error("Exception occurs during cron job execution for twitter ", e);
@@ -103,5 +121,21 @@ public class TwitterScheduler {
 
 		log.info("[TwitterScheduler]: Activated method method  Ending.");
 	}
+     
+     private String[] getPropertyAsArray(Object obj){
+ 		String []paths={""};
+ 		if(obj!=null) {
+ 			
+ 		if(obj instanceof String[]){
+ 			paths=(String[])obj;
+     	}else{
+     		paths=new String[1];
+     		paths[0]=(String)obj;
+     	}
+ 		
+ 		}
+ 		return paths;
+ 		
+ 	}
 
 }
