@@ -315,6 +315,11 @@ public class SearchServiceHelper {
 				searchParams.put("group." + groupCnt
 						+ "_group.8_fulltext.relPath",
 						"jcr:content/metadata/@keywords");
+//				searchParams.put("group." + groupCnt + "_group.9_fulltext",searchKeyword);
+//				searchParams.put("group." + groupCnt+  "_group.9_fulltext.relPath","jcr:content");
+				searchParams.put("group." + groupCnt + "_group.9_fulltext",searchKeyword); 
+				searchParams.put("group." + groupCnt + "_group.9_fulltext.relPath", "jcr:content");
+
 			}
 		}
 	}
@@ -381,11 +386,11 @@ public class SearchServiceHelper {
 		searchParams.put("group." + groupCnt
 				+ "_group.2_group.6_fulltext.relPath",
 				"jcr:content/metadata/@dc:description");
-		searchParams.put("group." + groupCnt + "_group.2_group.7_fulltext",
-				searchKeyword);
-		searchParams.put("group." + groupCnt
-				+ "_group.2_group.7_fulltext.relPath",
-				"jcr:content/metadata/@dc:keywords");
+		searchParams.put("group." + groupCnt + "_group.2_group.7_fulltext",searchKeyword);
+		searchParams.put("group." + groupCnt+ "_group.2_group.7_fulltext.relPath","jcr:content/metadata/@dc:keywords");
+		
+		searchParams.put("group." + groupCnt + "_group.2_group.8_fulltext",searchKeyword);
+		searchParams.put("group." + groupCnt+ "_group.2_group.8_fulltext.relPath","jcr:content");	
 	}
 
 	public SearchResult getFullTextBasedResuts(String[] paths, String[] tags,
