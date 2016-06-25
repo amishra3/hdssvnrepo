@@ -212,7 +212,7 @@ public final class PropertyResolver {
 	                	 priority = (String)iProperties.getInherited("sitemappagepriority", "1.0");
 	                 }
 	                 
-	                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'");
+	                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 	                 
 	                 if(child.getLastModified()!=null){
 	                	 lastmod = fmt.format(child.getLastModified().getTime());
@@ -272,7 +272,7 @@ public final class PropertyResolver {
          changefreq = "monthly";
          priority = ".5";
          
-         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'");
+         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
          
          if(properties.containsKey("jcr:lastModified")){
         	 
