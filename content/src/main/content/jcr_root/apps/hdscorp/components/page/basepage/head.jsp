@@ -124,5 +124,5 @@
 	  </c:if>
 <c:set var="domain" value="<%= pageProperties.getInherited("domain", "") %>" />
 		<c:set var="cPath" value="${pageContext.request.requestURI}" />
-    <link rel="canonical" href ="${domain}${hdscorp:shortURL(cPath)}" />
+   <link rel="canonical" href ="${domain}${cPath}" />
 </head>
